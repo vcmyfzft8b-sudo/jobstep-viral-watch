@@ -121,24 +121,26 @@ def run(dry_run=False, only_detect=False):
         if 'created' not in v:
             continue
         lvl = detect.level(v, now, detect.creator_baseline(history, v['handle']), th)
-        if not lvl or lvl in v['notified'] or ('viral' in v['notified']):
+        if not lvl or 'viral' in v['notified'] or (lvl == 'taking_off' and 'taking_off' in v['notified']):
             continue
-        # Older videos of a newly added account: one summary push instead of one push each.
-        quiet = v.get('first_seen') == int(now) and now - v['created'] > 48 * 3600
+        # Older "taking off" videos of a newly added account: one summary instead of one message each.
+        # Viral videos always get their own full message.
+        quiet = lvl == 'taking_off' and v.get('first_seen') == int(now) and now - v['created'] > 48 * 3600
         try:
             result = handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=quiet)
             actions.append(result)
             if quiet:
                 backlog.append(result)
-            v['notified'].append(lvl)
+            if lvl == 'taking_off' and not dry_run:
+                v['notified'].append(lvl)
         except Exception as e:  # keep going with the other videos
             traceback.print_exc()
-            notify.push('⚠️ JobStep-Watcher Fehler', f"{v['url']}\n{str(e)[:300]}", click=v.get('url'), tags='warning')
+            notify.push('⚠️ JobStep watcher error', f"{v['url']}\n{str(e)[:300]}", click=v.get('url'))
             state.log({'type': 'error', 'video': vid, 'error': str(e)[:500]})
     if backlog and not dry_run:
         viral = sum(1 for r in backlog if r['level'] == 'viral')
-        notify.push(f'📋 {len(backlog)} ältere Videos neuer Accounts', f'{viral} viral, {len(backlog) - viral} hebt ab '
-                    '(letzte 7 Tage) – Details auf der Radar-Seite', tags='clipboard')
+        notify.push(f'📋 {len(backlog)} older "taking off" videos from newly added accounts',
+                    'Last 7 days – details on the Notion radar page', tags='clipboard')
 
     # Classify every video once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
     if not dry_run:
@@ -198,74 +200,128 @@ def resolve(formats, fid):
 
 
 def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=False):
-    radar_page = cfg['notion']['radar_page']
-    age_h = (now - v['created']) / 3600
-    eng = detect.engagement(v)
+    """Taking off: short message. Viral: see handle_viral."""
     if dry_run:
         print('DRY', lvl, v['handle'], v['views'], v.get('url'))
         return {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v.get('format')}
+    if lvl == 'viral':
+        return handle_viral(v, formats, history, cfg, now, only_detect)
+    radar_page = cfg['notion']['radar_page']
     if not v.get('format_checked'):
         c = classify.classify(v, formats, cfg['models']['classify'])
         v['format'], v['hook_en'], v['format_checked'] = c.get('match'), c.get('hook_en', ''), True
-        v['new_format_description'] = c.get('new_format_description', '')
         history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
     known = resolve(formats, v['format'])
-    if lvl == 'viral' and not known and not only_detect:
-        # Strict re-check with the strong model against everything in Notion (list + archive) before building.
-        dup = classify.confirm_new(v, formats, cfg['models']['build'])
-        if dup:
-            v['format'] = dup
-            history.get(v['id'], {})['format'] = dup
-            known = resolve(formats, dup)
-    eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
-    weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement']
-    head = '🟢 VIRAL' if lvl == 'viral' else '🟡 Hebt ab'
-    result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
-
-    # Viral again + the format is in the archive: bring the archived page back into the list.
-    revived = None
-    if lvl == 'viral' and known and known.get('status') != 'active' and not weak and not only_detect:
-        revived = revive_format(known, v, formats, history, cfg)
-
-    # Viral + not in Notion yet: build first (with the final duplicate check on the transcript), then report.
-    built = None
-    if lvl == 'viral' and not known and not weak and not only_detect:
-        page, problems, position, dup = build_format(v, formats, history, cfg, quiet=quiet)
-        if dup:
-            known = resolve(formats, dup)
-            result['format'] = dup
-        else:
-            built = (page, problems, position)
-            result.update({'built': page['url'], 'problems': problems, 'position': position})
-
-    if known and known.get('status') == 'active':
-        fmt_text = f"Format: {known['title']} (schon in der Liste)"
-    elif known and revived:
-        fmt_text = f"Format aus dem Archiv zurückgeholt auf Platz {revived}: {known['title']}"
-    elif known:
-        fmt_text = f"Format: {known['title']} (liegt im Archiv – Interaktion zu schwach zum Zurückholen)"
-    elif built and not built[1]:
-        fmt_text = f"NEUES Format – automatisch hinzugefügt auf Platz {built[2]}: {built[0]['url']}"
-    elif built:
-        fmt_text = f"Neues Format – Entwurf zum Prüfen ({'; '.join(built[1])}): {built[0]['url']}"
-    else:
-        fmt_text = f"Neues Format: {v.get('hook_en') or '?'}" + (' (schwache Interaktion, nicht gebaut)' if weak else '')
-    msg = (f"@{v['handle']} – {fmt_views(v['views'])} Aufrufe nach {age_h:.0f} h · Shares+Saves {eng:.1%}"
-           f"{' (schwach)' if weak else ''}{' (Shares/Saves unbekannt)' if eng_unknown else ''}\n{fmt_text}")
+    age_h = (now - v['created']) / 3600
+    fmt_text = (f"Probably format: {known['title']}" + ('' if known.get('status') == 'active' else ' (archive)')
+                if known else f"Possibly new format: {v.get('hook_en') or '?'}")
+    msg = (f"@{v['handle']} – {fmt_views(v['views'])} views after {age_h:.0f} h · shares+saves {detect.engagement(v):.1%}\n"
+           f"{fmt_text}\n(Full check with script follows if it goes viral.)")
     if not quiet:
-        notify.push(f'{head}: JobStep-Video', msg, click=v['url'], tags='chart_with_upwards_trend')
-    notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – {head} – {msg.replace(chr(10), ' – ')}",
+        notify.push('🟡 Taking off: JobStep video', msg, click=v['url'])
+    notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟡 – {msg.replace(chr(10), ' – ')}",
                  link=v['url'], link_label='Video')
+    result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
     state.log({'type': 'alert', **result})
     return result
 
 
-def refresh_page(fmt, v, cfg):
-    """Rebuild a format page in the current layout from a fresh viral video. Returns problems (empty = done)."""
-    work = tempfile.mkdtemp(prefix='fmt-')
+def list_position(cfg, page_id):
+    ids = [pid.replace('-', '') for _, pid in notion.list_entries(cfg['notion']['dach_page'])[0]]
+    pid = (page_id or '').replace('-', '')
+    return ids.index(pid) + 1 if pid in ids else None
+
+
+def handle_viral(v, formats, history, cfg, now, only_detect):
+    """Every viral video: download + Soniox transcript, Claude (Opus) judges against ALL formats in Notion (list +
+    archive) and translates the script to English. Then: already in the list -> report; in the archive -> bring
+    it back; new -> build the page. One Slack message with link, verdict and English script.
+    If anything fails, a basic Slack message still goes out and the full check is retried next run."""
+    radar_page = cfg['notion']['radar_page']
+    age_h = (now - v['created']) / 3600
+    eng = detect.engagement(v)
+    eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
+    weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement']
+    stats = (f"@{v['handle']} – *{fmt_views(v['views'])} views* after {age_h:.0f} h · shares+saves {eng:.1%}"
+             f"{' (weak)' if weak else ''}{' (unknown)' if eng_unknown else ''}")
+    result = {'video': v['id'], 'level': 'viral', 'views': v['views']}
+    work = tempfile.mkdtemp(prefix='viral-')
     try:
-        video_file = media.download(v['url'], work)
-        transcript = soniox.transcribe(media.audio(video_file, work))
+        video_file, note = None, ''
+        try:
+            video_file = media.download(v['url'], work)
+            transcript = soniox.transcribe(media.audio(video_file, work))
+        except Exception as e:
+            note = f' (video download/transcription failed: {str(e)[:80]} – judged from TikTok text)'
+            transcript = {'text': v.get('subtitles', ''), 'segments': [], 'language': ''}
+        try:
+            verdict = classify.judge(v, formats, cfg['models']['build'], transcript.get('text', ''))
+        except Exception as e:
+            if 'viral_basic' not in v['notified']:
+                notify.push('🟢 VIRAL: JobStep video', f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – "
+                            'the full check + English script will follow in the next run (6 h).', click=v['url'])
+                v['notified'].append('viral_basic')
+            state.log({'type': 'judge_failed', 'video': v['id'], 'error': str(e)[:300]})
+            result['error'] = str(e)[:200]
+            return result
+
+        dup = verdict.get('duplicate_of')
+        known = resolve(formats, dup) if dup else None
+        prepared = {'work': work, 'video_file': video_file, 'transcript': transcript} if video_file else None
+        if known:
+            v['format'] = known['id']
+            history.get(v['id'], {})['format'] = known['id']
+            if known.get('status') == 'active':
+                pos = list_position(cfg, known.get('page_id'))
+                outcome = (f"✅ *Already in Notion* – in the list{f' as #{pos}' if pos else ''}: "
+                           f"<https://app.notion.com/p/{known['page_id'].replace('-', '')}|{known['title']}>")
+            elif weak or only_detect or not prepared:
+                outcome = f"📦 *Already in Notion* – in the archive: {known['title']} (not brought back: " + \
+                          ('weak engagement' if weak else 'only-detect mode' if only_detect else 'video unavailable') + ')'
+            else:
+                pos = revive_format(known, v, formats, history, cfg, prepared=prepared)
+                outcome = (f"♻️ *Was in the archive – brought back as #{pos}*: "
+                           f"<https://app.notion.com/p/{known['page_id'].replace('-', '')}|{known['title']}>")
+        else:
+            if weak or only_detect or not prepared:
+                outcome = '🆕 *NEW format – not in Notion yet*, not added (' + \
+                          ('weak engagement' if weak else 'only-detect mode' if only_detect else 'video unavailable') + ')'
+            else:
+                page, problems, position = build_format(v, formats, history, cfg, prepared=prepared,
+                                                        description=verdict.get('new_format_description', ''))
+                result.update({'built': page['url'], 'problems': problems, 'position': position})
+                outcome = (f"🆕 *NEW format – not in Notion yet → added as #{position}*: <{page['url']}|{page['url']}>"
+                           if not problems else
+                           f"🆕 *NEW format* → draft to check ({'; '.join(problems)}): <{page['url']}|draft>")
+        result['format'] = v.get('format')
+        script = (verdict.get('english_script') or '').strip() or '(no speech / text found)'
+        quoted = '\n'.join('> ' + line for line in script.splitlines() if line.strip())
+        msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>\n\n"
+               f"*Format check (Claude):* {outcome}\n_{verdict.get('reason', '')}_{note}\n\n"
+               f"*Script (English):*\n{quoted[:3500]}")
+        notify.push('🟢 VIRAL: JobStep video', msg)
+        notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟢 VIRAL – @{v['handle']} "
+                     f"{fmt_views(v['views'])} – {outcome}", link=v['url'], link_label='Video')
+        v['notified'].append('viral')
+        state.log({'type': 'alert', **result})
+        return result
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
+def _prepare(v, cfg, prepared):
+    """Reuse an already downloaded video + transcript, or fetch them."""
+    if prepared:
+        return prepared['work'], prepared['video_file'], prepared['transcript'], False
+    work = tempfile.mkdtemp(prefix='fmt-')
+    video_file = media.download(v['url'], work)
+    return work, video_file, soniox.transcribe(media.audio(video_file, work)), True
+
+
+def refresh_page(fmt, v, cfg, prepared=None):
+    """Rebuild a format page in the current layout from a fresh viral video. Returns problems (empty = done)."""
+    work, video_file, transcript, own = _prepare(v, cfg, prepared)
+    try:
         frames = media.frames(video_file, work)
         spec = builder.build_spec(v, transcript, frames, cfg['models']['build'])
         problems = builder.validate(spec, transcript)
@@ -276,82 +332,67 @@ def refresh_page(fmt, v, cfg):
         fmt['script'] = ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900]
         return []
     finally:
-        shutil.rmtree(work, ignore_errors=True)
+        if own:
+            shutil.rmtree(work, ignore_errors=True)
 
 
-def revive_format(fmt, v, formats, history, cfg):
+def revive_format(fmt, v, formats, history, cfg, prepared=None):
     """Move an archived format page back into "Alle Formatseiten", refresh it to the current layout with the new
     viral video as inspiration, and put it into the ranked list. Returns its position."""
     notion.move_page(fmt['page_id'], cfg['notion']['holder_page'])
     try:
-        problems = refresh_page(fmt, v, cfg)
+        problems = refresh_page(fmt, v, cfg, prepared=prepared)
     except Exception as e:
         problems = [f'refresh failed: {str(e)[:150]}']
-    if problems:  # keep the old (working) page content, but tell the user
+    if problems:  # keep the old (working) page content, but note it
         notify.radar(cfg['notion']['radar_page'], f"Zurückgeholt, aber Seite nicht aktualisiert ({'; '.join(problems)}): {fmt['title']}",
                      link=f"https://app.notion.com/p/{fmt['page_id'].replace('-', '')}", link_label='Seite')
     fmt['status'] = 'active'
+    fmt.pop('archived_reason', None)
     fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
     v['format'] = fmt['id']
     history.get(v['id'], {})['format'] = fmt['id']
     position = rerank(formats, history, cfg, reason=None).index(fmt['id']) + 1
     state.log({'type': 'format_revived', 'format': fmt['id'], 'video': v['id'], 'position': position})
-    notify.radar(cfg['notion']['radar_page'], f"Archiviertes Format zurückgeholt auf Platz {position}: {fmt['title']}",
-                 link=f"https://app.notion.com/p/{fmt['page_id'].replace('-', '')}", link_label='Seite')
     return position
 
 
-def build_format(v, formats, history, cfg, quiet=False):
-    work = tempfile.mkdtemp(prefix='fmt-')
+def build_format(v, formats, history, cfg, prepared=None, description=''):
+    """Build a new German format page (current layout) and add it to the list. Returns (page, problems, position)."""
+    work, video_file, transcript, own = _prepare(v, cfg, prepared)
     try:
-        video_file = media.download(v['url'], work)
-        transcript = soniox.transcribe(media.audio(video_file, work))
-        # Last check with the full transcript: is this format already in Notion (list or archive)?
-        dup = classify.confirm_new(v, formats, cfg['models']['build'], transcript=transcript.get('text', ''))
-        if dup:
-            v['format'] = dup
-            history.get(v['id'], {})['format'] = dup
-            state.log({'type': 'duplicate_skipped', 'video': v['id'], 'format': dup})
-            return None, [], None, dup
         frames = media.frames(video_file, work)
         spec = builder.build_spec(v, transcript, frames, cfg['models']['build'])
         problems = builder.validate(spec, transcript)
         upload_id = notion.upload_video(media.for_notion(video_file, work))
         blocks = notion.page_blocks(spec, v, upload_id, cfg['links'])
     finally:
-        shutil.rmtree(work, ignore_errors=True)
+        if own:
+            shutil.rmtree(work, ignore_errors=True)
 
-    fid = 'A' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M')
-    entry = {'id': fid, 'title': spec['page_title'], 'description': spec.get('registry_description') or v.get('new_format_description', ''),
+    fid = 'A' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M%S')
+    entry = {'id': fid, 'title': spec['page_title'], 'description': spec.get('registry_description') or description,
              'script': ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900],
              'source_video': v['url'], 'created': int(time.time())}
     position = None
     if problems:
         page = notion.create_page(cfg['notion']['radar_page'], 'ENTWURF – ' + spec['page_title'], spec.get('icon') or '📝', blocks)
         entry.update({'page_id': page['id'], 'status': 'draft', 'problems': problems})
-        formats.append(entry)
-        v['format'] = fid
-        history[v['id']]['format'] = fid
-        if quiet:
-            notify.push('📝 Neues Format als Entwurf', f"{spec['page_title']}\nBitte prüfen: " + '; '.join(problems), click=page['url'], tags='memo')
-        notify.radar(cfg['notion']['radar_page'], f"Entwurf erstellt (nicht veröffentlicht): {spec['page_title']} – " + '; '.join(problems),
-                     link=page['url'], link_label='Entwurf')
     else:
         page = notion.create_page(cfg['notion']['holder_page'], spec['page_title'], spec.get('icon') or '🎬', blocks)
         entry.update({'page_id': page['id'], 'status': 'active'})
-        formats.append(entry)
-        v['format'] = fid
-        history[v['id']]['format'] = fid
+    formats.append(entry)
+    v['format'] = fid
+    history.get(v['id'], {})['format'] = fid
+    if not problems:
         position = rerank(formats, history, cfg, reason=None).index(fid) + 1
-        assets = spec.get('assets_needed') or []
-        extra = ('\nNoch zu erstellen: ' + ', '.join(a['name'] for a in assets)) if assets else ''
-        if quiet or extra:
-            notify.push(f'✅ Neues Format auf Platz {position}', f"{spec['page_title']}\nVorbild: @{v['handle']}, {fmt_views(v['views'])} Aufrufe{extra}",
-                        click=page['url'], tags='white_check_mark')
-        notify.radar(cfg['notion']['radar_page'], f"Neues Format hinzugefügt auf Platz {position}: {spec['page_title']}{extra}",
-                     link=page['url'], link_label='Seite')
+    assets = spec.get('assets_needed') or []
+    if assets:
+        notify.push('📎 New format needs a resource', f"{spec['page_title']}: " + ', '.join(a['name'] for a in assets), click=page['url'])
+    notify.radar(cfg['notion']['radar_page'], (f"Neues Format hinzugefügt auf Platz {position}: " if not problems
+                 else f"Entwurf erstellt ({'; '.join(problems)}): ") + spec['page_title'], link=page['url'], link_label='Seite')
     state.log({'type': 'format_built', 'format': fid, 'page': page['url'], 'problems': problems, 'position': position})
-    return page, problems, position, None
+    return page, problems, position
 
 
 def rerank(formats, history, cfg, reason):
@@ -375,7 +416,17 @@ def main():
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
+    ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
     a = ap.parse_args()
+    if a.test_viral:
+        import re as _re
+        handle, vid = _re.search(r'@([^/]+)/video/(\d+)', a.test_viral).groups()
+        v = tiktok.video_detail(handle, vid)
+        v.update({'notified': [], 'first_seen': int(time.time())})
+        cfg = load_config()
+        r = handle_viral(v, load_formats(), state.load('history.json', {}), cfg, time.time(), only_detect=True)
+        print('test viral result:', json.dumps(r, ensure_ascii=False))
+        return
     if a.test_claude:
         import re as _re, subprocess as _sp
         tok = os.environ.get('CLAUDE_CODE_OAUTH_TOKEN', '')

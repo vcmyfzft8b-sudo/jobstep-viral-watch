@@ -10,6 +10,10 @@ on:
         type: choice
         options: [normal, only-detect, dry-run, test-notify, test-claude]
         default: normal
+      test_viral:
+        description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
+        required: false
+        default: ''
       test_video:
         description: 'Optional: TikTok video URL -> build a TEST format page into the private radar page (nothing public)'
         required: false
@@ -73,7 +77,9 @@ jobs:
           TIKTOK_PROXY: socks5h://127.0.0.1:9150
           MODE: ${{ github.event.inputs.mode || 'normal' }}
           TEST_VIDEO: ${{ github.event.inputs.test_video }}
+          TEST_VIRAL: ${{ github.event.inputs.test_viral }}
         run: |
+          if [ -n "$TEST_VIRAL" ]; then python -m watcher.main --test-viral "$TEST_VIRAL"; exit 0; fi
           if [ -n "$TEST_VIDEO" ]; then
             HANDLE=$(echo "$TEST_VIDEO" | sed -E 's#.*/@([^/]+)/video/([0-9]+).*#\1#')
             VID=$(echo "$TEST_VIDEO" | sed -E 's#.*/@([^/]+)/video/([0-9]+).*#\2#')

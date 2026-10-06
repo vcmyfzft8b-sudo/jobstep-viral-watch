@@ -92,3 +92,30 @@ Return JSON {{"results": [{{"id": "<video id>", "match": "<format id or null>", 
             m = x.get('match')
             out[str(x.get('id'))] = {'match': None if m in (None, '', 'null', 'None') else m, 'hook_en': x.get('hook_en', '')}
     return out
+
+
+def judge(video, formats, model, transcript=''):
+    """The definitive check for a viral video (strong model): is its format already in Notion (list or archive)?
+    Also translates the script to English for the Slack message.
+    Returns {'duplicate_of', 'reason', 'english_script', 'hook_en', 'new_format_description'}."""
+    prompt = f"""All formats we already have in Notion (active list + archive), with the script from each page:
+{_listing(formats, with_script=True)}
+
+Viral TikTok video (@{video['handle']}):
+ON-SCREEN TEXT: {video.get('sticker') or '-'}
+CAPTION: {video.get('desc') or '-'}
+SPEECH (transcript): {(transcript or video.get('subtitles') or '-')[:6000]}
+
+1) Is this video's format already one of the formats above? Compare the story/premise, the hook and how the video
+   is built - not just the topic (CVs/ATS alone is NOT enough). If it tells the same story as one of our pages, it
+   IS that format, even if worded differently or in another language. We never want duplicates: if you are unsure,
+   answer with the closest existing format.
+2) Translate the full script into natural English (spoken lines; if there is no speech, the on-screen texts),
+   keeping the line order. Replace nothing - translate what is said.
+Return JSON {{"duplicate_of": "<format id or null>", "reason": "<one sentence why>",
+"hook_en": "<the hook in English>", "new_format_description": "<if new: one English sentence describing the format>",
+"english_script": "<the translated script, line breaks between sentences>"}}"""
+    r = llm.chat_json(model, SYSTEM, prompt, timeout=1200)
+    if r.get('duplicate_of') in (None, '', 'null', 'None'):
+        r['duplicate_of'] = None
+    return r

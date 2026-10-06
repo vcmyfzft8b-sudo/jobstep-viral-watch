@@ -647,6 +647,7 @@ def main():
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
+    ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -687,6 +688,18 @@ def main():
         return
     if a.check_hot:
         check_hot()
+        return
+    if a.edit_discord:
+        cfg = load_config()
+        meta, fmts = state.load('meta.json', {}), load_formats()
+        by_id = {f['id']: f for f in fmts}
+        mk = next(x for x in M.load(cfg) if x['key'] == 'de')
+        fid = next(f for f, h in meta.get('hot', {}).items() if h.get('announced', {}).get('de'))
+        text = hot.announcement(mk['T'], by_id[fid], meta['hot'][fid]['count'], page_of(by_id[fid], 'de'))
+        hot.edit_discord(os.environ[mk['discord_env']], a.edit_discord, text)
+        meta['hot'][fid].setdefault('messages', {})['de'] = a.edit_discord
+        state.save('meta.json', meta)
+        print('edited announcement', a.edit_discord, 'for', by_id[fid]['title'])
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config())

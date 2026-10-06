@@ -44,14 +44,26 @@ def public_link(page_id):
 
 
 def discord(url, text):
+    """Posts via the webhook; returns the Discord message id ('' if it failed)."""
     if not url:
-        return False
+        return ''
     try:
-        r = requests.post(url, json={'content': text, 'username': 'Parakeet AI', 'allowed_mentions': {'parse': ['everyone']}},
-                          timeout=20)
-        return r.ok
-    except requests.RequestException:
-        return False
+        r = requests.post(url, params={'wait': 'true'}, json={'content': text, 'username': 'Parakeet AI',
+                                                              'allowed_mentions': {'parse': ['everyone']}}, timeout=20)
+        return r.json().get('id', 'sent') if r.ok else ''
+    except (requests.RequestException, ValueError):
+        return ''
+
+
+def edit_discord(url, message_id, text):
+    """Rewrites an announcement the webhook posted earlier (no new ping)."""
+    r = requests.patch(f'{url}/messages/{message_id}', json={'content': text, 'allowed_mentions': {'parse': []}}, timeout=20)
+    r.raise_for_status()
+
+
+def announcement(T, f, n, page_id):
+    """Discord text for format f: the exact title creators see in their list (with its number), never a Notion link."""
+    return T['discord'].format(title=notion_title(page_id, keep_number=True) or f['title'], n=n)
 
 
 def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
@@ -78,16 +90,17 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
         if not isinstance(announced, dict):  # older state: True/False meant DACH
             announced = {'de': bool(announced)}
         meta_hot[fid] = {'count': n, 'since': old.get('since', int(time.time())), 'announced': announced,
-                         'creators': old.get('creators', {})}
+                         'creators': old.get('creators', {}), 'messages': old.get('messages', {})}
     # The hot formats themselves move up into the 🚀 section of every list (done by the re-sort in main.rerank).
     for mk in mkts:
         m, T = mk['key'], mk['T']
         url = os.environ.get(mk.get('discord_env', ''), '') if mk.get('discord_announce', True) else ''
         for fid in [f for f in hot_now if not meta_hot[f]['announced'].get(m) and url and page(by_id[f], m)]:
             f, n = by_id[fid], hot_now[fid]
-            title = notion_title(page(f, m)) or f['title']
-            if discord(url, T['discord'].format(title=title, n=n)):
+            msg = discord(url, announcement(T, f, n, page(f, m)))
+            if msg:
                 meta_hot[fid]['announced'][m] = True
+                meta_hot[fid]['messages'][m] = msg
                 state.log({'type': 'hot_announced', 'market': m, 'format': fid, 'count': n})
         if mk.get('creator_channels') and discord_bot.token() and hot_now:
             try:
@@ -97,8 +110,7 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
                 chans = []
             for fid in [f for f in hot_now if page(by_id[f], m)]:
                 done = meta_hot[fid]['creators'].setdefault(m, [])
-                text = T['discord'].replace('@everyone ', '', 1).format(
-                    title=notion_title(page(by_id[fid], m)) or by_id[fid]['title'], n=hot_now[fid])
+                text = announcement(T, by_id[fid], hot_now[fid], page(by_id[fid], m)).replace('@everyone ', '', 1)
                 for c in [c for c in chans if c['id'] not in done]:
                     try:
                         discord_bot.send(c['id'], text, c['members'])
@@ -125,12 +137,12 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
     meta['hot'] = meta_hot
 
 
-def notion_title(page_id):
-    """The page's current title without the list number (e.g. the French title on the French page)."""
+def notion_title(page_id, keep_number=False):
+    """The page's current title (e.g. the French title on the French page), by default without the list number."""
     import re
     try:
         p = notion.api('GET', f'/pages/{page_id}')
         t = ''.join(x['plain_text'] for x in next(v for v in p['properties'].values() if v['type'] == 'title')['title'])
-        return re.sub(r'^\d+\.\s*', '', t)
+        return t if keep_number else re.sub(r'^\d+\.\s*', '', t)
     except Exception:
         return None

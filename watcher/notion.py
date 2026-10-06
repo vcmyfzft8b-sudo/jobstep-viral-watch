@@ -194,77 +194,87 @@ def _icon(b):
     return ((b.get(b['type']) or {}).get('icon') or {}).get('emoji')
 
 
-HOT_HEADER_ICON = '📈'
-HOT_COLOR = 'yellow_background'  # hot entries: same ▶️ box as the others, soft yellow instead of gray
-SECTION_ICONS = ('📈', '🚀', '⬇️')  # section header callouts inside the list (no page link); 🚀 = older layout
+SECTION_ICONS = ('📈', '🚀', '⬇️')  # older section header callouts (no page link) - removed on the next re-sort
+
+
+def _page_mention(b):
+    return next((x['mention']['page']['id'] for x in b['callout']['rich_text']
+                 if x['type'] == 'mention' and x['mention']['type'] == 'page'), None)
+
+
+def _is_empty(b):
+    return b['type'] == 'paragraph' and not b['paragraph']['rich_text']
+
+
+def _layout(list_page):
+    """Splits the list page into its parts.
+
+    Layout: <heading> · going-viral entries (gray ▶️ callouts "Dreh das jetzt – geht gerade viral: <page>") · empty line ·
+    🔥 instructions · ▶️ entries · 🚨 rule. Returns dict(blocks, top_anchor, top_ids, fire_anchor, entries, stale)."""
+    blocks = children(list_page)
+    fire = next(i for i, b in enumerate(blocks) if b['type'] == 'callout' and _icon(b) == '🔥')
+    top, stale, k = [], [], fire - 1
+    while k >= 0 and (_is_empty(blocks[k]) or (blocks[k]['type'] == 'callout' and (
+            _page_mention(blocks[k]) or _icon(blocks[k]) in SECTION_ICONS))):
+        b = blocks[k]
+        if b['type'] == 'callout' and _page_mention(b):
+            top.insert(0, (b['id'], _page_mention(b)))
+        else:
+            stale.append(b['id'])  # spacer lines / old headers above 🔥
+        k -= 1
+    fire_anchor = blocks[fire]['id']
+    if fire + 1 < len(blocks) and _is_empty(blocks[fire + 1]):
+        fire_anchor = blocks[fire + 1]['id']
+    rest = []
+    for b in blocks[fire + 1:]:
+        if b['type'] == 'callout' and _icon(b) == '🚨':
+            break
+        if b['type'] == 'callout' and _page_mention(b):
+            rest.append((b['id'], _page_mention(b)))
+        elif b['type'] == 'callout' and _icon(b) in SECTION_ICONS:
+            stale.append(b['id'])
+    return {'blocks': blocks, 'top_anchor': blocks[k]['id'] if k >= 0 else None, 'top': top,
+            'fire_anchor': fire_anchor, 'rest': rest, 'stale': stale}
 
 
 def list_entries(list_page):
-    """[(callout_block_id, page_id)] in order (hot section first), plus the block after which the list starts."""
-    blocks = children(list_page)
-    start = next(i for i, b in enumerate(blocks) if b['type'] == 'callout' and _icon(b) == '🔥')
-    anchor = blocks[start]['id']
-    if start + 1 < len(blocks) and blocks[start + 1]['type'] == 'paragraph' and not blocks[start + 1]['paragraph']['rich_text']:
-        anchor = blocks[start + 1]['id']
-    entries = []
-    for b in blocks[start + 1:]:
-        if b['type'] == 'callout' and _icon(b) == '🚨':
-            break
-        if b['type'] == 'callout':
-            pid = next((x['mention']['page']['id'] for x in b['callout']['rich_text']
-                        if x['type'] == 'mention' and x['mention']['type'] == 'page'), None)
-            if pid:
-                entries.append((b['id'], pid))
-    return entries, anchor
+    """[(callout_block_id, page_id)] in order (going-viral formats at the top first), plus the 🔥 anchor."""
+    L = _layout(list_page)
+    return L['top'] + L['rest'], L['fire_anchor']
 
 
 def hot_entry_count(list_page):
-    """How many list entries are currently shown in the "going viral" section (old 🚀 layout counts as 0)."""
-    entries = {e[0] for e in list_entries(list_page)[0]}
-    return sum(1 for b in children(list_page) if b['id'] in entries and b['callout'].get('color') == HOT_COLOR
-               and _icon(b) == '▶️')
+    """How many formats are shown in the going-viral spot above the 🔥 instructions."""
+    return len(_layout(list_page)['top'])
 
 
-def _section_blocks(list_page):
-    """Section header callouts (📈 / ⬇️, without a page link) between the 🔥 instructions and the 🚨 rule."""
-    out, inside = [], False
-    for b in children(list_page):
-        if b['type'] == 'callout' and _icon(b) == '🔥':
-            inside = True
-            continue
-        if inside and b['type'] == 'callout' and _icon(b) == '🚨':
-            break
-        if inside and b['type'] == 'callout' and _icon(b) in SECTION_ICONS and not any(
-                x['type'] == 'mention' for x in b['callout']['rich_text']):
-            out.append(b['id'])
-    return out
+def _insert(list_page, blocks, anchor):
+    for i in range(0, len(blocks), 90):
+        body = {'children': blocks[i:i + 90]}
+        if anchor:
+            body['after'] = anchor
+        r = api('PATCH', f'/blocks/{list_page}/children', body)
+        anchor = r['results'][-1]['id']
 
 
 def set_order(list_page, page_ids, hot_count=0, lang='de'):
-    """Rewrite the list: hot formats first under a calm 📈 "going viral" header (soft yellow), then the rest;
-    number the titles 1., 2., ..."""
+    """Rewrite the list: hot formats at the very top (above the 🔥 instructions, same gray ▶️ box with
+    "Dreh das jetzt – geht gerade viral:" in front), then the rest under 🔥; number the titles 1., 2., ..."""
     T = TEXT[lang]
     page_ids = list(dict.fromkeys(p.replace('-', '') for p in page_ids))  # never show a format twice
-    entries, anchor = list_entries(list_page)
-    for block_id in [e[0] for e in entries] + _section_blocks(list_page):
+    L = _layout(list_page)
+    for block_id in [e[0] for e in L['top'] + L['rest']] + L['stale']:
         api('DELETE', f'/blocks/{block_id}')
-    normal = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
-    hot = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': HOT_COLOR}
-    new = []
-    if hot_count:
-        new.append(block('callout', [rt(T['hot_header'], bold=True)], icon={'type': 'emoji', 'emoji': HOT_HEADER_ICON}, color=HOT_COLOR))
-    for i, pid in enumerate(page_ids):
-        if hot_count and i == hot_count:
-            new.append(block('callout', [rt(T['rest_header'], bold=True)], icon={'type': 'emoji', 'emoji': '⬇️'}, color='default'))
-        new.append(block('callout', [mention(pid)], **(hot if i < hot_count else normal)))
-    for i in range(0, len(new), 90):
-        r = api('PATCH', f'/blocks/{list_page}/children', {'children': new[i:i + 90], 'after': anchor})
-        anchor = r['results'][-1]['id']
+    box = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
+    hot = [block('callout', [rt(T['hot_header'] + ' ', bold=True), mention(pid)], **box) for pid in page_ids[:hot_count]]
+    if hot:
+        _insert(list_page, hot + [block('paragraph', [])], L['top_anchor'])
+    _insert(list_page, [block('callout', [mention(pid)], **box) for pid in page_ids[hot_count:]], L['fire_anchor'])
     # keep at most one empty line after the 🚨 rule
     blocks = children(list_page)
     rule = next((k for k, b in enumerate(blocks) if b['type'] == 'callout' and _icon(b) == '🚨'), None)
     if rule is not None:
-        empties = [b['id'] for b in blocks[rule + 1:] if b['type'] == 'paragraph' and not b['paragraph']['rich_text']]
+        empties = [b['id'] for b in blocks[rule + 1:] if _is_empty(b)]
         for bid in empties[1:]:
             api('DELETE', f'/blocks/{bid}')
     for i, pid in enumerate(page_ids, 1):

@@ -14,6 +14,10 @@ on:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
         required: false
         default: ''
+      discord_message_id:
+        description: 'Optional: id of a DACH hot announcement -> rewrite it with the current text (no new ping)'
+        required: false
+        default: ''
       test_video:
         description: 'Optional: TikTok video URL -> build a TEST format page into the private radar page (nothing public)'
         required: false
@@ -82,7 +86,9 @@ jobs:
           MODE: ${{ github.event.inputs.mode || 'normal' }}
           TEST_VIDEO: ${{ github.event.inputs.test_video }}
           TEST_VIRAL: ${{ github.event.inputs.test_viral }}
+          DISCORD_MESSAGE_ID: ${{ github.event.inputs.discord_message_id }}
         run: |
+          if [ -n "$DISCORD_MESSAGE_ID" ]; then python -m watcher.main --edit-discord "$DISCORD_MESSAGE_ID"; exit 0; fi
           if [ -n "$TEST_VIRAL" ]; then python -m watcher.main --test-viral "$TEST_VIRAL"; exit 0; fi
           if [ -n "$TEST_VIDEO" ]; then
             HANDLE=$(echo "$TEST_VIDEO" | sed -E 's#.*/@([^/]+)/video/([0-9]+).*#\1#')

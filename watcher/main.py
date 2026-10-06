@@ -480,7 +480,7 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
     return position
 
 
-def rerank(mkts, fmts, history, cfg):
+def rerank(mkts, fmts, history, cfg, force=False):
     """One order for all markets (creators of all markets count the same); applied to every market's list.
     Hot formats (5+ confirmed viral videos in 7 days) come first, inside the "going viral" section."""
     ids, scores = rank.order(history, fmts, cfg)
@@ -491,7 +491,7 @@ def rerank(mkts, fmts, history, cfg):
         hot_count = sum(1 for i in hot_ids if page_of(by_id[i], mk['key']))
         entries, _ = notion.list_entries(mk['list_page'])
         current = [pid.replace('-', '') for _, pid in entries]
-        if [p.replace('-', '') for p in page_ids] != current or notion.hot_entry_count(mk['list_page']) != hot_count:
+        if force or [p.replace('-', '') for p in page_ids] != current or notion.hot_entry_count(mk['list_page']) != hot_count:
             notion.set_order(mk['list_page'], page_ids, hot_count=hot_count, lang=mk['lang'])
     state.log({'type': 'rerank', 'order': ids})
     return ids
@@ -702,7 +702,7 @@ def main():
         print('edited announcement', a.edit_discord, 'for', by_id[fid]['title'])
         return
     if a.relist:
-        rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config())
+        rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)
         return
     if a.test_viral:
         import re as _re

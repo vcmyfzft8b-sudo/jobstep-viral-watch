@@ -43,7 +43,7 @@ TEXT = {
         'discord': '@everyone 🔥 **Dieses Format geht gerade viral!**\n\n**{title}**\n\n{n} Videos mit über 100.000 '
                    'Aufrufen in den letzten 7 Tagen. 👉 Dreh es **jetzt als Nächstes**.\n\nDu findest es im Creator-Portal ganz '
                    'oben in deiner Formatliste – unter genau diesem Titel: <https://megasheet.app/portal/login>',
-        'hot_header': 'Dreh das jetzt – geht gerade viral:',
+        'hot_header': 'Geht gerade viral – dreh das jetzt zuerst',
         'stopwords': 'der das und ist ich nicht ein eine zu mit auf für den dem es sie wir ihr mein dein was wie hab habe hat '
                      'sind auch noch dann so aber wenn schon mal einfach jetzt hier da',
     },
@@ -82,7 +82,7 @@ TEXT = {
                    '100 000 vues ces 7 derniers jours. 👉 Tourne-le **maintenant, en priorité**.\n\nTu le trouves dans le '
                    'portail créateur, tout en haut de ta liste de formats – sous ce titre exact : '
                    '<https://megasheet.app/portal/login>',
-        'hot_header': 'Tourne-le maintenant – en train de devenir viral :',
+        'hot_header': 'En train de devenir viral – à tourner en premier',
         'stopwords': 'le la les et est je tu pas un une de des du pour avec sur que qui mon ton ce cette mais si on en au aux '
                      'il elle vous nous ça c’est',
     },
@@ -120,7 +120,7 @@ TEXT = {
                    '100.000 visualizaciones en los últimos 7 días. 👉 Grábalo **ahora, el siguiente**.\n\nLo tienes en el '
                    'portal de creadores, arriba del todo en tu lista de formatos – con este mismo título: '
                    '<https://megasheet.app/portal/login>',
-        'hot_header': 'Grábalo ya – se está haciendo viral:',
+        'hot_header': 'Se está haciendo viral – grábalo primero',
         'stopwords': 'el la los las y es yo tu tú no un una de del para con en que mi este esta pero si se lo al por me te '
                      'muy ya',
     },

@@ -200,7 +200,7 @@ def list_entries(dach_page):
     for b in blocks[start + 1:]:
         if b['type'] == 'callout' and _icon(b) == '🚨':
             break
-        if b['type'] == 'callout':
+        if b['type'] == 'callout' and _icon(b) != HOT_ICON:
             pid = next((x['mention']['page']['id'] for x in b['callout']['rich_text']
                         if x['type'] == 'mention' and x['mention']['type'] == 'page'), None)
             if pid:
@@ -214,7 +214,7 @@ def list_entries(dach_page):
 def set_order(dach_page, page_ids):
     """Rewrite the list so it shows page_ids in this order, and number the page titles 1., 2., ..."""
     entries, anchor = list_entries(dach_page)
-    style = {'icon': {'type': 'emoji', 'emoji': '💡'}, 'color': 'gray_background'}
+    style = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
     if entries:  # keep the look of the existing list entries
         first = api('GET', f'/blocks/{entries[0][0]}')['callout']
         style = {k: first[k] for k in ('icon', 'color') if first.get(k)}
@@ -229,6 +229,24 @@ def set_order(dach_page, page_ids):
         new = f'{i}. ' + re.sub(r'^\d+\.\s*', '', title)
         if new != title:
             api('PATCH', f'/pages/{pid}', {'properties': {'title': {'title': [rt(new)]}}})
+
+
+HOT_ICON = '🚀'
+
+
+def set_hot(dach_page, hot):
+    """hot: [(page_id, viral_count)]. Shows them as 🚀 callouts right under the 🔥 instructions (top of the list)."""
+    blocks = children(dach_page)
+    fire = next(b for b in blocks if b['type'] == 'callout' and _icon(b) == '🔥')
+    for b in blocks:
+        if b['type'] == 'callout' and _icon(b) == HOT_ICON:
+            api('DELETE', f"/blocks/{b['id']}")
+    if not hot:
+        return
+    callouts = [block('callout', [rt('GEHT GERADE VIRAL – DREH DAS JETZT ZUERST: ', bold=True), mention(pid),
+                                  rt(f'  ({n} JobStep-Videos mit über 100.000 Aufrufen in den letzten 7 Tagen)')],
+                      icon={'type': 'emoji', 'emoji': HOT_ICON}, color='orange_background') for pid, n in hot]
+    api('PATCH', f'/blocks/{dach_page}/children', {'children': callouts, 'after': fire['id']})
 
 
 def append_log(radar_page, rich):

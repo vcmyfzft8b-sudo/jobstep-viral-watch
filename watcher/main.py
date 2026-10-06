@@ -16,7 +16,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, llm, media, notify, notion, rank, soniox, state, tiktok
+from . import builder, classify, detect, discover, hot, llm, media, notify, notion, rank, soniox, state, tiktok
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
@@ -155,6 +155,13 @@ def run(dry_run=False, only_detect=False):
                 history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
         print(f'classified {len(todo)} videos')
 
+    # Hot formats (5+ viral videos in 7 days): 🚀 callout at the top + Discord announcement
+    if not only_detect:
+        try:
+            hot.update(history, videos, formats, cfg, meta, dry_run=dry_run)
+        except Exception as e:
+            print('hot update failed:', str(e)[:200])
+
     # 5. weekly re-rank
     today = datetime.datetime.now(datetime.timezone.utc)
     week = today.strftime('%G-%V')
@@ -201,6 +208,8 @@ def resolve(formats, fid):
 
 def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=False):
     """Taking off: short message. Viral: see handle_viral."""
+    if now - v['created'] > cfg['watch_days'] * 86400:  # never alert on old videos
+        return {'video': v['id'], 'level': lvl, 'skipped': 'older than watch window'}
     if dry_run:
         print('DRY', lvl, v['handle'], v['views'], v.get('url'))
         return {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v.get('format')}
@@ -232,7 +241,7 @@ def list_position(cfg, page_id):
     return ids.index(pid) + 1 if pid in ids else None
 
 
-def handle_viral(v, formats, history, cfg, now, only_detect):
+def handle_viral(v, formats, history, cfg, now, only_detect, test=False):
     """Every viral video: download + Soniox transcript, Claude (Opus) judges against ALL formats in Notion (list +
     archive) and translates the script to English. Then: already in the list -> report; in the archive -> bring
     it back; new -> build the page. One Slack message with link, verdict and English script.
@@ -258,7 +267,7 @@ def handle_viral(v, formats, history, cfg, now, only_detect):
             verdict = classify.judge(v, formats, cfg['models']['build'], transcript.get('text', ''))
         except Exception as e:
             if 'viral_basic' not in v['notified']:
-                notify.push('🟢 VIRAL: JobStep video', f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – "
+                notify.push(('🧪 TEST – ' if test else '') + '🟢 VIRAL: JobStep video', f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – "
                             'the full check + English script will follow in the next run (6 h).', click=v['url'])
                 v['notified'].append('viral_basic')
             state.log({'type': 'judge_failed', 'video': v['id'], 'error': str(e)[:300]})
@@ -299,7 +308,7 @@ def handle_viral(v, formats, history, cfg, now, only_detect):
         msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>\n\n"
                f"*Format check (Claude):* {outcome}\n_{verdict.get('reason', '')}_{note}\n\n"
                f"*Script (English):*\n{quoted[:3500]}")
-        notify.push('🟢 VIRAL: JobStep video', msg)
+        notify.push(('🧪 TEST – ' if test else '') + '🟢 VIRAL: JobStep video', msg)
         notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟢 VIRAL – @{v['handle']} "
                      f"{fmt_views(v['views'])} – {outcome}", link=v['url'], link_label='Video')
         v['notified'].append('viral')
@@ -424,7 +433,7 @@ def main():
         v = tiktok.video_detail(handle, vid)
         v.update({'notified': [], 'first_seen': int(time.time())})
         cfg = load_config()
-        r = handle_viral(v, load_formats(), state.load('history.json', {}), cfg, time.time(), only_detect=True)
+        r = handle_viral(v, load_formats(), state.load('history.json', {}), cfg, time.time(), only_detect=True, test=True)
         print('test viral result:', json.dumps(r, ensure_ascii=False))
         return
     if a.test_claude:

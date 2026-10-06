@@ -61,6 +61,31 @@ def latest_videos(handle):
     return []
 
 
+def download(handle, video_id, out_path):
+    """Download the MP4 from the video page data (same session/cookies as the page request). True on success."""
+    url = f'https://www.tiktok.com/@{handle}/video/{video_id}'
+    for proxy in ([False, True] if PROXY else [False]):
+        for _ in range(2):
+            sess = _new_session(proxy=proxy)
+            item, _err = _item(url, session=sess)
+            if not item:
+                continue
+            video = item.get('video') or {}
+            candidates = [video.get('playAddr'), video.get('downloadAddr')]
+            candidates += [b.get('PlayAddr', {}).get('UrlList', [None])[0] for b in (video.get('bitrateInfo') or [])]
+            for src in [c for c in candidates if c]:
+                try:
+                    r = sess.get(src, headers={'Referer': 'https://www.tiktok.com/', 'Range': 'bytes=0-'}, timeout=120)
+                except requests.RequestException:
+                    continue
+                if r.status_code in (200, 206) and len(r.content) > 100_000:
+                    with open(out_path, 'wb') as f:
+                        f.write(r.content)
+                    return True
+            time.sleep(3)
+    return False
+
+
 def _item(url, session=None):
     html = _get(url, session=session)
     if not html:

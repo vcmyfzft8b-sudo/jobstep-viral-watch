@@ -155,6 +155,15 @@ def create_page(parent_id, title, icon, blocks):
     return page
 
 
+def replace_content(page_id, blocks):
+    """Replace everything on a page with new blocks (title and page link stay the same)."""
+    for b in children(page_id):
+        api('DELETE', f"/blocks/{b['id']}")
+    while blocks:
+        api('PATCH', f'/blocks/{page_id}/children', {'children': blocks[:90]})
+        blocks = blocks[90:]
+
+
 def move_page(page_id, new_parent_id):
     """Move a page under another page (Notion API 2025-09-03 'move page' endpoint)."""
     h = _headers()

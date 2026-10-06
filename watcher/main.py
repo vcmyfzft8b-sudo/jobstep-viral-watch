@@ -267,9 +267,36 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
     return result
 
 
+def refresh_page(fmt, v, cfg):
+    """Rebuild a format page in the current layout from a fresh viral video. Returns problems (empty = done)."""
+    work = tempfile.mkdtemp(prefix='fmt-')
+    try:
+        video_file = media.download(v['url'], work)
+        transcript = soniox.transcribe(media.audio(video_file, work))
+        frames = media.frames(video_file, work)
+        spec = builder.build_spec(v, transcript, frames, cfg['models']['build'])
+        problems = builder.validate(spec, transcript)
+        if problems:
+            return problems
+        upload_id = notion.upload_video(media.for_notion(video_file, work))
+        notion.replace_content(fmt['page_id'], notion.page_blocks(spec, v, upload_id, cfg['links']))
+        fmt['script'] = ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900]
+        return []
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def revive_format(fmt, v, formats, history, cfg):
-    """Move an archived format page back into "Alle Formatseiten" and into the ranked list. Returns its position."""
+    """Move an archived format page back into "Alle Formatseiten", refresh it to the current layout with the new
+    viral video as inspiration, and put it into the ranked list. Returns its position."""
     notion.move_page(fmt['page_id'], cfg['notion']['holder_page'])
+    try:
+        problems = refresh_page(fmt, v, cfg)
+    except Exception as e:
+        problems = [f'refresh failed: {str(e)[:150]}']
+    if problems:  # keep the old (working) page content, but tell the user
+        notify.radar(cfg['notion']['radar_page'], f"Zurückgeholt, aber Seite nicht aktualisiert ({'; '.join(problems)}): {fmt['title']}",
+                     link=f"https://app.notion.com/p/{fmt['page_id'].replace('-', '')}", link_label='Seite')
     fmt['status'] = 'active'
     fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
     v['format'] = fmt['id']

@@ -9,7 +9,6 @@ get() {  # get <file> <KEY>
 }
 
 get ~/Documents/auto-outreach-parakeetai/.env.local NOTION_API_KEY  | gh secret set NOTION_TOKEN       -R "$REPO"
-get ~/Desktop/repost/.env                          OPENROUTER_API_KEY | gh secret set OPENROUTER_API_KEY -R "$REPO"
 get ~/Documents/transcript/.env.local              SONIOX_API_KEY  | gh secret set SONIOX_API_KEY     -R "$REPO"
 get ~/Documents/auto-outreach-parakeetai/.env.local LIGHTREEL_API_KEY | gh secret set LIGHTREEL_API_KEY -R "$REPO"
 

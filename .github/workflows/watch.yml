@@ -40,8 +40,13 @@ jobs:
           python-version: '3.12'
           cache: pip
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Install
         run: |
+          npm install -g @anthropic-ai/claude-code > /dev/null
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg tor > /dev/null
           pip install -q -r requirements.txt
 
@@ -60,7 +65,7 @@ jobs:
         env:
           STATE_DIR: state-branch/state
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           SONIOX_API_KEY: ${{ secrets.SONIOX_API_KEY }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

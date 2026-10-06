@@ -64,3 +64,31 @@ Return JSON {{"duplicate_of": "<format id or null>", "reason": "<short>"}}"""
     r = llm.chat_json(model, SYSTEM, prompt, max_tokens=600, temperature=0)
     dup = r.get('duplicate_of')
     return None if dup in (None, '', 'null', 'None') else dup
+
+
+def classify_many(videos, formats, model, batch=25):
+    """Sort many videos in few requests (25 per request). Returns {video_id: {'match', 'hook_en'}}."""
+    out = {}
+    for i in range(0, len(videos), batch):
+        chunk = videos[i:i + batch]
+        items = '\n\n'.join(f"VIDEO {v['id']} (@{v['handle']}):\nON-SCREEN TEXT: {v.get('sticker') or '-'}\n"
+                              f"CAPTION: {(v.get('desc') or '-')[:300]}\nSPEECH: {(v.get('subtitles') or '-')[:900]}"
+                              for v in chunk)
+        prompt = f"""All formats we already have in Notion (active list + archive):
+{_listing(formats)}
+
+Sort each of these videos. Match a format when the CORE premise is the same (even if worded differently);
+same topic (CVs/ATS) alone is not enough. Use null when it is none of them.
+
+{items}
+
+Return JSON {{"results": [{{"id": "<video id>", "match": "<format id or null>", "hook_en": "<short English hook>"}}]}}"""
+        try:
+            r = llm.chat_json(model, SYSTEM, prompt, timeout=900)
+        except Exception as e:
+            print('batch classify failed:', str(e)[:200])
+            continue
+        for x in r.get('results', []):
+            m = x.get('match')
+            out[str(x.get('id'))] = {'match': None if m in (None, '', 'null', 'None') else m, 'hook_en': x.get('hook_en', '')}
+    return out

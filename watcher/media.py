@@ -81,3 +81,27 @@ def cleanup(out_dir):
     for p in glob.glob(os.path.join(out_dir, '**', '*'), recursive=True):
         if os.path.isfile(p):
             os.remove(p)
+
+
+def contact_sheets(frames, out_dir, per_sheet=12, cols=4):
+    """Combine frames into a few labelled sheets (timestamp on each tile) so Claude reads 3-4 images, not 45.
+    Returns [(first_second, last_second, path)]."""
+    from PIL import Image, ImageDraw, ImageFont
+    sheets = []
+    font = ImageFont.load_default(size=28)
+    for i in range(0, len(frames), per_sheet):
+        chunk = frames[i:i + per_sheet]
+        tiles = [Image.open(p).convert('RGB') for _, p in chunk]
+        w = max(t.width for t in tiles)
+        h = max(t.height for t in tiles)
+        rows = (len(tiles) + cols - 1) // cols
+        sheet = Image.new('RGB', (cols * w, rows * (h + 40)), 'white')
+        draw = ImageDraw.Draw(sheet)
+        for k, ((t, _), tile) in enumerate(zip(chunk, tiles)):
+            x, y = (k % cols) * w, (k // cols) * (h + 40)
+            draw.text((x + 8, y + 4), f'{t:.1f}s', fill='red', font=font)
+            sheet.paste(tile, (x, y + 40))
+        path = os.path.join(out_dir, f'sheet_{i // per_sheet:02d}.jpg')
+        sheet.save(path, quality=80)
+        sheets.append((chunk[0][0], chunk[-1][0], path))
+    return sheets

@@ -32,7 +32,7 @@ Every 6 hours (GitHub Actions) this watcher:
    | Secret | Used for |
    |---|---|
    | `NOTION_TOKEN` | writing format pages, the list and the radar log |
-   | `OPENROUTER_API_KEY` | Claude (format matching: Sonnet 5.5, page writing: Opus 5.5) |
+   | `CLAUDE_CODE_OAUTH_TOKEN` | Claude via Claude Code on your Claude subscription (create once with `claude setup-token`) – sorting: Sonnet, duplicate check + page writing: Opus |
    | `SONIOX_API_KEY` | speech-to-text |
    | `SLACK_WEBHOOK_URL` | Slack messages (Incoming Webhook of a Slack app, one channel) |
 | `NTFY_TOPIC` | optional phone push via the ntfy app |

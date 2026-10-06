@@ -141,8 +141,8 @@
     "rerank_weekday": 0
   },
   "models": {
-    "classify": "anthropic/claude-sonnet-5.5",
-    "build": "anthropic/claude-opus-5.5"
+    "classify": "sonnet",
+    "build": "opus"
   },
   "links": {
     "parakeet": "https://www.parakeet-ai.com/resume-maker",

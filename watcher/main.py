@@ -15,7 +15,6 @@ import shutil
 import tempfile
 import time
 import traceback
-from concurrent.futures import ThreadPoolExecutor
 
 from . import builder, classify, detect, discover, media, notify, notion, rank, soniox, state, tiktok
 
@@ -146,18 +145,12 @@ def run(dry_run=False, only_detect=False):
         todo = [v for v in videos.values()
                 if 'created' in v and not v.get('format_checked') and now - v['created'] >= 48 * 3600]
 
-        def _classify(v):
-            try:
-                return v, classify.classify(v, formats, cfg['models']['classify'])
-            except Exception as e:
-                print('classify failed', v['id'], str(e)[:200])
-                return v, None
-
-        with ThreadPoolExecutor(8) as pool:
-            for v, c in pool.map(_classify, todo):
-                if c:
-                    v['format'], v['hook_en'], v['format_checked'] = c.get('match'), c.get('hook_en', ''), True
-                    history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
+        results = classify.classify_many(todo, formats, cfg['models']['classify'])
+        for v in todo:
+            c = results.get(v['id'])
+            if c:
+                v['format'], v['hook_en'], v['format_checked'] = c['match'], c['hook_en'], True
+                history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
         print(f'classified {len(todo)} videos')
 
     # 5. weekly re-rank
@@ -388,7 +381,7 @@ def main():
                     click='https://github.com/vcmyfzft8b-sudo/jobstep-viral-watch/actions')
         print('test notification sent' + ('' if os.environ.get('SLACK_WEBHOOK_URL') else ' (no SLACK_WEBHOOK_URL set!)'))
         return
-    missing = [k for k in ('NOTION_TOKEN', 'OPENROUTER_API_KEY', 'SONIOX_API_KEY') if not os.environ.get(k)]
+    missing = [k for k in ('NOTION_TOKEN', 'CLAUDE_CODE_OAUTH_TOKEN', 'SONIOX_API_KEY') if not os.environ.get(k)]
     if missing and not a.dry_run:
         # Without keys we can't notify or build: watch only and don't mark anything as notified.
         print('Missing secrets', missing, '-> running as dry run (run scripts/set_secrets.sh once)')

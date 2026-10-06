@@ -85,12 +85,13 @@ CAPTION: {video.get('desc') or '-'}
 SPEECH WITH TIMESTAMPS (Soniox):
 {timed}
 
-The following images are frames from the video; each is preceded by its timestamp. Use them to see the visual hook,
-what is shown on screen and when the app appears.
+The following images are contact sheets of frames from the video; every tile is labelled with its timestamp in
+seconds (red). Use them to see the visual hook, what is shown on screen and when the app appears.
 
 {SCHEMA}"""}]
-    for t, path in frames:
-        content.append({'type': 'text', 'text': f'Frame at {t:.1f}s:'})
+    from . import media
+    for t0, t1, path in media.contact_sheets(frames, os.path.dirname(frames[0][1])):
+        content.append({'type': 'text', 'text': f'Frames {t0:.1f}s – {t1:.1f}s:'})
         content.append(llm.image_part(path))
     spec = llm.chat_json(model, SYSTEM, content, max_tokens=8000, temperature=0.4)
     for seg in spec.get('script', []):

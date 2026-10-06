@@ -10553,6 +10553,7 @@
   "german": false,
   "handle": "issa.jobtips",
   "hook": "How to get hired as fast as possible? I applied all summer and got nowhere until I redid my CV on JobStep.",
+  "judged": true,
   "mature": false,
   "views": 211100
  },
@@ -10643,6 +10644,7 @@
   "german": false,
   "handle": "tsvetelina.tips",
   "hook": "Unknown: no on-screen text or speech; the caption only says 'follow for more secrets' about jobs (Bulgarian)",
+  "judged": true,
   "mature": false,
   "views": 159500
  },
@@ -10688,6 +10690,7 @@
   "german": false,
   "handle": "lockinwitheva",
   "hook": "How to make your CV? (Greek caption only; no on-screen text or speech available)",
+  "judged": true,
   "mature": false,
   "views": 101500
  },
@@ -10810,10 +10813,11 @@
  },
  "7691252438875098400": {
   "created": 1790759263,
-  "format": "X16",
+  "format": "N07",
   "german": false,
   "handle": "marine.realfakephotos",
   "hook": "The secret of people who work in HR: a friend of my mom in HR said my basic Canva CV would never get accepted anywhere",
+  "judged": true,
   "mature": false,
   "views": 144500
  },
@@ -11633,6 +11637,7 @@
   "german": false,
   "handle": "career.tea.with.d",
   "hook": "Top 10 best employers in Greece (a list of companies; what makes an employer 'good'?)",
+  "judged": true,
   "mature": false,
   "views": 230600
  },
@@ -12335,6 +12340,7 @@
   "german": true,
   "handle": "lissa.jobtipps",
   "hook": "Lügt in eurem Lebenslauf (lie on your CV)",
+  "judged": true,
   "mature": false,
   "views": 217100
  },
@@ -12574,10 +12580,11 @@
  },
  "7692421729553108246": {
   "created": 1791031510,
-  "format": "N10",
+  "format": "N01",
   "german": false,
   "handle": "avazdagbok",
   "hook": "Today's CV no longer works! Did you know this?",
+  "judged": true,
   "mature": false,
   "views": 121500
  },
@@ -12866,6 +12873,7 @@
   "german": false,
   "handle": "job.by.niki",
   "hook": "how to explain to parents",
+  "judged": true,
   "mature": false,
   "views": 114300
  },
@@ -12884,6 +12892,7 @@
   "german": false,
   "handle": "career.tea.with.d",
   "hook": "Greek companies with the best work environment, shown as an on-screen list of top employers, ending with a Jobstep.io tie-in",
+  "judged": true,
   "mature": false,
   "views": 107700
  },
@@ -12929,6 +12938,7 @@
   "german": false,
   "handle": "emasavetuje",
   "hook": "kako ovo da objasnim roditeljima (how do I explain this to my parents)",
+  "judged": true,
   "mature": false,
   "views": 156400
  },
@@ -12974,6 +12984,7 @@
   "german": false,
   "handle": "lockinwitheva",
   "hook": "From 1 November, listing the salary in job ads becomes mandatory in Greece - no more vague 'competitive pay' or 'bus fare covered' - then a skull-emoji pivot to ATS and sending CVs.",
+  "judged": true,
   "mature": false,
   "views": 152800
  },
@@ -12992,6 +13003,7 @@
   "german": false,
   "handle": "luworks",
   "hook": "We've entered the best time of year to job hunt (mid-October, before the December rush) - here's a tip to get out of unemployment",
+  "judged": true,
   "mature": false,
   "views": 134800
  },
@@ -13217,6 +13229,7 @@
   "german": false,
   "handle": "tips.from.ale",
   "hook": "Recruiters don't want you to know this: your CV from Canva or ChatGPT was never read by a human because it didn't pass the ATS filters",
+  "judged": true,
   "mature": false,
   "views": 135100
  },
@@ -13424,6 +13437,7 @@
   "german": false,
   "handle": "emasavetuje",
   "hook": "NIKO ne cita tvoj CV (nobody reads your CV)",
+  "judged": true,
   "mature": false,
   "views": 117400
  },
@@ -13442,6 +13456,7 @@
   "german": true,
   "handle": "salii.jobtipps",
   "hook": "these CVs never reach a recruiter - ATS filter",
+  "judged": true,
   "mature": false,
   "views": 160400
  },
@@ -13496,6 +13511,7 @@
   "german": false,
   "handle": "dorcsyy_jobstep",
   "hook": "Finding a job in 2026 is brutal - my sister works in HR at a well-known company and told me the one thing that decides whether employers write back: the CV",
+  "judged": true,
   "mature": false,
   "views": 147100
  },
@@ -13541,6 +13557,7 @@
   "german": false,
   "handle": "lockinwitheva",
   "hook": "HR rejects CVs like this!! (ATS)",
+  "judged": true,
   "mature": false,
   "views": 194100
  },

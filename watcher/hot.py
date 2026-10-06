@@ -63,7 +63,9 @@ def edit_discord(url, message_id, text):
 
 def announcement(T, f, n, page_id):
     """Discord text for format f: the exact title creators see in their list (with its number), never a Notion link."""
-    return T['discord'].format(title=notion_title(page_id, keep_number=True) or f['title'], n=n)
+    import re
+    title = notion_title(page_id, keep_number=True) or f['title']
+    return T['discord'].format(title=re.sub(r'^(\d+)\.', r'\1\\.', title), n=n)  # "1\." - no Discord list
 
 
 def update(history, videos, formats, cfg, meta, mkts, dry_run=False):

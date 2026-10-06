@@ -17,7 +17,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, hot, llm, markets as M, media, notify, notion, rank, soniox, state, tiktok
+from . import builder, classify, detect, discover, hot, llm, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -210,7 +210,17 @@ def run(dry_run=False, only_detect=False):
             finally:
                 shutil.rmtree(work, ignore_errors=True)
 
-    # 5. 🚀 hot spot + Discord (every market), then sort all lists in the same order (what goes viral right now first)
+    # 4b. our own creators: new videos, views, formats (feeds the ranking: how each format does for US)
+    own_accounts, own_videos = own.load()
+    if not dry_run:
+        try:
+            print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, now))
+            state.save('own.json', own_videos)
+            state.save('own_accounts.json', own_accounts)
+        except Exception as e:
+            print('own creators failed:', str(e)[:200])
+
+    # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
         try:
             hot.update(history, videos, fmts, cfg, meta, mkts, dry_run=dry_run)
@@ -229,6 +239,13 @@ def run(dry_run=False, only_detect=False):
             except Exception as e:
                 print('re-sort failed:', str(e)[:200])
 
+    # 5b. Monday: weekly report in Slack
+    if not dry_run:
+        try:
+            weekly.maybe_send(meta, history, own_videos, own_accounts, fmts, cfg, now)
+        except Exception as e:
+            print('weekly report failed:', str(e)[:200])
+
     # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
     today = datetime.datetime.now(datetime.timezone.utc)
     if not dry_run and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:
@@ -245,6 +262,15 @@ def run(dry_run=False, only_detect=False):
             notify.push(f'🔎 {len(added)} new JobStep accounts', summary)
         notify.radar(radar_page, f"{today:%d.%m.%Y} – Account-Check: {summary}")
         state.log({'type': 'discovery', 'added': added, 'paused': paused, 'revived': revived})
+        try:  # same for our own creators
+            o_added, o_paused, o_revived = own.refresh_accounts(own_accounts)
+            state.save('own_accounts.json', own_accounts)
+            if o_added:
+                notify.push(f'🔎 {len(o_added)} new Parakeet AI creator accounts tracked',
+                            ', '.join(f"@{h} ({own_accounts[h].get('market') or '?'})" for h in o_added))
+            state.log({'type': 'own_discovery', 'added': o_added, 'paused': o_paused, 'revived': o_revived})
+        except Exception as e:
+            print('own discovery failed:', str(e)[:200])
 
     if not dry_run:
         state.save('videos.json', videos)
@@ -648,6 +674,8 @@ def main():
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
     ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
+    ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
+    ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (more video checks), then re-sort')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -700,6 +728,23 @@ def main():
         meta['hot'][fid].setdefault('messages', {})['de'] = a.edit_discord
         state.save('meta.json', meta)
         print('edited announcement', a.edit_discord, 'for', by_id[fid]['title'])
+        return
+    if a.weekly:
+        own_accounts, own_videos = own.load()
+        weekly.maybe_send({}, state.load('history.json', {}), own_videos, own_accounts, load_formats(), load_config(),
+                          time.time(), force=True)
+        return
+    if a.own_sync:
+        cfg, fmts = load_config(), load_formats()
+        own_accounts, own_videos = own.load()
+        print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, time.time(), max_details=300))
+        state.save('own.json', own_videos)
+        state.save('own_accounts.json', own_accounts)
+        o = own.stats(own_videos, fmts, time.time())
+        by = {f['id']: f['title'] for f in fmts}
+        for fid, x in sorted(o.items(), key=lambda kv: -kv[1]['n']):
+            print(f"  {by.get(fid, fid)[:50]:50} ours: {x['n']} videos, {x['hits_20k']} >=20k, {x['hits_100k']} >=100k")
+        rerank(M.load(cfg), fmts, state.load('history.json', {}), cfg)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

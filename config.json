@@ -138,7 +138,8 @@
     "prior_weight": 45,
     "weight_20k": 0.25,
     "german_weight": 2,
-    "rerank_weekday": 0
+    "rerank_weekday": 0,
+    "own_prior_weight": 8
   },
   "models": {
     "classify": "sonnet",

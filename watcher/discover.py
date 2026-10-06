@@ -39,11 +39,11 @@ def check_account(handle, max_days=30):
     return 'active' if (recent and jobstep) else 'inactive'
 
 
-def lightreel_handles(known):
+def lightreel_handles(known, question=None):
     key = os.environ.get('LIGHTREEL_API_KEY')
     if not key:
         return set()
-    q = QUESTION.format(today=time.strftime('%d %B %Y'), known=', '.join('@' + h for h in sorted(known)))
+    q = (question or QUESTION).format(today=time.strftime('%d %B %Y'), known=', '.join('@' + h for h in sorted(known)))
     try:
         r = requests.post('https://api.lightreel.ai/v1/chat', json={'question': q}, timeout=1500,
                           headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})

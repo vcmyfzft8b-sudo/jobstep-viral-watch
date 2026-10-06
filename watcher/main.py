@@ -87,6 +87,11 @@ def run(dry_run=False, only_detect=False):
         if now - v['created'] > cfg['watch_days'] * 86400:
             videos.pop(vid)
     print(f'accounts={len(accounts)} new_videos={fresh} watchlist={len(videos)} fetch_failures={failed}')
+    if tiktok.LAST_ERROR:
+        reasons = {}
+        for err in tiktok.LAST_ERROR.values():
+            reasons[err] = reasons.get(err, 0) + 1
+        print('fetch failure reasons:', reasons)
 
     # 3./4. alerts
     actions = []

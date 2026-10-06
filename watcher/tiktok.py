@@ -7,8 +7,16 @@ import requests
 
 UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/130.0 Safari/537.36')
-SESSION = requests.Session()
-SESSION.headers.update({'User-Agent': UA, 'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8'})
+LAST_ERROR = {}
+
+
+def _new_session():
+    s = requests.Session()
+    s.headers.update({'User-Agent': UA, 'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8'})
+    return s
+
+
+SESSION = _new_session()
 
 
 def _get(url, tries=3):
@@ -38,18 +46,35 @@ def latest_video_ids(handle):
     return []
 
 
-def video_detail(handle, video_id):
-    """Stats, on-screen text and TikTok's own subtitles for one video; None if unavailable."""
-    url = f'https://www.tiktok.com/@{handle}/video/{video_id}'
+def _item(url):
     html = _get(url)
     if not html:
-        return None
+        return None, 'no response'
     m = re.search(r'<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"[^>]*>(.*?)</script>', html)
     if not m:
-        return None
+        return None, 'no data script (blocked/captcha?)'
     try:
-        item = json.loads(m.group(1))['__DEFAULT_SCOPE__']['webapp.video-detail']['itemInfo']['itemStruct']
+        detail = json.loads(m.group(1))['__DEFAULT_SCOPE__']['webapp.video-detail']
     except (KeyError, json.JSONDecodeError):
+        return None, 'no video-detail block'
+    item = (detail.get('itemInfo') or {}).get('itemStruct')
+    if not item or not item.get('id'):
+        return None, f"statusCode {detail.get('statusCode')} {detail.get('statusMsg', '')}".strip()
+    return item, None
+
+
+def video_detail(handle, video_id):
+    """Stats, on-screen text and TikTok's own subtitles for one video; None if unavailable."""
+    global SESSION
+    url = f'https://www.tiktok.com/@{handle}/video/{video_id}'
+    time.sleep(0.7)
+    item, err = _item(url)
+    if not item:  # second chance with fresh cookies
+        time.sleep(5)
+        SESSION = _new_session()
+        item, err = _item(url)
+    if not item:
+        LAST_ERROR[video_id] = err
         return None
     stats = item.get('statsV2') or item.get('stats') or {}
     sticker = ' / '.join(t for st in (item.get('stickersOnItem') or []) for t in st.get('stickerText', []))

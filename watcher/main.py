@@ -31,19 +31,17 @@ def load_config():
     return cfg
 
 
-def load_formats(m='de'):
-    formats = state.load(M.formats_file(m), None)
+def load_formats():
+    """One shared format list for all markets. Each format has a page per market: page_id (DACH) + pages{fr, es}."""
+    formats = state.load('formats.json', None)
     if formats is None:
-        if m != 'de':
-            return []
         with open(os.path.join(ROOT, 'registry', 'formats.json')) as f:
             formats = json.load(f)
     return formats
 
 
-def save_formats(fmts):
-    for m, formats in fmts.items():
-        state.save(M.formats_file(m), formats)
+def page_of(fmt, m):
+    return fmt.get('page_id') if m == 'de' else (fmt.get('pages') or {}).get(m)
 
 
 def local_accounts(account_info, cfg, lang):
@@ -62,11 +60,8 @@ def page_url(page_id):
 def to_history(history, v, german, now):
     old = history.get(v['id'], {})
     entry = {'handle': v['handle'], 'created': v['created'], 'views': v['views'], 'hook': v.get('hook_en', ''),
-             'german': v['handle'] in german, 'mature': now - v['created'] >= 7 * 86400}
-    for m in ALL_MARKETS:
-        fk, jk = M.fkey(m), M.jkey(m)
-        entry[fk] = v.get(fk, old.get(fk))
-        entry[jk] = bool(v.get(jk) or old.get(jk))
+             'german': v['handle'] in german, 'mature': now - v['created'] >= 7 * 86400,
+             'format': v.get('format', old.get('format')), 'judged': bool(v.get('judged') or old.get('judged'))}
     if now - v['created'] <= 7.5 * 86400:
         entry['views_7d'] = v['views']
     elif 'views_7d' in old:
@@ -74,15 +69,15 @@ def to_history(history, v, german, now):
     history[v['id']] = entry
 
 
-def set_format(v, history, m, fid, judged=None):
-    v[M.fkey(m)] = fid
+def set_format(v, history, fid, judged=None):
+    v['format'] = fid
     h = history.get(v['id'])
     if h is not None:
-        h[M.fkey(m)] = fid
+        h['format'] = fid
     if judged:
-        v[M.jkey(m)] = True
+        v['judged'] = True
         if h is not None:
-            h[M.jkey(m)] = True
+            h['judged'] = True
 
 
 def resolve(formats, fid):
@@ -99,7 +94,7 @@ def resolve(formats, fid):
 def run(dry_run=False, only_detect=False):
     cfg = load_config()
     mkts = M.load(cfg)
-    fmts = {mk['key']: load_formats(mk['key']) for mk in mkts}
+    fmts = load_formats()
     videos = state.load('videos.json', {})
     history = state.load('history.json', {})
     meta = state.load('meta.json', {})
@@ -181,69 +176,54 @@ def run(dry_run=False, only_detect=False):
                     'Last 7 days – details on the Notion radar page')
 
     if not dry_run:
-        # Sort every video into each market's formats once it is 48h old, so the ranking sees hits AND flops.
-        for mk in mkts:
-            m = mk['key']
-            ck = M.ckey(m)
-            todo = [v for v in videos.values() if 'created' in v and not v.get(ck) and now - v['created'] >= 48 * 3600]
-            if not todo or not fmts[m]:
-                continue
-            results = classify.classify_many(todo, fmts[m], cfg['models']['classify'])
+        # Sort every video into our formats once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
+        todo = [v for v in videos.values() if 'created' in v and not v.get('format_checked') and now - v['created'] >= 48 * 3600]
+        if todo:
+            results = classify.classify_many(todo, fmts, cfg['models']['classify'])
             for v in todo:
                 c = results.get(v['id'])
                 if c:
-                    set_format(v, history, m, c['match'])
-                    v[ck] = True
+                    set_format(v, history, c['match'])
+                    v['format_checked'] = True
                     v.setdefault('hook_en', c['hook_en'])
-            print(f"{mk['T']['flag']} sorted {len(todo)} videos")
+            print(f'sorted {len(todo)} videos')
 
-        # Viral videos not yet confirmed by the strict Claude check (e.g. older tags): re-check quietly.
-        for v in [v for v in videos.values() if v.get('views', 0) >= th['viral_views'] and 'created' in v
-                  and now - v['created'] <= cfg['watch_days'] * 86400
-                  and any(not v.get(M.jkey(mk['key'])) for mk in mkts)][:5]:
+        # Viral videos not yet confirmed by the strict Claude check (e.g. older tags): re-check quietly (max 5 per run).
+        for v in [v for v in videos.values() if v.get('views', 0) >= th['viral_views'] and not v.get('judged')
+                  and 'created' in v and now - v['created'] <= cfg['watch_days'] * 86400][:5]:
             work = tempfile.mkdtemp(prefix='judge-')
             try:
                 try:
                     transcript = soniox.transcribe(media.audio(media.download(v['url'], work), work)).get('text', '')
                 except Exception:
                     transcript = v.get('subtitles', '')
-                for mk in mkts:
-                    m = mk['key']
-                    if v.get(M.jkey(m)) or not fmts[m]:
-                        continue
-                    verdict = classify.judge(v, fmts[m], cfg['models']['build'], transcript, translate=False)
-                    f = resolve(fmts[m], verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
-                    set_format(v, history, m, f['id'] if f else None, judged=True)
-                    print('re-judged', mk['T']['flag'], v['handle'], v['views'], '->', v.get(M.fkey(m)))
+                verdict = classify.judge(v, fmts, cfg['models']['build'], transcript, translate=False)
+                f = resolve(fmts, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+                set_format(v, history, f['id'] if f else None, judged=True)
+                print('re-judged', v['handle'], v['views'], '->', v.get('format'))
             except Exception as e:
                 print('re-judge failed', v['id'], str(e)[:150])
             finally:
                 shutil.rmtree(work, ignore_errors=True)
 
-    # 5. per market: 🚀 hot spot + Discord, then sort the list (what goes viral right now first)
+    # 5. 🚀 hot spot + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
-        for mk in mkts:
-            m, T = mk['key'], mk['T']
-            if not fmts[m]:
-                continue
+        try:
+            hot.update(history, videos, fmts, cfg, meta, mkts, dry_run=dry_run)
+        except Exception as e:
+            print('hot update failed:', str(e)[:200])
+        if not dry_run:
             try:
-                hot.update(history, videos, fmts[m], cfg, meta, mk, dry_run=dry_run)
-            except Exception as e:
-                print(T['flag'], 'hot update failed:', str(e)[:200])
-            if dry_run:
-                continue
-            try:
-                tkey = 'top3' if m == 'de' else f'top3_{m}'
-                before_top = meta.get(tkey, [])
-                ids = rerank(mk, fmts[m], history, cfg, account_info)
-                meta[tkey] = ids[:3]
+                before_top = meta.get('top3', [])
+                ids = rerank(mkts, fmts, history, cfg)
+                meta['top3'] = ids[:3]
                 if before_top and ids[:3] != before_top:
-                    by = {f['id']: f for f in fmts[m]}
-                    recent = rank.recent_viral(history, fmts[m], cfg, m)
-                    notify.push(f"🔁 {T['flag']} New top of the {T['name']} list", '\n'.join(
+                    by = {f['id']: f for f in fmts}
+                    recent = rank.recent_viral(history, fmts, cfg)
+                    notify.push('🔁 New top of the format lists (DE/FR/ES)', '\n'.join(
                         f"{n}. {by[i]['title']} – {recent.get(i, 0)} viral in 7 days" for n, i in enumerate(ids[:5], 1)))
             except Exception as e:
-                print(T['flag'], 're-sort failed:', str(e)[:200])
+                print('re-sort failed:', str(e)[:200])
 
     # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
     today = datetime.datetime.now(datetime.timezone.utc)
@@ -265,7 +245,7 @@ def run(dry_run=False, only_detect=False):
     if not dry_run:
         state.save('videos.json', videos)
         state.save('history.json', history)
-        save_formats(fmts)
+        state.save('formats.json', fmts)
         state.save('accounts.json', account_info)
         meta['last_run'] = int(now)
         state.save('meta.json', meta)
@@ -281,17 +261,16 @@ def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect, qu
         return {'video': v['id'], 'level': lvl, 'views': v['views']}
     if lvl == 'viral':
         return handle_viral(v, mkts, fmts, history, cfg, now, only_detect)
-    first = mkts[0]['key']
-    if not v.get(M.ckey(first)) and fmts[first]:
-        c = classify.classify(v, fmts[first], cfg['models']['classify'])
-        set_format(v, history, first, c.get('match'))
-        v[M.ckey(first)], v['hook_en'] = True, c.get('hook_en', '')
-    known = resolve(fmts[first], v.get(M.fkey(first)))
+    if not v.get('format_checked'):
+        c = classify.classify(v, fmts, cfg['models']['classify'])
+        set_format(v, history, c.get('match'))
+        v['format_checked'], v['hook_en'] = True, c.get('hook_en', '')
+    known = resolve(fmts, v.get('format'))
     age_h = (now - v['created']) / 3600
     fmt_text = (f"Probably format: {known['title']}" + ('' if known.get('status') == 'active' else ' (archive)')
                 if known else f"Possibly new format: {v.get('hook_en') or '?'}")
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} views after {age_h:.0f} h · shares+saves {detect.engagement(v):.1%}\n"
-           f"{fmt_text}\n(Full check per market with script follows if it goes viral.)")
+           f"{fmt_text}\n(Full check with script follows if it goes viral.)")
     if not quiet:
         notify.push('🟡 Taking off: JobStep video', msg, click=v['url'])
     notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟡 – "
@@ -307,12 +286,16 @@ def list_position(mk, page_id):
     return ids.index(pid) + 1 if pid in ids else None
 
 
+def market_links(fmt, mkts):
+    return ' · '.join(f"<{page_url(page_of(fmt, mk['key']))}|{mk['T']['flag']}>" for mk in mkts if page_of(fmt, mk['key']))
+
+
 def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
-    """Every viral video: download + Soniox transcript; per market Claude (Opus) judges it against ALL of that
-    market's formats (list + archive); the first check also translates the script to English. Then per market:
-    in the list -> report; in the archive -> bring back; new -> build the page in the market's language.
-    One Slack message with link, English script and a line per market. If Claude fails, a basic message still goes
-    out and the full check is retried next run."""
+    """Every viral video (creators from ALL markets): download + Soniox transcript, Claude (Opus) judges it against
+    ALL our formats (list + archive) and translates the script to English. Then for every market (DE/FR/ES):
+    in the list -> nothing to build (missing language pages are added); in the archive -> brought back everywhere;
+    new -> built in every market's language and added to every list. One Slack message with link, verdict, English
+    script. If Claude fails, a basic message still goes out and the full check is retried next run."""
     age_h = (now - v['created']) / 3600
     eng = detect.engagement(v)
     eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
@@ -320,7 +303,7 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
     stats = (f"@{v['handle']} – *{fmt_views(v['views'])} views* after {age_h:.0f} h · shares+saves {eng:.1%}"
              f"{' (weak)' if weak else ''}{' (unknown)' if eng_unknown else ''}")
     title = ('🧪 TEST – ' if test else '') + '🟢 VIRAL: JobStep video'
-    result = {'video': v['id'], 'level': 'viral', 'views': v['views'], 'markets': {}}
+    result = {'video': v['id'], 'level': 'viral', 'views': v['views']}
     work = tempfile.mkdtemp(prefix='viral-')
     try:
         video_file, note = None, ''
@@ -330,12 +313,8 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
         except Exception as e:
             note = f'\n_(video download/transcription failed: {str(e)[:80]} – judged from TikTok text)_'
             transcript = {'text': v.get('subtitles', ''), 'segments': [], 'language': ''}
-        verdicts = {}
         try:
-            for i, mk in enumerate(mkts):
-                if fmts[mk['key']]:
-                    verdicts[mk['key']] = classify.judge(v, fmts[mk['key']], cfg['models']['build'],
-                                                         transcript.get('text', ''), translate=(i == 0))
+            verdict = classify.judge(v, fmts, cfg['models']['build'], transcript.get('text', ''))
         except Exception as e:
             if 'viral_basic' not in v['notified']:
                 notify.push(title, f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – the full check + English script "
@@ -346,48 +325,38 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
             return result
 
         prepared = {'work': work, 'video_file': video_file, 'transcript': transcript} if video_file else None
-        lines = []
-        for mk in mkts:
-            m, T = mk['key'], mk['T']
-            if m not in verdicts:
-                continue
-            verdict = verdicts[m]
-            known = resolve(fmts[m], verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
-            reason = ''
-            if known:
-                set_format(v, history, m, known['id'], judged=True)
-                if known.get('status') == 'active':
-                    pos = list_position(mk, known.get('page_id'))
-                    outcome = f"✅ already in the list{f' (#{pos})' if pos else ''}: <{page_url(known['page_id'])}|{known['title']}>"
-                elif weak or only_detect or not prepared:
-                    outcome = f"📦 in the archive: {known['title']} – not brought back (" + \
-                              ('weak engagement' if weak else 'only-detect mode' if only_detect else 'video unavailable') + ')'
-                else:
-                    pos = revive_format(known, v, mk, fmts[m], history, cfg, prepared=prepared)
-                    outcome = f"♻️ was in the archive → *brought back as #{pos}*: <{page_url(known['page_id'])}|{known['title']}>"
+        blocked = 'weak engagement' if weak else 'only-detect mode' if only_detect else None if prepared else 'video unavailable'
+        known = resolve(fmts, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+        if known:
+            set_format(v, history, known['id'], judged=True)
+            if known.get('status') == 'active':
+                added = [] if blocked else ensure_market_pages(known, v, mkts, fmts, history, cfg, prepared)
+                pos = list_position(mkts[0], page_of(known, mkts[0]['key']))
+                outcome = (f"✅ *Already in Notion* – in the lists{f' as #{pos}' if pos else ''}: *{known['title']}* "
+                           f"({market_links(known, mkts)})" + (f"\n➕ added missing pages: {' '.join(added)}" if added else ''))
+            elif blocked:
+                outcome = f"📦 *Already in Notion* – in the archive: *{known['title']}* – not brought back ({blocked})"
             else:
-                set_format(v, history, m, None, judged=True)
-                if weak or only_detect or not prepared:
-                    outcome = '🆕 *NEW format – not in Notion yet*, not added (' + \
-                              ('weak engagement' if weak else 'only-detect mode' if only_detect else 'video unavailable') + ')'
-                else:
-                    page, problems, position = build_format(v, mk, fmts[m], history, cfg, prepared=prepared,
-                                                            description=verdict.get('new_format_description', ''))
-                    result['markets'][m] = {'built': page['url'], 'problems': problems, 'position': position}
-                    outcome = (f"🆕 *NEW format → added as #{position}*: <{page['url']}|open page>" if not problems else
-                               f"🆕 NEW format → draft to check ({'; '.join(problems)}): <{page['url']}|draft>")
-            reason = verdict.get('reason', '')
-            lines.append(f"{T['flag']} {outcome}" + (f"\n      _{reason}_" if reason else ''))
-            result['markets'].setdefault(m, {})['format'] = v.get(M.fkey(m))
-        first = next(iter(verdicts.values()), {})
-        script = (first.get('english_script') or '').strip() or '(no speech / text found)'
+                pos = revive_format(known, v, mkts, fmts, history, cfg, prepared=prepared)
+                outcome = f"♻️ *Was in the archive → brought back as #{pos}* in all lists: *{known['title']}* ({market_links(known, mkts)})"
+        else:
+            set_format(v, history, None, judged=True)
+            if blocked:
+                outcome = f"🆕 *NEW format – not in Notion yet*, not added ({blocked})"
+            else:
+                fmt, problems, position = build_format(v, mkts, fmts, history, cfg, prepared=prepared,
+                                                       description=verdict.get('new_format_description', ''))
+                result.update({'built': fmt['id'], 'problems': problems, 'position': position})
+                outcome = (f"🆕 *NEW format → added as #{position}* in all lists: *{fmt['title']}* ({market_links(fmt, mkts)})"
+                           + (f"\n⚠️ drafts to check: {'; '.join(problems)}" if problems else ''))
+        result['format'] = v.get('format')
+        script = (verdict.get('english_script') or '').strip() or '(no speech / text found)'
         quoted = '\n'.join('> ' + line for line in script.splitlines() if line.strip())
-        msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>{note}\n\n*Format check (Claude) per market:*\n" + '\n'.join(lines) +
-               f"\n\n*Script (English):*\n{quoted[:3500]}")
+        msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>{note}\n\n*Format check (Claude):* {outcome}\n"
+               f"_{verdict.get('reason', '')}_\n\n*Script (English):*\n{quoted[:3500]}")
         notify.push(title, msg)
         notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟢 VIRAL – "
-                     f"@{v['handle']} {fmt_views(v['views'])} – " + ' | '.join(l.split('\n')[0] for l in lines),
-                     link=v['url'], link_label='Video')
+                     f"@{v['handle']} {fmt_views(v['views'])} – {outcome.split(chr(10))[0]}", link=v['url'], link_label='Video')
         v['notified'].append('viral')
         state.log({'type': 'alert', **result})
         return result
@@ -407,107 +376,130 @@ def _prepare(v, prepared):
     return work, video_file, transcript, media.frames(video_file, work), True
 
 
-def refresh_page(fmt, v, mk, cfg, prepared=None):
-    """Rebuild a format page in the current layout (market language) from a fresh viral video. Returns problems."""
+def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None):
+    """Build one market's page (its language, current layout). Returns (page_id_or_url, spec, problems)."""
     work, video_file, transcript, frames, own = _prepare(v, prepared)
     try:
         spec = builder.build_spec(v, transcript, frames, cfg['models']['build'], lang=mk['lang'])
         problems = builder.validate(spec, transcript, lang=mk['lang'])
-        if problems:
-            return problems
-        upload_id = notion.upload_video(media.for_notion(video_file, work))
-        notion.replace_content(fmt['page_id'], notion.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'],
-                                                                  lab_url=mk['visual_hook_lab']))
-        fmt['script'] = ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900]
-        return []
-    finally:
-        if own:
-            shutil.rmtree(work, ignore_errors=True)
-
-
-def revive_format(fmt, v, mk, formats, history, cfg, prepared=None):
-    """Move an archived format page back into the market's format folder, refresh it to the current layout with the
-    new viral video, and put it into the list. Returns its position."""
-    notion.move_page(fmt['page_id'], mk['holder_page'])
-    try:
-        problems = refresh_page(fmt, v, mk, cfg, prepared=prepared)
-    except Exception as e:
-        problems = [f'refresh failed: {str(e)[:150]}']
-    if problems:
-        notify.radar(cfg['notion']['radar_page'], f"{mk['T']['flag']} brought back, page not refreshed ({'; '.join(problems)}): "
-                     f"{fmt['title']}", link=page_url(fmt['page_id']), link_label='Page')
-    fmt['status'] = 'active'
-    fmt.pop('archived_reason', None)
-    fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
-    set_format(v, history, mk['key'], fmt['id'], judged=True)
-    position = rerank(mk, formats, history, cfg, state.load('accounts.json', {})).index(fmt['id']) + 1
-    state.log({'type': 'format_revived', 'market': mk['key'], 'format': fmt['id'], 'video': v['id'], 'position': position})
-    return position
-
-
-def build_format(v, mk, formats, history, cfg, prepared=None, description=''):
-    """Build a new format page in the market's language (current layout) and add it to that market's list.
-    Returns (page, problems, position)."""
-    m, T = mk['key'], mk['T']
-    work, video_file, transcript, frames, own = _prepare(v, prepared)
-    try:
-        spec = builder.build_spec(v, transcript, frames, cfg['models']['build'], lang=mk['lang'])
-        problems = builder.validate(spec, transcript, lang=mk['lang'])
+        if replace_page and problems:
+            return None, spec, problems
         upload_id = notion.upload_video(media.for_notion(video_file, work))
         blocks = notion.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'], lab_url=mk['visual_hook_lab'])
     finally:
         if own:
             shutil.rmtree(work, ignore_errors=True)
-
-    fid = m.upper() + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M%S')
-    entry = {'id': fid, 'title': spec['page_title'], 'description': spec.get('registry_description') or description,
-             'script': ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900],
-             'source_video': v['url'], 'created': int(time.time())}
-    position = None
+    if replace_page:
+        notion.replace_content(replace_page, blocks)
+        return replace_page, spec, []
     if problems:
-        page = notion.create_page(cfg['notion']['radar_page'], T['draft_prefix'] + spec['page_title'], spec.get('icon') or '📝', blocks)
-        entry.update({'page_id': page['id'], 'status': 'draft', 'problems': problems})
+        page = notion.create_page(cfg['notion']['radar_page'], mk['T']['draft_prefix'] + spec['page_title'], spec.get('icon') or '📝', blocks)
     else:
-        page = notion.create_page(mk['holder_page'], spec['page_title'], spec.get('icon') or '🎬', blocks)
-        entry.update({'page_id': page['id'], 'status': 'active'})
-    formats.append(entry)
-    set_format(v, history, m, fid, judged=True)
-    if not problems:
-        position = rerank(mk, formats, history, cfg, state.load('accounts.json', {})).index(fid) + 1
-    assets = spec.get('assets_needed') or []
-    if assets:
-        notify.push(f"📎 {T['flag']} New format needs a resource", f"{spec['page_title']}: " + ', '.join(a['name'] for a in assets),
-                    click=page['url'])
-    notify.radar(cfg['notion']['radar_page'], f"{T['flag']} " + (f"new format added as #{position}: " if not problems
-                 else f"draft ({'; '.join(problems)}): ") + spec['page_title'], link=page['url'], link_label='Page')
-    state.log({'type': 'format_built', 'market': m, 'format': fid, 'page': page['url'], 'problems': problems, 'position': position})
-    return page, problems, position
+        page = notion.create_page(parent or mk['holder_page'], title or spec['page_title'], spec.get('icon') or '🎬', blocks)
+    return page['id'], spec, problems
 
 
-def rerank(mk, formats, history, cfg, account_info):
-    m = mk['key']
-    ids, scores = rank.order(history, formats, cfg, m, local_accounts(account_info, cfg, mk['lang']))
-    by_id = {f['id']: f for f in formats}
-    page_ids = [by_id[i]['page_id'] for i in ids]
-    current = [pid.replace('-', '') for _, pid in notion.list_entries(mk['list_page'])[0]]
-    if [p.replace('-', '') for p in page_ids] != current:
-        notion.set_order(mk['list_page'], page_ids)
-    state.log({'type': 'rerank', 'market': m, 'order': ids})
+def set_page(fmt, m, page_id):
+    if m == 'de':
+        fmt['page_id'] = page_id
+    else:
+        fmt.setdefault('pages', {})[m] = page_id
+
+
+def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
+    """A format in the list that is missing in a market gets that market's page (built from this viral video)."""
+    added = []
+    for mk in mkts:
+        if not page_of(fmt, mk['key']):
+            pid, spec, problems = make_page(v, mk, cfg, prepared)
+            if not problems:
+                set_page(fmt, mk['key'], pid)
+                added.append(mk['T']['flag'])
+    if added:
+        rerank(mkts, fmts, history, cfg)
+    return added
+
+
+def build_format(v, mkts, fmts, history, cfg, prepared=None, description=''):
+    """New format: build its page in every market's language (DE/FR/ES) and add it to every list.
+    Returns (format entry, problems, position)."""
+    fid = 'A' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M%S')
+    entry = {'id': fid, 'source_video': v['url'], 'created': int(time.time()), 'pages': {}, 'status': 'active'}
+    problems = []
+    for mk in mkts:
+        pid, spec, probs = make_page(v, mk, cfg, prepared)
+        if probs:
+            problems.append(f"{mk['T']['flag']} {'; '.join(probs)}")
+            continue
+        set_page(entry, mk['key'], pid)
+        if mk['key'] == 'de' or 'title' not in entry:
+            entry.update({'title': spec['page_title'], 'description': spec.get('registry_description') or description,
+                          'script': ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900]})
+        assets = spec.get('assets_needed') or []
+        if assets and mk['key'] == mkts[0]['key']:
+            notify.push('📎 New format needs a resource', f"{spec['page_title']}: " + ', '.join(a['name'] for a in assets))
+    if not entry.get('page_id'):  # DACH page failed: keep it as a draft entry, don't list it
+        entry['status'] = 'draft'
+        entry.setdefault('title', v.get('hook_en') or 'draft')
+    fmts.append(entry)
+    set_format(v, history, fid, judged=True)
+    position = None
+    if entry['status'] == 'active':
+        position = rerank(mkts, fmts, history, cfg).index(fid) + 1
+    state.log({'type': 'format_built', 'format': fid, 'pages': entry.get('pages'), 'page_de': entry.get('page_id'),
+               'problems': problems, 'position': position})
+    return entry, problems, position
+
+
+def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
+    """Archived format went viral again: in every market move its page back from the archive into the format folder
+    (refreshed to the current layout with the new video); markets without a page get one. Returns its position."""
+    for mk in mkts:
+        m = mk['key']
+        pid = page_of(fmt, m)
+        try:
+            if pid:
+                notion.move_page(pid, mk['holder_page'])
+                make_page(v, mk, cfg, prepared, replace_page=pid)
+            else:
+                new_pid, spec, problems = make_page(v, mk, cfg, prepared)
+                if not problems:
+                    set_page(fmt, m, new_pid)
+        except Exception as e:
+            notify.radar(cfg['notion']['radar_page'], f"{mk['T']['flag']} revive issue for {fmt['title']}: {str(e)[:150]}")
+    fmt['status'] = 'active'
+    fmt.pop('archived_reason', None)
+    fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
+    set_format(v, history, fmt['id'], judged=True)
+    position = rerank(mkts, fmts, history, cfg).index(fmt['id']) + 1
+    state.log({'type': 'format_revived', 'format': fmt['id'], 'video': v['id'], 'position': position})
+    return position
+
+
+def rerank(mkts, fmts, history, cfg):
+    """One order for all markets (creators of all markets count the same); applied to every market's list."""
+    ids, scores = rank.order(history, fmts, cfg)
+    by_id = {f['id']: f for f in fmts}
+    for mk in mkts:
+        page_ids = [page_of(by_id[i], mk['key']) for i in ids if page_of(by_id[i], mk['key'])]
+        current = [pid.replace('-', '') for _, pid in notion.list_entries(mk['list_page'])[0]]
+        if [p.replace('-', '') for p in page_ids] != current:
+            notion.set_order(mk['list_page'], page_ids)
+    state.log({'type': 'rerank', 'order': ids})
     return ids
 
 
 def check_hot():
-    """Strict Claude check of every viral video (100k+) posted in the last 7 days, per market, then report."""
+    """Strict Claude check of every viral video (100k+) posted in the last 7 days, then report per format."""
     cfg = load_config()
-    mkts = M.load(cfg)
-    fmts = {mk['key']: load_formats(mk['key']) for mk in mkts}
+    fmts = load_formats()
     videos, history = state.load('videos.json', {}), state.load('history.json', {})
     now = time.time()
     todo = [v for v in videos.values() if v.get('views', 0) >= cfg['thresholds']['viral_views']
             and 'created' in v and now - v['created'] <= cfg['watch_days'] * 86400]
     print(f'{len(todo)} viral videos from the last 7 days')
     for v in todo:
-        if all(v.get(M.jkey(mk['key'])) for mk in mkts if fmts[mk['key']]):
+        if v.get('judged'):
             continue
         work = tempfile.mkdtemp(prefix='judge-')
         try:
@@ -515,65 +507,129 @@ def check_hot():
                 transcript = soniox.transcribe(media.audio(media.download(v['url'], work), work)).get('text', '')
             except Exception:
                 transcript = v.get('subtitles', '')
-            for mk in mkts:
-                m = mk['key']
-                if v.get(M.jkey(m)) or not fmts[m]:
-                    continue
-                verdict = classify.judge(v, fmts[m], cfg['models']['build'], transcript, translate=False)
-                f = resolve(fmts[m], verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
-                set_format(v, history, m, f['id'] if f else None, judged=True)
-                v['hook_en'] = verdict.get('hook_en', v.get('hook_en', ''))
+            verdict = classify.judge(v, fmts, cfg['models']['build'], transcript, translate=False)
+            f = resolve(fmts, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+            set_format(v, history, f['id'] if f else None, judged=True)
+            v['hook_en'] = verdict.get('hook_en', v.get('hook_en', ''))
         except Exception as e:
             print('judge failed', v['id'], str(e)[:150])
         finally:
             shutil.rmtree(work, ignore_errors=True)
     state.save('videos.json', videos)
     state.save('history.json', history)
-    for mk in mkts:
-        m = mk['key']
-        by = {f['id']: f for f in fmts[m]}
-        groups = {}
-        for v in todo:
-            groups.setdefault(v.get(M.fkey(m)) or 'NEW/none', []).append(v)
-        print(f"\n{mk['T']['flag']} CONFIRMED VIRAL VIDEOS PER FORMAT (last 7 days):")
-        for fid, vs in sorted(groups.items(), key=lambda x: -len(x[1])):
-            f = by.get(fid)
-            name = f['title'] + ('' if f.get('status') == 'active' else ' [archive]') if f else 'not in Notion'
-            print(f'{len(vs)} | {fid} | {name}')
-            for v in sorted(vs, key=lambda x: -x['views']):
-                print(f"    {v['views']:>7} @{v['handle']:22} {v['url']}  | {v.get('hook_en', '')[:70]}")
+    by = {f['id']: f for f in fmts}
+    groups = {}
+    for v in todo:
+        groups.setdefault(v.get('format') or 'NEW/none', []).append(v)
+    print('\nCONFIRMED VIRAL VIDEOS PER FORMAT (last 7 days):')
+    for fid, vs in sorted(groups.items(), key=lambda x: -len(x[1])):
+        f = by.get(fid)
+        name = f['title'] + ('' if f.get('status') == 'active' else ' [archive]') if f else 'not in Notion'
+        print(f'{len(vs)} | {fid} | {name}')
+        for v in sorted(vs, key=lambda x: -x['views']):
+            print(f"    {v['views']:>7} @{v['handle']:22} {v['url']}  | {v.get('hook_en', '')[:70]}")
+
+
+def _page_text(page_id):
+    texts = []
+    for c in notion.children(page_id):
+        rt = c.get(c['type'], {}).get('rich_text')
+        if rt:
+            texts.append(''.join(x['plain_text'] for x in rt))
+    return ' '.join(texts)
+
+
+def source_video(fmt):
+    """The TikTok inspiration video of a format (stored, or the 'Original auf TikTok' link on its DACH page)."""
+    if fmt.get('source_video'):
+        return fmt['source_video']
+    for b in notion.children(fmt['page_id']):
+        for x in (b.get(b['type'], {}) or {}).get('rich_text', []) or []:
+            url = ((x.get('text') or {}).get('link') or {}).get('url', '')
+            if 'tiktok.com/@' in url and '/video/' in url:
+                return url
+    return None
 
 
 def init_market(m):
-    """Create a market's format registry from Notion: active formats (format folder) + archived formats (archive page).
-    Claude writes a one-sentence description of each format for the duplicate check."""
+    """Connect a market to the shared format list.
+    1. Its existing format pages (format folder + archive) are matched by Claude to our formats -> become that
+       format's page for this market.
+    2. Pages of formats that are not in the active list are moved to the market's archive (nothing is deleted);
+       unmatched ones become archived formats (so they are known to the duplicate check).
+    3. Every active format still missing a page in this market gets one, built from its inspiration video."""
     cfg = load_config()
-    mk = cfg['markets'][m]
+    mk = next(x for x in M.load({**cfg, 'markets': {k: {**v, 'enabled': True} for k, v in cfg['markets'].items()}}) if x['key'] == m)
+    fmts = load_formats()
     pages = []
-    for status, parent in (('active', mk['holder_page']), ('archived', mk['archive_page'])):
+    for where, parent in (('folder', mk['holder_page']), ('archive', mk['archive_page'])):
         for b in notion.children(parent):
-            if b['type'] != 'child_page':
-                continue
-            texts = []
-            for c in notion.children(b['id']):
-                rt = c.get(c['type'], {}).get('rich_text')
-                if rt:
-                    texts.append(''.join(x['plain_text'] for x in rt))
-            pages.append({'page_id': b['id'], 'title': b['child_page']['title'], 'status': status, 'text': ' '.join(texts)[:1500]})
-    items = '\n'.join(f"{i}: TITLE {p['title']} | PAGE TEXT {p['text'][:900]}" for i, p in enumerate(pages))
-    r = llm.chat_json(cfg['models']['build'], 'Reply JSON only.', f"""For each of these short-form video format pages
-(CV-app UGC formats), write ONE English sentence describing the format's core premise/hook and structure, in the style
-"<hook idea>: <what happens>. Examples: '<hook>'".
+            if b['type'] == 'child_page':
+                pages.append({'page_id': b['id'], 'title': b['child_page']['title'], 'where': where, 'text': _page_text(b['id'])[:1200]})
+    listing = '\n'.join(f"- {f['id']} ({f.get('status')}): {f.get('description', f['title'])}" for f in fmts)
+    items = '\n'.join(f"{i}: TITLE {p['title']} | TEXT {p['text'][:700]}" for i, p in enumerate(pages))
+    r = llm.chat_json(cfg['models']['build'], 'Reply JSON only.', f"""Our formats (one shared list for all markets):
+{listing}
+
+These are existing {mk['T']['lang_name']} format pages. For each page, which of our formats is it (same core premise/hook
+and structure, even if worded differently)? null if none. Also write one English sentence describing each page's format.
 {items}
-Return JSON {{"descriptions": {{"<index>": "<sentence>"}}}}""", timeout=1800)
-    formats = []
-    for i, p in enumerate(pages):
-        prefix = 'X' if p['status'] == 'archived' else ''
-        formats.append({'id': f"{m.upper()}{prefix}{i + 1:02d}", 'page_id': p['page_id'], 'title': p['title'],
-                        'status': p['status'], 'description': r['descriptions'].get(str(i), p['title']),
-                        'script': p['text'][:900]})
-    state.save(M.formats_file(m), formats)
-    print(f'{m}: {sum(f["status"] == "active" for f in formats)} active, {sum(f["status"] != "active" for f in formats)} archived')
+Return JSON {{"pages": [{{"index": 0, "format": "<format id or null>", "description": "<sentence>"}}]}}""", timeout=1800)
+    by = {f['id']: f for f in fmts}
+    moved, matched, extra = 0, 0, 0
+    for x in r.get('pages', []):
+        p = pages[int(x['index'])]
+        f = by.get(x.get('format'))
+        if f and not page_of(f, m):
+            set_page(f, m, p['page_id'])
+            matched += 1
+            target = mk['holder_page'] if f.get('status') == 'active' else mk['archive_page']
+        else:
+            fid = f"{m.upper()}X{int(x['index']) + 1:02d}"
+            fmts.append({'id': fid, 'title': p['title'], 'status': 'archived', 'description': x.get('description', p['title']),
+                         'script': p['text'][:900], 'pages': {m: p['page_id']}, 'market_only': m})
+            by[fid] = fmts[-1]
+            extra += 1
+            target = mk['archive_page']
+        if (p['where'] == 'folder') != (target == mk['holder_page']):
+            notion.move_page(p['page_id'], target)
+            moved += 1
+    state.save('formats.json', fmts)
+    print(f'{m}: matched {matched}, archived-only {extra}, moved {moved}')
+    fill_market(m)
+
+
+def fill_market(m):
+    """Build the missing pages of active formats for one market from their inspiration videos, then sort the list."""
+    cfg = load_config()
+    mk = next(x for x in M.load({**cfg, 'markets': {k: {**v, 'enabled': True} for k, v in cfg['markets'].items()}}) if x['key'] == m)
+    fmts, history = load_formats(), state.load('history.json', {})
+    built = 0
+    for f in [f for f in fmts if f.get('status') == 'active' and not page_of(f, m)]:
+        url = source_video(f)
+        if not url:
+            print('no inspiration video for', f['title'])
+            continue
+        import re as _re
+        handle, vid = _re.search(r'@([^/]+)/video/(\d+)', url).groups()
+        v = tiktok.video_detail(handle, vid)
+        if not v:
+            print('video unavailable for', f['title'])
+            continue
+        try:
+            pid, spec, problems = make_page(v, mk, cfg, None)
+            if problems:
+                print('draft only for', f['title'], problems)
+                continue
+            set_page(f, m, pid)
+            built += 1
+            state.save('formats.json', fmts)
+            print('built', m, f['title'], '->', spec['page_title'])
+        except Exception as e:
+            print('build failed', f['title'], str(e)[:200])
+    state.save('formats.json', fmts)
+    rerank([mk], fmts, history, cfg)
+    print(f'{m}: built {built} pages')
 
 
 def main():
@@ -584,7 +640,8 @@ def main():
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
-    ap.add_argument('--init-market', default='', help='fr | es: build the market format registry from Notion')
+    ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
+    ap.add_argument('--fill-market', default='', help='fr | es: build missing pages of active formats')
     ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
     a = ap.parse_args()
     if a.test_discord:
@@ -602,6 +659,9 @@ def main():
     if a.init_market:
         init_market(a.init_market)
         return
+    if a.fill_market:
+        fill_market(a.fill_market)
+        return
     if a.check_hot:
         check_hot()
         return
@@ -612,8 +672,7 @@ def main():
         v.update({'notified': [], 'first_seen': int(time.time())})
         cfg = load_config()
         mkts = M.load(cfg)
-        r = handle_viral(v, mkts, {mk['key']: load_formats(mk['key']) for mk in mkts}, state.load('history.json', {}), cfg,
-                         time.time(), only_detect=True, test=True)
+        r = handle_viral(v, mkts, load_formats(), state.load('history.json', {}), cfg, time.time(), only_detect=True, test=True)
         print('test viral result:', json.dumps(r, ensure_ascii=False))
         return
     if a.test_claude:

@@ -1,9 +1,9 @@
-"""Hot formats (per market): 5+ viral JobStep videos (100k+) of the same format posted within the last 7 days,
-each confirmed by the strict Claude check as that market's format.
+"""Hot formats: 5+ viral videos (100k+) of the same format posted within the last 7 days, from creators of all
+markets, each confirmed by the strict Claude check as that format.
 
-While a format is hot it gets a 🚀 callout at the top of that market's list; once per hot period an @everyone
-announcement in the market's language goes to its Discord #announcements (webhook from discord_env) plus a Slack
-message listing the videos. When it cools down (< 5), the callout is removed.
+While a format is hot it moves into the 🚀 section at the top of every list (main.rerank); once per hot period an
+@everyone announcement in each market's language goes to its Discord #announcements (webhook from discord_env), plus
+a Slack message listing the videos. When it cools down (< 5), it drops back into the normal order.
 """
 import os
 import time

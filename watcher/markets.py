@@ -1,7 +1,8 @@
 """Markets (DACH / France / Spain): Notion pages, language texts and per-market data keys.
 
-Every viral JobStep video is judged separately against each market's own formats (list + archive). Building
-pages, the list order, the 🚀 hot spot and the Discord announcement all happen per market, in its language.
+There is ONE shared format list (formats.json), fed by the creators of all markets. Every format has a page in
+each market's language (DE/FR/ES); all lists get the same order and the same 🚀 hot section, and each market gets
+its own Discord announcement in its language.
 """
 import json
 import os

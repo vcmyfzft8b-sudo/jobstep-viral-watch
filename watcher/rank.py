@@ -29,9 +29,24 @@ def scores(history, formats, cfg):
     return out
 
 
+def recent_viral(history, formats, cfg):
+    """{format_id: confirmed viral videos (100k+) posted in the last 7 days} - what is going viral right now."""
+    from . import hot
+    return hot.counts(history, {}, formats, cfg['thresholds']['viral_views'])
+
+
 def order(history, formats, cfg):
-    """New formats (fewer than 5 videos) can enter at position 4 at the highest - right after the three
-    strongest proven formats - and only climb further once more of their videos prove them."""
+    """List order = what creators should make RIGHT NOW: most confirmed viral videos in the last 7 days first.
+    Ties (and formats without viral videos this week) are ordered by the long-term score below."""
+    s = long_term_order_scores(history, formats, cfg)
+    recent = recent_viral(history, formats, cfg)
+    for fid in s:
+        s[fid]['recent_viral'] = recent.get(fid, 0)
+    return sorted(s, key=lambda fid: (-s[fid]['recent_viral'], -s[fid]['score'])), s
+
+
+def long_term_order_scores(history, formats, cfg):
+    """Long-term score; new formats (fewer than 5 videos) are capped below the three strongest proven ones."""
     s = scores(history, formats, cfg)
     proven = sorted((v['score'] for v in s.values() if v['videos'] >= 5), reverse=True)
     if len(proven) >= 3:
@@ -39,4 +54,4 @@ def order(history, formats, cfg):
         for v in s.values():
             if v['videos'] < 5:
                 v['score'] = min(v['score'], cap)
-    return sorted(s, key=lambda fid: -s[fid]['score']), s
+    return s

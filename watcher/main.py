@@ -190,12 +190,20 @@ def run(dry_run=False, only_detect=False):
         except Exception as e:
             print('hot update failed:', str(e)[:200])
 
-    # 5. weekly re-rank
+    # 5. re-sort the list every run: what is going viral right now comes first
     today = datetime.datetime.now(datetime.timezone.utc)
-    week = today.strftime('%G-%V')
-    if not dry_run and not only_detect and today.weekday() == cfg['ranking']['rerank_weekday'] and meta.get('reranked_week') != week:
-        rerank(formats, history, cfg, reason='Wöchentliches Update')
-        meta['reranked_week'] = week
+    if not dry_run and not only_detect:
+        try:
+            before_top = meta.get('top3', [])
+            ids = rerank(formats, history, cfg, reason=None)
+            meta['top3'] = ids[:3]
+            if before_top and ids[:3] != before_top:
+                by = {f['id']: f for f in formats}
+                recent = rank.recent_viral(history, formats, cfg)
+                notify.push('🔁 New top of the DACH list', '\n'.join(
+                    f"{n}. {by[i]['title']} – {recent.get(i, 0)} viral in 7 days" for n, i in enumerate(ids[:5], 1)))
+        except Exception as e:
+            print('re-sort failed:', str(e)[:200])
 
     # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
     if not dry_run and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:

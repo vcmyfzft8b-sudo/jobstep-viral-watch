@@ -166,22 +166,22 @@
     "fr": {
       "lang": "fr",
       "list_page": "e78958b0fc14828993ed81497c5e5a93",
-      "holder_page": "",
+      "holder_page": "3f1958b0fc1481e88b41ebdef141fbdc",
       "archive_page": "3f0958b0fc148031b606ee3e9178b024",
       "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc1480049b7ded8f07e6e53e",
       "discord_env": "DISCORD_WEBHOOK_URL_FR",
       "discord_server": "",
-      "enabled": false
+      "enabled": true
     },
     "es": {
       "lang": "es",
       "list_page": "eb7958b0fc14837092c0015722d46252",
-      "holder_page": "",
+      "holder_page": "3f1958b0fc1481818320f3b0cabdbaa5",
       "archive_page": "3f0958b0fc1480eda45ec861e5072d1b",
       "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc148064bf70e3fcbb264243",
       "discord_env": "DISCORD_WEBHOOK_URL_ES",
       "discord_server": "",
-      "enabled": false
+      "enabled": true
     }
   }
 }

@@ -21,7 +21,8 @@ Every 6 hours (GitHub Actions) this watcher:
    JobStep posts for 30 days are paused and re-checked every 3 days, so they come back automatically. You get a push
    when new accounts are added.
 6. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
-   smoothed for small samples, German creators count double).
+   smoothed for small samples, German creators count double). A video counts only if it reached 100k (20k)
+   within its first 7 days after posting.
 
 ## Setup
 

@@ -44,9 +44,15 @@ def fmt_views(n):
 
 
 def to_history(history, v, german, now):
-    history[v['id']] = {'handle': v['handle'], 'created': v['created'], 'views': v['views'], 'format': v.get('format'),
-                        'hook': v.get('hook_en', ''), 'german': v['handle'] in german,
-                        'mature': now - v['created'] >= 7 * 86400}
+    old = history.get(v['id'], {})
+    entry = {'handle': v['handle'], 'created': v['created'], 'views': v['views'], 'format': v.get('format'),
+             'hook': v.get('hook_en', ''), 'german': v['handle'] in german, 'mature': now - v['created'] >= 7 * 86400}
+    # Views within the first 7 days after posting (what counts as "viral" for the ranking).
+    if now - v['created'] <= 7.5 * 86400:
+        entry['views_7d'] = v['views']
+    elif 'views_7d' in old:
+        entry['views_7d'] = old['views_7d']
+    history[v['id']] = entry
 
 
 def run(dry_run=False, only_detect=False):

@@ -60,7 +60,7 @@ def discord(text):
     if not url:
         return False
     try:
-        r = requests.post(url, json={'content': text, 'allowed_mentions': {'parse': ['everyone']}}, timeout=20)
+        r = requests.post(url, json={'content': text, 'username': 'Parakeet AI', 'allowed_mentions': {'parse': ['everyone']}}, timeout=20)
         return r.ok
     except requests.RequestException:
         return False

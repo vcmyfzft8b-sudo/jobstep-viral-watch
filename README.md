@@ -2,8 +2,8 @@
 
 Every 6 hours (GitHub Actions) this watcher:
 
-1. **Pulls every new video** posted by JobStep's creator accounts (`config.json → accounts`, plus accounts found by a
-   weekly Lightreel search) and keeps each video on a 7-day watchlist.
+1. **Pulls every new video** posted by all active JobStep creator accounts (89 on 6 Oct 2026, list in the `state`
+   branch → `state/accounts.json`) and keeps each video on a 7-day watchlist.
 2. **Re-checks every watchlist video** (views, likes, shares, saves) and stores a snapshot, so growth over time is known.
 3. **Alerts** (phone push via [ntfy](https://ntfy.sh) + a log line on the private Notion page *JobStep Viral-Radar*):
    - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views
@@ -16,8 +16,12 @@ Every 6 hours (GitHub Actions) this watcher:
    same layout as the existing ones → added to the numbered list at its ranked position.
    If a check fails (e.g. "JobStep" left in the text, not German, script length off by more than 25 %), the page is
    created as a private draft on the radar page instead and you get a notification with the reason.
-5. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
-   smoothed for small samples, German creators count double) and looks for new JobStep accounts.
+5. **Every 3 days – complete account list**: Lightreel is asked for every account promoting JobStep; each new handle
+   is verified on TikTok (posted in the last 30 days + JobStep in captions or videos) and added. Accounts without
+   JobStep posts for 30 days are paused and re-checked every 3 days, so they come back automatically. You get a push
+   when new accounts are added.
+6. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
+   smoothed for small samples, German creators count double).
 
 ## Setup
 
@@ -31,7 +35,7 @@ Every 6 hours (GitHub Actions) this watcher:
    | `OPENROUTER_API_KEY` | Claude (format matching: Sonnet 5.5, page writing: Opus 5.5) |
    | `SONIOX_API_KEY` | speech-to-text |
    | `NTFY_TOPIC` | phone push notifications (subscribe to the topic in the ntfy app) |
-   | `LIGHTREEL_API_KEY` | weekly discovery of new JobStep accounts (optional) |
+   | `LIGHTREEL_API_KEY` | finding new JobStep accounts every 3 days |
 2. The `state` branch holds the watchlist, history and format registry; the workflow commits to it after every run.
 
 ## Run manually

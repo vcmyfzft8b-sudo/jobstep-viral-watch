@@ -57,8 +57,9 @@ def run(dry_run=False, only_detect=False):
     meta = state.load('meta.json', {})
     now = time.time()
     th = cfg['thresholds']
-    german = set(cfg['german_accounts'])
-    accounts = list(dict.fromkeys(cfg['accounts'] + meta.get('discovered_accounts', [])))
+    account_info = state.load('accounts.json', None) or {h: {'status': 'manual', 'since': int(now)} for h in cfg['accounts']}
+    german = {h for h, a in account_info.items() if a.get('lang') == 'de'} | set(cfg['german_accounts'])
+    accounts = [h for h, a in account_info.items() if a['status'] in ('active', 'manual')]
     radar_page = cfg['notion']['radar_page']
 
     # 1. new videos
@@ -79,6 +80,14 @@ def run(dry_run=False, only_detect=False):
     # 2. refresh stats
     failed = 0
     for vid, v in list(videos.items()):
+        age_h = (now - v.get('created', now)) / 3600
+        last = v['snapshots'][-1][0] if v['snapshots'] else 0
+        if age_h > 72 and now - last < 20 * 3600 and v.get('views', 0) < th['viral_views']:
+            # 3-7 day old videos: full check once a day; in between only the free embed view count
+            if vid in embed_views and embed_views[vid]['views'] > v.get('views', 0):
+                v['views'] = embed_views[vid]['views']
+                to_history(history, v, german, now)
+            continue
         d = tiktok.video_detail(v['handle'], vid)
         if not d and vid in embed_views:
             # Full page not reachable: use the creator embed's view count (likes/shares/saves keep their last value).
@@ -133,22 +142,34 @@ def run(dry_run=False, only_detect=False):
                 except Exception as e:
                     print('classify failed', v['id'], str(e)[:200])
 
-    # 5. weekly re-rank + account discovery
+    # 5. weekly re-rank
     today = datetime.datetime.now(datetime.timezone.utc)
     week = today.strftime('%G-%V')
     if not dry_run and not only_detect and today.weekday() == cfg['ranking']['rerank_weekday'] and meta.get('reranked_week') != week:
         rerank(formats, history, cfg, reason='Wöchentliches Update')
         meta['reranked_week'] = week
-        new_accounts = discover.find_accounts(accounts)
-        if new_accounts:
-            meta.setdefault('discovered_accounts', []).extend(new_accounts)
-            notify.push('🔎 Neue JobStep-Accounts', ', '.join('@' + h for h in new_accounts), tags='mag')
-            notify.radar(radar_page, f"{today:%d.%m.%Y} – neue JobStep-Accounts beobachtet: " + ', '.join('@' + h for h in new_accounts))
+
+    # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
+    if not dry_run and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:
+        account_info, added, paused, revived = discover.refresh(account_info)
+        for h in added:
+            account_info[h]['lang'] = discover.language(h)
+        meta['discovered_at'] = int(now)
+        n_active = sum(1 for a in account_info.values() if a['status'] in ('active', 'manual'))
+        summary = (f"{n_active} aktive JobStep-Accounts" + (f" · neu: {', '.join('@' + h for h in added)}" if added else '')
+                   + (f" · pausiert: {', '.join('@' + h for h in paused)}" if paused else '')
+                   + (f" · wieder aktiv: {', '.join('@' + h for h in revived)}" if revived else ''))
+        print('discovery:', summary)
+        if added:
+            notify.push(f'🔎 {len(added)} neue JobStep-Accounts', summary, tags='mag')
+        notify.radar(radar_page, f"{today:%d.%m.%Y} – Account-Check: {summary}")
+        state.log({'type': 'discovery', 'added': added, 'paused': paused, 'revived': revived})
 
     if not dry_run:
         state.save('videos.json', videos)
         state.save('history.json', history)
         state.save('formats.json', formats)
+        state.save('accounts.json', account_info)
         meta['last_run'] = int(now)
         state.save('meta.json', meta)
     print('actions:', json.dumps(actions, ensure_ascii=False))

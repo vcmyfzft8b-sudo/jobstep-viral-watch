@@ -70,7 +70,6 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
 
     new = [fid for fid in hot_now if fid not in before]
     cooled = [fid for fid in before if fid not in hot_now]
-    changed = new or cooled or any(before.get(f, {}).get('count') != n for f, n in hot_now.items())
     meta_hot = {}
     for fid, n in hot_now.items():
         old = before.get(fid, {})
@@ -78,17 +77,14 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
         if not isinstance(announced, dict):  # older state: True/False meant DACH
             announced = {'de': bool(announced)}
         meta_hot[fid] = {'count': n, 'since': old.get('since', int(time.time())), 'announced': announced}
+    # The hot formats themselves move up into the 🚀 section of every list (done by the re-sort in main.rerank).
     for mk in mkts:
         m, T = mk['key'], mk['T']
-        if changed or any(not meta_hot[f]['announced'].get(m) for f in hot_now):
-            items = [(page(by_id[f], m), n) for f, n in sorted(hot_now.items(), key=lambda x: -x[1]) if page(by_id[f], m)]
-            if changed:
-                notion.set_hot(mk['list_page'], items, lang=mk['lang'])
         url = os.environ.get(mk.get('discord_env', ''), '')
         for fid in [f for f in hot_now if not meta_hot[f]['announced'].get(m) and url and page(by_id[f], m)]:
             f, n = by_id[fid], hot_now[fid]
             title = notion_title(page(f, m)) or f['title']
-            if discord(url, T['discord'].format(title=title, n=n, link=public_link(page(f, m)))):
+            if discord(url, T['discord'].format(title=title, n=n)):
                 meta_hot[fid]['announced'][m] = True
                 state.log({'type': 'hot_announced', 'market': m, 'format': fid, 'count': n})
     for fid in new:
@@ -97,13 +93,13 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
                           for x in sorted(proof.get(fid, []), key=lambda x: -x['views']))
         done = [mk['T']['flag'] for mk in mkts if meta_hot[fid]['announced'].get(mk['key'])]
         notify.push('🚀 HOT format',
-                    f"*{f['title']}* – {n} viral JobStep videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
-                    f"Pinned at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}",
+                    f"*{f['title']}* – {n} viral videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
+                    f"Moved into the 🚀 section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}",
                     click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
         state.log({'type': 'hot', 'format': fid, 'count': n})
     for fid in cooled:
         notify.push('Hot format cooled down', f"*{by_id[fid]['title'] if fid in by_id else fid}* – fewer than {MIN_VIRAL} "
-                    'viral videos in the last 7 days, removed from the top of the lists.')
+                    'viral videos in the last 7 days, back in the normal list.')
         state.log({'type': 'hot_cooled', 'format': fid})
     meta['hot'] = meta_hot
 

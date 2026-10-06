@@ -37,10 +37,13 @@ TEXT = {
                       'wie es weiter viral geht. Danach machst du mit der Liste weiter.'],
         'visual_rule': '**Ein Visual Hook ist für jedes Video Pflicht!** Ideen findest du im ',
         'hot_prefix': 'GEHT GERADE VIRAL – DREH DAS JETZT ZUERST: ',
-        'hot_suffix': '  ({n} JobStep-Videos mit über 100.000 Aufrufen in den letzten 7 Tagen)',
+        'hot_suffix': '  ({n} Videos mit über 100.000 Aufrufen in den letzten 7 Tagen)',
         'holder': 'Alle Formatseiten',
-        'discord': '@everyone 🔥 **Dieses Format geht gerade viral!**\n\n**{title}**\n{n} JobStep-Videos mit über 100.000 '
-                   'Aufrufen in den letzten 7 Tagen.\n👉 Dreh es **jetzt als Nächstes** – Skript, Beispielvideo und alle Infos:\n{link}',
+        'discord': '@everyone 🔥 **Dieses Format geht gerade viral!**\n\n**{title}**\n\n{n} Videos mit über 100.000 '
+                   'Aufrufen in den letzten 7 Tagen. 👉 Dreh es **jetzt als Nächstes** – du findest es ganz oben in deiner '
+                   'Formatliste im Creator-Portal: https://megasheet.app/portal/login',
+        'hot_header': '🚀 GEHT GERADE VIRAL – DREH DIESE FORMATE JETZT ZUERST',
+        'rest_header': 'Danach: alle weiteren Formate der Reihe nach',
         'stopwords': 'der das und ist ich nicht ein eine zu mit auf für den dem es sie wir ihr mein dein was wie hab habe hat '
                      'sind auch noch dann so aber wenn schon mal einfach jetzt hier da',
     },
@@ -73,11 +76,13 @@ TEXT = {
                       'continue à devenir viral. Ensuite, tu reprends la liste.'],
         'visual_rule': '**Un visual hook est obligatoire sur chaque vidéo !** Des idées dans le ',
         'hot_prefix': 'EN TRAIN DE DEVENIR VIRAL – TOURNE-LE EN PREMIER : ',
-        'hot_suffix': '  ({n} vidéos JobStep à plus de 100 000 vues ces 7 derniers jours)',
+        'hot_suffix': '  ({n} vidéos à plus de 100 000 vues ces 7 derniers jours)',
         'holder': 'Tous les formats',
-        'discord': '@everyone 🔥 **Ce format est en train de devenir viral !**\n\n**{title}**\n{n} vidéos JobStep à plus de '
-                   '100 000 vues ces 7 derniers jours.\n👉 Tourne-le **maintenant, en priorité** – script, vidéo d’exemple '
-                   'et toutes les infos :\n{link}',
+        'discord': '@everyone 🔥 **Ce format est en train de devenir viral !**\n\n**{title}**\n\n{n} vidéos à plus de '
+                   '100 000 vues ces 7 derniers jours. 👉 Tourne-le **maintenant, en priorité** – tu le trouves tout en haut '
+                   'de ta liste de formats dans le portail créateur : https://megasheet.app/portal/login',
+        'hot_header': '🚀 EN TRAIN DE DEVENIR VIRAL – TOURNE CES FORMATS EN PREMIER',
+        'rest_header': 'Ensuite : tous les autres formats dans l’ordre',
         'stopwords': 'le la les et est je tu pas un une de des du pour avec sur que qui mon ton ce cette mais si on en au aux '
                      'il elle vous nous ça c’est',
     },
@@ -109,11 +114,13 @@ TEXT = {
                       'mientras siga haciéndose viral. Después, sigues con la lista.'],
         'visual_rule': '**¡Un visual hook es obligatorio en cada vídeo!** Ideas en el ',
         'hot_prefix': 'SE ESTÁ HACIENDO VIRAL – GRÁBALO PRIMERO: ',
-        'hot_suffix': '  ({n} vídeos de JobStep con más de 100.000 visualizaciones en los últimos 7 días)',
+        'hot_suffix': '  ({n} vídeos con más de 100.000 visualizaciones en los últimos 7 días)',
         'holder': 'Todos los formatos',
-        'discord': '@everyone 🔥 **¡Este formato se está haciendo viral!**\n\n**{title}**\n{n} vídeos de JobStep con más de '
-                   '100.000 visualizaciones en los últimos 7 días.\n👉 Grábalo **ahora, el siguiente** – guion, vídeo de '
-                   'ejemplo y toda la info:\n{link}',
+        'discord': '@everyone 🔥 **¡Este formato se está haciendo viral!**\n\n**{title}**\n\n{n} vídeos con más de '
+                   '100.000 visualizaciones en los últimos 7 días. 👉 Grábalo **ahora, el siguiente** – lo tienes arriba del '
+                   'todo en tu lista de formatos del portal de creadores: https://megasheet.app/portal/login',
+        'hot_header': '🚀 SE ESTÁN HACIENDO VIRALES – GRABA ESTOS FORMATOS PRIMERO',
+        'rest_header': 'Después: todos los demás formatos en orden',
         'stopwords': 'el la los las y es yo tu tú no un una de del para con en que mi este esta pero si se lo al por me te '
                      'muy ya',
     },

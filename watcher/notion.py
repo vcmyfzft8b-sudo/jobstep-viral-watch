@@ -194,61 +194,83 @@ def _icon(b):
     return ((b.get(b['type']) or {}).get('icon') or {}).get('emoji')
 
 
-def list_entries(dach_page):
-    """[(callout_block_id, page_id)] in order, plus the id of the block the list comes after."""
-    blocks = children(dach_page)
+HOT_ICON = '🚀'
+SECTION_ICONS = ('🚀', '⬇️')  # section header callouts inside the list (no page link)
+
+
+def list_entries(list_page):
+    """[(callout_block_id, page_id)] in order (hot section first), plus the block after which the list starts."""
+    blocks = children(list_page)
     start = next(i for i, b in enumerate(blocks) if b['type'] == 'callout' and _icon(b) == '🔥')
-    entries, anchor = [], blocks[start]['id']
+    anchor = blocks[start]['id']
+    if start + 1 < len(blocks) and blocks[start + 1]['type'] == 'paragraph' and not blocks[start + 1]['paragraph']['rich_text']:
+        anchor = blocks[start + 1]['id']
+    entries = []
     for b in blocks[start + 1:]:
         if b['type'] == 'callout' and _icon(b) == '🚨':
             break
-        if b['type'] == 'callout' and _icon(b) != HOT_ICON:
+        if b['type'] == 'callout':
             pid = next((x['mention']['page']['id'] for x in b['callout']['rich_text']
                         if x['type'] == 'mention' and x['mention']['type'] == 'page'), None)
             if pid:
                 entries.append((b['id'], pid))
-                continue
-        if not entries:
-            anchor = b['id']
     return entries, anchor
 
 
-def set_order(dach_page, page_ids):
-    """Rewrite the list so it shows page_ids in this order, and number the page titles 1., 2., ..."""
-    entries, anchor = list_entries(dach_page)
-    style = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
-    if entries:  # keep the look of the existing list entries
-        first = api('GET', f'/blocks/{entries[0][0]}')['callout']
-        style = {k: first[k] for k in ('icon', 'color') if first.get(k)}
-    for block_id, _ in entries:
+def hot_entry_count(list_page):
+    """How many list entries are currently shown in the 🚀 section."""
+    entries = {e[0] for e in list_entries(list_page)[0]}
+    return sum(1 for b in children(list_page) if b['id'] in entries and _icon(b) == HOT_ICON)
+
+
+def _section_blocks(list_page):
+    """Section header callouts (🚀 / ⬇️, without a page link) between the 🔥 instructions and the 🚨 rule."""
+    out, inside = [], False
+    for b in children(list_page):
+        if b['type'] == 'callout' and _icon(b) == '🔥':
+            inside = True
+            continue
+        if inside and b['type'] == 'callout' and _icon(b) == '🚨':
+            break
+        if inside and b['type'] == 'callout' and _icon(b) in SECTION_ICONS and not any(
+                x['type'] == 'mention' for x in b['callout']['rich_text']):
+            out.append(b['id'])
+    return out
+
+
+def set_order(list_page, page_ids, hot_count=0, lang='de'):
+    """Rewrite the list: hot formats first inside a 🚀 section (orange), then the rest; number the titles 1., 2., ..."""
+    T = TEXT[lang]
+    page_ids = list(dict.fromkeys(p.replace('-', '') for p in page_ids))  # never show a format twice
+    entries, anchor = list_entries(list_page)
+    for block_id in [e[0] for e in entries] + _section_blocks(list_page):
         api('DELETE', f'/blocks/{block_id}')
-    callouts = [block('callout', [mention(pid)], **style) for pid in page_ids]
-    api('PATCH', f'/blocks/{dach_page}/children', {'children': callouts, 'after': anchor})
+    normal = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
+    hot = {'icon': {'type': 'emoji', 'emoji': HOT_ICON}, 'color': 'orange_background'}
+    new = []
+    if hot_count:
+        new.append(block('callout', [rt(T['hot_header'], bold=True)], icon={'type': 'emoji', 'emoji': '🚀'}, color='red_background'))
+    for i, pid in enumerate(page_ids):
+        if hot_count and i == hot_count:
+            new.append(block('callout', [rt(T['rest_header'], bold=True)], icon={'type': 'emoji', 'emoji': '⬇️'}, color='default'))
+        new.append(block('callout', [mention(pid)], **(hot if i < hot_count else normal)))
+    for i in range(0, len(new), 90):
+        r = api('PATCH', f'/blocks/{list_page}/children', {'children': new[i:i + 90], 'after': anchor})
+        anchor = r['results'][-1]['id']
+    # keep at most one empty line after the 🚨 rule
+    blocks = children(list_page)
+    rule = next((k for k, b in enumerate(blocks) if b['type'] == 'callout' and _icon(b) == '🚨'), None)
+    if rule is not None:
+        empties = [b['id'] for b in blocks[rule + 1:] if b['type'] == 'paragraph' and not b['paragraph']['rich_text']]
+        for bid in empties[1:]:
+            api('DELETE', f'/blocks/{bid}')
     for i, pid in enumerate(page_ids, 1):
         page = api('GET', f'/pages/{pid}')
         prop = next(v for v in page['properties'].values() if v['type'] == 'title')
         title = ''.join(x['plain_text'] for x in prop['title'])
-        new = f'{i}. ' + re.sub(r'^\d+\.\s*', '', title)
-        if new != title:
-            api('PATCH', f'/pages/{pid}', {'properties': {'title': {'title': [rt(new)]}}})
-
-
-HOT_ICON = '🚀'
-
-
-def set_hot(dach_page, hot, lang='de'):
-    """hot: [(page_id, viral_count)]. Shows them as 🚀 callouts right under the 🔥 instructions (top of the list)."""
-    T = TEXT[lang]
-    blocks = children(dach_page)
-    fire = next(b for b in blocks if b['type'] == 'callout' and _icon(b) == '🔥')
-    for b in blocks:
-        if b['type'] == 'callout' and _icon(b) == HOT_ICON:
-            api('DELETE', f"/blocks/{b['id']}")
-    if not hot:
-        return
-    callouts = [block('callout', [rt(T['hot_prefix'], bold=True), mention(pid), rt(T['hot_suffix'].format(n=n))],
-                      icon={'type': 'emoji', 'emoji': HOT_ICON}, color='orange_background') for pid, n in hot]
-    api('PATCH', f'/blocks/{dach_page}/children', {'children': callouts, 'after': fire['id']})
+        new_title = f'{i}. ' + re.sub(r'^\d+\.\s*', '', title)
+        if new_title != title:
+            api('PATCH', f'/pages/{pid}', {'properties': {'title': {'title': [rt(new_title)]}}})
 
 
 def append_log(radar_page, rich):

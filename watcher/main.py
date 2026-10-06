@@ -167,6 +167,10 @@ def run(dry_run=False, only_detect=False):
                 backlog.append(result)
             if lvl == 'taking_off' and not dry_run:
                 v['notified'].append(lvl)
+            if not dry_run:  # save right away, so a video is never reported twice (even if the run crashes later)
+                state.save('videos.json', videos)
+                state.save('history.json', history)
+                state.save('formats.json', fmts)
         except Exception as e:  # keep going with the other videos
             traceback.print_exc()
             notify.push('⚠️ JobStep watcher error', f"{v['url']}\n{str(e)[:300]}", click=v.get('url'))
@@ -477,14 +481,18 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
 
 
 def rerank(mkts, fmts, history, cfg):
-    """One order for all markets (creators of all markets count the same); applied to every market's list."""
+    """One order for all markets (creators of all markets count the same); applied to every market's list.
+    Hot formats (5+ confirmed viral videos in 7 days) come first, inside the 🚀 section."""
     ids, scores = rank.order(history, fmts, cfg)
     by_id = {f['id']: f for f in fmts}
+    hot_ids = [i for i in ids if scores[i].get('recent_viral', 0) >= hot.MIN_VIRAL]
     for mk in mkts:
         page_ids = [page_of(by_id[i], mk['key']) for i in ids if page_of(by_id[i], mk['key'])]
-        current = [pid.replace('-', '') for _, pid in notion.list_entries(mk['list_page'])[0]]
-        if [p.replace('-', '') for p in page_ids] != current:
-            notion.set_order(mk['list_page'], page_ids)
+        hot_count = sum(1 for i in hot_ids if page_of(by_id[i], mk['key']))
+        entries, _ = notion.list_entries(mk['list_page'])
+        current = [pid.replace('-', '') for _, pid in entries]
+        if [p.replace('-', '') for p in page_ids] != current or notion.hot_entry_count(mk['list_page']) != hot_count:
+            notion.set_order(mk['list_page'], page_ids, hot_count=hot_count, lang=mk['lang'])
     state.log({'type': 'rerank', 'order': ids})
     return ids
 

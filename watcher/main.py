@@ -743,7 +743,7 @@ def main():
         o = own.stats(own_videos, fmts, time.time())
         by = {f['id']: f['title'] for f in fmts}
         for fid, x in sorted(o.items(), key=lambda kv: -kv[1]['n']):
-            print(f"  {by.get(fid, fid)[:50]:50} ours: {x['n']} videos, {x['hits_20k']} >=20k, {x['hits_100k']} >=100k")
+            print(f"  {by.get(fid, fid)[:50]:50} ours: {x['n']} videos, {2 ** x['lift']:.2f}x usual, {x['hits_100k']} >=100k")
         rerank(M.load(cfg), fmts, state.load('history.json', {}), cfg)
         return
     if a.relist:

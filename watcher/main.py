@@ -206,11 +206,22 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
         v['new_format_description'] = c.get('new_format_description', '')
         history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
     known = next((f for f in formats if f['id'] == v['format']), None)
+    if lvl == 'viral' and not known and not only_detect:
+        # Strict re-check with the strong model against everything in Notion (list + archive) before building.
+        dup = classify.confirm_new(v, formats, cfg['models']['build'])
+        if dup:
+            v['format'] = dup
+            history.get(v['id'], {})['format'] = dup
+            known = next((f for f in formats if f['id'] == dup), None)
     eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
     weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement']
     head = '🟢 VIRAL' if lvl == 'viral' else '🟡 Hebt ab'
-    fmt_text = (f"Format: {known['title']}" if known and known.get('status') == 'active'
-                else f"Neues Format: {v.get('hook_en') or '?'}")
+    if known and known.get('status') == 'active':
+        fmt_text = f"Format: {known['title']} (schon in der Liste)"
+    elif known:
+        fmt_text = f"Format: {known['title']} (liegt im Archiv – nicht neu hinzugefügt)"
+    else:
+        fmt_text = f"Neues Format: {v.get('hook_en') or '?'}"
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} Aufrufe nach {age_h:.0f} h · Shares+Saves {eng:.1%}"
            f"{' (schwach)' if weak else ''}{' (Shares/Saves unbekannt)' if eng_unknown else ''}\n{fmt_text}")
     result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}

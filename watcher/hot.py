@@ -2,15 +2,16 @@
 markets, each confirmed by the strict Claude check as that format.
 
 While a format is hot it moves into the 🚀 section at the top of every list (main.rerank); once per hot period an
-@everyone announcement in each market's language goes to its Discord #announcements (webhook from discord_env), plus
-a Slack message listing the videos. When it cools down (< 5), it drops back into the normal order.
+@everyone announcement in each market's language goes to its Discord #announcements (webhook from discord_env), the
+same message goes into every creator's private channel (our bot, markets with creator_channels), plus a Slack message
+listing the videos. When it cools down (< 5), it drops back into the normal order.
 """
 import os
 import time
 
 import requests
 
-from . import notify, notion, state
+from . import discord_bot, notify, notion, state
 from .markets import fkey, jkey
 
 MIN_VIRAL = 5
@@ -76,17 +77,36 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
         announced = old.get('announced', {})
         if not isinstance(announced, dict):  # older state: True/False meant DACH
             announced = {'de': bool(announced)}
-        meta_hot[fid] = {'count': n, 'since': old.get('since', int(time.time())), 'announced': announced}
+        meta_hot[fid] = {'count': n, 'since': old.get('since', int(time.time())), 'announced': announced,
+                         'creators': old.get('creators', {})}
     # The hot formats themselves move up into the 🚀 section of every list (done by the re-sort in main.rerank).
     for mk in mkts:
         m, T = mk['key'], mk['T']
-        url = os.environ.get(mk.get('discord_env', ''), '')
+        url = os.environ.get(mk.get('discord_env', ''), '') if mk.get('discord_announce', True) else ''
         for fid in [f for f in hot_now if not meta_hot[f]['announced'].get(m) and url and page(by_id[f], m)]:
             f, n = by_id[fid], hot_now[fid]
             title = notion_title(page(f, m)) or f['title']
             if discord(url, T['discord'].format(title=title, n=n)):
                 meta_hot[fid]['announced'][m] = True
                 state.log({'type': 'hot_announced', 'market': m, 'format': fid, 'count': n})
+        if mk.get('creator_channels') and discord_bot.token() and hot_now:
+            try:
+                chans = discord_bot.creator_channels(mk['discord_server'], cfg)
+            except Exception as e:
+                print(m, 'creator channels failed:', str(e)[:200])
+                chans = []
+            for fid in [f for f in hot_now if page(by_id[f], m)]:
+                done = meta_hot[fid]['creators'].setdefault(m, [])
+                text = T['discord'].replace('@everyone ', '', 1).format(
+                    title=notion_title(page(by_id[fid], m)) or by_id[fid]['title'], n=hot_now[fid])
+                for c in [c for c in chans if c['id'] not in done]:
+                    try:
+                        discord_bot.send(c['id'], text, c['members'])
+                        done.append(c['id'])
+                    except Exception as e:
+                        print(m, 'creator channel', c['name'], 'failed:', str(e)[:200])
+                if done:
+                    state.log({'type': 'hot_creators', 'market': m, 'format': fid, 'channels': len(done)})
     for fid in new:
         f, n = by_id[fid], hot_now[fid]
         links = '\n'.join(f"• @{x['handle']} – {x['views'] // 1000}k – <https://www.tiktok.com/@{x['handle']}/video/{x['id']}|video>"
@@ -94,7 +114,8 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
         done = [mk['T']['flag'] for mk in mkts if meta_hot[fid]['announced'].get(mk['key'])]
         notify.push('🚀 HOT format',
                     f"*{f['title']}* – {n} viral videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
-                    f"Moved into the 🚀 section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}",
+                    f"Moved into the 🚀 section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}"
+                    f" · creator channels: {sum(len(v) for v in meta_hot[fid]['creators'].values())}",
                     click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
         state.log({'type': 'hot', 'format': fid, 'count': n})
     for fid in cooled:

@@ -161,7 +161,9 @@
       "visual_hook_lab": "https://app.notion.com/p/3d4958b0fc148040a3f6e8dc64bb7a90",
       "discord_env": "DISCORD_WEBHOOK_URL",
       "discord_server": "1546450769291513886",
-      "enabled": true
+      "enabled": true,
+      "discord_announce": true,
+      "creator_channels": true
     },
     "fr": {
       "lang": "fr",
@@ -171,7 +173,9 @@
       "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc1480049b7ded8f07e6e53e",
       "discord_env": "DISCORD_WEBHOOK_URL_FR",
       "discord_server": "1546445780334682155",
-      "enabled": true
+      "enabled": true,
+      "discord_announce": false,
+      "creator_channels": false
     },
     "es": {
       "lang": "es",
@@ -181,7 +185,12 @@
       "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc148064bf70e3fcbb264243",
       "discord_env": "DISCORD_WEBHOOK_URL_ES",
       "discord_server": "1546440887687450674",
-      "enabled": true
+      "enabled": true,
+      "discord_announce": false,
+      "creator_channels": false
     }
+  },
+  "discord": {
+    "creator_category_prefix": "Creators"
   }
 }

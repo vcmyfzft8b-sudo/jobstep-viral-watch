@@ -663,6 +663,20 @@ def main():
             info = r.json() if r.ok else {}
             print(mk['key'], 'discord webhook ok:', r.ok, '| channel id:', info.get('channel_id'), '| server id:',
                   info.get('guild_id'), '| expected server:', info.get('guild_id') == mk.get('discord_server') if mk.get('discord_server') else '?')
+        from . import discord_bot
+        cfg = load_config()
+        for mk in M.load(cfg):
+            if not mk.get('creator_channels'):
+                continue
+            if not discord_bot.token():
+                print(mk['key'], 'creator channels: DISCORD_BOT_TOKEN not set')
+                continue
+            try:  # only reads the channel list, posts nothing
+                chans = discord_bot.creator_channels(mk['discord_server'], cfg)
+                print(mk['key'], f'creator channels the bot can post in: {len(chans)}',
+                      [(c['name'], len(c['members'])) for c in chans])
+            except Exception as e:
+                print(mk['key'], 'creator channels failed:', str(e)[:300])
         return
     if a.init_market:
         init_market(a.init_market)

@@ -115,12 +115,13 @@
   "title": "Jetzt ist die BESTE Zeit für die Jobsuche 👀"
  },
  {
+  "archived_reason": "duplicate of N10 (same core message: ATS rejects pretty CVs)",
   "created": 1791293741,
   "description": "Talking-head explainer that opens by pointing at fancy Canva-style CVs on a monitor with red X overlays, explains why ATS rejects bar charts and icons (with a green-screen segment), then screen-records the full CV app flow from score analysis to job-link tailoring, template choice, and download.",
   "id": "A202610061335",
   "page_id": "3f1958b0-fc14-8170-a169-dba97b041280",
   "source_video": "https://www.tiktok.com/@lockinwitheva/video/7691082863533427990",
-  "status": "active",
+  "status": "archived",
   "title": "Das HR hasst diese Lebensläufe? Schau hier hin 👀"
  }
 ]

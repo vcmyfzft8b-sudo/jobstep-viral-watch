@@ -193,6 +193,17 @@ def run(dry_run=False, only_detect=False):
     print('actions:', json.dumps(actions, ensure_ascii=False))
 
 
+def resolve(formats, fid):
+    """Formats archived as duplicates point to the format they duplicate."""
+    f = next((x for x in formats if x['id'] == fid), None)
+    seen = set()
+    while f and f.get('archived_reason', '').startswith('duplicate of ') and f['id'] not in seen:
+        seen.add(f['id'])
+        target = f['archived_reason'].split()[2]
+        f = next((x for x in formats if x['id'] == target), f)
+    return f
+
+
 def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=False):
     radar_page = cfg['notion']['radar_page']
     age_h = (now - v['created']) / 3600
@@ -205,43 +216,62 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
         v['format'], v['hook_en'], v['format_checked'] = c.get('match'), c.get('hook_en', ''), True
         v['new_format_description'] = c.get('new_format_description', '')
         history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
-    known = next((f for f in formats if f['id'] == v['format']), None)
+    known = resolve(formats, v['format'])
     if lvl == 'viral' and not known and not only_detect:
         # Strict re-check with the strong model against everything in Notion (list + archive) before building.
         dup = classify.confirm_new(v, formats, cfg['models']['build'])
         if dup:
             v['format'] = dup
             history.get(v['id'], {})['format'] = dup
-            known = next((f for f in formats if f['id'] == dup), None)
+            known = resolve(formats, dup)
     eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
     weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement']
     head = '🟢 VIRAL' if lvl == 'viral' else '🟡 Hebt ab'
+    result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
+
+    # Viral + not in Notion yet: build first (with the final duplicate check on the transcript), then report.
+    built = None
+    if lvl == 'viral' and not known and not weak and not only_detect:
+        page, problems, position, dup = build_format(v, formats, history, cfg, quiet=quiet)
+        if dup:
+            known = resolve(formats, dup)
+            result['format'] = dup
+        else:
+            built = (page, problems, position)
+            result.update({'built': page['url'], 'problems': problems, 'position': position})
+
     if known and known.get('status') == 'active':
         fmt_text = f"Format: {known['title']} (schon in der Liste)"
     elif known:
         fmt_text = f"Format: {known['title']} (liegt im Archiv – nicht neu hinzugefügt)"
+    elif built and not built[1]:
+        fmt_text = f"NEUES Format – automatisch hinzugefügt auf Platz {built[2]}: {built[0]['url']}"
+    elif built:
+        fmt_text = f"Neues Format – Entwurf zum Prüfen ({'; '.join(built[1])}): {built[0]['url']}"
     else:
-        fmt_text = f"Neues Format: {v.get('hook_en') or '?'}"
+        fmt_text = f"Neues Format: {v.get('hook_en') or '?'}" + (' (schwache Interaktion, nicht gebaut)' if weak else '')
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} Aufrufe nach {age_h:.0f} h · Shares+Saves {eng:.1%}"
            f"{' (schwach)' if weak else ''}{' (Shares/Saves unbekannt)' if eng_unknown else ''}\n{fmt_text}")
-    result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
     if not quiet:
         notify.push(f'{head}: JobStep-Video', msg, click=v['url'], tags='chart_with_upwards_trend')
     notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – {head} – {msg.replace(chr(10), ' – ')}",
                  link=v['url'], link_label='Video')
     state.log({'type': 'alert', **result})
-
-    if lvl == 'viral' and not known and not weak and not only_detect:
-        page, problems, position = build_format(v, formats, history, cfg)
-        result.update({'built': page['url'], 'problems': problems, 'position': position})
     return result
 
 
-def build_format(v, formats, history, cfg):
+def build_format(v, formats, history, cfg, quiet=False):
     work = tempfile.mkdtemp(prefix='fmt-')
     try:
         video_file = media.download(v['url'], work)
         transcript = soniox.transcribe(media.audio(video_file, work))
+        # Last check with the full transcript: is this format already in Notion (list or archive)?
+        dup = classify.confirm_new(v, formats, cfg['models']['build'], transcript=transcript.get('text', ''))
+        if dup:
+            v['format'] = dup
+            history.get(v['id'], {})['format'] = dup
+            state.log({'type': 'duplicate_skipped', 'video': v['id'], 'format': dup})
+            return None, [], None, dup
         frames = media.frames(video_file, work)
         spec = builder.build_spec(v, transcript, frames, cfg['models']['build'])
         problems = builder.validate(spec, transcript)
@@ -252,6 +282,7 @@ def build_format(v, formats, history, cfg):
 
     fid = 'A' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M')
     entry = {'id': fid, 'title': spec['page_title'], 'description': spec.get('registry_description') or v.get('new_format_description', ''),
+             'script': ' '.join(seg.get('text', '') for seg in spec.get('script', []))[:900],
              'source_video': v['url'], 'created': int(time.time())}
     position = None
     if problems:
@@ -260,7 +291,8 @@ def build_format(v, formats, history, cfg):
         formats.append(entry)
         v['format'] = fid
         history[v['id']]['format'] = fid
-        notify.push('📝 Neues Format als Entwurf', f"{spec['page_title']}\nBitte prüfen: " + '; '.join(problems), click=page['url'], tags='memo')
+        if quiet:
+            notify.push('📝 Neues Format als Entwurf', f"{spec['page_title']}\nBitte prüfen: " + '; '.join(problems), click=page['url'], tags='memo')
         notify.radar(cfg['notion']['radar_page'], f"Entwurf erstellt (nicht veröffentlicht): {spec['page_title']} – " + '; '.join(problems),
                      link=page['url'], link_label='Entwurf')
     else:
@@ -272,12 +304,13 @@ def build_format(v, formats, history, cfg):
         position = rerank(formats, history, cfg, reason=None).index(fid) + 1
         assets = spec.get('assets_needed') or []
         extra = ('\nNoch zu erstellen: ' + ', '.join(a['name'] for a in assets)) if assets else ''
-        notify.push(f'✅ Neues Format auf Platz {position}', f"{spec['page_title']}\nVorbild: @{v['handle']}, {fmt_views(v['views'])} Aufrufe{extra}",
-                    click=page['url'], tags='white_check_mark')
+        if quiet or extra:
+            notify.push(f'✅ Neues Format auf Platz {position}', f"{spec['page_title']}\nVorbild: @{v['handle']}, {fmt_views(v['views'])} Aufrufe{extra}",
+                        click=page['url'], tags='white_check_mark')
         notify.radar(cfg['notion']['radar_page'], f"Neues Format hinzugefügt auf Platz {position}: {spec['page_title']}{extra}",
                      link=page['url'], link_label='Seite')
     state.log({'type': 'format_built', 'format': fid, 'page': page['url'], 'problems': problems, 'position': position})
-    return page, problems, position
+    return page, problems, position, None
 
 
 def rerank(formats, history, cfg, reason):

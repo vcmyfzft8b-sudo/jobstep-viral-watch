@@ -163,7 +163,7 @@
       "discord_server": "1546450769291513886",
       "enabled": true,
       "discord_announce": true,
-      "creator_channels": true
+      "creator_channels": false
     },
     "fr": {
       "lang": "fr",

@@ -29,5 +29,13 @@ def scores(history, formats, cfg):
 
 
 def order(history, formats, cfg):
+    """New formats (fewer than 5 videos) can enter at position 4 at the highest - right after the three
+    strongest proven formats - and only climb further once more of their videos prove them."""
     s = scores(history, formats, cfg)
+    proven = sorted((v['score'] for v in s.values() if v['videos'] >= 5), reverse=True)
+    if len(proven) >= 3:
+        cap = proven[2] - 1e-6
+        for v in s.values():
+            if v['videos'] < 5:
+                v['score'] = min(v['score'], cap)
     return sorted(s, key=lambda fid: -s[fid]['score']), s

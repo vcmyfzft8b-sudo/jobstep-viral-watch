@@ -17,8 +17,10 @@ ON-SCREEN TEXT: {video.get('sticker') or '-'}
 CAPTION: {video.get('desc') or '-'}
 SPEECH: {(transcript or video.get('subtitles') or '-')[:2500]}
 
-Does this video use one of our formats (same hook/premise and structure)? Only match when the MAIN hook/premise
-is the same - many videos mention ATS or CVs in passing.
+Does this video use one of our formats? Match when the CORE MESSAGE / premise is the same as a format, even if the
+hook is worded differently (e.g. "HR hates these CVs" and "nobody reads your CV" are both the ATS-rejects-pretty-CVs
+format). Only call it new when the premise itself is different - not just because many videos mention ATS or CVs in
+passing.
 Return JSON:
 {{"match": "<format id or null>", "confidence": "high|med|low",
   "hook_en": "<the video's hook in English, short>",

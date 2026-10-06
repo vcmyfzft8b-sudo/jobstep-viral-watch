@@ -449,14 +449,59 @@ def rerank(formats, history, cfg, reason):
     return ids
 
 
+def check_hot():
+    """Strict Claude check of every viral video (100k+) posted in the last 7 days, then report per format."""
+    cfg, formats = load_config(), load_formats()
+    videos, history = state.load('videos.json', {}), state.load('history.json', {})
+    now = time.time()
+    todo = [v for v in videos.values() if v.get('views', 0) >= cfg['thresholds']['viral_views']
+            and 'created' in v and now - v['created'] <= cfg['watch_days'] * 86400]
+    print(f'{len(todo)} viral videos from the last 7 days')
+    for v in todo:
+        if v.get('judged'):
+            continue
+        work = tempfile.mkdtemp(prefix='judge-')
+        try:
+            try:
+                transcript = soniox.transcribe(media.audio(media.download(v['url'], work), work)).get('text', '')
+            except Exception:
+                transcript = v.get('subtitles', '')
+            verdict = classify.judge(v, formats, cfg['models']['build'], transcript)
+            fmt = resolve(formats, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+            v['format'], v['judged'] = (fmt['id'] if fmt else None), True
+            v['hook_en'] = verdict.get('hook_en', v.get('hook_en', ''))
+            history.get(v['id'], {}).update({'format': v['format'], 'judged': True})
+        except Exception as e:
+            print('judge failed', v['id'], str(e)[:150])
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+    state.save('videos.json', videos)
+    state.save('history.json', history)
+    by = {f['id']: f for f in formats}
+    groups = {}
+    for v in todo:
+        groups.setdefault(v.get('format') or 'NEW/none', []).append(v)
+    print('\nCONFIRMED VIRAL VIDEOS PER FORMAT (last 7 days):')
+    for fid, vs in sorted(groups.items(), key=lambda x: -len(x[1])):
+        f = by.get(fid)
+        name = f['title'] + ('' if f.get('status') == 'active' else ' [archive]') if f else 'not in Notion'
+        print(f'{len(vs)} | {fid} | {name}')
+        for v in sorted(vs, key=lambda x: -x['views']):
+            print(f"    {v['views']:>7} @{v['handle']:22} {v['url']}  | {v.get('hook_en', '')[:70]}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
+    ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days + report per format')
     ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
     a = ap.parse_args()
+    if a.check_hot:
+        check_hot()
+        return
     if a.test_viral:
         import re as _re
         handle, vid = _re.search(r'@([^/]+)/video/(\d+)', a.test_viral).groups()

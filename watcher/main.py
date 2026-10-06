@@ -16,7 +16,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, media, notify, notion, rank, soniox, state, tiktok
+from . import builder, classify, detect, discover, llm, media, notify, notion, rank, soniox, state, tiktok
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
@@ -374,7 +374,18 @@ def main():
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
+    ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
     a = ap.parse_args()
+    if a.test_claude:
+        import re as _re, subprocess as _sp
+        tok = os.environ.get('CLAUDE_CODE_OAUTH_TOKEN', '')
+        print('token length:', len(tok), '| starts with sk-ant-oat01-:', tok.startswith('sk-ant-oat01-'),
+              '| contains whitespace/newline:', bool(_re.search(r'\s', tok)), '| ends with AA:', tok.endswith('AA'))
+        try:
+            print('claude says:', llm.chat('sonnet', 'Be brief.', 'Reply with exactly: OK'))
+        except Exception as e:
+            print('claude test failed:', str(e)[:300])
+        return
     if a.test_notify:
         notify.push('✅ JobStep-Radar: GitHub → Slack funktioniert',
                     'Der Watcher läuft alle 6 Stunden und meldet sich hier, sobald ein JobStep-Video abhebt oder viral geht.',

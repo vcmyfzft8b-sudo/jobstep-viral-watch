@@ -504,9 +504,21 @@ def main():
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
+    ap.add_argument('--test-discord', action='store_true', help='check the Discord webhook WITHOUT posting')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days + report per format')
     ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
     a = ap.parse_args()
+    if a.test_discord:
+        import requests as _rq
+        url = os.environ.get('DISCORD_WEBHOOK_URL', '')
+        if not url:
+            print('DISCORD_WEBHOOK_URL not set')
+            return
+        r = _rq.get(url, timeout=20)  # reading the webhook does not post anything
+        info = r.json() if r.ok else {}
+        print('discord webhook ok:', r.ok, '| name:', info.get('name'), '| channel id:', info.get('channel_id'),
+              '| server id:', info.get('guild_id'), '| DACH server:', info.get('guild_id') == '1546450769291513886')
+        return
     if a.check_hot:
         check_hot()
         return

@@ -63,30 +63,43 @@ def run(dry_run=False, only_detect=False):
 
     # 1. new videos
     fresh = 0
+    embed_views = {}
     for handle in accounts:
-        for vid in tiktok.latest_video_ids(handle):
+        for item in tiktok.latest_videos(handle):
+            vid = item['id']
+            embed_views[vid] = item
             if vid not in videos and vid not in history:
-                videos[vid] = {'id': vid, 'handle': handle, 'first_seen': int(now), 'snapshots': [], 'notified': []}
+                videos[vid] = {'id': vid, 'handle': handle, 'first_seen': int(now), 'snapshots': [], 'notified': [],
+                               'url': f'https://www.tiktok.com/@{handle}/video/{vid}',
+                               'created': int(vid) >> 32,  # TikTok IDs start with the upload timestamp
+                               'desc': item['desc'], 'sticker': '', 'subtitles': '', 'duration': 0,
+                               'views': 0, 'likes': 0, 'comments': 0, 'shares': 0, 'saves': 0}
                 fresh += 1
 
     # 2. refresh stats
     failed = 0
     for vid, v in list(videos.items()):
         d = tiktok.video_detail(v['handle'], vid)
+        if not d and vid in embed_views:
+            # Full page not reachable: use the creator embed's view count (likes/shares/saves keep their last value).
+            d = {**v, 'views': max(embed_views[vid]['views'], v.get('views', 0)), 'detail_missing': True}
         if not d:
             v['fails'] = v.get('fails', 0) + 1
             failed += 1
-            if v['fails'] >= 8:
+            if v['fails'] >= 8 or now - v.get('created', now) > cfg['watch_days'] * 86400:
                 videos.pop(vid)
             continue
         v.update({k: d[k] for k in ('url', 'created', 'duration', 'desc', 'sticker', 'subtitles',
                                     'views', 'likes', 'comments', 'shares', 'saves')})
         v['fails'] = 0
+        v['detail_missing'] = bool(d.get('detail_missing'))
         v['snapshots'].append([int(now), d['views'], d['likes'], d['shares'], d['saves']])
         to_history(history, v, german, now)
         if now - v['created'] > cfg['watch_days'] * 86400:
             videos.pop(vid)
-    print(f'accounts={len(accounts)} new_videos={fresh} watchlist={len(videos)} fetch_failures={failed}')
+    print(f'accounts={len(accounts)} new_videos={fresh} watchlist={len(videos)} not_updated={failed} '
+          f'page_direct={tiktok.STATS["direct_ok"]} page_via_eu={tiktok.STATS["proxy_ok"]} '
+          f'views_only={sum(1 for x in videos.values() if x.get("detail_missing"))}')
     if tiktok.LAST_ERROR:
         reasons = {}
         for err in tiktok.LAST_ERROR.values():
@@ -151,12 +164,13 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect):
         v['new_format_description'] = c.get('new_format_description', '')
         history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
     known = next((f for f in formats if f['id'] == v['format']), None)
-    weak = eng < cfg['thresholds']['min_engagement']
+    eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
+    weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement']
     head = '🟢 VIRAL' if lvl == 'viral' else '🟡 Hebt ab'
     fmt_text = (f"Format: {known['title']}" if known and known.get('status') == 'active'
                 else f"Neues Format: {v.get('hook_en') or '?'}")
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} Aufrufe nach {age_h:.0f} h · Shares+Saves {eng:.1%}"
-           f"{' (schwach)' if weak else ''}\n{fmt_text}")
+           f"{' (schwach)' if weak else ''}{' (Shares/Saves unbekannt)' if eng_unknown else ''}\n{fmt_text}")
     result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
     if dry_run:
         print('DRY', head, msg)

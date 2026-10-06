@@ -11,7 +11,13 @@ def _run(cmd):
 def download(url, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     out = os.path.join(out_dir, 'video.mp4')
-    _run(['yt-dlp', '-q', '--no-warnings', '-f', 'mp4/best', '-o', out, url])
+    cmd = ['yt-dlp', '-q', '--no-warnings', '-f', 'mp4/best', '-o', out, url]
+    try:
+        _run(cmd)
+    except subprocess.CalledProcessError:
+        if not os.environ.get('TIKTOK_PROXY'):
+            raise
+        _run(cmd[:1] + ['--proxy', os.environ['TIKTOK_PROXY']] + cmd[1:])  # Europe-only video
     return out
 
 

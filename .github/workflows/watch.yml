@@ -38,8 +38,18 @@ jobs:
 
       - name: Install
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg tor > /dev/null
           pip install -q -r requirements.txt
+
+      # GitHub's servers are in the US; some JobStep videos are Europe-only. Those requests go through Tor
+      # with European exit nodes (only used as a fallback, see watcher/tiktok.py).
+      - name: Start European route (Tor)
+        run: |
+          sudo systemctl stop tor || true
+          printf 'SocksPort 9050\nExitNodes {de},{at},{ch},{nl},{be},{fr},{pl},{cz},{dk},{se}\nStrictNodes 1\nLog notice file /tmp/tor.log\n' > /tmp/torrc
+          tor -f /tmp/torrc --RunAsDaemon 1
+          for i in $(seq 1 60); do grep -q "Bootstrapped 100%" /tmp/tor.log 2>/dev/null && break; sleep 2; done
+          grep -q "Bootstrapped 100%" /tmp/tor.log && echo "Tor ready" || echo "Tor not ready - Europe-only videos will use embed view counts"
 
       - name: Run watcher
         env:
@@ -49,6 +59,7 @@ jobs:
           SONIOX_API_KEY: ${{ secrets.SONIOX_API_KEY }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           LIGHTREEL_API_KEY: ${{ secrets.LIGHTREEL_API_KEY }}
+          TIKTOK_PROXY: socks5h://127.0.0.1:9050
           MODE: ${{ github.event.inputs.mode || 'normal' }}
         run: |
           case "$MODE" in

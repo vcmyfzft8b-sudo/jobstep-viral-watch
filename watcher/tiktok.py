@@ -1,5 +1,6 @@
 """Read public TikTok data without a browser: the creator embed (latest videos) and each video's page."""
 import json
+import os
 import re
 import time
 
@@ -10,19 +11,27 @@ UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
 LAST_ERROR = {}
 
 
-def _new_session():
+# Some videos are only available in Europe ("cross_border_violation" from US servers such as GitHub's).
+# Those requests are retried through TIKTOK_PROXY (the workflow runs Tor with European exit nodes).
+PROXY = os.environ.get('TIKTOK_PROXY', '')
+
+
+def _new_session(proxy=False):
     s = requests.Session()
     s.headers.update({'User-Agent': UA, 'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8'})
+    if proxy and PROXY:
+        s.proxies = {'http': PROXY, 'https': PROXY}
     return s
 
 
 SESSION = _new_session()
+STATS = {'direct_ok': 0, 'proxy_ok': 0, 'failed': 0}
 
 
-def _get(url, tries=3):
+def _get(url, tries=3, session=None):
     for attempt in range(tries):
         try:
-            r = SESSION.get(url, timeout=30)
+            r = (session or SESSION).get(url, timeout=45)
             if r.status_code == 200 and r.text:
                 return r.text
         except requests.RequestException:
@@ -33,6 +42,11 @@ def _get(url, tries=3):
 
 def latest_video_ids(handle):
     """IDs of a creator's latest videos (TikTok's official creator embed returns about 10)."""
+    return [v['id'] for v in latest_videos(handle)]
+
+
+def latest_videos(handle):
+    """The creator embed's latest videos: [{'id', 'views', 'desc'}] (views also for Europe-only videos)."""
     html = _get(f'https://www.tiktok.com/embed/@{handle}')
     if not html:
         return []
@@ -42,12 +56,13 @@ def latest_video_ids(handle):
     data = json.loads(m.group(1))
     for key, value in data.get('source', {}).get('data', {}).items():
         if key.startswith('/embed/@') and isinstance(value, dict) and 'videoList' in value:
-            return [v['id'] for v in value['videoList'] if v.get('id')]
+            return [{'id': v['id'], 'views': int(v.get('playCount') or 0), 'desc': v.get('desc', '')}
+                    for v in value['videoList'] if v.get('id')]
     return []
 
 
-def _item(url):
-    html = _get(url)
+def _item(url, session=None):
+    html = _get(url, session=session)
     if not html:
         return None, 'no response'
     m = re.search(r'<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"[^>]*>(.*?)</script>', html)
@@ -69,11 +84,21 @@ def video_detail(handle, video_id):
     url = f'https://www.tiktok.com/@{handle}/video/{video_id}'
     time.sleep(0.7)
     item, err = _item(url)
-    if not item:  # second chance with fresh cookies
+    if not item and err and '10231' not in err:  # second chance with fresh cookies
         time.sleep(5)
         SESSION = _new_session()
         item, err = _item(url)
+    if item:
+        STATS['direct_ok'] += 1
+    elif PROXY:  # Europe-only video (or blocked): go through the European route
+        for _ in range(3):
+            item, err = _item(url, session=_new_session(proxy=True))
+            if item:
+                STATS['proxy_ok'] += 1
+                break
+            time.sleep(3)
     if not item:
+        STATS['failed'] += 1
         LAST_ERROR[video_id] = err
         return None
     stats = item.get('statsV2') or item.get('stats') or {}

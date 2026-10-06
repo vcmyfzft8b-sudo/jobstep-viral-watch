@@ -249,6 +249,11 @@ def main():
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
     a = ap.parse_args()
+    missing = [k for k in ('NOTION_TOKEN', 'OPENROUTER_API_KEY', 'SONIOX_API_KEY') if not os.environ.get(k)]
+    if missing and not a.dry_run:
+        # Without keys we can't notify or build: watch only and don't mark anything as notified.
+        print('Missing secrets', missing, '-> running as dry run (run scripts/set_secrets.sh once)')
+        a.dry_run = True
     run(dry_run=a.dry_run, only_detect=a.only_detect)
 
 

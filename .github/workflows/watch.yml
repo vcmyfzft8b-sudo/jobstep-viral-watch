@@ -10,6 +10,10 @@ on:
         type: choice
         options: [normal, only-detect, dry-run]
         default: normal
+      test_video:
+        description: 'Optional: TikTok video URL -> build a TEST format page into the private radar page (nothing public)'
+        required: false
+        default: ''
 
 concurrency:
   group: jobstep-viral-watch
@@ -62,7 +66,14 @@ jobs:
           LIGHTREEL_API_KEY: ${{ secrets.LIGHTREEL_API_KEY }}
           TIKTOK_PROXY: socks5h://127.0.0.1:9150
           MODE: ${{ github.event.inputs.mode || 'normal' }}
+          TEST_VIDEO: ${{ github.event.inputs.test_video }}
         run: |
+          if [ -n "$TEST_VIDEO" ]; then
+            HANDLE=$(echo "$TEST_VIDEO" | sed -E 's#.*/@([^/]+)/video/([0-9]+).*#\1#')
+            VID=$(echo "$TEST_VIDEO" | sed -E 's#.*/@([^/]+)/video/([0-9]+).*#\2#')
+            python scripts/test_build.py "$HANDLE" "$VID"
+            exit 0
+          fi
           case "$MODE" in
             dry-run)     python -m watcher.main --dry-run ;;
             only-detect) python -m watcher.main --only-detect ;;

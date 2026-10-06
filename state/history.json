@@ -10358,8 +10358,9 @@
   "handle": "jobtipy",
   "hook": "So many interview invitations! I opened my email after a few days and found a pile of interview invites, after getting none for a month.",
   "judged": false,
-  "mature": false,
-  "views": 621
+  "mature": true,
+  "views": 623,
+  "views_7d": 623
  },
  "7690947320204021025": {
   "created": 1790688220,
@@ -10378,8 +10379,9 @@
   "handle": "emma.jobtips",
   "hook": "Unknown: no speech or on-screen text. The caption only says 'I'm giving you my best tips' (job search, HR, recruitment, CV), marked as an ad.",
   "judged": false,
-  "mature": false,
-  "views": 3777
+  "mature": true,
+  "views": 3857,
+  "views_7d": 3857
  },
  "7690951741390540054": {
   "created": 1790689257,
@@ -10398,8 +10400,9 @@
   "handle": "ale.jobtips",
   "hook": "piccolo promemoria - Canva/ChatGPT CVs not suitable for ATS",
   "judged": false,
-  "mature": false,
-  "views": 1359
+  "mature": true,
+  "views": 1365,
+  "views_7d": 1365
  },
  "7690955379139677472": {
   "created": 1790690097,
@@ -10408,8 +10411,9 @@
   "handle": "matildedicas",
   "hook": "How did she get a job in 20 minutes? My friend was already hired while we had coffee, showed me her inbox, and told me about a site (JobStep) that scores and tailors your CV.",
   "judged": false,
-  "mature": false,
-  "views": 618
+  "mature": true,
+  "views": 619,
+  "views_7d": 619
  },
  "7690955610363399446": {
   "created": 1790690154,
@@ -10418,8 +10422,9 @@
   "handle": "martets",
   "hook": "I sent my CV on Thursday, had an interview yesterday, start tomorrow - rebuilt my CV with Jobstep.io and got a 96/100 ATS score",
   "judged": false,
-  "mature": false,
-  "views": 29700
+  "mature": true,
+  "views": 29800,
+  "views_7d": 29800
  },
  "7690964265083079942": {
   "created": 1790692170,
@@ -10428,8 +10433,9 @@
   "handle": "ferni.tips",
   "hook": "Sorry, but LinkedIn can do THIS now? Change 86400 to 3600 in the URL to see jobs posted in the last hour, then paste the job link into the tool to tailor your CV.",
   "judged": false,
-  "mature": false,
-  "views": 568300
+  "mature": true,
+  "views": 579000,
+  "views_7d": 579000
  },
  "7690971638967340320": {
   "created": 1790693882,
@@ -10438,8 +10444,9 @@
   "handle": "gabbolab",
   "hook": "Which of these two CVs is better? (Canva one with graphics vs. neutral ATS-friendly one)",
   "judged": false,
-  "mature": false,
-  "views": 855
+  "mature": true,
+  "views": 856,
+  "views_7d": 856
  },
  "7690974287917763873": {
   "created": 1790694498,
@@ -10448,8 +10455,9 @@
   "handle": "juliejobtips",
   "hook": "The receptionist rejects me on the spot when I try to hand in my paper CV; she says everything is done online and advises improving my CV",
   "judged": false,
-  "mature": false,
-  "views": 390
+  "mature": true,
+  "views": 392,
+  "views_7d": 392
  },
  "7690976989418753303": {
   "created": 1790695129,
@@ -10458,8 +10466,9 @@
   "handle": "linnegzmstf",
   "hook": "Lucky me: jobstep.io made my CV and cover letter in under 5 minutes and creates a new tailored application for every job ad",
   "judged": false,
-  "mature": false,
-  "views": 266
+  "mature": true,
+  "views": 267,
+  "views_7d": 267
  },
  "7690981041426877704": {
   "created": 1790696071,
@@ -10478,8 +10487,9 @@
   "handle": "emma_jobtips",
   "hook": "Two candidates apply for the same job with different CVs - which one gets invited to the interview?",
   "judged": false,
-  "mature": false,
-  "views": 170400
+  "mature": true,
+  "views": 175500,
+  "views_7d": 175500
  },
  "7690984893446180128": {
   "created": 1790696969,
@@ -10498,8 +10508,9 @@
   "handle": "jobtipsmetmarie",
   "hook": "This CV gets rejected, this one gets rejected, and this one too: CVs with icons and charts are worthless because ATS can't read them.",
   "judged": false,
-  "mature": false,
-  "views": 682
+  "mature": true,
+  "views": 690,
+  "views_7d": 690
  },
  "7690989920453774614": {
   "created": 1790698141,
@@ -10508,8 +10519,9 @@
   "handle": "gina.fekete7",
   "hook": "In Hungary you send 3-4 CVs a day and never get a single reply; if you really want a job, use JobStep, which fixes your CV for free.",
   "judged": false,
-  "mature": false,
-  "views": 3371
+  "mature": true,
+  "views": 3377,
+  "views_7d": 3377
  },
  "7690997356925439254": {
   "created": 1790699873,
@@ -10528,8 +10540,9 @@
   "handle": "itswithluna",
   "hook": "You think your CV is good, I thought so too, but it's missing a lot. It looks great and has all my experience, yet I still can't get a job. My mom works in HR and tipped me off about Jobstep.",
   "judged": false,
-  "mature": false,
-  "views": 593
+  "mature": true,
+  "views": 599,
+  "views_7d": 599
  },
  "7690999711314070817": {
   "created": 1790700416,
@@ -10538,8 +10551,9 @@
   "handle": "misialurisia",
   "hook": "Job listing websites are terrible: most listings are outdated and you never get a reply, so I found a much better site",
   "judged": false,
-  "mature": false,
-  "views": 2242
+  "mature": true,
+  "views": 2249,
+  "views_7d": 2249
  },
  "7691010249322548512": {
   "created": 1790702871,
@@ -10548,8 +10562,9 @@
   "handle": "manal.jobstep.io",
   "hook": "HR are too lazy to read CVs, so you need an ATS-friendly CV for them to see you and call you back. This site checks your CV and stops the automatic rejection emails.",
   "judged": false,
-  "mature": false,
-  "views": 453
+  "mature": true,
+  "views": 454,
+  "views_7d": 454
  },
  "7691012136121716001": {
   "created": 1790703311,
@@ -10558,8 +10573,9 @@
   "handle": "job.by.niki",
   "hook": "if you struggle to find a job watch this",
   "judged": false,
-  "mature": false,
-  "views": 992
+  "mature": true,
+  "views": 997,
+  "views_7d": 997
  },
  "7691015669080444182": {
   "created": 1790704137,
@@ -10568,18 +10584,20 @@
   "handle": "career.tea.with.d",
   "hook": "From 1 November 2026, listing the starting salary or salary range in job ads becomes mandatory in Greece (pay transparency news)",
   "judged": false,
-  "mature": false,
-  "views": 56100
+  "mature": true,
+  "views": 56200,
+  "views_7d": 56200
  },
  "7691016721053895958": {
   "created": 1790704380,
   "format": "N04",
   "german": false,
   "handle": "issa.jobtips",
-  "hook": "How to get hired as fast as possible? I applied all summer and got nowhere until I redid my CV on JobStep.",
+  "hook": "I applied for jobs all summer and didn't get accepted anywhere until I changed my CV. (On-screen: How to get hired as fast as possible? 🤯😱)",
   "judged": true,
-  "mature": false,
-  "views": 211100
+  "mature": true,
+  "views": 211200,
+  "views_7d": 211200
  },
  "7691020473206902048": {
   "created": 1790705251,
@@ -10598,8 +10616,9 @@
   "handle": "junew0rk",
   "hook": "In your opinion: which one is better? (a silent poll comparing two options, with Jobstep.io shown)",
   "judged": false,
-  "mature": false,
-  "views": 446
+  "mature": true,
+  "views": 447,
+  "views_7d": 447
  },
  "7691040796677672215": {
   "created": 1790709987,
@@ -10609,7 +10628,8 @@
   "hook": "POV: You're unemployed, but the rent still has to be paid tomorrow… (then steps: go to Jobstep.io, upload CV and see score, tailor it to the job ad, get the job)",
   "judged": false,
   "mature": false,
-  "views": 58100
+  "views": 59400,
+  "views_7d": 59400
  },
  "7691043019885120790": {
   "created": 1790710503,
@@ -10619,7 +10639,8 @@
   "hook": "Since when does LinkedIn do this? Am I the only one who just found out?",
   "judged": false,
   "mature": false,
-  "views": 1252
+  "views": 1256,
+  "views_7d": 1256
  },
  "7691047167057874179": {
   "created": 1790711469,
@@ -10629,7 +10650,8 @@
   "hook": "Never getting invited to job interviews? Turns out the systems can't read my CV at all, so I uploaded it to a site I found on TikTok, got a score, improved it, and now I get replies.",
   "judged": false,
   "mature": false,
-  "views": 1421
+  "views": 1444,
+  "views_7d": 1444
  },
  "7691050108732951830": {
   "created": 1790712156,
@@ -10639,7 +10661,8 @@
   "hook": "I could have married the guy from HR who showed me this",
   "judged": false,
   "mature": false,
-  "views": 1699
+  "views": 1746,
+  "views_7d": 1746
  },
  "7691058040019225878": {
   "created": 1790714002,
@@ -10649,7 +10672,8 @@
   "hook": "If your CV looks like this, throw it away: it's why you don't even get interviews, and no recruiter is sitting there reading every application.",
   "judged": false,
   "mature": false,
-  "views": 1995
+  "views": 2015,
+  "views_7d": 2015
  },
  "7691059443693309216": {
   "created": 1790714325,
@@ -10659,7 +10683,8 @@
   "hook": "This is one of the rejection emails that made me cry at night - all my applications got rejected, until a friend in HR told me to try an ATS-format CV.",
   "judged": false,
   "mature": false,
-  "views": 968
+  "views": 969,
+  "views_7d": 969
  },
  "7691060860554415382": {
   "created": 1790714660,
@@ -10669,17 +10694,19 @@
   "hook": "The job market today is a joke - send this to the friend who has been job hunting for ages; CVs made in Canva/ChatGPT get deleted by ATS filters",
   "judged": false,
   "mature": false,
-  "views": 1420
+  "views": 1430,
+  "views_7d": 1430
  },
  "7691061952071716118": {
   "created": 1790714913,
   "format": "X16",
   "german": false,
   "handle": "tsvetelina.tips",
-  "hook": "Unknown: no on-screen text or speech; the caption only says 'follow for more secrets' about jobs (Bulgarian)",
+  "hook": "I just quit my job in HR, so I'm going to spill all their secrets.",
   "judged": true,
   "mature": false,
-  "views": 159500
+  "views": 160900,
+  "views_7d": 160900
  },
  "7691064046690389280": {
   "created": 1790715399,
@@ -10689,7 +10716,8 @@
   "hook": "I was unemployed, but look at what my inbox looks like now - then I pasted my CV into JobStep, fixed the keywords and got a score of 96",
   "judged": false,
   "mature": false,
-  "views": 938
+  "views": 943,
+  "views_7d": 943
  },
  "7691072911368817938": {
   "created": 1790717476,
@@ -10699,7 +10727,8 @@
   "hook": "POV: you keep getting rejected - fancy CVs with graphics and icons never reach recruiters because the ATS robot trashes them",
   "judged": false,
   "mature": false,
-  "views": 1635
+  "views": 1648,
+  "views_7d": 1648
  },
  "7691077371667025172": {
   "created": 1790718510,
@@ -10709,7 +10738,8 @@
   "hook": "sent CV Friday interview yesterday start Friday - look how many interview invites",
   "judged": false,
   "mature": false,
-  "views": 2094
+  "views": 2099,
+  "views_7d": 2099
  },
  "7691081093772102944": {
   "created": 1790719368,
@@ -10719,17 +10749,19 @@
   "hook": "My brother who works in IT at Microsoft showed me this - how to find a job within a week",
   "judged": false,
   "mature": false,
-  "views": 963
+  "views": 968,
+  "views_7d": 968
  },
  "7691082863533427990": {
   "created": 1790719785,
   "format": "N10",
   "german": false,
   "handle": "lockinwitheva",
-  "hook": "How to make your CV? (Greek caption only; no on-screen text or speech available)",
+  "hook": "Rejection, rejection, rejection. These templates from Canva and similar sites are a no-go.",
   "judged": true,
   "mature": false,
-  "views": 101500
+  "views": 101600,
+  "views_7d": 101600
  },
  "7691085622844345632": {
   "created": 1790720423,
@@ -10759,7 +10791,8 @@
   "hook": "Rating job-search websites as Yes / No / Maybe: the job boards get No and Maybe, and JobStep gets the Yes.",
   "judged": false,
   "mature": false,
-  "views": 31500
+  "views": 31600,
+  "views_7d": 31600
  },
  "7691137481579973895": {
   "created": 1790732501,
@@ -10799,7 +10832,8 @@
   "hook": "How I found a job in 20 minutes - I'll probably delete this video in 2 hours, so save it; there's a simple way to find work that we've been missing for years",
   "judged": false,
   "mature": false,
-  "views": 500
+  "views": 504,
+  "views_7d": 504
  },
  "7691227687712525601": {
   "created": 1790753500,
@@ -10819,7 +10853,8 @@
   "hook": "Just lie on your CV - you can fudge small details, nobody checks anymore; what you really need is an ATS-format CV.",
   "judged": false,
   "mature": false,
-  "views": 951
+  "views": 954,
+  "views_7d": 954
  },
  "7691230103984000289": {
   "created": 1790754063,
@@ -10829,7 +10864,8 @@
   "hook": "Rejected ❌❌ - pretty, aesthetic CVs get rejected; only an ATS-format CV passes",
   "judged": false,
   "mature": false,
-  "views": 473
+  "views": 474,
+  "views_7d": 474
  },
  "7691230167334735137": {
   "created": 1790754075,
@@ -10866,10 +10902,11 @@
   "format": "N07",
   "german": false,
   "handle": "marine.realfakephotos",
-  "hook": "The secret of people who work in HR: a friend of my mom in HR said my basic Canva CV would never get accepted anywhere",
+  "hook": "The secret of people who work in HR ‼️ – A friend of my mom's who works in HR told me that with a CV like this, you'd never get accepted for any job.",
   "judged": true,
   "mature": false,
-  "views": 144500
+  "views": 144600,
+  "views_7d": 144600
  },
  "7691260582569299233": {
   "created": 1790761158,
@@ -10879,7 +10916,8 @@
   "hook": "I finally found a job after 2 months of unemployment - I was a bit silly because I wasn't doing one thing everyone told me to do (ATS-friendly CV)",
   "judged": false,
   "mature": false,
-  "views": 7363
+  "views": 7512,
+  "views_7d": 7512
  },
  "7691264599240346902": {
   "created": 1790762096,
@@ -10899,7 +10937,8 @@
   "hook": "I could marry the guy from HR for showing me this!",
   "judged": false,
   "mature": false,
-  "views": 1239
+  "views": 1294,
+  "views_7d": 1294
  },
  "7691274360266460448": {
   "created": 1790764366,
@@ -10909,7 +10948,8 @@
   "hook": "You DON'T need work experience to get a job. Job ads ask for years of experience, but if your CV gets through the ATS, every company will want you.",
   "judged": false,
   "mature": false,
-  "views": 965
+  "views": 969,
+  "views_7d": 969
  },
  "7691275269440539936": {
   "created": 1790764576,
@@ -10929,7 +10969,8 @@
   "hook": "Abgelehnt - pretty CVs rejected vs ATS-format CV",
   "judged": false,
   "mature": false,
-  "views": 577
+  "views": 579,
+  "views_7d": 579
  },
  "7691278886918704416": {
   "created": 1790765418,
@@ -10939,7 +10980,8 @@
   "hook": "Ranking job-search websites from 3 to 1 (Jobbird, magnet.me, Jobstep); the CV tool Jobstep wins at #1",
   "judged": false,
   "mature": false,
-  "views": 490
+  "views": 499,
+  "views_7d": 499
  },
  "7691281708188060950": {
   "created": 1790766077,
@@ -10949,7 +10991,8 @@
   "hook": "If you're struggling to find a job, look at this first: a website that prepares your CV for ATS systems",
   "judged": false,
   "mature": false,
-  "views": 362
+  "views": 363,
+  "views_7d": 363
  },
  "7691288549085269280": {
   "created": 1790767668,
@@ -10969,7 +11012,8 @@
   "hook": "BEST SOUND for all our fans lol - the real deal is right here (checkmarks)",
   "judged": false,
   "mature": false,
-  "views": 346
+  "views": 348,
+  "views_7d": 348
  },
  "7691309759101685014": {
   "created": 1790772607,
@@ -10979,7 +11023,8 @@
   "hook": "Why can't you apply for jobs like before anymore? Do you still hand in your CV in person? Try this too!",
   "judged": false,
   "mature": false,
-  "views": 4423
+  "views": 4432,
+  "views_7d": 4432
  },
  "7691319827826265366": {
   "created": 1790774953,
@@ -10999,7 +11044,8 @@
   "hook": "your sign to let Jobstep make your CV",
   "judged": false,
   "mature": false,
-  "views": 1277
+  "views": 1290,
+  "views_7d": 1290
  },
  "7691335182913228054": {
   "created": 1790778531,
@@ -11009,7 +11055,8 @@
   "hook": "LinkedIn can do this?! Change the URL time filter to 3600 to see jobs from the last hour, then copy the job ad and paste it into the tool to tailor the CV.",
   "judged": false,
   "mature": false,
-  "views": 67600
+  "views": 67900,
+  "views_7d": 67900
  },
  "7691340136893795617": {
   "created": 1790779678,
@@ -11019,7 +11066,8 @@
   "hook": "I spent more than 50 hours job hunting this week (screen time) and companies never reply; my sister saw my CV and told me to change it",
   "judged": false,
   "mature": false,
-  "views": 407
+  "views": 410,
+  "views_7d": 410
  },
  "7691341221670702369": {
   "created": 1790779932,
@@ -11029,7 +11077,8 @@
   "hook": "LinkedIn can do THIS now - 86400 to 3600",
   "judged": false,
   "mature": false,
-  "views": 1013
+  "views": 1015,
+  "views_7d": 1015
  },
  "7691345516126375189": {
   "created": 1790780934,
@@ -11039,7 +11088,8 @@
   "hook": "I sent my CV on Thursday, had an interview yesterday, and I start on Wednesday - I redid my CV with Jobstep.io and got an ATS score of 96/100",
   "judged": false,
   "mature": false,
-  "views": 82000
+  "views": 82600,
+  "views_7d": 82600
  },
  "7691349406892772641": {
   "created": 1790781838,
@@ -11069,7 +11119,8 @@
   "hook": "Is there still such a thing as a 'correct CV'?",
   "judged": false,
   "mature": false,
-  "views": 988
+  "views": 989,
+  "views_7d": 989
  },
  "7691363329087933718": {
   "created": 1790785080,
@@ -11079,7 +11130,8 @@
   "hook": "POV: companies are finally getting back to me",
   "judged": false,
   "mature": false,
-  "views": 780
+  "views": 784,
+  "views_7d": 784
  },
  "7691365262360055062": {
   "created": 1790785530,
@@ -11089,7 +11141,8 @@
   "hook": "My first CVs were rejected or never even opened because they don't get through the ATS; here's the fix, and now my inbox looks great.",
   "judged": false,
   "mature": false,
-  "views": 1287
+  "views": 1292,
+  "views_7d": 1292
  },
  "7691372201869659414": {
   "created": 1790787146,
@@ -11109,7 +11162,8 @@
   "hook": "HR wouldn't want us to know this",
   "judged": false,
   "mature": false,
-  "views": 9216
+  "views": 9269,
+  "views_7d": 9269
  },
  "7691374144608423200": {
   "created": 1790787604,
@@ -11129,7 +11183,8 @@
   "hook": "10 job interview invitations - I got lots of interview invites after months of none, because my CV wasn't passing the ATS filter",
   "judged": false,
   "mature": false,
-  "views": 14700
+  "views": 15000,
+  "views_7d": 15000
  },
  "7691378263914007840": {
   "created": 1790788556,
@@ -11139,7 +11194,8 @@
   "hook": "recruiters absolutely don't want you to know this",
   "judged": false,
   "mature": false,
-  "views": 27500
+  "views": 27600,
+  "views_7d": 27600
  },
  "7691382138691702048": {
   "created": 1790789458,
@@ -11149,7 +11205,8 @@
   "hook": "Unknown - no on-screen text or speech available; only a caption with CV tips hashtags and an ad label",
   "judged": false,
   "mature": false,
-  "views": 342
+  "views": 343,
+  "views_7d": 343
  },
  "7691382655958469910": {
   "created": 1790789581,
@@ -11159,7 +11216,8 @@
   "hook": "Rating job platforms as a 17-year-old: LinkedIn 6.7/10, Indeed 7/10, Jobstep.io 9.2/10",
   "judged": false,
   "mature": false,
-  "views": 5879
+  "views": 5956,
+  "views_7d": 5956
  },
  "7691383764462652694": {
   "created": 1790789839,
@@ -11169,7 +11227,8 @@
   "hook": "If I wanted to find a job in the next 24 hours, here's what I'd do: stop applying on crowded platforms, and build a CV that passes ATS filters.",
   "judged": false,
   "mature": false,
-  "views": 3053
+  "views": 3118,
+  "views_7d": 3118
  },
  "7691383958357019926": {
   "created": 1790789883,
@@ -11179,7 +11238,8 @@
   "hook": "I sent my CV on Thursday, had an interview yesterday, and start work on Wednesday. Come, I'll show you how.",
   "judged": false,
   "mature": false,
-  "views": 17200
+  "views": 19500,
+  "views_7d": 19500
  },
  "7691385138013359382": {
   "created": 1790790160,
@@ -11199,7 +11259,8 @@
   "hook": "Rating job-search websites with YES, NO or MAYBE: Net Empregos is a no, LinkedIn is a maybe, JobStep.io is a yes",
   "judged": false,
   "mature": false,
-  "views": 836
+  "views": 841,
+  "views_7d": 841
  },
  "7691387812964355360": {
   "created": 1790790779,
@@ -11219,7 +11280,8 @@
   "hook": "I woke up to 10+ emails from jobs after applying to 200+ and forgetting about them",
   "judged": false,
   "mature": false,
-  "views": 720
+  "views": 725,
+  "views_7d": 725
  },
  "7691391834471320864": {
   "created": 1790791714,
@@ -11239,7 +11301,8 @@
   "hook": "So incredibly nice!! New job application in 5 minutes (sponsored, no speech or on-screen text)",
   "judged": false,
   "mature": false,
-  "views": 367
+  "views": 368,
+  "views_7d": 368
  },
  "7691398597899783457": {
   "created": 1790793290,
@@ -11249,7 +11312,8 @@
   "hook": "Wie soll ich DAS meinen Eltern erklären",
   "judged": false,
   "mature": false,
-  "views": 393
+  "views": 395,
+  "views_7d": 395
  },
  "7691398897754721568": {
   "created": 1790793359,
@@ -11259,7 +11323,8 @@
   "hook": "Looking for a job for the first time or after a long break? Companies use AI/ATS filters, so you'd need a new CV for every job, about 3 hours a day. Nobody wants that, so use AI too.",
   "judged": false,
   "mature": false,
-  "views": 333
+  "views": 335,
+  "views_7d": 335
  },
  "7691404005041376534": {
   "created": 1790794554,
@@ -11269,7 +11334,8 @@
   "hook": "HR doesn't read your CV! You have to do THIS to get noticed",
   "judged": false,
   "mature": false,
-  "views": 72400
+  "views": 72500,
+  "views_7d": 72500
  },
  "7691406614309506327": {
   "created": 1790795160,
@@ -11279,7 +11345,8 @@
   "hook": "People who say we do nothing on unemployment benefits - here's what our day looks like (sleeping, walks, family time), and we have all this time to apply for jobs",
   "judged": false,
   "mature": false,
-  "views": 9561
+  "views": 9582,
+  "views_7d": 9582
  },
  "7691415369155726595": {
   "created": 1790797197,
@@ -11289,7 +11356,8 @@
   "hook": "Check out Jobstep.io to get an ATS-tailored CV and a much higher CV score - thank me later (lifehack ad)",
   "judged": false,
   "mature": false,
-  "views": 1069
+  "views": 1078,
+  "views_7d": 1078
  },
  "7691421350883347734": {
   "created": 1790798592,
@@ -11309,7 +11377,8 @@
   "hook": "Why are you so happy? Because JobStep exists.",
   "judged": false,
   "mature": false,
-  "views": 545
+  "views": 557,
+  "views_7d": 557
  },
  "7691426151243238678": {
   "created": 1790799708,
@@ -11319,7 +11388,8 @@
   "hook": "Why am I only finding out about this site now? After dozens of rejections my CV scored 38, and after 5 steps it scored 96.",
   "judged": false,
   "mature": false,
-  "views": 1657
+  "views": 1664,
+  "views_7d": 1664
  },
  "7691432238835174678": {
   "created": 1790801125,
@@ -11329,7 +11399,8 @@
   "hook": "Sorry, but LinkedIn can now do THIS?? Change 86400 to 3600 in the URL to see jobs posted in the last hour, then paste the link into the tool to tailor your CV.",
   "judged": false,
   "mature": false,
-  "views": 27700
+  "views": 29000,
+  "views_7d": 29000
  },
  "7691441721284267266": {
   "created": 1790803338,
@@ -11339,7 +11410,8 @@
   "hook": "Unknown. The video has no on-screen text or speech. The caption only says 'Ad part 6 | here are my hot tips' for job applications.",
   "judged": false,
   "mature": false,
-  "views": 1316
+  "views": 1334,
+  "views_7d": 1334
  },
  "7691444290819542294": {
   "created": 1790803937,
@@ -11359,7 +11431,8 @@
   "hook": "POV finally clear why everyone deletes ChatGPT",
   "judged": false,
   "mature": false,
-  "views": 4492
+  "views": 4508,
+  "views_7d": 4508
  },
  "7691450855307939094": {
   "created": 1790805467,
@@ -11369,7 +11442,8 @@
   "hook": "HR secrets: they don't read all CVs!!! ATS",
   "judged": false,
   "mature": false,
-  "views": 2694
+  "views": 2807,
+  "views_7d": 2807
  },
  "7691459305588985110": {
   "created": 1790807438,
@@ -11379,7 +11453,8 @@
   "hook": "How a friend of mine got a job in 20 minutes - I'll probably delete this video in two hours, so save this now",
   "judged": false,
   "mature": false,
-  "views": 3057
+  "views": 3129,
+  "views_7d": 3129
  },
  "7691461570274053408": {
   "created": 1790807954,
@@ -11389,7 +11464,8 @@
   "hook": "3 reasons why you can't get a job: sending too few generic applications, your CV fails ATS, and you're unprepared for the interview",
   "judged": false,
   "mature": false,
-  "views": 1446
+  "views": 1449,
+  "views_7d": 1449
  },
  "7691491494267473204": {
   "created": 1790814927,
@@ -11399,7 +11475,8 @@
   "hook": "I opened my email after a few days and it's full of job/interview invitations that never used to come - here's how I did it",
   "judged": false,
   "mature": false,
-  "views": 1308
+  "views": 1312,
+  "views_7d": 1312
  },
  "7691538523584924949": {
   "created": 1790825878,
@@ -11419,7 +11496,8 @@
   "hook": "Why did no one tell me about this earlier? A CV like this is terrible, did you know about this?",
   "judged": false,
   "mature": false,
-  "views": 994
+  "views": 1003,
+  "views_7d": 1003
  },
  "7691586086396562721": {
   "created": 1790836955,
@@ -11439,7 +11517,8 @@
   "hook": "Just lie on your CV 💀❌",
   "judged": false,
   "mature": false,
-  "views": 482
+  "views": 485,
+  "views_7d": 485
  },
  "7691586406187044128": {
   "created": 1790837022,
@@ -11449,7 +11528,8 @@
   "hook": "Rejected ❌❌ - this CV gets rejected, that one too, pretty/aesthetic CVs have no relevant info; only the ATS-format CV gets through the sorting software recruiters use.",
   "judged": false,
   "mature": false,
-  "views": 1072
+  "views": 1078,
+  "views_7d": 1078
  },
  "7691600800141020448": {
   "created": 1790840373,
@@ -11459,7 +11539,8 @@
   "hook": "I found a way for AI to write every job application in 5 minutes, but I'll delete this video within 24 hours if it goes viral so recruiters don't catch on.",
   "judged": false,
   "mature": false,
-  "views": 583
+  "views": 584,
+  "views_7d": 584
  },
  "7691612674832026902": {
   "created": 1790843141,
@@ -11469,7 +11550,8 @@
   "hook": "This CV was rejected, and so was this one: an HR acquaintance told me ATS systems can't read CVs with graphics and fancy layouts",
   "judged": false,
   "mature": false,
-  "views": 7806
+  "views": 7823,
+  "views_7d": 7823
  },
  "7691619371004759318": {
   "created": 1790844701,
@@ -11479,7 +11561,8 @@
   "hook": "Ad (part 4): it takes so little time and makes your CV so much better - no on-screen text or speech to show the premise",
   "judged": false,
   "mature": false,
-  "views": 1481
+  "views": 1500,
+  "views_7d": 1500
  },
  "7691622446192921888": {
   "created": 1790845413,
@@ -11489,7 +11572,8 @@
   "hook": "I found a job - new CV sent yesterday",
   "judged": false,
   "mature": false,
-  "views": 943
+  "views": 944,
+  "views_7d": 944
  },
  "7691629376470797590": {
   "created": 1790847029,
@@ -11499,7 +11583,8 @@
   "hook": "Showing a 96/100 ATS score on a CV (only counting 1 2 3 4 in speech, no real narrative)",
   "judged": false,
   "mature": false,
-  "views": 30300
+  "views": 32300,
+  "views_7d": 32300
  },
  "7691635780967550241": {
   "created": 1790848517,
@@ -11529,7 +11614,8 @@
   "hook": "October is the best month to find a job: people hired in September get replaced or fired, so positions open up before the listings go online.",
   "judged": false,
   "mature": false,
-  "views": 1030
+  "views": 1038,
+  "views_7d": 1038
  },
  "7691669536336219425": {
   "created": 1790856375,
@@ -11559,7 +11645,8 @@
   "hook": "HR doesn't want you to know this: I just quit my HR job, so I can share the secrets. Your CVs are the problem, because ATS filters sort them before any human sees them.",
   "judged": false,
   "mature": false,
-  "views": 4368
+  "views": 4378,
+  "views_7d": 4378
  },
  "7691684699168607520": {
   "created": 1790859905,
@@ -11569,7 +11656,8 @@
   "hook": "Lie in your CV! (exaggerate your achievements, you can't be verified) - there's a tool that guides you with questions",
   "judged": false,
   "mature": false,
-  "views": 1106
+  "views": 1109,
+  "views_7d": 1109
  },
  "7691688025369120022": {
   "created": 1790860683,
@@ -11579,7 +11667,8 @@
   "hook": "The best tip if you're job hunting right now: make your CV ATS-friendly!",
   "judged": false,
   "mature": false,
-  "views": 4247
+  "views": 4260,
+  "views_7d": 4260
  },
  "7691691461867212065": {
   "created": 1790861478,
@@ -11589,7 +11678,8 @@
   "hook": "I got so many rejection emails I thought I was useless, until I learned that ATS software filters CVs before anyone reads them",
   "judged": false,
   "mature": false,
-  "views": 1035
+  "views": 1051,
+  "views_7d": 1051
  },
  "7691696030080945440": {
   "created": 1790862543,
@@ -11619,7 +11709,8 @@
   "hook": "In Greece, anyone can do anything 😅 (caption only, no on-screen text or speech)",
   "judged": false,
   "mature": false,
-  "views": 3173
+  "views": 3204,
+  "views_7d": 3204
  },
  "7691705248309595414": {
   "created": 1790864692,
@@ -11639,7 +11730,8 @@
   "hook": "Shocked by my emails: I have 10 new job interviews to go to! You just have to redo all your CVs - big difference.",
   "judged": false,
   "mature": false,
-  "views": 1179
+  "views": 1194,
+  "views_7d": 1194
  },
  "7691708914039196930": {
   "created": 1790865545,
@@ -11649,7 +11741,8 @@
   "hook": "If you're job hunting in 2026 and can't find work, I'm your person - I brought you a free website that helps improve your CV (JobStep).",
   "judged": false,
   "mature": false,
-  "views": 1645
+  "views": 1652,
+  "views_7d": 1652
  },
  "7691710224322841888": {
   "created": 1790865846,
@@ -11659,7 +11752,8 @@
   "hook": "old CVs not ATS compliant - ATS filter rejects",
   "judged": false,
   "mature": false,
-  "views": 6930
+  "views": 6983,
+  "views_7d": 6983
  },
  "7691717100955585824": {
   "created": 1790867448,
@@ -11669,7 +11763,8 @@
   "hook": "secondo voi qual è il CV migliore - pretty Canva CV vs ATS-passing CV",
   "judged": false,
   "mature": false,
-  "views": 2179
+  "views": 2241,
+  "views_7d": 2241
  },
  "7691723447621127457": {
   "created": 1790868923,
@@ -11679,7 +11774,8 @@
   "hook": "POV: you keep getting rejected / you only get rejections",
   "judged": false,
   "mature": false,
-  "views": 379
+  "views": 381,
+  "views_7d": 381
  },
  "7691729081624218912": {
   "created": 1790870236,
@@ -11689,7 +11785,8 @@
   "hook": "Sorry, but LinkedIn can do THIS now?? Why didn't anyone show me this before?",
   "judged": false,
   "mature": false,
-  "views": 1184
+  "views": 1196,
+  "views_7d": 1196
  },
  "7691738999437774102": {
   "created": 1790872550,
@@ -11699,7 +11796,8 @@
   "hook": "Thousands of job emails in one day - I opened my inbox and found tons of interview invitations after months of nothing",
   "judged": false,
   "mature": false,
-  "views": 1769
+  "views": 1772,
+  "views_7d": 1772
  },
  "7691742699883482400": {
   "created": 1790873408,
@@ -11709,7 +11807,8 @@
   "hook": "Ranking of job application sites - do you agree with this ranking?",
   "judged": false,
   "mature": false,
-  "views": 439
+  "views": 440,
+  "views_7d": 440
  },
  "7691743050317483286": {
   "created": 1790873492,
@@ -11749,7 +11848,8 @@
   "hook": "how to prevent an AI job rejection (KI Jobabsage)",
   "judged": false,
   "mature": false,
-  "views": 3164
+  "views": 3214,
+  "views_7d": 3214
  },
  "7691750775785082134": {
   "created": 1790875292,
@@ -11759,7 +11859,8 @@
   "hook": "If someone tells you they urgently need your CV today, what do you do? I made it like everyone else, but nobody would hire me, then I heard about JobStep.",
   "judged": false,
   "mature": false,
-  "views": 1008
+  "views": 1013,
+  "views_7d": 1013
  },
  "7691756607645961504": {
   "created": 1790876646,
@@ -11776,10 +11877,11 @@
   "format": "A202610061328",
   "german": false,
   "handle": "career.tea.with.d",
-  "hook": "Top 10 best employers in Greece (a list of companies; what makes an employer 'good'?)",
+  "hook": "They say these companies are the best ones to work for in Greece. Yeah, but what does 'best company' even mean?",
   "judged": true,
   "mature": false,
-  "views": 230600
+  "views": 231800,
+  "views_7d": 231800
  },
  "7691757552576548118": {
   "created": 1790876868,
@@ -11789,7 +11891,8 @@
   "hook": "POV: you applied to 30 jobs in one month and got rejected; I found a site that tailors a CV to any job link",
   "judged": false,
   "mature": false,
-  "views": 991
+  "views": 1000,
+  "views_7d": 1000
  },
  "7691759794348150049": {
   "created": 1790877388,
@@ -11799,7 +11902,8 @@
   "hook": "Job hunting for the first time or after a long break in 2026? Let me explain how it works now: sending 2 CVs a day isn't enough, companies use ATS/AI filters, so use the tool to tailor your CV to each job link.",
   "judged": false,
   "mature": false,
-  "views": 1639
+  "views": 1650,
+  "views_7d": 1650
  },
  "7691760405047233810": {
   "created": 1790877536,
@@ -11809,7 +11913,8 @@
   "hook": "got the job after 250 applications",
   "judged": false,
   "mature": false,
-  "views": 3687
+  "views": 3783,
+  "views_7d": 3783
  },
  "7691761642371091734": {
   "created": 1790877819,
@@ -11819,7 +11924,8 @@
   "hook": "Imagine still being unemployed while this literally exists... (save this video, you'll thank yourself later)",
   "judged": false,
   "mature": false,
-  "views": 972
+  "views": 980,
+  "views_7d": 980
  },
  "7691761828044508449": {
   "created": 1790877859,
@@ -11829,7 +11935,8 @@
   "hook": "MRZIM OVO (I hate this)",
   "judged": false,
   "mature": false,
-  "views": 54000
+  "views": 55800,
+  "views_7d": 55800
  },
  "7691762321563290882": {
   "created": 1790877980,
@@ -11839,7 +11946,8 @@
   "hook": "A friendly reminder for job hunting: STOP (doing this) - it doesn't work",
   "judged": false,
   "mature": false,
-  "views": 28300
+  "views": 30500,
+  "views_7d": 30500
  },
  "7691763488653331745": {
   "created": 1790878247,
@@ -11849,7 +11957,8 @@
   "hook": "REJECTED - graphic elements and no keywords fail systems",
   "judged": false,
   "mature": false,
-  "views": 1910
+  "views": 1932,
+  "views_7d": 1932
  },
  "7691764899000880386": {
   "created": 1790878580,
@@ -11859,7 +11968,8 @@
   "hook": "Something HR doesn't want you to know",
   "judged": false,
   "mature": false,
-  "views": 9651
+  "views": 9690,
+  "views_7d": 9690
  },
  "7691765904660647200": {
   "created": 1790878812,
@@ -11879,7 +11989,8 @@
   "hook": "Your best tip if you're job hunting right now (silent text hook, ad for a CV website)",
   "judged": false,
   "mature": false,
-  "views": 476
+  "views": 479,
+  "views_7d": 479
  },
  "7691767572567428354": {
   "created": 1790879199,
@@ -11889,7 +12000,8 @@
   "hook": "I applied for a job yesterday and the recruiter replied today: your application was rejected in under ten seconds, one of the worst 5% this month. Her advice: fix your CV on this site.",
   "judged": false,
   "mature": false,
-  "views": 649
+  "views": 654,
+  "views_7d": 654
  },
  "7691768633609047317": {
   "created": 1790879449,
@@ -11899,7 +12011,8 @@
   "hook": "Recruiters don't actually read your CV anymore: companies use ATS keyword filters, so check your CV before sending it.",
   "judged": false,
   "mature": false,
-  "views": 1082
+  "views": 1084,
+  "views_7d": 1084
  },
  "7691770702000704790": {
   "created": 1790879931,
@@ -11909,7 +12022,8 @@
   "hook": "I got a rejection 2 minutes after applying - how can anyone have seen my CV in that time? Check your CV.",
   "judged": false,
   "mature": false,
-  "views": 2623
+  "views": 2654,
+  "views_7d": 2654
  },
  "7691772162050379030": {
   "created": 1790880269,
@@ -11919,7 +12033,8 @@
   "hook": "Are you applying for a job for the first time in your life, or after a long break?",
   "judged": false,
   "mature": false,
-  "views": 6901
+  "views": 6923,
+  "views_7d": 6923
  },
  "7691785463706766625": {
   "created": 1790883364,
@@ -11929,7 +12044,8 @@
   "hook": "am I really the only one who didn't know (template CV tools)",
   "judged": false,
   "mature": false,
-  "views": 660
+  "views": 664,
+  "views_7d": 664
  },
  "7691787878929632534": {
   "created": 1790883928,
@@ -11939,7 +12055,8 @@
   "hook": "The red question: do you think you have a good CV? Put it to the test on the app.",
   "judged": false,
   "mature": false,
-  "views": 1538
+  "views": 1567,
+  "views_7d": 1567
  },
  "7691793749382270230": {
   "created": 1790885295,
@@ -11949,7 +12066,8 @@
   "hook": "I spent 40 hours on LinkedIn job hunting until I found JobStep, where a CV tailored to the job ad took 20 minutes and got me replies",
   "judged": false,
   "mature": false,
-  "views": 799
+  "views": 802,
+  "views_7d": 802
  },
  "7691801165876464918": {
   "created": 1790887024,
@@ -11959,7 +12077,8 @@
   "hook": "I would marry the guy from HR who showed me this",
   "judged": false,
   "mature": false,
-  "views": 4149
+  "views": 4166,
+  "views_7d": 4166
  },
  "7691808913456516374": {
   "created": 1790888831,
@@ -11969,7 +12088,8 @@
   "hook": "Unknown - no on-screen text or speech; only a caption with generic job-search hashtags (marked as an ad)",
   "judged": false,
   "mature": false,
-  "views": 1682
+  "views": 1744,
+  "views_7d": 1744
  },
  "7691818420559531284": {
   "created": 1790891043,
@@ -11979,7 +12099,8 @@
   "hook": "recruiters don't even read your CV",
   "judged": false,
   "mature": false,
-  "views": 4178
+  "views": 4187,
+  "views_7d": 4187
  },
  "7691818460237597984": {
   "created": 1790891051,
@@ -11989,7 +12110,8 @@
   "hook": "How do I explain to my parents that nobody hands in a CV in person anymore? Everything is online.",
   "judged": false,
   "mature": false,
-  "views": 1017
+  "views": 1022,
+  "views_7d": 1022
  },
  "7691824563201543457": {
   "created": 1790892470,
@@ -11999,7 +12121,8 @@
   "hook": "How did she get a job in 20 minutes?! My friend booked five interviews over lunch and told me about the app that did it",
   "judged": false,
   "mature": false,
-  "views": 3607
+  "views": 3619,
+  "views_7d": 3619
  },
  "7691859410079059220": {
   "created": 1790900583,
@@ -12009,7 +12132,8 @@
   "hook": "Get a job using this website: upload your CV so it passes ATS filters, and now I have 10+ job offers",
   "judged": false,
   "mature": false,
-  "views": 2848
+  "views": 2877,
+  "views_7d": 2877
  },
  "7691862259819187476": {
   "created": 1790901252,
@@ -12039,7 +12163,8 @@
   "hook": "If you're just starting to look for internships, watch this",
   "judged": false,
   "mature": false,
-  "views": 1131
+  "views": 1140,
+  "views_7d": 1140
  },
  "7691885362414701832": {
   "created": 1790906628,
@@ -12049,7 +12174,8 @@
   "hook": "Why did nobody tell me I could do this on LinkedIn? Copy the job link, paste it into JobStep to get a compatibility score and a CV tailored to that job.",
   "judged": false,
   "mature": false,
-  "views": 1704
+  "views": 1729,
+  "views_7d": 1729
  },
  "7691892809342684424": {
   "created": 1790908367,
@@ -12059,7 +12185,8 @@
   "hook": "My uncle is a recruiter and showed me how to find a job in 24 hours",
   "judged": false,
   "mature": false,
-  "views": 4420
+  "views": 4462,
+  "views_7d": 4462
  },
  "7691906489476336904": {
   "created": 1790911551,
@@ -12079,7 +12206,8 @@
   "hook": "If you're job hunting for the first time or after a long break, here's how things work today: sending the same CV isn't enough because ATS/AI filters rank CVs, so you need a tailored CV per vacancy.",
   "judged": false,
   "mature": false,
-  "views": 4534
+  "views": 4569,
+  "views_7d": 4569
  },
  "7691931564787240214": {
   "created": 1790917399,
@@ -12099,7 +12227,8 @@
   "hook": "Job hunting for the first time or after a long break? Here's how it works now: companies use AI/ATS, so you need a tailored CV for every job, and who wants to spend hours on that? Use AI too.",
   "judged": false,
   "mature": false,
-  "views": 959
+  "views": 971,
+  "views_7d": 971
  },
  "7691952320266915094": {
   "created": 1790922221,
@@ -12119,7 +12248,8 @@
   "hook": "I just opened my inbox and I'm shocked: 26 interview requests after I redid my CV to pass the ATS filters",
   "judged": false,
   "mature": false,
-  "views": 1955
+  "views": 1972,
+  "views_7d": 1972
  },
  "7691978359223356704": {
   "created": 1790928279,
@@ -12139,7 +12269,8 @@
   "hook": "1.3 business degree and no job (rejected at supermarket)",
   "judged": false,
   "mature": false,
-  "views": 1358
+  "views": 1397,
+  "views_7d": 1397
  },
  "7691989925163535649": {
   "created": 1790930975,
@@ -12149,7 +12280,8 @@
   "hook": "My brother is a recruiter and just told me the ultimate trick to find a job in under 24 hours",
   "judged": false,
   "mature": false,
-  "views": 2528
+  "views": 2746,
+  "views_7d": 2746
  },
  "7691995926449212694": {
   "created": 1790932379,
@@ -12169,7 +12301,8 @@
   "hook": "Finding a job in 2026 is a full-time job in itself - anyone relate?",
   "judged": false,
   "mature": false,
-  "views": 4359
+  "views": 4387,
+  "views_7d": 4387
  },
  "7691997309910928672": {
   "created": 1790932689,
@@ -12179,7 +12312,8 @@
   "hook": "Please stop applying to jobs: 200-300 people apply to the same posting with the same CV, so tailor your CV to each offer to stand out.",
   "judged": false,
   "mature": false,
-  "views": 53500
+  "views": 56500,
+  "views_7d": 56500
  },
  "7692003182221806870": {
   "created": 1790934062,
@@ -12189,7 +12323,8 @@
   "hook": "Two candidates apply for the same job, who gets hired?",
   "judged": false,
   "mature": false,
-  "views": 843
+  "views": 844,
+  "views_7d": 844
  },
  "7692006954343943456": {
   "created": 1790934936,
@@ -12199,7 +12334,8 @@
   "hook": "So erkennst du einen schlechten Lebenslauf - pretty CV vs ATS format",
   "judged": false,
   "mature": false,
-  "views": 1362
+  "views": 1369,
+  "views_7d": 1369
  },
  "7692011190989458720": {
   "created": 1790935923,
@@ -12219,7 +12355,8 @@
   "hook": "I sent in my CV on Thursday, had an interview yesterday and start on Wednesday – I redid my CV with JobStep and got a 96/100 ATS score",
   "judged": false,
   "mature": false,
-  "views": 6179
+  "views": 6213,
+  "views_7d": 6213
  },
  "7692019868383857923": {
   "created": 1790937948,
@@ -12229,7 +12366,8 @@
   "hook": "What are you doing to find a job in 2026? (It doesn't take effort, it takes the right way)",
   "judged": false,
   "mature": false,
-  "views": 793
+  "views": 802,
+  "views_7d": 802
  },
  "7692041928283606294": {
   "created": 1790943084,
@@ -12239,7 +12377,8 @@
   "hook": "no hook - caption only Jobstep.io",
   "judged": false,
   "mature": false,
-  "views": 5889
+  "views": 5937,
+  "views_7d": 5937
  },
  "7692045461770767638": {
   "created": 1790943906,
@@ -12249,7 +12388,8 @@
   "hook": "POV: someone is finally helping me create the perfect CV 😍",
   "judged": false,
   "mature": false,
-  "views": 1061
+  "views": 1064,
+  "views_7d": 1064
  },
  "7692051120042020128": {
   "created": 1790945220,
@@ -12259,7 +12399,8 @@
   "hook": "10 Interviewanfragen",
   "judged": false,
   "mature": false,
-  "views": 377
+  "views": 378,
+  "views_7d": 378
  },
  "7692051310417333526": {
   "created": 1790945265,
@@ -12289,7 +12430,8 @@
   "hook": "What!! If I had known about the Jobstep.io site sooner, I would have been hired long ago...",
   "judged": false,
   "mature": false,
-  "views": 773
+  "views": 780,
+  "views_7d": 780
  },
  "7692069602548829473": {
   "created": 1790949519,
@@ -12299,7 +12441,8 @@
   "hook": "The uglier your CV, the better – a recruiter (my sister) says pretty CVs with icons can't be read by ATS systems",
   "judged": false,
   "mature": false,
-  "views": 292
+  "views": 295,
+  "views_7d": 295
  },
  "7692075940716858656": {
   "created": 1790950997,
@@ -12309,7 +12452,8 @@
   "hook": "I got 100 rejections on my CV, and nobody wants to hire me. A friend told me nobody reads my CV because it isn't ATS-formatted.",
   "judged": false,
   "mature": false,
-  "views": 1171
+  "views": 1187,
+  "views_7d": 1187
  },
  "7692076184032513313": {
   "created": 1790951053,
@@ -12319,7 +12463,8 @@
   "hook": "Lie on your CV: add a few numbers or slightly higher performance, because nobody ever checks it",
   "judged": false,
   "mature": false,
-  "views": 954
+  "views": 969,
+  "views_7d": 969
  },
  "7692078572298685728": {
   "created": 1790951611,
@@ -12329,7 +12474,8 @@
   "hook": "I could marry the HR guy for showing me this",
   "judged": false,
   "mature": false,
-  "views": 906
+  "views": 909,
+  "views_7d": 909
  },
  "7692091469166857494": {
   "created": 1790954616,
@@ -12339,7 +12485,8 @@
   "hook": "Tired of getting rejections on student job applications? Upload your CV to JobStep.io and it gets analyzed and improved.",
   "judged": false,
   "mature": false,
-  "views": 970
+  "views": 973,
+  "views_7d": 973
  },
  "7692097673469381910": {
   "created": 1790956059,
@@ -12349,7 +12496,8 @@
   "hook": "WHAT?!? I can actually get the job I want - with JobStep.io!",
   "judged": false,
   "mature": false,
-  "views": 561
+  "views": 563,
+  "views_7d": 563
  },
  "7692100135911705888": {
   "created": 1790956629,
@@ -12359,7 +12507,8 @@
   "hook": "I somehow have to explain this to my parents 😭 (then: I just got a job-offer email after countless CVs, here's the tool that fixed it)",
   "judged": false,
   "mature": false,
-  "views": 5213
+  "views": 5256,
+  "views_7d": 5256
  },
  "7692100963422784800": {
   "created": 1790956824,
@@ -12379,7 +12528,8 @@
   "hook": "Ad: so smart! Especially if you're like me and have no clue about CVs or job applications",
   "judged": false,
   "mature": false,
-  "views": 574
+  "views": 577,
+  "views_7d": 577
  },
  "7692106916784344342": {
   "created": 1790958214,
@@ -12389,7 +12539,8 @@
   "hook": "POV: You're unemployed, but the rent still has to be paid tomorrow... (caption: job secured, rent paid)",
   "judged": false,
   "mature": false,
-  "views": 3181
+  "views": 3220,
+  "views_7d": 3220
  },
  "7692107137413025047": {
   "created": 1790958264,
@@ -12399,7 +12550,8 @@
   "hook": "Remote work from the village (only a Jobstep.io on-screen text and a caption, no speech)",
   "judged": false,
   "mature": false,
-  "views": 1919
+  "views": 1930,
+  "views_7d": 1930
  },
  "7692107212176575777": {
   "created": 1790958278,
@@ -12409,7 +12561,8 @@
   "hook": "These are the CVs that always get rejected: two reasons you can't find a job (graphics-heavy CVs and missing keywords)",
   "judged": false,
   "mature": false,
-  "views": 2111
+  "views": 2140,
+  "views_7d": 2140
  },
  "7692110099149491489": {
   "created": 1790958948,
@@ -12419,7 +12572,8 @@
   "hook": "You're driving me crazy, I'm quitting - why stay in a toxic work environment?",
   "judged": false,
   "mature": false,
-  "views": 210
+  "views": 211,
+  "views_7d": 211
  },
  "7692112433476832534": {
   "created": 1790959495,
@@ -12429,7 +12583,8 @@
   "hook": "I sent 200 job applications and all were ignored, but this is my inbox since I fixed my CV with one site",
   "judged": false,
   "mature": false,
-  "views": 949
+  "views": 950,
+  "views_7d": 950
  },
  "7692119203016494369": {
   "created": 1790961071,
@@ -12439,7 +12594,8 @@
   "hook": "job search in 2026 is a circus",
   "judged": false,
   "mature": false,
-  "views": 6199
+  "views": 6384,
+  "views_7d": 6384
  },
  "7692120032943328534": {
   "created": 1790961265,
@@ -12449,7 +12605,8 @@
   "hook": "I'd happily marry the guy from HR for showing me this - since when is it so easy to find a job?",
   "judged": false,
   "mature": false,
-  "views": 24400
+  "views": 24600,
+  "views_7d": 24600
  },
  "7692123414198242593": {
   "created": 1790962050,
@@ -12459,7 +12616,8 @@
   "hook": "Tell me what WTF job France Travail (the French unemployment agency) offered you - who can do worse than me?",
   "judged": false,
   "mature": false,
-  "views": 225
+  "views": 228,
+  "views_7d": 228
  },
  "7692125028871146760": {
   "created": 1790962429,
@@ -12469,7 +12627,8 @@
   "hook": "dobila sam 20 intervjua? (I got 20 interviews?)",
   "judged": false,
   "mature": false,
-  "views": 56400
+  "views": 56500,
+  "views_7d": 56500
  },
  "7692126256208334102": {
   "created": 1790962712,
@@ -12479,7 +12638,8 @@
   "hook": "No company wants me; I sent them this CV and got rejected, then sent two others and they said I could just pick one, then I found this site that scores my CV against the job link",
   "judged": false,
   "mature": false,
-  "views": 1280
+  "views": 1292,
+  "views_7d": 1292
  },
  "7692127560796245266": {
   "created": 1790963017,
@@ -12489,7 +12649,8 @@
   "hook": "My brother is a recruiter and showed me how to find a job in 24 hours",
   "judged": false,
   "mature": false,
-  "views": 647
+  "views": 662,
+  "views_7d": 662
  },
  "7692129941965606166": {
   "created": 1790963573,
@@ -12499,7 +12660,8 @@
   "hook": "You do NOT need work experience to get a job",
   "judged": false,
   "mature": false,
-  "views": 959
+  "views": 972,
+  "views_7d": 972
  },
  "7692131198633725187": {
   "created": 1790963865,
@@ -12509,7 +12671,8 @@
   "hook": "3 reasons we can't find a job (sending too few CVs, a bad CV that fails ATS, and lying in the interview)",
   "judged": false,
   "mature": false,
-  "views": 909
+  "views": 914,
+  "views_7d": 914
  },
  "7692131579564444961": {
   "created": 1790963951,
@@ -12529,7 +12692,8 @@
   "hook": "I finally got a job! It only took me 340 applications, 100 depressions, 3 interviews, 811771 rejections, 6 months of searching - thanks to JobStep.io",
   "judged": false,
   "mature": false,
-  "views": 54800
+  "views": 56100,
+  "views_7d": 56100
  },
  "7692137403749862678": {
   "created": 1790965308,
@@ -12539,7 +12703,8 @@
   "hook": "POV: I finally understand why everyone is deleting ChatGPT - 1. copy the job ad link, 2. go to this website, 3. paste the link and add your CV, 4. accept the changes, and you get a CV tailored to the job posting.",
   "judged": false,
   "mature": false,
-  "views": 17300
+  "views": 17700,
+  "views_7d": 17700
  },
  "7692139924786613526": {
   "created": 1790965897,
@@ -12549,17 +12714,19 @@
   "hook": "I've received 100+ job offers (hold for 2x)",
   "judged": false,
   "mature": false,
-  "views": 48600
+  "views": 48800,
+  "views_7d": 48800
  },
  "7692141310198713633": {
   "created": 1790966215,
-  "format": null,
+  "format": "A20261006183623",
   "german": true,
   "handle": "lissa.jobtipps",
-  "hook": "Lügt in eurem Lebenslauf (lie on your CV)",
+  "hook": "Lie on your CV 🚨🚨‼️",
   "judged": true,
   "mature": false,
-  "views": 217100
+  "views": 235400,
+  "views_7d": 235400
  },
  "7692143642164710689": {
   "created": 1790966758,
@@ -12589,7 +12756,8 @@
   "hook": "Toksičan savjet za pronalazak posla (toxic job search tip)",
   "judged": false,
   "mature": false,
-  "views": 3393
+  "views": 3428,
+  "views_7d": 3428
  },
  "7692145675500277014": {
   "created": 1790967234,
@@ -12599,7 +12767,8 @@
   "hook": "Stop making your CV in Canva: it isn't ATS-proof, so recruiters never see it. Other people make applying easy for us.",
   "judged": false,
   "mature": false,
-  "views": 809
+  "views": 810,
+  "views_7d": 810
  },
  "7692148305312189703": {
   "created": 1790967855,
@@ -12609,7 +12778,8 @@
   "hook": "got the job after 200 applications 6 months",
   "judged": false,
   "mature": false,
-  "views": 3574
+  "views": 3609,
+  "views_7d": 3609
  },
  "7692154477012339990": {
   "created": 1790969285,
@@ -12619,7 +12789,8 @@
   "hook": "Jobstep.io can now do THIS?!? It analyzes your CV and transforms it into the perfect version in seconds",
   "judged": false,
   "mature": false,
-  "views": 824
+  "views": 828,
+  "views_7d": 828
  },
  "7692155278501973270": {
   "created": 1790969471,
@@ -12629,7 +12800,8 @@
   "hook": "CVs that look like these won't get you a job: they never reach HR because ATS filters reject them automatically.",
   "judged": false,
   "mature": false,
-  "views": 2556
+  "views": 2619,
+  "views_7d": 2619
  },
  "7692158672578956566": {
   "created": 1790970262,
@@ -12639,7 +12811,8 @@
   "hook": "Why don't employers reply to my job applications? I tested my CV in JobStep and the ATS score showed why: ATS filters CVs quickly.",
   "judged": false,
   "mature": false,
-  "views": 382
+  "views": 416,
+  "views_7d": 416
  },
  "7692159984804662561": {
   "created": 1790970566,
@@ -12649,7 +12822,8 @@
   "hook": "I recruiter NON vogliono che tu lo sappia (recruiters don't want you to know)",
   "judged": false,
   "mature": false,
-  "views": 1527
+  "views": 1564,
+  "views_7d": 1564
  },
  "7692165628844690710": {
   "created": 1790971881,
@@ -12659,7 +12833,8 @@
   "hook": "I'm speechless... excuse me, WHAT?! This is how my job application was answered",
   "judged": false,
   "mature": false,
-  "views": 19900
+  "views": 21200,
+  "views_7d": 21200
  },
  "7692177887264328961": {
   "created": 1790974739,
@@ -12669,7 +12844,8 @@
   "hook": "30 seconds to get any job you want",
   "judged": false,
   "mature": false,
-  "views": 1107
+  "views": 1115,
+  "views_7d": 1115
  },
  "7692190996460784928": {
   "created": 1790977787,
@@ -12679,7 +12855,8 @@
   "hook": "Employer secrets: I worked at a big company and HR people don't want you to know this - I'll show you how it's done (paste job link + CV into JobStep)",
   "judged": false,
   "mature": false,
-  "views": 5025
+  "views": 5049,
+  "views_7d": 5049
  },
  "7692198067986009376": {
   "created": 1790979432,
@@ -12689,7 +12866,8 @@
   "hook": "If your CV looks like this, throw it away! A friend who works in HR told me my CV was bad and recommended JobStep; I scored low, followed the tips, improved the score and now have three interviews.",
   "judged": false,
   "mature": false,
-  "views": 44300
+  "views": 46900,
+  "views_7d": 46900
  },
  "7692227814518508808": {
   "created": 1790986363,
@@ -12699,7 +12877,8 @@
   "hook": "It annoys me when people say unemployed people do nothing - the creator breaks down an unemployed person's day to show how little time is left for job hunting, then presents the tool that tailors a CV to each job ad.",
   "judged": false,
   "mature": false,
-  "views": 2671
+  "views": 2672,
+  "views_7d": 2672
  },
  "7692228508038434066": {
   "created": 1790986524,
@@ -12709,7 +12888,8 @@
   "hook": "How to stop being 'unemploy-fairy': I just got out of unemployment, and the tip is your CV - Canva CVs don't pass filters, a friend in HR told me to use the Harvard method with this AI app",
   "judged": false,
   "mature": false,
-  "views": 86400
+  "views": 86600,
+  "views_7d": 86600
  },
  "7692260615275973896": {
   "created": 1790993996,
@@ -12729,7 +12909,8 @@
   "hook": "3 steps to find a job in very little time (I'm deleting this video soon, so listen closely)",
   "judged": false,
   "mature": false,
-  "views": 626
+  "views": 631,
+  "views_7d": 631
  },
  "7692308262619761938": {
   "created": 1791005092,
@@ -12739,7 +12920,8 @@
   "hook": "A super toxic tip to find a job faster and avoid hours of fruitless applications: use an AI tool that tailors your CV to pass ATS filters.",
   "judged": false,
   "mature": false,
-  "views": 1441
+  "views": 1449,
+  "views_7d": 1449
  },
  "7692337593677024534": {
   "created": 1791011923,
@@ -12749,7 +12931,8 @@
   "hook": "How to turn a 1/10 CV into a 10/10 CV - go to the jobstep.io site",
   "judged": false,
   "mature": false,
-  "views": 955
+  "views": 967,
+  "views_7d": 967
  },
  "7692342682022186263": {
   "created": 1791013110,
@@ -12759,7 +12942,8 @@
   "hook": "You don't need work experience to get a job - if your CV passes the ATS filter, companies will want you anyway",
   "judged": false,
   "mature": false,
-  "views": 937
+  "views": 951,
+  "views_7d": 951
  },
  "7692362453023231254": {
   "created": 1791017707,
@@ -12769,7 +12953,8 @@
   "hook": "Make your CV for fun (but seriously) - CV in 1 minute",
   "judged": false,
   "mature": false,
-  "views": 2047
+  "views": 2080,
+  "views_7d": 2080
  },
  "7692378708522306849": {
   "created": 1791021490,
@@ -12779,7 +12964,8 @@
   "hook": "These CVs get rejected: fancy CVs with icons and graphs can't be read by ATS and lack the right keywords, so they never reach the recruiter.",
   "judged": false,
   "mature": false,
-  "views": 2157
+  "views": 2174,
+  "views_7d": 2174
  },
  "7692387066088361218": {
   "created": 1791023439,
@@ -12789,7 +12975,8 @@
   "hook": "950 applications, 8 interviews, 9 months searching, 9538 nervous breakdowns, 2 depressions - I FOUND A JOB (thanks to my mom who showed me this website)",
   "judged": false,
   "mature": false,
-  "views": 823
+  "views": 833,
+  "views_7d": 833
  },
  "7692400374342241558": {
   "created": 1791026536,
@@ -12809,7 +12996,8 @@
   "hook": "I didn't know this was a thing in job hunting: your CV should be ATS-friendly",
   "judged": false,
   "mature": false,
-  "views": 4931
+  "views": 4946,
+  "views_7d": 4946
  },
  "7692420830642343190": {
   "created": 1791031301,
@@ -12819,17 +13007,19 @@
   "hook": "Got a job after 400 applications, 4 interviews, 7 depressions and countless hours spent applying - finally made it thanks to jobstep.io",
   "judged": false,
   "mature": false,
-  "views": 3615
+  "views": 3641,
+  "views_7d": 3641
  },
  "7692421729553108246": {
   "created": 1791031510,
   "format": "N01",
   "german": false,
   "handle": "avazdagbok",
-  "hook": "Today's CV no longer works! Did you know this?",
+  "hook": "How do you explain to your parents that you can't write CVs like this anymore?",
   "judged": true,
   "mature": false,
-  "views": 121500
+  "views": 128400,
+  "views_7d": 128400
  },
  "7692426592970116374": {
   "created": 1791032642,
@@ -12839,7 +13029,8 @@
   "hook": "How I found a job in 20 minutes - I'll probably delete this video in 2 hours, so save it",
   "judged": false,
   "mature": false,
-  "views": 816
+  "views": 817,
+  "views_7d": 817
  },
  "7692429502600809761": {
   "created": 1791033316,
@@ -12859,7 +13050,8 @@
   "hook": "the secret of HR workers - Canva CV never accepted",
   "judged": false,
   "mature": false,
-  "views": 1038
+  "views": 1045,
+  "views_7d": 1045
  },
  "7692437450110668034": {
   "created": 1791035170,
@@ -12879,7 +13071,8 @@
   "hook": "HR doesn't want you to know this: I just quit my HR job, so here are the secrets. Your CVs get filtered by ATS before anyone sees them, so they need to be ugly.",
   "judged": false,
   "mature": false,
-  "views": 4404
+  "views": 4418,
+  "views_7d": 4418
  },
  "7692446830814072096": {
   "created": 1791037351,
@@ -12889,7 +13082,8 @@
   "hook": "I left my job in HR, I'll reveal the recruiters' secret: nobody wants to see your CV because Canva templates get auto-rejected by ATS",
   "judged": false,
   "mature": false,
-  "views": 703
+  "views": 717,
+  "views_7d": 717
  },
  "7692447215477886240": {
   "created": 1791037441,
@@ -12899,7 +13093,8 @@
   "hook": "How do I explain to my parents that it's not easy to find a job (even after graduating)?",
   "judged": false,
   "mature": false,
-  "views": 1484
+  "views": 1510,
+  "views_7d": 1510
  },
  "7692448687443692833": {
   "created": 1791037783,
@@ -12909,7 +13104,8 @@
   "hook": "Pov SOFORT einen Job finden - job in 2 hours",
   "judged": false,
   "mature": false,
-  "views": 1084
+  "views": 1091,
+  "views_7d": 1091
  },
  "7692450519842901270": {
   "created": 1791038212,
@@ -12919,7 +13115,8 @@
   "hook": "Before sending my CV I always do one thing: I used to send the same CV to every company, now I paste the job ad into JobStep and AI tailors it.",
   "judged": false,
   "mature": false,
-  "views": 3279
+  "views": 3290,
+  "views_7d": 3290
  },
  "7692453559522135328": {
   "created": 1791038918,
@@ -12929,7 +13126,8 @@
   "hook": "pov du suchst einen Job - how it works today",
   "judged": false,
   "mature": false,
-  "views": 840
+  "views": 841,
+  "views_7d": 841
  },
  "7692456971336830241": {
   "created": 1791039713,
@@ -12949,7 +13147,8 @@
   "hook": "How am I supposed to explain this to my parents… (then a story of constant rejections until a recruiter explained the ATS filter problem)",
   "judged": false,
   "mature": false,
-  "views": 1185
+  "views": 1190,
+  "views_7d": 1190
  },
  "7692463247538113814": {
   "created": 1791041175,
@@ -12959,7 +13158,8 @@
   "hook": "I'd bet a liter (bet) you can't guess which of my CVs got me my job - you have three seconds",
   "judged": false,
   "mature": false,
-  "views": 1826
+  "views": 1892,
+  "views_7d": 1892
  },
  "7692463362076085526": {
   "created": 1791041201,
@@ -12969,7 +13169,8 @@
   "hook": "Please don't make your CV in Canva: ATS systems reject it, so the recruiter never sees it.",
   "judged": false,
   "mature": false,
-  "views": 1174
+  "views": 1179,
+  "views_7d": 1179
  },
  "7692465437782641942": {
   "created": 1791041686,
@@ -12979,7 +13180,8 @@
   "hook": "What's the difference between these two CVs? One got me zero replies, the other got 5 interviews because it passes the ATS filter (made with jobstep.io)",
   "judged": false,
   "mature": false,
-  "views": 71500
+  "views": 73200,
+  "views_7d": 73200
  },
  "7692466472706182422": {
   "created": 1791041927,
@@ -12989,7 +13191,8 @@
   "hook": "Don't send your job application before you've done this!",
   "judged": false,
   "mature": false,
-  "views": 894
+  "views": 934,
+  "views_7d": 934
  },
  "7692470085478321431": {
   "created": 1791042768,
@@ -13009,7 +13212,8 @@
   "hook": "The HR guy who showed me this deserves a statue",
   "judged": false,
   "mature": false,
-  "views": 74400
+  "views": 74600,
+  "views_7d": 74600
  },
  "7692474607890140438": {
   "created": 1791043821,
@@ -13019,7 +13223,8 @@
   "hook": "Tired of getting rejections on job applications?",
   "judged": false,
   "mature": false,
-  "views": 899
+  "views": 901,
+  "views_7d": 901
  },
  "7692477319138659606": {
   "created": 1791044453,
@@ -13029,7 +13234,8 @@
   "hook": "It's not hard to pass the ATS filter (sponsored post for JobStep)",
   "judged": false,
   "mature": false,
-  "views": 675
+  "views": 696,
+  "views_7d": 696
  },
  "7692478528595578144": {
   "created": 1791044733,
@@ -13049,7 +13255,8 @@
   "hook": "I got over 20 job offers",
   "judged": false,
   "mature": false,
-  "views": 5369
+  "views": 5502,
+  "views_7d": 5502
  },
  "7692480178575985953": {
   "created": 1791045114,
@@ -13079,7 +13286,8 @@
   "hook": "POV: new government = new job opportunities = new CV",
   "judged": false,
   "mature": false,
-  "views": 648
+  "views": 658,
+  "views_7d": 658
  },
  "7692504985896095008": {
   "created": 1791050891,
@@ -13099,7 +13307,8 @@
   "hook": "I could marry the HR guy for showing me this",
   "judged": false,
   "mature": false,
-  "views": 5189
+  "views": 5224,
+  "views_7d": 5224
  },
  "7692508564866305313": {
   "created": 1791051724,
@@ -13109,7 +13318,8 @@
   "hook": "\"We regret to inform you we chose another candidate\" - lies, lies, lies: ATS filters automatically reject your CV before anyone reads it.",
   "judged": false,
   "mature": false,
-  "views": 565
+  "views": 576,
+  "views_7d": 576
  },
  "7692514146973224214": {
   "created": 1791053027,
@@ -13119,7 +13329,8 @@
   "hook": "POV: you're unemployed and have to pay rent tomorrow - copy the job ad link, paste it into JobStep, get your CV score, tailor the CV to that exact ad, find a job",
   "judged": false,
   "mature": false,
-  "views": 23300
+  "views": 23400,
+  "views_7d": 23400
  },
  "7692520165124099348": {
   "created": 1791054428,
@@ -13129,7 +13340,8 @@
   "hook": "POV: I finally understand why everyone is deleting ChatGPT - 5 numbered steps to get a CV tailored to a job ad (jobstep.io)",
   "judged": false,
   "mature": false,
-  "views": 1840
+  "views": 1870,
+  "views_7d": 1870
  },
  "7692520392988036374": {
   "created": 1791054480,
@@ -13139,17 +13351,19 @@
   "hook": "100 applications, 0 job offers, and I just found this app 😭😂 (caption: 'Since when does this exist??')",
   "judged": false,
   "mature": false,
-  "views": 5138
+  "views": 5203,
+  "views_7d": 5203
  },
  "7692522740556893472": {
   "created": 1791055025,
   "format": "N01",
   "german": false,
   "handle": "job.by.niki",
-  "hook": "how to explain to parents",
+  "hook": "How do I explain to my parents…? 🤡",
   "judged": true,
   "mature": false,
-  "views": 114300
+  "views": 129800,
+  "views_7d": 129800
  },
  "7692527080092994839": {
   "created": 1791056037,
@@ -13159,17 +13373,19 @@
   "hook": "Ad part 7: the lifehack of all time for getting a job faster (caption only, no on-screen text or speech)",
   "judged": false,
   "mature": false,
-  "views": 5625
+  "views": 5689,
+  "views_7d": 5689
  },
  "7692534806348909846": {
   "created": 1791057837,
   "format": "A202610061328",
   "german": false,
   "handle": "career.tea.with.d",
-  "hook": "Greek companies with the best work environment, shown as an on-screen list of top employers, ending with a Jobstep.io tie-in",
+  "hook": "These are the top 5 Greek companies with the best work climate.",
   "judged": true,
   "mature": false,
-  "views": 107700
+  "views": 107800,
+  "views_7d": 107800
  },
  "7692536852691078422": {
   "created": 1791058313,
@@ -13179,7 +13395,8 @@
   "hook": "Applied to over 100 jobs 💀",
   "judged": false,
   "mature": false,
-  "views": 2645
+  "views": 2753,
+  "views_7d": 2753
  },
  "7692537566993698070": {
   "created": 1791058480,
@@ -13189,7 +13406,8 @@
   "hook": "I showed my CV to 10 recruiters and 7 of them said it's BAD - 7 professionals called my CV bad",
   "judged": false,
   "mature": false,
-  "views": 592
+  "views": 613,
+  "views_7d": 613
  },
  "7692538077151071506": {
   "created": 1791058603,
@@ -13199,7 +13417,8 @@
   "hook": "I was unemployed for 8 months and only NOW am I finding this out?! Nobody told me everyone uses the Harvard-style CV now?",
   "judged": false,
   "mature": false,
-  "views": 6691
+  "views": 6706,
+  "views_7d": 6706
  },
  "7692539613218426134": {
   "created": 1791058957,
@@ -13209,17 +13428,19 @@
   "hook": "I got rejected even from a volunteer position - why is it so hard to get hired?",
   "judged": false,
   "mature": false,
-  "views": 1687
+  "views": 1693,
+  "views_7d": 1693
  },
  "7692550993833151762": {
   "created": 1791061610,
   "format": "N01",
   "german": false,
   "handle": "emasavetuje",
-  "hook": "kako ovo da objasnim roditeljima (how do I explain this to my parents)",
+  "hook": "How am I supposed to explain THIS to my parents? 😩",
   "judged": true,
   "mature": false,
-  "views": 156400
+  "views": 157000,
+  "views_7d": 157000
  },
  "7692553702590172448": {
   "created": 1791062234,
@@ -13229,7 +13450,8 @@
   "hook": "The difference between these two CVs? One gets zero replies and zero interviews, the other passes the ATS filters and gets 5 interviews and a job.",
   "judged": false,
   "mature": false,
-  "views": 1111
+  "views": 1131,
+  "views_7d": 1131
  },
  "7692553926465522964": {
   "created": 1791062292,
@@ -13239,7 +13461,8 @@
   "hook": "LinkedIn can do THIS?",
   "judged": false,
   "mature": false,
-  "views": 26300
+  "views": 26500,
+  "views_7d": 26500
  },
  "7692558287346109728": {
   "created": 1791063301,
@@ -13249,7 +13472,8 @@
   "hook": "why do I only learn NOW about a site that writes your application",
   "judged": false,
   "mature": false,
-  "views": 1092
+  "views": 1097,
+  "views_7d": 1097
  },
  "7692559829625212193": {
   "created": 1791063661,
@@ -13259,17 +13483,19 @@
   "hook": "Everyone keeps this trick to themselves!! Did you know this?",
   "judged": false,
   "mature": false,
-  "views": 1
+  "views": 1,
+  "views_7d": 1
  },
  "7692564706321599766": {
   "created": 1791064800,
   "format": null,
   "german": false,
   "handle": "lockinwitheva",
-  "hook": "From 1 November, listing the salary in job ads becomes mandatory in Greece - no more vague 'competitive pay' or 'bus fare covered' - then a skull-emoji pivot to ATS and sending CVs.",
+  "hook": "From November 1, job ads will have to state the salary.",
   "judged": true,
   "mature": false,
-  "views": 152800
+  "views": 154700,
+  "views_7d": 154700
  },
  "7692588828141423904": {
   "created": 1791070417,
@@ -13279,17 +13505,19 @@
   "hook": "The biggest job-search mistake: using one single CV for every job opening",
   "judged": false,
   "mature": false,
-  "views": 720
+  "views": 737,
+  "views_7d": 737
  },
  "7692607504752135432": {
   "created": 1791074770,
   "format": "A202610061334",
   "german": false,
   "handle": "luworks",
-  "hook": "We've entered the best time of year to job hunt (mid-October, before the December rush) - here's a tip to get out of unemployment",
+  "hook": "October is officially here – the best month to look for a job.",
   "judged": true,
   "mature": false,
-  "views": 134800
+  "views": 136900,
+  "views_7d": 136900
  },
  "7692612092842560769": {
   "created": 1791075836,
@@ -13309,7 +13537,8 @@
   "hook": "Unknown: no speech or on-screen text, only the caption 'so easy' with CV/job hashtags",
   "judged": false,
   "mature": false,
-  "views": 1102
+  "views": 1111,
+  "views_7d": 1111
  },
  "7692670363037175048": {
   "created": 1791089406,
@@ -13319,7 +13548,8 @@
   "hook": "You're putting these things on your CV when applying to jobs - stop doing it now (references, overly long personal info, same CV for every vacancy)",
   "judged": false,
   "mature": false,
-  "views": 1000
+  "views": 1003,
+  "views_7d": 1003
  },
  "7692724710647352598": {
   "created": 1791102059,
@@ -13329,7 +13559,8 @@
   "hook": "HR wouldn't want me to tell you this, but I don't want to keep it secret: you can apply to any job anywhere, copy the job link and paste it into Jobstep.io",
   "judged": false,
   "mature": false,
-  "views": 606
+  "views": 655,
+  "views_7d": 655
  },
  "7692747891831622934": {
   "created": 1791107452,
@@ -13339,7 +13570,8 @@
   "hook": "How do you explain to your parents that you haven't gotten a job in months with that CV? (then: my new ATS-friendly CV, thanks to the girl who showed me this lifehack)",
   "judged": false,
   "mature": false,
-  "views": 562
+  "views": 577,
+  "views_7d": 577
  },
  "7692748763546340640": {
   "created": 1791107653,
@@ -13349,7 +13581,8 @@
   "hook": "Who gets the job? (❌💀 suggests one candidate or CV gets rejected)",
   "judged": false,
   "mature": false,
-  "views": 320
+  "views": 320,
+  "views_7d": 320
  },
  "7692749851469106464": {
   "created": 1791107904,
@@ -13359,7 +13592,8 @@
   "hook": "Rejected, rejected, rejected: my pretty CVs all get rejected because recruiters' ATS software filters them; only an ATS-format CV gets through.",
   "judged": false,
   "mature": false,
-  "views": 4142
+  "views": 4196,
+  "views_7d": 4196
  },
  "7692749898785099040": {
   "created": 1791107914,
@@ -13369,7 +13603,8 @@
   "hook": "Who gets the 60k job offer? Two candidates with identical experience and education, but only one has a CV that gets through the ATS filter.",
   "judged": false,
   "mature": false,
-  "views": 651
+  "views": 651,
+  "views_7d": 651
  },
  "7692752782826229025": {
   "created": 1791108585,
@@ -13379,7 +13614,8 @@
   "hook": "If you don't know this in 2026 you'll be lost: sending 2 CVs a day isn't enough, companies use AI/ATS filters, so you need a tailored CV for every job.",
   "judged": false,
   "mature": false,
-  "views": 773
+  "views": 773,
+  "views_7d": 773
  },
  "7692775564695899414": {
   "created": 1791113894,
@@ -13389,7 +13625,8 @@
   "hook": "no hook - caption only Jobstep.io",
   "judged": false,
   "mature": false,
-  "views": 2615
+  "views": 2656,
+  "views_7d": 2656
  },
  "7692795435626269985": {
   "created": 1791118516,
@@ -13399,17 +13636,19 @@
   "hook": "I could marry the HR guy for showing me this",
   "judged": false,
   "mature": false,
-  "views": 1036
+  "views": 1041,
+  "views_7d": 1041
  },
  "7692799896658742560": {
   "created": 1791119556,
-  "format": null,
+  "format": "N10",
   "german": false,
   "handle": "jobtipsmetmarie",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1090
+  "views": 1127,
+  "views_7d": 1127
  },
  "7692802142691773718": {
   "created": 1791120085,
@@ -13419,7 +13658,8 @@
   "hook": "950 applications, 8 interviews, 9 months searching, 9583 nervous breakdowns, 2 depressions - a silent on-screen stats list of the exhausting job search",
   "judged": false,
   "mature": false,
-  "views": 60400
+  "views": 62100,
+  "views_7d": 62100
  },
  "7692802914892533014": {
   "created": 1791120262,
@@ -13429,7 +13669,8 @@
   "hook": "spilling recruiter secrets (no speech)",
   "judged": false,
   "mature": false,
-  "views": 435
+  "views": 438,
+  "views_7d": 438
  },
  "7692807858378853664": {
   "created": 1791121411,
@@ -13439,7 +13680,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 40100
+  "views": 54400,
+  "views_7d": 54400
  },
  "7692808060535917857": {
   "created": 1791121457,
@@ -13449,7 +13691,8 @@
   "hook": "Mein größtes Geheimnis - how to get any job",
   "judged": false,
   "mature": false,
-  "views": 774
+  "views": 781,
+  "views_7d": 781
  },
  "7692808373141589281": {
   "created": 1791121528,
@@ -13459,7 +13702,8 @@
   "hook": "finde einen Job mit dieser Webseite",
   "judged": false,
   "mature": false,
-  "views": 864
+  "views": 868,
+  "views_7d": 868
  },
  "7692809790430465302": {
   "created": 1791121861,
@@ -13469,7 +13713,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 3259
+  "views": 3271,
+  "views_7d": 3271
  },
  "7692818949184015638": {
   "created": 1791123995,
@@ -13479,37 +13724,41 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1165
+  "views": 1190,
+  "views_7d": 1190
  },
  "7692820453475224864": {
   "created": 1791124342,
-  "format": null,
+  "format": "X16",
   "german": false,
   "handle": "stay.with.giulia",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1420
+  "views": 1436,
+  "views_7d": 1436
  },
  "7692822016570707233": {
   "created": 1791124706,
-  "format": null,
+  "format": "A202610061330",
   "german": false,
   "handle": "stay.with.giulia",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 511
+  "views": 533,
+  "views_7d": 533
  },
  "7692825240027630871": {
   "created": 1791125460,
-  "format": null,
+  "format": "N10",
   "german": false,
   "handle": "itswithluna",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 552
+  "views": 558,
+  "views_7d": 558
  },
  "7692826567684279585": {
   "created": 1791125766,
@@ -13519,7 +13768,8 @@
   "hook": "rejected rejected rejected - pretty CVs with no content",
   "judged": false,
   "mature": false,
-  "views": 286
+  "views": 286,
+  "views_7d": 286
  },
  "7692827759109786912": {
   "created": 1791126042,
@@ -13529,17 +13779,19 @@
   "hook": "10 invitations for job interviews",
   "judged": false,
   "mature": false,
-  "views": 454
+  "views": 454,
+  "views_7d": 454
  },
  "7692829268404981014": {
   "created": 1791126398,
   "format": "X16",
   "german": false,
   "handle": "tips.from.ale",
-  "hook": "Recruiters don't want you to know this: your CV from Canva or ChatGPT was never read by a human because it didn't pass the ATS filters",
+  "hook": "Recruiters don't want you to know this!!! 😱😱 Send this clip to as many friends as you can!!",
   "judged": true,
   "mature": false,
-  "views": 135100
+  "views": 144600,
+  "views_7d": 144600
  },
  "7692829274746653974": {
   "created": 1791126398,
@@ -13549,47 +13801,52 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 311
+  "views": 312,
+  "views_7d": 312
  },
  "7692830457909497120": {
   "created": 1791126671,
-  "format": null,
+  "format": "A20261006183623",
   "german": true,
   "handle": "job.reality.mit.tatyana",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 388
+  "views": 390,
+  "views_7d": 390
  },
  "7692833900946640150": {
   "created": 1791127476,
-  "format": null,
+  "format": "N10",
   "german": false,
   "handle": "martets",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 19100
+  "views": 19400,
+  "views_7d": 19400
  },
  "7692837274526059808": {
   "created": 1791128260,
-  "format": null,
+  "format": "N01",
   "german": false,
   "handle": "gabbolab",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 397
+  "views": 398,
+  "views_7d": 398
  },
  "7692838304374328608": {
   "created": 1791128498,
-  "format": null,
+  "format": "X17",
   "german": false,
   "handle": "charline.jobstep.io",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 3471
+  "views": 3494,
+  "views_7d": 3494
  },
  "7692839657591131414": {
   "created": 1791128815,
@@ -13599,7 +13856,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 967
+  "views": 980,
+  "views_7d": 980
  },
  "7692839710401547542": {
   "created": 1791128827,
@@ -13609,7 +13867,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1091
+  "views": 1096,
+  "views_7d": 1096
  },
  "7692843142382603542": {
   "created": 1791129627,
@@ -13619,17 +13878,19 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 620
+  "views": 621,
+  "views_7d": 621
  },
  "7692843568662187297": {
   "created": 1791129723,
-  "format": null,
+  "format": "X17",
   "german": true,
   "handle": "itssophiatalea",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 253
+  "views": 254,
+  "views_7d": 254
  },
  "7692845081547508999": {
   "created": 1791130077,
@@ -13639,7 +13900,8 @@
   "hook": "If you're not getting hired, do this: the last 4 months of the year are the best time to apply, so apply to lots of jobs with a strategy.",
   "judged": false,
   "mature": false,
-  "views": 85900
+  "views": 86400,
+  "views_7d": 86400
  },
  "7692845787130187030": {
   "created": 1791130243,
@@ -13649,47 +13911,52 @@
   "hook": "spilling recruiter secrets because fired (no speech)",
   "judged": false,
   "mature": false,
-  "views": 310
+  "views": 312,
+  "views_7d": 312
  },
  "7692851261141568800": {
   "created": 1791131515,
-  "format": null,
+  "format": "N07",
   "german": true,
   "handle": "alex.jobtipps",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 795
+  "views": 795,
+  "views_7d": 795
  },
  "7692853576217005334": {
   "created": 1791132057,
-  "format": null,
+  "format": "A202610061334",
   "german": false,
   "handle": "juliantyonhaku",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1311
+  "views": 1371,
+  "views_7d": 1371
  },
  "7692853771851943171": {
   "created": 1791132102,
-  "format": null,
+  "format": "N10",
   "german": false,
   "handle": "diana_osm",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1066
+  "views": 1072,
+  "views_7d": 1072
  },
  "7692854783144774945": {
   "created": 1791132335,
-  "format": null,
+  "format": "X01",
   "german": true,
   "handle": "alex.jobtipps",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 4494
+  "views": 4523,
+  "views_7d": 4523
  },
  "7692866942952131862": {
   "created": 1791135169,
@@ -13699,7 +13966,8 @@
   "hook": "recruiters NEVER want you to know this (no speech)",
   "judged": false,
   "mature": false,
-  "views": 378
+  "views": 383,
+  "views_7d": 383
  },
  "7692869874716134688": {
   "created": 1791135848,
@@ -13709,7 +13977,8 @@
   "hook": "I left my HR job and now I can say it - CVs filtered by ATS so I never looked at them",
   "judged": false,
   "mature": false,
-  "views": 64500
+  "views": 66000,
+  "views_7d": 66000
  },
  "7692875476528008450": {
   "created": 1791137154,
@@ -13719,7 +13988,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 666
+  "views": 688,
+  "views_7d": 688
  },
  "7692878940662172961": {
   "created": 1791137958,
@@ -13729,27 +13999,30 @@
   "hook": "sent CV Thursday interview yesterday start tomorrow",
   "judged": false,
   "mature": false,
-  "views": 29300
+  "views": 37500,
+  "views_7d": 37500
  },
  "7692879221458308374": {
   "created": 1791138027,
-  "format": null,
+  "format": "N04",
   "german": false,
   "handle": "benkorebeka5",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2905
+  "views": 2994,
+  "views_7d": 2994
  },
  "7692880437647052065": {
   "created": 1791138308,
-  "format": null,
+  "format": "X20",
   "german": false,
   "handle": "marine.realfakephotos",
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 601
+  "views": 614,
+  "views_7d": 614
  },
  "7692881158203280672": {
   "created": 1791138474,
@@ -13759,17 +14032,19 @@
   "hook": "all 3 CVs fail the ATS filter before reaching recruiter",
   "judged": false,
   "mature": false,
-  "views": 1075
+  "views": 1124,
+  "views_7d": 1124
  },
  "7692884328304479495": {
   "created": 1791139217,
   "format": "N10",
   "german": false,
   "handle": "emasavetuje",
-  "hook": "NIKO ne cita tvoj CV (nobody reads your CV)",
+  "hook": "NOBODY reads your CV 😮",
   "judged": true,
   "mature": false,
-  "views": 117400
+  "views": 121800,
+  "views_7d": 121800
  },
  "7692884932288318741": {
   "created": 1791139355,
@@ -13779,17 +14054,19 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 90
+  "views": 106,
+  "views_7d": 106
  },
  "7692885628320550177": {
   "created": 1791139516,
   "format": "N10",
   "german": true,
   "handle": "salii.jobtipps",
-  "hook": "these CVs never reach a recruiter - ATS filter",
+  "hook": "This is so embarrassing, but I'm making this video so you don't make the same mistake I did.",
   "judged": true,
   "mature": false,
-  "views": 160400
+  "views": 186100,
+  "views_7d": 186100
  },
  "7692886021154852118": {
   "created": 1791139611,
@@ -13799,7 +14076,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 337
+  "views": 343,
+  "views_7d": 343
  },
  "7692895819221044512": {
   "created": 1791141888,
@@ -13809,7 +14087,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2642
+  "views": 2673,
+  "views_7d": 2673
  },
  "7692899277806390560": {
   "created": 1791142694,
@@ -13819,7 +14098,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 384
+  "views": 387,
+  "views_7d": 387
  },
  "7692908779439983904": {
   "created": 1791144908,
@@ -13829,7 +14109,8 @@
   "hook": "nobody warned me - pretty CVs dont pass ATS filter",
   "judged": false,
   "mature": false,
-  "views": 16400
+  "views": 16700,
+  "views_7d": 16700
  },
  "7692920213314014486": {
   "created": 1791147574,
@@ -13839,17 +14120,19 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1768
+  "views": 1790,
+  "views_7d": 1790
  },
  "7692923176141049110": {
   "created": 1791148264,
   "format": "N07",
   "german": false,
   "handle": "dorcsyy_jobstep",
-  "hook": "Finding a job in 2026 is brutal - my sister works in HR at a well-known company and told me the one thing that decides whether employers write back: the CV",
+  "hook": "Finding a job in 2026? 💀 My sister works in HR at a really well-known company and told me the one thing that makes them not even write back to you.",
   "judged": true,
   "mature": false,
-  "views": 147100
+  "views": 153600,
+  "views_7d": 153600
  },
  "7692933113793596705": {
   "created": 1791150575,
@@ -13859,7 +14142,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1556
+  "views": 1581,
+  "views_7d": 1581
  },
  "7692934325280460053": {
   "created": 1791150861,
@@ -13869,7 +14153,8 @@
   "hook": "how do I explain THIS to my parents",
   "judged": false,
   "mature": false,
-  "views": 5992
+  "views": 6020,
+  "views_7d": 6020
  },
  "7692936274755226902": {
   "created": 1791151314,
@@ -13879,7 +14164,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 739
+  "views": 748,
+  "views_7d": 748
  },
  "7692941859466906912": {
   "created": 1791152613,
@@ -13889,17 +14175,19 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 957
+  "views": 974,
+  "views_7d": 974
  },
  "7692955054797589762": {
   "created": 1791155697,
   "format": "N10",
   "german": false,
   "handle": "lockinwitheva",
-  "hook": "HR rejects CVs like this!! (ATS)",
+  "hook": "HR REJECTS CVs like these!! / ATS",
   "judged": true,
   "mature": false,
-  "views": 194100
+  "views": 201900,
+  "views_7d": 201900
  },
  "7692963429589601569": {
   "created": 1791157646,
@@ -13909,7 +14197,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 7224
+  "views": 7306,
+  "views_7d": 7306
  },
  "7692997199176682770": {
   "created": 1791165498,
@@ -13919,7 +14208,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1709
+  "views": 1732,
+  "views_7d": 1732
  },
  "7693054991518403863": {
   "created": 1791178962,
@@ -13929,7 +14219,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2380
+  "views": 2502,
+  "views_7d": 2502
  },
  "7693065333443169557": {
   "created": 1791181358,
@@ -13939,7 +14230,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1548
+  "views": 1571,
+  "views_7d": 1571
  },
  "7693067539508743446": {
   "created": 1791181883,
@@ -13949,7 +14241,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 6089
+  "views": 6188,
+  "views_7d": 6188
  },
  "7693069557711342880": {
   "created": 1791182345,
@@ -13959,7 +14252,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 361
+  "views": 363,
+  "views_7d": 363
  },
  "7693069920401214752": {
   "created": 1791182430,
@@ -13969,7 +14263,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1106
+  "views": 1107,
+  "views_7d": 1107
  },
  "7693070292708560160": {
   "created": 1791182520,
@@ -13979,7 +14274,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1398
+  "views": 1409,
+  "views_7d": 1409
  },
  "7693086205105278240": {
   "created": 1791186222,
@@ -13989,7 +14285,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1164
+  "views": 1186,
+  "views_7d": 1186
  },
  "7693106090577366305": {
   "created": 1791190851,
@@ -13999,7 +14296,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 38400
+  "views": 40800,
+  "views_7d": 40800
  },
  "7693109985806535968": {
   "created": 1791191758,
@@ -14009,7 +14307,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2144
+  "views": 2563,
+  "views_7d": 2563
  },
  "7693126164075924768": {
   "created": 1791195522,
@@ -14019,7 +14318,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1598
+  "views": 1676,
+  "views_7d": 1676
  },
  "7693132188291812641": {
   "created": 1791196924,
@@ -14029,7 +14329,8 @@
   "hook": "in 24h einen Job finden - mein Bruder ist Recruiter",
   "judged": false,
   "mature": false,
-  "views": 1172
+  "views": 1187,
+  "views_7d": 1187
  },
  "7693152036040346912": {
   "created": 1791201546,
@@ -14039,7 +14340,8 @@
   "hook": "turns out our CVs aren't even seen by real humans",
   "judged": false,
   "mature": false,
-  "views": 642
+  "views": 642,
+  "views_7d": 642
  },
  "7693152966567644438": {
   "created": 1791201769,
@@ -14049,7 +14351,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 485
+  "views": 565,
+  "views_7d": 565
  },
  "7693154286716439841": {
   "created": 1791202070,
@@ -14059,7 +14362,8 @@
   "hook": "don't give up after recruiter rejection - reply to rejection email",
   "judged": false,
   "mature": false,
-  "views": 756
+  "views": 758,
+  "views_7d": 758
  },
  "7693155154136272150": {
   "created": 1791202280,
@@ -14069,7 +14373,8 @@
   "hook": "its 2026 lie on your CV",
   "judged": false,
   "mature": false,
-  "views": 559
+  "views": 0,
+  "views_7d": 0
  },
  "7693160230162681121": {
   "created": 1791203455,
@@ -14079,7 +14384,8 @@
   "hook": "Warum erfahre ich das erst jetzt (no speech)",
   "judged": false,
   "mature": false,
-  "views": 468
+  "views": 477,
+  "views_7d": 477
  },
  "7693172181454408992": {
   "created": 1791206234,
@@ -14089,7 +14395,8 @@
   "hook": "I could kiss the HR who gave me this tip",
   "judged": false,
   "mature": false,
-  "views": 823
+  "views": 825,
+  "views_7d": 825
  },
  "7693175579440336150": {
   "created": 1791207032,
@@ -14099,7 +14406,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 680
+  "views": 723,
+  "views_7d": 723
  },
  "7693186811526466848": {
   "created": 1791209643,
@@ -14109,7 +14417,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 632
+  "views": 680,
+  "views_7d": 680
  },
  "7693186837422083361": {
   "created": 1791209648,
@@ -14119,7 +14428,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 5064
+  "views": 5107,
+  "views_7d": 5107
  },
  "7693187024811068704": {
   "created": 1791209692,
@@ -14129,7 +14439,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1295
+  "views": 1336,
+  "views_7d": 1336
  },
  "7693189612004445462": {
   "created": 1791210298,
@@ -14139,7 +14450,8 @@
   "hook": "HR is hiding this from you!",
   "judged": false,
   "mature": false,
-  "views": 28300
+  "views": 30900,
+  "views_7d": 30900
  },
  "7693192644645735702": {
   "created": 1791211004,
@@ -14149,7 +14461,8 @@
   "hook": "I could marry the person in HR who showed me this!",
   "judged": false,
   "mature": false,
-  "views": 41800
+  "views": 46500,
+  "views_7d": 46500
  },
  "7693193564171373846": {
   "created": 1791211219,
@@ -14159,7 +14472,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 156
+  "views": 199,
+  "views_7d": 199
  },
  "7693200547553348896": {
   "created": 1791212839,
@@ -14169,7 +14483,8 @@
   "hook": "this CV rejected x3 - only this one passes ATS",
   "judged": false,
   "mature": false,
-  "views": 965
+  "views": 1071,
+  "views_7d": 1071
  },
  "7693200794463669506": {
   "created": 1791212901,
@@ -14179,7 +14494,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 738
+  "views": 754,
+  "views_7d": 754
  },
  "7693201659903659286": {
   "created": 1791213101,
@@ -14189,7 +14505,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 396
+  "views": 426,
+  "views_7d": 426
  },
  "7693213730292682006": {
   "created": 1791215912,
@@ -14199,7 +14516,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 712
+  "views": 752,
+  "views_7d": 752
  },
  "7693216253644721430": {
   "created": 1791216500,
@@ -14209,7 +14527,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 605
+  "views": 658,
+  "views_7d": 658
  },
  "7693218435622341910": {
   "created": 1791217011,
@@ -14219,7 +14538,8 @@
   "hook": "hope nobody from work sees this",
   "judged": false,
   "mature": false,
-  "views": 300
+  "views": 305,
+  "views_7d": 305
  },
  "7693220093278309664": {
   "created": 1791217390,
@@ -14229,7 +14549,8 @@
   "hook": "these CVs never reach a recruiter - ATS filter",
   "judged": false,
   "mature": false,
-  "views": 840
+  "views": 934,
+  "views_7d": 934
  },
  "7693221709930941718": {
   "created": 1791217768,
@@ -14239,7 +14560,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1381
+  "views": 1420,
+  "views_7d": 1420
  },
  "7693224362605808918": {
   "created": 1791218385,
@@ -14249,7 +14571,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 345
+  "views": 359,
+  "views_7d": 359
  },
  "7693227395884584214": {
   "created": 1791219095,
@@ -14259,7 +14582,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 895
+  "views": 948,
+  "views_7d": 948
  },
  "7693232090036374817": {
   "created": 1791220185,
@@ -14269,7 +14593,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 264
+  "views": 278,
+  "views_7d": 278
  },
  "7693232789130399008": {
   "created": 1791220346,
@@ -14279,7 +14604,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 509
+  "views": 559,
+  "views_7d": 559
  },
  "7693233254681283842": {
   "created": 1791220457,
@@ -14289,7 +14615,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 5389
+  "views": 5523,
+  "views_7d": 5523
  },
  "7693236338317020419": {
   "created": 1791221175,
@@ -14299,7 +14626,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1591
+  "views": 1816,
+  "views_7d": 1816
  },
  "7693236911695039777": {
   "created": 1791221305,
@@ -14309,7 +14637,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 725
+  "views": 728,
+  "views_7d": 728
  },
  "7693244079286603040": {
   "created": 1791222973,
@@ -14319,7 +14648,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1163
+  "views": 1182,
+  "views_7d": 1182
  },
  "7693244210102701345": {
   "created": 1791223004,
@@ -14329,7 +14659,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 796
+  "views": 802,
+  "views_7d": 802
  },
  "7693245170262773014": {
   "created": 1791223230,
@@ -14339,7 +14670,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 265
+  "views": 278,
+  "views_7d": 278
  },
  "7693245626066210081": {
   "created": 1791223334,
@@ -14349,7 +14681,8 @@
   "hook": "only this CV gets through the ATS filter - the other 3 are trash",
   "judged": false,
   "mature": false,
-  "views": 1245
+  "views": 1352,
+  "views_7d": 1352
  },
  "7693246373000465686": {
   "created": 1791223511,
@@ -14359,7 +14692,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 5366
+  "views": 5533,
+  "views_7d": 5533
  },
  "7693246413093817633": {
   "created": 1791223517,
@@ -14369,7 +14703,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1345
+  "views": 1490,
+  "views_7d": 1490
  },
  "7693247118588382486": {
   "created": 1791223685,
@@ -14379,7 +14714,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1898
+  "views": 1908,
+  "views_7d": 1908
  },
  "7693248530319838466": {
   "created": 1791224014,
@@ -14389,7 +14725,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 445
+  "views": 525,
+  "views_7d": 525
  },
  "7693251724928208160": {
   "created": 1791224756,
@@ -14409,7 +14746,8 @@
   "hook": "POV you always get rejected - ATS scans cant read figures",
   "judged": false,
   "mature": false,
-  "views": 731
+  "views": 741,
+  "views_7d": 741
  },
  "7693254808307879176": {
   "created": 1791225476,
@@ -14419,7 +14757,8 @@
   "hook": "da li je bitno radno iskustvo (is work experience important?)",
   "judged": false,
   "mature": false,
-  "views": 350
+  "views": 389,
+  "views_7d": 389
  },
  "7693256995985460513": {
   "created": 1791225982,
@@ -14429,7 +14768,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 781
+  "views": 791,
+  "views_7d": 791
  },
  "7693259262843194647": {
   "created": 1791226512,
@@ -14439,7 +14779,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1531
+  "views": 1618,
+  "views_7d": 1618
  },
  "7693261717991607585": {
   "created": 1791227081,
@@ -14449,7 +14790,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 402
+  "views": 479,
+  "views_7d": 479
  },
  "7693263197083651350": {
   "created": 1791227429,
@@ -14459,7 +14801,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 4963
+  "views": 5160,
+  "views_7d": 5160
  },
  "7693268443092618529": {
   "created": 1791228647,
@@ -14469,7 +14812,8 @@
   "hook": "Lügt auf eurem Lebenslauf (lie on your CV)",
   "judged": false,
   "mature": false,
-  "views": 853
+  "views": 991,
+  "views_7d": 991
  },
  "7693282454869691670": {
   "created": 1791231914,
@@ -14479,7 +14823,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1149
+  "views": 1593,
+  "views_7d": 1593
  },
  "7693289825587301653": {
   "created": 1791233634,
@@ -14489,7 +14834,8 @@
   "hook": "you have 3 seconds challenge",
   "judged": false,
   "mature": false,
-  "views": 941
+  "views": 973,
+  "views_7d": 973
  },
  "7693292823260499222": {
   "created": 1791234327,
@@ -14499,7 +14845,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 513
+  "views": 570,
+  "views_7d": 570
  },
  "7693296002941373728": {
   "created": 1791235065,
@@ -14509,7 +14856,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 447
+  "views": 564,
+  "views_7d": 564
  },
  "7693296934974459169": {
   "created": 1791235282,
@@ -14519,7 +14867,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 468
+  "views": 555,
+  "views_7d": 555
  },
  "7693297509015358753": {
   "created": 1791235419,
@@ -14529,7 +14878,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2
+  "views": 2,
+  "views_7d": 2
  },
  "7693299888611790113": {
   "created": 1791235973,
@@ -14539,7 +14889,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1016
+  "views": 1043,
+  "views_7d": 1043
  },
  "7693303321704123681": {
   "created": 1791236770,
@@ -14549,7 +14900,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 753
+  "views": 968,
+  "views_7d": 968
  },
  "7693305761245531425": {
   "created": 1791237339,
@@ -14559,7 +14911,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1185
+  "views": 1301,
+  "views_7d": 1301
  },
  "7693315247121108242": {
   "created": 1791239558,
@@ -14567,9 +14920,10 @@
   "german": false,
   "handle": "sevvalcareer",
   "hook": "My CVs were all rejected, and they even told me to quit ChatGPT. My CV doesn't even pass the ATS filter.",
-  "judged": false,
+  "judged": true,
   "mature": false,
-  "views": 90300
+  "views": 157000,
+  "views_7d": 157000
  },
  "7693315339546971414": {
   "created": 1791239574,
@@ -14579,7 +14933,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 14100
+  "views": 25400,
+  "views_7d": 25400
  },
  "7693339021044403474": {
   "created": 1791245085,
@@ -14589,7 +14944,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 697
+  "views": 709,
+  "views_7d": 709
  },
  "7693369464569498898": {
   "created": 1791252174,
@@ -14599,7 +14955,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 386
+  "views": 440,
+  "views_7d": 440
  },
  "7693374001447570696": {
   "created": 1791253231,
@@ -14609,7 +14966,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 679
+  "views": 839,
+  "views_7d": 839
  },
  "7693376551273991432": {
   "created": 1791253825,
@@ -14619,7 +14977,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 871
+  "views": 1148,
+  "views_7d": 1148
  },
  "7693412039028460820": {
   "created": 1791262089,
@@ -14639,7 +14998,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 200
+  "views": 264,
+  "views_7d": 264
  },
  "7693434133581794582": {
   "created": 1791267239,
@@ -14649,7 +15009,8 @@
   "hook": "recruiters NEVER want you to know this (fired)",
   "judged": false,
   "mature": false,
-  "views": 3976
+  "views": 4543,
+  "views_7d": 4543
  },
  "7693434138426150177": {
   "created": 1791267231,
@@ -14659,7 +15020,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 4099
+  "views": 4793,
+  "views_7d": 4793
  },
  "7693438516771949857": {
   "created": 1791268248,
@@ -14669,7 +15031,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 784
+  "views": 797,
+  "views_7d": 797
  },
  "7693438732925422880": {
   "created": 1791268304,
@@ -14679,7 +15042,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 862
+  "views": 1001,
+  "views_7d": 1001
  },
  "7693445142065188129": {
   "created": 1791269791,
@@ -14689,7 +15053,8 @@
   "hook": "best time of year to look for a job (October)",
   "judged": false,
   "mature": false,
-  "views": 272
+  "views": 286,
+  "views_7d": 286
  },
  "7693445653296434464": {
   "created": 1791269915,
@@ -14699,7 +15064,8 @@
   "hook": "first time job searching or after a long break",
   "judged": false,
   "mature": false,
-  "views": 264
+  "views": 293,
+  "views_7d": 293
  },
  "7693445858544602400": {
   "created": 1791269959,
@@ -14709,7 +15075,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 321
+  "views": 347,
+  "views_7d": 347
  },
  "7693448630677556502": {
   "created": 1791270610,
@@ -14719,7 +15086,8 @@
   "hook": "Two candidates apply for the same job - which one gets invited to an interview?",
   "judged": false,
   "mature": false,
-  "views": 8096
+  "views": 13200,
+  "views_7d": 13200
  },
  "7693451731937561878": {
   "created": 1791271336,
@@ -14729,7 +15097,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 666
+  "views": 801,
+  "views_7d": 801
  },
  "7693459964370701600": {
   "created": 1791273244,
@@ -14739,7 +15108,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 827
+  "views": 881,
+  "views_7d": 881
  },
  "7693460913592028449": {
   "created": 1791273462,
@@ -14749,7 +15119,8 @@
   "hook": "if your CV looks like this delete it - wont pass ATS filter",
   "judged": false,
   "mature": false,
-  "views": 1127
+  "views": 1271,
+  "views_7d": 1271
  },
  "7693487070026681622": {
   "created": 1791279555,
@@ -14759,7 +15130,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 2248
+  "views": 4117,
+  "views_7d": 4117
  },
  "7693488690340973856": {
   "created": 1791279931,
@@ -14769,7 +15141,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 336
+  "views": 458,
+  "views_7d": 458
  },
  "7693489119422336288": {
   "created": 1791280033,
@@ -14779,7 +15152,8 @@
   "hook": "I found a job! Eating and watching a series at noon, she celebrates finally getting hired after a long search, then shows how she used the app (copy Indeed job link, paste into JobStep, get a tailored CV).",
   "judged": false,
   "mature": false,
-  "views": 9933
+  "views": 27200,
+  "views_7d": 27200
  },
  "7693505504936594710": {
   "created": 1791283851,
@@ -14789,7 +15163,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1661
+  "views": 2283,
+  "views_7d": 2283
  },
  "7693506567680920864": {
   "created": 1791284091,
@@ -14799,7 +15174,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 294
+  "views": 500,
+  "views_7d": 500
  },
  "7693523067984678166": {
   "created": 1791287937,
@@ -14809,7 +15185,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 235
+  "views": 367,
+  "views_7d": 367
  },
  "7693523300420537622": {
   "created": 1791287992,
@@ -14819,7 +15196,8 @@
   "hook": "If you're job hunting, watch this: one tip I wish I'd known when I started. Close your Canva CV and try a cleaner Harvard-style CV instead.",
   "judged": false,
   "mature": false,
-  "views": 6077
+  "views": 23200,
+  "views_7d": 23200
  },
  "7693524368730754326": {
   "created": 1791288241,
@@ -14829,7 +15207,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 368
+  "views": 926,
+  "views_7d": 926
  },
  "7693526214471961889": {
   "created": 1791288665,
@@ -14839,7 +15218,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 1011
+  "views": 1313,
+  "views_7d": 1313
  },
  "7693529083644316961": {
   "created": 1791289335,
@@ -14849,7 +15229,8 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 0
+  "views": 1,
+  "views_7d": 1
  },
  "7693535096263019808": {
   "created": 1791290732,
@@ -14859,6 +15240,304 @@
   "hook": "",
   "judged": false,
   "mature": false,
-  "views": 376
+  "views": 1106,
+  "views_7d": 1106
+ },
+ "7693543151843183874": {
+  "created": 1791292612,
+  "format": null,
+  "german": false,
+  "handle": "avazdagbok",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 22200,
+  "views_7d": 22200
+ },
+ "7693545812311166240": {
+  "created": 1791293227,
+  "format": null,
+  "german": false,
+  "handle": "matildedicas",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 606,
+  "views_7d": 606
+ },
+ "7693551328294898966": {
+  "created": 1791294518,
+  "format": null,
+  "german": false,
+  "handle": "itswithluna",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 809,
+  "views_7d": 809
+ },
+ "7693551474961386774": {
+  "created": 1791294553,
+  "format": null,
+  "german": false,
+  "handle": "alexkoleva13",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1197,
+  "views_7d": 1197
+ },
+ "7693555303203261718": {
+  "created": 1791295441,
+  "format": null,
+  "german": false,
+  "handle": "sara.jobstep.io",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 283,
+  "views_7d": 283
+ },
+ "7693555355082558753": {
+  "created": 1791295450,
+  "format": null,
+  "german": false,
+  "handle": "chloe.jobtipps",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 399,
+  "views_7d": 399
+ },
+ "7693557087892262176": {
+  "created": 1791295854,
+  "format": null,
+  "german": false,
+  "handle": "stay.with.giulia",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 246,
+  "views_7d": 246
+ },
+ "7693558667169320225": {
+  "created": 1791296221,
+  "format": null,
+  "german": true,
+  "handle": "salii.jobtipps",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 853,
+  "views_7d": 853
+ },
+ "7693559449205706017": {
+  "created": 1791296403,
+  "format": null,
+  "german": false,
+  "handle": "stay.with.giulia",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 280,
+  "views_7d": 280
+ },
+ "7693568611725872407": {
+  "created": 1791298540,
+  "format": null,
+  "german": false,
+  "handle": "ella.jobtips",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1459,
+  "views_7d": 1459
+ },
+ "7693572103647268129": {
+  "created": 1791299350,
+  "format": null,
+  "german": false,
+  "handle": "ale.jobtips",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 565,
+  "views_7d": 565
+ },
+ "7693573409107741984": {
+  "created": 1791299655,
+  "format": null,
+  "german": false,
+  "handle": "juliejobtips",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 357,
+  "views_7d": 357
+ },
+ "7693576131340979489": {
+  "created": 1791300288,
+  "format": null,
+  "german": false,
+  "handle": "job.by.niki",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1984,
+  "views_7d": 1984
+ },
+ "7693579815361744150": {
+  "created": 1791301146,
+  "format": null,
+  "german": false,
+  "handle": "elizacv25",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 417,
+  "views_7d": 417
+ },
+ "7693580740994305302": {
+  "created": 1791301362,
+  "format": null,
+  "german": false,
+  "handle": "joelle.jobstep.io",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 381,
+  "views_7d": 381
+ },
+ "7693587021075614999": {
+  "created": 1791302826,
+  "format": null,
+  "german": false,
+  "handle": "joelle.jobstep.io",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 322,
+  "views_7d": 322
+ },
+ "7693590333099199766": {
+  "created": 1791303597,
+  "format": null,
+  "german": false,
+  "handle": "linnegzmstf",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1915,
+  "views_7d": 1915
+ },
+ "7693591242805873942": {
+  "created": 1791303808,
+  "format": null,
+  "german": false,
+  "handle": "sara.jobstep.io",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 369,
+  "views_7d": 369
+ },
+ "7693591657475837217": {
+  "created": 1791303901,
+  "format": null,
+  "german": false,
+  "handle": "jobtipsmetmarie",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 329,
+  "views_7d": 329
+ },
+ "7693597511264767255": {
+  "created": 1791305269,
+  "format": null,
+  "german": false,
+  "handle": "dorcsyy_jobstep",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1381,
+  "views_7d": 1381
+ },
+ "7693598285931629857": {
+  "created": 1791305446,
+  "format": null,
+  "german": false,
+  "handle": "charline.jobstep.io",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 168,
+  "views_7d": 168
+ },
+ "7693599617740508438": {
+  "created": 1791305757,
+  "format": null,
+  "german": false,
+  "handle": "annikajobtips",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 323,
+  "views_7d": 323
+ },
+ "7693601460084362516": {
+  "created": 1791306187,
+  "format": null,
+  "german": false,
+  "handle": "ferni.tips",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1802,
+  "views_7d": 1802
+ },
+ "7693608283550092577": {
+  "created": 1791307772,
+  "format": null,
+  "german": false,
+  "handle": "gabbolab",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 84,
+  "views_7d": 84
+ },
+ "7693609045281836310": {
+  "created": 1791307953,
+  "format": null,
+  "german": false,
+  "handle": "benkorebeka5",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1941,
+  "views_7d": 1941
+ },
+ "7693618823802506518": {
+  "created": 1791310231,
+  "format": null,
+  "german": false,
+  "handle": "viktorietyna",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 325,
+  "views_7d": 325
+ },
+ "7693621597831204128": {
+  "created": 1791310873,
+  "format": null,
+  "german": true,
+  "handle": "emy.jobtipps",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 67,
+  "views_7d": 67
  }
 }

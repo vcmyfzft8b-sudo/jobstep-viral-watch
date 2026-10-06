@@ -1,7 +1,15 @@
 {
  "discovered_at": 1791288746,
- "hot": {},
- "last_run": 1791292037,
+ "hot": {
+  "N10": {
+   "announced": {
+    "de": true
+   },
+   "count": 5,
+   "since": 1791311936
+  }
+ },
+ "last_run": 1791311221,
  "top3": [
   "N10",
   "N01",

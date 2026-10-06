@@ -1,22 +1,126 @@
 [
-  {"id": "N10", "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5", "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀", "status": "active",
-   "description": "Nobody reads your CV / your CV never reaches a recruiter: ATS software filters or rejects CVs before a human sees them; pretty/creative CVs fail the ATS. Examples: 'NIKO ne cita tvoj CV', 'pov: alles Lügen', 'POV: cały czas dostajesz odmowy', 'Mach das nicht!! abgelehnt'."},
-  {"id": "N01", "page_id": "3f0958b0fc14816aadb3f7c783ee29c9", "title": "2026 Abschluss – aber noch kein Job? 😭", "status": "active",
-   "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'."},
-  {"id": "N06", "page_id": "3f0958b0fc1481208c6ac19b0c666666", "title": "Jobsuche: Ja, nein oder vielleicht?", "status": "active",
-   "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'."},
-  {"id": "N02", "page_id": "3f0958b0fc148181bcdde9677a8e051e", "title": "Seit wann kann LinkedIn das? 🤯", "status": "active",
-   "description": "LinkedIn job-search hack: change the time filter in the URL (86400 -> 3600, r3600) to see jobs posted in the last hour, then tailor the CV. Example: 'OD KAD LINKEDIN MOŽE OVO???'."},
-  {"id": "N03", "page_id": "3f0958b0fc14819f99f8f24903aeaeb3", "title": "POV: Dein Lebenslauf bekommt endlich ein Upgrade 🤯", "status": "active",
-   "description": "POV: I finally understand why everyone is deleting ChatGPT - usually no voiceover, on-screen numbered steps (copy job ad, paste into the tool, CV gets tailored) with music."},
-  {"id": "N04", "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef", "title": "Monatelang Bewerbungen – und kaum Antworten? 😭", "status": "active",
-   "description": "I got 20 interviews? / my inbox is full of interview invitations: shows an email inbox full of interview invites as proof, then explains the CV change. Examples: 'dobila sam 20 INTERVJUA', 'WAR IS OVER (tak wygląda moja poczta)'."},
-  {"id": "N07", "page_id": "3f0958b0fc1481babee1d2e56b4e56af", "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫", "status": "active",
-   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'."},
-  {"id": "N05", "page_id": "3f0958b0fc1481229383d89628cc3be3", "title": "Für jede Stelle wieder den Lebenslauf umschreiben? 😩", "status": "active",
-   "description": "I hate this: having to write a new CV and cover letter for every single job is exhausting; a friend showed me a tool that tailors it. Example: 'MRZIM OVO', '3 mois perdus à personnaliser mes CV'."},
-  {"id": "N08", "page_id": "3f0958b0fc148162b1d5c72be508d006", "title": "Kein Job ohne Erfahrung? Dieser Kreislauf nervt 😭", "status": "active",
-   "description": "You don't need work experience to get a job / is work experience important? - missing experience is not why you're rejected, the CV is. Examples: 'NE TREBA VAM RADNO ISKUSTVO', 'NIE potrzebujesz doświadczenia'."},
-  {"id": "N09", "page_id": "3f0958b0fc1481da8accda8f08494a00", "title": "Den HR-Typen könnte ich heiraten 😳", "status": "active",
-   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'."}
+ {
+  "description": "Nobody reads your CV / your CV never reaches a recruiter: ATS software filters or rejects CVs before a human sees them; pretty/creative CVs fail the ATS. Examples: 'NIKO ne cita tvoj CV', 'pov: alles Lügen', 'POV: cały czas dostajesz odmowy', 'Mach das nicht!! abgelehnt'.",
+  "id": "N10",
+  "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5",
+  "status": "active",
+  "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀"
+ },
+ {
+  "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'.",
+  "id": "N01",
+  "page_id": "3f0958b0fc14816aadb3f7c783ee29c9",
+  "status": "active",
+  "title": "2026 Abschluss – aber noch kein Job? 😭"
+ },
+ {
+  "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'.",
+  "id": "N06",
+  "page_id": "3f0958b0fc1481208c6ac19b0c666666",
+  "status": "active",
+  "title": "Jobsuche: Ja, nein oder vielleicht?"
+ },
+ {
+  "description": "LinkedIn job-search hack: change the time filter in the URL (86400 -> 3600, r3600) to see jobs posted in the last hour, then tailor the CV. Example: 'OD KAD LINKEDIN MOŽE OVO???'.",
+  "id": "N02",
+  "page_id": "3f0958b0fc148181bcdde9677a8e051e",
+  "status": "active",
+  "title": "Seit wann kann LinkedIn das? 🤯"
+ },
+ {
+  "description": "POV: I finally understand why everyone is deleting ChatGPT - usually no voiceover, on-screen numbered steps (copy job ad, paste into the tool, CV gets tailored) with music.",
+  "id": "N03",
+  "page_id": "3f0958b0fc14819f99f8f24903aeaeb3",
+  "status": "active",
+  "title": "POV: Dein Lebenslauf bekommt endlich ein Upgrade 🤯"
+ },
+ {
+  "description": "I got 20 interviews? / my inbox is full of interview invitations: shows an email inbox full of interview invites as proof, then explains the CV change. Examples: 'dobila sam 20 INTERVJUA', 'WAR IS OVER (tak wygląda moja poczta)'.",
+  "id": "N04",
+  "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef",
+  "status": "active",
+  "title": "Monatelang Bewerbungen – und kaum Antworten? 😭"
+ },
+ {
+  "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
+  "id": "N07",
+  "page_id": "3f0958b0fc1481babee1d2e56b4e56af",
+  "status": "active",
+  "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫"
+ },
+ {
+  "description": "I hate this: having to write a new CV and cover letter for every single job is exhausting; a friend showed me a tool that tailors it. Example: 'MRZIM OVO', '3 mois perdus à personnaliser mes CV'.",
+  "id": "N05",
+  "page_id": "3f0958b0fc1481229383d89628cc3be3",
+  "status": "active",
+  "title": "Für jede Stelle wieder den Lebenslauf umschreiben? 😩"
+ },
+ {
+  "description": "You don't need work experience to get a job / is work experience important? - missing experience is not why you're rejected, the CV is. Examples: 'NE TREBA VAM RADNO ISKUSTVO', 'NIE potrzebujesz doświadczenia'.",
+  "id": "N08",
+  "page_id": "3f0958b0fc148162b1d5c72be508d006",
+  "status": "active",
+  "title": "Kein Job ohne Erfahrung? Dieser Kreislauf nervt 😭"
+ },
+ {
+  "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
+  "id": "N09",
+  "page_id": "3f0958b0fc1481da8accda8f08494a00",
+  "status": "active",
+  "title": "Den HR-Typen könnte ich heiraten 😳"
+ },
+ {
+  "created": 1791293339,
+  "description": "Creator casually eats a snack on the sofa while talking to camera over an on-screen 'top 10 employers' list, muses about what makes an employer good, then pivots to the CV app (paste job link, tailored CV, upload and score) with screen-recording inserts.",
+  "id": "A202610061328",
+  "page_id": "3f1958b0-fc14-8180-bc9f-d5f809e56081",
+  "source_video": "https://www.tiktok.com/@career.tea.with.d/video/7691756700235369730",
+  "status": "active",
+  "title": "Die 10 Top-Arbeitgeber – aber was heißt eigentlich „gut“? 🏆"
+ },
+ {
+  "created": 1791293407,
+  "description": "Talking-head creator says she got no job offers all summer, shows her old CV, shows the site in Google search, uploads the CV for a low score, improves it step by step to a high score, shows the new CV and ends with an inbox full of job offers.",
+  "id": "A202610061330",
+  "page_id": "3f1958b0-fc14-810a-8e90-c310ed3f16fd",
+  "source_video": "https://www.tiktok.com/@issa.jobtips/video/7691016721053895958",
+  "status": "active",
+  "title": "Den ganzen Sommer nur Absagen? Bis ich DAS geändert hab 😱"
+ },
+ {
+  "created": 1791293480,
+  "description": "Faceless voiceover comparing two printed CVs side by side ('two candidates, same job – who gets invited?'), pointing out the ATS-unfriendly icons and charts on one, then showing the app on a laptop building the ATS-friendly CV.",
+  "id": "A202610061331",
+  "page_id": "3f1958b0-fc14-8109-965a-ddda9e24cd16",
+  "source_video": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673",
+  "status": "active",
+  "title": "Zwei Lebensläufe, wer wird eingeladen? 👀"
+ },
+ {
+  "created": 1791293560,
+  "description": "Ex-HR 'insider secrets' talking-head hook (CVs are Canva templates, ATS filters read them), then a laptop screen recording: add a job link, get a before score, fix the CV, get an after score, download.",
+  "id": "A202610061332",
+  "page_id": "3f1958b0-fc14-8107-9431-f2f20737aa98",
+  "source_video": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
+  "status": "active",
+  "title": "Ex-HR verrät: So kommt dein Lebenslauf durch die Filter 🤫"
+ },
+ {
+  "created": 1791293645,
+  "description": "Talking-head 'best season to job hunt' tip video that tells viewers to ditch their Canva CV for a Harvard-style one, then films the laptop screen with a phone while uploading the CV, showing a low score, using the AI editor and revealing the high new score.",
+  "id": "A202610061334",
+  "page_id": "3f1958b0-fc14-81de-8b2c-f04f93c7caee",
+  "source_video": "https://www.tiktok.com/@luworks/video/7692607504752135432",
+  "status": "active",
+  "title": "Jetzt ist die BESTE Zeit für die Jobsuche 👀"
+ },
+ {
+  "created": 1791293741,
+  "description": "Talking-head explainer that opens by pointing at fancy Canva-style CVs on a monitor with red X overlays, explains why ATS rejects bar charts and icons (with a green-screen segment), then screen-records the full CV app flow from score analysis to job-link tailoring, template choice, and download.",
+  "id": "A202610061335",
+  "page_id": "3f1958b0-fc14-8170-a169-dba97b041280",
+  "source_video": "https://www.tiktok.com/@lockinwitheva/video/7691082863533427990",
+  "status": "active",
+  "title": "Das HR hasst diese Lebensläufe? Schau hier hin 👀"
+ }
 ]

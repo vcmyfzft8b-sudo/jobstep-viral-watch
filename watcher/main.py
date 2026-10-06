@@ -482,7 +482,7 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
 
 def rerank(mkts, fmts, history, cfg):
     """One order for all markets (creators of all markets count the same); applied to every market's list.
-    Hot formats (5+ confirmed viral videos in 7 days) come first, inside the 🚀 section."""
+    Hot formats (5+ confirmed viral videos in 7 days) come first, inside the "going viral" section."""
     ids, scores = rank.order(history, fmts, cfg)
     by_id = {f['id']: f for f in fmts}
     hot_ids = [i for i in ids if scores[i].get('recent_viral', 0) >= hot.MIN_VIRAL]
@@ -647,6 +647,7 @@ def main():
     ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     ap.add_argument('--test-claude', action='store_true', help='check the Claude subscription token and exit')
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
+    ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
     ap.add_argument('--fill-market', default='', help='fr | es: build missing pages of active formats')
@@ -686,6 +687,9 @@ def main():
         return
     if a.check_hot:
         check_hot()
+        return
+    if a.relist:
+        rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config())
         return
     if a.test_viral:
         import re as _re

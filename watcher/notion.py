@@ -194,8 +194,9 @@ def _icon(b):
     return ((b.get(b['type']) or {}).get('icon') or {}).get('emoji')
 
 
-HOT_ICON = '🚀'
-SECTION_ICONS = ('🚀', '⬇️')  # section header callouts inside the list (no page link)
+HOT_HEADER_ICON = '📈'
+HOT_COLOR = 'yellow_background'  # hot entries: same ▶️ box as the others, soft yellow instead of gray
+SECTION_ICONS = ('📈', '🚀', '⬇️')  # section header callouts inside the list (no page link); 🚀 = older layout
 
 
 def list_entries(list_page):
@@ -218,13 +219,14 @@ def list_entries(list_page):
 
 
 def hot_entry_count(list_page):
-    """How many list entries are currently shown in the 🚀 section."""
+    """How many list entries are currently shown in the "going viral" section (old 🚀 layout counts as 0)."""
     entries = {e[0] for e in list_entries(list_page)[0]}
-    return sum(1 for b in children(list_page) if b['id'] in entries and _icon(b) == HOT_ICON)
+    return sum(1 for b in children(list_page) if b['id'] in entries and b['callout'].get('color') == HOT_COLOR
+               and _icon(b) == '▶️')
 
 
 def _section_blocks(list_page):
-    """Section header callouts (🚀 / ⬇️, without a page link) between the 🔥 instructions and the 🚨 rule."""
+    """Section header callouts (📈 / ⬇️, without a page link) between the 🔥 instructions and the 🚨 rule."""
     out, inside = [], False
     for b in children(list_page):
         if b['type'] == 'callout' and _icon(b) == '🔥':
@@ -239,17 +241,18 @@ def _section_blocks(list_page):
 
 
 def set_order(list_page, page_ids, hot_count=0, lang='de'):
-    """Rewrite the list: hot formats first inside a 🚀 section (orange), then the rest; number the titles 1., 2., ..."""
+    """Rewrite the list: hot formats first under a calm 📈 "going viral" header (soft yellow), then the rest;
+    number the titles 1., 2., ..."""
     T = TEXT[lang]
     page_ids = list(dict.fromkeys(p.replace('-', '') for p in page_ids))  # never show a format twice
     entries, anchor = list_entries(list_page)
     for block_id in [e[0] for e in entries] + _section_blocks(list_page):
         api('DELETE', f'/blocks/{block_id}')
     normal = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': 'gray_background'}
-    hot = {'icon': {'type': 'emoji', 'emoji': HOT_ICON}, 'color': 'orange_background'}
+    hot = {'icon': {'type': 'emoji', 'emoji': '▶️'}, 'color': HOT_COLOR}
     new = []
     if hot_count:
-        new.append(block('callout', [rt(T['hot_header'], bold=True)], icon={'type': 'emoji', 'emoji': '🚀'}, color='red_background'))
+        new.append(block('callout', [rt(T['hot_header'], bold=True)], icon={'type': 'emoji', 'emoji': HOT_HEADER_ICON}, color=HOT_COLOR))
     for i, pid in enumerate(page_ids):
         if hot_count and i == hot_count:
             new.append(block('callout', [rt(T['rest_header'], bold=True)], icon={'type': 'emoji', 'emoji': '⬇️'}, color='default'))

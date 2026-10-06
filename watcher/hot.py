@@ -1,7 +1,7 @@
 """Hot formats: 5+ viral videos (100k+) of the same format posted within the last 7 days, from creators of all
 markets, each confirmed by the strict Claude check as that format.
 
-While a format is hot it moves into the 🚀 section at the top of every list (main.rerank); once per hot period an
+While a format is hot it moves into the "going viral" section at the top of every list (main.rerank); once per hot period an
 @everyone announcement in each market's language goes to its Discord #announcements (webhook from discord_env), the
 same message goes into every creator's private channel (our bot, markets with creator_channels), plus a Slack message
 listing the videos. When it cools down (< 5), it drops back into the normal order.
@@ -56,7 +56,7 @@ def discord(url, text):
 
 def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
     """Recompute hot formats (shared list, creators of all markets) and show them in every market:
-    🚀 callout at the top of each list + one @everyone Discord post per market in its language."""
+    "going viral" section at the top of each list + one @everyone Discord post per market in its language."""
     viral = cfg['thresholds']['viral_views']
     proof = viral_videos(history, videos, formats, viral)
     hot_now = {fid: len(vs) for fid, vs in proof.items() if len(vs) >= MIN_VIRAL}
@@ -114,7 +114,7 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
         done = [mk['T']['flag'] for mk in mkts if meta_hot[fid]['announced'].get(mk['key'])]
         notify.push('🚀 HOT format',
                     f"*{f['title']}* – {n} viral videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
-                    f"Moved into the 🚀 section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}"
+                    f"Moved into the going-viral section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}"
                     f" · creator channels: {sum(len(v) for v in meta_hot[fid]['creators'].values())}",
                     click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
         state.log({'type': 'hot', 'format': fid, 'count': n})

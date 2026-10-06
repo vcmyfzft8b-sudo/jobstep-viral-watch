@@ -155,6 +155,17 @@ def create_page(parent_id, title, icon, blocks):
     return page
 
 
+def move_page(page_id, new_parent_id):
+    """Move a page under another page (Notion API 2025-09-03 'move page' endpoint)."""
+    h = _headers()
+    h['Notion-Version'] = '2025-09-03'
+    r = requests.post(f'{API}/pages/{page_id}/move', headers=h, timeout=60,
+                      json={'parent': {'type': 'page_id', 'page_id': new_parent_id}})
+    if not r.ok:
+        raise RuntimeError(f'Notion move: HTTP {r.status_code} {r.text[:300]}')
+    return r.json()
+
+
 # ---------- the DACH list ----------
 
 def children(block_id):

@@ -229,6 +229,11 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
     head = '🟢 VIRAL' if lvl == 'viral' else '🟡 Hebt ab'
     result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
 
+    # Viral again + the format is in the archive: bring the archived page back into the list.
+    revived = None
+    if lvl == 'viral' and known and known.get('status') != 'active' and not weak and not only_detect:
+        revived = revive_format(known, v, formats, history, cfg)
+
     # Viral + not in Notion yet: build first (with the final duplicate check on the transcript), then report.
     built = None
     if lvl == 'viral' and not known and not weak and not only_detect:
@@ -242,8 +247,10 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
 
     if known and known.get('status') == 'active':
         fmt_text = f"Format: {known['title']} (schon in der Liste)"
+    elif known and revived:
+        fmt_text = f"Format aus dem Archiv zurückgeholt auf Platz {revived}: {known['title']}"
     elif known:
-        fmt_text = f"Format: {known['title']} (liegt im Archiv – nicht neu hinzugefügt)"
+        fmt_text = f"Format: {known['title']} (liegt im Archiv – Interaktion zu schwach zum Zurückholen)"
     elif built and not built[1]:
         fmt_text = f"NEUES Format – automatisch hinzugefügt auf Platz {built[2]}: {built[0]['url']}"
     elif built:
@@ -258,6 +265,20 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet
                  link=v['url'], link_label='Video')
     state.log({'type': 'alert', **result})
     return result
+
+
+def revive_format(fmt, v, formats, history, cfg):
+    """Move an archived format page back into "Alle Formatseiten" and into the ranked list. Returns its position."""
+    notion.move_page(fmt['page_id'], cfg['notion']['holder_page'])
+    fmt['status'] = 'active'
+    fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
+    v['format'] = fmt['id']
+    history.get(v['id'], {})['format'] = fmt['id']
+    position = rerank(formats, history, cfg, reason=None).index(fmt['id']) + 1
+    state.log({'type': 'format_revived', 'format': fmt['id'], 'video': v['id'], 'position': position})
+    notify.radar(cfg['notion']['radar_page'], f"Archiviertes Format zurückgeholt auf Platz {position}: {fmt['title']}",
+                 link=f"https://app.notion.com/p/{fmt['page_id'].replace('-', '')}", link_label='Seite')
+    return position
 
 
 def build_format(v, formats, history, cfg, quiet=False):

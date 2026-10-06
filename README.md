@@ -5,7 +5,7 @@ Every 6 hours (GitHub Actions) this watcher:
 1. **Pulls every new video** posted by all active JobStep creator accounts (89 on 6 Oct 2026, list in the `state`
    branch → `state/accounts.json`) and keeps each video on a 7-day watchlist.
 2. **Re-checks every watchlist video** (views, likes, shares, saves) and stores a snapshot, so growth over time is known.
-3. **Alerts** (phone push via [ntfy](https://ntfy.sh) + a log line on the private Notion page *JobStep Viral-Radar*):
+3. **Alerts** (Slack message via `SLACK_WEBHOOK_URL`, optional phone push via ntfy, + a log line on the private Notion page *JobStep Viral-Radar*):
    - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views
    - 🟢 **viral** – 100k+ views
    - "weak" is added when shares + saves are below 1.5 % of views
@@ -34,7 +34,8 @@ Every 6 hours (GitHub Actions) this watcher:
    | `NOTION_TOKEN` | writing format pages, the list and the radar log |
    | `OPENROUTER_API_KEY` | Claude (format matching: Sonnet 5.5, page writing: Opus 5.5) |
    | `SONIOX_API_KEY` | speech-to-text |
-   | `NTFY_TOPIC` | phone push notifications (subscribe to the topic in the ntfy app) |
+   | `SLACK_WEBHOOK_URL` | Slack messages (Incoming Webhook of a Slack app, one channel) |
+| `NTFY_TOPIC` | optional phone push via the ntfy app |
    | `LIGHTREEL_API_KEY` | finding new JobStep accounts every 3 days |
 2. The `state` branch holds the watchlist, history and format registry; the workflow commits to it after every run.
 

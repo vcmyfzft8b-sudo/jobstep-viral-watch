@@ -1,4 +1,5 @@
-"""Notifications: phone push via ntfy (NTFY_TOPIC, optional) + a log line on the private Notion radar page."""
+"""Notifications: Slack (SLACK_WEBHOOK_URL), optional phone push via ntfy (NTFY_TOPIC),
+plus a log line on the private Notion radar page."""
 import os
 
 import requests
@@ -6,7 +7,19 @@ import requests
 from . import notion
 
 
+def slack(title, message, click=None):
+    url = os.environ.get('SLACK_WEBHOOK_URL')
+    if not url:
+        return
+    text = f'*{title}*\n{message}' + (f'\n<{click}|▶ Öffnen>' if click else '')
+    try:
+        requests.post(url, json={'text': text, 'unfurl_links': False}, timeout=20)
+    except requests.RequestException:
+        pass
+
+
 def push(title, message, click=None, tags=''):
+    slack(title, message, click)
     topic = os.environ.get('NTFY_TOPIC')
     if not topic:
         return

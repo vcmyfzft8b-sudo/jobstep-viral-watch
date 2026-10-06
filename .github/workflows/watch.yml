@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run]
+        options: [normal, only-detect, dry-run, test-notify]
         default: normal
       test_video:
         description: 'Optional: TikTok video URL -> build a TEST format page into the private radar page (nothing public)'
@@ -77,6 +77,7 @@ jobs:
           fi
           case "$MODE" in
             dry-run)     python -m watcher.main --dry-run ;;
+            test-notify) python -m watcher.main --test-notify ;;
             only-detect) python -m watcher.main --only-detect ;;
             *)           python -m watcher.main ;;
           esac

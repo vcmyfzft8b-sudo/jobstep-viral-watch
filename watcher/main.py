@@ -288,7 +288,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
     ap.add_argument('--only-detect', action='store_true', help='alerts but never build pages or re-rank')
+    ap.add_argument('--test-notify', action='store_true', help='send one test notification and exit')
     a = ap.parse_args()
+    if a.test_notify:
+        notify.push('✅ JobStep-Radar: GitHub → Slack funktioniert',
+                    'Der Watcher läuft alle 6 Stunden und meldet sich hier, sobald ein JobStep-Video abhebt oder viral geht.',
+                    click='https://github.com/vcmyfzft8b-sudo/jobstep-viral-watch/actions')
+        print('test notification sent' + ('' if os.environ.get('SLACK_WEBHOOK_URL') else ' (no SLACK_WEBHOOK_URL set!)'))
+        return
     missing = [k for k in ('NOTION_TOKEN', 'OPENROUTER_API_KEY', 'SONIOX_API_KEY') if not os.environ.get(k)]
     if missing and not a.dry_run:
         # Without keys we can't notify or build: watch only and don't mark anything as notified.

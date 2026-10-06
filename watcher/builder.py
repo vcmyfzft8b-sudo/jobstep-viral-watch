@@ -39,8 +39,11 @@ RULES = """RULES
   directions (e.g. "überraschte Reaktion, Musik") use cue "direction" with the direction as text in asset_name.
   Otherwise cue null. Put the cue on the segment where that screen starts.
 - CVs are NEVER assets: creators show their own old CV and the CV they make in Parakeet AI (cue "parakeet").
-  Only things a creator cannot make themselves count as assets (e.g. an email inbox full of interview invites).
-  For every asset, add one extra_hook_lines entry that says how to show it (German).
+- Public websites/apps the creator can simply open and film (a discount page, a job board, Google) are NOT assets:
+  use cue "direction" with a short German direction like "Prime-Student-Seite am Laptop zeigen" and add one
+  extra_hook_lines entry with the exact page to open.
+- Only things a creator cannot make or open themselves count as assets (e.g. an email inbox full of interview
+  invites). For every asset, add one extra_hook_lines entry that says how to show it (German).
 - Address creators neutrally (du / "Creator"), never "Creatorin".
 - No voiceover videos (only on-screen text + music): set voiceover=false; each script segment is one text overlay.
 - title_hook: the on-screen hook/title of the original, adapted to punchy German (keep caps/emojis style).

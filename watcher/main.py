@@ -15,6 +15,7 @@ import shutil
 import tempfile
 import time
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 
 from . import builder, classify, detect, discover, media, notify, notion, rank, soniox, state, tiktok
 
@@ -142,14 +143,22 @@ def run(dry_run=False, only_detect=False):
 
     # Classify every video once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
     if not dry_run:
-        for v in videos.values():
-            if 'created' in v and not v.get('format_checked') and now - v['created'] >= 48 * 3600:
-                try:
-                    c = classify.classify(v, formats, cfg['models']['classify'])
+        todo = [v for v in videos.values()
+                if 'created' in v and not v.get('format_checked') and now - v['created'] >= 48 * 3600]
+
+        def _classify(v):
+            try:
+                return v, classify.classify(v, formats, cfg['models']['classify'])
+            except Exception as e:
+                print('classify failed', v['id'], str(e)[:200])
+                return v, None
+
+        with ThreadPoolExecutor(8) as pool:
+            for v, c in pool.map(_classify, todo):
+                if c:
                     v['format'], v['hook_en'], v['format_checked'] = c.get('match'), c.get('hook_en', ''), True
                     history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
-                except Exception as e:
-                    print('classify failed', v['id'], str(e)[:200])
+        print(f'classified {len(todo)} videos')
 
     # 5. weekly re-rank
     today = datetime.datetime.now(datetime.timezone.utc)

@@ -146,13 +146,42 @@
   },
   "links": {
     "parakeet": "https://www.parakeet-ai.com/resume-maker",
-    "linkedin": "https://www.linkedin.com/jobs/",
-    "visual_hook_lab": "https://app.notion.com/p/3d4958b0fc148040a3f6e8dc64bb7a90"
+    "linkedin": "https://www.linkedin.com/jobs/"
   },
   "notion": {
-    "dach_page": "9a9958b0fc148375be81010f79268995",
-    "holder_page": "3f1958b0fc148130a316fb99f4f8738b",
     "radar_page": "3f1958b0fc148177bcd9cee8c43090e0"
   },
-  "discovery_every_days": 3
+  "discovery_every_days": 3,
+  "markets": {
+    "de": {
+      "lang": "de",
+      "list_page": "9a9958b0fc148375be81010f79268995",
+      "holder_page": "3f1958b0fc148130a316fb99f4f8738b",
+      "archive_page": "3f1958b0fc148103bfbdf9034f351940",
+      "visual_hook_lab": "https://app.notion.com/p/3d4958b0fc148040a3f6e8dc64bb7a90",
+      "discord_env": "DISCORD_WEBHOOK_URL",
+      "discord_server": "1546450769291513886",
+      "enabled": true
+    },
+    "fr": {
+      "lang": "fr",
+      "list_page": "e78958b0fc14828993ed81497c5e5a93",
+      "holder_page": "",
+      "archive_page": "3f0958b0fc148031b606ee3e9178b024",
+      "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc1480049b7ded8f07e6e53e",
+      "discord_env": "DISCORD_WEBHOOK_URL_FR",
+      "discord_server": "",
+      "enabled": false
+    },
+    "es": {
+      "lang": "es",
+      "list_page": "eb7958b0fc14837092c0015722d46252",
+      "holder_page": "",
+      "archive_page": "3f0958b0fc1480eda45ec861e5072d1b",
+      "visual_hook_lab": "https://app.notion.com/p/3f1958b0fc148064bf70e3fcbb264243",
+      "discord_env": "DISCORD_WEBHOOK_URL_ES",
+      "discord_server": "",
+      "enabled": false
+    }
+  }
 }

@@ -6,6 +6,7 @@ import time
 import requests
 
 from . import builder
+from .markets import TEXT
 
 API = 'https://api.notion.com/v1'
 VERSION = '2022-06-28'
@@ -87,27 +88,28 @@ def upload_video(path):
 
 # ---------- page content (same layout as our existing format pages) ----------
 
-def page_blocks(spec, video, file_upload_id, links):
+def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None):
+    T = TEXT[lang]
     cue_links = {'parakeet': ('Parakeet AI · Resume Maker', links['parakeet']),
-                 'linkedin': ('LinkedIn-Jobsuche', links['linkedin'])}
-    blocks = [block('heading_1', [rt('Inspirationsvideo')])]
+                 'linkedin': (T['cue_linkedin'], links['linkedin'])}
+    blocks = [block('heading_1', [rt(T['video_heading'])])]
     if file_upload_id:
         blocks.append(block('video', type='file_upload', file_upload={'id': file_upload_id}))
-    blocks.append(para([rt('Original auf TikTok', link=video['url'])]))
-    blocks.append(block('callout', md(builder.INSPO_NOTE[0] + '\n' + builder.INSPO_NOTE[1]),
+    blocks.append(para([rt(T['source'], link=video['url'])]))
+    blocks.append(block('callout', md(T['inspo_note'][0] + '\n' + T['inspo_note'][1]),
                         icon={'type': 'emoji', 'emoji': '⚠️'}, color='gray_background'))
 
-    blocks.append(block('heading_2', [rt('📲'), rt('TITEL', bold=True)]))
+    blocks.append(block('heading_2', [rt('📲'), rt(T['title_h'], bold=True)]))
     blocks.append(para([rt(spec['title_hook'], bold=True)]))
-    sub = 'Automatische Untertitel' if spec.get('voiceover', True) else 'Musik aus der Plattform-Bibliothek, kein Voiceover'
+    sub = T['sub_voice'] if spec.get('voiceover', True) else T['sub_silent']
     blocks.append(block('bulleted_list_item', [rt(sub)]))
     blocks.append(divider())
 
-    blocks.append(block('heading_2', [rt('💬SKRIPT')]))
+    blocks.append(block('heading_2', [rt(T['script_h'])]))
     paragraphs, current = [], []
     silent = not spec.get('voiceover', True)
     if silent:
-        paragraphs.append([rt('Texteinblendungen – nicht sprechen:', bold=True)])
+        paragraphs.append([rt(T['silent_label'], bold=True)])
     for seg in spec['script']:
         cue = seg.get('cue')
         parts = []
@@ -115,9 +117,9 @@ def page_blocks(spec, video, file_upload_id, links):
             label, url = cue_links[cue]
             parts += [rt('('), rt(label, link=url), rt(') ')]
         elif cue == 'asset':
-            parts.append(rt(f"(📎 {seg.get('asset_name') or 'Aufnahme'} – siehe Ressourcen) "))
-        elif cue == 'direction':
-            parts.append(rt(f"({seg.get('asset_name') or 'Regie'}) "))
+            parts.append(rt(T['asset_cue'].format(name=seg.get('asset_name') or '📎')))
+        elif cue == 'direction' and seg.get('asset_name'):
+            parts.append(rt(f"({seg['asset_name']}) "))
         parts.append(rt(seg['text'].strip() + ' ', bold=silent))
         if silent:
             paragraphs.append(parts)
@@ -131,16 +133,16 @@ def page_blocks(spec, video, file_upload_id, links):
     blocks += [para(p) for p in paragraphs]
     blocks.append(divider())
 
-    blocks.append(block('heading_2', [rt('🎬 VISUELLER HOOK')]))
-    blocks += [para([rt(line)]) for line in builder.hook_lines(spec)]
-    blocks.append(para([rt(builder.REQUIRED_LINE)]))
-    blocks.append(para([rt('Visual Hook Lab', link=links['visual_hook_lab'])]))
+    blocks.append(block('heading_2', [rt(T['hook_h'])]))
+    blocks += [para([rt(line)]) for line in builder.hook_lines(spec, lang)]
+    blocks.append(para([rt(T['required_line'])]))
+    blocks.append(para([rt('Visual Hook Lab', link=lab_url or links.get('visual_hook_lab'))]))
     blocks.append(divider())
 
-    blocks.append(block('heading_2', [rt('🔧'), rt('RESSOURCEN', bold=True)]))
+    blocks.append(block('heading_2', [rt('🔧'), rt(T['res_h'], bold=True)]))
     res = [rt('Parakeet AI · Resume Maker', link=links['parakeet'])]
     for asset in spec.get('assets_needed', []):
-        res.append(rt(f"\n📎 {asset['name']} – wird noch erstellt: {asset.get('description', '')}"))
+        res.append(rt(f"\n📎 {asset['name']} – {T['asset_todo']}: {asset.get('description', '')}"))
     blocks.append(block('callout', res, icon={'type': 'emoji', 'emoji': '💡'}, color='gray_background'))
     return blocks
 
@@ -234,8 +236,9 @@ def set_order(dach_page, page_ids):
 HOT_ICON = '🚀'
 
 
-def set_hot(dach_page, hot):
+def set_hot(dach_page, hot, lang='de'):
     """hot: [(page_id, viral_count)]. Shows them as 🚀 callouts right under the 🔥 instructions (top of the list)."""
+    T = TEXT[lang]
     blocks = children(dach_page)
     fire = next(b for b in blocks if b['type'] == 'callout' and _icon(b) == '🔥')
     for b in blocks:
@@ -243,8 +246,7 @@ def set_hot(dach_page, hot):
             api('DELETE', f"/blocks/{b['id']}")
     if not hot:
         return
-    callouts = [block('callout', [rt('GEHT GERADE VIRAL – DREH DAS JETZT ZUERST: ', bold=True), mention(pid),
-                                  rt(f'  ({n} JobStep-Videos mit über 100.000 Aufrufen in den letzten 7 Tagen)')],
+    callouts = [block('callout', [rt(T['hot_prefix'], bold=True), mention(pid), rt(T['hot_suffix'].format(n=n))],
                       icon={'type': 'emoji', 'emoji': HOT_ICON}, color='orange_background') for pid, n in hot]
     api('PATCH', f'/blocks/{dach_page}/children', {'children': callouts, 'after': fire['id']})
 

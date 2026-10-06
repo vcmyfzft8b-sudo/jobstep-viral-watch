@@ -94,10 +94,13 @@ Return JSON {{"results": [{{"id": "<video id>", "match": "<format id or null>", 
     return out
 
 
-def judge(video, formats, model, transcript=''):
+def judge(video, formats, model, transcript='', translate=True):
     """The definitive check for a viral video (strong model): is its format already in Notion (list or archive)?
     Also translates the script to English for the Slack message.
     Returns {'duplicate_of', 'reason', 'english_script', 'hook_en', 'new_format_description'}."""
+    translate_task = ('2) Translate the full script into natural English (spoken lines; if there is no speech, the on-screen '
+                      'texts), keeping the line order. Replace nothing - translate what is said.') if translate else ''
+    translate_field = ',\n"english_script": "<the translated script, line breaks between sentences>"' if translate else ''
     prompt = f"""All formats we already have in Notion (active list + archive), with the script from each page:
 {_listing(formats, with_script=True)}
 
@@ -110,11 +113,9 @@ SPEECH (transcript): {(transcript or video.get('subtitles') or '-')[:6000]}
    is built - not just the topic (CVs/ATS alone is NOT enough). If it tells the same story as one of our pages, it
    IS that format, even if worded differently or in another language. We never want duplicates: if you are unsure,
    answer with the closest existing format.
-2) Translate the full script into natural English (spoken lines; if there is no speech, the on-screen texts),
-   keeping the line order. Replace nothing - translate what is said.
+{translate_task}
 Return JSON {{"duplicate_of": "<format id or null>", "reason": "<one sentence why>",
-"hook_en": "<the hook in English>", "new_format_description": "<if new: one English sentence describing the format>",
-"english_script": "<the translated script, line breaks between sentences>"}}"""
+"hook_en": "<the hook in English>", "new_format_description": "<if new: one English sentence describing the format>"{translate_field}}}"""
     r = llm.chat_json(model, SYSTEM, prompt, timeout=1200)
     if r.get('duplicate_of') in (None, '', 'null', 'None'):
         r['duplicate_of'] = None

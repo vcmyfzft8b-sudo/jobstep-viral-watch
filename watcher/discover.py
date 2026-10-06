@@ -76,11 +76,16 @@ def refresh(accounts):
     return accounts, added, paused, revived
 
 
-GERMAN = set('der das und ist ich nicht eine mit auf für den wir mein dein lebenslauf bewerbung bewerbungen '
-             'hab habe auch noch dann aber wenn schon einfach jetzt anzeige werbung ausbildung stelle'.split())
-
-
 def language(handle):
-    """'de' if the account's captions are mostly German, else ''."""
-    words = re.findall(r'[a-zäöüß]+', ' '.join(v['desc'] for v in tiktok.latest_videos(handle)).lower())
-    return 'de' if words and sum(w in GERMAN for w in words) / len(words) >= 0.08 else ''
+    """'de', 'fr' or 'es' if the account's captions are mostly in that language, else ''."""
+    from .markets import TEXT
+    words = re.findall(r"[a-zäöüßàâçéèêëîïôûùÿœñáíóú’']+", ' '.join(v['desc'] for v in tiktok.latest_videos(handle)).lower())
+    if not words:
+        return ''
+    best, score = '', 0.0
+    for lang in ('de', 'fr', 'es'):
+        stop = set(TEXT[lang]['stopwords'].split()) - {'job', 'cv'}
+        r = sum(w in stop for w in words) / len(words)
+        if r > score:
+            best, score = lang, r
+    return best if score >= 0.08 else ''

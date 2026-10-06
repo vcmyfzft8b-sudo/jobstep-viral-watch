@@ -1,8 +1,9 @@
-"""Hot formats: 5+ viral JobStep videos (100k+) of the same format posted within the last 7 days.
+"""Hot formats (per market): 5+ viral JobStep videos (100k+) of the same format posted within the last 7 days,
+each confirmed by the strict Claude check as that market's format.
 
-While a format is hot it gets a 🚀 callout at the top of the DACH list ("geht gerade viral – dreh das jetzt"),
-and the moment it becomes hot an @everyone announcement goes to the DACH Discord #announcements channel
-(DISCORD_WEBHOOK_URL) plus a Slack message. When it cools down (< 5), the callout is removed again.
+While a format is hot it gets a 🚀 callout at the top of that market's list; once per hot period an @everyone
+announcement in the market's language goes to its Discord #announcements (webhook from discord_env) plus a Slack
+message listing the videos. When it cools down (< 5), the callout is removed.
 """
 import os
 import time
@@ -10,102 +11,86 @@ import time
 import requests
 
 from . import notify, notion, state
+from .markets import fkey, jkey
 
 MIN_VIRAL = 5
 WINDOW_DAYS = 7
 
 
-def viral_videos(history, videos, formats, viral_views):
-    """{format_id: [video, ...]} – viral videos posted in the last 7 days whose format was confirmed by the strict
-    Claude check (transcript vs. every format page in Notion), for active formats."""
+def viral_videos(history, videos, formats, viral_views, m='de'):
+    """{format_id: [video, ...]} - confirmed viral videos posted in the last 7 days, for active formats."""
     now = time.time()
     active = {f['id'] for f in formats if f.get('status') == 'active'}
+    fk, jk = fkey(m), jkey(m)
     seen, out = set(), {}
     for vid, v in list(videos.items()) + list(history.items()):
         if vid in seen:
             continue
         seen.add(vid)
-        fid = v.get('format')
-        if (fid in active and v.get('judged') and v.get('views', 0) >= viral_views
+        fid = v.get(fk)
+        if (fid in active and v.get(jk) and v.get('views', 0) >= viral_views
                 and now - v.get('created', 0) <= WINDOW_DAYS * 86400):
             out.setdefault(fid, []).append({'id': vid, **v})
     return out
 
 
-def counts(history, videos, formats, viral_views):
-    """{format_id: number of confirmed viral videos posted in the last 7 days} for active formats."""
-    return {fid: len(vs) for fid, vs in viral_videos(history, videos, formats, viral_views).items()}
-
-
-def _old_counts(history, videos, formats, viral_views):
-    now = time.time()
-    active = {f['id'] for f in formats if f.get('status') == 'active'}
-    seen, out = set(), {}
-    for vid, v in list(videos.items()) + list(history.items()):
-        if vid in seen:
-            continue
-        seen.add(vid)
-        fid = v.get('format')
-        if fid in active and v.get('views', 0) >= viral_views and now - v.get('created', 0) <= WINDOW_DAYS * 86400:
-            out[fid] = out.get(fid, 0) + 1
-    return out
+def counts(history, videos, formats, viral_views, m='de'):
+    return {fid: len(vs) for fid, vs in viral_videos(history, videos, formats, viral_views, m).items()}
 
 
 def public_link(page_id):
     return f"https://parakeetai.notion.site/{page_id.replace('-', '')}"
 
 
-def discord(text):
-    url = os.environ.get('DISCORD_WEBHOOK_URL')
+def discord(url, text):
     if not url:
         return False
     try:
-        r = requests.post(url, json={'content': text, 'username': 'Parakeet AI', 'allowed_mentions': {'parse': ['everyone']}}, timeout=20)
+        r = requests.post(url, json={'content': text, 'username': 'Parakeet AI', 'allowed_mentions': {'parse': ['everyone']}},
+                          timeout=20)
         return r.ok
     except requests.RequestException:
         return False
 
 
-def update(history, videos, formats, cfg, meta, dry_run=False):
-    """Recompute hot formats, update the Notion callouts and announce new ones."""
-    c = counts(history, videos, formats, cfg['thresholds']['viral_views'])
-    hot_now = {fid: n for fid, n in c.items() if n >= MIN_VIRAL}
-    before = meta.get('hot', {})
+def update(history, videos, formats, cfg, meta, market, dry_run=False):
+    """Recompute hot formats for one market, update its Notion callouts and announce new ones."""
+    m, T = market['key'], market['T']
+    viral = cfg['thresholds']['viral_views']
+    proof = viral_videos(history, videos, formats, viral, m)
+    hot_now = {fid: len(vs) for fid, vs in proof.items() if len(vs) >= MIN_VIRAL}
+    mkey = 'hot' if m == 'de' else f'hot_{m}'
+    before = meta.get(mkey, {})
     by_id = {f['id']: f for f in formats}
-    print('hot formats:', {by_id[f]['title'][:40]: n for f, n in hot_now.items()} or 'none')
+    print(f"{T['flag']} hot formats:", {by_id[f]['title'][:40]: n for f, n in hot_now.items()} or 'none')
     if dry_run:
         return
     new = [fid for fid in hot_now if fid not in before]
     cooled = [fid for fid in before if fid not in hot_now]
-    shown = {fid: n for fid, n in hot_now.items()}
-    if new or cooled or any(before.get(f, {}).get('count') != n for f, n in shown.items()):
-        notion.set_hot(cfg['notion']['dach_page'], [(by_id[f]['page_id'], n) for f, n in
-                                                     sorted(shown.items(), key=lambda x: -x[1])])
+    if new or cooled or any(before.get(f, {}).get('count') != n for f, n in hot_now.items()):
+        notion.set_hot(market['list_page'], [(by_id[f]['page_id'], n) for f, n in
+                                             sorted(hot_now.items(), key=lambda x: -x[1])], lang=market['lang'])
     meta_hot = {fid: {'count': n, 'since': before.get(fid, {}).get('since', int(time.time())),
                       'announced': before.get(fid, {}).get('announced', False)} for fid, n in hot_now.items()}
-    # Announce in Discord once per hot period - also later, if Discord was not connected yet when it became hot.
-    for fid in [f for f in hot_now if not meta_hot[f]['announced'] and os.environ.get('DISCORD_WEBHOOK_URL')]:
+    url = os.environ.get(market.get('discord_env', ''), '')
+    for fid in [f for f in hot_now if not meta_hot[f]['announced'] and url]:
         f, n = by_id[fid], hot_now[fid]
-        if discord(f"@everyone 🔥 **Dieses Format geht gerade viral!**\n\n**{f['title']}**\n"
-                   f"{n} JobStep-Videos mit über 100.000 Aufrufen in den letzten 7 Tagen.\n"
-                   f"👉 Dreh es **jetzt als Nächstes** – Skript, Beispielvideo und alle Infos:\n{public_link(f['page_id'])}"):
+        if discord(url, T['discord'].format(title=f['title'], n=n, link=public_link(f['page_id']))):
             meta_hot[fid]['announced'] = True
-            notify.push('📣 Announced in Discord #announcements', f"*{f['title']}* ({n} viral videos in 7 days)")
-            state.log({'type': 'hot_announced', 'format': fid, 'count': n})
-    proof = viral_videos(history, videos, formats, cfg['thresholds']['viral_views'])
+            notify.push(f"📣 {T['flag']} Announced in Discord #announcements", f"*{f['title']}* ({n} viral videos in 7 days)")
+            state.log({'type': 'hot_announced', 'market': m, 'format': fid, 'count': n})
     for fid in new:
         f, n = by_id[fid], hot_now[fid]
-        ok = meta_hot[fid]['announced']
-        links = '\n'.join(f"• @{x['handle']} – {x['views'] // 1000}k – "
-                          f"<https://www.tiktok.com/@{x['handle']}/video/{x['id']}|video>"
+        links = '\n'.join(f"• @{x['handle']} – {x['views'] // 1000}k – <https://www.tiktok.com/@{x['handle']}/video/{x['id']}|video>"
                           for x in sorted(proof.get(fid, []), key=lambda x: -x['views']))
-        notify.push('🚀 HOT format', f"*{f['title']}* – {n} viral JobStep videos in 7 days (each confirmed by Claude as this format):\n"
-                    f"{links}\n\nPinned at the top of the DACH list"
-                    f"{' and announced in Discord #announcements' if ok else ' (Discord not connected – no announcement sent)'}.",
+        notify.push(f"🚀 {T['flag']} HOT format ({T['name']})",
+                    f"*{f['title']}* – {n} viral JobStep videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
+                    f"Pinned at the top of the {T['name']} list"
+                    f"{' and announced in Discord #announcements' if meta_hot[fid]['announced'] else ' (Discord not connected – no announcement sent)'}.",
                     click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
-        state.log({'type': 'hot', 'format': fid, 'count': n, 'discord': ok})
+        state.log({'type': 'hot', 'market': m, 'format': fid, 'count': n})
     for fid in cooled:
-        notify.push('Hot format cooled down', f"*{by_id[fid]['title'] if fid in by_id else fid}* – fewer than {MIN_VIRAL} viral videos "
-                    'in the last 7 days, removed from the top of the list.')
-        state.log({'type': 'hot_cooled', 'format': fid})
-    meta['hot'] = meta_hot
+        notify.push(f"{T['flag']} Hot format cooled down", f"*{by_id[fid]['title'] if fid in by_id else fid}* – fewer than "
+                    f"{MIN_VIRAL} viral videos in the last 7 days, removed from the top of the {T['name']} list.")
+        state.log({'type': 'hot_cooled', 'market': m, 'format': fid})
+    meta[mkey] = meta_hot

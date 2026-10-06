@@ -52,7 +52,9 @@ RULES = """RULES
 - visual_hook_first: one German sentence telling the creator what to do in the first seconds, based on what the
   original creator does in the first 3 seconds (action/prop + speaking to camera + title on screen).
 - return_to_camera: true if the original goes back to talking to the camera for the last line(s).
-- extra_hook_lines: 0-2 extra German lines only if the original needs special filming instructions."""
+- extra_hook_lines: 0-2 extra German lines only if the original needs special filming instructions. Never repeat
+  the standard line about filming Parakeet AI on the laptop at every link and cutting loading times - it is added
+  automatically."""
 
 SCHEMA = """Return JSON:
 {"page_title": "...", "icon": "<one emoji>", "title_hook": "...", "voiceover": true,

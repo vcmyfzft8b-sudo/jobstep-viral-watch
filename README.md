@@ -7,7 +7,7 @@ Every 6 hours (GitHub Actions) this watcher:
 2. **Re-checks every watchlist video** (views, likes, shares, saves) and stores a snapshot, so growth over time is known.
 3. **Alerts** (Slack message via `SLACK_WEBHOOK_URL`, optional phone push via ntfy, + a log line on the private Notion page *JobStep Viral-Radar*):
    - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views
-   - 🟢 **viral** – 100k+ views
+   - 🟢 **viral** – 100k+ views (counts the moment it gets there – after 1 day or 6 hours – as long as the video is from the last 7 days)
    - "weak" is added when shares + saves are below 1.5 % of views
 4. **Builds a new format page** when a viral video (good engagement) uses a format that is not on the DACH
    instructions page yet:
@@ -16,13 +16,14 @@ Every 6 hours (GitHub Actions) this watcher:
    same layout as the existing ones → added to the numbered list at its ranked position.
    If a check fails (e.g. "JobStep" left in the text, not German, script length off by more than 25 %), the page is
    created as a private draft on the radar page instead and you get a notification with the reason.
-5. **Every 3 days – complete account list**: Lightreel is asked for every account promoting JobStep; each new handle
+5. **Hot formats**: every format with 5+ viral videos posted in the last 7 days gets a 🚀 box at the top of the DACH
+   list (several formats possible) and one German @everyone announcement in the DACH Discord #announcements.
+6. **Every 3 days – complete account list**: Lightreel is asked for every account promoting JobStep; each new handle
    is verified on TikTok (posted in the last 30 days + JobStep in captions or videos) and added. Accounts without
    JobStep posts for 30 days are paused and re-checked every 3 days, so they come back automatically. You get a push
    when new accounts are added.
-6. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
-   smoothed for small samples, German creators count double). A video counts only if it reached 100k (20k)
-   within its first 7 days after posting.
+7. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
+   smoothed for small samples, German creators count double).
 
 ## Setup
 

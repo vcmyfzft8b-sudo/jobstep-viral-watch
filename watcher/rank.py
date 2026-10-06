@@ -1,8 +1,7 @@
 """Order of the formats on the DACH page, from how every JobStep video of each format performed.
 
-score = smoothed share of videos with 100k+ views + weight_20k * smoothed share with 20k+ views,
-counting only views reached within the first 7 days after posting (exact for every video we tracked from the
-start; for older videos first seen later, today's total views / 1.2 is used as a cautious estimate).
+score = smoothed share of videos with 100k+ views + weight_20k * smoothed share with 20k+ views
+(every video counts with its views, no matter how long it took to get them).
 Smoothing pulls small samples towards the network average (prior), so one lucky video can't top the list
 on its own, but a new format with a real hit still ranks high. German creators' videos count double.
 """
@@ -20,10 +19,9 @@ def scores(history, formats, cfg):
             if v.get('format') != f['id']:
                 continue
             w = r['german_weight'] if v['handle'] in german else 1
-            v7 = v['views_7d'] if v.get('views_7d') is not None else v['views'] / 1.2
             n += w
-            hits += w * (v7 >= 100_000)
-            hits20 += w * (v7 >= 20_000)
+            hits += w * (v['views'] >= 100_000)
+            hits20 += w * (v['views'] >= 20_000)
         k = r['prior_weight']
         p100 = (hits + r['prior_hit_rate'] * k) / (n + k)
         p20 = (hits20 + r['prior_20k_rate'] * k) / (n + k)

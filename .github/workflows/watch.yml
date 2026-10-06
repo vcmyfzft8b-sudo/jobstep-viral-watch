@@ -1,0 +1,67 @@
+name: JobStep viral watch
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # every 6 hours
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
+        type: choice
+        options: [normal, only-detect, dry-run]
+        default: normal
+
+concurrency:
+  group: jobstep-viral-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out state branch
+        uses: actions/checkout@v4
+        with:
+          ref: state
+          path: state-branch
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q -r requirements.txt
+
+      - name: Run watcher
+        env:
+          STATE_DIR: state-branch/state
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SONIOX_API_KEY: ${{ secrets.SONIOX_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          LIGHTREEL_API_KEY: ${{ secrets.LIGHTREEL_API_KEY }}
+          MODE: ${{ github.event.inputs.mode || 'normal' }}
+        run: |
+          case "$MODE" in
+            dry-run)     python -m watcher.main --dry-run ;;
+            only-detect) python -m watcher.main --only-detect ;;
+            *)           python -m watcher.main ;;
+          esac
+
+      - name: Save state
+        if: always()
+        working-directory: state-branch
+        run: |
+          git config user.name "jobstep-viral-watch"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A state
+          git diff --cached --quiet || (git commit -q -m "state $(date -u +%Y-%m-%dT%H:%MZ)" && git push -q)

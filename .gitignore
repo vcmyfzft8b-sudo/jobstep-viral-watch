@@ -1,0 +1,8 @@
+.env
+.env.*
+*.mp4
+*.flac
+__pycache__/
+state/
+/tmp/
+.DS_Store

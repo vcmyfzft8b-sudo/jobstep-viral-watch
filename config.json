@@ -1,0 +1,72 @@
+{
+  "accounts": [
+    "emasavetuje",
+    "revekaonline",
+    "zorica.djurdjevic21",
+    "karmencvtips",
+    "neli.gomolj",
+    "lissa.jobtipps",
+    "salii.jobtipps",
+    "emy.jobstep.io",
+    "lilly.jobtipps",
+    "franzi.jobtipps",
+    "emy.jobtipps",
+    "chloe.jobtipps",
+    "sara.jobstep.io",
+    "ale.jobtips",
+    "jobstep.io",
+    "job.by.niki"
+  ],
+  "german_accounts": [
+    "lissa.jobtipps",
+    "salii.jobtipps",
+    "emy.jobstep.io",
+    "lilly.jobtipps",
+    "franzi.jobtipps",
+    "emy.jobtipps"
+  ],
+  "watch_days": 7,
+  "thresholds": {
+    "early": [
+      [
+        6,
+        5000
+      ],
+      [
+        24,
+        20000
+      ],
+      [
+        48,
+        50000
+      ]
+    ],
+    "creator_multiple": 10,
+    "creator_multiple_min_views": 5000,
+    "creator_multiple_max_age_hours": 72,
+    "viral_views": 100000,
+    "min_engagement": 0.015
+  },
+  "ranking": {
+    "prior_hit_rate": 0.03,
+    "prior_20k_rate": 0.12,
+    "prior_weight": 45,
+    "weight_20k": 0.25,
+    "german_weight": 2,
+    "rerank_weekday": 0
+  },
+  "models": {
+    "classify": "anthropic/claude-sonnet-5.5",
+    "build": "anthropic/claude-opus-5.5"
+  },
+  "links": {
+    "parakeet": "https://www.parakeet-ai.com/resume-maker",
+    "linkedin": "https://www.linkedin.com/jobs/",
+    "visual_hook_lab": "https://app.notion.com/p/3d4958b0fc148040a3f6e8dc64bb7a90"
+  },
+  "notion": {
+    "dach_page": "9a9958b0fc148375be81010f79268995",
+    "holder_page": "3f1958b0fc148130a316fb99f4f8738b",
+    "radar_page": "3f1958b0fc148177bcd9cee8c43090e0"
+  }
+}

@@ -116,20 +116,29 @@ def run(dry_run=False, only_detect=False):
         print('fetch failure reasons:', reasons)
 
     # 3./4. alerts
-    actions = []
+    actions, backlog = [], []
     for vid, v in sorted(videos.items(), key=lambda x: -x[1].get('views', 0)):
         if 'created' not in v:
             continue
         lvl = detect.level(v, now, detect.creator_baseline(history, v['handle']), th)
         if not lvl or lvl in v['notified'] or ('viral' in v['notified']):
             continue
+        # Older videos of a newly added account: one summary push instead of one push each.
+        quiet = v.get('first_seen') == int(now) and now - v['created'] > 48 * 3600
         try:
-            actions.append(handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect))
+            result = handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=quiet)
+            actions.append(result)
+            if quiet:
+                backlog.append(result)
             v['notified'].append(lvl)
         except Exception as e:  # keep going with the other videos
             traceback.print_exc()
             notify.push('⚠️ JobStep-Watcher Fehler', f"{v['url']}\n{str(e)[:300]}", click=v.get('url'), tags='warning')
             state.log({'type': 'error', 'video': vid, 'error': str(e)[:500]})
+    if backlog and not dry_run:
+        viral = sum(1 for r in backlog if r['level'] == 'viral')
+        notify.push(f'📋 {len(backlog)} ältere Videos neuer Accounts', f'{viral} viral, {len(backlog) - viral} hebt ab '
+                    '(letzte 7 Tage) – Details auf der Radar-Seite', tags='clipboard')
 
     # Classify every video once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
     if not dry_run:
@@ -175,10 +184,13 @@ def run(dry_run=False, only_detect=False):
     print('actions:', json.dumps(actions, ensure_ascii=False))
 
 
-def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect):
+def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect, quiet=False):
     radar_page = cfg['notion']['radar_page']
     age_h = (now - v['created']) / 3600
     eng = detect.engagement(v)
+    if dry_run:
+        print('DRY', lvl, v['handle'], v['views'], v.get('url'))
+        return {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v.get('format')}
     if not v.get('format_checked'):
         c = classify.classify(v, formats, cfg['models']['classify'])
         v['format'], v['hook_en'], v['format_checked'] = c.get('match'), c.get('hook_en', ''), True
@@ -193,10 +205,8 @@ def handle_alert(v, lvl, formats, history, cfg, now, dry_run, only_detect):
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} Aufrufe nach {age_h:.0f} h · Shares+Saves {eng:.1%}"
            f"{' (schwach)' if weak else ''}{' (Shares/Saves unbekannt)' if eng_unknown else ''}\n{fmt_text}")
     result = {'video': v['id'], 'level': lvl, 'views': v['views'], 'format': v['format']}
-    if dry_run:
-        print('DRY', head, msg)
-        return result
-    notify.push(f'{head}: JobStep-Video', msg, click=v['url'], tags='chart_with_upwards_trend')
+    if not quiet:
+        notify.push(f'{head}: JobStep-Video', msg, click=v['url'], tags='chart_with_upwards_trend')
     notify.radar(radar_page, f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – {head} – {msg.replace(chr(10), ' – ')}",
                  link=v['url'], link_label='Video')
     state.log({'type': 'alert', **result})

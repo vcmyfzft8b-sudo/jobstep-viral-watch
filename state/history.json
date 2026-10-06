@@ -10549,7 +10549,7 @@
  },
  "7691016721053895958": {
   "created": 1790704380,
-  "format": "A202610061330",
+  "format": "N04",
   "german": false,
   "handle": "issa.jobtips",
   "hook": "How to get hired as fast as possible? I applied all summer and got nowhere until I redid my CV on JobStep.",
@@ -10594,7 +10594,7 @@
  },
  "7691047167057874179": {
   "created": 1790711469,
-  "format": "A202610061330",
+  "format": "N04",
   "german": false,
   "handle": "juliantyonhaku",
   "hook": "Never getting invited to job interviews? Turns out the systems can't read my CV at all, so I uploaded it to a site I found on TikTok, got a score, improved it, and now I get replies.",
@@ -10639,7 +10639,7 @@
  },
  "7691061952071716118": {
   "created": 1790714913,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "tsvetelina.tips",
   "hook": "Unknown: no on-screen text or speech; the caption only says 'follow for more secrets' about jobs (Bulgarian)",
@@ -10810,7 +10810,7 @@
  },
  "7691252438875098400": {
   "created": 1790759263,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "marine.realfakephotos",
   "hook": "The secret of people who work in HR: a friend of my mom in HR said my basic Canva CV would never get accepted anywhere",
@@ -11215,7 +11215,7 @@
  },
  "7691426151243238678": {
   "created": 1790799708,
-  "format": "A202610061330",
+  "format": "N04",
   "german": false,
   "handle": "issa.jobtips",
   "hook": "Why am I only finding out about this site now? After dozens of rejections my CV scored 38, and after 5 steps it scored 96.",
@@ -11431,7 +11431,7 @@
  },
  "7691683779408137505": {
   "created": 1790859690,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "charline.jobstep.io",
   "hook": "HR doesn't want you to know this: I just quit my HR job, so I can share the secrets. Your CVs are the problem, because ATS filters sort them before any human sees them.",
@@ -12160,7 +12160,7 @@
  },
  "7692100963422784800": {
   "created": 1790956824,
-  "format": "A202610061332",
+  "format": "X16",
   "german": true,
   "handle": "job.reality.mit.tatyana",
   "hook": "A recruiter tells me a secret: HR doesn't want a perfectly aesthetic Canva-template CV, and this website is the game changer.",
@@ -12619,7 +12619,7 @@
  },
  "7692439494859050272": {
   "created": 1791035644,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "charline.jobstep.io",
   "hook": "HR doesn't want you to know this: I just quit my HR job, so here are the secrets. Your CVs get filtered by ATS before anyone sees them, so they need to be ugly.",
@@ -12628,7 +12628,7 @@
  },
  "7692446830814072096": {
   "created": 1791037351,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "stay.with.giulia",
   "hook": "I left my job in HR, I'll reveal the recruiters' secret: nobody wants to see your CV because Canva templates get auto-rejected by ATS",
@@ -13213,7 +13213,7 @@
  },
  "7692829268404981014": {
   "created": 1791126398,
-  "format": "A202610061332",
+  "format": "X16",
   "german": false,
   "handle": "tips.from.ale",
   "hook": "Recruiters don't want you to know this: your CV from Canva or ChatGPT was never read by a human because it didn't pass the ATS filters",

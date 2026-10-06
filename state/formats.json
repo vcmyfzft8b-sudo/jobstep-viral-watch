@@ -79,12 +79,13 @@
   "title": "Die 10 Top-Arbeitgeber – aber was heißt eigentlich „gut“? 🏆"
  },
  {
+  "archived_reason": "duplicate of N04 (already in Notion)",
   "created": 1791293407,
   "description": "Talking-head creator says she got no job offers all summer, shows her old CV, shows the site in Google search, uploads the CV for a low score, improves it step by step to a high score, shows the new CV and ends with an inbox full of job offers.",
   "id": "A202610061330",
   "page_id": "3f1958b0-fc14-810a-8e90-c310ed3f16fd",
   "source_video": "https://www.tiktok.com/@issa.jobtips/video/7691016721053895958",
-  "status": "active",
+  "status": "archived",
   "title": "Den ganzen Sommer nur Absagen? Bis ich DAS geändert hab 😱"
  },
  {
@@ -97,12 +98,13 @@
   "title": "Zwei Lebensläufe, wer wird eingeladen? 👀"
  },
  {
+  "archived_reason": "duplicate of X16 (already in Notion)",
   "created": 1791293560,
   "description": "Ex-HR 'insider secrets' talking-head hook (CVs are Canva templates, ATS filters read them), then a laptop screen recording: add a job link, get a before score, fix the CV, get an after score, download.",
   "id": "A202610061332",
   "page_id": "3f1958b0-fc14-8107-9431-f2f20737aa98",
   "source_video": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
-  "status": "active",
+  "status": "archived",
   "title": "Ex-HR verrät: So kommt dein Lebenslauf durch die Filter 🤫"
  },
  {
@@ -117,11 +119,179 @@
  {
   "archived_reason": "duplicate of N10 (same core message: ATS rejects pretty CVs)",
   "created": 1791293741,
-  "description": "Talking-head explainer that opens by pointing at fancy Canva-style CVs on a monitor with red X overlays, explains why ATS rejects bar charts and icons (with a green-screen segment), then screen-records the full CV app flow from score analysis to job-link tailoring, template choice, and download.",
+  "description": "HR-hates-these-CVs green-screen hook: the creator repeats 'rejection, rejection, rejection', slams Canva-style templates as unreadable by ATS while standing in front of their old CV, then opens Parakeet AI's Resume Maker to build an ATS-friendly version. Examples: 'Das HR HASST diese Lebensläufe ❌'",
   "id": "A202610061335",
   "page_id": "3f1958b0-fc14-8170-a169-dba97b041280",
   "source_video": "https://www.tiktok.com/@lockinwitheva/video/7691082863533427990",
   "status": "archived",
   "title": "Das HR hasst diese Lebensläufe? Schau hier hin 👀"
+ },
+ {
+  "description": "Fake-appointment interview hook: the creator claims you don't need connections or a scheduled meeting to land an interview, briefly explains why, then shows their CV on a laptop, tailors it to a job posting in Parakeet AI and reveals the score and AI improvements before a 'Comment JOB' CTA. Examples: 'DU BRAUCHST KEINEN TERMIN, UM EIN VORSTELLUNGSGESPRÄCH ZU BEKOMMEN'",
+  "id": "X01",
+  "page_id": "3eb958b0-fc14-80c1-afc1-f1dd5ed26188",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Ich hab so getan, als hätte ich einen Termin 😳"
+ },
+ {
+  "description": "Gushing HR-tip hook: the creator jokes they could marry the HR guy who showed them a trick, then demos copying a job-ad link into Parakeet AI, which analyzes it and generates a tailored CV that can be edited further, ending with a 'Comment JOB' CTA. Examples: 'Ich könnte den Typen aus dem HR wirklich heiraten'",
+  "id": "X02",
+  "page_id": "3eb958b0-fc14-80b0-94a4-f86ba412dcc2",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Ich könnte den Typen aus dem HR wirklich heiraten 😳"
+ },
+ {
+  "description": "HR insider-secret hook: a self-described ex-big-company 'snitch' reveals what HR hides, demoing how to copy an Indeed job link, paste it into Parakeet AI and get an analyzed, tailored CV, ending with a 'Comment JOB' CTA. Examples: 'Was HR nicht will, dass du weißt 🤫'",
+  "id": "X03",
+  "page_id": "3eb958b0-fc14-8060-8097-fe191b2eca39",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Was HR nicht will, dass du weißt 🤫"
+ },
+ {
+  "description": "Job-search tier-list hook: the creator talks to camera and ranks job tools and platforms from F-Tier to S-Tier with short verdicts (e.g., Indeed for ghost jobs, LinkedIn), finishing by flashing the Parakeet AI logo and placing it in S-Tier, with no laptop demo. Examples: 'Gut, besser, am besten: Bewerbungs-Edition'",
+  "id": "X04",
+  "page_id": "3e7958b0-fc14-809c-a682-fbe124d693a4",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Gut, besser, am besten: Bewerbungs-Edition"
+ },
+ {
+  "description": "Unpopular-opinion hook: the creator argues that sending the same CV to every job doesn't actually save time because it fails to show fit, then turns the camera to the laptop to demo tailoring a CV with Parakeet AI. Examples: 'Unpopuläre Meinung: Derselbe Lebenslauf für jede Stelle spart dir keine Zeit'",
+  "id": "X05",
+  "page_id": "3e7958b0-fc14-806a-951e-d4f737f25a8b",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Unpopuläre Meinung: Derselbe Lebenslauf für jede Stelle spart dir keine Zeit"
+ },
+ {
+  "description": "Am-I-the-only-one mistake warning: the creator asks whether they're the only one who didn't know old-style CVs no longer work, explains ATS filters, then shows how to make an ATS-friendly CV with Parakeet AI. Examples: 'Vermeidet diesen Fehler!!'",
+  "id": "X06",
+  "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Vermeidet diesen Fehler!!"
+ },
+ {
+  "description": "Meeting-POV skit: the creator refuses a boss's demands (voiced by provided MP3s) to turn their camera on, responding with escalating comebacks in a single static shot, then speaks directly to the audience with the Parakeet AI 'Comment JOB' CTA. Examples: 'Wie hättet ihr reagiert??'",
+  "id": "X07",
+  "page_id": "3d5958b0-fc14-8185-9d5a-eeac10c9f2f0",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Wie hättet ihr reagiert??"
+ },
+ {
+  "description": "Outrage rejection story: the creator vents that even with a 1.3 Abitur they got rejected for a summer job at EDEKA, learns their application was never received (filtered out), then shows fixing their CV with Parakeet AI. Examples: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
+  "id": "X08",
+  "page_id": "3d5958b0-fc14-8142-ba86-d4195599a81a",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡"
+ },
+ {
+  "description": "Deleting-soon recruiter-secrets hook: the creator claims they'll delete the video in 2 hours, reveals that companies use software to scan CVs for structure and keywords, then shows using Parakeet AI to optimize their CV. Examples: 'Dinge die Personaler euch verheimlichen 😳❌'",
+  "id": "X09",
+  "page_id": "3e2958b0-fc14-8079-954e-f1a0fed8673f",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Dinge die Personaler euch verheimlichen 😳❌"
+ },
+ {
+  "description": "Boss-call skit: a boss pressures the creator to cover a morning shift on their birthday, the creator politely but firmly refuses through rising back-and-forth, setting up a pivot to finding a better job with Parakeet AI. Examples: 'Ich soll an meinem Geburtstag arbeiten ??😭'",
+  "id": "X10",
+  "page_id": "3d5958b0-fc14-81df-b1cf-d5d1f419f07c",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Ich soll an meinem Geburtstag arbeiten ??😭"
+ },
+ {
+  "description": "Perfect-CV reveal: the creator proudly presents a '12/10' CV that beats every ATS, explains what scanners check (job-ad keywords, structure, font size, tool used), then shows it was made with Parakeet AI. Examples: 'Ein Lebenslauf der nicht abgelehnt wird'",
+  "id": "X11",
+  "page_id": "3d5958b0-fc14-818f-9562-c6e1e7f0b2ed",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Ein Lebenslauf der nicht abgelehnt wird"
+ },
+ {
+  "description": "Applying-to-your-ex POV: the creator applies to a company where their ex is a department head, tailors and restyles their CV with Parakeet AI while joking about changing their surname to avoid auto-rejection, and waits to see if it works. Examples: 'POV: du bewirbst dich bei deinem Ex 🤡💀'",
+  "id": "X12",
+  "page_id": "3d5958b0-fc14-8157-a870-c1299d14dcf0",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "POV: du bewirbst dich bei deinem Ex 🤡💀"
+ },
+ {
+  "description": "Psychological job-hunt tips: using one of several provocative on-screen lines, the creator delivers three quick contrarian tips for landing a job this week, such as never sending the same CV twice and passing ATS filters, while showing the Parakeet AI resume builder. Examples: 'LinkedIn wird dir keinen Job finden', 'Dein Lebenslauf ist wahrscheinlich zu schön'",
+  "id": "X13",
+  "page_id": "3e6958b0-fc14-80c5-bcda-fe62db114cc4",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "3 Psycho-Tipps, um diese Woche einen Job zu finden"
+ },
+ {
+  "description": "Explaining-to-parents hook: the creator rants about how job hunting has changed since printed CVs and walk-ins, shares 50+ rejections and a recruiter friend's verdict on their CV, then shows fixing it with Parakeet AI. Examples: 'Wie soll ich meinen Eltern erklären, dass...'",
+  "id": "X14",
+  "page_id": "3d5958b0-fc14-8155-857c-d9c1c697c845",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Wie soll ich meinen Eltern erklären, dass..."
+ },
+ {
+  "description": "Rejected-rejected-rejected warning: the creator flips through their pretty but empty old CVs, contrasts them with a plain but content-rich new CV that passes ATS filters, and refuses to gatekeep by showing Parakeet AI. Examples: 'Mach das nicht!!'",
+  "id": "X15",
+  "page_id": "3d5958b0-fc14-8135-81f0-c063de327abd",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Mach das nicht!!"
+ },
+ {
+  "description": "Ex-HR-insider secret: a creator who claims to have worked in corporate HR reveals the hidden trick of sharing and copying a job link, pasting it into Parakeet AI via 'Job hinzufügen' and getting an auto-tailored CV. Examples: 'Personaler wollen nicht, dass du das weißt 😳😳'",
+  "id": "X16",
+  "page_id": "3d5958b0-fc14-815d-bf46-d3b4d1ac8008",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Personaler wollen nicht, dass du das weißt 😳😳"
+ },
+ {
+  "description": "Ugly-CVs-win contrarian hook: the creator repeats that the uglier your CV the better, shows their pretty but empty old CV, then shares a cousin-in-HR tip and demos a plain, content-rich CV made with Parakeet AI. Examples: 'Hässliche Lebensläufe sind fr besser'",
+  "id": "X17",
+  "page_id": "3d5958b0-fc14-81a8-8781-ce9d93a65bcf",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Hässliche Lebensläufe sind fr besser"
+ },
+ {
+  "description": "Spill-the-secret hook: the creator bluntly reveals that employers use ATS, then walks through copying any job-ad link (Indeed, LinkedIn, etc.) and pasting it into Parakeet AI to beat the system. Examples: 'Personaler wollen nicht dass wir das wissen 🤡'",
+  "id": "X18",
+  "page_id": "3d5958b0-fc14-8179-b216-cd6c20cb48e1",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Personaler wollen nicht dass wir das wissen 🤡"
+ },
+ {
+  "description": "Humble-brag hook: the creator wonders how to tell unemployed friends they're flooded with interview requests, explains how they went from constant rejections to ATS-optimized CVs after recruiter TikTok advice, and shows Parakeet AI. Examples: 'Wie soll ich meinen Freunden erklären 💀'",
+  "id": "X19",
+  "page_id": "3d5958b0-fc14-8189-a75a-cc309c4fed21",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Wie soll ich das meinen Freunden erklären 💀"
+ },
+ {
+  "description": "Relatable-rejection hook: the creator reads the typical 'we chose another candidate' email, calls it a lie, explains it's an automatic AI rejection triggered by missing keywords, then shows how to pass with Parakeet AI. Examples: 'Wer kennt auch diese typische Absage😭😭'",
+  "id": "X20",
+  "page_id": "3d5958b0-fc14-81b2-9b26-e77a40ee443b",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "Wer kennt auch diese typische Absage😭😭"
+ },
+ {
+  "description": "Camera-on meeting POV skit: a female boss insists the creator turn on their camera during a video call while the creator keeps refusing, escalating into a power struggle that sets up a pivot to job hunting with Parakeet AI. Examples: 'POV deine Chefin zwingt dich deine kamera anzumachen 🤡'",
+  "id": "X21",
+  "page_id": "3d5958b0-fc14-8107-916c-f6e611986e98",
+  "source": "DACH archive (old formats)",
+  "status": "archived",
+  "title": "POV deine Chefin zwingt dich deine kamera anzumachen 🤡"
  }
 ]

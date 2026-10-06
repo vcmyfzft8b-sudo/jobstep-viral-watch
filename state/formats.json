@@ -3,6 +3,9 @@
   "description": "Nobody reads your CV / your CV never reaches a recruiter: ATS software filters or rejects CVs before a human sees them; pretty/creative CVs fail the ATS. Examples: 'NIKO ne cita tvoj CV', 'pov: alles Lügen', 'POV: cały czas dostajesz odmowy', 'Mach das nicht!! abgelehnt'.",
   "id": "N10",
   "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5",
+  "pages": {
+   "fr": "3d6958b0-fc14-8081-9ed6-cef70d0e34df"
+  },
   "script": "Niemand liest deinen Lebenslauf. Sorry, dass ich's so direkt sagen muss, aber niemand liest deinen Lebenslauf. Und das sag ich, obwohl ich selbst lange nicht kapiert hab, warum ich mit so viel Berufserfahrung, Praktika und Abschluss nicht ein einziges Vorstellungsgespräch bekommen hab. Und stell dir meinen Schock vor, als ich gehört hab, dass Menschen Lebensläufe gar nicht mehr lesen. Das macht jetzt KI. (Parakeet AI · Resume Maker) Ich fand diesen Lebenslauf richtig gut. Sag du mir: „Was fehlt hier?“ (Parakeet AI · Resume Maker) Dann hab ich diese Seite gefunden, Parakeet AI, und lad den Lebenslauf hoch, um zu sehen, welche Punktzahl ich krieg. (Parakeet AI · Resume Maker) Und ich krieg X von 100. Also nichts, echt gar nichts ist gut. (Parakeet AI · Resume Maker) Aber wenn du ihn auf der Seite verbessern lässt, beantwortest du Fragen zu dir und zu dem Job, den du willst, und es macht d",
   "status": "active",
   "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀"
@@ -11,6 +14,9 @@
   "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'.",
   "id": "N01",
   "page_id": "3f0958b0fc14816aadb3f7c783ee29c9",
+  "pages": {
+   "fr": "3f0958b0-fc14-80a7-b99b-d1bdcb5e0628"
+  },
   "script": "Wie soll ich meinen Eltern bitte erklären, dass ich 2026 mit dem Studium fertig bin und einfach keinen Job finde? Und warum sagt einem eigentlich keiner, wie schwer so ein Lebenslauf ist? (Parakeet AI · Resume Maker) Ich fand meinen Lebenslauf echt gut, richtig schön gemacht – (Parakeet AI · Resume Maker) bis ich Parakeet AI entdeckt hab. Das bewertet deinen Lebenslauf und macht ihn besser. (Parakeet AI · Resume Maker) Leute, ich hatte X von 100. Ich hatte null Ahnung, dass der so schlecht ist. Es gibt nämlich ein bestimmtes Format für Lebensläufe, und das kannte ich nicht – deswegen kamen bei mir nur Absagen. (Parakeet AI · Resume Maker) Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch. (Parakeet AI · Resume Maker) Das ganze Format macht es für dich, und klar kannst du",
   "status": "active",
   "title": "2026 Abschluss – aber noch kein Job? 😭"
@@ -19,6 +25,9 @@
   "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'.",
   "id": "N06",
   "page_id": "3f0958b0fc1481208c6ac19b0c666666",
+  "pages": {
+   "fr": "3f0958b0-fc14-8081-94a3-c83118091812"
+  },
   "script": "Jobseiten bewerten: Ja, Nein oder Vielleicht. Indeed: auf gar keinen Fall – außer du hast Bock, für Mindestlohn einen Job zu machen, für den man eigentlich zehn Leute bräuchte. Auf LinkedIn einen guten Job zu finden, ist echt nicht leicht. Da sitzt du locker ein paar Wochen und suchst, aber vielleicht hast du Glück und findest wirklich was. Also: Vielleicht. Parakeet AI ist ein klares Ja. Die Plattform ist noch ziemlich neu, funktioniert aber deutlich besser als die anderen. (Parakeet AI · Resume Maker) Die passt deinen Lebenslauf an das an, was in der Stellenanzeige verlangt wird. (Parakeet AI · Resume Maker) Das ist mein alter, der hatte X Punkte. (Parakeet AI · Resume Maker) So kommt er durch alle Filter und landet wirklich beim Recruiter. (Parakeet AI · Resume Maker) Und hier hat mein neuer Y Punkte, (Parakeet AI · Resume Maker) und ich kann ihn sogar noch bearbeiten, zum Beispiel d",
   "status": "active",
   "title": "Jobsuche: Ja, nein oder vielleicht?"
@@ -27,6 +36,9 @@
   "description": "LinkedIn job-search hack: change the time filter in the URL (86400 -> 3600, r3600) to see jobs posted in the last hour, then tailor the CV. Example: 'OD KAD LINKEDIN MOŽE OVO???'.",
   "id": "N02",
   "page_id": "3f0958b0fc148181bcdde9677a8e051e",
+  "pages": {
+   "fr": "3f0958b0-fc14-8062-b0d7-f22c1ceec5b2"
+  },
   "script": "Sorry, aber seit wann kann LinkedIn bitte das? (LinkedIn-Jobsuche) Geh auf „Jobs“ und stell ein, dass nur Stellen aus den letzten 24 Stunden angezeigt werden – dann steht oben im Link 86400, das sind einfach die Sekunden von einem Tag. (LinkedIn-Jobsuche) Ersetz das durch 3600, und schon siehst du nur die Jobs aus der letzten Stunde. (LinkedIn-Jobsuche) Dann kopierst du dir die Stellenbeschreibung (Parakeet AI · Resume Maker) und packst sie in Parakeet AI. (Parakeet AI · Resume Maker) Parakeet AI baut dir daraus einen neuen Lebenslauf, der genau auf diese Stelle passt. So bist du unter den Ersten, die sich bewerben, und dein Lebenslauf kommt durch alle Filter – damit kriegst du den Job auf jeden Fall. 🎬",
   "status": "active",
   "title": "Seit wann kann LinkedIn das? 🤯"
@@ -35,6 +47,9 @@
   "description": "POV: I finally understand why everyone is deleting ChatGPT - usually no voiceover, on-screen numbered steps (copy job ad, paste into the tool, CV gets tailored) with music.",
   "id": "N03",
   "page_id": "3f0958b0fc14819f99f8f24903aeaeb3",
+  "pages": {
+   "fr": "3f0958b0-fc14-80fb-956e-c9a57d8d6d55"
+  },
   "script": "Texteinblendungen – nicht sprechen: (überraschte Reaktion, Musik) pov: Ich verstehe ENDLICH, warum ALLE ChatGPT löschen 😭🤯 (LinkedIn-Jobsuche) 1. Kopier dir die Stellenbeschreibung (Parakeet AI · Resume Maker) 2. Ab auf diese Seite (Parakeet AI · Resume Maker) 3. Reinkopieren und Parakeet AI deinen Lebenslauf fixen lassen … (Parakeet AI · Resume Maker) … und genau auf deine Stelle anpassen (Parakeet AI · Resume Maker) Und dann sieht dein Lebenslauf sooo aus Die Seite: parakeet-ai.com/resume-maker 🎬",
   "status": "active",
   "title": "POV: Dein Lebenslauf bekommt endlich ein Upgrade 🤯"
@@ -43,6 +58,9 @@
   "description": "I got 20 interviews? / my inbox is full of interview invitations: shows an email inbox full of interview invites as proof, then explains the CV change. Examples: 'dobila sam 20 INTERVJUA', 'WAR IS OVER (tak wygląda moja poczta)'.",
   "id": "N04",
   "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef",
+  "pages": {
+   "fr": "3f0958b0-fc14-808d-b0f2-cfff9682c186"
+  },
   "script": "Ich such jetzt schon seit Monaten einen Job. Und mit Monaten mein ich wirklich Monate. Ich schick meinen Lebenslauf auf jede einzelne Anzeige raus und hab nicht eine einzige Antwort bekommen. (Gmail-Aufnahme) Und jetzt guckt euch mal heute mein Postfach an, Leute. Guckt, wie viele Antworten ich bekommen hab – echt auf jede Stelle, auf die ich mich beworben hab. Ich dachte ja: „Die haben doch alle irgendwelche Kontakte“, aber in Wahrheit war mein Lebenslauf, sagen wir mal, eine Katastrophe. (Parakeet AI · Resume Maker) Das war mein Lebenslauf, (Parakeet AI · Resume Maker) und mit dem bin ich auf diese Seite. Rein in Parakeet AI, Lebenslauf hochgeladen, (Parakeet AI · Resume Maker) und dann kam die Bewertung – die schlechteste Punktzahl überhaupt. Da war echt fast nichts gut. (Parakeet AI · Resume Maker) Die App hat mich gefragt, was ich schon gearbeitet hab, wer ich bin, wo ich hin will",
   "status": "active",
   "title": "Monatelang Bewerbungen – und kaum Antworten? 😭"
@@ -51,6 +69,9 @@
   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
   "id": "N07",
   "page_id": "3f0958b0fc1481babee1d2e56b4e56af",
+  "pages": {
+   "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472"
+  },
   "script": "Mein Bruder ist Recruiter, und ich zeig dir, wie du in 24 Stunden einen Job findest. Als Erstes muss dein Lebenslauf gut sein und eine gute Punktzahl haben. Am einfachsten checkst du das, (Parakeet AI · Resume Maker) indem du auf diese Seite gehst und deine Daten eingibst. (Parakeet AI · Resume Maker) So sieht mein Lebenslauf gerade aus. (Parakeet AI · Resume Maker) Nach jeder Frage kommt ein neuer Teil vom Lebenslauf dazu, und der ist echt wichtig. (Parakeet AI · Resume Maker) Und hier ist er. Meine Endpunktzahl ist Y, und so sieht der Lebenslauf jetzt aus. (Parakeet AI · Resume Maker) Vorher sah er so aus. (Parakeet AI · Resume Maker) Und das war seine Punktzahl. 🎬",
   "status": "active",
   "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫"
@@ -59,6 +80,9 @@
   "description": "I hate this: having to write a new CV and cover letter for every single job is exhausting; a friend showed me a tool that tailors it. Example: 'MRZIM OVO', '3 mois perdus à personnaliser mes CV'.",
   "id": "N05",
   "page_id": "3f0958b0fc1481229383d89628cc3be3",
+  "pages": {
+   "fr": "3f0958b0-fc14-80f5-aaf3-e149f9f6d348"
+  },
   "script": "Ich bin gerade auf Jobsuche, und was ich daran echt hasse: Ich muss tausend Bewerbungen rausschicken und für jede Stelle einen eigenen Lebenslauf und ein eigenes Anschreiben schreiben. Das ist so anstrengend und frisst so viel Zeit – und eine Freundin von mir hat in drei Tagen einen Job gefunden. Ehrlich, es war mir voll unangenehm, sie zu fragen, wie sie das gemacht hat. Aber ich hab gefragt, was hab ich schon zu verlieren? (LinkedIn-Jobsuche) Und sie hat mir gezeigt: Du kopierst einfach die Beschreibung von der Stelle, auf die du dich bewirbst, (Parakeet AI · Resume Maker) packst sie auf diese Seite, Parakeet AI, (Parakeet AI · Resume Maker) lädst noch deinen normalen Lebenslauf dazu hoch, (Parakeet AI · Resume Maker) und es macht dir einen Lebenslauf, der genau zu der Stelle passt. Ich war ehrlich geschockt, ich wusste nicht, dass KI schon so weit ist. Speicher dir das Video unbeding",
   "status": "active",
   "title": "Für jede Stelle wieder den Lebenslauf umschreiben? 😩"
@@ -67,6 +91,9 @@
   "description": "You don't need work experience to get a job / is work experience important? - missing experience is not why you're rejected, the CV is. Examples: 'NE TREBA VAM RADNO ISKUSTVO', 'NIE potrzebujesz doświadczenia'.",
   "id": "N08",
   "page_id": "3f0958b0fc148162b1d5c72be508d006",
+  "pages": {
+   "fr": "3f0958b0-fc14-801d-a71a-d7cf43b5e9a9"
+  },
   "script": "Keine Ahnung, wie oft du das schon gehört hast, aber du brauchst keine Berufserfahrung. Viele sagen, man kriegt keinen Job, nur weil man keine Erfahrung hat – aber ich glaub, da gibt's viel größere Gründe. Wenn dein Lebenslauf zum Beispiel schlecht aussieht, kriegst du sicher keinen Job. Und wenn er aussieht wie der von allen anderen und null heraussticht, nehmen die dich sicher nicht. Ich zeig dir, wie du einen richtig guten Lebenslauf machst. (Parakeet AI · Resume Maker) Geh einfach auf Parakeet AI und lad deinen Lebenslauf hoch. (Parakeet AI · Resume Maker) Meiner hatte X Punkte. (Parakeet AI · Resume Maker) Beantworte ein paar Fragen und lass Parakeet AI deinen Lebenslauf verbessern. (Parakeet AI · Resume Maker) Danach sieht deine Punktzahl so aus (Parakeet AI · Resume Maker) und dein Lebenslauf so. Das war's schon. Einfacher kommst du ohne Berufserfahrung nicht an einen Job. 🎬",
   "status": "active",
   "title": "Kein Job ohne Erfahrung? Dieser Kreislauf nervt 😭"
@@ -75,6 +102,9 @@
   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
   "id": "N09",
   "page_id": "3f0958b0fc1481da8accda8f08494a00",
+  "pages": {
+   "fr": "3d6958b0-fc14-8022-8fc8-d1975c6dd4b5"
+  },
   "script": "(Texteinblendung 0–3 s, nicht sprechen) Ich könnte den Typen aus HR echt heiraten, weil er mir das gezeigt hat. (LinkedIn-Jobsuche) Du suchst dir eine Stellenanzeige aus, die dir gefällt, und kopierst die Beschreibung. (Parakeet AI · Resume Maker) Dann ab auf diese Seite. (Parakeet AI · Resume Maker) Hier fügst du die Anzeige ein, und die wird automatisch analysiert. (Parakeet AI · Resume Maker) Dann bewertet es deinen Lebenslauf im Vergleich zu der Stelle, auf die du dich bewerben willst, (Parakeet AI · Resume Maker) und hier kannst du noch ein paar Sachen ergänzen. (Parakeet AI · Resume Maker) Und das ist jetzt mein fertiger Lebenslauf. Leute, das müsst ihr ausprobieren. Wie lange hab ich gebraucht? Nicht mal zwei Minuten – und Y Prozent. Ich kann's nicht glauben. 🎬",
   "status": "active",
   "title": "Den HR-Typen könnte ich heiraten 😳"
@@ -84,6 +114,9 @@
   "description": "Creator casually eats a snack on the sofa while talking to camera over an on-screen 'top 10 employers' list, muses about what makes an employer good, then pivots to the CV app (paste job link, tailored CV, upload and score) with screen-recording inserts.",
   "id": "A202610061328",
   "page_id": "3f1958b0-fc14-8180-bc9f-d5f809e56081",
+  "pages": {
+   "fr": "3f1958b0-fc14-81a6-8fbf-f9b2a4cedbc8"
+  },
   "script": "Angeblich sind das hier die besten Arbeitgeber in Deutschland.  Ja, aber was heißt eigentlich „bester Arbeitgeber“? Soll dein Chef korrekt sein? Nahbar? Aber wenn der okay ist und das Team furchtbar – was machst du dann? Oder das Team ist mega und der Chef furchtbar? Also, wenn du gute Arbeit machst, ja, dann wird das geschätzt. Und auf der anderen Seite, wenn du gar nichts machst … na ja, you know.  Aber was hältst du von diesen Firmen? Wenn du gerade auf Jobsuche bist und dich bei einer davon bewerben willst – warte kurz.  (Texteinblendung „parakeet-ai.com/resume-maker“) Geh auf Parakeet AI. (Parakeet AI · Resume Maker) Da kopierst du einfach den Link von der Stellenanzeige rein, die dich interessiert, (Parakeet AI · Resume Maker) und es baut dir einen richtig starken Lebenslauf, der auch gute Chancen hat, durch die ATS-Filter zu kommen.  (Parakeet AI · Resume Maker) Und selbst wenn d",
   "source_video": "https://www.tiktok.com/@career.tea.with.d/video/7691756700235369730",
   "status": "active",
@@ -105,6 +138,9 @@
   "description": "Faceless voiceover comparing two printed CVs side by side ('two candidates, same job – who gets invited?'), pointing out the ATS-unfriendly icons and charts on one, then showing the app on a laptop building the ATS-friendly CV.",
   "id": "A202610061331",
   "page_id": "3f1958b0-fc14-8109-965a-ddda9e24cd16",
+  "pages": {
+   "fr": "3e2958b0-fc14-80e7-b625-c1d444186ff5"
+  },
   "script": "(Parakeet AI · Resume Maker) Zwei Kandidaten bewerben sich mit ihrem Lebenslauf auf genau dieselbe Stelle: Kandidat 1 und Kandidat 2. Was meinst du, welcher Kandidat wird zum Vorstellungsgespräch eingeladen?  Und zwar der hier. Und warum? Weil dieser Lebenslauf hier lauter Icons und Diagramme hat, die das ATS-System nicht lesen kann. Und außerdem fehlen ihm ganz viele Keywords, die du brauchst, um durch diese Filter zu kommen.  Der hier dagegen ist im richtigen Format, also im ATS-Format. (Parakeet AI · Resume Maker) Und so einen kannst du zum Beispiel mit so einem Tool machen: parakeet-ai.com/resume-maker. Das geht im Chat deine ganze Erfahrung mit dir durch, stellt dir ganz viele Fragen dazu und macht dir dann deinen ATS-sicheren Lebenslauf.  (Parakeet AI · Resume Maker) Und wie du hier bei der Berufserfahrung siehst, stehen da zum Beispiel auch richtig klar die Ergebnisse dabei. Der",
   "source_video": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673",
   "status": "active",
@@ -116,6 +152,9 @@
   "description": "Ex-HR 'insider secrets' talking-head hook (CVs are Canva templates, ATS filters read them), then a laptop screen recording: add a job link, get a before score, fix the CV, get an after score, download.",
   "id": "A202610061332",
   "page_id": "3f1958b0-fc14-8107-9431-f2f20737aa98",
+  "pages": {
+   "fr": "3e9958b0-fc14-8052-aec2-e7bda47e7d5e"
+  },
   "script": "Ich hab grad meinen Job im HR gekündigt, also verrat ich euch jetzt alle ihre Geheimnisse. Der Grund, warum grad so viele Leute keinen Job finden, ist eigentlich mega simpel. Schuld sind eure Lebensläufe, Leute. (Parakeet AI · Resume Maker) Eure Lebensläufe sind Canva-Vorlagen. Das sagt euch keiner, aber eure Lebensläufe müssen eigentlich super hässlich sein.  Und noch ein Geheimnis: Kein einziger Mensch im HR schaut sich eure Lebensläufe an. Das machen alles ATS-Filter. So eine Art KI. Und damit ich euch richtig helfe, zeig ich euch die Seite, mit der ihr durch diese Filter kommt.  (Parakeet AI · Resume Maker) Ihr geht auf Parakeet AI. (Parakeet AI · Resume Maker) Da seht ihr alle eure Bewerbungen. (Parakeet AI · Resume Maker) Ihr klickt auf „Neuer Job“ (Parakeet AI · Resume Maker) und fügt den Link zu einer Stellenanzeige ein. (LinkedIn-Jobsuche) Mir hat die Anzeige hier gefallen. (Pa",
   "source_video": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
   "status": "archived",
@@ -126,6 +165,9 @@
   "description": "Talking-head 'best season to job hunt' tip video that tells viewers to ditch their Canva CV for a Harvard-style one, then films the laptop screen with a phone while uploading the CV, showing a low score, using the AI editor and revealing the high new score.",
   "id": "A202610061334",
   "page_id": "3f1958b0-fc14-81de-8b2c-f04f93c7caee",
+  "pages": {
+   "fr": "3f1958b0-fc14-81de-9596-f60bb33c85fa"
+  },
   "script": "Also, Oktober ist offiziell da – und das ist der beste Monat, um einen Job zu suchen. Genau jetzt bereiten sich nämlich alle auf das vor, was im Dezember kommt. Also bleib dran, ich geb dir einen richtig krassen Tipp, damit du endlich aus der Arbeitslosigkeit rauskommst.  (Handy in die Hand nehmen, als würdest du deinen Canva-Lebenslauf schließen) Als Erstes machst du diesen Lebenslauf zu, den du in Canva hast, und stattdessen machst du einen im Harvard-Stil. Und wenn du nicht weißt, was das ist, dann wird's echt Zeit, aufzuwachen – wahrscheinlich hast du genau deswegen noch keinen Job.  (Parakeet AI · Resume Maker) Geh auf diese Seite, die heißt Parakeet AI. (Parakeet AI · Resume Maker) Das ist mega einfach: Du lädst deinen Lebenslauf hoch und kriegst eine komplette Analyse. (Parakeet AI · Resume Maker) Das hier kam raus, als ich meinen Lebenslauf zum ersten Mal hochgeladen hab – X von",
   "source_video": "https://www.tiktok.com/@luworks/video/7692607504752135432",
   "status": "active",
@@ -137,6 +179,9 @@
   "description": "HR-hates-these-CVs green-screen hook: the creator repeats 'rejection, rejection, rejection', slams Canva-style templates as unreadable by ATS while standing in front of their old CV, then opens Parakeet AI's Resume Maker to build an ATS-friendly version. Examples: 'Das HR HASST diese Lebensläufe ❌'",
   "id": "A202610061335",
   "page_id": "3f1958b0-fc14-8170-a169-dba97b041280",
+  "pages": {
+   "fr": "3d5958b0-fc14-803a-a9dd-c9edea1d687a"
+  },
   "script": "(Parakeet AI · Resume Maker) Absage, Absage, Absage. Diese Vorlagen von Canva oder ähnlichen Seiten sind ein absolutes No-Go. (Parakeet AI · Resume Maker) Die sehen vielleicht schick aus, aber sie kommen einfach nicht durchs ATS. (Greenscreen: dein alter Lebenslauf hinter dir) Das ATS ist eine Maschine und kann keine Balkendiagramme lesen. Und Icons natürlich auch nicht. Und so kann's passieren, dass du alle Skills hast, aber trotzdem aussortiert wirst und HR deinen Lebenslauf nie zu sehen kriegt.  Eine Freundin von mir, die im HR arbeitet, hat mir dann diese Seite empfohlen. (Parakeet AI · Resume Maker) Die heißt Parakeet AI, parakeet-ai.com/resume-maker, und damit baust du dir einen ATS-freundlichen Lebenslauf.  (Parakeet AI · Resume Maker) Ich hab einen von den alten Lebensläufen, die ihr gerade gesehen habt, analysieren lassen, und wie erwartet: X von 100. Kommt nicht durch. (Parake",
   "source_video": "https://www.tiktok.com/@lockinwitheva/video/7691082863533427990",
   "status": "archived",
@@ -146,6 +191,9 @@
   "description": "Fake-appointment interview hook: the creator claims you don't need connections or a scheduled meeting to land an interview, briefly explains why, then shows their CV on a laptop, tailors it to a job posting in Parakeet AI and reveals the score and AI improvements before a 'Comment JOB' CTA. Examples: 'DU BRAUCHST KEINEN TERMIN, UM EIN VORSTELLUNGSGESPRÄCH ZU BEKOMMEN'",
   "id": "X01",
   "page_id": "3eb958b0-fc14-80c1-afc1-f1dd5ed26188",
+  "pages": {
+   "fr": "3d6958b0-fc14-807f-a55c-dba5a1db1294"
+  },
   "script": "(DEUTSCH) An das Mädchen, das gesagt hat: „Wenn du keine Ausbildung findest, nimm einfach deinen Lebenslauf, geh in eine Firma und sag, du hast einen Termin – auch wenn du keinen hast“: Danke. Ehrlich, danke. Bevor ich das ausprobiert habe, brauchte ich einen ordentlichen Lebenslauf. Also bin ich auf Parakeet AI gegangen. Ich habe den Link zur Stellenanzeige eingefügt und meinen Lebenslauf auf die Stelle zugeschnitten. Dann habe ich mir den Score angesehen und mit der KI die Formulierungen verbessert. Schaut mal – das ist die fertige Version. [Dreh die Kamera zu deinem Laptop, sobald du „Parakeet AI“ sagst. Zeige die Website, füge den Link zur Stellenanzeige ein, passe den Lebenslauf an, zeige den Score und anschließend den fertigen Lebenslauf.] Als er fertig war, habe ich ihn ausgedruckt und bin zur Firma gegangen. Ich war um 9:20 Uhr da und habe gesagt, dass ich um 9:30 Uhr einen Term",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -164,6 +212,9 @@
   "description": "HR insider-secret hook: a self-described ex-big-company 'snitch' reveals what HR hides, demoing how to copy an Indeed job link, paste it into Parakeet AI and get an analyzed, tailored CV, ending with a 'Comment JOB' CTA. Examples: 'Was HR nicht will, dass du weißt 🤫'",
   "id": "X03",
   "page_id": "3eb958b0-fc14-8060-8097-fe191b2eca39",
+  "pages": {
+   "fr": "3d5958b0-fc14-8066-a3e0-eece4e907476"
+  },
   "script": "(DEUTSCH) Ich habe in einem großen Unternehmen gearbeitet, und HR will nicht, dass ihr das wisst. Aber ich bin eine kleine Petze, also verrate ich es euch. Zuerst: Das geht für jede Stelle. Ich bin auf Indeed, und diese Assistenzstelle gefällt mir. Hier auf „Link kopieren“ klicken. Dann gehe ich auf Parakeet AI und füge den Link zur Stellenanzeige ein. Die Anzeige wird analysiert und mit meinem Lebenslauf verglichen, den ich vorher hochgeladen habe. Hier seht ihr meinen aktuellen Score: [dein tatsächlicher Ausgangswert]. Mein Lebenslauf passt also noch nicht besonders gut zu dieser Stelle. Jetzt lasse ich ihn anpassen. Das Coole ist: Die KI hilft mir, meinen Lebenslauf auf genau diese Stellenanzeige zuzuschneiden. Ich prüfe die Vorschläge und übernehme die passenden Änderungen. Schaut mal: Das ist der fertige Lebenslauf. Mein Score liegt jetzt bei [dein tatsächlicher neuer Wert]. Den Le",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -191,6 +242,9 @@
   "description": "Am-I-the-only-one mistake warning: the creator asks whether they're the only one who didn't know old-style CVs no longer work, explains ATS filters, then shows how to make an ATS-friendly CV with Parakeet AI. Examples: 'Vermeidet diesen Fehler!!'",
   "id": "X06",
   "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
+  "pages": {
+   "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a"
+  },
   "script": "(DEUTSCH) Bin ich die Einzige, die nicht wusste, dass man sich nicht mehr mit solchen Lebensläufen bewirbt? Keiner redet mittlerweile darüber, denn es ist so wichtig. Mit solchen Lebensläufen kommt man heutzutage nicht mehr durch die ATS-Scanner. Wenn ihr nicht wisst, was das ist: Das sind solche Filter, die eben Unternehmen benutzen, damit die erst mal ausfiltern können, bis es dann zum Recruiter kommt. Du fragst dich vielleicht: Wie erstelle ich einen übersichtlichen Lebenslauf für meine Bewerbung? Dafür nutze ich Parakeet AI. Ich lade meinen bisherigen Lebenslauf hoch, füge den Link zur Stellenanzeige ein und passe den Lebenslauf an die Stelle an. Wenn ich noch keinen Lebenslauf habe, starte ich mit meinen eigenen Angaben im Lebenslauf-Builder. Dann schaue ich mir den Score an und verbessere mit der KI die Formulierungen. Schaut mal – das ist die fertige Version. Also mega.\n\nKommenti",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -209,6 +263,9 @@
   "description": "Outrage rejection story: the creator vents that even with a 1.3 Abitur they got rejected for a summer job at EDEKA, learns their application was never received (filtered out), then shows fixing their CV with Parakeet AI. Examples: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
   "id": "X08",
   "page_id": "3d5958b0-fc14-8142-ba86-d4195599a81a",
+  "pages": {
+   "fr": "3d5958b0-fc14-80de-b575-c1f0d84f692e"
+  },
   "script": "(DEUTSCH) Kann mir jemand mal bitte erklären, warum es so schwer ist, 2026 einen Job zu finden? Ich habe mein Abi mit 1,3 bestanden und ich habe mich versucht, bei Edeka zu bewerben, einfach dass ich was für den Sommer habe, dass ich arbeiten kann. Und ich wurde bei Edeka abgelehnt. Mein 1,3 Abi wurde bei Edeka abgelehnt. Leute, ich war schockiert, das kann doch nicht sein.  Als ich mich dann bei Edeka gemeldet habe und gefragt habe, warum sie mich nicht angenommen haben, meinten sie: “Sie haben meine Bewerbung erst gar nicht erhalten.” Und ich meinte: “Hä, wie? Ihr habt meine Bewerbung nicht erhalten?” Die so: “Ja, wir haben so ein neues System, dein Bewerbungs- also dein Formular muss halt nach diesem ATS-Format sein.”  Und ich hatte gar keine Ahnung, was überhaupt ein ATS-Format ist. Und sie meinten, es gibt so eine Website, die heißt Parakeet AI, so sieht das Ganze aus, Parakeet AI,",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -218,6 +275,9 @@
   "description": "Deleting-soon recruiter-secrets hook: the creator claims they'll delete the video in 2 hours, reveals that companies use software to scan CVs for structure and keywords, then shows using Parakeet AI to optimize their CV. Examples: 'Dinge die Personaler euch verheimlichen 😳❌'",
   "id": "X09",
   "page_id": "3e2958b0-fc14-8079-954e-f1a0fed8673f",
+  "pages": {
+   "fr": "3e2958b0-fc14-805b-809f-d34a4e59f5e4"
+  },
   "script": "(DEUTSCH) Das hier sind Dinge, die Personaler nicht wollen, dass ihr sie wisst, und ich lösche dieses Video in 2 Stunden. Wenn ihr das gerade seht, habt ihr wirklich Glück. Viele Unternehmen nutzen Software, um Lebensläufe zu scannen, bevor überhaupt ein Recruiter sie sieht. Das heißt: Die Struktur eures Lebenslaufs und die richtigen Keywords können einen großen Unterschied machen. Ich habe letztens mit meiner Cousine gesprochen. Sie arbeitet seit 10 Jahren im Personalbereich und hat mir erzählt, dass inzwischen sehr viele Bewerbungen fast gleich aussehen. Dann hat sie mir das hier gezeigt. Ihr geht einfach zu der Stelle, auf die ihr euch bewerben wollt, und kopiert den Link zur Stellenanzeige. Dann öffnet ihr Parakeet AI, geht zu Target job, fügt den Link unter Job post link ein und klickt auf Set target job. Parakeet AI analysiert die Stellenanzeige und zeigt euch, welche Keywords eue",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -236,6 +296,9 @@
   "description": "Perfect-CV reveal: the creator proudly presents a '12/10' CV that beats every ATS, explains what scanners check (job-ad keywords, structure, font size, tool used), then shows it was made with Parakeet AI. Examples: 'Ein Lebenslauf der nicht abgelehnt wird'",
   "id": "X11",
   "page_id": "3d5958b0-fc14-818f-9562-c6e1e7f0b2ed",
+  "pages": {
+   "fr": "3d9958b0-fc14-80c0-972e-f02a0811661a"
+  },
   "script": "(DEUTSCH) Darf ich präsentieren? Dieser Lebenslauf ist eine glatte 10 von 10, wenn nicht sogar eine 12 von 10. Dieser Lebenslauf wird alle ATS, Filtersysteme, Softwareprogramme austricksen. Es gibt super viele Punkte, auf die diese Filter- und Scansysteme achten.  Hauptsächlich sind es, Tatsache, die Schlüsselwörter, die hier in diesem Dokument enthalten sind, übernommen aus der Stellenausschreibung, aber auch Punkte wie zum Beispiel eine gewisse Struktur. Oder auch, Tatsache, welche Schriftgröße du verwendet hast oder mit welchem Tool du gearbeitet hast.  Zum Beispiel wie Vorlagen von Canva habe ich selber tausendmal benutzt und auch gesehen, durch so kleine Bildchen und Sachen, die da mit reingebastelt werden, die absolut unnötig sind. Mit diesen Lebensläufen, die ihr auf Canva erstellt, mit denen kommt ihr eben nicht durch diese Filtersysteme.  Jetzt aber mal zu dem Wichtigen: Parake",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -254,6 +317,9 @@
   "description": "Psychological job-hunt tips: using one of several provocative on-screen lines, the creator delivers three quick contrarian tips for landing a job this week, such as never sending the same CV twice and passing ATS filters, while showing the Parakeet AI resume builder. Examples: 'LinkedIn wird dir keinen Job finden', 'Dein Lebenslauf ist wahrscheinlich zu schön'",
   "id": "X13",
   "page_id": "3e6958b0-fc14-80c5-bcda-fe62db114cc4",
+  "pages": {
+   "fr": "3d5958b0-fc14-80b2-99c5-d0d9e039ea1a"
+  },
   "script": "(DEUTSCH) Okay, ich gebe dir 3 Psycho-Tipps, mit denen du in weniger als einer Woche einen Job findest. Erstens: Hör auf mit LinkedIn. Ehrlich, bis du dich bewirbst, waren schon tausend Leute vor dir da. Geh lieber auf kleinere Jobportale. Da hast du viel weniger Konkurrenz. Zweitens: Mach einen hässlichen Lebenslauf. Ja, hässlich. Die hübsche Canva-Vorlage mit den kleinen Icons und den Skill-Balken … die bleibt in den ATS-Filtern hängen. Das ist die Software, die Lebensläufe sortiert, bevor überhaupt ein Mensch sie öffnet. Das war mein alter Lebenslauf. Null Rückmeldungen. Nie. Und hier ist der neue. Seitdem bekomme ich Antworten. Drittens: Bewirb dich über deinem Level. Du nimmst den Link der Stellenanzeige, fügst ihn in Parakeet AI ein, und es passt deinen Lebenslauf genau an diese Stelle an. Dann kannst du es auch gleich eine Stufe höher versuchen – da ist es oft viel weniger überla",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -263,6 +329,9 @@
   "description": "Explaining-to-parents hook: the creator rants about how job hunting has changed since printed CVs and walk-ins, shares 50+ rejections and a recruiter friend's verdict on their CV, then shows fixing it with Parakeet AI. Examples: 'Wie soll ich meinen Eltern erklären, dass...'",
   "id": "X14",
   "page_id": "3d5958b0-fc14-8155-857c-d9c1c697c845",
+  "pages": {
+   "fr": "3d5958b0-fc14-8068-840a-c907033698a5"
+  },
   "script": "(DEUTSCH) Wie soll ich meinen Eltern erklären, dass man heutzutage NICHT mit einem ausgedruckten Lebenslauf in eine Firma reinläuft und sagt: “Hier, ich bewerbe mich jetzt”? So, heutzutage wollen Firmen einfach auch, dass man ein Bewerbungsvideo dreht. Ich habe wirklich ungelogen letzten Monat über 50 Bewerbungen rausgeschickt und wurde die ganze Zeit abgelehnt.  Meine beste Freundin arbeitet aber im Recruiting bei so einer großen Firma, und ich habe sie mal gefragt, was denn falsch ist mit meinen Bewerbungen, und sie meinte: “Franzi, klar wirst du abgelehnt, weil dein Lebenslauf nicht im ATS-Format ist.” Und ich so: “Ja, okay, und was heißt das jetzt?”  Sie meinte, dass die Lebensläufe gar nicht mehr von echten Menschen gelesen werden, sondern dass es durch eine KI durchgeht. Sie hat mir dann so eine Website gezeigt, Parakeet AI heißt sie, da habe ich jetzt meinen Lebenslauf, meinen al",
   "source": "DACH archive (old formats)",
   "status": "archived",
@@ -281,6 +350,9 @@
   "description": "Ex-HR-insider secret: a creator who claims to have worked in corporate HR reveals the hidden trick of sharing and copying a job link, pasting it into Parakeet AI via 'Job hinzufügen' and getting an auto-tailored CV. Examples: 'Personaler wollen nicht, dass du das weißt 😳😳'",
   "id": "X16",
   "page_id": "3d5958b0-fc14-815d-bf46-d3b4d1ac8008",
+  "pages": {
+   "fr": "3f1958b0-fc14-81a2-ba66-cc883deaa52d"
+  },
   "revived": {
    "at": 1791296449,
    "because": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
@@ -341,10 +413,199 @@
   "description": "German talking-head video with a provocative 'lie on your CV' hook while doing a satisfying prop action (cutting an apple with a pizza cutter), then filming the laptop screen uploading an old CV and pasting a job ad link so the CV gets tailored, ending with a shocked reaction to camera.",
   "id": "A20261006183623",
   "page_id": "3f1958b0-fc14-81ef-aa77-e32183b89f91",
-  "pages": {},
+  "pages": {
+   "fr": "3d5958b0-fc14-80e1-8ab6-d13fc35db8c1"
+  },
   "script": "Lügt in eurem Lebenslauf. Und ich sag's nochmal: Lügt in eurem Lebenslauf. Und nein, damit mein ich nicht, dass ihr irgendwelche Jobs erfinden sollt, die ihr nie gemacht habt. Es geht einfach nur um die kleinen Details, die am Ende doch den großen Unterschied machen. Ich wusste nämlich auch überhaupt nicht, was ich in meinen Lebenslauf schreiben soll. Bis mir eine Freundin von diesem Tool hier erzählt hat, Parakeet AI. Da lädst du einfach deinen alten Lebenslauf hoch. Und dann fügst du hier einfach die Stellenausschreibung ein. Und Leute, ihr werdet mir das vielleicht nicht glauben, aber dann wird euer Lebenslauf einfach passend zur Stellenausschreibung angepasst. Wie krass ist das bitte? Probiert's aus: parakeet-ai.com/resume-maker.",
   "source_video": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
   "status": "active",
   "title": "Lügt in eurem Lebenslauf 🚨"
+ },
+ {
+  "description": "A plain demo of tailoring a CV in minutes by pasting a France Travail or Welcome to the Jungle job link into ParakeetAI and improving the match score.",
+  "id": "FRX14",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3f0958b0-fc14-8011-b6ac-caf9a74ddb29"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. J’ai arrêté de passer 2 heures sur chaque CV Mon CV est passé de 38 % à 96 % en quelques minutes Copie le lien de l’offre. Regarde ce que devient ton CV. Ce site adapte ton CV à l’offre sans rien faire Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Voilà comment j’adapte mon CV sans y passer toute la soirée. Je trouve une offre qui me plaît par exemple sur France Travail ou Welcome to the Jungle, je copie le lien et je le colle dans ParakeetAI. L’outil analyse l’annonce et vérifie si mon CV correspond bien au poste. Ensuite, je peux ajouter ce qui manque, améliorer certaines phrases et relire la version finale. Mon CV est arrivé à 96 % de correspondance et ça ne m’a pris que quelques minutes. Bien sûr, je vérifie toujours tout avant de l’envoyer, mais ça rend vraiment les candidatures beaucoup plus simples. 🎬 ACCROCHE VISUE",
+  "status": "archived",
+  "title": "Adapter son CV en quelques minutes"
+ },
+ {
+  "description": "The creator warns that no human may ever see your CV because software screens it first, then checks their own CV's score on ParakeetAI.",
+  "id": "FRX15",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3f0958b0-fc14-8019-9306-fb0df5124a65"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Ton CV est peut-être rejeté avant d’être lu Personne n’a jamais lu ton CV, voici pourquoi Diplôme + stages + expérience… et 0 entretien ? Mon CV avait 38/100. Je le croyais parfait. Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT J’aime pas devoir te dire ça, mais il est possible qu’aucune vraie personne ne voie ton CV. Je ne comprenais pas pourquoi je n’obtenais aucun entretien alors que j’avais de l’expérience, des stages et un diplôme. Puis j’ai appris que beaucoup d’entreprises utilisent des logiciels pour analyser les CV avant de les transmettre à un recruteur. Du coup j’ai ajouté le mien sur ParakeetAI pour voir son score et j’ai obtenu 38 sur 100. Pourtant, j’étais vraiment persuadée d’avoir un bon CV. ParakeetAI m’a aidée à mieux l’organiser, à améliorer certaines phrases et à choisir un modèle plus clair. J’ai ensui",
+  "status": "archived",
+  "title": "Pourquoi personne ne voit peut-être ton CV"
+ },
+ {
+  "description": "A video with no dialogue and only on-screen text about getting zero replies, until the creator redid their CV correctly with Parakeet AI and started getting responses.",
+  "id": "FRX19",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3d5958b0-fc14-807d-a2a7-e6d3da6e3dbb"
+  },
+  "script": "📲 TEXTE ÉCRIT Personne n’en parle mais c’est quoi cette période où tu cherches un job, tu envoies des CV tous les jours et t’as littéralement 0 réponse ?? 😭\nMais les gars, j’ai juste refait mon CV correctement et j’ai enfin commencé à avoir des réponses.💀 Ce n’est qu’un exemple, vous pouvez bien sûr en créer d’autres qui correspondent au même style et qui ont du sens pour la vidéo. 🇫🇷 Légende J’ai arrêté d’utiliser le même CV pour toutes les offres… et franchement, ça change tout. 😭 Avant, je passais une éternité à adapter mon CV, chercher les bons mots-clés et écrire une nouvelle lettre de motivation pour chaque candidature. Maintenant, je colle simplement le lien de l’offre dans Parakeet AI Resume Builder et il m’aide à : ✨ adapter mon CV à l’offre ✨ identifier les mots-clés importants ✨ optimiser mon CV pour les ATS ✨ vérifier mon score ATS avant de postuler La recherche d’emploi est ",
+  "status": "archived",
+  "title": "Vidéo sans dialogue — texte à l’écran"
+ },
+ {
+  "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
+  "id": "FRX22",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3d8958b0-fc14-8024-bea3-d5fcb04410d4"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Après six mois de chômage, j’ai enfin trouvé un emploi Un seul changement a tout changé Mon ancien CV était joli, mais il n’était pas compatible avec les ATS La première entreprise à laquelle j’ai postulé m’a embauchée Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué. On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes. Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV. Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même. Le nouveau, lui, c'est tout l'i",
+  "status": "archived",
+  "title": "Après six mois de chômage, j’ai enfin trouvé un travail"
+ },
+ {
+  "description": "The creator counts 378 applications sent with only two replies, both rejections, then discovers their CV wasn't passing ATS filters.",
+  "id": "FRX24",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3d9958b0-fc14-80f4-8f06-f26d6b134186"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. 378 CANDIDATURES ENVOYÉES et 2 réponses, 2 refus Pov : l’emploi en france c’est 378 candidatures pour 2 réponses et 0 entretiens Pov : tu recherches un emploi en france Pov : tu viens d’apprendre après 378 candidatures que ton CV ne passe pas les filtres ATS Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Hier j'ai eu le courage de compter mes candidatures. 378. Vas-y, devine combien de retours j'ai eus. Deux. Et les deux, c'était des refus. Pour les 376 autres, rien. Le vide. Pas un mail, pas un accusé de réception, rien qui me dise que quelqu'un avait seulement cliqué sur mon CV quelque part. Et à un moment, j'ai arrêté de me dire que je postulais pas assez. Le souci venait pas du nombre. Il venait de mon CV. Parce qu'une grosse partie des candidatures se fait recaler par un logiciel ATS avant qu'un recruteur pose les yeux",
+  "status": "archived",
+  "title": "378 candidatures envoyées, 2 réponses — 2 refus"
+ },
+ {
+  "description": "The creator uses French unemployment and job-vacancy figures to argue that finding a job in 2026 isn't just about motivation, then pivots to standing out with a better CV.",
+  "id": "FRX25",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3d8958b0-fc14-80d9-a5fc-e5199815b817"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. TU PENSES QUE TROUVER UN TRAVAIL EN 2026, C’EST FACILE ? 🤡 3 À 5 MILLIONS DE PERSONNES CHERCHENT UN EMPLOI EN FRANCE MAIS DONC C’EST FACILE DE TROUVER UN EMPLOI EN FRANCE ? 🤡 TROUVER DU TRAVAIL EN 2026 EN FRANCE 🤡 Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT T'as encore l'impression que trouver un taf en 2026, c'est juste une question de motivation ? Poses-toi et regarde les chiffres. En France, on est autour de 3 millions de demandeurs d'emploi. Et jusqu'à 5 millions si tu comptes tout le monde. En face, devine combien d'offres. Moins de 500 000. Fais le calcul. Ça tombe pas juste. Mathématiquement, il y a pas de place pour tout le monde. Et pendant ce temps, on continue de nous expliquer qu'il suffit de traverser la rue. Donc dans une compétition pareille, le moindre détail compte. Et le premier obstacle, c'est même pas",
+  "status": "archived",
+  "title": "Tu penses que trouver un travail en 2026, c’est facile ?"
+ },
+ {
+  "description": "The creator shares a 'toxic' tip: call the company directly about an application that got no response to unblock it.",
+  "id": "FRX26",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e2958b0-fc14-8008-9605-ec6c92f5f8d4"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Conseil toxique mais qui peut marcher pour décrocher un entretien Le conseil le plus toxique que je vais te donner (mais ça marche) Conseil toxique n°1 pour décrocher l'entretien que tu veux Conseil un peu culotté pour les candidatures sans réponse T'as pas de réponse à ta candidature ? Appelle-les Ta candidature est bloquée ? Voilà comment la débloquer Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Ok, j'ai un conseil ultra toxique, mais je te promets que ça peut marcher. Tu prends l'offre de tes rêves, celle où t'as postulé et où t'as jamais eu de nouvelles. Tu appelles directement l'entreprise, et tu leur dis : \"Bonjour, j'ai reçu un appel pour un entretien concernant votre offre, désolée j'étais à la salle, j'ai pas pu décrocher. Je suis dispo cette semaine si ça vous va !\" Là, ils vont chercher ton dossier. Et tu encha",
+  "status": "archived",
+  "title": "J’ai un conseil hyper toxic"
+ },
+ {
+  "description": "A trend video using a filter and the looping ringing-phone sound, with text saying this is the creator's phone since they redid their CV on Parakeet AI.",
+  "id": "FRX29",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e2958b0-fc14-8015-b43a-c3fc89f77e5f"
+  },
+  "script": "  📲 TEXTE ÉCRIT Choisis une de ces phrases. Mon téléphone depuis que j'ai refait mon CV sur Parakeet AI Mon téléphone depuis que j'ai arrêté de faire mon CV sur Word Mon téléphone depuis que j'ai arrêté de faire mon CV sur Canva Comment est mon téléphone depuis que mon CV est enfin adapté aux offres Mon téléphone depuis que j'ai arrêté de galérer sur mon CV Mon téléphone depuis que j'ai testé la fonction CV de Parakeet AI Le son : le son trend du téléphone qui sonne en boucle, comme dans la vidéo d'exemple. 🎬 ACCROCHE VISUELLE L'accroche visuelle : mettez un filtre comme sur la vidéo d'exemple, et lâchez-vous ! Ou jouez avec un truc inhabituel, dansez, faites un geste décalé… L'idée c'est d'arrêter le scroll dès la première seconde et de paraître heureux(se).",
+  "status": "archived",
+  "title": "Trend : téléphone qui sonne"
+ },
+ {
+  "description": "An 'I'm manifesting that this video reaches you' trend aimed at struggling job seekers, leading into Parakeet AI.",
+  "id": "FRX30",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e2958b0-fc14-80a2-b017-e97a1694598e"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Je manifeste pour que cette vidéo arrive chez toi qui galère à trouver du travail 🤡 Je manifeste pour que cette vidéo arrive chez toi qui envoies des CV depuis 3 mois sans réponse Je manifeste pour que ton prochain entretien soit le dernier de ta recherche Je manifeste pour que cette vidéo arrive chez toi qui adaptes ton CV à chaque offre à la main Je manifeste pour que cette vidéo arrive chez toi qui sais pas quoi mettre sur ton CV Je manifeste pour que tu découvres Parakeet avant d'envoyer ta prochaine candidature Je manifeste pour que ton CV passe enfin les filtres des recruteurs Je manifeste pour que ton CV décroche enfin des entretiens 🎬 ACCROCHE VISUELLE L'accroche : tu fais impérativement le signe de prière, face cam, comme dans la vidéo d'exemple. Ensuite, tu fais une démo : tu enchaînes directement sur la réalisation de ton CV sur Parake",
+  "status": "archived",
+  "title": "Trend : je manifeste pour que…"
+ },
+ {
+  "description": "The creator 'gifts' viewers the CV that got them their dream job, telling them to screenshot it, and explains how it was made.",
+  "id": "FRX31",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e4958b0-fc14-80bc-af47-f0036db848ee"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Je vous offre le CV qui m'a fait décrocher mon job Prenez mon CV, j'en ai plus besoin Le CV qui m'a sortie de la galère, c'est cadeau Si vous êtes [métier], ce CV est pour vous Cadeau pour ceux qui galèrent à trouver un job J'ai eu le job de mes rêves avec ce CV. Servez-vous Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Je vous mets mon CV là, c'est cadeau. Faites un screen car c’est clairement ce CV qui m'a permis de décrocher le job de mes rêves. Et je sais que c'est vraiment la galère en ce moment. Moi j'ai galéré longtemps, donc si ça peut aider quelqu'un, allez-y. Moi je voulais absolument bosser dans [secteur]. Parce que je pense que c'est là que tout va évoluer dans les prochaines années, avec l'IA et tout le reste. Donc si vous êtes [métier], ou que vous voulez vous lancer là-dedans, prenez-le, j'en ai plus besoin.",
+  "status": "archived",
+  "title": "Je vous donne mon CV - screen"
+ },
+ {
+  "description": "The creator mocks a France Travail CV workshop that still recommends Canva CVs despite 8% unemployment and urges viewers to get their CV scored instead.",
+  "id": "FRX32",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e5958b0-fc14-806e-bab6-e16932d16fd5"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. 8 % de chômage, et on vous conseille encore Canva pour vos CV France Travail qui se plaint du chômage… c'est pas un peu leur job ? Le conseil CV qu'on vous donne encore en 2026 (et pourquoi c'est faux) Pourquoi vos candidatures restent sans réponse Faites noter votre CV avant de l'envoyer Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT France Travail qui se plaint qu'il y a 8 % de chômage en France… Les gars, c'est pas un peu votre job de nous en trouver, du travail ? Je sors d'un atelier CV chez eux. L'enfer. On m'explique qu'il faut faire son CV sur Canva. Sauf qu'on est plus en 2018. Les CV Canva, avec les colonnes et les icônes, ils passent pas les filtres ATS. Donc en gros, si je les écoute, mes candidatures seront jamais lues par un recruteur. Elles seront éliminées par un logiciel avant. Alors petit conseil : faites v",
+  "status": "archived",
+  "title": "8% de chomage en france"
+ },
+ {
+  "description": "The creator criticizes France Travail and Mission Locale for promoting a 'good CV' example that wouldn't pass ATS filters.",
+  "id": "FRX33",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e5958b0-fc14-80f4-a214-f701467a7b6a"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. France Travail et la Mission Locale vous racontent n'importe quoi Le CV que France Travail recommande… ne passe pas les filtres Ils vous montrent le \"bon CV\" à faire. Il est éliminé par les logiciels Les institutions censées vous aider sabotent vos candidatures Pourquoi le CV recommandé par France Travail est un mauvais conseil Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Que ce soit France Travail ou la Mission Locale, ils vous racontent n'importe quoi. Récemment, ils ont posté un TikTok avec deux CV : \"ça, c'est le bon\" et \"ça, c'est le mauvais\". Sauf que regardez le CV qu'ils recommandent. Sur le principe, oui, il est joli. Mais les petites étoiles, les logos, la police fantaisie… tout ça, ça passe pas les filtres ATS. Les filtres ATS, c'est quoi ? Ce sont les logiciels qui trient votre CV avant même qu'un recruteur l'",
+  "status": "archived",
+  "title": "France travail ou la mission locale racontent n’importe quoi"
+ },
+ {
+  "description": "Frustrated at getting no replies even for warehouse order-picker jobs, the creator asks whether you have to sell your soul to get a job, then raises their CV match score from 70% to 100%.",
+  "id": "FRX34",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e5958b0-fc14-8039-bae2-e1b29e3b6893"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Il faut vendre son âme pour avoir un job en France en 2026 ? Je postule pour préparatrice de commandes et j'ai zéro réponse J'étais à deux doigts de mentir sur mon CV Même CV, même annonce, deux résultats différents Mon CV était à 70 %. Maintenant il est à 100 % Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT C'est la 60e fois que je pose la question, mais s'il vous plaît : il faut vendre son âme ou pas pour avoir un job en France en 2026 ? Je postule sur les annonces en ligne, jamais de réponse. Jamais. Et attention, on parle pas d'un poste de direction. Préparatrice de commandes chez Lidl.  Donc je comprends pas. Je vous jure que je suis compétente. J'en étais à deux doigts de commencer à mentir sur mon CV. Et là, une copine qui galérait pareil me parle de Parakeet AI. Je refais mon CV dessus, je repostule à la même annonc",
+  "status": "archived",
+  "title": "Il faut vendre son âme pour avoir un job en 2026 ?"
+ },
+ {
+  "description": "The creator answers people who say unemployed people do nothing by breaking down a daily routine of 5–6 hours of applications and how they optimize it.",
+  "id": "FRX35",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e5958b0-fc14-80da-bf90-e02e2c320146"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Pour ceux qui pensent qu'au chômage on ne fout rien Voilà à quoi ressemble vraiment une journée de recherche d'emploi 6 heures par jour à postuler. Tous les jours Chômeurs, arrêtez de perdre votre temps, faites plutôt ça Comment j'optimise mes 6 heures de candidatures par jour Postuler, c'est un travail à temps plein Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Cette vidéo s'adresse aux personnes qui disent qu'au chômage, on ne fout rien. Écoutez-moi bien. De 23 h à 7 h, on dort. De 7 h à 11 h, café, routine, sport. De 19 h à 23 h, on mange, on voit un peu sa famille. Donc il me reste midi à 18 h. Cinq, six heures par jour à postuler. Tous les jours. C'est énorme. Alors chômeurs, écoutez-moi : au lieu d'y passer vos journées, optimisez. Vous allez sur Parakeet AI, vous déposez votre CV et l'annonce. Il analyse et vous don",
+  "status": "archived",
+  "title": "Au chômage on ne fou rien ?"
+ },
+ {
+  "description": "A skit of a phone call in which a candidate follows up on an application and the HR person admits they never even saw the CV.",
+  "id": "FRX36",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e5958b0-fc14-801e-8daa-d6518a278406"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. J'ai appelé pour savoir pourquoi je n'avais pas de réponse La RH m'a dit qu'elle n'avait jamais vu mon CV Votre CV n'est peut-être jamais arrivé jusqu'au recruteur Ce que m'a répondu la RH quand j'ai relancé ma candidature Trois semaines sans réponse, et voilà pourquoi « Je n'ai même pas vu votre CV passer » Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Candidat : « Oui allô, j'ai candidaté chez vous il y a à peu près trois semaines et j'ai toujours pas eu de retour. Je voulais savoir s'il y avait une suite à ma candidature. » RH : « Bonjour. Écoutez, si vous n'avez pas de nouvelles, c'est qu'on a pas gardé votre profil tout simplement. » Candidat : « Je comprends pas, pourtant j'ai vraiment le profil demandé. » RH : « Alors, je n'ai même pas vu votre CV passer. On reçoit des centaines de candidatures, donc on a un logicie",
+  "status": "archived",
+  "title": "Appel entre un RH et un candidat"
+ },
+ {
+  "description": "A celebratory face-to-camera party hook ('sent my CV Monday, start Wednesday'), followed by a demo of making the CV on Parakeet.",
+  "id": "FRX38",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3e9958b0-fc14-8057-84bc-c12d393e1030"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. J'ai envoyé mon CV lundi. Entretien hier. Je commence mercredi. 🎉 CV envoyé lundi. Rappelée mercredi. Signée vendredi. 🎉 CV refait dimanche soir. Déjà 3 entretiens cette semaine. 🎉 J'ai postulé mardi. On m'a rappelée le lendemain. 🎉 0 réponse en trois mois VS 2 entretiens en trois jours. 🎉 Le jour où j'ai arrêté d'envoyer mon CV Canva. 🎉 🎬 ACCROCHE VISUELLE L'accroche : tu fais la fête, face cam, comme dans la vidéo d'exemple. Ensuite, tu fais une démo : tu enchaînes directement sur la réalisation de ton CV sur Parakeet. On doit voir les étapes et le résultat final.",
+  "status": "archived",
+  "title": "J’ai envoyer mon CV, j'ai eu un entretien, je commence"
+ },
+ {
+  "description": "The creator walks through an ATS-passing CV template section by section: job title under the name, short summary with keywords, contact details and so on.",
+  "id": "FRX39",
+  "market_only": "fr",
+  "pages": {
+   "fr": "3ea958b0-fc14-80c7-8fe3-ea76eb6c7996"
+  },
+  "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Le modèle de CV qui passe les ATS en 2026 Voilà à quoi doit ressembler votre CV Les 5 choses à corriger sur votre CV aujourd'hui Pourquoi votre CV finit en bas de la pile L'erreur que tout le monde fait sur son CV Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Ça, c'est un modèle de CV qui passe les ATS et qui convainc les recruteurs. Première chose, l'intitulé du poste juste sous le nom. Vous postulez pour un poste précis, ça doit se voir en une seconde. Ensuite le résumé de profil. Trois ou quatre lignes grand max : pourquoi vous, pourquoi ce poste, pourquoi cette boîte. Et vous reprenez les mots-clés de l'annonce. Les contacts. Ça paraît bête, mais énormément de gens oublient leur adresse mail. Si elle n'y est pas, l'ATS ne remonte pas votre profil. Le recruteur peut toujours vous voir, sauf qu'avec 200 CV, il n'atteindr",
+  "status": "archived",
+  "title": "Ca c’est un modèle de CV qui passe les filtres ATS"
  }
 ]

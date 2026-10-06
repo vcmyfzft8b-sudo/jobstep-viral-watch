@@ -1,0 +1,22 @@
+[
+  {"id": "N10", "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5", "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀", "status": "active",
+   "description": "Nobody reads your CV / your CV never reaches a recruiter: ATS software filters or rejects CVs before a human sees them; pretty/creative CVs fail the ATS. Examples: 'NIKO ne cita tvoj CV', 'pov: alles Lügen', 'POV: cały czas dostajesz odmowy', 'Mach das nicht!! abgelehnt'."},
+  {"id": "N01", "page_id": "3f0958b0fc14816aadb3f7c783ee29c9", "title": "2026 Abschluss – aber noch kein Job? 😭", "status": "active",
+   "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'."},
+  {"id": "N06", "page_id": "3f0958b0fc1481208c6ac19b0c666666", "title": "Jobsuche: Ja, nein oder vielleicht?", "status": "active",
+   "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'."},
+  {"id": "N02", "page_id": "3f0958b0fc148181bcdde9677a8e051e", "title": "Seit wann kann LinkedIn das? 🤯", "status": "active",
+   "description": "LinkedIn job-search hack: change the time filter in the URL (86400 -> 3600, r3600) to see jobs posted in the last hour, then tailor the CV. Example: 'OD KAD LINKEDIN MOŽE OVO???'."},
+  {"id": "N03", "page_id": "3f0958b0fc14819f99f8f24903aeaeb3", "title": "POV: Dein Lebenslauf bekommt endlich ein Upgrade 🤯", "status": "active",
+   "description": "POV: I finally understand why everyone is deleting ChatGPT - usually no voiceover, on-screen numbered steps (copy job ad, paste into the tool, CV gets tailored) with music."},
+  {"id": "N04", "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef", "title": "Monatelang Bewerbungen – und kaum Antworten? 😭", "status": "active",
+   "description": "I got 20 interviews? / my inbox is full of interview invitations: shows an email inbox full of interview invites as proof, then explains the CV change. Examples: 'dobila sam 20 INTERVJUA', 'WAR IS OVER (tak wygląda moja poczta)'."},
+  {"id": "N07", "page_id": "3f0958b0fc1481babee1d2e56b4e56af", "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫", "status": "active",
+   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'."},
+  {"id": "N05", "page_id": "3f0958b0fc1481229383d89628cc3be3", "title": "Für jede Stelle wieder den Lebenslauf umschreiben? 😩", "status": "active",
+   "description": "I hate this: having to write a new CV and cover letter for every single job is exhausting; a friend showed me a tool that tailors it. Example: 'MRZIM OVO', '3 mois perdus à personnaliser mes CV'."},
+  {"id": "N08", "page_id": "3f0958b0fc148162b1d5c72be508d006", "title": "Kein Job ohne Erfahrung? Dieser Kreislauf nervt 😭", "status": "active",
+   "description": "You don't need work experience to get a job / is work experience important? - missing experience is not why you're rejected, the CV is. Examples: 'NE TREBA VAM RADNO ISKUSTVO', 'NIE potrzebujesz doświadczenia'."},
+  {"id": "N09", "page_id": "3f0958b0fc1481da8accda8f08494a00", "title": "Den HR-Typen könnte ich heiraten 😳", "status": "active",
+   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'."}
+]

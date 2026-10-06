@@ -725,5 +725,17 @@
   },
   "ts": 1791303667,
   "type": "rerank"
+ },
+ {
+  "level": "viral",
+  "markets": {
+   "de": {
+    "format": null
+   }
+  },
+  "ts": 1791306492,
+  "type": "alert",
+  "video": "7692141310198713633",
+  "views": 231900
  }
 ]

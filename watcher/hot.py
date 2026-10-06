@@ -15,8 +15,29 @@ MIN_VIRAL = 5
 WINDOW_DAYS = 7
 
 
+def viral_videos(history, videos, formats, viral_views):
+    """{format_id: [video, ...]} – viral videos posted in the last 7 days whose format was confirmed by the strict
+    Claude check (transcript vs. every format page in Notion), for active formats."""
+    now = time.time()
+    active = {f['id'] for f in formats if f.get('status') == 'active'}
+    seen, out = set(), {}
+    for vid, v in list(videos.items()) + list(history.items()):
+        if vid in seen:
+            continue
+        seen.add(vid)
+        fid = v.get('format')
+        if (fid in active and v.get('judged') and v.get('views', 0) >= viral_views
+                and now - v.get('created', 0) <= WINDOW_DAYS * 86400):
+            out.setdefault(fid, []).append({'id': vid, **v})
+    return out
+
+
 def counts(history, videos, formats, viral_views):
-    """{format_id: number of viral videos posted in the last 7 days} for active formats."""
+    """{format_id: number of confirmed viral videos posted in the last 7 days} for active formats."""
+    return {fid: len(vs) for fid, vs in viral_videos(history, videos, formats, viral_views).items()}
+
+
+def _old_counts(history, videos, formats, viral_views):
     now = time.time()
     active = {f['id'] for f in formats if f.get('status') == 'active'}
     seen, out = set(), {}
@@ -71,11 +92,16 @@ def update(history, videos, formats, cfg, meta, dry_run=False):
             meta_hot[fid]['announced'] = True
             notify.push('📣 Announced in Discord #announcements', f"*{f['title']}* ({n} viral videos in 7 days)")
             state.log({'type': 'hot_announced', 'format': fid, 'count': n})
+    proof = viral_videos(history, videos, formats, cfg['thresholds']['viral_views'])
     for fid in new:
         f, n = by_id[fid], hot_now[fid]
         ok = meta_hot[fid]['announced']
-        notify.push('🚀 HOT format', f"*{f['title']}* – {n} viral JobStep videos in 7 days.\n"
-                    f"Pinned at the top of the DACH list{' and announced in Discord #announcements' if ok else ' (Discord not connected – no announcement sent)'}.",
+        links = '\n'.join(f"• @{x['handle']} – {x['views'] // 1000}k – "
+                          f"<https://www.tiktok.com/@{x['handle']}/video/{x['id']}|video>"
+                          for x in sorted(proof.get(fid, []), key=lambda x: -x['views']))
+        notify.push('🚀 HOT format', f"*{f['title']}* – {n} viral JobStep videos in 7 days (each confirmed by Claude as this format):\n"
+                    f"{links}\n\nPinned at the top of the DACH list"
+                    f"{' and announced in Discord #announcements' if ok else ' (Discord not connected – no announcement sent)'}.",
                     click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
         state.log({'type': 'hot', 'format': fid, 'count': n, 'discord': ok})
     for fid in cooled:

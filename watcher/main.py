@@ -46,7 +46,8 @@ def fmt_views(n):
 def to_history(history, v, german, now):
     old = history.get(v['id'], {})
     entry = {'handle': v['handle'], 'created': v['created'], 'views': v['views'], 'format': v.get('format'),
-             'hook': v.get('hook_en', ''), 'german': v['handle'] in german, 'mature': now - v['created'] >= 7 * 86400}
+             'hook': v.get('hook_en', ''), 'german': v['handle'] in german, 'mature': now - v['created'] >= 7 * 86400,
+             'judged': bool(v.get('judged') or old.get('judged'))}
     # Views within the first 7 days after posting (what counts as "viral" for the ranking).
     if now - v['created'] <= 7.5 * 86400:
         entry['views_7d'] = v['views']
@@ -160,6 +161,27 @@ def run(dry_run=False, only_detect=False):
                 v['format'], v['hook_en'], v['format_checked'] = c['match'], c['hook_en'], True
                 history.get(v['id'], {}).update({'format': v['format'], 'hook': v['hook_en']})
         print(f'classified {len(todo)} videos')
+
+    # Viral videos tagged before the strict Claude check existed: re-check them quietly (max 5 per run).
+    if not dry_run:
+        todo = [v for v in videos.values() if v.get('views', 0) >= th['viral_views'] and not v.get('judged')
+                and 'created' in v and now - v['created'] <= cfg['watch_days'] * 86400][:5]
+        for v in todo:
+            work = tempfile.mkdtemp(prefix='judge-')
+            try:
+                try:
+                    transcript = soniox.transcribe(media.audio(media.download(v['url'], work), work)).get('text', '')
+                except Exception:
+                    transcript = v.get('subtitles', '')
+                verdict = classify.judge(v, formats, cfg['models']['build'], transcript)
+                fmt = resolve(formats, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+                v['format'], v['judged'] = (fmt['id'] if fmt else v.get('format')), True
+                history.get(v['id'], {}).update({'format': v['format'], 'judged': True})
+                print('re-judged', v['handle'], v['views'], '->', v['format'])
+            except Exception as e:
+                print('re-judge failed', v['id'], str(e)[:150])
+            finally:
+                shutil.rmtree(work, ignore_errors=True)
 
     # Hot formats (5+ viral videos in 7 days): 🚀 callout at the top + Discord announcement
     if not only_detect:
@@ -282,6 +304,8 @@ def handle_viral(v, formats, history, cfg, now, only_detect, test=False):
 
         dup = verdict.get('duplicate_of')
         known = resolve(formats, dup) if dup else None
+        v['judged'] = True
+        history.get(v['id'], {})['judged'] = True
         prepared = {'work': work, 'video_file': video_file, 'transcript': transcript} if video_file else None
         if known:
             v['format'] = known['id']

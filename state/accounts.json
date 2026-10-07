@@ -1,35 +1,55 @@
 {
  "_klaudii30": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "adriana_jobs": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "aime_aqui": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "ale.jobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "alex.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "alexkoleva13": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "anniaelina": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "annikajobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -41,18 +61,21 @@
   "status": "inactive"
  },
  "avazdagbok": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "benkorebeka5": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "career.tea.with.d": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -69,7 +92,18 @@
   "source": "tiktok-search",
   "status": "inactive"
  },
+ "chajobtips": {
+  "since": 1791371133,
+  "source": "lightreel",
+  "status": "inactive"
+ },
+ "charline.job": {
+  "since": 1791371133,
+  "source": "lightreel",
+  "status": "inactive"
+ },
  "charline.jobstep.io": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
@@ -81,6 +115,7 @@
   "status": "inactive"
  },
  "chloe.jobtipps": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -98,24 +133,42 @@
   "status": "inactive"
  },
  "cvwithines_": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "danielaavega___": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
   "status": "active"
  },
  "diana_osm": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "dianapracuje": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "dorcsyy_jobstep": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "edda.anneli": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -128,12 +181,14 @@
   "status": "active"
  },
  "elizacv25": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "ella.jobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -146,6 +201,7 @@
   "status": "manual"
  },
  "emily_190730": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -164,15 +220,24 @@
   "status": "active"
  },
  "emy.jobstep.io": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "emy.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "esracareers": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
   "status": "active"
  },
  "ferni.tips": {
@@ -182,12 +247,14 @@
   "status": "active"
  },
  "filippajobbtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "franzi.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -200,12 +267,14 @@
   "status": "active"
  },
  "gabbolab": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "gina.fekete7": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -222,42 +291,84 @@
   "status": "inactive"
  },
  "iloveklodzko": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "isaconsejoscv": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "isaura.jobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "issa.jobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "itssophiatalea": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "itswithluna": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "jeanine.gc8": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "jenny.gonzalez392": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "jenny_jennyv": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "jimena.ruizf": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "job.by.niki": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "job.reality.mit.tatyana": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -275,60 +386,87 @@
   "status": "active"
  },
  "jobstep.io": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "known",
   "status": "manual"
  },
  "jobtipsmetmarie": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "jobtipy": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "joelle.jobstep.io": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "julia.jobstep": {
+  "since": 1791371133,
+  "source": "lightreel",
+  "status": "inactive"
+ },
  "juliajobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "juliantyonhaku": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "julie.jobstep.io": {
+  "since": 1791371133,
+  "source": "lightreel",
+  "status": "inactive"
+ },
+ "julie.jobtips": {
+  "checked_ugc": true,
+  "lang": "fr",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "juliejobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "junew0rk": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "justsara676": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "karmencvtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -345,12 +483,14 @@
   "status": "inactive"
  },
  "lau.urarm": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "lavalaletze": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -362,30 +502,42 @@
   "status": "inactive"
  },
  "leonorjobstepp": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "leyla.jobstep": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
+ "lil.janeiro0": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "lilly.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "linnegzmstf": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "lissa.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -397,33 +549,71 @@
   "status": "inactive"
  },
  "lockinwitheva": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "luworks": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "ma.life.de.chomeu": {
+  "checked_ugc": true,
+  "lang": "fr",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "madebyanna92": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "majo67568": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "manal.jobstep.io": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "manon.job3": {
+  "checked_ugc": true,
+  "lang": "fr",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "manon.jobstep": {
+  "since": 1791371133,
+  "source": "lightreel",
+  "status": "inactive"
+ },
  "manujobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "maria25alm": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
   "status": "active"
  },
  "marie.jobtipps": {
@@ -432,18 +622,21 @@
   "status": "inactive"
  },
  "mariee.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "marine.realfakephotos": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "martets": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -456,6 +649,7 @@
   "status": "active"
  },
  "matildedicas": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -467,24 +661,28 @@
   "status": "inactive"
  },
  "misialurisia": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "mona.jobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "nass.job.tips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "neli.gomolj": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -496,9 +694,17 @@
   "status": "inactive"
  },
  "olatinasaid": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "origomez953": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
   "status": "active"
  },
  "realfakephoto": {
@@ -507,30 +713,49 @@
   "status": "inactive"
  },
  "revekaonline": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "roxanaempleos": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "rubi.te.guia": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "salii.jobtipps": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "known",
   "status": "manual"
  },
  "samantha_jobstep": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "samjobtips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "sara.jobstep.io": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -542,12 +767,14 @@
   "status": "inactive"
  },
  "sarinajobstep": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "sevvalcareer": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -558,37 +785,57 @@
   "source": "tiktok-search",
   "status": "inactive"
  },
+ "sophia_einszwei": {
+  "checked_ugc": true,
+  "lang": "de",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
+ "srokolajobtips": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "stay.with.giulia": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "swaaag_06": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "thelma.gtz": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "thilde9154": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "this.is.creed": {
+  "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "tips.from.ale": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -600,24 +847,35 @@
   "status": "inactive"
  },
  "trabajandoconker": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "tsvetelina.tips": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "viktorietyna": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "work.with.ell": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1791371133,
+  "source": "search-2026-10-07",
+  "status": "active"
+ },
  "zorica.djurdjevic21": {
+  "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",

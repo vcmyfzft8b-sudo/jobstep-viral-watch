@@ -1126,5 +1126,46 @@
   ],
   "ts": 1791365963,
   "type": "rerank"
+ },
+ {
+  "added": [
+   "aime_aqui",
+   "danielaavega___",
+   "dianapracuje",
+   "jeanine.gc8",
+   "jenny.gonzalez392",
+   "jimena.ruizf",
+   "julie.jobtips",
+   "lil.janeiro0",
+   "ma.life.de.chomeu",
+   "manon.job3",
+   "origomez953",
+   "roxanaempleos",
+   "rubi.te.guia",
+   "srokolajobtips",
+   "isaconsejoscv",
+   "majo67568",
+   "adriana_jobs",
+   "esracareers",
+   "jenny_jennyv",
+   "maria25alm",
+   "sophia_einszwei",
+   "work.with.ell"
+  ],
+  "blocked": [],
+  "ts": 1791371524,
+  "type": "accounts_sync",
+  "unclear": [
+   "catita.tipss",
+   "chloejobtips",
+   "elisa.jobtipps",
+   "emasavetuje",
+   "emma.jobtips",
+   "emma_jobtips",
+   "ferni.tips",
+   "fridaempleotips",
+   "jobfluesterin",
+   "mary.jobtipps"
+  ]
  }
 ]

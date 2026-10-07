@@ -1081,5 +1081,50 @@
   ],
   "ts": 1791353891,
   "type": "rerank"
+ },
+ {
+  "form": 0.63,
+  "format": "N09",
+  "reason": "current form 0.63 (below average) and no viral video in the last 21 days",
+  "ts": 1791365900,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.77,
+  "format": "N08",
+  "reason": "current form 0.77 (below average) and no viral video in the last 21 days",
+  "ts": 1791365901,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.9,
+  "format": "N06",
+  "reason": "current form 0.90 (below average) and no viral video in the last 21 days",
+  "ts": 1791365902,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.9,
+  "format": "N05",
+  "reason": "current form 0.90 (below average) and no viral video in the last 21 days",
+  "ts": 1791365903,
+  "type": "lineup_out"
+ },
+ {
+  "order": [
+   "N10",
+   "N01",
+   "A202610061328",
+   "X16",
+   "A20261006183623",
+   "A202610061334",
+   "N07",
+   "N02",
+   "N03",
+   "A202610061331",
+   "N04"
+  ],
+  "ts": 1791365963,
+  "type": "rerank"
  }
 ]

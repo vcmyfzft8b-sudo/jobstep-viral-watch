@@ -24,6 +24,7 @@
   "title": "2026 Abschluss – aber noch kein Job? 😭"
  },
  {
+  "archived_reason": "clean-up 07.10.2026: current form 0.90 (below average) and no viral video in the last 21 days",
   "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'.",
   "id": "N06",
   "page_id": "3f0958b0fc1481208c6ac19b0c666666",
@@ -32,7 +33,7 @@
    "fr": "3f0958b0-fc14-8081-94a3-c83118091812"
   },
   "script": "Jobseiten bewerten: Ja, Nein oder Vielleicht. Indeed: auf gar keinen Fall – außer du hast Bock, für Mindestlohn einen Job zu machen, für den man eigentlich zehn Leute bräuchte. Auf LinkedIn einen guten Job zu finden, ist echt nicht leicht. Da sitzt du locker ein paar Wochen und suchst, aber vielleicht hast du Glück und findest wirklich was. Also: Vielleicht. Parakeet AI ist ein klares Ja. Die Plattform ist noch ziemlich neu, funktioniert aber deutlich besser als die anderen. (Parakeet AI · Resume Maker) Die passt deinen Lebenslauf an das an, was in der Stellenanzeige verlangt wird. (Parakeet AI · Resume Maker) Das ist mein alter, der hatte X Punkte. (Parakeet AI · Resume Maker) So kommt er durch alle Filter und landet wirklich beim Recruiter. (Parakeet AI · Resume Maker) Und hier hat mein neuer Y Punkte, (Parakeet AI · Resume Maker) und ich kann ihn sogar noch bearbeiten, zum Beispiel d",
-  "status": "active",
+  "status": "archived",
   "title": "Jobsuche: Ja, nein oder vielleicht?"
  },
  {
@@ -84,6 +85,7 @@
   "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫"
  },
  {
+  "archived_reason": "clean-up 07.10.2026: current form 0.90 (below average) and no viral video in the last 21 days",
   "description": "I hate this: having to write a new CV and cover letter for every single job is exhausting; a friend showed me a tool that tailors it. Example: 'MRZIM OVO', '3 mois perdus à personnaliser mes CV'.",
   "id": "N05",
   "page_id": "3f0958b0fc1481229383d89628cc3be3",
@@ -92,10 +94,11 @@
    "fr": "3f0958b0-fc14-80f5-aaf3-e149f9f6d348"
   },
   "script": "Ich bin gerade auf Jobsuche, und was ich daran echt hasse: Ich muss tausend Bewerbungen rausschicken und für jede Stelle einen eigenen Lebenslauf und ein eigenes Anschreiben schreiben. Das ist so anstrengend und frisst so viel Zeit – und eine Freundin von mir hat in drei Tagen einen Job gefunden. Ehrlich, es war mir voll unangenehm, sie zu fragen, wie sie das gemacht hat. Aber ich hab gefragt, was hab ich schon zu verlieren? (LinkedIn-Jobsuche) Und sie hat mir gezeigt: Du kopierst einfach die Beschreibung von der Stelle, auf die du dich bewirbst, (Parakeet AI · Resume Maker) packst sie auf diese Seite, Parakeet AI, (Parakeet AI · Resume Maker) lädst noch deinen normalen Lebenslauf dazu hoch, (Parakeet AI · Resume Maker) und es macht dir einen Lebenslauf, der genau zu der Stelle passt. Ich war ehrlich geschockt, ich wusste nicht, dass KI schon so weit ist. Speicher dir das Video unbeding",
-  "status": "active",
+  "status": "archived",
   "title": "Für jede Stelle wieder den Lebenslauf umschreiben? 😩"
  },
  {
+  "archived_reason": "clean-up 07.10.2026: current form 0.77 (below average) and no viral video in the last 21 days",
   "description": "You don't need work experience to get a job / is work experience important? - missing experience is not why you're rejected, the CV is. Examples: 'NE TREBA VAM RADNO ISKUSTVO', 'NIE potrzebujesz doświadczenia'.",
   "id": "N08",
   "page_id": "3f0958b0fc148162b1d5c72be508d006",
@@ -104,10 +107,11 @@
    "fr": "3f0958b0-fc14-801d-a71a-d7cf43b5e9a9"
   },
   "script": "Keine Ahnung, wie oft du das schon gehört hast, aber du brauchst keine Berufserfahrung. Viele sagen, man kriegt keinen Job, nur weil man keine Erfahrung hat – aber ich glaub, da gibt's viel größere Gründe. Wenn dein Lebenslauf zum Beispiel schlecht aussieht, kriegst du sicher keinen Job. Und wenn er aussieht wie der von allen anderen und null heraussticht, nehmen die dich sicher nicht. Ich zeig dir, wie du einen richtig guten Lebenslauf machst. (Parakeet AI · Resume Maker) Geh einfach auf Parakeet AI und lad deinen Lebenslauf hoch. (Parakeet AI · Resume Maker) Meiner hatte X Punkte. (Parakeet AI · Resume Maker) Beantworte ein paar Fragen und lass Parakeet AI deinen Lebenslauf verbessern. (Parakeet AI · Resume Maker) Danach sieht deine Punktzahl so aus (Parakeet AI · Resume Maker) und dein Lebenslauf so. Das war's schon. Einfacher kommst du ohne Berufserfahrung nicht an einen Job. 🎬",
-  "status": "active",
+  "status": "archived",
   "title": "Kein Job ohne Erfahrung? Dieser Kreislauf nervt 😭"
  },
  {
+  "archived_reason": "clean-up 07.10.2026: current form 0.63 (below average) and no viral video in the last 21 days",
   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
   "id": "N09",
   "page_id": "3f0958b0fc1481da8accda8f08494a00",
@@ -116,7 +120,7 @@
    "fr": "3d6958b0-fc14-8022-8fc8-d1975c6dd4b5"
   },
   "script": "(Texteinblendung 0–3 s, nicht sprechen) Ich könnte den Typen aus HR echt heiraten, weil er mir das gezeigt hat. (LinkedIn-Jobsuche) Du suchst dir eine Stellenanzeige aus, die dir gefällt, und kopierst die Beschreibung. (Parakeet AI · Resume Maker) Dann ab auf diese Seite. (Parakeet AI · Resume Maker) Hier fügst du die Anzeige ein, und die wird automatisch analysiert. (Parakeet AI · Resume Maker) Dann bewertet es deinen Lebenslauf im Vergleich zu der Stelle, auf die du dich bewerben willst, (Parakeet AI · Resume Maker) und hier kannst du noch ein paar Sachen ergänzen. (Parakeet AI · Resume Maker) Und das ist jetzt mein fertiger Lebenslauf. Leute, das müsst ihr ausprobieren. Wie lange hab ich gebraucht? Nicht mal zwei Minuten – und Y Prozent. Ich kann's nicht glauben. 🎬",
-  "status": "active",
+  "status": "archived",
   "title": "Den HR-Typen könnte ich heiraten 😳"
  },
  {

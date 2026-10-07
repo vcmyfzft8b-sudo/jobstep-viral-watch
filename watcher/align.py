@@ -146,7 +146,7 @@ def _validate(spec, n_orig):
     return ''
 
 
-def run(fmts, mkts, cfg, page_of, workers=3):
+def run(fmts, mkts, cfg, page_of, workers=8):
     import concurrent.futures as cf
     jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts if page_of(f, mk['key'])]
 

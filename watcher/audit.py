@@ -215,7 +215,7 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
     return 'failed', notes + ['still failing: ' + '; '.join(v['script_issues'] + v['direction_issues'] + [v['example_issue']])[:200]]
 
 
-def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4, rebuild=None, only_failed=False):
+def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=8, rebuild=None, only_failed=False):
     import concurrent.futures as cf
     last = meta.setdefault('audit', {})
     if only_failed and not last:  # no record yet: the pages listed in registry/audit_todo.json are the open ones

@@ -173,3 +173,23 @@ def test_reviewer_sees_cue_markers_but_not_as_spoken_words():
     assert crosscheck.cue_text(b) == 'Ich lade ihn hoch [CUE: (Parakeet AI · Resume Maker)]'
     from watcher import reword as rw
     assert 'Parakeet' not in rw.spoken_text([b])
+
+
+def test_unreadable_reviewer_answer_is_retried_then_unverified(monkeypatch):
+    import json as _json
+    pages = {'L1_de': {'src': '500'}, 'L1_fr': {'src': '501'}, 'L1_es': {'src': '502'}}
+    World(monkeypatch, pages)
+    good = llm.chat_json
+    calls = []
+
+    def flaky(*a, **k):
+        calls.append(1)
+        if len(calls) == 1:
+            raise _json.JSONDecodeError('Expecting', 'x', 0)
+        return good(*a, **k)
+    monkeypatch.setattr(llm, 'chat_json', flaky)
+    assert crosscheck.check_group(fmt('L1'), MKTS, CFG, page_of, {}, dup_list=[])['status'] == 'pass'
+    monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: (_ for _ in ()).throw(ValueError('No JSON')))
+    meta = {}
+    res = crosscheck.check_group(fmt('L1'), MKTS, CFG, page_of, meta, dup_list=[])
+    assert res['status'] == 'unverified' and not res['passed'] and meta['group_audit']['L1']['key'] is None

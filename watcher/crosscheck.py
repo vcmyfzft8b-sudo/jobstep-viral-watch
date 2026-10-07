@@ -202,9 +202,18 @@ other. Be strict:
 
 Return JSON {{"results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
 "summary": "<one sentence>"}} with every dimension {list(DIMENSIONS)} for every country {sorted(evidence)}."""
-    r = llm.chat_json(model, 'You are a strict QA reviewer for UGC creator formats across countries. Reply with JSON only.',
-                      prompt, timeout=1500)
-    return r.get('results') or {}, r.get('summary', '')
+    for attempt in range(3):  # an unreadable answer is asked again, never guessed
+        try:
+            r = llm.chat_json(model, 'You are a strict QA reviewer for UGC creator formats across countries. Reply with '
+                              'JSON only (valid JSON: escape quotes inside strings).', prompt, timeout=1500)
+        except ValueError as e:  # includes json.JSONDecodeError
+            err = e
+            continue
+        results = r.get('results') or {}
+        if all(isinstance((results.get(d) or {}).get(m), dict) for d in DIMENSIONS for m in evidence):
+            return results, r.get('summary', '')
+        err = ValueError('incomplete review answer')
+    raise err
 
 
 def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
@@ -248,7 +257,13 @@ def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
         res = {**base, 'status': 'unverified', 'passed': False, 'reasons': reasons, 'deterministic': hard}
         store[fmt['id']] = {**res, 'key': key}
         return res
-    results, summary = judge(fmt, ref, evidence, cfg['models']['build'])
+    try:
+        results, summary = judge(fmt, ref, evidence, cfg['models']['build'])
+    except Exception as e:  # no verdict -> unverified (stays in staging), and checked again next time (no cache key)
+        res = {**base, 'status': 'unverified', 'passed': False, 'deterministic': hard,
+               'reasons': reasons + [f'reviewer failed: {str(e)[:160]}']}
+        store[fmt['id']] = {**res, 'key': None}
+        return res
     for m, issue in hard.items():  # a rejected source is a mismatch whatever the model says
         results.setdefault('format_consistency', {})[m] = {'pass': False, 'issue': issue}
     complete = all(isinstance((results.get(d) or {}).get(m), dict) for d in DIMENSIONS for m in inputs)

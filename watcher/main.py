@@ -978,7 +978,11 @@ def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
     notes = []
     if fix:
         for f in [f for f in fmts if results.get(f['id'], {}).get('status') == 'fail']:
-            res, changed, awaiting = crosscheck.group_cycle(f, mkts, cfg, page_of, meta)
+            try:
+                res, changed, awaiting = crosscheck.group_cycle(f, mkts, cfg, page_of, meta)
+            except Exception as e:  # one format's error never stops the others
+                res, changed, awaiting = {**results[f['id']], 'status': 'unverified', 'passed': False,
+                                          'reasons': [f'repair error: {str(e)[:200]}']}, [], []
             results[f['id']] = res
             notes += [f"{f['title']}: {c}" for c in changed] + [f"{f['title']}: ⏸ {a}" for a in awaiting]
             state.save('meta.json', meta)

@@ -17,7 +17,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, hot, lineup, llm, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
+from . import builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -232,6 +232,13 @@ def run(dry_run=False, only_detect=False):
             except Exception as e:
                 traceback.print_exc()
                 notify.push('⚠️ Weekly clean-up failed', str(e)[:300])
+
+        if is_due:
+            try:  # Monday: inspiration videos in each market's language for formats that still miss one
+                localize_report(localize.run(fmts, mkts, history, account_info, meta, cfg, page_of, now), only_changes=True)
+                state.save('formats.json', fmts)
+            except Exception as e:
+                print('localize failed:', str(e)[:200])
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
@@ -679,6 +686,94 @@ def fill_market(m):
     print(f'{m}: built {built} pages')
 
 
+def localize_report(rep, only_changes=False):
+    for r in rep:
+        print(' | '.join(str(x) for x in r))
+    flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}
+    done = [r for r in rep if r[2] == 'replaced']
+    miss = [r for r in rep if r[2] in ('missing', 'error')]
+    if done or (miss and not only_changes):
+        notify.push('🌍 Inspiration videos in the creators\' language',
+                    (f"Replaced {len(done)}:\n" + '\n'.join(f"{flags[m]} {t} – {d}" for t, m, _, d in done) if done else 'Nothing replaced.')
+                    + (f"\n\nStill missing ({len(miss)}):\n" + '\n'.join(f"{flags[m]} {t} – {d}" for t, m, _, d in miss) if miss else ''))
+
+
+def backfill(handles, fmts, history, cfg, now):
+    """Older videos (> 7 days) of newly added accounts: into history and sorted into formats, so ranking and the
+    language-matched inspiration videos see them. Younger videos are left to the normal watch (alerts)."""
+    vids = []
+    for h in handles:
+        for item in tiktok.latest_videos(h):
+            created = int(item['id']) >> 32
+            if item['id'] in history or now - created <= cfg['watch_days'] * 86400:
+                continue
+            d = tiktok.video_detail(h, item['id']) or {'desc': item['desc'], 'sticker': '', 'subtitles': '', 'views': item['views']}
+            vids.append({'id': item['id'], 'handle': h, 'created': created, 'views': max(d['views'], item['views']),
+                         'desc': d['desc'], 'sticker': d['sticker'], 'subtitles': d['subtitles']})
+    res = classify.classify_many(vids, fmts, cfg['models']['classify']) if vids else {}
+    for v in vids:
+        c = res.get(v['id'], {})
+        history[v['id']] = {'handle': v['handle'], 'created': v['created'], 'views': v['views'], 'hook': c.get('hook_en', ''),
+                            'german': False, 'mature': True, 'format': c.get('match'), 'judged': False, 'views_7d': v['views'],
+                            'backfill': True}
+    return len(vids), sum(1 for v in vids if res.get(v['id'], {}).get('match'))
+
+
+def accounts_sync(path):
+    """Check a candidate list with Claude and update the JobStep account list:
+    {"candidates": [handles found by search/Lightreel], "paused": {handle: source}}.
+    Every candidate AND every account we already track is read by Claude (latest videos: caption, on-screen text,
+    speech). Only real JobStep UGC accounts are tracked; tracked accounts that are not (other app / random) are
+    blocked. Then: older videos of the new accounts are pulled in, and the inspiration videos are localized."""
+    cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+    history = state.load('history.json', {})
+    accounts = state.load('accounts.json', {})
+    with open(path) as f:
+        data = json.load(f)
+    now = time.time()
+    tracked = [h for h, a in accounts.items() if a['status'] in ('active', 'manual')]
+    cands = [h for h in dict.fromkeys(data.get('candidates', [])) if h not in tracked and not accounts.get(h, {}).get('blocked')]
+    cands = [h for h in cands if discover.check_account(h) == 'active']  # posted in 30 days + JobStep in its videos
+    verdicts = discover.confirm_ugc(tracked + cands)
+    added, blocked, unclear = [], [], []
+    for h in cands:
+        if verdicts.get(h, {}).get('verdict') == 'jobstep_ugc':
+            accounts[h] = {**accounts.get(h, {}), 'status': 'active', 'since': int(now), 'source': 'search-2026-10-07',
+                           'lang': discover.language(h), 'checked_ugc': True}
+            added.append(h)
+    for h in tracked:
+        v = verdicts.get(h, {})
+        if v.get('verdict') in ('other_app', 'not_ugc') and h != 'jobstep.io':
+            accounts[h].update({'status': 'inactive', 'blocked': True,
+                                'blocked_reason': f"{v['verdict']}: {v.get('other_app') or ''} {v.get('reason', '')}".strip()})
+            blocked.append((h, v))
+        elif v.get('verdict') == 'jobstep_ugc':
+            accounts[h]['checked_ugc'] = True
+        else:
+            unclear.append(h)
+    for h, src in data.get('paused', {}).items():
+        accounts.setdefault(h, {'status': 'inactive', 'since': int(now), 'source': src})
+    state.save('accounts.json', accounts)
+    for h, v in verdicts.items():
+        print(f"{h:24} {v.get('verdict', '?'):12} {v.get('other_app', '')[:18]:18} {v.get('reason', '')[:100]}")
+    n, sorted_n = backfill(added, fmts, history, cfg, now)
+    state.save('history.json', history)
+    active = sum(1 for a in accounts.values() if a['status'] in ('active', 'manual'))
+    summary = (f"{active} active JobStep UGC accounts now tracked – every one checked by Claude (latest videos: caption, "
+               f"on-screen text, speech).\n+{len(added)} new: {', '.join('@' + h for h in added) or '-'}\n"
+               + (f"Removed {len(blocked)} (not JobStep UGC):\n" + '\n'.join(
+                   f"• @{h} – {v.get('other_app') or v['verdict']}: {v.get('reason', '')[:90]}" for h, v in blocked) + '\n' if blocked else '')
+               + (f"Could not decide (kept): {', '.join('@' + h for h in unclear)}\n" if unclear else '')
+               + f"Pulled in {n} older videos of the new accounts ({sorted_n} match one of our formats).")
+    print(summary)
+    notify.push('🔎 JobStep creator list checked', summary)
+    state.log({'type': 'accounts_sync', 'added': added, 'blocked': [h for h, _ in blocked], 'unclear': unclear})
+    rep = localize.run(fmts, M.load(cfg), history, accounts, meta, cfg, page_of)
+    state.save('formats.json', fmts)
+    state.save('meta.json', meta)
+    localize_report(rep)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
@@ -691,6 +786,8 @@ def main():
     ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (more video checks), then re-sort')
     ap.add_argument('--lineup', action='store_true', help='show the current form of every format and what Monday would take out (no changes)')
     ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
+    ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
+    ap.add_argument('--localize', action='store_true', help='inspiration videos in each market language (missing ones only)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -777,6 +874,16 @@ def main():
         if a.lineup_apply:
             state.save('formats.json', fmts)
             rerank(M.load(cfg), fmts, history, cfg)
+        return
+    if a.accounts_sync:
+        accounts_sync(a.accounts_sync)
+        return
+    if a.localize:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        rep = localize.run(fmts, M.load(cfg), state.load('history.json', {}), state.load('accounts.json', {}), meta, cfg, page_of)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
+        localize_report(rep)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

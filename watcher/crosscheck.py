@@ -275,7 +275,8 @@ other. Be strict:
 
 Never put the character " inside an issue text (write ' or « » instead) - the answer must be valid JSON.
 If a country's on-screen title makes a claim we can't make (an invented number of interviews, a time promise, a
-guaranteed result), put a fixed title for it in "titles" (same language and style, same hook idea), else leave it out.
+guaranteed result) or, in a silent on-screen-text format, differs from the script's first on-screen line, put a fixed
+title for it in "titles" (same language and style, same hook idea), else leave it out.
 Return JSON {{"titles": {{"<country>": "<fixed title>"}}, "results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
 "summary": "<one sentence>"}} with every dimension {list(DIMENSIONS)} for every country {sorted(evidence)}."""
     for attempt in range(3):  # an unreadable answer is asked again, never guessed

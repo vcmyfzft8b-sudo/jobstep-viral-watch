@@ -41,11 +41,10 @@
   "id": "N01",
   "inspo": {
    "de": {
-    "at": 1791372321,
-    "prev": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+    "audit": true,
     "strict": true,
-    "url": "https://www.tiktok.com/@salii.jobtipps/video/7662355491695152417",
-    "views": 95700
+    "url": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+    "views": 159300
    },
    "es": {
     "rebuilt": true,

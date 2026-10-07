@@ -30,7 +30,7 @@ class World:
         monkeypatch.setattr(localize, 'current_source', lambda pid: {'url': f"https://www.tiktok.com/@x/video/{self.pages[pid]['src']}"})
         monkeypatch.setattr(audit, 'fingerprint', lambda pid: self.pages[pid].get('fp', 'fp-' + pid))
         monkeypatch.setattr(crosscheck, 'video_identity', lambda pid, cache=None: self.pages[pid].get('vid', 'sha:' + self.pages[pid]['src']))
-        monkeypatch.setattr(localize, 'example_text', lambda url, page_id=None: self.pages[page_id].get('example', 'SPEECH: words'))
+        monkeypatch.setattr(localize, 'example_text', lambda url, page_id=None: self.pages.get(page_id, {}).get('example', 'SPEECH: words'))
         monkeypatch.setattr(reword, 'script_blocks', lambda pid: [])
         monkeypatch.setattr(reword, 'spoken_text', lambda blocks: 'our script')
         monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [])
@@ -278,3 +278,23 @@ def test_apply_approvals_switches_example_then_writes_approved_script(monkeypatc
                                      put_example=lambda f, m, pid, lang, url: order.append(('example', pid, url)))
     assert order == [('example', 'N10_de', ok['example']), ('write', 'N10_de')]   # only the approved page
     assert len(out) == 2
+
+
+def test_new_format_gets_a_reference_from_its_source_video(monkeypatch, tmp_path):
+    from watcher import state
+    monkeypatch.setattr(state, 'DIR', str(tmp_path))
+    pages = {'NEW_de': {'src': '800'}, 'NEW_fr': {'src': '800', 'vid': 'sha:fr'}, 'NEW_es': {'src': '800', 'vid': 'sha:es'}}
+    w = World(monkeypatch, pages, refs={})
+    monkeypatch.setattr(crosscheck, 'references', lambda: {**state.load('format_references.json', {})})
+    good = llm.chat_json
+
+    def chat(model, system, prompt, **kw):
+        if 'reference definition that all three' in prompt:
+            return {'hook': 'h', 'beats': ['a', 'b'], 'product': {'introduced_at_beat': 2}}
+        return good(model, system, prompt, **kw)
+    monkeypatch.setattr(llm, 'chat_json', chat)
+    f = {**fmt('NEW'), 'source_video': 'https://www.tiktok.com/@n/video/800'}
+    res = crosscheck.check_group(f, MKTS, CFG, page_of, {}, dup_list=[])
+    assert res['status'] == 'pass'
+    saved = state.load('format_references.json', {})['NEW']
+    assert saved['canonical_source'] == '800' and saved['accepted_sources'] == ['800']

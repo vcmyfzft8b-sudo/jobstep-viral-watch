@@ -38,11 +38,61 @@ DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wordi
 
 
 def references():
+    """Reviewed definitions from the repository; formats without one (new or revived) use the definition generated from
+    their source video (state/format_references.json). A reviewed definition always wins."""
+    from . import state
     try:
         with open(REFERENCES) as f:
-            return json.load(f).get('formats', {})
+            reviewed = json.load(f).get('formats', {})
     except FileNotFoundError:
-        return {}
+        reviewed = {}
+    return {**state.load('format_references.json', {}), **reviewed}
+
+
+def ensure_reference(fmt, page_of, cfg):
+    """A format without a reference definition (a new viral format, or one revived from the archive) gets one built
+    from its source video. Returns the reference or None (then the group stays unverified and is tried again)."""
+    from . import state
+    ref = reference(fmt['id'])
+    if ref:
+        return ref
+    url = fmt.get('source_video') or (fmt.get('revived') or {}).get('because')
+    pid = page_of(fmt, 'de')
+    if not url and pid:
+        url = (localize.current_source(pid) or {}).get('url')
+    vid = source_id(url)
+    if not vid:
+        return None
+    example = localize.example_text(url)
+    if not example:
+        return None
+    prompt = f"""A JobStep TikTok video defines a UGC format we adapt for Parakeet AI in Germany, France and Spain.
+Format: {fmt.get('title', '')} - {fmt.get('description', '')[:600]}
+VIDEO ({url}):
+{example[:4000]}
+
+{PARAKEET_FACTS}
+
+Write the format's reference definition that all three countries must follow. Return JSON {{"title_en": "", "hook": "",
+"premise": "", "beats": ["<beat 1>", "..."], "filming": "<length, shots, demo sequence>",
+"product": {{"introduced_at_beat": <number>, "spoken_brand": "<where the brand/URL is said, or 'not spoken'>",
+"cta": "<the call to action, or 'none'>", "features_used": ["<only real Parakeet AI features>"]}},
+"allowed_localisation": ["<what may differ per country>"], "not_allowed": ["<what would make it another format,
+and claims we must not make>"]}}"""
+    try:
+        r = llm.chat_json(cfg['models']['build'], 'You define UGC video formats precisely. Reply with JSON only.', prompt,
+                          timeout=900)
+    except Exception:
+        return None
+    if not (isinstance(r.get('beats'), list) and r['beats'] and r.get('hook') and isinstance(r.get('product'), dict)):
+        return None
+    ref = {**r, 'canonical_source': vid, 'accepted_sources': [vid], 'rejected_sources': {}, 'source_urls': {vid: url},
+           'generated': int(time.time())}
+    with state.LOCK:
+        generated = state.load('format_references.json', {})
+        generated[fmt['id']] = ref
+        state.save('format_references.json', generated)
+    return ref
 
 
 def reference(fid):
@@ -220,7 +270,7 @@ Return JSON {{"results": {{"<dimension>": {{"<country>": {{"pass": true, "issue"
 def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
     """Returns the group result (also cached in meta['group_audit'][format_id])."""
     store = meta.setdefault('group_audit', {})
-    ref = reference(fmt['id'])
+    ref = reference(fmt['id']) or ensure_reference(fmt, page_of, cfg)
     inputs = page_inputs(fmt, mkts, page_of, meta)
     approval = approval_status(fmt, mkts, page_of, cfg['links'])
     dups = [d for d in (dup_list or []) if fmt['id'] in d['formats']]

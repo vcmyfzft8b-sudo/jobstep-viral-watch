@@ -1093,7 +1093,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791404126,
+   "checked_at": 1791405092,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1110,12 +1110,10 @@
      "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
     }
    },
-   "key": "327f3253c28f936f46bcf033e36e4bce0a9626e1e92c2393f124bbaa07ca05cf",
+   "key": "a7c6d1cb75e586b5beb8702af79e9cec049cb152ee9531391a7f79168c50bad5",
    "passed": false,
    "reasons": [
-    "format_consistency es: Beat 5 in the reference is a spoken website. ES only says the brand name ('Este lo he hecho con Parakeet AI') and never says the URL parakeet-ai.com/resume-maker.",
-    "independent_wording de: Almost every sentence is a near-literal translation of the Dutch example with the brand swapped, e.g. 'dit CV daarentegen is in het gewenste formaat, het ats formaat' -> 'Der hier dagegen ist im richtigen Format – im ATS-Format', 'die kun je bijvoorbeeld maken met' -> 'So einen machst du zum Beispiel mit', 'de inhoud klopt veel meer en zegt veel meer over jou' -> 'der Inhalt passt also viel besser und sagt viel mehr über dich'.",
-    "directions_match es: The script's stage direction says 'Dos CV impresos sobre la mesa', but the filming directions say to put them 'sobre la cama'. The directions also describe the experience close-up before the chat demo, which is the reverse of the script order."
+    "independent_wording de: Almost every sentence is a near-literal translation of the Dutch example with the brand swapped, e.g. 'Der hier dagegen ist im richtigen Format – im ATS-Format. So einen machst du zum Beispiel mit…' and 'geht es deine ganze Erfahrung mit dir durch, stellt dir Fragen dazu', and the closing 'der Inhalt passt also viel besser und sagt viel mehr über dich'."
    ],
    "results": {
     "directions_match": {
@@ -1124,8 +1122,8 @@
       "pass": true
      },
      "es": {
-      "issue": "The script's stage direction says 'Dos CV impresos sobre la mesa', but the filming directions say to put them 'sobre la cama'. The directions also describe the experience close-up before the chat demo, which is the reverse of the script order.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
       "issue": "",
@@ -1152,8 +1150,8 @@
       "pass": true
      },
      "es": {
-      "issue": "Beat 5 in the reference is a spoken website. ES only says the brand name ('Este lo he hecho con Parakeet AI') and never says the URL parakeet-ai.com/resume-maker.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
       "issue": "",
@@ -1162,7 +1160,7 @@
     },
     "independent_wording": {
      "de": {
-      "issue": "Almost every sentence is a near-literal translation of the Dutch example with the brand swapped, e.g. 'dit CV daarentegen is in het gewenste formaat, het ats formaat' -> 'Der hier dagegen ist im richtigen Format – im ATS-Format', 'die kun je bijvoorbeeld maken met' -> 'So einen machst du zum Beispiel mit', 'de inhoud klopt veel meer en zegt veel meer over jou' -> 'der Inhalt passt also viel besser und sagt viel mehr über dich'.",
+      "issue": "Almost every sentence is a near-literal translation of the Dutch example with the brand swapped, e.g. 'Der hier dagegen ist im richtigen Format – im ATS-Format. So einen machst du zum Beispiel mit…' and 'geht es deine ganze Erfahrung mit dir durch, stellt dir Fragen dazu', and the closing 'der Inhalt passt also viel besser und sagt viel mehr über dich'.",
       "pass": false
      },
      "es": {
@@ -1190,7 +1188,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow the beats in the right order, but DE is mostly a light translation of the Dutch example, ES says only the brand name instead of the website and its directions conflict with its stage direction on the surface (mesa vs cama), and FR passes every dimension.",
+   "summary": "All three countries follow the reference beats, product timing and faceless filming sequence, and their directions match their scripts. FR and ES are written independently, but the DE script is mostly a direct translation of the example and fails independent wording.",
    "version": "group-2026-10-07.2"
   },
   "A202610061334": {
@@ -1721,7 +1719,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791403727,
+   "checked_at": 1791404807,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1738,12 +1736,10 @@
      "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
     }
    },
-   "key": "9eafe62348f4d2ec71a7a8bddebf69a784e60c24669577e8899bbe877e375b9c",
+   "key": "2c69a98ac7ed73b554984a8b50cb88991b023ce7d261aa8ef0c1294027e69838",
    "passed": false,
    "reasons": [
-    "independent_wording de: Almost every line translates the Serbian example directly. Examples: 'JETZT versteh ich, warum ALLE ChatGPT löschen' and 'und dann sieht dein Lebenslauf sooo aus', which even copies the stretched 'ovakoooo'. Only the brand is swapped.",
-    "independent_wording fr: The hook and steps 1–3 translate the example almost word for word, including 'je capte ENFIN' for 'NAPOKON' and '… pour ce poste'. Only 'Ton nouveau CV 😍' is new, so most lines are still translations.",
-    "independent_wording es: Most lines translate the example directly: 'Ya entiendo por qué TODOS borran ChatGPT', 'Copia el enlace de una oferta', 'Abre esta web', '…adaptado al puesto' and '¡Y así queda tu CV!'. Only the brand is swapped."
+    "independent_wording de: Every line is a near-literal translation of the Serbian overlays with the brand swapped. Examples: 'JETZT versteh ich, warum ALLE ChatGPT löschen' = 'NAPOKON mi je jasno zašto SVI brišu ChatGPT', 'Ab auf diese Seite' = 'odeš na ovu stranicu', 'und dann sieht dein Lebenslauf sooo aus' = 'i onda tvoj CV izgleda ovakoooo' (the stretched word is copied too), 'Die Seite:' = 'stranica je'."
    ],
    "results": {
     "directions_match": {
@@ -1790,16 +1786,16 @@
     },
     "independent_wording": {
      "de": {
-      "issue": "Almost every line translates the Serbian example directly. Examples: 'JETZT versteh ich, warum ALLE ChatGPT löschen' and 'und dann sieht dein Lebenslauf sooo aus', which even copies the stretched 'ovakoooo'. Only the brand is swapped.",
+      "issue": "Every line is a near-literal translation of the Serbian overlays with the brand swapped. Examples: 'JETZT versteh ich, warum ALLE ChatGPT löschen' = 'NAPOKON mi je jasno zašto SVI brišu ChatGPT', 'Ab auf diese Seite' = 'odeš na ovu stranicu', 'und dann sieht dein Lebenslauf sooo aus' = 'i onda tvoj CV izgleda ovakoooo' (the stretched word is copied too), 'Die Seite:' = 'stranica je'.",
       "pass": false
      },
      "es": {
-      "issue": "Most lines translate the example directly: 'Ya entiendo por qué TODOS borran ChatGPT', 'Copia el enlace de una oferta', 'Abre esta web', '…adaptado al puesto' and '¡Y así queda tu CV!'. Only the brand is swapped.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
-      "issue": "The hook and steps 1–3 translate the example almost word for word, including 'je capte ENFIN' for 'NAPOKON' and '… pour ce poste'. Only 'Ton nouveau CV 😍' is new, so most lines are still translations.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -1818,7 +1814,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow the reference format, match the example, make only real Parakeet AI claims and have matching directions, but DE, ES and FR all fail independent wording because their scripts are close translations of the Serbian example with the brand swapped.",
+   "summary": "All three countries follow N03: same silent text hook, three steps, CV reveal and URL end card, with only real Parakeet AI features. DE fails independent wording because its overlays are a line-by-line translation of the Serbian example; FR and ES are reworded enough to pass.",
    "version": "group-2026-10-07.2"
   },
   "N04": {
@@ -1827,7 +1823,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791403960,
+   "checked_at": 1791404956,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1844,15 +1840,12 @@
      "video_identity": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb"
     }
    },
-   "key": "ca07a817458150b4bd95bf99889ad5352314101fbdc2f56b4cdba28f1fb18a68",
+   "key": "7da40a464db92f44f596157384772c7b947eb2bc1c1808aa7a05bd2290712317",
    "passed": false,
    "reasons": [
-    "format_consistency de: Beats and order follow the reference, but the closing line 'Der hier kommt durch und landet bei einem Menschen' is the guaranteed 'gets through to a human' claim the reference does not allow.",
-    "format_consistency fr: Hook, beats, product timing, brand/URL placement and the softened ATS claim match, but the planned filming ends on the app screen. The reference ends back on selfie for the conclusion.",
-    "independent_wording de: Almost every sentence translates the example closely with the brand swapped, e.g. 'sagen wir’s nett, eine Katastrophe' (blago rečeno užasan), 'Das hier war er', 'wollte die App wissen… wer ich bin, wo ich hin will, aber am wichtigsten war das Format', 'Schaut mal, wie anders der aussieht', 'Die checkt euren ganzen Lebenslauf'.",
-    "features_claims de: 'Der hier kommt durch und landet bei einem Menschen' guarantees ATS passage. There is also no X placeholder for the score; it only says 'Schlechter ging’s kaum'.",
-    "directions_match fr: The directions send the conclusion ('Alors teste parakeet-ai.com/resume-maker…') back to the app screen, which contradicts the reference's return to selfie. 'selon les cadrages et incrustations précisés sur cette page' points to framing that is never given.",
-    "directions_match es: Both Gmail markers are broken by repeated text: '📎 📎 📎 … – ver Recursos – ver Recursos – ver Recursos'. Apart from that, the selfie, inbox, old CV, upload/X, chat, X vs Y and back-to-selfie sequence is covered."
+    "format_consistency de: Closing says 'Der hier kommt durch und landet bei einem Menschen', which is the guaranteed 'gets through to a human' claim the reference does not allow.",
+    "independent_wording de: Most sentences are near-literal translations of the example with the brand swapped: 'sagen wir's nett, eine Katastrophe', 'wollte die App wissen, was ich bisher gemacht hab, wer ich bin, wo ich hin will, aber am wichtigsten war das Format', 'Schaut mal, wie anders der aussieht', 'Der hier kommt durch... Deshalb die ganzen Einladungen', 'Die checkt euren ganzen Lebenslauf'.",
+    "features_claims de: Guarantees ATS passage and human review ('kommt durch und landet bei einem Menschen') and links that directly to the invitations."
    ],
    "results": {
     "directions_match": {
@@ -1861,17 +1854,17 @@
       "pass": true
      },
      "es": {
-      "issue": "Both Gmail markers are broken by repeated text: '📎 📎 📎 … – ver Recursos – ver Recursos – ver Recursos'. Apart from that, the selfie, inbox, old CV, upload/X, chat, X vs Y and back-to-selfie sequence is covered.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
-      "issue": "The directions send the conclusion ('Alors teste parakeet-ai.com/resume-maker…') back to the app screen, which contradicts the reference's return to selfie. 'selon les cadrages et incrustations précisés sur cette page' points to framing that is never given.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
      "de": {
-      "issue": "'Der hier kommt durch und landet bei einem Menschen' guarantees ATS passage. There is also no X placeholder for the score; it only says 'Schlechter ging’s kaum'.",
+      "issue": "Guarantees ATS passage and human review ('kommt durch und landet bei einem Menschen') and links that directly to the invitations.",
       "pass": false
      },
      "es": {
@@ -1885,7 +1878,7 @@
     },
     "format_consistency": {
      "de": {
-      "issue": "Beats and order follow the reference, but the closing line 'Der hier kommt durch und landet bei einem Menschen' is the guaranteed 'gets through to a human' claim the reference does not allow.",
+      "issue": "Closing says 'Der hier kommt durch und landet bei einem Menschen', which is the guaranteed 'gets through to a human' claim the reference does not allow.",
       "pass": false
      },
      "es": {
@@ -1893,13 +1886,13 @@
       "pass": true
      },
      "fr": {
-      "issue": "Hook, beats, product timing, brand/URL placement and the softened ATS claim match, but the planned filming ends on the app screen. The reference ends back on selfie for the conclusion.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "independent_wording": {
      "de": {
-      "issue": "Almost every sentence translates the example closely with the brand swapped, e.g. 'sagen wir’s nett, eine Katastrophe' (blago rečeno užasan), 'Das hier war er', 'wollte die App wissen… wer ich bin, wo ich hin will, aber am wichtigsten war das Format', 'Schaut mal, wie anders der aussieht', 'Die checkt euren ganzen Lebenslauf'.",
+      "issue": "Most sentences are near-literal translations of the example with the brand swapped: 'sagen wir's nett, eine Katastrophe', 'wollte die App wissen, was ich bisher gemacht hab, wer ich bin, wo ich hin will, aber am wichtigsten war das Format', 'Schaut mal, wie anders der aussieht', 'Der hier kommt durch... Deshalb die ganzen Einladungen', 'Die checkt euren ganzen Lebenslauf'.",
       "pass": false
      },
      "es": {
@@ -1927,7 +1920,7 @@
     }
    },
    "status": "fail",
-   "summary": "FR and ES follow the reference with their own wording, but FR's conclusion is filmed on the app screen instead of selfie and ES has broken repeated Gmail markers. DE is a near-literal translation of the example and keeps the not-allowed guaranteed 'reaches a human' claim. The ES page's listed source (7691177962904800520) is the rejected video, while the example shown is the canonical one.",
+   "summary": "FR and ES follow the reference with their own wording and softened ATS claims, while DE is a near-literal translation of the example and keeps the forbidden guaranteed 'reaches a human' claim.",
    "version": "group-2026-10-07.2"
   },
   "N07": {
@@ -2179,7 +2172,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791404174,
+   "checked_at": 1791405258,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2196,11 +2189,10 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "be2deb74a29c06f4922c749b2155f0a690ead9dd74d0fac6f6426cdc308c870b",
+   "key": "e1c47b43125fb2b3ad809a08dd01a3cafb3c8ea772fe112fe7896f7bf4734349",
    "passed": false,
    "reasons": [
-    "independent_wording de: Most sentences closely follow the French example in the same order: big group and HR secret, 'ich plaudere' for 'je suis une balance', works for any position, the Indeed post for Assistenz der Geschäftsführung that 'reizt mich', the CV already uploaded earlier, the AI analysing the whole ad, failing the filters, the CV being remodelled, then download. Only the brand and the dropped JobStep steps differ.",
-    "independent_wording fr: Nearly every sentence is a close rewrite of the Polish example: worked at a big company, HR wants it kept quiet, 'je vais te montrer' for 'wam pokażę', works for any job, first copy the ad link, paste the link 'juste ici' for 'tutaj wrzucacie', the CV is only so-so, the AI adds what fits, a few small tweaks and the score goes up, repeat for every ad."
+    "independent_wording fr: Almost every line is a close French translation of the Polish example with the brand swapped. Examples: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... pokażę' -> 'J'ai bossé dans une grande entreprise... les RH préféreraient... je te montre tout'; 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' -> 'C'est déjà beaucoup mieux, mais je retouche encore deux trucs'; 'takim sposobem aplikujecie na wszystkie interesujące ogłoszenia' -> 'tu répètes ça pour chaque offre qui te plaît'."
    ],
    "results": {
     "directions_match": {
@@ -2247,15 +2239,15 @@
     },
     "independent_wording": {
      "de": {
-      "issue": "Most sentences closely follow the French example in the same order: big group and HR secret, 'ich plaudere' for 'je suis une balance', works for any position, the Indeed post for Assistenz der Geschäftsführung that 'reizt mich', the CV already uploaded earlier, the AI analysing the whole ad, failing the filters, the CV being remodelled, then download. Only the brand and the dropped JobStep steps differ.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
       "pass": true
      },
      "fr": {
-      "issue": "Nearly every sentence is a close rewrite of the Polish example: worked at a big company, HR wants it kept quiet, 'je vais te montrer' for 'wam pokażę', works for any job, first copy the ad link, paste the link 'juste ici' for 'tutaj wrzucacie', the CV is only so-so, the AI adds what fits, a few small tweaks and the score goes up, repeat for every ad.",
+      "issue": "Almost every line is a close French translation of the Polish example with the brand swapped. Examples: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... pokażę' -> 'J'ai bossé dans une grande entreprise... les RH préféreraient... je te montre tout'; 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' -> 'C'est déjà beaucoup mieux, mais je retouche encore deux trucs'; 'takim sposobem aplikujecie na wszystkie interesujące ogłoszenia' -> 'tu répètes ça pour chaque offre qui te plaît'.",
       "pass": false
      }
     },
@@ -2275,7 +2267,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three pages follow X03's hook, beats, product timing and CTA with real Parakeet AI features and X/Y placeholders, but the DE and FR scripts are too close to their example videos' wording sentence by sentence, while ES is independently written.",
+   "summary": "All three countries follow X03 and use only real Parakeet AI features, but the FR script fails independent wording because it is mostly a line-by-line translation of the Polish example.",
    "version": "group-2026-10-07.2"
   },
   "X13": {
@@ -2386,7 +2378,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791404368,
+   "checked_at": 1791404662,
    "deterministic": {},
    "duplicates": [
     {
@@ -2553,7 +2545,6 @@
    "kind": "source_id",
    "pages": [
     "N10:de",
-    "X15:de",
     "X15:fr",
     "X15:es"
    ],

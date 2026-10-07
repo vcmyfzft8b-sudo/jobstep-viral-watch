@@ -19,6 +19,7 @@ from . import discover, llm, media, notion, tiktok
 from .markets import TEXT
 
 LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish'}
+MIN_VIEWS = 10_000  # an inspiration video must be proven, not just in the right language
 
 
 def _handle(url):
@@ -95,6 +96,28 @@ def replace_video(page_id, src, d, lang):
             'children': [notion.para([notion.rt(TEXT[lang]['source'], link=d['url'])])], 'after': new_video})
 
 
+def add_section(page_id, d, lang):
+    """Page without an inspiration video (older FR/ES pages): add the whole section at the top in its language."""
+    T = TEXT[lang]
+    work = tempfile.mkdtemp(prefix='inspo-')
+    try:
+        upload = notion.upload_video(media.for_notion(media.download(d['url'], work), work))
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+    section = [notion.block('heading_1', [notion.rt(T['video_heading'])]),
+               notion.block('video', type='file_upload', file_upload={'id': upload}),
+               notion.para([notion.rt(T['source'], link=d['url'])]),
+               notion.block('callout', notion.md('\n'.join(T['inspo_note'])), icon={'type': 'emoji', 'emoji': '⚠️'},
+                            color='gray_background'),
+               notion.block('divider')]
+    try:
+        notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section, 'position': {'type': 'start'}},
+                   version='2025-09-03')
+    except Exception as e:  # if inserting at the top is refused: put it at the end of the page instead
+        print('top insert refused, adding at the end:', str(e)[:150])
+        notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section})
+
+
 def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
     """Returns [(format title, market, status, detail)]. status: kept | replaced | missing | no page | error."""
     now = now or time.time()
@@ -118,28 +141,28 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
                 continue
             try:
                 src = current_source(pid)
-                if src is None:
-                    report.append((f['title'], m, 'error', 'page has no video block'))
-                    continue
-                if src['url'] and langs.get(_handle(src['url'])) == lang:
+                if src and src['url'] and langs.get(_handle(src['url'])) == lang:
                     f.setdefault('inspo', {})[m] = {'url': src['url'], 'at': int(now)}
                     report.append((f['title'], m, 'kept', src['url']))
                     continue
                 found = None
-                for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang][:tries]:
+                for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang and v['views'] >= MIN_VIEWS][:tries]:
                     d = tiktok.video_detail(v['handle'], vid)
                     if not d:
                         continue
                     c = confirm(d, f, lang, cfg['models']['build'])
-                    if ok(c, lang):
+                    if ok(c, lang) and d['views'] >= MIN_VIEWS:
                         found = d
                         break
                 if not found:
                     report.append((f['title'], m, 'missing', f'no {LANG_NAME[lang]} JobStep video of this format yet'))
                     continue
-                replace_video(pid, src, found, lang)
+                if src:
+                    replace_video(pid, src, found, lang)
+                else:
+                    add_section(pid, found, lang)
                 f.setdefault('inspo', {})[m] = {'url': found['url'], 'views': found['views'], 'at': int(now),
-                                                'prev': src['url'], 'strict': True}
+                                                'prev': src['url'] if src else None, 'strict': True}
                 report.append((f['title'], m, 'replaced', f"{found['url']} ({found['views'] // 1000}k views)"))
             except Exception as e:
                 report.append((f['title'], m, 'error', str(e)[:150]))
@@ -162,7 +185,7 @@ def recheck(fmts, mkts, history, accounts, meta, cfg, page_of, now=None):
             vid = re.search(r'/video/(\d+)', x['url']).group(1)
             d = tiktok.video_detail(h, vid)
             c = confirm(d, f, lang, cfg['models']['build']) if d else {}
-            if d and ok(c, lang):
+            if d and ok(c, lang) and d['views'] >= MIN_VIEWS:
                 x['strict'] = True
                 report.append((f['title'], m, 'confirmed', x['url']))
                 continue

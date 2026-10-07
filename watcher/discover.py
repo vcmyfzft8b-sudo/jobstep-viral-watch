@@ -74,13 +74,13 @@ def account_text(handle, details=4):
     return '\n'.join(lines)
 
 
-def confirm_ugc(handles, model='sonnet', batch=8):
+def confirm_ugc(handles, model='sonnet', batch=8, details=4):
     """Claude reads each account's latest videos: is it really a UGC/creator account promoting the JobStep CV app?
     Returns {handle: {'verdict': 'jobstep_ugc'|'other_app'|'not_ugc'|'unclear', 'other_app', 'reason'}}."""
     import concurrent.futures as cf
     from . import llm
     with cf.ThreadPoolExecutor(8) as ex:
-        texts = dict(zip(handles, ex.map(account_text, handles)))
+        texts = dict(zip(handles, ex.map(lambda h: account_text(h, details), handles)))
     out = {}
 
     def one(chunk):

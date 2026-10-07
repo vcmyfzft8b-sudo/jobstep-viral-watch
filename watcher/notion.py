@@ -19,9 +19,12 @@ def _headers(json_body=True):
     return h
 
 
-def api(method, path, body=None):
+def api(method, path, body=None, version=None):
     for attempt in range(5):
-        r = requests.request(method, API + path, headers=_headers(), json=body, timeout=60)
+        h = _headers()
+        if version:
+            h['Notion-Version'] = version
+        r = requests.request(method, API + path, headers=h, json=body, timeout=60)
         if r.status_code == 429 or r.status_code >= 500:
             time.sleep(float(r.headers.get('Retry-After', 2 + attempt * 3)))
             continue

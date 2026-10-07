@@ -735,6 +735,9 @@ def accounts_sync(path):
     cands = [h for h in dict.fromkeys(data.get('candidates', [])) if h not in tracked and not accounts.get(h, {}).get('blocked')]
     cands = [h for h in cands if discover.check_account(h) == 'active']  # posted in 30 days + JobStep in its videos
     verdicts = discover.confirm_ugc(tracked + cands)
+    retry = [h for h in tracked + cands if verdicts.get(h, {}).get('verdict') in (None, 'unclear')]
+    if retry:  # second look for the undecided ones: all 8 videos with on-screen text and speech
+        verdicts.update(discover.confirm_ugc(retry, model=cfg['models']['build'], batch=4, details=8))
     added, blocked, unclear = [], [], []
     for h in cands:
         if verdicts.get(h, {}).get('verdict') == 'jobstep_ugc':

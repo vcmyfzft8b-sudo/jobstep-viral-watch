@@ -3524,6 +3524,44 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8100-b646-d3e88d077345": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Ich hab nämlich rausgefunden, dass es so ATS-Filter gibt, die jeden Lebenslauf scannen. Und der neue kommt da durch. Die alten sind alle hängen geblieben. Und weil ich jetzt nicht unnötig Geld raushauen will, zeig ich euch einfach, wie ich's gemacht hab. ",
+   "text": {
+    "content": "Ich hab nämlich rausgefunden, dass es so ATS-Filter gibt, die jeden Lebenslauf scannen. Und der neue kommt da durch. Die alten sind alle hängen geblieben. Und weil ich jetzt nicht unnötig Geld raushauen will, zeig ich euch einfach, wie ich's gemacht hab. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8102-8db9-ff4049b8c1fb": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Abgelehnt. Abgelehnt. Und nochmal abgelehnt. Stell dir vor, du steckst so viel Arbeit in deine Lebensläufe, und am Ende sind die einfach komplett unbrauchbar. ",
+   "text": {
+    "content": "Abgelehnt. Abgelehnt. Und nochmal abgelehnt. Stell dir vor, du steckst so viel Arbeit in deine Lebensläufe, und am Ende sind die einfach komplett unbrauchbar. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8106-a3d0-fe2e3bae1ade": [
   {
    "annotations": {
@@ -3818,6 +3856,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-812f-ad74-d407b8588214": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Und das hier ist mein neuer. Klar, der ist jetzt nicht so „aesthetic“ wie die alten, aber Leute, guckt euch mal an, was da drinsteht. Das ist echt next level. Im Vergleich dazu steht in den alten ja fast gar nichts drin. Wie hab ich mich damit bitte überall beworben? ",
+   "text": {
+    "content": "Und das hier ist mein neuer. Klar, der ist jetzt nicht so „aesthetic“ wie die alten, aber Leute, guckt euch mal an, was da drinsteht. Das ist echt next level. Im Vergleich dazu steht in den alten ja fast gar nichts drin. Wie hab ich mich damit bitte überall beworben? ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8130-9d05-d16a267b9ae7": [
   {
    "annotations": {
@@ -3940,6 +3997,25 @@
    "plain_text": ") et là, la pire note possible : X sur 100. Franchement, presque rien n'allait. ",
    "text": {
     "content": ") et là, la pire note possible : X sur 100. Franchement, presque rien n'allait. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8134-a68d-eba6d1270b80": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Du coup, t'es parmi les premiers à postuler, avec un CV qui passe les filtres, donc t'augmentes vraiment tes chances. ",
+   "text": {
+    "content": "Du coup, t'es parmi les premiers à postuler, avec un CV qui passe les filtres, donc t'augmentes vraiment tes chances. ",
     "link": null
    },
    "type": "text"
@@ -4084,6 +4160,25 @@
    "plain_text": "… y te lo ajuste a ese puesto en concreto ",
    "text": {
     "content": "… y te lo ajuste a ese puesto en concreto ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8140-b991-fbe09c6a2c20": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Attends, depuis quand LinkedIn sait faire ça ? ",
+   "text": {
+    "content": "Attends, depuis quand LinkedIn sait faire ça ? ",
     "link": null
    },
    "type": "text"
@@ -4400,6 +4495,97 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8160-9ebf-fd3e4223a337": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.linkedin.com/jobs/",
+   "plain_text": "Recherche d’emploi LinkedIn",
+   "text": {
+    "content": "Recherche d’emploi LinkedIn",
+    "link": {
+     "url": "https://www.linkedin.com/jobs/"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Va dans « Emplois », filtre sur les dernières 24 heures, et dans le lien tu verras 86400. C'est le nombre de secondes dans une journée. (",
+   "text": {
+    "content": ") Va dans « Emplois », filtre sur les dernières 24 heures, et dans le lien tu verras 86400. C'est le nombre de secondes dans une journée. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.linkedin.com/jobs/",
+   "plain_text": "Recherche d’emploi LinkedIn",
+   "text": {
+    "content": "Recherche d’emploi LinkedIn",
+    "link": {
+     "url": "https://www.linkedin.com/jobs/"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Remplace-le par 3600, et t'as que les offres postées dans la dernière heure. ",
+   "text": {
+    "content": ") Remplace-le par 3600, et t'as que les offres postées dans la dernière heure. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8161-93d9-d4b8defdd6dd": [
   {
    "annotations": {
@@ -4613,6 +4799,97 @@
    "plain_text": "¿Cómo les explico a mis padres que en pleno 2026, con la carrera recién terminada, no consigo ni un solo trabajo? Pero ni uno, eh. ",
    "text": {
     "content": "¿Cómo les explico a mis padres que en pleno 2026, con la carrera recién terminada, no consigo ni un solo trabajo? Pero ni uno, eh. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8167-a443-e571cd9feb8b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Ensuite, copie le lien et colle-le dans Parakeet AI. (",
+   "text": {
+    "content": ") Ensuite, copie le lien et colle-le dans Parakeet AI. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Et là, il te fait un nouveau CV adapté pile à ce poste. ",
+   "text": {
+    "content": ") Et là, il te fait un nouveau CV adapté pile à ce poste. ",
     "link": null
    },
    "type": "text"
@@ -5929,6 +6206,97 @@
    "plain_text": "pov : j'ai ENFIN compris pourquoi TOUT LE MONDE supprime ChatGPT 😭🤯 ",
    "text": {
     "content": "pov : j'ai ENFIN compris pourquoi TOUT LE MONDE supprime ChatGPT 😭🤯 ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81d8-b7a1-f8d1a938a024": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Ihr geht zuerst auf diese Seite, parakeet-ai.com/resume-maker, gebt da alle eure Infos ein, und dann wird euch daraus ein Lebenslauf gebaut. (",
+   "text": {
+    "content": ") Ihr geht zuerst auf diese Seite, parakeet-ai.com/resume-maker, gebt da alle eure Infos ein, und dann wird euch daraus ein Lebenslauf gebaut. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Die KI stellt euch dabei nur ein paar Fragen und gibt eurem Lebenslauf am Ende sogar eine Bewertung. ",
+   "text": {
+    "content": ") Die KI stellt euch dabei nur ein paar Fragen und gibt eurem Lebenslauf am Ende sogar eine Bewertung. ",
     "link": null
    },
    "type": "text"

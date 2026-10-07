@@ -243,7 +243,7 @@ def run(dry_run=False, only_detect=False):
             except Exception as e:
                 print('localize failed:', str(e)[:200])
             try:  # Monday: every page must check out (example video = format, script follows it, reworded)
-                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of) if r[2] not in ('ok', 'fixed')]
+                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page) if r[2] not in ('ok', 'fixed')]
                 state.save('formats.json', fmts)
                 if bad:
                     notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
@@ -792,6 +792,20 @@ def _plain_text(b):
     return ''.join(x.get('plain_text', '') for x in (b.get(b['type'], {}) or {}).get('rich_text', []) or []).strip()
 
 
+def rebuild_page(fmt, mk, url):
+    """Rebuild one market page (current layout, reworded script) from the given example video. -> (ok, reason)"""
+    cfg = load_config()
+    m = re.search(r'@([^/]+)/video/(\d+)', url)
+    v = tiktok.video_detail(*m.groups()) if m else None
+    if not v:
+        return False, 'example video unavailable'
+    page, spec, problems = make_page(v, mk, cfg, None, replace_page=page_of(fmt, mk['key']))
+    if problems:
+        return False, '; '.join(problems)[:150]
+    fmt.setdefault('reworded', {})[mk['key']] = True
+    return True, ''
+
+
 def standardize(only=None):
     """Every active format page in every market in the current layout, without leftovers:
     - pages in the old layout (no example video or no resources section) are rebuilt from their example video
@@ -994,7 +1008,7 @@ def main():
         return
     if a.audit:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
-        rep = audit.run(fmts, M.load(cfg), cfg, state.load('history.json', {}), state.load('accounts.json', {}), meta, page_of)
+        rep = audit.run(fmts, M.load(cfg), cfg, state.load('history.json', {}), state.load('accounts.json', {}), meta, page_of, rebuild=rebuild_page)
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
         flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}

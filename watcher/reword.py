@@ -69,7 +69,7 @@ def decode(text, links):
     return rich
 
 
-def reword_page(fmt, page_id, lang, model, original=''):
+def reword_page(fmt, page_id, lang, model, original='', feedback=''):
     blocks = script_blocks(page_id)
     enc = [(b, *encode(b)) for b in blocks]
     enc = [(b, t, l) for b, t, l in enc if t is not None]
@@ -89,6 +89,8 @@ Rules:
 - Keep **bold** lines bold (they are on-screen texts); keep X and Y (the scores creators read from the app).
 - Keep "Parakeet AI" and parakeet-ai.com/resume-maker as they are. Never mention JobStep.
 - No promises nobody can guarantee (e.g. "you will definitely get the job") - say "better chances" instead.
+
+{('A reviewer found these problems - fix them: ' + feedback) if feedback else ''}
 
 Paragraphs:
 {numbered}

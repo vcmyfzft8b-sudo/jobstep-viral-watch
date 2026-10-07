@@ -83,11 +83,11 @@ def _put_example(fmt, m, page_id, lang, url, same_lang):
     return True
 
 
-def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3):
+def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3, rebuild=None):
     """Checks one page and fixes it until it passes. Returns (status, notes)."""
     m, lang, model = mk['key'], mk['lang'], cfg['models']['build']
     pid = page_of(fmt, m)
-    notes, rejected = [], set()
+    notes, rejected, rebuilt = [], set(), False
     for r in range(rounds + 1):
         passed, v, url = check(fmt, pid, lang, model)
         if passed:
@@ -109,8 +109,16 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3):
                     _put_example(fmt, m, pid, lang, orig, same_lang=False)
                     notes.append('put back the original JobStep video')
             continue
+        if not v.get('script_follows_example') and url and rebuild and not rebuilt:
+            # the example tells the format in another order: build the page from the example (reworded script)
+            rebuilt = True
+            ok, why = rebuild(fmt, mk, url)
+            notes.append('page rebuilt from its example video' if ok else f'rebuild refused: {why}')
+            if ok:
+                continue
         notes.append('script reworded again: ' + '; '.join(v['script_issues'])[:120])
-        status, why, changes = reword.reword_page(fmt, pid, lang, model, localize.example_text(url) if url else '')
+        status, why, changes = reword.reword_page(fmt, pid, lang, model, localize.example_text(url) if url else '',
+                                                  feedback='; '.join(v['script_issues']))
         if status == 'ok':
             reword.apply(changes)
             fmt.setdefault('reworded', {})[m] = True
@@ -119,7 +127,7 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3):
     return 'failed', notes + ['still failing: ' + '; '.join(v['script_issues'] + [v['example_issue']])[:200]]
 
 
-def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4):
+def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4, rebuild=None):
     import concurrent.futures as cf
     jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts]
 
@@ -128,7 +136,7 @@ def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4):
         if not page_of(f, mk['key']):
             return f['title'], mk['key'], 'no page', []
         try:
-            status, notes = fix_page(f, mk, cfg, history, accounts, meta, page_of)
+            status, notes = fix_page(f, mk, cfg, history, accounts, meta, page_of, rebuild=rebuild)
         except Exception as e:
             status, notes = 'error', [str(e)[:200]]
         print(f"{f['title'][:45]} | {mk['key']} | {status} | {' / '.join(notes)}", flush=True)

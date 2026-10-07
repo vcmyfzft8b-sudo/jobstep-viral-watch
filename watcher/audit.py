@@ -15,7 +15,7 @@ import json
 import os
 import re
 
-from . import llm, localize, notion, reword, tiktok
+from . import align, llm, localize, notion, reword, tiktok
 
 ORIGINALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'originals.json')
 
@@ -95,10 +95,13 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     v['same_lang'] = same
     v['views_ok'] = v['views'] < 0 or v['views'] >= localize.MIN_VIEWS or url == originals().get(fmt['id'])
     v['title_block'] = title_block
+    spoken = example.split('SPEECH:', 1)[-1] if example else ''
+    base = spoken if align._words(spoken) >= 15 else example
+    v['length_ok'] = not example or align._words(script) <= 1.15 * max(align._words(base), 1)
     if not title_block:
         v['title_ok'] = True
     passed = all(v.get(k) for k in ('example_same_format', 'script_follows_example', 'script_reworded', 'script_ok',
-                                    'directions_ok', 'note_ok', 'views_ok', 'title_ok'))
+                                    'directions_ok', 'note_ok', 'views_ok', 'title_ok', 'length_ok'))
     if re.search(r'job\s*-?\s*step', script, re.I):
         passed = False
         v['script_issues'].append('JobStep is mentioned in the script')
@@ -150,6 +153,12 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
         if not v.get('note_ok') and v.get('example_same_format'):
             localize.set_note(pid, lang, v['same_lang'])
             notes.append('note under the video corrected')
+            continue
+        if v.get('example_same_format') and (not v.get('length_ok') or not v.get('script_reworded')
+                                             or not v.get('script_follows_example')) and not rebuilt:
+            rebuilt = True  # script too long / too close / not following: mirror the example sentence by sentence
+            st, why = align.align_page(fmt, pid, lang, cfg, cfg['links'])
+            notes.append(f'script rewritten sentence by sentence ({why})' if st == 'ok' else f'rewrite refused: {why}')
             continue
         if not v.get('title_ok') and v.get('title_suggestion') and v.get('title_block'):
             tb = v['title_block']

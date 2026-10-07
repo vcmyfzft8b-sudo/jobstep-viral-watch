@@ -18,7 +18,7 @@ import tempfile
 import time
 import traceback
 
-from . import audit, builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
+from . import align, audit, builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -924,6 +924,8 @@ def main():
     ap.add_argument('--audit-failed', action='store_true', help='audit only the pages that did not pass last time')
     ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
     ap.add_argument('--accounts-add', default='', help='JSON file of checked accounts to add (with evidence)')
+    ap.add_argument('--align', action='store_true', help='rewrite every script sentence by sentence against its example')
+    ap.add_argument('--set-example', default='', help='FORMAT_ID:market:tiktok_url - put this example video on that page')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -1060,6 +1062,25 @@ def main():
         return
     if a.accounts_add:
         accounts_add(a.accounts_add)
+        return
+    if a.set_example:
+        cfg, fmts = load_config(), load_formats()
+        fid, m, url = a.set_example.split(':', 2)
+        f = next(x for x in fmts if x['id'] == fid)
+        mk = next(x for x in M.load(cfg) if x['key'] == m)
+        print('example set:', audit._put_example(f, m, page_of(f, m), mk['lang'], url, same_lang=False))
+        print('script:', align.align_page(f, page_of(f, m), mk['lang'], cfg, cfg['links']))
+        state.save('formats.json', fmts)
+        return
+    if a.align:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        rep = align.run(fmts, M.load(cfg), cfg, page_of)
+        meta['audit'] = {k: v for k, v in meta.get('audit', {}).items() if False}  # all pages changed -> audit again
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
+        bad = [r for r in rep if r[2] != 'ok']
+        notify.push('✍️ Scripts rewritten sentence by sentence', f"{len(rep) - len(bad)}/{len(rep)} pages rewritten"
+                    + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

@@ -157,12 +157,11 @@ def set_note(page_id, lang, same_lang, own=False):
 
 
 def finish(f, m, pid, lang, url, cfg):
-    """After a same-language example is on the page: note says so, script reworded against that example."""
-    from . import reword
+    """After a same-language example is on the page: note says so, script mirrors that example sentence by sentence."""
+    from . import align
     set_note(pid, lang, True)
-    status, why, changes = reword.reword_page(f, pid, lang, cfg['models']['build'], example_text(url))
+    status, why = align.align_page(f, pid, lang, cfg, cfg['links'])
     if status == 'ok':
-        reword.apply(changes)
         f.setdefault('reworded', {})[m] = True
     return status, why
 

@@ -19,12 +19,14 @@ Parakeet AI, in the creators' language. Reply with JSON only."""
 
 RULES = """RULES
 - Output language for ALL creator-facing text (page_title, title_hook, script, visual_hook_first, extra_hook_lines,
-  asset names/descriptions, directions): {lang}. Script style: {style}. Same meaning, same beats, same order, roughly
-  the same length as the original speech (±25%) - but REWORDED, never a 1:1 transcription or literal translation:
-  say each beat in your own words (other phrasing, other sentence structure, other filler words), so the video feels
-  very similar but is clearly not a copy of the JobStep creator. This applies even more when the original is already
-  in {lang}: then no sentence may match the original word for word. Keep the hook idea and on-screen title punchy
-  (they may stay close). The example pages below are German - copy their STYLE and STRUCTURE, but write in {lang}.
+  asset names/descriptions, directions): {lang}. Script style: {style}. Mirror the original SENTENCE BY SENTENCE:
+  exactly one sentence of ours per sentence of the original, same order, about the same length - the whole script at
+  most 110% of the original speech, add nothing. Same meaning, but build every sentence differently (other word
+  order, question instead of statement, other words) - never a 1:1 transcription or literal translation, even more
+  so when the original is already in {lang}. Name "Parakeet AI" exactly where (and as often as) the original names
+  JobStep; if the original only shows the app ("this tool here"), only show it too. A website/call to action at the
+  end only if the original has one. Keep the hook idea and on-screen title punchy. The example pages below are German
+  - copy their STYLE and STRUCTURE, but write in {lang}.
 - Replace JobStep with Parakeet AI everywhere (jobstep.io -> parakeet-ai.com/resume-maker). The words "JobStep" or
   "Job Step" must not appear anywhere in your output.
 - Concrete scores/percentages the app shows become X (before) and Y (after) - creators read their own numbers.
@@ -157,8 +159,8 @@ def validate(spec, transcript, lang='de'):
     new_words = sum(len(s.get('text', '').split()) for s in spec.get('script', []))
     if spec.get('voiceover', True) and orig_words >= 20:
         ratio = new_words / orig_words
-        if not 0.75 <= ratio <= 1.25:
-            problems.append(f'script length is {ratio:.0%} of the original (allowed 75–125%)')
+        if not 0.8 <= ratio <= 1.12:
+            problems.append(f'script length is {ratio:.0%} of the original (allowed 80–110%)')
     if not any(s.get('cue') == 'parakeet' for s in spec.get('script', [])):
         problems.append('no Parakeet AI moment in the script')
     return problems

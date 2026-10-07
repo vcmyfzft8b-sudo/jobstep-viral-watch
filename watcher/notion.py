@@ -122,6 +122,28 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, sam
     blocks.append(divider())
 
     blocks.append(block('heading_2', [rt(T['script_h'])]))
+    blocks += script_paragraphs(spec, links, lang)
+    blocks.append(divider())
+
+    blocks.append(block('heading_2', [rt(T['hook_h'])]))
+    blocks += [para([rt(line)]) for line in builder.hook_lines(spec, lang)]
+    blocks.append(para([rt(T['required_line'])]))
+    blocks.append(para([rt('Visual Hook Lab', link=lab_url or links.get('visual_hook_lab'))]))
+    blocks.append(divider())
+
+    blocks.append(block('heading_2', [rt('🔧'), rt(T['res_h'], bold=True)]))
+    res = [rt('Parakeet AI · Resume Maker', link=links['parakeet'])]
+    for asset in spec.get('assets_needed', []):
+        res.append(rt(f"\n📎 {asset['name']} – {T['asset_todo']}: {asset.get('description', '')}"))
+    blocks.append(block('callout', res, icon={'type': 'emoji', 'emoji': '💡'}, color='gray_background'))
+    return blocks
+
+
+def script_paragraphs(spec, links, lang='de'):
+    """The script section's paragraphs (cue links in front of the line where the app/LinkedIn/asset appears)."""
+    T = TEXT[lang]
+    cue_links = {'parakeet': ('Parakeet AI · Resume Maker', links['parakeet']),
+                 'linkedin': (T['cue_linkedin'], links['linkedin'])}
     paragraphs, current = [], []
     silent = not spec.get('voiceover', True)
     if silent:
@@ -146,21 +168,7 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, sam
         current += parts
     if current:
         paragraphs.append(current)
-    blocks += [para(p) for p in paragraphs]
-    blocks.append(divider())
-
-    blocks.append(block('heading_2', [rt(T['hook_h'])]))
-    blocks += [para([rt(line)]) for line in builder.hook_lines(spec, lang)]
-    blocks.append(para([rt(T['required_line'])]))
-    blocks.append(para([rt('Visual Hook Lab', link=lab_url or links.get('visual_hook_lab'))]))
-    blocks.append(divider())
-
-    blocks.append(block('heading_2', [rt('🔧'), rt(T['res_h'], bold=True)]))
-    res = [rt('Parakeet AI · Resume Maker', link=links['parakeet'])]
-    for asset in spec.get('assets_needed', []):
-        res.append(rt(f"\n📎 {asset['name']} – {T['asset_todo']}: {asset.get('description', '')}"))
-    blocks.append(block('callout', res, icon={'type': 'emoji', 'emoji': '💡'}, color='gray_background'))
-    return blocks
+    return [para(p) for p in paragraphs]
 
 
 def create_page(parent_id, title, icon, blocks):

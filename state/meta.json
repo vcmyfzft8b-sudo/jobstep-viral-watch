@@ -557,6 +557,128 @@
    "status": "draft",
    "why": ""
   },
+  "N04:de": {
+   "at": 1791405420,
+   "draft": {
+    "example": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
+    "jobstep_mentions_in_original": 2,
+    "n_orig": 211,
+    "script": [
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Monate – so lange bin ich jetzt schon auf Jobsuche, und bis vor Kurzem kam einfach gar nichts zurück."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Ich hab mich wirklich überall beworben, wo auch nur halbwegs was gepasst hat."
+     },
+     {
+      "asset_name": "📎 Gmail-Aufnahme – siehe Ressourcen",
+      "cue": "asset",
+      "new_paragraph": true,
+      "text": "Und jetzt guckt mal in mein Postfach von heute, da stapeln sich die Rückmeldungen."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Lange hab ich mir eingeredet, dass die anderen halt Vitamin B haben."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Tja, in Wahrheit lag's an meinem Lebenslauf, und der war ehrlich gesagt ein Desaster."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": true,
+      "text": "Das hier ist die alte Version, die ich überall rumgeschickt hab."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": false,
+      "text": "Ich hab sie bei Parakeet AI hochgeladen, und die Bewertung lag bei peinlichen X."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": false,
+      "text": "Da war wirklich fast nichts, was gepasst hat."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": true,
+      "text": "Danach kamen im Chat ein paar Fragen: zu meinen bisherigen Jobs, zu mir als Person und wo ich beruflich hinwill."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": false,
+      "text": "Der eigentliche Knackpunkt war aber das Format."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": false,
+      "text": "Ich hab alles beantwortet, und die KI hat mir daraus einen völlig neuen Lebenslauf gebaut – vergleicht mal vorher und nachher."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": true,
+      "text": "Viele Firmen lassen Bewerbungen nämlich erst von KI-Programmen filtern, sogenannten ATS."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Passt das Format nicht, sieht ein echter Mensch euren Lebenslauf unter Umständen nie."
+     },
+     {
+      "asset_name": "",
+      "cue": "parakeet",
+      "new_paragraph": true,
+      "text": "Mit dem neuen hab ich jetzt Y und deutlich bessere Chancen, wirklich gelesen zu werden."
+     },
+     {
+      "asset_name": "zeigt grinsend aufs Handy",
+      "cue": "direction",
+      "new_paragraph": false,
+      "text": "Und genau deshalb trudeln jetzt die ganzen Einladungen ein."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Also schaut unbedingt mal auf parakeet-ai.com/resume-maker vorbei."
+     },
+     {
+      "asset_name": "",
+      "cue": null,
+      "new_paragraph": false,
+      "text": "Da wird euer kompletter Lebenslauf durchgecheckt, und eure Chancen steigen spürbar."
+     }
+    ],
+    "voiceover": true
+   },
+   "example": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
+   "example_changes": false,
+   "fails": [
+    "features_claims",
+    "format_consistency",
+    "independent_wording"
+   ],
+   "status": "draft",
+   "why": ""
+  },
   "N07:de": {
    "at": 1791402878,
    "draft": {

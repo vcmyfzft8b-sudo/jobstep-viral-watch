@@ -220,18 +220,18 @@ def run(dry_run=False, only_detect=False):
         except Exception as e:
             print('own creators failed:', str(e)[:200])
 
-    # 4c. Monday: weekly lineup - which formats are in the list at all (weakest out, clearly better archived ones in)
+    # 4c. Monday: weekly clean-up - formats that perform badly leave the list
     if not dry_run and not only_detect:
         is_due, week_id = lineup.due(meta, now)
         if is_due:
             try:
                 p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
-                print('lineup:', [f['title'] for f, _, _ in p['out']], '->', [f['title'] for f, _, _ in p['in']])
+                print('clean-up:', [f['title'] for f, _, _ in p['out']])
                 meta['lineup'] = week_id
                 state.save('formats.json', fmts)
             except Exception as e:
                 traceback.print_exc()
-                notify.push('⚠️ Weekly lineup failed', str(e)[:300])
+                notify.push('⚠️ Weekly clean-up failed', str(e)[:300])
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
@@ -689,8 +689,8 @@ def main():
     ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
     ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
     ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (more video checks), then re-sort')
-    ap.add_argument('--lineup', action='store_true', help='show the lineup scoreboard and what Monday would change (no changes)')
-    ap.add_argument('--lineup-apply', action='store_true', help='carry out the weekly lineup now')
+    ap.add_argument('--lineup', action='store_true', help='show the current form of every format and what Monday would take out (no changes)')
+    ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -773,12 +773,7 @@ def main():
             x = b[f['id']]
             print(f"  {x['form']:.2f}  {f['title'][:50]:50} JobStep {x['js_form']:.2f} ({x['all_videos']} videos) "
                   f"x ours {x['own_factor']:.2f} ({x['own_videos']}) {'| protected: ' + p['protected'][f['id']] if p['protected'].get(f['id']) else ''}")
-        print('BENCH (best 8):')
-        for f in sorted([f for f in fmts if f.get('status') != 'active'], key=lambda f: -b[f['id']]['form'])[:8]:
-            x = b[f['id']]
-            print(f"  {x['form']:.2f}  {f['title'][:50]:50} JobStep {x['js_form']:.2f} ({x['all_videos']} videos) x ours {x['own_factor']:.2f} ({x['own_videos']})")
         print('OUT:', [(f['title'], round(sc, 2), r) for f, sc, r in p['out']])
-        print('IN :', [(f['title'], round(sc, 2), r) for f, sc, r in p['in']])
         if a.lineup_apply:
             state.save('formats.json', fmts)
             rerank(M.load(cfg), fmts, history, cfg)

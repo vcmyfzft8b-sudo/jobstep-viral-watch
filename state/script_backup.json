@@ -426,6 +426,63 @@
    "type": "text"
   }
  ],
+ "3eb958b0-fc14-8038-a083-f0cdd59d5b21": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Nach dem Einstieg filmst du Indeed am Laptop und kopierst den Stellenlink. Beim Satz „Danach öffnest du Parakeet AI.“ wechselst du zur App: Lebenslauf hochladen → Stellenlink einfügen → Analyse und X zeigen → Fragen beantworten und Änderungen prüfen → neue Version und Y → Download. Film den Bildschirm mit dem Handy, zeig mit dem Finger auf die jeweiligen Schritte und schneide Ladezeiten raus.",
+   "text": {
+    "content": "Nach dem Einstieg filmst du Indeed am Laptop und kopierst den Stellenlink. Beim Satz „Danach öffnest du Parakeet AI.“ wechselst du zur App: Lebenslauf hochladen → Stellenlink einfügen → Analyse und X zeigen → Fragen beantworten und Änderungen prüfen → neue Version und Y → Download. Film den Bildschirm mit dem Handy, zeig mit dem Finger auf die jeweiligen Schritte und schneide Ladezeiten raus.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3eb958b0-fc14-80a5-a4c1-cf74ccccf82d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Nutze einen echten Lebenslauf und eine echte Stellenanzeige. Für X und Y liest du jeweils deine tatsächlich angezeigte Bewertung vor; nicht behaupten, der Wert beweise das Bestehen eines ATS. Den persönlichen Einstieg über einen früheren Arbeitgeber nur verwenden, wenn er stimmt. Zum Schluss bleibt die Kamera beim Download und der bearbeitbaren Endfassung; kein zusätzlicher Kommentar-CTA.",
+   "text": {
+    "content": "Nutze einen echten Lebenslauf und eine echte Stellenanzeige. Für X und Y liest du jeweils deine tatsächlich angezeigte Bewertung vor; nicht behaupten, der Wert beweise das Bestehen eines ATS. Den persönlichen Einstieg über einen früheren Arbeitgeber nur verwenden, wenn er stimmt. Zum Schluss bleibt die Kamera beim Download und der bearbeitbaren Endfassung; kein zusätzlicher Kommentar-CTA.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3eb958b0-fc14-80b8-903f-e41df6842756": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Starte wie im Beispiel direkt vor der Kamera: nahes Gesicht, frecher Ton, Zeigefinger nach oben und ein überzeichneter Gesichtsfilter. Blende die Hook ein. Nach dem gesprochenen Einstieg drehst du die Kamera zum Laptop und zeigst die Stellenanzeige.",
+   "text": {
+    "content": "Starte wie im Beispiel direkt vor der Kamera: nahes Gesicht, frecher Ton, Zeigefinger nach oben und ein überzeichneter Gesichtsfilter. Blende die Hook ein. Nach dem gesprochenen Einstieg drehst du die Kamera zum Laptop und zeigst die Stellenanzeige.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f0958b0-fc14-8001-b6c3-f4a260e26040": [
   {
    "annotations": {
@@ -9517,6 +9574,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8171-ad6a-fd3e3a029332": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur l'écran du laptop, montre le choix du modèle de CV, puis la mise en page qui se fait toute seule.",
+   "text": {
+    "content": "Sur l'écran du laptop, montre le choix du modèle de CV, puis la mise en page qui se fait toute seule.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8173-91e2-c5b7bfff00d8": [
   {
    "annotations": {
@@ -12168,6 +12244,25 @@
    "plain_text": "Et là ton CV ressemble à çaaaa ",
    "text": {
     "content": "Et là ton CV ressemble à çaaaa ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81b7-a9a0-daff0d7c9b8f": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Ensuite l'IA réécrit ton CV pour ce job, et tu peux encore tout retoucher toi-même. », montre dans l'app le CV réécrit, puis une petite retouche à la main.",
+   "text": {
+    "content": "Sur « Ensuite l'IA réécrit ton CV pour ce job, et tu peux encore tout retoucher toi-même. », montre dans l'app le CV réécrit, puis une petite retouche à la main.",
     "link": null
    },
    "type": "text"
@@ -17527,6 +17622,120 @@
     "plain_text": "(Réaction choquée face caméra, main devant la bouche) Non mais attends, c'est complètement fou, non ?",
     "text": {
      "content": "(Réaction choquée face caméra, main devant la bouche) Non mais attends, c'est complètement fou, non ?",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3d5958b0-fc14-8135-81f0-c063de327abd": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Schon wieder eine Absage. Und noch eine. Du steckst ewig Zeit in deine Lebensläufe – und trotzdem bringen sie dir nichts? Schau dir meinen neuen an. Weniger hübsch als die alten, ja, aber inhaltlich ist das ein Riesenunterschied. Bei denen steht ja kaum etwas drin. Damit hab ich mich wirklich beworben?",
+    "text": {
+     "content": "Schon wieder eine Absage. Und noch eine. Du steckst ewig Zeit in deine Lebensläufe – und trotzdem bringen sie dir nichts? Schau dir meinen neuen an. Weniger hübsch als die alten, ja, aber inhaltlich ist das ein Riesenunterschied. Bei denen steht ja kaum etwas drin. Damit hab ich mich wirklich beworben?",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ich hab erst später von ATS-Filtern erfahren: Die lesen deinen Lebenslauf automatisch ein. Diese schlichte Version ist dafür besser aufgebaut als meine alten. Wie ich sie gemacht hab, verrate ich dir natürlich. ",
+    "text": {
+     "content": "Ich hab erst später von ATS-Filtern erfahren: Die lesen deinen Lebenslauf automatisch ein. Diese schlichte Version ist dafür besser aufgebaut als meine alten. Wie ich sie gemacht hab, verrate ich dir natürlich. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": true,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "(Parakeet AI · Resume Maker)",
+    "text": {
+     "content": "(Parakeet AI · Resume Maker)",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": " Du öffnest diese Seite, trägst deine Angaben ein und lässt daraus deinen Lebenslauf erstellen.",
+    "text": {
+     "content": " Du öffnest diese Seite, trägst deine Angaben ein und lässt daraus deinen Lebenslauf erstellen.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": true,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "(Parakeet AI · Resume Maker)",
+    "text": {
+     "content": "(Parakeet AI · Resume Maker)",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": " Die KI fragt noch ein paar Dinge zu deiner Erfahrung ab. Zum Schluss bekommst du sogar eine Bewertung für deinen Lebenslauf.",
+    "text": {
+     "content": " Die KI fragt noch ein paar Dinge zu deiner Erfahrung ab. Zum Schluss bekommst du sogar eine Bewertung für deinen Lebenslauf.",
      "link": null
     },
     "type": "text"

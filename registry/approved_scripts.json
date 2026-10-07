@@ -1,0 +1,521 @@
+{
+ "note": "German scripts approved by the user on 2026-10-07 (sentence-aligned, reworded). align.py uses these as they are when the page shows the listed example video.",
+ "de": {
+  "N10": {
+   "example": "https://www.tiktok.com/@emy.jobstep.io/video/7682028282191105312",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Absage, Absage, Absage. Du steckst so viel Mühe in deine Lebensläufe – und am Ende sind sie einfach Müll?",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Hier, mein neuer Lebenslauf. Klar, so „aesthetic“ wie die anderen ist er nicht, aber der Inhalt, Leute – der Inhalt ist krass. Schau mal, wie wenig in den alten drinsteht – damit wollte ich mich ernsthaft bewerben?",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": null,
+     "text": "Es gibt nämlich sogenannte ATS-Filter, die deinen Lebenslauf scannen, hab ich rausgefunden, und dieser hier kommt durch – die alten nicht. Gatekeepen will ich nicht, also zeig ich dir, was ich gemacht hab.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Du gehst auf diese Website, gibst hier deine Daten ein, und schon wird dir ein Lebenslauf erstellt.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Ein paar Fragen von der KI, und am Ende bewertet sie deinen Lebenslauf sogar.",
+     "asset_name": "",
+     "new_paragraph": false
+    }
+   ]
+  },
+  "N01": {
+   "example": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "2026 hab ich meinen Abschluss – und keinen einzigen Job. Wie erklär ich das bitte meinen Eltern? Und wieso redet eigentlich keiner darüber, wie schwer so ein Lebenslauf ist?",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Auf den ersten Blick fand ich meinen top, richtig schön – bis ich auf parakeet-ai.com gestoßen bin, wo er bewertet und verbessert wird.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "X von 100, Leute. Dass der so schlecht ist, hatte ich null auf dem Schirm.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Lebensläufe brauchen nämlich ein bestimmtes Format – wusste ich nicht, und deshalb kam überall eine Absage.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Bei Parakeet AI hab ich dann einfach die Fragen beantwortet, und raus kam ein komplett neuer Lebenslauf, mit dem ich zum ersten Mal zu einem Vorstellungsgespräch eingeladen wurde.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Das ganze Format übernimmt es für dich, ändern kannst du natürlich trotzdem alles, aber schau mal, wie viel besser und professioneller der jetzt aussieht. Und er hat gute Chancen, durch die Systeme zu kommen, sogar durch die KI-Systeme, die Lebensläufe bewerten – bis zu HR.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": null,
+     "text": "Klappt’s bei dir mit der Jobsuche nicht, liegt’s vielleicht einfach am Lebenslauf, also teste die Seite unbedingt – mir hat sie endlich ein Vorstellungsgespräch gebracht.",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "A202610061328": {
+   "example": "https://www.tiktok.com/@career.tea.with.d/video/7691756700235369730",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Das hier sollen angeblich die besten Arbeitgeber bei uns sein. Schön und gut – aber was macht eine Firma eigentlich zur besten? Ein Chef, der korrekt ist und ansprechbar? Und was, wenn der Chef passt, aber das Team eine Katastrophe ist? Oder das Team ist top, und der Chef geht gar nicht?",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Gute Arbeit wird geschätzt, klar. Und wenn du gar nichts machst … na ja, you know. Was sagst du zu diesen Firmen? Du suchst gerade einen Job und willst dich bei einer davon bewerben? Warte kurz.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Auf Parakeet AI kopierst du einfach den Link der Stellenanzeige rein, und es baut dir einen starken Lebenslauf mit guten Chancen, durch die ATS-Filter zu kommen.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Du hast schon einen Lebenslauf? Lad ihn hoch, und du bekommst eine Bewertung.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Viel Glück!",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "X16": {
+   "example": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "HR-Job gekündigt – also verrat ich dir jetzt alle ihre Geheimnisse. Warum gerade so viele keinen Job finden? Der Grund ist ganz simpel: dein Lebenslauf, Leute. Canva-Vorlagen, wohin man schaut. Sagt dir keiner, aber dein Lebenslauf muss eigentlich super schlicht sein, fast hässlich.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Noch ein Geheimnis: Oft schaut sich anfangs kein Mensch aus dem HR deinen Lebenslauf an. Das übernehmen die ATS-Filter, so eine Art künstliche Intelligenz. Damit’s dir wirklich was bringt, zeig ich dir die Seite, mit der du bessere Chancen bei diesen Filtern hast.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Ab zu Parakeet AI.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Lebenslauf hochladen.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "linkedin",
+     "text": "Dann suchst du dir eine Stelle raus – die hier fand ich gut –",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "und fügst ihren Link hier ein.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Die KI checkt deinen Lebenslauf und gibt dir eine erste Bewertung – bei mir X % der ATS-Kriterien.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Also lass ich die KI ihn verbessern und pass noch ein paar Details an, fertig.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Jetzt erfüllt mein Lebenslauf – Achtung – Y % der ATS-Kriterien.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Runterladen, fertig.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Und wenn du willst, kannst du danach alles noch selbst anpassen.",
+     "asset_name": "",
+     "new_paragraph": false
+    }
+   ]
+  },
+  "A20261006183623": {
+   "example": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Lügt in eurem Lebenslauf. Ja, ich sag’s extra nochmal: Lügt rein.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Erfundene Jobs, die ihr nie gemacht habt? Nein, die mein ich nicht. Den großen Unterschied machen am Ende die kleinen Details. Was da überhaupt reingehört, wusste ich selbst lange nicht.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Bis mir eine Freundin dieses Tool hier gezeigt hat. Ihr ladet euren alten Lebenslauf hoch,",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "fügt hier den Link zur Stellenausschreibung ein,",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "und – kein Witz: Danach ist euer Lebenslauf genau an diese Stelle angepasst.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "direction",
+     "text": "Wie krass ist das bitte?",
+     "asset_name": "zurück in die Kamera, Hand geschockt vor dem Mund",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "A202610061334": {
+   "example": "https://www.tiktok.com/@luworks/video/7692607504752135432",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Oktober ist da – und offiziell der beste Monat für die Jobsuche. Genau jetzt bereiten sich alle auf das vor, was im Dezember kommt, also bleib dran: Ich hab einen richtig guten Tipp, damit du aus der Arbeitslosigkeit rauskommst.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Mach als Erstes deinen Canva-Lebenslauf zu und bau dir stattdessen einen im Harvard-Stil. Harvard-Stil sagt dir nichts? Dann wird’s Zeit aufzuwachen – vermutlich liegt’s genau daran, dass du noch keinen Job hast.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Parakeet AI ist mega einfach: Lebenslauf hochladen, komplette Analyse bekommen.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Das kam bei mir beim ersten Mal raus, also lass ich ihn verbessern.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Ab in den KI-Editor.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Fertig: ein optimierter Lebenslauf im Harvard-Stil.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Und jetzt hab ich deutlich bessere Chancen auf eine Einladung.",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "N07": {
+   "example": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Mein Bruder ist Recruiter, und ich zeig dir, wie du deine Jobchancen in 24 Stunden pushst. Erstens: Dein Lebenslauf muss gut sein und eine gute Punktzahl haben.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Am schnellsten checkst du das auf dieser Seite hier – einfach deine Daten eingeben.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "So sieht mein Lebenslauf gerade aus.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Mit jeder Frage kommt ein neuer, wichtiger Teil dazu.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Und da ist er: Endpunktzahl Y – und so sieht er jetzt aus.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Vorher sah er so aus,",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "mit dieser Punktzahl: X.",
+     "asset_name": "",
+     "new_paragraph": false
+    }
+   ]
+  },
+  "N02": {
+   "example": "https://www.tiktok.com/@revekaonline/video/7689223891197136148",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Sorry, aber seit wann kann LinkedIn das?",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "linkedin",
+     "text": "Unter „Jobs“ den Filter „letzte 24 Stunden“ wählen – oben im Link steht dann 86400, so viele Sekunden hat ein Tag.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "linkedin",
+     "text": "Mach daraus 3600, und du siehst nur Jobs aus der letzten Stunde.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Den Link kopierst du in Parakeet AI,",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "und Parakeet AI baut dir einen neuen Lebenslauf, der genau auf diese Stelle passt.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "So bist du unter den Ersten – mit einem Lebenslauf, der deine Chancen echt erhöht.",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "N03": {
+   "example": "https://www.tiktok.com/@zorica.djurdjevic21/video/7688735719120014600",
+   "voiceover": false,
+   "script": [
+    {
+     "cue": "direction",
+     "text": "pov: JETZT versteh ich, warum ALLE ChatGPT löschen 😭🤯",
+     "asset_name": "überraschte Reaktion, Musik",
+     "new_paragraph": false
+    },
+    {
+     "cue": "linkedin",
+     "text": "1. Link der Stellenanzeige kopieren",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "2. Ab auf diese Seite",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "3. Link rein und Parakeet AI deinen Lebenslauf fixen lassen",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "– genau passend zur Stelle",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "und dann sieht dein Lebenslauf sooo aus",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Die Seite: parakeet-ai.com/resume-maker",
+     "asset_name": "",
+     "new_paragraph": false
+    }
+   ]
+  },
+  "A202610061331": {
+   "example": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Selbe Stelle, zwei Bewerbungen: Kandidat 1 und Kandidat 2. Wer, glaubst du, wird zum Vorstellungsgespräch eingeladen?",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Der hier. Warum? Der andere Lebenslauf steckt voller Icons und Diagramme, mit denen das ATS nichts anfangen kann, und ihm fehlen jede Menge Keywords, die du für diese Filter brauchst.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": null,
+     "text": "Der hier dagegen ist im richtigen Format – im ATS-Format.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "So einen machst du zum Beispiel mit parakeet-ai.com/resume-maker.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Im Chat geht es deine ganze Erfahrung mit dir durch, stellt dir Fragen dazu, und daraus wird dein ATS-tauglicher Lebenslauf.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Schau dir die Berufserfahrung an: Da stehen klar die Ergebnisse drin – der Inhalt passt also viel besser und sagt viel mehr über dich.",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  },
+  "N04": {
+   "example": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
+   "voiceover": true,
+   "script": [
+    {
+     "cue": null,
+     "text": "Monate. So lange such ich schon einen Job. Auf jede einzelne Anzeige ging mein Lebenslauf raus, und zurück kam: nichts.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "asset",
+     "text": "Und jetzt schaut euch heute mein Postfach an: Antworten von fast jeder Stelle. Ich dachte echt, die anderen haben einfach Kontakte. Dabei war mein Lebenslauf, sagen wir’s nett, eine Katastrophe.",
+     "asset_name": "Gmail-Aufnahme",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Das hier war er.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Ab damit zu Parakeet AI, hochgeladen, und die Bewertung? Schlechter ging’s kaum.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": "parakeet",
+     "text": "Dann wollte die App wissen, was ich bisher gemacht hab, wer ich bin, wo ich hin will, aber am wichtigsten war das Format.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Infos rein, und raus kam ein komplett neuer Lebenslauf. Schaut mal, wie anders der aussieht.",
+     "asset_name": "",
+     "new_paragraph": false
+    },
+    {
+     "cue": null,
+     "text": "Es geht nämlich ums Format: KI-Systeme, sogenannte ATS, sortieren Lebensläufe vor, und manche landen nie bei einem Menschen.",
+     "asset_name": "",
+     "new_paragraph": true
+    },
+    {
+     "cue": "parakeet",
+     "text": "Der hier kommt durch und landet bei einem Menschen. Deshalb die ganzen Einladungen. Probiert also unbedingt parakeet-ai.com/resume-maker aus. Die checkt euren ganzen Lebenslauf, und eure Chancen steigen.",
+     "asset_name": "",
+     "new_paragraph": true
+    }
+   ]
+  }
+ }
+}

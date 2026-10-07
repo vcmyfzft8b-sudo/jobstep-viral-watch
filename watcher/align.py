@@ -23,11 +23,28 @@ def _words(t):
     return len(re.findall(r'\w+', t))
 
 
+APPROVED = __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'registry', 'approved_scripts.json')
+
+
+def approved(fid, lang, url):
+    """A script the user approved word for word (only while the page still shows the example it was written for)."""
+    import json
+    try:
+        with open(APPROVED) as f:
+            x = json.load(f).get(lang, {}).get(fid)
+    except FileNotFoundError:
+        return None
+    return x if x and url and x['example'].split('?')[0] == url.split('?')[0] else None
+
+
 def align_page(fmt, page_id, lang, cfg, links):
     """Returns (status, why)."""
     T = TEXT[lang]
     src = localize.current_source(page_id)
     url = src['url'] if src else None
+    ok = approved(fmt['id'], lang, url)
+    if ok:
+        return _write(fmt, page_id, lang, cfg, links, {'voiceover': ok['voiceover'], 'script': ok['script']}, 'approved script')
     example = localize.example_text(url) if url else ''
     if not example:
         return 'skipped', 'example video could not be read'
@@ -77,6 +94,12 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
             break
     else:
         return 'skipped', why
+    return _write(fmt, page_id, lang, cfg, links, spec,
+                  f"{sum(_words(s['text']) for s in spec['script'])} words (original {n_orig})")
+
+
+def _write(fmt, page_id, lang, cfg, links, spec, info):
+    blocks = reword.script_blocks(page_id)
     for seg in spec['script']:
         if seg.get('cue') in ('null', 'None', ''):
             seg['cue'] = None
@@ -89,7 +112,7 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
     for b in blocks:
         notion.api('DELETE', f"/blocks/{b['id']}")
     reword.fix_directions(fmt, page_id, lang, cfg['models']['classify'])
-    return 'ok', f"{sum(_words(s['text']) for s in spec['script'])} words (original {n_orig})"
+    return 'ok', info
 
 
 def _validate(spec, n_orig):

@@ -95,9 +95,13 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     v['same_lang'] = same
     v['views_ok'] = v['views'] < 0 or v['views'] >= localize.MIN_VIEWS or url == originals().get(fmt['id'])
     v['title_block'] = title_block
+    v['approved'] = bool(align.approved(fmt['id'], lang, url))
+    if v['approved']:  # the user approved this script word for word - only directions/note/title/example are checked
+        v.update({'script_follows_example': True, 'script_reworded': True, 'script_ok': True})
+        v['script_issues'] = []
     spoken = example.split('SPEECH:', 1)[-1] if example else ''
     base = spoken if align._words(spoken) >= 15 else example
-    v['length_ok'] = not example or align._words(script) <= 1.15 * max(align._words(base), 1)
+    v['length_ok'] = v['approved'] or not example or align._words(script) <= 1.15 * max(align._words(base), 1)
     if not title_block:
         v['title_ok'] = True
     passed = all(v.get(k) for k in ('example_same_format', 'script_follows_example', 'script_reworded', 'script_ok',

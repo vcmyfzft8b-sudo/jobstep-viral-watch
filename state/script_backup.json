@@ -15162,6 +15162,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81fb-af45-fc1811b982a4": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Quand tu dis « Chaque fois que tu réponds à une question, il ajoute une partie qui compte vraiment. », montre les écrans de questions de l'app et une nouvelle partie qui s'ajoute à ton CV après chaque réponse.",
+   "text": {
+    "content": "Quand tu dis « Chaque fois que tu réponds à une question, il ajoute une partie qui compte vraiment. », montre les écrans de questions de l'app et une nouvelle partie qui s'ajoute à ton CV après chaque réponse.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81ff-929a-ea6b14b9ef62": [
   {
    "annotations": {

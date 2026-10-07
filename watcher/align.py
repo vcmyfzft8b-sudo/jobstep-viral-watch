@@ -11,6 +11,7 @@ Rules (agreed 2026-10-07):
 Only the script section is replaced (old text backed up in state/script_backup.json); the filming directions are
 then matched to the new script.
 """
+import json
 import re
 
 from . import llm, localize, notion, reword, state
@@ -69,13 +70,14 @@ def matches_approved(page_id, lang, links, spec):
     return signature(reword.script_blocks(page_id)) == signature(notion.script_paragraphs(spec, links, lang))
 
 
-def align_page(fmt, page_id, lang, cfg, links):
-    """Returns (status, why)."""
+def align_page(fmt, page_id, lang, cfg, links, feedback='', draft_url=None):
+    """Returns (status, why). With draft_url: writes NOTHING - returns ('draft', spec) for a replacement script that
+    follows that example (used to prepare replacements of approval-locked scripts for the user's approval)."""
     T = TEXT[lang]
     src = localize.current_source(page_id)
-    url = src['url'] if src else None
-    ok = approved(fmt['id'], lang, url)
-    if approved_script(fmt['id'], lang) and not ok:
+    url = draft_url or (src['url'] if src else None)
+    ok = None if draft_url else approved(fmt['id'], lang, url)
+    if approved_script(fmt['id'], lang) and not ok and not draft_url:
         return 'skipped', 'approved script is locked; example differs from the approved example'
     if ok:
         if matches_approved(page_id, lang, links, ok):
@@ -93,6 +95,8 @@ def align_page(fmt, page_id, lang, cfg, links):
     base = speech if _words(speech) >= 15 else screen  # text-only videos: the on-screen texts are the script
     voiceover = _words(speech) >= 15
     n_orig = _words(base)
+    from . import crosscheck
+    ref = crosscheck.reference(fmt['id'])
     prompt = f"""ORIGINAL JobStep video ({'speech' if voiceover else 'on-screen texts, no speech'}):
 {base[:4000]}
 {('On-screen texts of the original: ' + screen[:800]) if voiceover and screen else ''}
@@ -103,11 +107,15 @@ recording is shown, and the asset names):
 
 {PARAKEET_FACTS}
 
-Write our new {T['lang_name']} script ({T['style']}) that mirrors the ORIGINAL sentence by sentence:
-1. Exactly one sentence of ours for each sentence of the original, in the same order, about the same length.
-   The whole script must have {int(n_orig * 0.85)}-{int(n_orig * 1.1)} words (the original has {n_orig}). Add nothing.
-2. Same meaning, but build every sentence differently: other word order, a question instead of a statement (or the
-   other way round), other words. A native viewer must not recognise the original's sentences.
+{('REFERENCE DEFINITION of this format (beats, product moment, brand/CTA rules): ' + json.dumps(ref, ensure_ascii=False)) if ref else ''}
+
+Write our new {T['lang_name']} script ({T['style']}) for the SAME FORMAT, independently worded:
+1. Same beats in the same order as the original (and the reference), the product introduced at the same beat, about
+   the same length. The whole script must have {int(n_orig * 0.8)}-{max_words(n_orig)} words (the original has
+   {n_orig}). Add no new beats, claims or features.
+2. Write every beat in your OWN words, as a creator would tell it from scratch: do NOT translate or paraphrase the
+   original's sentences one by one, do not keep its sentence structure, images or turns of phrase (only the hook
+   idea may stay close). A native viewer who saw the original must not recognise any sentence.
 3. Where the original says or writes JobStep / jobstep.io, write "Parakeet AI" / parakeet-ai.com/resume-maker -
    exactly as often and at the same spots. Where the original only shows the app without naming it (e.g. "this tool
    here"), do the same: do NOT name it. Never mention JobStep.
@@ -122,9 +130,9 @@ Write our new {T['lang_name']} script ({T['style']}) that mirrors the ORIGINAL s
 Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceover).lower()},
 "script": [{{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "<one sentence>",
 "new_paragraph": false}}]}}"""
-    why = ''
-    for attempt in range(3):
-        extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
+    why = feedback
+    for attempt in range(5):
+        extra = f'\n\nA reviewer rejected the current/previous version: {why}. Fix exactly that.' if why else ''
         spec = llm.chat_json(cfg['models']['build'], 'You are a senior UGC script writer. Reply with JSON only.',
                              prompt + extra, timeout=1200)
         why = _validate(spec, n_orig, base)
@@ -132,6 +140,8 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
             break
     else:
         return 'skipped', why
+    if draft_url:
+        return 'draft', {**spec, 'example': draft_url, 'n_orig': n_orig}
     return _write(fmt, page_id, lang, cfg, links, spec,
                   f"{sum(_words(s['text']) for s in spec['script'])} words (original {n_orig})")
 
@@ -150,9 +160,13 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
             if reword._plain(b).strip() != sub:
                 notion.api('PATCH', f"/blocks/{b['id']}", {'bulleted_list_item': {'rich_text': [notion.rt(sub)]}})
             break
+    resources = reword.resources_text(page_id)
     for seg in spec['script']:
         if seg.get('cue') in ('null', 'None', ''):
             seg['cue'] = None
+        if seg.get('cue') == 'asset' and not reword.in_resources(notion.asset_label(seg.get('asset_name')), resources):
+            seg['cue'] = 'direction'  # nothing in the resources to point to -> a plain stage direction
+            seg['asset_name'] = notion.asset_label(seg.get('asset_name'))
     new_blocks = notion.script_paragraphs(spec, links, lang)
     with state.LOCK:
         backup = state.load('script_backup.json', {})
@@ -165,14 +179,19 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
     return 'ok', info
 
 
+def max_words(n_orig):
+    """110% of the original; very short on-screen scripts get a few words more (articles in FR/ES/DE)."""
+    return int(n_orig * 1.1) if n_orig >= 60 else max(int(n_orig * 1.1), n_orig + 8)
+
+
 def _validate(spec, n_orig, source=None):
     script = spec.get('script') or []
     if not script:
         return 'empty script'
     text = ' '.join(s.get('text', '') for s in script)
     n = _words(text)
-    if not 0.8 * n_orig <= n <= 1.10 * n_orig:
-        return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{int(n_orig * 1.1)}'
+    if not 0.8 * n_orig <= n <= max_words(n_orig):
+        return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{max_words(n_orig)}'
     if JOBSTEP.search(text):
         return 'JobStep is mentioned'
     want = len(JOBSTEP.findall(source)) if source is not None else int(spec.get('jobstep_mentions_in_original') or 0)

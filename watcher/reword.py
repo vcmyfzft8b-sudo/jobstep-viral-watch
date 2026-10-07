@@ -184,15 +184,20 @@ def run(fmts, mkts, cfg, page_of, originals=None, dry=False):
 def direction_blocks(page_id):
     """Blocks of the 🎬 filming-directions section (without the mandatory 🚨 line and the Visual Hook Lab link)."""
     blocks = notion.children(page_id)
-    start = next((i for i, b in enumerate(blocks) if b['type'].startswith('heading') and '🎬' in _plain(b)), None)
-    if start is None:
-        return []
-    out = []
-    for b in blocks[start + 1:]:
-        if b['type'] == 'divider' or b['type'].startswith('heading'):
-            break
+    out, inside = [], False
+    for b in blocks:  # 🎬 = directions; older German pages also keep them under 👀 VISUELLER EINSTIEG
+        if b['type'].startswith('heading'):
+            inside = '🎬' in _plain(b) or '👀' in _plain(b)
+            continue
+        if b['type'] == 'divider':
+            inside = False
+            continue
         t = _plain(b)
-        if b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t and 'Visual Hook Lab' not in t:
+        has_link = any(((x.get('text') or {}).get('link') or {}).get('url', '').startswith('http') and
+                       'parakeet-ai.com' not in ((x.get('text') or {}).get('link') or {}).get('url', '')
+                       for x in b.get(b['type'], {}).get('rich_text', []))
+        if inside and b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t \
+                and 'Visual Hook Lab' not in t and not has_link:  # the example's TikTok link is never a direction
             out.append(b)
     return out
 
@@ -202,6 +207,8 @@ def fix_directions(fmt, page_id, lang, model, issues=''):
     cue really in the script. Lines may be removed. Returns (status, why)."""
     T = TEXT[lang]
     script = '\n'.join(_plain(b) for b in script_blocks(page_id))
+    from . import crosscheck
+    filming = (crosscheck.reference(fmt['id']) or {}).get('filming', '')
     enc = [(b, *encode(b)) for b in direction_blocks(page_id)]
     enc = [(b, t, l) for b, t, l in enc if t is not None]
     if not enc:
@@ -213,11 +220,15 @@ SCRIPT:
 
 DIRECTIONS:
 {numbered}
+{('How this format is filmed (reference, all countries): ' + filming) if filming else ''}
 {('A reviewer found: ' + issues) if issues else ''}
 Fix the directions so they match the script exactly: remove duplicate or contradicting lines; mention "X"/"Y" only
 if they appear in the script (only X -> only X); a direction that quotes a script line must quote the script's
-actual wording; keep everything else as it is (same language, same tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged.
-Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...]}} - one item per line."""
+actual wording; never refer to markers the script does not have; keep everything else as it is (same language, same
+tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged. If a shot of the reference filming sequence or something the reviewer
+names is missing, add short new lines for it ("add", in {T['lang_name']}, no links) - only what the script needs.
+Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...],
+"add": ["<new direction line>", ...]}} - one item per existing line; "add" may be empty."""
     r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt, timeout=900)
     items = {int(x['index']): x.get('text') for x in r.get('lines', []) if str(x.get('index', '')).isdigit()}
     if set(items) != set(range(len(enc))):
@@ -230,12 +241,73 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
     for i, (b, old, links) in enumerate(enc):
         new = items[i]
         if new is None or not str(new).strip():
+            if links:
+                continue  # a line with a link is never deleted
             notion.api('DELETE', f"/blocks/{b['id']}")
         elif new != old:
             if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(new)]:
                 continue  # keep that line rather than lose a link
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(new, links)}})
+    add = [str(t).strip() for t in (r.get('add') or []) if str(t).strip() and '⟦' not in str(t)][:4]
+    if add:
+        notion.api('PATCH', f'/blocks/{page_id}/children', {'after': enc[-1][0]['id'], 'children': [
+            {'object': 'block', 'type': 'bulleted_list_item', 'bulleted_list_item': {'rich_text': [notion.rt(t)]}}
+            for t in add]})
     return 'ok', ''
+
+
+def resources_text(page_id):
+    """Plain text of the page's 🔧 resources section (what a '📎 … – see resources' cue may point to)."""
+    out, inside = [], False
+    for b in notion.children(page_id):
+        if b['type'].startswith('heading'):
+            inside = '🔧' in _plain(b)
+            continue
+        if inside and b['type'] != 'divider':
+            out.append(_plain(b))
+    return ' '.join(out).lower()
+
+
+def in_resources(name, resources):
+    """True if the asset is really in the resources section (e.g. 'Gmail inbox' -> 'Gmail recording')."""
+    words = [w for w in re.findall(r'\w+', (name or '').lower()) if len(w) >= 4]
+    return any(w in resources for w in words)
+
+
+def fix_asset_cues(page_id):
+    """Repairs script cues: decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos'), or pointing to the
+    resources section for something that is not there (then it is a plain stage direction '(InfoJobs)')."""
+    suffixes = {l: TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') for l in TEXT}
+    resources = None
+    fixed = 0
+    for b in script_blocks(page_id):
+        rich = b[b['type']].get('rich_text', [])
+        changed = False
+        for x in rich:
+            if not x.get('text'):
+                continue
+            t = x['text'].get('content', '')
+            for m in re.finditer(r'\((📎[^()]*)\)', t):
+                lang = next((l for l, suf in suffixes.items() if suf in m.group(1)), None)
+                if not lang:
+                    continue
+                name = notion.asset_label(m.group(1))
+                if resources is None:
+                    resources = resources_text(page_id)
+                if not in_resources(name, resources):
+                    clean = f'({name})'
+                elif m.group(1).count('📎') > 1:
+                    clean = TEXT[lang]['asset_cue'].format(name=name).strip()
+                else:
+                    continue
+                t = t.replace(m.group(0), clean)
+                changed = True
+            x['text']['content'] = t
+        if changed:
+            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [
+                {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich if x.get('text')]}})
+            fixed += 1
+    return fixed
 
 
 def spoken_text(blocks):

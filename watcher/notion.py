@@ -139,6 +139,18 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, sam
     return blocks
 
 
+def asset_label(name):
+    """Bare asset name: a rewrite copies the rendered cue ('📎 Gmail – siehe Ressourcen'), which must not be decorated
+    again (it piled up as '📎 📎 📎 … – ver Recursos – ver Recursos')."""
+    t = (name or '').strip()
+    while True:
+        new = re.sub(r'^[(\s]*📎\s*', '', t)
+        new = re.sub(r'\s*[–-]\s*(siehe Ressourcen|voir Ressources|ver Recursos)\s*\)?\s*$', '', new).strip()
+        if new == t:
+            return t
+        t = new
+
+
 def script_paragraphs(spec, links, lang='de'):
     """The script section's paragraphs (cue links in front of the line where the app/LinkedIn/asset appears)."""
     T = TEXT[lang]
@@ -155,7 +167,7 @@ def script_paragraphs(spec, links, lang='de'):
             label, url = cue_links[cue]
             parts += [rt('('), rt(label, link=url), rt(') ')]
         elif cue == 'asset':
-            parts.append(rt(T['asset_cue'].format(name=seg.get('asset_name') or '📎')))
+            parts.append(rt(T['asset_cue'].format(name=asset_label(seg.get('asset_name')) or '📎')))
         elif cue == 'direction' and seg.get('asset_name'):
             parts.append(rt(f"({seg['asset_name']}) "))
         parts.append(rt(seg['text'].strip() + ' ', bold=silent))

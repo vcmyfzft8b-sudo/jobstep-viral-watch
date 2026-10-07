@@ -1,0 +1,801 @@
+{
+ "version": 1,
+ "note": "Canonical reference definition per UGC format (Parakeet AI creator campaign, adapted from JobStep TikTok videos). Evidence: Codex/2026-10-07/is-x20/outputs/english-script-comparison.json (source beats, visuals, page scripts). Parakeet features vocabulary: upload CV; CV score / analysis; paste job-ad link or text; answer questions in chat; AI rewrites / tailors CV to the job; choose template; edit everything yourself; download CV. Never: applications overview, 'New job' button, cover letter. 'accepted_notes' and 'current_page_sources' are informational extensions to the schema.",
+ "formats": {
+  "N10": {
+   "title_en": "Nobody reads your CV",
+   "canonical_source": "7692884328304479495",
+   "accepted_sources": [
+    "7692884328304479495"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7682028282191105312": "This is X15's story, not N10: 'rejected, rejected, rejected' opening, printed old CVs vs plain new CV, unnamed website with entering details and AI questions, score at the end. No 'nobody reads it' hook, no upload and low-score reveal, no template step, no HR-friend explanation, no spoken brand or CTA.",
+    "7693601460084362516": "Different story and demo: hook is 'my CVs never reached a real person' with an imagined human rejection; demo is paste job link + upload + apply suggested keywords with a rising score; no question-driven rebuild, no template choice, no HR-friend beat, tool never named in speech; ends on a claimed reply."
+   },
+   "hook": "Blunt statement repeated to camera: 'Nobody reads your CV' (sorry to say it like this).",
+   "premise": "A well-qualified person gets no interviews because an AI/screening system reads the CV before any recruiter; the tool scores it low, rebuilds it through questions, and a later HR friend confirms format screening.",
+   "beats": [
+    "Hook: 'Nobody reads your CV' - repeated bluntly.",
+    "Credibility + shock: experience, internships, degree, still no interviews; learning that AI/systems read the CV before a recruiter.",
+    "'I thought this CV was great' - website named, old CV uploaded, low score revealed.",
+    "Website named again: answer questions about yourself and the target job, a new CV takes shape.",
+    "Edit details and pick a template - show how different and professional it looks.",
+    "Later, a friend from HR explains that software checks the format/structure; a CV that fails may never reach a recruiter.",
+    "New, higher score; speaker will still tweak a few sentences herself.",
+    "Website named a third time + recommendation for anyone job hunting this year."
+   ],
+   "filming": "~80s. Selfie talking head in a room (source: pink room), cut to laptop showing the old CV, the score screen, question/edit/template screens, back to selfie for the HR-friend explanation and closing recommendation.",
+   "product": {
+    "introduced_at_beat": 3,
+    "spoken_brand": "Spoken three times: at the upload/low-score reveal (beat 3), at the questions/template rebuild (beat 4) and in the closing recommendation (beat 8).",
+    "cta": "Spoken site recommendation: worth trying if you are looking for work this year.",
+    "features_used": [
+     "upload CV",
+     "CV score / analysis",
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "choose template",
+     "edit everything yourself"
+    ]
+   },
+   "allowed_localisation": [
+    "year reference",
+    "creator's room/setting",
+    "score as X/Y placeholders",
+    "softened screening claims ('may never reach a recruiter')",
+    "wording of the HR friend (friend/colleague who worked in HR)",
+    "brand vs URL form (Parakeet AI / parakeet-ai.com/resume-maker)",
+    "slang and register"
+   ],
+   "not_allowed": [
+    "rejection-montage opening or printed old-vs-new CV comparison (X15)",
+    "inbox/result-first opening (N04)",
+    "replacing the question-driven rebuild with job-link-only tailoring",
+    "dropping the low score -> higher score arc",
+    "dropping the HR-friend explanation beat",
+    "tool never named in speech",
+    "introducing the tool before the problem setup"
+   ],
+   "current_page_sources": {
+    "de": "7682028282191105312",
+    "fr": "7692884328304479495",
+    "es": "7693601460084362516"
+   },
+   "source_urls": {
+    "7692884328304479495": "https://www.tiktok.com/@emasavetuje/video/7692884328304479495",
+    "7693601460084362516": "https://www.tiktok.com/@ferni.tips/video/7693601460084362516",
+    "7682028282191105312": "https://www.tiktok.com/@emy.jobstep.io/video/7682028282191105312"
+   }
+  },
+  "X16": {
+   "title_en": "I quit HR, here are their secrets",
+   "canonical_source": "7691061952071716118",
+   "accepted_sources": [
+    "7691061952071716118"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'I just quit my job in HR, so I'm telling you all their secrets.'",
+   "premise": "An ex-HR insider reveals that decorative (Canva) CVs fail and that ATS filters, not humans, read CVs first, then demonstrates fixing a CV against a real job ad.",
+   "beats": [
+    "Hook: just quit HR - spilling their secrets.",
+    "Secret 1: so many people can't find work because of the CV - Canva templates everywhere; a CV should be plain, almost ugly.",
+    "Secret 2: often nobody from HR reads it first - ATS filters do.",
+    "'I'll show you the site' - brand spoken, upload CV.",
+    "Choose a job ad and paste its link.",
+    "AI analyses and gives an initial score (X).",
+    "Ask the AI to improve it, adjust a few details - new score (Y).",
+    "Download, done - you can still edit everything yourself."
+   ],
+   "filming": "~65s. Talking head (source uses a face filter), then laptop screen recording of upload -> job link -> score -> improve -> higher score -> download.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Spoken once at the start of the demo (beat 4).",
+    "cta": "none (ends on download / edit-it-yourself)",
+    "features_used": [
+     "upload CV",
+     "paste job-ad link or text",
+     "CV score / analysis",
+     "AI rewrites / tailors CV to the job",
+     "edit everything yourself",
+     "download CV"
+    ]
+   },
+   "allowed_localisation": [
+    "job ad chosen from a local job board",
+    "score format (X/100 or X% of criteria)",
+    "closing with template choice instead of the source's cover-letter option",
+    "slang ('guys', register)"
+   ],
+   "not_allowed": [
+    "applications dashboard, 'New job' button or cover letter (source shows these; unsupported)",
+    "dropping the ex-HR premise",
+    "dropping the Canva/plain-CV or ATS secret",
+    "skipping the initial score -> improved score sequence"
+   ],
+   "current_page_sources": {
+    "de": "7691061952071716118",
+    "fr": "7691061952071716118",
+    "es": "7691061952071716118"
+   },
+   "source_urls": {
+    "7691061952071716118": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118"
+   }
+  },
+  "N01": {
+   "title_en": "Graduated in 2026, still no job",
+   "canonical_source": "7692550993833151762",
+   "accepted_sources": [
+    "7692550993833151762"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'I graduate in 2026 and can't find a single job - how do I explain this to my parents?'",
+   "premise": "A fresh graduate thought her CV was beautiful; the tool scored it poorly, revealing that format was why she was rejected everywhere; answering the tool's questions rebuilt it and led to a first interview.",
+   "beats": [
+    "Hook: graduating in 2026 with no job - how do I explain this to my parents?",
+    "Why does nobody talk about how hard a CV is?",
+    "Thought my CV looked great - until the named website scored it: X/100.",
+    "CVs need a specific format; that is why I was rejected everywhere.",
+    "Answered the tool's questions -> completely new CV -> first interview invitation.",
+    "Show layout/template; you can still change everything; more professional; better chance through screening systems to HR.",
+    "CTA: if your search isn't working, it may be your CV - try the site."
+   ],
+   "filming": "~62s. Selfie in a room, then laptop: score screen, questions, template and CV reveal, back to selfie for the recommendation.",
+   "product": {
+    "introduced_at_beat": 3,
+    "spoken_brand": "Spoken at the score reveal (beat 3) and again at the question flow (beat 5); closing recommendation refers to 'the site'.",
+    "cta": "Try the site - it got me an interview.",
+    "features_used": [
+     "upload CV",
+     "CV score / analysis",
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "choose template",
+     "edit everything yourself"
+    ]
+   },
+   "allowed_localisation": [
+    "graduation year",
+    "education wording (degree/university/Abschluss)",
+    "parents/family phrasing",
+    "score as X placeholder",
+    "softened screening claims"
+   ],
+   "not_allowed": [
+    "dropping the graduation/parents premise",
+    "replacing the question flow with job-link-only tailoring",
+    "dropping the low-score reveal",
+    "dropping the first-interview payoff"
+   ],
+   "current_page_sources": {
+    "de": "7692550993833151762",
+    "fr": "7692550993833151762",
+    "es": "7692550993833151762"
+   },
+   "source_urls": {
+    "7692550993833151762": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762"
+   }
+  },
+  "A202610061328": {
+   "title_en": "What makes a top employer good?",
+   "canonical_source": "7691756700235369730",
+   "accepted_sources": [
+    "7691756700235369730"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "On-screen ranking of the 'best employers' with the question: what actually makes a company the best?",
+   "premise": "A casual debate about what makes a good employer (boss vs team) turns into 'want to apply to one of them? Wait' and a quick pivot to the tool.",
+   "beats": [
+    "On-screen list of the supposed best employers: 'these are supposedly the best employers'.",
+    "What makes a company good? A fair, approachable boss?",
+    "Contrasts: good boss but disaster team / great team but unbearable boss; good work valued, doing nothing... you know.",
+    "Question to viewer: what do you think of these companies?",
+    "Pivot: looking for a job and want to apply to one of them? Wait.",
+    "Tool named: paste the job-ad link -> tailored CV; already have a CV? upload it for a score.",
+    "'Good luck!' sign-off."
+   ],
+   "filming": "~47s. Seated talking head eating a snack, employer names overlaid on screen, app inset during the product pivot.",
+   "product": {
+    "introduced_at_beat": 6,
+    "spoken_brand": "Spoken once at the pivot (beat 6).",
+    "cta": "none (good-luck sign-off)",
+    "features_used": [
+     "paste job-ad link or text",
+     "AI rewrites / tailors CV to the job",
+     "upload CV",
+     "CV score / analysis"
+    ]
+   },
+   "allowed_localisation": [
+    "country-specific employer list (must be a real, sourced ranking for that market)",
+    "country name in the hook",
+    "snack/prop",
+    "slang"
+   ],
+   "not_allowed": [
+    "presenting the Greek source ranking as a local ranking",
+    "dropping the boss-vs-team debate or the viewer question",
+    "introducing the product before the 'want to apply? wait' pivot",
+    "turning it into a ranking of job sites (N06)"
+   ],
+   "current_page_sources": {
+    "de": "7691756700235369730",
+    "fr": "7691756700235369730",
+    "es": "7691756700235369730"
+   },
+   "source_urls": {
+    "7691756700235369730": "https://www.tiktok.com/@career.tea.with.d/video/7691756700235369730"
+   }
+  },
+  "A20261006183623": {
+   "title_en": "Lie on your CV - provocative hook",
+   "canonical_source": "7692141310198713633",
+   "accepted_sources": [
+    "7692141310198713633"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'Lie on your CV.' - repeated deliberately for shock.",
+   "premise": "A provocative instruction is immediately qualified (no invented jobs - it's the small details); a friend's tool adapts the old CV to a specific job ad.",
+   "beats": [
+    "Hook: 'Lie on your CV' - said again on purpose.",
+    "Qualification: not made-up jobs you never did.",
+    "Small details make the big difference; I didn't know what to put in my CV either.",
+    "A friend showed me this tool (unnamed in speech).",
+    "Upload old CV, paste the job-ad link.",
+    "Result: CV adapted to exactly that position.",
+    "Surprised rhetorical close: 'How amazing is that?'"
+   ],
+   "filming": "~40s. Talking head while doing a kitchen task (source: cutting food with a pizza cutter), then app and CV clips.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "not spoken - only shown",
+    "cta": "none (rhetorical surprise close)",
+    "features_used": [
+     "upload CV",
+     "paste job-ad link or text",
+     "AI rewrites / tailors CV to the job"
+    ]
+   },
+   "allowed_localisation": [
+    "exact wording of the closing exclamation",
+    "kitchen/activity prop",
+    "slang and register"
+   ],
+   "not_allowed": [
+    "dropping the no-invented-jobs qualification",
+    "dropping the friend recommendation",
+    "adding a score-led or question-led demo as the main sequence"
+   ],
+   "current_page_sources": {
+    "de": "7692141310198713633",
+    "fr": "7692141310198713633",
+    "es": "7692141310198713633"
+   },
+   "source_urls": {
+    "7692141310198713633": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633"
+   }
+  },
+  "X13": {
+   "title_en": "Three contrarian job-search tips",
+   "canonical_source": "7693414335552425234",
+   "accepted_sources": [
+    "7693414335552425234"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'Three tips to find work' - numbered list format.",
+   "premise": "Three counter-intuitive tips (smaller job boards, plain CV, value yourself); the product appears only inside tip two.",
+   "beats": [
+    "Hook: three tips to find work.",
+    "Tip 1: stop relying only on LinkedIn/Indeed - saturated, thousands of applicants; use smaller job boards.",
+    "Tip 2: make a plain/'ugly' CV - Canva colours don't help; ATS filters screen for keywords.",
+    "Within tip 2: try this site - paste the job-ad link, review the requested skills, answer a few questions, CV ready.",
+    "Tip 3: value yourself - don't settle for minimum pay; aim higher, even as a beginner."
+   ],
+   "filming": "~56s. Talking head with numbered on-screen overlays; app inset only during tip 2.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "not spoken - only shown",
+    "cta": "none (ends on tip 3)",
+    "features_used": [
+     "paste job-ad link or text",
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "edit everything yourself"
+    ]
+   },
+   "allowed_localisation": [
+    "names of the big job boards and local smaller job boards",
+    "minimum-wage/pay wording and currency",
+    "time estimate removed or softened"
+   ],
+   "not_allowed": [
+    "changing the number or order of tips",
+    "moving the product out of tip 2",
+    "dropping the self-worth tip",
+    "a quantified time promise presented as measured performance"
+   ],
+   "current_page_sources": {
+    "de": "7693414335552425234",
+    "fr": "7693414335552425234",
+    "es": "7693414335552425234"
+   },
+   "source_urls": {
+    "7693414335552425234": "https://www.tiktok.com/@diann1770/video/7693414335552425234"
+   }
+  },
+  "A202610061334": {
+   "title_en": "October hiring-season tip",
+   "canonical_source": "7692607504752135432",
+   "accepted_sources": [
+    "7692607504752135432"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'October is the best month to look for work.'",
+   "premise": "Seasonal urgency (companies prepare now for December) plus one tip: ditch the Canva CV for a Harvard-style CV, done via the tool's analysis and AI improvement.",
+   "beats": [
+    "Hook: October is the best month to job hunt.",
+    "Companies are preparing for December - stay to the end for a tip.",
+    "Close your Canva CV, use Harvard style - never heard of it? that may be why you have no job.",
+    "Named website: upload CV, get a complete analysis/score.",
+    "First result shown -> improve with the AI chat/editor.",
+    "Revised Harvard-style CV revealed.",
+    "Close: better-prepared CV (score Y) - not a hiring probability."
+   ],
+   "filming": "~32s. Talking head holding an object, then laptop score screen and revised CV.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Spoken once at the analysis step (beat 4).",
+    "cta": "none (ends on improved CV/score)",
+    "features_used": [
+     "upload CV",
+     "CV score / analysis",
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "choose template",
+     "edit everything yourself"
+    ]
+   },
+   "allowed_localisation": [
+    "strength of the seasonal claim (softened per market)",
+    "Harvard-style naming",
+    "score as Y placeholder",
+    "slang"
+   ],
+   "not_allowed": [
+    "a numerical hiring-probability claim",
+    "dropping the seasonal October/December hook",
+    "dropping the Canva -> Harvard-style advice"
+   ],
+   "current_page_sources": {
+    "de": "7692607504752135432",
+    "fr": "7692607504752135432",
+    "es": "7692607504752135432"
+   },
+   "source_urls": {
+    "7692607504752135432": "https://www.tiktok.com/@luworks/video/7692607504752135432"
+   }
+  },
+  "N07": {
+   "title_en": "Recruiter relative gives a CV tip",
+   "canonical_source": "7689479710677470471",
+   "accepted_sources": [
+    "7689479710677470471"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7691252438875098400": "Different story: mother's HR friend criticises a standard Canva CV, surprise + 'save this video' CTA, spoken URL, upload -> poor score -> long chat demo, ATS percentage, 'so easy and fast' ending; 67.7s vs 29.8s and no reverse before/after reveal."
+   },
+   "hook": "'My brother is a recruiter, and here's how to find a job (fast / in 24h).'",
+   "premise": "An insider relative's tip: your CV needs a good score; check and build it on a site question by question, then reveal the before/after.",
+   "beats": [
+    "Hook: my brother is a recruiter - here's how to boost your job chances fast.",
+    "First: your CV must be good and have a good score.",
+    "Quickest check: this site - just enter your details.",
+    "This is my CV now - each question adds a new important section.",
+    "Final score Y and the new CV.",
+    "Reverse reveal: before it looked like this, with score X."
+   ],
+   "filming": "~30s. Casual selfie while doing something with the hands (source: handling jewellery), then laptop question screens and before/after CVs with scores.",
+   "product": {
+    "introduced_at_beat": 3,
+    "spoken_brand": "not spoken - only shown",
+    "cta": "none (ends on before/after reveal)",
+    "features_used": [
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "CV score / analysis"
+    ]
+   },
+   "allowed_localisation": [
+    "relative as brother or sister",
+    "'24 hours' framing softened or dropped",
+    "score as X/Y placeholders",
+    "slang"
+   ],
+   "not_allowed": [
+    "a different authority figure story (e.g. mother's HR friend)",
+    "criticism-of-my-Canva-CV narrative",
+    "'save this video' CTA",
+    "long (60s+) story or detailed chat walkthrough",
+    "dropping the final-score then before-score reverse reveal"
+   ],
+   "current_page_sources": {
+    "de": "7689479710677470471",
+    "fr": "7691252438875098400",
+    "es": "7689479710677470471"
+   },
+   "source_urls": {
+    "7689479710677470471": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
+    "7691252438875098400": "https://www.tiktok.com/@marine.realfakephotos/video/7691252438875098400"
+   }
+  },
+  "X15": {
+   "title_en": "Repeated CV rejections / Mach das nicht",
+   "canonical_source": "7682028282191105312",
+   "accepted_sources": [
+    "7682028282191105312"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7667662711190195489": "Same rejection hook but different middle and demo: no printed old-vs-new CV comparison; replaced by a long ATS explanation (online/large employers, structure, keywords), a spoken brand, and a score-threshold 'assurance' ending; no entering-details + AI-questions demo. 57s vs 32s."
+   },
+   "hook": "'Rejected, rejected, rejected' - all that effort on your CVs and they're rubbish?",
+   "premise": "After repeated rejections, the creator holds up a plainer but content-rich new CV next to her empty old ones, explains ATS, and shows the unnamed site that built it.",
+   "beats": [
+    "Hook: 'Rejected, rejected, rejected' - so much effort, and the CVs are rubbish?",
+    "Hold up the new CV: less 'aesthetic', but the content is far better.",
+    "Compare with printed old CVs - so little in them; 'did I really apply with these?'",
+    "Discovered ATS filters that scan CVs; the new format suits them, the old ones didn't.",
+    "'Not gatekeeping - here's what I did': go to this website (unnamed).",
+    "Enter your details; the AI asks a few questions; the CV is created.",
+    "At the end it even scores your CV."
+   ],
+   "filming": "~32s. Printed CVs held to camera and compared side by side, then laptop demo.",
+   "product": {
+    "introduced_at_beat": 5,
+    "spoken_brand": "not spoken - only shown",
+    "cta": "none (ends on CV creation and scoring)",
+    "features_used": [
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "CV score / analysis"
+    ]
+   },
+   "allowed_localisation": [
+    "number of 'rejected' repetitions",
+    "slang ('aesthetic', 'gatekeep')",
+    "softened ATS-passing claim"
+   ],
+   "not_allowed": [
+    "dropping the printed old-vs-new CV comparison",
+    "replacing the demo with a long ATS lecture",
+    "guaranteed-pass or score-threshold assurance",
+    "'nobody reads your CV' hook (N10)"
+   ],
+   "current_page_sources": {
+    "de": "7682028282191105312",
+    "fr": "7682028282191105312",
+    "es": "7667662711190195489"
+   },
+   "source_urls": {
+    "7667662711190195489": "https://www.tiktok.com/@danielaavega___/video/7667662711190195489",
+    "7682028282191105312": "https://www.tiktok.com/@emy.jobstep.io/video/7682028282191105312"
+   }
+  },
+  "X03": {
+   "title_en": "Former employee reveals an HR secret",
+   "canonical_source": "7692059934875340064",
+   "accepted_sources": [
+    "7692059934875340064",
+    "7685281585674849569"
+   ],
+   "accepted_notes": {
+    "7685281585674849569": "Same hook (ex big-company employee, HR secret), same premise (works for any position) and same demo order: copy job link -> open named tool -> upload + paste link -> low match score -> rework -> higher score. Variant differences only: longer laptop demo on a specific Indeed vacancy, ends with download instead of 'repeat for every job'. Its applications dashboard, 'New job' and cover-letter steps are unsupported and must be dropped."
+   },
+   "rejected_sources": {},
+   "hook": "'I worked at a big company - HR won't want you to know this, but I'll show you.'",
+   "premise": "An ex-insider shares a method that works for any position: tailor the CV to each specific job ad and watch the match score rise.",
+   "beats": [
+    "Hook: worked at a big company; HR would rather keep this secret.",
+    "It works for any position.",
+    "Copy the link of the job ad you want.",
+    "Open the named tool, upload your CV, paste the link.",
+    "Poor match score shown.",
+    "AI reworks the CV with relevant background/keywords; a few small tweaks yourself.",
+    "Score rises to Y.",
+    "Close: do this for every job ad you're interested in."
+   ],
+   "filming": "~35s. Talking head handling a small object (source: glasses), then tablet or laptop screen demo of link -> score -> rework -> higher score.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Spoken once at the start of the demo (beat 4).",
+    "cta": "Repeat the process for every job you're interested in.",
+    "features_used": [
+     "paste job-ad link or text",
+     "upload CV",
+     "CV score / analysis",
+     "AI rewrites / tailors CV to the job",
+     "edit everything yourself",
+     "download CV"
+    ]
+   },
+   "allowed_localisation": [
+    "job board used for the ad (Indeed, StepStone, InfoJobs...)",
+    "tablet or laptop",
+    "demo length (short vs extended with download)",
+    "score as X/Y placeholders"
+   ],
+   "not_allowed": [
+    "applications dashboard, 'New job' button or cover letter",
+    "dropping the ex-employee secret hook",
+    "showing no score change",
+    "turning it into an ex-HR Canva/ATS lecture (X16)"
+   ],
+   "current_page_sources": {
+    "de": "7685281585674849569",
+    "fr": "7692059934875340064",
+    "es": "7692059934875340064"
+   },
+   "source_urls": {
+    "7685281585674849569": "https://www.tiktok.com/@marine.realfakephotos/video/7685281585674849569",
+    "7692059934875340064": "https://www.tiktok.com/@srokolajobtips/video/7692059934875340064"
+   }
+  },
+  "N02": {
+   "title_en": "LinkedIn last-hour job-search trick",
+   "canonical_source": "7689223891197136148",
+   "accepted_sources": [
+    "7689223891197136148"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7690964265083079942": "silent on-screen variant: no spoken intro/conclusion, brand never named, ends on the CV reveal and drops the 'apply among the first' payoff - one delivery mode (voiceover) across all three countries"
+   },
+   "hook": "'Sorry, but since when can LinkedIn do this?'",
+   "premise": "A LinkedIn URL hack (86400 -> 3600) surfaces jobs posted in the last hour; paste the link into the tool to get a CV tailored to that job and apply first.",
+   "beats": [
+    "Hook: since when can LinkedIn do this?",
+    "Jobs -> 'past 24 hours' filter; the URL shows 86400 (seconds in a day).",
+    "Change it to 3600 -> only jobs from the last hour.",
+    "Copy the job link into the named tool.",
+    "Tool (named again) builds a CV tailored to that exact job.",
+    "Payoff: you apply among the first with a CV that improves your chances."
+   ],
+   "filming": "~33s. Spoken selfie intro, filmed LinkedIn browser steps (URL edit clearly visible), CV tool demo, selfie conclusion.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Spoken twice: when pasting the link (beat 4) and during tailoring (beat 5).",
+    "cta": "none (ends on the apply-first payoff)",
+    "features_used": [
+     "paste job-ad link or text",
+     "CV score / analysis",
+     "AI rewrites / tailors CV to the job"
+    ]
+   },
+   "allowed_localisation": [
+    "LinkedIn UI language",
+    "softened outcome claim ('better chance of an interview')"
+   ],
+   "not_allowed": [
+    "a different job-site trick or filter",
+    "skipping the 86400 -> 3600 URL edit",
+    "guaranteed-job claim",
+    "product shown before the LinkedIn trick"
+   ],
+   "current_page_sources": {
+    "de": "7689223891197136148",
+    "fr": "7689223891197136148",
+    "es": "7690964265083079942"
+   },
+   "source_urls": {
+    "7689223891197136148": "https://www.tiktok.com/@revekaonline/video/7689223891197136148",
+    "7690964265083079942": "https://www.tiktok.com/@ferni.tips/video/7690964265083079942"
+   }
+  },
+  "ESX11": {
+   "title_en": "Toxic shortcut for job applications",
+   "canonical_source": "7692988880336735509",
+   "accepted_sources": [
+    "7692988880336735509"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "'I have a super-toxic job tip.'",
+   "premise": "A self-described 'toxic' lazy shortcut: copy a job-ad link, paste it with your CV into the tool and get a tailored CV without spending hours applying.",
+   "beats": [
+    "Hook: I've got a super-toxic job tip.",
+    "Don't want to spend three hours a day applying? Save this video - so simple you barely have to think.",
+    "Copy the job-ad link from a job board (share button).",
+    "Spoken website: open it, upload your CV, paste the link.",
+    "AI analyses the requirements and tailors the CV; review and download.",
+    "'That's it - good luck, bye!'"
+   ],
+   "filming": "~39s. Talking head (glasses on), then laptop demo on a job board and the tool.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Website spoken once at the start of the tool demo (beat 4).",
+    "cta": "'Save this video' early (beat 2); ending is a good-luck sign-off.",
+    "features_used": [
+     "paste job-ad link or text",
+     "upload CV",
+     "AI rewrites / tailors CV to the job",
+     "edit everything yourself",
+     "download CV"
+    ]
+   },
+   "allowed_localisation": [
+    "local job board (Indeed, InfoJobs, StepStone...) shown correctly",
+    "brand name vs URL",
+    "slang for 'toxic'"
+   ],
+   "not_allowed": [
+    "cover-letter promise or 'New job' button (source shows these; unsupported)",
+    "dropping the 'toxic tip' + save-this-video hook",
+    "adding a score-driven or question-driven long demo"
+   ],
+   "current_page_sources": {
+    "de": "7692988880336735509",
+    "fr": "7692988880336735509",
+    "es": "7692988880336735509"
+   },
+   "source_urls": {
+    "7692988880336735509": "https://www.tiktok.com/@marietipsapply/video/7692988880336735509"
+   }
+  },
+  "N03": {
+   "title_en": "Why everyone is deleting ChatGPT",
+   "canonical_source": "7688735719120014600",
+   "accepted_sources": [
+    "7688735719120014600"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "On-screen text: 'POV: now I understand why EVERYONE is deleting ChatGPT' over a surprised reaction.",
+   "premise": "Silent music-backed montage: three numbered steps turn a job link into a tailored CV, implying the tool beats ChatGPT for this.",
+   "beats": [
+    "Text hook over surprised reaction: why everyone is deleting ChatGPT.",
+    "'1. Copy the job-ad link'.",
+    "'2. Go to this page'.",
+    "'3. Paste the link and let [brand] fix your CV' - tailored to the job.",
+    "Finished CV reveal ('and then your CV looks like this').",
+    "End card with the website address."
+   ],
+   "filming": "~15s. No voice; music, reaction selfie, fast laptop montage with numbered text overlays.",
+   "product": {
+    "introduced_at_beat": 3,
+    "spoken_brand": "not spoken - only shown (brand written at step 3, URL on the end card)",
+    "cta": "On-screen website address at the end.",
+    "features_used": [
+     "paste job-ad link or text",
+     "AI rewrites / tailors CV to the job"
+    ]
+   },
+   "allowed_localisation": [
+    "overlay wording and emojis",
+    "music track",
+    "job site used for the link"
+   ],
+   "not_allowed": [
+    "voiceover",
+    "more steps or a long demo (keep ~15s)",
+    "dropping the ChatGPT comparison hook"
+   ],
+   "current_page_sources": {
+    "de": "7688735719120014600",
+    "fr": "7688735719120014600",
+    "es": "7688735719120014600"
+   },
+   "source_urls": {
+    "7688735719120014600": "https://www.tiktok.com/@zorica.djurdjevic21/video/7688735719120014600"
+   }
+  },
+  "A202610061331": {
+   "title_en": "Two CVs: who gets the interview?",
+   "canonical_source": "7690984077121424673",
+   "accepted_sources": [
+    "7690984077121424673"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {},
+   "hook": "Two printed CVs for the same job: 'Who do you think gets the interview?'",
+   "premise": "A faceless side-by-side comparison shows why the graphic CV loses (ATS can't read it, missing keywords) and the plain one wins; the tool's chat builds the winning kind.",
+   "beats": [
+    "Two printed CVs, same position: who gets invited?",
+    "Answer: this one.",
+    "Why the other loses: icons/charts ATS can't read, missing keywords.",
+    "The winner uses a simple ATS-friendly format.",
+    "Spoken website: the chat goes through your experience asking questions and builds the CV.",
+    "Close-up of the experience section: concrete results listed."
+   ],
+   "filming": "~45s. Faceless overhead shot of two printed CVs (source: on a bed), then laptop chat and CV close-up.",
+   "product": {
+    "introduced_at_beat": 5,
+    "spoken_brand": "Spoken once when introducing the chat (beat 5).",
+    "cta": "none (ends on experience-section close-up)",
+    "features_used": [
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job",
+     "choose template"
+    ]
+   },
+   "allowed_localisation": [
+    "candidate labels (1/2, left/right)",
+    "softened readability claim",
+    "surface the CVs lie on"
+   ],
+   "not_allowed": [
+    "showing the creator's face as a talking head",
+    "dropping the viewer guess question",
+    "dropping the results-in-experience close-up"
+   ],
+   "current_page_sources": {
+    "de": "7690984077121424673",
+    "fr": "7690984077121424673",
+    "es": "7690984077121424673"
+   },
+   "source_urls": {
+    "7690984077121424673": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673"
+   }
+  },
+  "N04": {
+   "title_en": "Inbox suddenly full of interview replies",
+   "canonical_source": "7692125028871146760",
+   "accepted_sources": [
+    "7692125028871146760"
+   ],
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7691177962904800520": "Different demo and order: opens on the inbox result, ATS reason is hearsay, unnamed website where details are entered - no old-CV upload, no bad-score reveal, no before/after; adds a '3-4 days' reply claim and ends with a casual 'try it' without a spoken brand/URL. Also missing the 'blamed connections' beat."
+   },
+   "hook": "'Months - that's how long I've been looking for a job, and nothing came back.'",
+   "premise": "Months of silence vs an inbox now full of replies; the problem wasn't connections but a disastrous CV, which the tool scored poorly and rebuilt for ATS.",
+   "beats": [
+    "Hook: months of applying to every ad, no replies.",
+    "Now: inbox full of replies shown.",
+    "Thought others just had connections - actually my CV was a disaster (old CV shown).",
+    "Named tool: uploaded, terrible score.",
+    "The app asks about experience, who you are, where you want to go; format rebuilt -> new CV, look at the difference.",
+    "Why: ATS systems screen CVs; some never reach a human.",
+    "New CV gets read -> the invitations; spoken URL: try it."
+   ],
+   "filming": "~66s. Selfie story, screen of the inbox, laptop score and new CV, back to selfie for the conclusion.",
+   "product": {
+    "introduced_at_beat": 4,
+    "spoken_brand": "Spoken at the upload/score step (beat 4) and as a URL in the closing recommendation (beat 7).",
+    "cta": "Try the website (spoken URL) - it checks your whole CV.",
+    "features_used": [
+     "upload CV",
+     "CV score / analysis",
+     "answer questions in chat",
+     "AI rewrites / tailors CV to the job"
+    ]
+   },
+   "allowed_localisation": [
+    "email client language",
+    "duration of the search ('months')",
+    "softened ATS-pass claim"
+   ],
+   "not_allowed": [
+    "dropping the old-CV upload and bad-score reveal",
+    "result-first opening with a shortened unnamed-tool demo",
+    "specific reply-time promises (e.g. '3-4 days')",
+    "guaranteed 'gets through to a human' claim"
+   ],
+   "current_page_sources": {
+    "de": "7692125028871146760",
+    "fr": "7692125028871146760",
+    "es": "7691177962904800520"
+   },
+   "source_urls": {
+    "7691177962904800520": "https://www.tiktok.com/@jimena.ruizf/video/7691177962904800520",
+    "7692125028871146760": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760"
+   }
+  }
+ }
+}

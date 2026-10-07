@@ -18,7 +18,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
+from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -292,6 +292,11 @@ def run(dry_run=False, only_detect=False):
                     notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
             except Exception as e:
                 print('audit failed:', str(e)[:200])
+            try:  # Monday: every format's three countries TOGETHER against its reference (cached unless anything changed)
+                group_report(fmts, mkts, cfg, meta, fix=True)
+                state.save('formats.json', fmts)
+            except Exception as e:
+                print('cross-country check failed:', str(e)[:200])
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
@@ -966,6 +971,35 @@ def standardize(only=None):
     return report
 
 
+def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
+    """Cross-country check of all formats; with fix=True failing groups are repaired (never approved scripts) and
+    checked again. Sends one Slack report with the result types kept separate."""
+    notes = []
+    if fix:  # script cues that point to nothing in the resources become stage directions (all unlocked pages)
+        for f in [f for f in fmts if f.get('status') in ('active', 'pending')]:
+            for mk in mkts:
+                pid = page_of(f, mk['key'])
+                if pid and not align.approved_script(f['id'], mk['lang']) and reword.fix_asset_cues(pid):
+                    notes.append(f"{f['title']}: {mk['key']}: script cues cleaned (resources)")
+    results, dups = crosscheck.run(fmts, mkts, cfg, page_of, meta, force=force)
+    if fix:
+        for f in [f for f in fmts if results.get(f['id'], {}).get('status') == 'fail'
+                  or results.get(f['id'], {}).get('title_fixes')]:
+            try:
+                res, changed, awaiting = crosscheck.group_cycle(f, mkts, cfg, page_of, meta)
+            except Exception as e:  # one format's error never stops the others
+                res, changed, awaiting = {**results[f['id']], 'status': 'unverified', 'passed': False,
+                                          'reasons': [f'repair error: {str(e)[:200]}']}, [], []
+            results[f['id']] = res
+            notes += [f"{f['title']}: {c}" for c in changed] + [f"{f['title']}: ⏸ {a}" for a in awaiting]
+            state.save('meta.json', meta)
+    text = crosscheck.report(results, dups, fmts) + ('\n\nRepairs:\n' + '\n'.join(notes) if notes else '')
+    print(text)
+    notify.push('🌍 Cross-country format check (DE/FR/ES)', text[:3800])
+    state.save('meta.json', meta)
+    return results, dups
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
@@ -989,6 +1023,13 @@ def main():
     ap.add_argument('--accounts-add', default='', help='JSON file of checked accounts to add (with evidence)')
     ap.add_argument('--align', action='store_true', help='rewrite every script sentence by sentence against its example')
     ap.add_argument('--set-example', default='', help='FORMAT_ID:market:tiktok_url - put this example video on that page')
+    ap.add_argument('--group-audit', action='store_true', help='cross-country check of all formats (report only)')
+    ap.add_argument('--group-fix', action='store_true', help='cross-country check + automatic repairs of failing groups')
+    ap.add_argument('--gate-rehearsal', action='store_true', help='run the publication gate on passing live formats (no publish)')
+    ap.add_argument('--apply-approved', action='store_true', help='write approved scripts (and their examples) to the pages')
+    ap.add_argument('--approval-drafts', action='store_true', help='replacement drafts for approval-locked scripts that '
+                    'fail the cross-country check (nothing written to Notion)')
+    ap.add_argument('--force', action='store_true', help='with --group-audit/--group-fix: ignore cached group results')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -1155,6 +1196,42 @@ def main():
         bad = [r for r in rep if r[2] != 'ok']
         notify.push('✍️ Scripts rewritten sentence by sentence', f"{len(rep) - len(bad)}/{len(rep)} pages rewritten"
                     + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
+        return
+    if a.gate_rehearsal:
+        # controlled end-to-end check of the publication gate on live formats whose group already passes:
+        # page audit of every country + cross-country check, exactly as for a new format - but nothing is published
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        history, account_info = state.load('history.json', {}), state.load('accounts.json', {})
+        mkts = M.load(cfg)
+        lines = []
+        for f in [f for f in fmts if f.get('status') == 'active'
+                  and (meta.get('group_audit') or {}).get(f['id'], {}).get('status') == 'pass']:
+            before = f.get('status')
+            ok, reasons = gate.check(f, mkts, cfg, history, account_info, meta, page_of, set_page, make_page, rebuild_page)
+            assert f.get('status') == before  # the rehearsal never changes publication state
+            lines.append(f"{f['title']}: {'PASS' if ok else 'HELD'} " + '; '.join(reasons)[:300])
+        print('\n'.join(lines) or 'no passing group to rehearse', flush=True)
+        state.save('meta.json', meta)
+        notify.push('🧪 Gate rehearsal (nothing published)', '\n'.join(lines)[:3500] or 'no passing group')
+        return
+    if a.apply_approved:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        done = crosscheck.apply_approvals(fmts, M.load(cfg), cfg, page_of, meta)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
+        if done:
+            notify.push('🔒 Approved scripts applied', '\n'.join(done)[:3500])
+        return
+    if a.approval_drafts:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        crosscheck.approval_drafts(fmts, M.load(cfg), cfg, page_of, meta)
+        state.save('meta.json', meta)
+        return
+    if a.group_audit or a.group_fix:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        group_report(fmts, M.load(cfg), cfg, meta, fix=a.group_fix, force=a.force)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

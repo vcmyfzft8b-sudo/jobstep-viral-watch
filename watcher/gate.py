@@ -10,7 +10,7 @@ Otherwise the format waits (status 'pending') and every run tries again; after M
 import re
 import time
 
-from . import audit, notify, notion, state, tiktok
+from . import audit, crosscheck, notify, notion, state, tiktok
 
 MAX_TRIES = 4
 
@@ -44,6 +44,11 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
         meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = status
         if status not in ('ok', 'fixed'):
             reasons.append(f"{mk['T']['flag']} {' / '.join(notes)[:160]}")
+    if not reasons:  # every page passed on its own - now all countries TOGETHER against the reference definition
+        res, changed, awaiting = crosscheck.group_cycle(fmt, mkts, cfg, page_of, meta)
+        if not res['passed']:
+            reasons.append(f"cross-country check {res['status']}: " + '; '.join(res.get('reasons', []))[:300])
+            reasons += awaiting
     return not reasons, reasons
 
 
@@ -133,7 +138,8 @@ def finish_listing(fmt, mkts, fmts, history, cfg, rerank, checkpoint=None):
 
 
 def has_unknown(fmt, mkts, meta):
-    return any(meta.get('audit', {}).get(f"{fmt['id']}:{mk['key']}") in ('unverified', 'error', None) for mk in mkts)
+    return (any(meta.get('audit', {}).get(f"{fmt['id']}:{mk['key']}") in ('unverified', 'error', None) for mk in mkts)
+            or meta.get('group_audit', {}).get(fmt['id'], {}).get('status') == 'unverified')
 
 
 def hold(fmt, reasons, kind, count_attempt=True):

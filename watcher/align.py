@@ -11,6 +11,7 @@ Rules (agreed 2026-10-07):
 Only the script section is replaced (old text backed up in state/script_backup.json); the filming directions are
 then matched to the new script.
 """
+import json
 import re
 
 from . import llm, localize, notion, reword, state
@@ -69,7 +70,7 @@ def matches_approved(page_id, lang, links, spec):
     return signature(reword.script_blocks(page_id)) == signature(notion.script_paragraphs(spec, links, lang))
 
 
-def align_page(fmt, page_id, lang, cfg, links):
+def align_page(fmt, page_id, lang, cfg, links, feedback=''):
     """Returns (status, why)."""
     T = TEXT[lang]
     src = localize.current_source(page_id)
@@ -93,6 +94,8 @@ def align_page(fmt, page_id, lang, cfg, links):
     base = speech if _words(speech) >= 15 else screen  # text-only videos: the on-screen texts are the script
     voiceover = _words(speech) >= 15
     n_orig = _words(base)
+    from . import crosscheck
+    ref = crosscheck.reference(fmt['id'])
     prompt = f"""ORIGINAL JobStep video ({'speech' if voiceover else 'on-screen texts, no speech'}):
 {base[:4000]}
 {('On-screen texts of the original: ' + screen[:800]) if voiceover and screen else ''}
@@ -103,11 +106,15 @@ recording is shown, and the asset names):
 
 {PARAKEET_FACTS}
 
-Write our new {T['lang_name']} script ({T['style']}) that mirrors the ORIGINAL sentence by sentence:
-1. Exactly one sentence of ours for each sentence of the original, in the same order, about the same length.
-   The whole script must have {int(n_orig * 0.85)}-{int(n_orig * 1.1)} words (the original has {n_orig}). Add nothing.
-2. Same meaning, but build every sentence differently: other word order, a question instead of a statement (or the
-   other way round), other words. A native viewer must not recognise the original's sentences.
+{('REFERENCE DEFINITION of this format (beats, product moment, brand/CTA rules): ' + json.dumps(ref, ensure_ascii=False)) if ref else ''}
+
+Write our new {T['lang_name']} script ({T['style']}) for the SAME FORMAT, independently worded:
+1. Same beats in the same order as the original (and the reference), the product introduced at the same beat, about
+   the same length. The whole script must have {int(n_orig * 0.8)}-{int(n_orig * 1.1)} words (the original has
+   {n_orig}). Add no new beats, claims or features.
+2. Write every beat in your OWN words, as a creator would tell it from scratch: do NOT translate or paraphrase the
+   original's sentences one by one, do not keep its sentence structure, images or turns of phrase (only the hook
+   idea may stay close). A native viewer who saw the original must not recognise any sentence.
 3. Where the original says or writes JobStep / jobstep.io, write "Parakeet AI" / parakeet-ai.com/resume-maker -
    exactly as often and at the same spots. Where the original only shows the app without naming it (e.g. "this tool
    here"), do the same: do NOT name it. Never mention JobStep.
@@ -122,9 +129,9 @@ Write our new {T['lang_name']} script ({T['style']}) that mirrors the ORIGINAL s
 Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceover).lower()},
 "script": [{{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "<one sentence>",
 "new_paragraph": false}}]}}"""
-    why = ''
+    why = feedback
     for attempt in range(3):
-        extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
+        extra = f'\n\nA reviewer rejected the current/previous version: {why}. Fix exactly that.' if why else ''
         spec = llm.chat_json(cfg['models']['build'], 'You are a senior UGC script writer. Reply with JSON only.',
                              prompt + extra, timeout=1200)
         why = _validate(spec, n_orig, base)

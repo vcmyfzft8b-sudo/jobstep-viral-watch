@@ -85,3 +85,22 @@ python -m unittest discover -s tests -v
 - `watcher/notion.py` – page layout, video upload, numbered list
 - `watcher/rank.py` – list order
 - `registry/formats.json` – the formats on the DACH page (copied into the state branch on first run)
+
+## Cross-country format check
+
+`watcher/crosscheck.py` compares the three countries of every format **together** against the format's reference
+definition in `registry/format_references.json` (hook and premise, ordered story beats, filming and demonstration
+sequence, product introduction with spoken brand/URL placement and CTA, allowed localisation differences). Results are
+reported separately per dimension and country: format consistency, script matching its example, independent
+wording, Parakeet features and claims, filming directions; approval-lock status is reported on its own and never
+counts as a pass.
+
+- A group result is cached under a key built from all three pages' content fingerprints, their example source IDs,
+  the SHA-256 of the uploaded example videos, the reference definition and `AUDIT_VERSION`; any change invalidates it.
+- Missing evidence (no page, unreadable example, unknown video bytes, no reference) makes the group `unverified`.
+- The same source video or uploaded video under different format IDs is flagged as a possible duplicate (never deleted).
+- New and changed groups stay in staging (quality gate) until the group passes. Failing groups are repaired
+  automatically where allowed (canonical example, independently worded rewrite, directions); approval-locked scripts
+  are only reported for approval.
+- Modes: `group-audit` (report), `group-audit-force` (ignore cache), `group-fix` (repair + re-check). The Monday run
+  does the cached check with repairs.

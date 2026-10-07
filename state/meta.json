@@ -1022,8 +1022,8 @@
   "A20261006183623:es": "ok",
   "A20261006183623:fr": "ok",
   "ESX11:de": "ok",
-  "ESX11:es": "ok",
-  "ESX11:fr": "ok",
+  "ESX11:es": "fixed",
+  "ESX11:fr": "fixed",
   "N01:de": "ok",
   "N01:es": "ok",
   "N01:fr": "ok",
@@ -1042,9 +1042,9 @@
   "N10:de": "ok",
   "N10:es": "ok",
   "N10:fr": "ok",
-  "X03:de": "ok",
+  "X03:de": "fixed",
   "X03:es": "ok",
-  "X03:fr": "ok",
+  "X03:fr": "fixed",
   "X13:de": "ok",
   "X13:es": "ok",
   "X13:fr": "ok",
@@ -1068,9 +1068,9 @@
   "A20261006183623:de": "331882ac78516c1bf4661eba218a2c6be56cbd4714b462658906e9cfbf964dd4",
   "A20261006183623:es": "ca06e94e5bbf2114220237f790e9618ec5cead703849adca5e61a239058e4e47",
   "A20261006183623:fr": "79b79571493a2204c86afc93cdd800184edfb6e1dc7a1b06556950d4c2edb4c1",
-  "ESX11:de": "442050d973003ee13479cc1ca893b3a7233ea18412849eaee9ad57e4f6510a09",
-  "ESX11:es": "c98a0274e2c8f6885a0d9cd5d40dfdd15c7f9c3e44c56c1e8d04985811bf6da2",
-  "ESX11:fr": "6c3eada2edeeba85dbf5389cf134e142eabb31879093b7919da5ace8f178f14c",
+  "ESX11:de": "1f477cd33f9c4a4be93b5570ec17836445da6aa7fb50064874352a233da23d08",
+  "ESX11:es": "5246e47b7f2a3b080c5cea2ab94fe4c83be94051aa3f50828bbec378e7f2bf79",
+  "ESX11:fr": "d8d4071e61d1da683914f27bdbbbb2da1648023875d9607c2aeb0a2ea7532692",
   "N01:de": "cf3ad25dc030dd8949f3d273e71207e92bd09b7f7ca55e5291c71f8d21a41695",
   "N01:es": "da716c469edafa2ee12341d793ecc709e88bf0b5b1875632afd120844c31942b",
   "N01:fr": "717d800fbcfebba57a6e2e50af6b35339f2cd5d61d952b40e47732cc945dadb3",
@@ -1089,9 +1089,9 @@
   "N10:de": "2ea4e9d5cbafad49c523e5c2049091c81a0221f88382301e0c4c002cc6d3b25f",
   "N10:es": "ca31388df060b7fdbb4f3e7e1252f534a7c8ab87a79a8d3439b7fd6f3c969663",
   "N10:fr": "241f2257344b729efc9aaaf605bfc3b8f015cbc15bb9f8cf20ee925e233770bc",
-  "X03:de": "5c281d1c960df45252ab8e0be54ee6f25382f0114883f01a8f15954738649e24",
-  "X03:es": "f192b3cf072b35690f740bb343b222f3b1345b59c3a0dc73dd3f0af6899c1898",
-  "X03:fr": "0132fdd163fd5b331b050d828e578299db417dfd76c5106e4ef6001b64f1e5c9",
+  "X03:de": "58c0f0e900d934894e0edc55d5ca720eed5435c556d9d9cca22a2c3af62e4328",
+  "X03:es": "b926744c79fa84ea5af5ec3d7bbcd12ab20fd41609ab32968047d122aa5e56e4",
+  "X03:fr": "f78e2034a1e6f4b0b52379e5924ba8db5433cb9d9f659a34e49877aeb9951dde",
   "X13:de": "32d0a272bae74ba1fa2618579ef833cbbdd0ad62a807c613f2efbe193133cae6",
   "X13:es": "62f0a9731fc9539060d2d3ad3194d8edbb901f26655d8910507e3a109ba83666",
   "X13:fr": "66ba55020843d5a7a98518a4d09aa0b6cd32249d07b6c107b91afeff75d36f7b",
@@ -1531,7 +1531,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791407300,
+   "checked_at": 1791408629,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1548,7 +1548,7 @@
      "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
     }
    },
-   "key": "cbe9ac61affe84ac802e02addf1419123f617aa2bd6a13757f820d7119a49bec",
+   "key": "703791850e4d4c6cfc5c3f16b7fec8f8a5be76c14c98340995cba35a2518f78f",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1624,7 +1624,7 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass every check: each keeps the toxic-tip hook, the early save CTA, the beat order with the tool introduced at beat 4 and the good-luck sign-off, and each drops the source's cover-letter and 'New job' features; minor notes: ES says 'más posibilidades' (a soft benefit, not a guarantee) and lists its filming directions out of order, and FR's directions mention glasses only at the end.",
+   "summary": "All three countries pass every check: each keeps the 'toxic tip' and save-this-video hook, uses a local job board (LinkedIn, InfoJobs or Indeed), says the URL once at the start of the tool demo, drops the cover-letter and 'New job' steps, and ends with a good-luck sign-off; minor nits are that the ES directions list the save-video cue last, out of order, and FR says '50 applications' instead of 'three hours a day'.",
    "version": "group-2026-10-07.3"
   },
   "N01": {
@@ -2298,7 +2298,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791407568,
+   "checked_at": 1791408065,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2315,7 +2315,7 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "0623964cb8c12cbb6797502ce9f5d5d15dc3a6725dce5a1f452f3d554ea567f9",
+   "key": "a866cc1436f7a07fda00434eeb63857525af513b99dba82f9e903e2ea8961169",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2391,7 +2391,7 @@
     }
    },
    "status": "pass",
-   "summary": "All three scripts follow the reference format: ex-employee secret hook, works for any position, copy job link, open Parakeet AI (brand spoken once at beat 4), upload CV and paste the link, low score X, AI rework plus small manual tweaks, higher score Y, repeat for every job (DE also shows the allowed download step). The wording is written independently, every feature mentioned exists in Parakeet AI, the dashboard, 'New job' button and cover letter are dropped, and the filming directions match the scripts. Small notes that do not fail anything: the DE and ES directions ask for an on-screen hook or title text that the scripts never write out, and the DE example video's speech is in French.",
+   "summary": "All three pages follow X03 with the ex-employee HR-secret hook, the copy-link, upload, low X, AI rework, own tweaks and higher Y demo, the brand spoken once at beat 4 and the repeat-for-every-job close; the German page also uses the allowed download variant, the wording is independent, and the scripts use only real Parakeet AI features with no guaranteed outcomes.",
    "version": "group-2026-10-07.3"
   },
   "X13": {

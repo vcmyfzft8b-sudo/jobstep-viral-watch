@@ -921,6 +921,7 @@ def main():
     ap.add_argument('--reword', action='store_true', help='reword all page scripts (similar, not 1:1) - writes to Notion')
     ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
     ap.add_argument('--audit', action='store_true', help='check every page (example video, script) and fix until it passes')
+    ap.add_argument('--audit-failed', action='store_true', help='audit only the pages that did not pass last time')
     ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
     ap.add_argument('--accounts-add', default='', help='JSON file of checked accounts to add (with evidence)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
@@ -1042,9 +1043,10 @@ def main():
             notify.push('✍️ Scripts reworded (similar, not 1:1)', f"{len(ok)} pages reworded"
                         + (f"\nNot changed ({len(bad)}): " + '; '.join(f"{t} {m}: {why}" for t, m, _, why, _ in bad) if bad else ''))
         return
-    if a.audit:
+    if a.audit or a.audit_failed:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
-        rep = audit.run(fmts, M.load(cfg), cfg, state.load('history.json', {}), state.load('accounts.json', {}), meta, page_of, rebuild=rebuild_page)
+        rep = audit.run(fmts, M.load(cfg), cfg, state.load('history.json', {}), state.load('accounts.json', {}), meta, page_of,
+                        rebuild=rebuild_page, only_failed=a.audit_failed)
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
         flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}

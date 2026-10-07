@@ -191,9 +191,18 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
     return 'failed', notes + ['still failing: ' + '; '.join(v['script_issues'] + v['direction_issues'] + [v['example_issue']])[:200]]
 
 
-def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4, rebuild=None):
+def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4, rebuild=None, only_failed=False):
     import concurrent.futures as cf
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts]
+    last = meta.setdefault('audit', {})
+    if only_failed and not last:  # no record yet: the pages listed in registry/audit_todo.json are the open ones
+        try:
+            with open(os.path.join(os.path.dirname(ORIGINALS), 'audit_todo.json')) as fh:
+                todo = set(json.load(fh)['pages'])
+            last.update({f"{f['id']}:{mk['key']}": 'ok' for f in fmts for mk in mkts if f"{f['id']}:{mk['key']}" not in todo})
+        except FileNotFoundError:
+            pass
+    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts
+            if not (only_failed and last.get(f"{f['id']}:{mk['key']}") in ('ok', 'fixed'))]
 
     def one(job):
         f, mk = job
@@ -206,4 +215,8 @@ def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4, rebuild=No
         print(f"{f['title'][:45]} | {mk['key']} | {status} | {' / '.join(notes)}", flush=True)
         return f['title'], mk['key'], status, notes
     with cf.ThreadPoolExecutor(workers) as ex:
-        return list(ex.map(one, jobs))
+        rep = list(ex.map(one, jobs))
+    by_title = {f['title']: f['id'] for f in fmts}
+    for t, m, status, _ in rep:
+        last[f"{by_title.get(t, t)}:{m}"] = status
+    return rep

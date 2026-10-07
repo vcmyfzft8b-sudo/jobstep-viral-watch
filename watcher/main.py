@@ -176,6 +176,11 @@ def run(dry_run=False, only_detect=False):
             traceback.print_exc()
             notify.push('⚠️ JobStep watcher error', f"{v['url']}\n{str(e)[:300]}", click=v.get('url'))
             state.log({'type': 'error', 'video': vid, 'error': str(e)[:500]})
+    if not dry_run:  # formats built or brought back in this run: their pages changed -> audited again on Monday
+        changed = {e.get('format') for e in state.load('log.json', [])
+                   if e.get('ts', 0) >= now and e.get('type') in ('format_built', 'format_revived')}
+        for key in [k for k in meta.get('audit', {}) if k.split(':')[0] in changed]:
+            meta['audit'].pop(key, None)
     if backlog and not dry_run:
         notify.push(f'📋 {len(backlog)} older "taking off" videos from newly added accounts',
                     'Last 7 days – details on the Notion radar page')
@@ -236,6 +241,15 @@ def run(dry_run=False, only_detect=False):
                 traceback.print_exc()
                 notify.push('⚠️ Weekly clean-up failed', str(e)[:300])
 
+        if is_due:
+            try:  # Monday: every active format gets its missing language pages
+                for mk in mkts:
+                    if any(f.get('status') == 'active' and not page_of(f, mk['key']) for f in fmts):
+                        state.save('formats.json', fmts)
+                        fill_market(mk['key'])
+                        fmts[:] = load_formats()
+            except Exception as e:
+                print('fill pages failed:', str(e)[:200])
         if is_due:
             try:  # Monday: inspiration videos in each market's language for formats that still miss one
                 localize_report(localize.run(fmts, mkts, history, account_info, meta, cfg, page_of, now), only_changes=True)

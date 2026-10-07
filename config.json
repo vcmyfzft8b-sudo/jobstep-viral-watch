@@ -193,5 +193,14 @@
   },
   "discord": {
     "creator_category_prefix": "Creators"
+  },
+  "lineup": {
+    "spots": 15,
+    "max_swaps": 2,
+    "margin": 1.2,
+    "protect_days": 14,
+    "half_life_days": 21,
+    "min_own_videos": 5,
+    "min_tries": 3
   }
 }

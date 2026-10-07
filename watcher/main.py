@@ -17,7 +17,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, hot, llm, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
+from . import builder, classify, detect, discover, hot, lineup, llm, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -219,6 +219,19 @@ def run(dry_run=False, only_detect=False):
             state.save('own_accounts.json', own_accounts)
         except Exception as e:
             print('own creators failed:', str(e)[:200])
+
+    # 4c. Monday: weekly lineup - which formats are in the list at all (weakest out, clearly better archived ones in)
+    if not dry_run and not only_detect:
+        is_due, week_id = lineup.due(meta, now)
+        if is_due:
+            try:
+                p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
+                print('lineup:', [f['title'] for f, _, _ in p['out']], '->', [f['title'] for f, _, _ in p['in']])
+                meta['lineup'] = week_id
+                state.save('formats.json', fmts)
+            except Exception as e:
+                traceback.print_exc()
+                notify.push('⚠️ Weekly lineup failed', str(e)[:300])
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
@@ -676,6 +689,8 @@ def main():
     ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
     ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
     ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (more video checks), then re-sort')
+    ap.add_argument('--lineup', action='store_true', help='show the lineup scoreboard and what Monday would change (no changes)')
+    ap.add_argument('--lineup-apply', action='store_true', help='carry out the weekly lineup now')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -745,6 +760,28 @@ def main():
         for fid, x in sorted(o.items(), key=lambda kv: -kv[1]['n']):
             print(f"  {by.get(fid, fid)[:50]:50} ours: {x['n']} videos, {2 ** x['lift']:.2f}x usual, {x['hits_100k']} >=100k")
         rerank(M.load(cfg), fmts, state.load('history.json', {}), cfg)
+        return
+    if a.lineup or a.lineup_apply:
+        cfg, fmts, history = load_config(), load_formats(), state.load('history.json', {})
+        _, own_videos = own.load()
+        p = (lineup.apply(history, fmts, cfg, own_videos, M.load(cfg)) if a.lineup_apply
+             else lineup.plan(history, fmts, cfg, own_videos))
+        b = p['board']
+        print('IN THE LIST (weakest last):')
+        for f in sorted([f for f in fmts if f.get('status') == 'active' or f in [x[0] for x in p['out']]],
+                        key=lambda f: -b[f['id']]['form']):
+            x = b[f['id']]
+            print(f"  {x['form']:.2f}  {f['title'][:50]:50} JobStep {x['js_form']:.2f} ({x['all_videos']} videos) "
+                  f"x ours {x['own_factor']:.2f} ({x['own_videos']}) {'| protected: ' + p['protected'][f['id']] if p['protected'].get(f['id']) else ''}")
+        print('BENCH (best 8):')
+        for f in sorted([f for f in fmts if f.get('status') != 'active'], key=lambda f: -b[f['id']]['form'])[:8]:
+            x = b[f['id']]
+            print(f"  {x['form']:.2f}  {f['title'][:50]:50} JobStep {x['js_form']:.2f} ({x['all_videos']} videos) x ours {x['own_factor']:.2f} ({x['own_videos']})")
+        print('OUT:', [(f['title'], round(sc, 2), r) for f, sc, r in p['out']])
+        print('IN :', [(f['title'], round(sc, 2), r) for f, sc, r in p['in']])
+        if a.lineup_apply:
+            state.save('formats.json', fmts)
+            rerank(M.load(cfg), fmts, history, cfg)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

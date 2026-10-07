@@ -96,7 +96,8 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None):
     if file_upload_id:
         blocks.append(block('video', type='file_upload', file_upload={'id': file_upload_id}))
     blocks.append(para([rt(T['source'], link=video['url'])]))
-    blocks.append(block('callout', md(T['inspo_note'][0] + '\n' + T['inspo_note'][1]),
+    note = T['inspo_note'][:1] if video.get('own') else T['inspo_note']  # our own creator's video: no JobStep line
+    blocks.append(block('callout', md('\n'.join(note)),
                         icon={'type': 'emoji', 'emoji': '⚠️'}, color='gray_background'))
 
     blocks.append(block('heading_2', [rt('📲'), rt(T['title_h'], bold=True)]))

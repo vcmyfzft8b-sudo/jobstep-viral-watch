@@ -32,7 +32,11 @@ def report(history, own_videos, own_accounts, fmts, cfg, now):
     built = [title(e['format']) for e in log if e['type'] == 'format_built']
     revived = [title(e['format']) for e in log if e['type'] == 'format_revived']
     hot = list(dict.fromkeys(title(e['format']) for e in log if e['type'] == 'hot'))
-    lines += ['', f"*New formats added:* {', '.join(built) if built else 'none'}",
+    gone = [f"{title(e['format'])} ({e['form']})" for e in log if e['type'] == 'lineup_out']
+    came = [f"{title(e['format'])} ({e['form']})" for e in log if e['type'] == 'lineup_in']
+    lines += ['', f"*Lineup – taken out:* {', '.join(gone) if gone else 'none'}",
+              f"*Lineup – brought in:* {', '.join(came) if came else 'none'}"]
+    lines += [f"*New formats added:* {', '.join(built) if built else 'none'}",
               f"*Brought back from the archive:* {', '.join(revived) if revived else 'none'}",
               f"*Went hot (5+ viral):* {', '.join(hot) if hot else 'none'}"]
 

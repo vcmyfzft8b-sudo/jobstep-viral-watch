@@ -37,6 +37,7 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
         if not page_of(fmt, mk['key']):
             why = _build_missing(fmt, mk, cfg, make_page, set_page, staging)
             if why:
+                meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = 'unverified'
                 reasons.append(why)
                 continue
         status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rebuild=rebuild)
@@ -46,24 +47,98 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
     return not reasons, reasons
 
 
-def publish(fmt, mkts, page_of):
-    """All pages passed: into every market's format folder, format becomes active (the re-sort lists it)."""
+def _checkpoint(fmt, checkpoint=None):
+    """Keep a recovery journal even if execution stops between two Notion writes."""
+    with state.LOCK:
+        journal = state.load('publication_journal.json', {})
+        if fmt.get('publication'):
+            journal[fmt['id']] = fmt['publication']
+        else:
+            journal.pop(fmt['id'], None)
+        state.save('publication_journal.json', journal)
+        if checkpoint:
+            checkpoint()
+
+
+def _rollback(fmt, checkpoint=None):
+    publication = fmt['publication']
+    publication['stage'] = 'rollback_pending'
+    fmt['status'] = 'pending'
+    _checkpoint(fmt, checkpoint)
+    errors = []
+    for pid in list(reversed(publication['attempted'])):
+        try:
+            notion.move_page(pid, publication['parents'][pid])
+            publication['attempted'].remove(pid)
+            _checkpoint(fmt, checkpoint)
+        except Exception as e:
+            errors.append(f'{pid}: {str(e)[:120]}')
+    if not errors:
+        fmt.pop('publication', None)
+    _checkpoint(fmt, checkpoint)
+    return errors
+
+
+def publish(fmt, mkts, page_of, checkpoint=None):
+    """Move all pages or compensate every attempted move; persist recovery before side effects."""
+    missing = [mk['key'] for mk in mkts if not page_of(fmt, mk['key'])]
+    if missing:
+        raise RuntimeError('publish: missing pages: ' + ', '.join(missing))
+    previous = fmt.get('publication') or state.load('publication_journal.json', {}).get(fmt['id'])
+    if previous:
+        fmt['publication'] = previous
+        errors = _rollback(fmt, checkpoint)
+        if errors:
+            raise RuntimeError('publish: rollback still pending: ' + '; '.join(errors))
+    parents = {}
     for mk in mkts:
         pid = page_of(fmt, mk['key'])
-        if pid:
-            try:
-                notion.move_page(pid, mk['holder_page'])
-            except Exception as e:
-                print('publish: move failed', mk['key'], str(e)[:120])
+        parent = notion.api('GET', f'/pages/{pid}').get('parent', {})
+        if parent.get('type') != 'page_id' or not parent.get('page_id'):
+            raise RuntimeError(f'publish: cannot safely restore parent for {pid}')
+        parents[pid] = parent['page_id']
+    fmt['publication'] = {'stage': 'moving', 'parents': parents, 'attempted': []}
+    _checkpoint(fmt, checkpoint)
+    for mk in mkts:
+        pid = page_of(fmt, mk['key'])
+        # A timed-out move may have succeeded remotely. Journal it before the request so recovery restores it too.
+        fmt['publication']['attempted'].append(pid)
+        _checkpoint(fmt, checkpoint)
+        try:
+            notion.move_page(pid, mk['holder_page'])
+        except Exception as e:
+            errors = _rollback(fmt, checkpoint)
+            raise RuntimeError(f'publish: move failed: {e}; rollback ' +
+                               ('pending: ' + '; '.join(errors) if errors else 'complete')) from e
     fmt['status'] = 'active'
     fmt.pop('pending', None)
     fmt.pop('archived_reason', None)
+    fmt.pop('publication', None)
+    fmt['list_repair_pending'] = {'reason': 'pages moved; lists still need updating'}
+    _checkpoint(fmt, checkpoint)
+
+
+def finish_listing(fmt, mkts, fmts, history, cfg, rerank, checkpoint=None):
+    """Keep a successfully moved format active when listing fails; retry without undoing public list writes."""
+    try:
+        pos = rerank(mkts, fmts, history, cfg).index(fmt['id']) + 1
+    except Exception as e:
+        fmt['list_repair_pending'] = {'reason': str(e)[:200]}
+        _checkpoint(fmt, checkpoint)
+        return False, None, ['list update needs retry: ' + str(e)[:200]]
+    fmt.pop('list_repair_pending', None)
     fmt['listed_at'] = int(time.time())
+    _checkpoint(fmt, checkpoint)
+    return True, pos, []
 
 
-def hold(fmt, reasons, kind):
+def has_unknown(fmt, mkts, meta):
+    return any(meta.get('audit', {}).get(f"{fmt['id']}:{mk['key']}") in ('unverified', 'error', None) for mk in mkts)
+
+
+def hold(fmt, reasons, kind, count_attempt=True):
     p = fmt.setdefault('pending', {'since': int(time.time()), 'tries': 0, 'kind': kind})
-    p['tries'] += 1
+    p['tries'] += int(count_attempt)
     p['reasons'] = reasons
     fmt['status'] = 'pending'
     state.log({'type': 'format_held', 'format': fmt['id'], 'tries': p['tries'], 'reasons': reasons})
@@ -71,19 +146,34 @@ def hold(fmt, reasons, kind):
 
 def retry_pending(fmts, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild, rerank):
     """Every run: formats waiting at the gate are checked again; published -> Slack, given up after MAX_TRIES."""
-    for f in [f for f in fmts if f.get('status') == 'pending']:
-        ok, reasons = check(f, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild)
-        if ok:
-            publish(f, mkts, page_of)
-            pos = rerank(mkts, fmts, history, cfg).index(f['id']) + 1
-            notify.push('✅ Format passed the check – now live', f"*{f['title']}* is now in all lists as #{pos} "
-                        '(every language page checked: example, script, note, directions, title).')
-            state.log({'type': 'format_published', 'format': f['id'], 'position': pos})
-            continue
-        hold(f, reasons, f.get('pending', {}).get('kind', 'new'))
-        if f['pending']['tries'] >= MAX_TRIES:
-            f['status'] = 'archived'
-            f['archived_reason'] = 'did not pass the page check: ' + '; '.join(reasons)[:200]
-            notify.push('❌ Format held back for good', f"*{f['title']}* did not pass the page check after "
-                        f"{MAX_TRIES} runs:\n" + '\n'.join(reasons) + '\nIt stays in the archive and comes back if it '
-                        'goes viral again.')
+    checkpoint = lambda: (state.save('formats.json', fmts), state.save('meta.json', meta))
+    for f in [f for f in fmts if f.get('status') == 'pending' or f.get('list_repair_pending')]:
+        try:
+            repair = f.get('status') == 'active' and f.get('list_repair_pending')
+            ok, reasons = (True, []) if repair else check(f, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild)
+            if ok:
+                if not repair:
+                    publish(f, mkts, page_of, checkpoint)
+                listed, pos, reasons = finish_listing(f, mkts, fmts, history, cfg, rerank, checkpoint)
+                if not listed:
+                    continue
+                notify.push('✅ Format passed the check – now live', f"*{f['title']}* is now in all lists as #{pos} "
+                            '(every language page checked: example, script, note, directions, title).')
+                state.log({'type': 'format_published', 'format': f['id'], 'position': pos})
+                continue
+            count_attempt = not has_unknown(f, mkts, meta)
+            hold(f, reasons, f.get('pending', {}).get('kind', 'new'), count_attempt=count_attempt)
+            if count_attempt and f['pending']['tries'] >= MAX_TRIES:
+                f['status'] = 'archived'
+                f['archived_reason'] = 'did not pass the page check: ' + '; '.join(reasons)[:200]
+                notify.push('❌ Format held back for good', f"*{f['title']}* did not pass the page check after "
+                            f"{MAX_TRIES} runs:\n" + '\n'.join(reasons) + '\nIt stays in the archive and comes back if it '
+                            'goes viral again.')
+        except Exception as e:
+            if f.get('status') == 'active':
+                state.log({'type': 'publication_notification_error', 'format': f['id'], 'error': str(e)[:200]})
+            else:
+                hold(f, [str(e)[:200]], f.get('pending', {}).get('kind', 'new'), count_attempt=False)
+        finally:
+            state.save('formats.json', fmts)
+            state.save('meta.json', meta)

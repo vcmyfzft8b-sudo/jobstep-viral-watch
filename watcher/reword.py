@@ -70,6 +70,11 @@ def decode(text, links):
 
 
 def reword_page(fmt, page_id, lang, model, original='', feedback=''):
+    from . import align
+    if align.approved_script(fmt['id'], lang):
+        return 'skipped', 'approved script is locked', []
+    if not original:
+        return 'skipped', 'source evidence required for sentence-aligned rewrite', []
     blocks = script_blocks(page_id)
     enc = [(b, *encode(b)) for b in blocks]
     enc = [(b, t, l) for b, t, l in enc if t is not None]
@@ -81,17 +86,21 @@ def reword_page(fmt, page_id, lang, model, original='', feedback=''):
 maker. It was adapted from a viral JobStep video and is currently almost a 1:1 transcription/translation of it.
 {('The example video on the page (use it as the reference for the beats - do NOT copy its wording): ' + original[:2500]) if original else ''}
 
-Rewrite EVERY paragraph so the video stays VERY similar - same story, same beats, same order, same hook idea, roughly
-the same length (±15%), same tone ({T['style']}) - but is clearly reworded: translate the IDEA, not the sentence.
-Change the sentence structure of every line, use other openings, other examples/images and other filler words, merge
-or split sentences where it sounds natural. Only the hook line may stay close. A native viewer who saw the JobStep
-video must NOT recognise sentences from it. Keep it natural spoken {T['lang_name']}.
+Rewrite EVERY paragraph with exactly one adapted sentence per original sentence, in the same order. Keep the same
+story, beats, meaning, hook idea and tone ({T['style']}); add no story beats, examples, filler or CTA. Change each
+sentence's wording and structure naturally, without merging or splitting source sentences. The whole script must
+be at most 110% of the original word count. Only the hook line may stay close. A native viewer who saw the JobStep
+video must NOT recognise its sentences. Keep it natural spoken {T['lang_name']}.
 Rules:
 - Keep every token ⟦n⟧...⟦/n⟧ exactly as it is (same number, same text inside) and in the same order and paragraph.
 - Keep **bold** lines bold (they are on-screen texts). Scores/percentages the app shows are ALWAYS X (before) and Y
   (after) - replace any concrete number like "64 %" or "40 sobre 100" with X or Y.
 - Address the viewer consistently as { {'de': 'du', 'fr': 'tu', 'es': 'tú (never vosotros)'}[lang] }. No backticks.
-- Keep "Parakeet AI" and parakeet-ai.com/resume-maker as they are. Never mention JobStep.
+- Mirror the ORIGINAL's spoken brand mentions exactly in count and story position: replace JobStep with Parakeet
+  AI, and its spoken URL with parakeet-ai.com/resume-maker, only where present in the source. Zero spoken brand
+  mentions in the original means zero in ours. Linked cue labels are filming directions, not spoken words. For
+  silent videos compare on-screen text instead. Never add a CTA or website absent from the original.
+- The spoken/on-screen script must not exceed 110% of the original word count. Never mention JobStep.
 - No promises nobody can guarantee (e.g. "you will definitely get the job") - say "better chances" instead.
 
 {('A reviewer found these problems - fix them: ' + feedback) if feedback else ''}
@@ -104,13 +113,13 @@ Return JSON {{"paragraphs": ["<reworded paragraph 0>", "<reworded paragraph 1>",
     for attempt in range(3):
         extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
         r = llm.chat_json(model, 'You are a senior UGC script writer. Reply with JSON only.', prompt + extra, timeout=1200)
-        why, changes = _validate(enc, r.get('paragraphs', []))
+        why, changes = _validate(enc, r.get('paragraphs', []), original)
         if not why:
             return 'ok', '', changes
     return 'skipped', why, []
 
 
-def _validate(enc, new):
+def _validate(enc, new, original=''):
     if len(new) != len(enc):
         return f'returned {len(new)} paragraphs instead of {len(enc)}', []
     changes = []
@@ -122,6 +131,16 @@ def _validate(enc, new):
         if len(old) > 60 and not 0.75 <= len(text) / len(old) <= 1.25:
             return f'paragraph {i}: length changed too much ({len(text)} vs {len(old)} characters)', []
         changes.append((b, old, text, links))
+    if original:
+        from . import align
+        base = align.source_script(original)
+        rendered = [{'type': b['type'], b['type']: {'rich_text': decode(text, links)}} for b, _, text, links in changes]
+        spoken = spoken_text(rendered)
+        if align._words(spoken) > 1.10 * align._words(base):
+            return 'script exceeds 110% of the original word count', []
+        want, have = len(align.JOBSTEP.findall(base)), len(re.findall(r'parakeet', spoken, re.I))
+        if have != want:
+            return f'spoken brand count is {have}; source requires {want}; cue labels do not count', []
     return '', changes
 
 
@@ -147,7 +166,7 @@ def run(fmts, mkts, cfg, page_of, originals=None, dry=False):
             from . import localize
             pid = page_of(f, mk['key'])
             src = localize.current_source(pid)
-            ref = localize.example_text(src['url']) if src and src.get('url') else (originals or {}).get(f['id'], '')
+            ref = localize.example_text(src.get('url') if src else None, page_id=pid) or (originals or {}).get(f['id'], '')
             status, why, changes = reword_page(f, pid, mk['lang'], cfg['models']['build'], ref)
             return f, mk, status, why, changes
         except Exception as e:
@@ -227,7 +246,7 @@ def spoken_text(blocks):
         for x in b[b['type']].get('rich_text', []):
             if ((x.get('text') or {}).get('link') or {}).get('url'):
                 continue  # cue link label
-            parts.append(x.get('plain_text', ''))
+            parts.append(x.get('plain_text', x.get('text', {}).get('content', '')))
         t = re.sub(r'\([^)]*\)\s*', '', ''.join(parts))
         if any(t.strip().startswith(TEXT[l]['silent_label']) for l in TEXT):
             continue

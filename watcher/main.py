@@ -32,9 +32,14 @@ def _gate(fmt, mkts, fmts, history, cfg, kind):
     meta, accounts = CTX.get('meta', {}), CTX.get('accounts') or state.load('accounts.json', {})
     ok, reasons = gate.check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild_page)
     if ok:
-        gate.publish(fmt, mkts, page_of)
-        return True, rerank(mkts, fmts, history, cfg).index(fmt['id']) + 1, []
-    gate.hold(fmt, reasons, kind)
+        checkpoint = lambda: (state.save('formats.json', fmts), state.save('meta.json', meta))
+        try:
+            gate.publish(fmt, mkts, page_of, checkpoint)
+        except Exception as e:
+            gate.hold(fmt, [str(e)], kind, count_attempt=False)
+            return False, None, [str(e)]
+        return gate.finish_listing(fmt, mkts, fmts, history, cfg, rerank, checkpoint)
+    gate.hold(fmt, reasons, kind, count_attempt=not gate.has_unknown(fmt, mkts, meta))
     return False, None, reasons
 
 
@@ -481,6 +486,11 @@ def _prepare(v, prepared):
 
 def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None, attempts=1):
     """Build one market's page (its language, current layout). Returns (page_id_or_url, spec, problems)."""
+    if replace_page:
+        locked = next((f for f in load_formats() if page_of(f, mk['key']) == replace_page
+                       and align.approved_script(f['id'], mk['lang'])), None)
+        if locked:
+            return None, {}, ['approved script/example locked; full-page rebuild refused']
     work, video_file, transcript, frames, own = _prepare(v, prepared)
     try:
         feedback = ''
@@ -523,16 +533,23 @@ def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
     for mk in mkts:
         if page_of(fmt, mk['key']):
             continue
-        pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
-        if problems:
-            continue
-        set_page(fmt, mk['key'], pid)
-        status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rebuild=rebuild_page)
+        pending_pages = fmt.setdefault('pending_pages', {})
+        pid = pending_pages.get(mk['key'])
+        if not pid:
+            pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
+            if problems:
+                continue
+            pending_pages[mk['key']] = pid
+            state.save('formats.json', fmts)
+        staged_page_of = lambda f, m: pid if f['id'] == fmt['id'] and m == mk['key'] else page_of(f, m)
+        status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, staged_page_of)
+        meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = status
         if status in ('ok', 'fixed'):
             notion.move_page(pid, mk['holder_page'])
+            set_page(fmt, mk['key'], pid)
+            pending_pages.pop(mk['key'], None)
             added.append(mk['T']['flag'])
-        else:  # not good enough yet: not linked anywhere, tried again with the next video
-            set_page(fmt, mk['key'], None)
+        state.save('formats.json', fmts)
     if added:
         rerank(mkts, fmts, history, cfg)
     return added
@@ -720,7 +737,7 @@ Return JSON {{"pages": [{{"index": 0, "format": "<format id or null>", "descript
 
 
 def fill_market(m):
-    """Build the missing pages of active formats for one market from their inspiration videos, then sort the list."""
+    """Missing language pages stay in staging until their complete audit passes."""
     cfg = load_config()
     mk = next(x for x in M.load({**cfg, 'markets': {k: {**v, 'enabled': True} for k, v in cfg['markets'].items()}}) if x['key'] == m)
     fmts, history = load_formats(), state.load('history.json', {})
@@ -737,14 +754,10 @@ def fill_market(m):
             print('video unavailable for', f['title'])
             continue
         try:
-            pid, spec, problems = make_page(v, mk, cfg, None)
-            if problems:
-                print('draft only for', f['title'], problems)
-                continue
-            set_page(f, m, pid)
-            built += 1
+            added = ensure_market_pages(f, v, [mk], fmts, history, cfg, None)
+            built += len(added)
             state.save('formats.json', fmts)
-            print('built', m, f['title'], '->', spec['page_title'])
+            print('published' if added else 'held in staging', m, f['title'])
         except Exception as e:
             print('build failed', f['title'], str(e)[:200])
     state.save('formats.json', fmts)

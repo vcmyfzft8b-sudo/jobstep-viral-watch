@@ -24,18 +24,49 @@ def _words(t):
     return len(re.findall(r'\w+', t))
 
 
+def source_script(example):
+    """Use speech for voiced videos, on-screen copy for silent ones; never count both together."""
+    speech = example.split('SPEECH:', 1)[-1].strip()
+    screen = example.split('SPEECH:', 1)[0].replace('ON-SCREEN:', '').strip()
+    return speech if _words(speech) >= 15 else screen
+
+
 APPROVED = __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'registry', 'approved_scripts.json')
 
 
-def approved(fid, lang, url):
-    """A script the user approved word for word (only while the page still shows the example it was written for)."""
+def approved_script(fid, lang):
+    """The approval lock survives changes to the example; automation cannot revoke it."""
     import json
     try:
         with open(APPROVED) as f:
             x = json.load(f).get(lang, {}).get(fid)
     except FileNotFoundError:
         return None
+    return x
+
+
+def approved(fid, lang, url):
+    x = approved_script(fid, lang)
     return x if x and url and x['example'].split('?')[0] == url.split('?')[0] else None
+
+
+def matches_approved(page_id, lang, links, spec):
+    """Compare actual text, cue links, emphasis and paragraph boundaries to the approved rendering."""
+    def signature(blocks):
+        out = []
+        for b in blocks:
+            # Notion may merge adjacent rich-text fragments; compare characters with their relevant styling.
+            chars = []
+            for x in b[b['type']].get('rich_text', []):
+                t = x.get('text', {})
+                style = (x.get('type', 'text'), (t.get('link') or {}).get('url'),
+                         bool(x.get('annotations', {}).get('bold')), bool(x.get('annotations', {}).get('code')))
+                chars.extend((c, style) for c in t.get('content', x.get('plain_text', '')))
+            while chars and chars[-1][0].isspace():
+                chars.pop()
+            out.append((b['type'], chars))
+        return out
+    return signature(reword.script_blocks(page_id)) == signature(notion.script_paragraphs(spec, links, lang))
 
 
 def align_page(fmt, page_id, lang, cfg, links):
@@ -44,9 +75,13 @@ def align_page(fmt, page_id, lang, cfg, links):
     src = localize.current_source(page_id)
     url = src['url'] if src else None
     ok = approved(fmt['id'], lang, url)
+    if approved_script(fmt['id'], lang) and not ok:
+        return 'skipped', 'approved script is locked; example differs from the approved example'
     if ok:
+        if matches_approved(page_id, lang, links, ok):
+            return 'ok', 'approved script unchanged'
         return _write(fmt, page_id, lang, cfg, links, {'voiceover': ok['voiceover'], 'script': ok['script']}, 'approved script')
-    example = localize.example_text(url) if url else ''
+    example = localize.example_text(url, page_id=page_id)
     if not example:
         return 'skipped', 'example video could not be read'
     blocks = reword.script_blocks(page_id)
@@ -92,7 +127,7 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
         extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
         spec = llm.chat_json(cfg['models']['build'], 'You are a senior UGC script writer. Reply with JSON only.',
                              prompt + extra, timeout=1200)
-        why = _validate(spec, n_orig)
+        why = _validate(spec, n_orig, base)
         if not why:
             break
     else:
@@ -102,6 +137,9 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
 
 
 def _write(fmt, page_id, lang, cfg, links, spec, info):
+    locked = approved_script(fmt['id'], lang)
+    if locked and (spec.get('script') != locked['script'] or spec.get('voiceover', True) != locked['voiceover']):
+        return 'skipped', 'approved script is locked'
     blocks = reword.script_blocks(page_id)
     if not blocks:
         return 'skipped', 'no script section'
@@ -127,17 +165,17 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
     return 'ok', info
 
 
-def _validate(spec, n_orig):
+def _validate(spec, n_orig, source=None):
     script = spec.get('script') or []
     if not script:
         return 'empty script'
     text = ' '.join(s.get('text', '') for s in script)
     n = _words(text)
-    if not 0.8 * n_orig <= n <= 1.12 * n_orig:
+    if not 0.8 * n_orig <= n <= 1.10 * n_orig:
         return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{int(n_orig * 1.1)}'
     if JOBSTEP.search(text):
         return 'JobStep is mentioned'
-    want = int(spec.get('jobstep_mentions_in_original') or 0)
+    want = len(JOBSTEP.findall(source)) if source is not None else int(spec.get('jobstep_mentions_in_original') or 0)
     have = len(re.findall(r'parakeet', text, re.I))
     if have != want:
         return f'"Parakeet AI"/the website appears {have} times, but the original names JobStep {want} times'

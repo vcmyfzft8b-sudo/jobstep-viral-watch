@@ -1,0 +1,24 @@
+{
+  "examples": [
+    {
+      "format_id": "X15",
+      "market": "es",
+      "page_id": "3d5958b0-fc14-807a-be33-dd2f1280d81f",
+      "video_block_id": "3f2958b0-fc14-8167-89b6-d054f3c2eb60",
+      "video_last_edited_time": "2026-10-07T15:02:00.000Z",
+      "media_sha256": "1da00dc8b56532454c65efbad543bb139eadd84a9b72d1066d8432cc0f3a7e51",
+      "source_language": "Spanish",
+      "checked_at": "2026-10-07T15:55:07Z",
+      "views_policy": "verified_public_count",
+      "evidence": "Uploaded example downloaded, transcribed with Soniox, and visually reviewed during takeover. Original TikTok source link recovered from the same page. Public metadata reported 2600000 views at review time; runtime audits require live views and public subtitles. The narrow brand ASR correction is verified against the uploaded audio and valid only for the exact pinned media and source URL. No full third-party transcript is stored here.",
+      "source_url": "https://www.tiktok.com/@danielaavega___/video/7667662711190195489",
+      "observed_views": 2600000,
+      "transcript_corrections": [
+        {
+          "from": "Jobs t punto i o",
+          "to": "JobStep.io"
+        }
+      ]
+    }
+  ]
+}

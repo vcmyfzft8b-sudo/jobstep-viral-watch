@@ -250,3 +250,18 @@ def test_fix_asset_cues_repairs_piled_up_decoration(monkeypatch):
     monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
     assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Y ahora (📎 Bandeja de Gmail – ver Recursos) Y ahora echa un ojo.'
+
+
+def test_direction_blocks_never_include_the_example_link(monkeypatch):
+    from watcher import notion
+
+    def blk(t, typ='paragraph', link=None):
+        x = {'type': 'text', 'plain_text': t, 'text': {'content': t, 'link': {'url': link} if link else None}}
+        return {'id': t[:8], 'type': typ, typ: {'rich_text': [x]}}
+    page = [blk('🎬 BEISPIELVIDEO', 'heading_2'), {'id': 'v', 'type': 'video', 'video': {}},
+            blk('Original auf TikTok', link='https://www.tiktok.com/@e/video/1'), blk('Ca. 32 Sekunden', 'bulleted_list_item'),
+            blk('💬 SKRIPT', 'heading_2'), blk('Schon wieder eine Absage.'),
+            blk('👀 VISUELLER EINSTIEG', 'heading_2'), blk('Halte die Lebensläufe in die Kamera.')]
+    monkeypatch.setattr(notion, 'children', lambda pid: page)
+    got = [reword._plain(b) for b in reword.direction_blocks('p')]
+    assert got == ['Ca. 32 Sekunden', 'Halte die Lebensläufe in die Kamera.']

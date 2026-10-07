@@ -184,15 +184,20 @@ def run(fmts, mkts, cfg, page_of, originals=None, dry=False):
 def direction_blocks(page_id):
     """Blocks of the 🎬 filming-directions section (without the mandatory 🚨 line and the Visual Hook Lab link)."""
     blocks = notion.children(page_id)
-    start = next((i for i, b in enumerate(blocks) if b['type'].startswith('heading') and '🎬' in _plain(b)), None)
-    if start is None:
-        return []
-    out = []
-    for b in blocks[start + 1:]:
-        if b['type'] == 'divider' or b['type'].startswith('heading'):
-            break
+    out, inside = [], False
+    for b in blocks:  # 🎬 = directions; older German pages also keep them under 👀 VISUELLER EINSTIEG
+        if b['type'].startswith('heading'):
+            inside = '🎬' in _plain(b) or '👀' in _plain(b)
+            continue
+        if b['type'] == 'divider':
+            inside = False
+            continue
         t = _plain(b)
-        if b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t and 'Visual Hook Lab' not in t:
+        has_link = any(((x.get('text') or {}).get('link') or {}).get('url', '').startswith('http') and
+                       'parakeet-ai.com' not in ((x.get('text') or {}).get('link') or {}).get('url', '')
+                       for x in b.get(b['type'], {}).get('rich_text', []))
+        if inside and b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t \
+                and 'Visual Hook Lab' not in t and not has_link:  # the example's TikTok link is never a direction
             out.append(b)
     return out
 
@@ -236,6 +241,8 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
     for i, (b, old, links) in enumerate(enc):
         new = items[i]
         if new is None or not str(new).strip():
+            if links:
+                continue  # a line with a link is never deleted
             notion.api('DELETE', f"/blocks/{b['id']}")
         elif new != old:
             if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(new)]:

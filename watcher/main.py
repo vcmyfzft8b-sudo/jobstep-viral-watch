@@ -243,7 +243,7 @@ def run(dry_run=False, only_detect=False):
             except Exception as e:
                 print('localize failed:', str(e)[:200])
             try:  # Monday: every page must check out (example video = format, script follows it, reworded)
-                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page) if r[2] not in ('ok', 'fixed')]
+                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page, only_failed=True) if r[2] not in ('ok', 'fixed')]
                 state.save('formats.json', fmts)
                 if bad:
                     notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))

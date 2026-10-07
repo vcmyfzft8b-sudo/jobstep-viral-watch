@@ -223,6 +223,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                 f.setdefault('inspo', {})[m] = {'url': found['url'], 'views': found['views'], 'at': int(now),
                                                 'prev': src['url'] if src else None, 'strict': True}
                 f.setdefault('reworded', {}).pop(m, None)
+                meta.setdefault('audit', {}).pop(f"{f['id']}:{m}", None)  # page changed -> audited again on Monday
                 rw = finish(f, m, pid, lang, found['url'], cfg)  # note + script now follow this example
                 report.append((f['title'], m, 'replaced', f"{found['url']} ({found['views'] // 1000}k views)"
                                + ('' if rw[0] == 'ok' else f" – script not reworded: {rw[1]}")))

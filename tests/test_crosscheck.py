@@ -154,3 +154,13 @@ def test_duplicates_ignore_single_format_reuse():
     groups = {'A': {'de': {'source_id': '1', 'video_identity': 'sha:1'}, 'fr': {'source_id': '1', 'video_identity': 'sha:1'}},
               'B': {'de': {'source_id': '2', 'video_identity': 'sha:2'}}}
     assert crosscheck.duplicates(groups) == []
+
+
+def test_rejected_sources_are_remembered_and_blocked(monkeypatch):
+    pages = {'N07_de': {'src': '700'}, 'N07_fr': {'src': '701'}, 'N07_es': {'src': '700', 'vid': 'sha:es'}}
+    w = World(monkeypatch, pages, verdict=lambda fid, m: m != 'fr')
+    meta = {'group_rejected': {'N07': ['555']}}
+    crosscheck.group_cycle(fmt('N07'), MKTS, CFG, page_of, meta, put_example=lambda *a: w.examples_put.append(a[1]))
+    assert '701' in meta['group_rejected']['N07']           # the wrong-story video is remembered
+    assert crosscheck.blocked_sources('N07', meta) >= {'701', '555'}  # reference + earlier checks: never re-added
+    assert crosscheck.blocked_sources('L1', meta) == set()

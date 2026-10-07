@@ -252,6 +252,15 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                 report.append((f['title'], m, 'kept' if align.approved(f['id'], lang, url) else 'error',
                                'approved script/example locked; audit verifies the live content'))
                 continue
+            from . import crosscheck
+            blocked = crosscheck.blocked_sources(f['id'], meta)  # wrong-story videos never come back
+            accepted = set((crosscheck.reference(f['id']) or {}).get('accepted_sources') or [])
+            src = current_source(pid)
+            if src and crosscheck.source_id(src.get('url')) in accepted:
+                report.append((f['title'], m, 'kept', 'example matches the reference definition of this format'))
+                continue  # the agreed example for all three countries; a same-language search could pick another story
+            if crosscheck.source_id(((f.get('inspo') or {}).get(m) or {}).get('url')) in blocked:
+                f['inspo'].pop(m, None)
             if (f.get('inspo') or {}).get(m, {}).get('strict'):
                 if not (f.get('reworded') or {}).get(m) and langs.get(_handle(f['inspo'][m]['url'])) == lang:
                     try:
@@ -262,7 +271,8 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                 continue  # entries from before the strict check are looked at again
             try:
                 src = current_source(pid)
-                if src and src['url'] and src['url'] not in exclude and langs.get(_handle(src['url'])) == lang:
+                if src and src['url'] and src['url'] not in exclude and crosscheck.source_id(src['url']) not in blocked \
+                        and langs.get(_handle(src['url'])) == lang:
                     cur = tiktok.video_detail(_handle(src['url']), re.search(r'/video/(\d+)', src['url']).group(1))
                     if cur and cur['views'] >= MIN_VIEWS and ok(confirm(cur, f, lang, cfg['models']['build']), lang):
                         f.setdefault('inspo', {})[m] = {'url': src['url'], 'views': cur['views'], 'at': int(now), 'strict': True}
@@ -272,6 +282,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                         continue  # right language and proven; otherwise look for a better one below
                 found = None
                 for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang and v['views'] >= MIN_VIEWS
+                                and vid not in blocked
                                 and f"https://www.tiktok.com/@{v['handle']}/video/{vid}" not in exclude][:tries]:
                     d = tiktok.video_detail(v['handle'], vid)
                     if not d:

@@ -294,6 +294,13 @@ def known_duplicates(fid, inputs, meta):
     return duplicates(groups)
 
 
+def blocked_sources(fid, meta):
+    """Videos that must never become this format's example: rejected in the reference definition, or rejected by an
+    earlier cross-country check (so the Monday language search can't put a wrong-story video back)."""
+    ref = reference(fid) or {}
+    return set(ref.get('rejected_sources') or {}) | set((meta or {}).get('group_rejected', {}).get(fid, []))
+
+
 def source_url(ref, vid):
     return (ref.get('source_urls') or {}).get(vid)
 
@@ -344,7 +351,12 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
             canon = ref.get('canonical_source')
             url = source_url(ref, canon)
             cur = localize.current_source(pid)
-            if url and (not cur or source_id(cur.get('url')) not in (ref.get('accepted_sources') or [])):
+            cur_id = source_id((cur or {}).get('url'))
+            if cur_id and cur_id not in (ref.get('accepted_sources') or []):
+                rejected = meta.setdefault('group_rejected', {}).setdefault(fmt['id'], [])
+                if cur_id not in rejected:
+                    rejected.append(cur_id)
+            if url and (not cur or cur_id not in (ref.get('accepted_sources') or [])):
                 put_example(fmt, m, pid, lang, url)
                 changed.append(f'{m}: example -> canonical {canon}')
         if set(failing) & {'format_consistency', 'script_matches_example', 'independent_wording', 'features_claims'}:

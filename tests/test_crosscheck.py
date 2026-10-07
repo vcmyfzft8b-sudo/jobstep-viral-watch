@@ -193,3 +193,30 @@ def test_unreadable_reviewer_answer_is_retried_then_unverified(monkeypatch):
     meta = {}
     res = crosscheck.check_group(fmt('L1'), MKTS, CFG, page_of, meta, dup_list=[])
     assert res['status'] == 'unverified' and not res['passed'] and meta['group_audit']['L1']['key'] is None
+
+
+def test_approval_drafts_never_write(monkeypatch):
+    pages = {'N10_de': {'src': '999'}, 'N10_fr': {'src': '111'}, 'N10_es': {'src': '112'}}
+    World(monkeypatch, pages, locked={('N10', 'de')})
+    seen = []
+    monkeypatch.setattr(align, 'align_page', lambda fmt, pid, lang, cfg, links, feedback='', draft_url=None:
+                        (seen.append((pid, draft_url)) or ('draft', {'script': [{'text': 'neu'}]})))
+    meta = {'group_audit': {'N10': {'results': {'format_consistency': {'de': {'pass': False, 'issue': 'X15 story'},
+                                                                       'fr': {'pass': True}}}}}}
+    out = crosscheck.approval_drafts([fmt('N10')], MKTS, CFG, page_of, meta)
+    assert seen == [('N10_de', 'https://www.tiktok.com/@a/video/111')]   # canonical example, locked page only
+    assert out['N10:de']['example_changes'] and out['N10:de']['draft']['script'][0]['text'] == 'neu'
+
+
+def test_align_draft_mode_returns_spec_without_writing(monkeypatch):
+    monkeypatch.setattr(localize, 'current_source', lambda pid: {'url': 'https://www.tiktok.com/@x/video/999'})
+    monkeypatch.setattr(align, 'approved_script', lambda fid, lang: {'script': [], 'voiceover': True, 'example': 'old'})
+    monkeypatch.setattr(localize, 'example_text', lambda url, page_id=None: 'SPEECH: ' + ' '.join(['wort'] * 20) + ' JobStep')
+    monkeypatch.setattr(reword, 'script_blocks', lambda pid: [{'type': 'paragraph', 'paragraph': {'rich_text': []}}])
+    monkeypatch.setattr(reword, '_plain', lambda b: 'alt')
+    monkeypatch.setattr(crosscheck, 'references', lambda: REFS)
+    spec = {'voiceover': True, 'script': [{'cue': 'parakeet', 'text': ' '.join(['neu'] * 19) + ' Parakeet AI'}]}
+    monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: spec)
+    monkeypatch.setattr(align, '_write', lambda *a, **k: pytest.fail('draft mode must not write'))
+    st, out = align.align_page(fmt('N10'), 'N10_de', 'de', CFG, {}, draft_url='https://www.tiktok.com/@a/video/111')
+    assert st == 'draft' and out['example'].endswith('/111')

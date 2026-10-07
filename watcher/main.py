@@ -1018,6 +1018,8 @@ def main():
     ap.add_argument('--set-example', default='', help='FORMAT_ID:market:tiktok_url - put this example video on that page')
     ap.add_argument('--group-audit', action='store_true', help='cross-country check of all formats (report only)')
     ap.add_argument('--group-fix', action='store_true', help='cross-country check + automatic repairs of failing groups')
+    ap.add_argument('--approval-drafts', action='store_true', help='replacement drafts for approval-locked scripts that '
+                    'fail the cross-country check (nothing written to Notion)')
     ap.add_argument('--force', action='store_true', help='with --group-audit/--group-fix: ignore cached group results')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
@@ -1185,6 +1187,11 @@ def main():
         bad = [r for r in rep if r[2] != 'ok']
         notify.push('✍️ Scripts rewritten sentence by sentence', f"{len(rep) - len(bad)}/{len(rep)} pages rewritten"
                     + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
+        return
+    if a.approval_drafts:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        crosscheck.approval_drafts(fmts, M.load(cfg), cfg, page_of, meta)
+        state.save('meta.json', meta)
         return
     if a.group_audit or a.group_fix:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})

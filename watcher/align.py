@@ -70,13 +70,14 @@ def matches_approved(page_id, lang, links, spec):
     return signature(reword.script_blocks(page_id)) == signature(notion.script_paragraphs(spec, links, lang))
 
 
-def align_page(fmt, page_id, lang, cfg, links, feedback=''):
-    """Returns (status, why)."""
+def align_page(fmt, page_id, lang, cfg, links, feedback='', draft_url=None):
+    """Returns (status, why). With draft_url: writes NOTHING - returns ('draft', spec) for a replacement script that
+    follows that example (used to prepare replacements of approval-locked scripts for the user's approval)."""
     T = TEXT[lang]
     src = localize.current_source(page_id)
-    url = src['url'] if src else None
-    ok = approved(fmt['id'], lang, url)
-    if approved_script(fmt['id'], lang) and not ok:
+    url = draft_url or (src['url'] if src else None)
+    ok = None if draft_url else approved(fmt['id'], lang, url)
+    if approved_script(fmt['id'], lang) and not ok and not draft_url:
         return 'skipped', 'approved script is locked; example differs from the approved example'
     if ok:
         if matches_approved(page_id, lang, links, ok):
@@ -139,6 +140,8 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
             break
     else:
         return 'skipped', why
+    if draft_url:
+        return 'draft', {**spec, 'example': draft_url, 'n_orig': n_orig}
     return _write(fmt, page_id, lang, cfg, links, spec,
                   f"{sum(_words(s['text']) for s in spec['script'])} words (original {n_orig})")
 

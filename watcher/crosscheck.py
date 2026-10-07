@@ -397,3 +397,37 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
             st, why = reword.fix_directions(fmt, pid, lang, cfg['models']['build'], issues)
             changed.append(f'{m}: directions fixed' if st == 'ok' else f'{m}: directions not changed ({why})')
     return changed, awaiting
+
+
+def approval_drafts(fmts, mkts, cfg, page_of, meta):
+    """Approval-locked scripts that fail the group check get a replacement DRAFT (nothing is written to Notion): same
+    beats and product timing as the reference's canonical example, independently worded. Stored in
+    meta['approval_drafts'] for the user to approve."""
+    out = meta.setdefault('approval_drafts', {})
+    for f in fmts:
+        res = (meta.get('group_audit') or {}).get(f['id']) or {}
+        ref = reference(f['id']) or {}
+        for mk in mkts:
+            m, lang = mk['key'], mk['lang']
+            pid = page_of(f, m)
+            if not pid or not align.approved_script(f['id'], lang):
+                continue
+            fails = {d: x for d, per in (res.get('results') or {}).items() for mm, x in per.items()
+                     if mm == m and not x.get('pass')}
+            if not fails:
+                continue
+            cur = source_id(((localize.current_source(pid) or {}).get('url')))
+            vid = cur if cur in (ref.get('accepted_sources') or []) else ref.get('canonical_source')
+            url = source_url(ref, vid)
+            if not url:
+                continue
+            try:
+                st, spec = align.align_page(f, pid, lang, cfg, cfg['links'],
+                                            feedback='; '.join(x.get('issue', '') for x in fails.values()), draft_url=url)
+            except Exception as e:
+                st, spec = 'error', str(e)[:200]
+            out[f"{f['id']}:{m}"] = {'status': st, 'fails': sorted(fails), 'example': url,
+                                     'example_changes': vid != cur, 'draft': spec if st == 'draft' else None,
+                                     'why': '' if st == 'draft' else spec, 'at': int(time.time())}
+            print(f"{f['id']} {m}: {st}", flush=True)
+    return out

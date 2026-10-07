@@ -14,6 +14,7 @@ then matched to the new script.
 import re
 
 from . import llm, localize, notion, reword, state
+from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
 JOBSTEP = re.compile(r'job\s*-?\s*st[ae]p|jopstep|jobset|jobster|job stay|jobs beget', re.I)
@@ -64,6 +65,8 @@ def align_page(fmt, page_id, lang, cfg, links):
 Our current {T['lang_name']} script for this format (for the cues: where the app, LinkedIn or an asset like a Gmail
 recording is shown, and the asset names):
 {old_script[:3000]}
+
+{PARAKEET_FACTS}
 
 Write our new {T['lang_name']} script ({T['style']}) that mirrors the ORIGINAL sentence by sentence:
 1. Exactly one sentence of ours for each sentence of the original, in the same order, about the same length.

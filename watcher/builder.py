@@ -52,6 +52,13 @@ RULES = """RULES
   really in YOUR script (quote your own wording, not the original's). Never repeat the standard
   line about filming Parakeet AI on the laptop at every link and cutting loading times - it is added automatically."""
 
+PARAKEET_FACTS = """What Parakeet AI's Resume Maker can do (only show/mention these): upload your CV, get a score/analysis,
+paste the link (or text) of a job ad, answer questions in a chat, let the AI rewrite/tailor the CV to the job, pick a
+template, edit everything yourself, download it. It does NOT have: an overview of your applications, a "New job"
+button, cover letters. If the original shows a JobStep feature Parakeet AI doesn't have, replace that sentence with an
+equivalent step that exists (keep the sentence count)."""
+
+
 COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
 
 SCHEMA = """Return JSON:
@@ -80,6 +87,7 @@ def build_spec(video, transcript, frames, model, lang='de', feedback=''):
 {_examples()}
 
 {rules}
+{PARAKEET_FACTS}
 
 ORIGINAL VIDEO (@{video['handle']}, {video['views']} views, {video['duration']}s, language: {transcript.get('language') or '?'})
 ON-SCREEN TEXT (TikTok text stickers): {video.get('sticker') or '-'}

@@ -1,0 +1,29 @@
+{
+ "note": "2026-10-07: accounts checked by reading their latest videos (verdicts with evidence)",
+ "add": {
+  "catita.tipss": "speech 'yo por ejemplo uso jobstep... la pego acá en jobstep' (1d); 'se llama jobstep punto i o' (6d)",
+  "chloejobtips": "Publicité; speech 'vous allez dans jobstep point you' (1d, 41.8k views); 'l'appli job step' (14d)",
+  "elisa.jobtipps": "speech 'ich soll jobstep ... ausprobieren' (19d); screen 'optimiere ich jede Bewerbung vorher mit Jobstep.io' (46d); low posting frequency",
+  "emma.jobtips": "publicité; speech 'on va sur le site jobstep point you' (5d, 58.8k); 'ça s'appelle jobstep point yo' (7d)",
+  "emma_jobtips": "advertentie; speech 'met zo'n tool jobstep punt o' (10d, 523k views); paste-link workflow 1-9d",
+  "ferni.tips": "screen 'Rehice mi CV con Jobstep.io' (7d, 83.8k); paste-link workflow 1-5d",
+  "jobfluesterin": "Anzeige; speech 'hab ihn bei jobstep hochgeladen' (21d); 'dieses Tool ... jobstep I O' (26d); last post 21d",
+  "mary.jobtipps": "#jobstep on all videos 18-31d; speech 'gehst du auf jobster Punkt Io' (27d); last post 18d",
+  "abis.luv6": "publi; speech 'esta web que se llama jobstep punto i o' (1d, 2d); screen 'Se llama jobstep.io' (6d)",
+  "alinaibarra13": "speech 'después jobstep te va a dar tu CV totalmente perfecto' (2d, 260k views)",
+  "claucreate": "publi; speech 'esta web que se llama jobstep te vienes a nueva oferta' (12d), 'Jobstep la conocí' (11d), 'se llama jobstep' (14d)",
+  "diann1770": "speech 'uno que se llamaba jobstep' (0d); 'un sitio que se llama jobstep' (3d); 'se fuera a jobstep' (8d)",
+  "laviniateol1": "speech 'questo sito che si chiama jobstep' (4d); 'la copio qui su jobstep.io' (8d)",
+  "marietipsapply": "speech 'esta página web jobstep punto i...' (2d, 291k views); 'este sitio web JobStep' (5d)",
+  "careerbydilara": "Turkish; speech 'jobstep'e giriyoruz' (5d); 'jobStep'e giriyosun' (10d); only 2 videos",
+  "dymphy.tiktok": "#partnerschap; speech 'deze website van jobstep punt e o' (11d); paste-link workflow 1-9d",
+  "itshelin03": "Anzeige; speech 'dein Lebenslauf mit jobstep überprüfen lassen' (1d); 'mit jobstep zu arbeiten' (3d)",
+  "joaocareer": "speech 'vais aqui à job step adicionas o trabalho' (10d, 72k); same workflow 1-9d"
+ },
+ "inactive": {
+  "fridaempleotips": "account no longer exists"
+ },
+ "own_add": {
+  "createdbydanaa": "de"
+ }
+}

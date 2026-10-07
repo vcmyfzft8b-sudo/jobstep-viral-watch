@@ -730,6 +730,36 @@ def backfill(handles, fmts, history, cfg, now):
     return len(vids), sum(1 for v in vids if res.get(v['id'], {}).get('match'))
 
 
+def accounts_add(path):
+    """Add accounts that were checked by hand/agent (with evidence): JobStep UGC -> tracked (+ older videos pulled
+    in), dead ones paused, our own Parakeet creators -> own tracking."""
+    cfg, fmts = load_config(), load_formats()
+    history, accounts = state.load('history.json', {}), state.load('accounts.json', {})
+    with open(path) as f:
+        data = json.load(f)
+    now = time.time()
+    new = [h for h in data.get('add', {}) if accounts.get(h, {}).get('status') not in ('active', 'manual')]
+    for h, evidence in data.get('add', {}).items():
+        accounts[h] = {**accounts.get(h, {}), 'status': accounts.get(h, {}).get('status') if accounts.get(h, {}).get('status') == 'manual' else 'active',
+                       'since': accounts.get(h, {}).get('since', int(now)), 'source': accounts.get(h, {}).get('source', 'checked-2026-10-07'),
+                       'lang': accounts.get(h, {}).get('lang') or discover.language(h), 'checked_ugc': True, 'evidence': evidence}
+        accounts[h].pop('blocked', None)
+    for h, why in data.get('inactive', {}).items():
+        if h in accounts:
+            accounts[h].update({'status': 'inactive', 'paused_reason': why})
+    state.save('accounts.json', accounts)
+    own_accounts, own_videos = own.load()
+    for h, market in data.get('own_add', {}).items():
+        own_accounts.setdefault(h, {'status': 'active', 'since': int(now), 'source': 'checked-2026-10-07', 'market': market})
+    state.save('own_accounts.json', own_accounts)
+    n, sorted_n = backfill(new, fmts, history, cfg, now)
+    state.save('history.json', history)
+    active = sum(1 for a in accounts.values() if a['status'] in ('active', 'manual'))
+    print(f'+{len(new)} accounts, {active} active; backfill {n} videos ({sorted_n} matched)')
+    notify.push('🔎 JobStep creator list completed', f"+{len(new)} more JobStep UGC accounts (each checked by reading its videos): "
+                + ', '.join('@' + h for h in new) + f"\n{active} active JobStep accounts tracked now.")
+
+
 def accounts_sync(path):
     """Check a candidate list with Claude and update the JobStep account list:
     {"candidates": [handles found by search/Lightreel], "paused": {handle: source}}.
@@ -887,6 +917,7 @@ def main():
     ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
     ap.add_argument('--audit', action='store_true', help='check every page (example video, script) and fix until it passes')
     ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
+    ap.add_argument('--accounts-add', default='', help='JSON file of checked accounts to add (with evidence)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -1019,6 +1050,9 @@ def main():
         return
     if a.standardize:
         standardize()
+        return
+    if a.accounts_add:
+        accounts_add(a.accounts_add)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

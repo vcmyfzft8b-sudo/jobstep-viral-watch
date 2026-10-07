@@ -45,7 +45,9 @@ RULES = """RULES
 - visual_hook_first: one sentence telling the creator what to do in the first seconds, based on what the original
   creator does in the first 3 seconds (action/prop + speaking to camera + title on screen).
 - return_to_camera: true if the original goes back to talking to the camera for the last line(s).
-- extra_hook_lines: 0-2 extra lines only if the original needs special filming instructions. Never repeat the standard
+- extra_hook_lines: 0-2 extra lines only if the original needs special filming instructions. Never mention X/Y scores
+  or going back to the camera at the end (both are added automatically). Every direction must refer to a line that is
+  really in YOUR script (quote your own wording, not the original's). Never repeat the standard
   line about filming Parakeet AI on the laptop at every link and cutting loading times - it is added automatically."""
 
 COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
@@ -107,12 +109,25 @@ def hook_lines(spec, lang='de'):
         app = T['linkedin_line'] + app
     if app.strip():
         lines.append(app.strip())
-    lines += spec.get('extra_hook_lines', [])
+    text = ' '.join(s['text'] for s in spec.get('script', []))
+    has_x, has_y = bool(re.search(r'\bX\b', text)), bool(re.search(r'\bY\b', text))
+    # the model's own extra lines must not repeat the standard lines (scores / back to camera)
+    extra = [l for l in spec.get('extra_hook_lines', [])
+             if not re.search(r'\bX\b|\bY\b', l) and not (spec.get('return_to_camera') and _similar(l, T['return_line']))]
+    lines += extra
     if spec.get('return_to_camera'):
         lines.append(T['return_line'])
-    if spec.get('has_scores') or any(re.search(r'\b[XY]\b', s['text']) for s in spec.get('script', [])):
-        lines.append(T['scores_line'])
+    if has_x or has_y:
+        line = T['scores_line']
+        if not (has_x and has_y):  # only one score in the script -> only name that one
+            line = re.sub(r'X\s+(und|et|e|y)\s+Y', 'X' if has_x else 'Y', line)
+        lines.append(line)
     return lines
+
+
+def _similar(a, b):
+    wa, wb = set(re.findall(r'\w{4,}', a.lower())), set(re.findall(r'\w{4,}', b.lower()))
+    return bool(wa and wb) and len(wa & wb) / min(len(wa), len(wb)) >= 0.5
 
 
 # Letters that must not appear in the finished text (leftovers from Balkan/Polish/Czech originals).

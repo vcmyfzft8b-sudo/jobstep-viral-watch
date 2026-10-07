@@ -82,11 +82,15 @@ maker. It was adapted from a viral JobStep video and is currently almost a 1:1 t
 {('The example video on the page (use it as the reference for the beats - do NOT copy its wording): ' + original[:2500]) if original else ''}
 
 Rewrite EVERY paragraph so the video stays VERY similar - same story, same beats, same order, same hook idea, roughly
-the same length (±15%), same tone ({T['style']}) - but is clearly reworded: other phrasing, other sentence structure,
-other filler words. No sentence may stay word for word. Keep it natural spoken {T['lang_name']}.
+the same length (±15%), same tone ({T['style']}) - but is clearly reworded: translate the IDEA, not the sentence.
+Change the sentence structure of every line, use other openings, other examples/images and other filler words, merge
+or split sentences where it sounds natural. Only the hook line may stay close. A native viewer who saw the JobStep
+video must NOT recognise sentences from it. Keep it natural spoken {T['lang_name']}.
 Rules:
 - Keep every token ⟦n⟧...⟦/n⟧ exactly as it is (same number, same text inside) and in the same order and paragraph.
-- Keep **bold** lines bold (they are on-screen texts); keep X and Y (the scores creators read from the app).
+- Keep **bold** lines bold (they are on-screen texts). Scores/percentages the app shows are ALWAYS X (before) and Y
+  (after) - replace any concrete number like "64 %" or "40 sobre 100" with X or Y.
+- Address the viewer consistently as { {'de': 'du', 'fr': 'tu', 'es': 'tú (never vosotros)'}[lang] }. No backticks.
 - Keep "Parakeet AI" and parakeet-ai.com/resume-maker as they are. Never mention JobStep.
 - No promises nobody can guarantee (e.g. "you will definitely get the job") - say "better chances" instead.
 
@@ -156,3 +160,60 @@ def run(fmts, mkts, cfg, page_of, originals=None, dry=False):
                 f.setdefault('reworded', {})[mk['key']] = True
             out.append((f['title'], mk['key'], status, why, changes))
     return out
+
+
+def direction_blocks(page_id):
+    """Blocks of the 🎬 filming-directions section (without the mandatory 🚨 line and the Visual Hook Lab link)."""
+    blocks = notion.children(page_id)
+    start = next((i for i, b in enumerate(blocks) if b['type'].startswith('heading') and '🎬' in _plain(b)), None)
+    if start is None:
+        return []
+    out = []
+    for b in blocks[start + 1:]:
+        if b['type'] == 'divider' or b['type'].startswith('heading'):
+            break
+        t = _plain(b)
+        if b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t and 'Visual Hook Lab' not in t:
+            out.append(b)
+    return out
+
+
+def fix_directions(fmt, page_id, lang, model, issues=''):
+    """Rewrite the filming directions so they match the script: no duplicates, X/Y only as in the script, every quoted
+    cue really in the script. Lines may be removed. Returns (status, why)."""
+    T = TEXT[lang]
+    script = '\n'.join(_plain(b) for b in script_blocks(page_id))
+    enc = [(b, *encode(b)) for b in direction_blocks(page_id)]
+    enc = [(b, t, l) for b, t, l in enc if t is not None]
+    if not enc:
+        return 'skipped', 'no directions found'
+    numbered = '\n'.join(f'{i}: {t}' for i, (_, t, _) in enumerate(enc))
+    prompt = f"""These are the filming directions ({T['lang_name']}) of a UGC format page, and the script they belong to.
+SCRIPT:
+{script[:4000]}
+
+DIRECTIONS:
+{numbered}
+{('A reviewer found: ' + issues) if issues else ''}
+Fix the directions so they match the script exactly: remove duplicate or contradicting lines; mention "X"/"Y" only
+if they appear in the script (only X -> only X); a direction that quotes a script line must quote the script's
+actual wording; keep everything else as it is (same language, same tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged.
+Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...]}} - one item per line."""
+    r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt, timeout=900)
+    items = {int(x['index']): x.get('text') for x in r.get('lines', []) if str(x.get('index', '')).isdigit()}
+    if set(items) != set(range(len(enc))):
+        return 'skipped', 'directions answer incomplete'
+    with state.LOCK:
+        backup = state.load('script_backup.json', {})
+        for b, _, _ in enc:
+            backup.setdefault(b['id'], b[b['type']]['rich_text'])
+        state.save('script_backup.json', backup)
+    for i, (b, old, links) in enumerate(enc):
+        new = items[i]
+        if new is None or not str(new).strip():
+            notion.api('DELETE', f"/blocks/{b['id']}")
+        elif new != old:
+            if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(new)]:
+                continue  # keep that line rather than lose a link
+            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(new, links)}})
+    return 'ok', ''

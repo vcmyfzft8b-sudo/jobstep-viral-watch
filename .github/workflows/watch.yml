@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, accounts-sync, init-fr, init-es]
+        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -33,7 +33,7 @@ permissions:
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
 
@@ -111,6 +111,7 @@ jobs:
             localize-recheck) python -m watcher.main --localize-recheck ;;
             reword)      python -m watcher.main --reword ;;
             reword-dry)  python -m watcher.main --reword-dry ;;
+            audit)       python -m watcher.main --audit ;;
             accounts-sync) python -m watcher.main --accounts-sync registry/accounts_sync.json ;;
             init-fr)     python -m watcher.main --init-market fr ;;
             init-es)     python -m watcher.main --init-market es ;;

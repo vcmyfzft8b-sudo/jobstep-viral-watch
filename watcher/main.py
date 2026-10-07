@@ -17,7 +17,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
+from . import audit, builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -239,6 +239,13 @@ def run(dry_run=False, only_detect=False):
                 state.save('formats.json', fmts)
             except Exception as e:
                 print('localize failed:', str(e)[:200])
+            try:  # Monday: every page must check out (example video = format, script follows it, reworded)
+                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of) if r[2] not in ('ok', 'fixed')]
+                state.save('formats.json', fmts)
+                if bad:
+                    notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
+            except Exception as e:
+                print('audit failed:', str(e)[:200])
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect:
@@ -795,6 +802,7 @@ def main():
     ap.add_argument('--localize-recheck', action='store_true', help='strictly re-check every swapped inspiration video')
     ap.add_argument('--reword', action='store_true', help='reword all page scripts (similar, not 1:1) - writes to Notion')
     ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
+    ap.add_argument('--audit', action='store_true', help='check every page (example video, script) and fix until it passes')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -913,6 +921,17 @@ def main():
             bad = [r for r in rep if r[2] != 'ok']
             notify.push('✍️ Scripts reworded (similar, not 1:1)', f"{len(ok)} pages reworded"
                         + (f"\nNot changed ({len(bad)}): " + '; '.join(f"{t} {m}: {why}" for t, m, _, why, _ in bad) if bad else ''))
+        return
+    if a.audit:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        rep = audit.run(fmts, M.load(cfg), cfg, state.load('history.json', {}), state.load('accounts.json', {}), meta, page_of)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
+        flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}
+        bad = [r for r in rep if r[2] not in ('ok', 'fixed')]
+        notify.push('✅ Page audit (example video + script)', f"{len(rep) - len(bad)}/{len(rep)} pages check out "
+                    f"({sum(1 for r in rep if r[2] == 'fixed')} fixed now)."
+                    + ('\n\nStill failing:\n' + '\n'.join(f"{flags[m]} {t} – {' / '.join(n)[:160]}" for t, m, _, n in bad) if bad else ''))
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

@@ -94,20 +94,29 @@ Paragraphs:
 {numbered}
 
 Return JSON {{"paragraphs": ["<reworded paragraph 0>", "<reworded paragraph 1>", ...]}} with exactly {len(enc)} items."""
-    r = llm.chat_json(model, 'You are a senior UGC script writer. Reply with JSON only.', prompt, timeout=1200)
-    new = r.get('paragraphs', [])
+    why = ''
+    for attempt in range(3):
+        extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
+        r = llm.chat_json(model, 'You are a senior UGC script writer. Reply with JSON only.', prompt + extra, timeout=1200)
+        why, changes = _validate(enc, r.get('paragraphs', []))
+        if not why:
+            return 'ok', '', changes
+    return 'skipped', why, []
+
+
+def _validate(enc, new):
     if len(new) != len(enc):
-        return 'skipped', f'Claude returned {len(new)} paragraphs instead of {len(enc)}', []
+        return f'returned {len(new)} paragraphs instead of {len(enc)}', []
     changes = []
-    for (b, old, links), text in zip(enc, new):
+    for i, ((b, old, links), text) in enumerate(zip(enc, new)):
         if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(text)]:
-            return 'skipped', 'a link cue moved or went missing', []
+            return f'paragraph {i}: the link tokens must stay exactly the same and in the same order', []
         if re.search(r'job\s*-?\s*step', text, re.I):
-            return 'skipped', 'JobStep appeared in the text', []
-        if not 0.8 <= len(text) / max(len(old), 1) <= 1.2 and len(old) > 60:
-            return 'skipped', f'length changed too much ({len(text)}/{len(old)})', []
+            return f'paragraph {i}: JobStep appeared', []
+        if len(old) > 60 and not 0.75 <= len(text) / len(old) <= 1.25:
+            return f'paragraph {i}: length changed too much ({len(text)} vs {len(old)} characters)', []
         changes.append((b, old, text, links))
-    return 'ok', '', changes
+    return '', changes
 
 
 def apply(changes):

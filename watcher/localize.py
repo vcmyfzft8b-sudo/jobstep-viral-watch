@@ -160,7 +160,7 @@ def finish(f, m, pid, lang, url, cfg):
     return status, why
 
 
-def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
+def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, exclude=()):
     """Returns [(format title, market, status, detail)]. status: kept | replaced | missing | no page | error."""
     now = now or time.time()
     langs = meta.setdefault('handle_lang', {})
@@ -188,7 +188,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
                 continue  # entries from before the strict check are looked at again
             try:
                 src = current_source(pid)
-                if src and src['url'] and langs.get(_handle(src['url'])) == lang:
+                if src and src['url'] and src['url'] not in exclude and langs.get(_handle(src['url'])) == lang:
                     cur = tiktok.video_detail(_handle(src['url']), re.search(r'/video/(\d+)', src['url']).group(1))
                     if cur and cur['views'] >= MIN_VIEWS:
                         f.setdefault('inspo', {})[m] = {'url': src['url'], 'views': cur['views'], 'at': int(now), 'strict': True}
@@ -197,7 +197,8 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
                         report.append((f['title'], m, 'kept', src['url']))
                         continue  # right language and proven; otherwise look for a better one below
                 found = None
-                for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang and v['views'] >= MIN_VIEWS][:tries]:
+                for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang and v['views'] >= MIN_VIEWS
+                                and f"https://www.tiktok.com/@{v['handle']}/video/{vid}" not in exclude][:tries]:
                     d = tiktok.video_detail(v['handle'], vid)
                     if not d:
                         continue

@@ -1,18 +1,7 @@
 {
  "discovered_at": 1791288746,
- "hot": {
-  "N10": {
-   "announced": {
-    "de": true
-   },
-   "count": 5,
-   "messages": {
-    "de": "1557099869183807558"
-   },
-   "since": 1791311936
-  }
- },
- "last_run": 1791321880,
+ "hot": {},
+ "last_run": 1791353226,
  "top3": [
   "N10",
   "N01",

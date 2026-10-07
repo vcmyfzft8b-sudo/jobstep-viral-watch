@@ -11,6 +11,8 @@ For each active format and market:
 Done formats are remembered in formats.json (fmt['inspo'][market]); the Monday run retries the missing ones.
 """
 import re
+import json
+import os
 import shutil
 import tempfile
 import time
@@ -20,6 +22,35 @@ from .markets import TEXT
 
 LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish'}
 MIN_VIEWS = 10_000  # an inspiration video must be proven, not just in the right language
+EMBEDDED_EVIDENCE = os.path.join(os.path.dirname(__file__), '..', 'registry', 'verified_embedded_examples.json')
+
+
+def embedded_record(page_id):
+    """Explicit evidence pinned to an upload; never infer verification from the presence of a video."""
+    try:
+        with open(EMBEDDED_EVIDENCE) as fh:
+            records = json.load(fh).get('examples', [])
+    except FileNotFoundError:
+        return None
+    return next((r for r in records if r['page_id'].replace('-', '') == page_id.replace('-', '')), None)
+
+
+def verified_embedded_example(page_id, source_url=None):
+    record = embedded_record(page_id)
+    if not record or not (record.get('speech') or record.get('transcript_corrections')) or not record.get('source_language'):
+        return None
+    video = next((b for b in notion.children(page_id) if b['type'] == 'video'), None)
+    if not video or video['id'] != record.get('video_block_id') or not video.get('last_edited_time'):
+        return None
+    if record.get('source_url'):
+        current = current_source(page_id)
+        normalize = lambda url: (url or '').split('?', 1)[0].split('#', 1)[0].rstrip('/')
+        expected = normalize(record['source_url'])
+        if not current or normalize(current.get('url')) != expected:
+            return None
+        if source_url and normalize(source_url) != expected:
+            return None
+    return record if video['last_edited_time'] == record.get('video_last_edited_time') else None
 
 
 def _handle(url):
@@ -120,8 +151,31 @@ def add_section(page_id, d, lang):
         notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section})
 
 
-def example_text(url):
+def example_text(url, page_id=None):
     """What is said / written in an example video (TikTok subtitles, else Soniox), for rewording against it."""
+    if page_id:
+        record = verified_embedded_example(page_id, source_url=url)
+        if record:
+            if record.get('transcript_corrections'):
+                # Fetch public subtitles at runtime; the registry stores only a reviewed ASR correction,
+                # never a copy of a third-party transcript. Do not infer text when public subtitles are absent.
+                source_url = record.get('source_url')
+                match = re.search(r'/video/(\d+)', source_url or '')
+                if not match:
+                    return ''
+                detail = tiktok.video_detail(_handle(source_url), match.group(1)) or {}
+                speech = detail.get('subtitles') or ''
+                if not speech.strip():
+                    return ''
+                for correction in record['transcript_corrections']:
+                    old, new = correction.get('from'), correction.get('to')
+                    if not old or not new or speech.count(old) != 1:
+                        return ''  # changed public ASR needs another review, not a broader replacement
+                    speech = speech.replace(old, new, 1)
+                return f"ON-SCREEN: {detail.get('sticker', '')}\nSPEECH: {speech}"
+            return f"ON-SCREEN: {record.get('on_screen', '')}\nSPEECH: {record['speech']}"
+        if embedded_record(page_id):
+            return ''  # stale media/source pins require review, not silent fallback to lower-quality ASR
     h, vid = _handle(url), re.search(r'/video/(\d+)', url or '')
     if not h or not vid:
         return ''
@@ -184,6 +238,20 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
             if not pid:
                 report.append((f['title'], m, 'no page', ''))
                 continue
+            if embedded_record(pid):
+                record = verified_embedded_example(pid)
+                report.append((f['title'], m, 'kept' if record else 'error',
+                               ('verified uploaded example and transcript retained' if record.get('source_url') else
+                                'verified legacy upload retained; views unavailable') if record else
+                               'uploaded example or source changed since verification; audit required'))
+                continue
+            from . import align
+            if align.approved_script(f['id'], lang):
+                src = current_source(pid)
+                url = src.get('url') if src else None
+                report.append((f['title'], m, 'kept' if align.approved(f['id'], lang, url) else 'error',
+                               'approved script/example locked; audit verifies the live content'))
+                continue
             if (f.get('inspo') or {}).get(m, {}).get('strict'):
                 if not (f.get('reworded') or {}).get(m) and langs.get(_handle(f['inspo'][m]['url'])) == lang:
                     try:
@@ -240,6 +308,9 @@ def recheck(fmts, mkts, history, accounts, meta, cfg, page_of, now=None):
     for f in [f for f in fmts if f.get('status') == 'active']:
         for mk in mkts:
             m, lang = mk['key'], mk['lang']
+            from . import align
+            if align.approved_script(f['id'], lang) or (page_of(f, m) and embedded_record(page_of(f, m))):
+                continue
             x = (f.get('inspo') or {}).get(m)
             if not x or x.get('strict') or 'views' not in x:
                 continue  # nothing replaced, or already strictly checked

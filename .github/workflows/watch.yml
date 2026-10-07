@@ -130,10 +130,16 @@ jobs:
           esac
 
       - name: Save state
+        id: save_state
         if: always()
         working-directory: state-branch
-        run: |
-          git config user.name "jobstep-viral-watch"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A state
-          git diff --cached --quiet || (git commit -q -m "state $(date -u +%Y-%m-%dT%H:%MZ)" && git push -q)
+        run: bash ../scripts/save_state.sh
+
+      - name: Preserve state when push fails
+        if: always() && steps.save_state.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: watcher-state-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: state-branch/state/
+          if-no-files-found: warn
+          retention-days: 14

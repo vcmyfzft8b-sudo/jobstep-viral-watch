@@ -47,6 +47,34 @@ GitHub → Actions → *JobStep viral watch* → Run workflow (`normal`, `only-d
 
 Locally: `STATE_DIR=/tmp/state python -m watcher.main --dry-run` (needs the same environment variables).
 
+## Page quality checks
+
+New and missing language pages remain in staging until their audit passes. Unavailable source evidence is
+`unverified`, never a pass, and does not exhaust the four quality-rejection attempts. Successful audit results
+are tied to live page content; external edits and changes during an audit require another check. Each completed
+page audit saves its state immediately.
+
+`registry/approved_scripts.json` locks exact approved scripts and their examples. Automation can restore the
+approved rendering but cannot rewrite it or replace its example. Source-aligned scripts have at most 110% of the
+source word count and preserve spoken brand mentions; linked filming cues do not count as speech.
+
+`registry/verified_embedded_examples.json` records reviewed evidence pinned to the video block ID and
+edit timestamp. A record with `source_url` additionally requires that exact live TikTok source and a verified live
+view count. Public subtitles are fetched at runtime; the registry stores only narrow verified ASR corrections,
+not full third-party transcripts. Missing subtitles or a correction that no longer matches require review. An explicitly
+recorded `legacy_original_unavailable` exemption is supported for uploads without a known source; it records unknown
+views without claiming a view threshold was met. The SHA-256 is provenance, not a substitute for the live pins.
+Replacing the upload or changing its known source requires new evidence.
+
+State pushes retry the same non-force push four times. A failed push leaves a GitHub Actions recovery artifact
+containing only the state directory; restore it after reviewing concurrent state, without overwriting other work.
+
+Offline regression checks (no Notion, Claude or other live service calls):
+
+```sh
+python -m unittest discover -s tests -v
+```
+
 ## Files
 
 - `watcher/tiktok.py` – creator embed (latest videos) + video page (stats, on-screen text, subtitles)

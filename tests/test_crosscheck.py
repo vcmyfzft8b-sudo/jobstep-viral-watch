@@ -220,3 +220,15 @@ def test_align_draft_mode_returns_spec_without_writing(monkeypatch):
     monkeypatch.setattr(align, '_write', lambda *a, **k: pytest.fail('draft mode must not write'))
     st, out = align.align_page(fmt('N10'), 'N10_de', 'de', CFG, {}, draft_url='https://www.tiktok.com/@a/video/111')
     assert st == 'draft' and out['example'].endswith('/111')
+
+
+def test_evidence_pin_of_a_rejected_source_is_inactive(monkeypatch, tmp_path):
+    import json as _json
+    reg = tmp_path / 'ev.json'
+    reg.write_text(_json.dumps({'examples': [
+        {'format_id': 'N07', 'page_id': 'p-1', 'source_url': 'https://www.tiktok.com/@m/video/701'},
+        {'format_id': 'N07', 'page_id': 'p-2', 'source_url': 'https://www.tiktok.com/@z/video/700'}]}))
+    monkeypatch.setattr(localize, 'EMBEDDED_EVIDENCE', str(reg))
+    monkeypatch.setattr(crosscheck, 'references', lambda: REFS)
+    assert localize.embedded_record('p1') is None          # pinned to the rejected different-story video
+    assert localize.embedded_record('p2')['page_id'] == 'p-2'  # Codex's verified pins stay in force

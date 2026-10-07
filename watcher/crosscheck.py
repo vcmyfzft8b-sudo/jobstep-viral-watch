@@ -200,6 +200,7 @@ other. Be strict:
 
 {chr(10).join(blocks)}
 
+Never put the character " inside an issue text (write ' or « » instead) - the answer must be valid JSON.
 Return JSON {{"results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
 "summary": "<one sentence>"}} with every dimension {list(DIMENSIONS)} for every country {sorted(evidence)}."""
     for attempt in range(3):  # an unreadable answer is asked again, never guessed

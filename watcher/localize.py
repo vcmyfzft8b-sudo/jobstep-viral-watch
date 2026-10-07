@@ -32,7 +32,13 @@ def embedded_record(page_id):
             records = json.load(fh).get('examples', [])
     except FileNotFoundError:
         return None
-    return next((r for r in records if r['page_id'].replace('-', '') == page_id.replace('-', '')), None)
+    record = next((r for r in records if r['page_id'].replace('-', '') == page_id.replace('-', '')), None)
+    if record and record.get('format_id') and record.get('source_url'):
+        from . import crosscheck  # evidence for a video the format's reference rejects belongs to the replaced example
+        rejected = (crosscheck.reference(record['format_id']) or {}).get('rejected_sources') or {}
+        if crosscheck.source_id(record['source_url']) in rejected:
+            return None
+    return record
 
 
 def verified_embedded_example(page_id, source_url=None):

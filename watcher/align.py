@@ -131,7 +131,7 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
 "script": [{{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "<one sentence>",
 "new_paragraph": false}}]}}"""
     why = feedback
-    for attempt in range(3):
+    for attempt in range(5):
         extra = f'\n\nA reviewer rejected the current/previous version: {why}. Fix exactly that.' if why else ''
         spec = llm.chat_json(cfg['models']['build'], 'You are a senior UGC script writer. Reply with JSON only.',
                              prompt + extra, timeout=1200)

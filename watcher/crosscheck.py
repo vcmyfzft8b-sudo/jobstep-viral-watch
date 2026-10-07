@@ -31,7 +31,7 @@ from . import align, audit, llm, localize, notion, reword
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-07.1'
+AUDIT_VERSION = 'group-2026-10-07.2'
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wording', 'features_claims',
               'directions_match')
@@ -142,9 +142,21 @@ def approval_status(fmt, mkts, page_of, links):
 def _evidence(fmt, mk, inp):
     pid = inp['page_id']
     example = localize.example_text(inp['url'], page_id=pid) if inp['url'] else ''
-    script = reword.spoken_text(reword.script_blocks(pid))
+    blocks = reword.script_blocks(pid)
+    script = reword.spoken_text(blocks)
+    marked = '\n'.join(cue_text(b) for b in blocks)
     directions = '\n'.join(reword._plain(b) for b in reword.direction_blocks(pid))
-    return {'example': example, 'script': script, 'directions': directions, 'source_id': inp['source_id']}
+    return {'example': example, 'script': script, 'marked': marked, 'directions': directions,
+            'source_id': inp['source_id']}
+
+
+def cue_text(b):
+    """Script line as the creator sees it: link labels are filming cues ("show the app here"), not spoken words."""
+    out = []
+    for x in b[b['type']].get('rich_text', []):
+        t = x.get('plain_text', x.get('text', {}).get('content', ''))
+        out.append(f'[CUE: {t.strip()}]' if ((x.get('text') or {}).get('link') or {}).get('url') else t)
+    return ''.join(out)
 
 
 def _deterministic(ref, inputs):
@@ -162,6 +174,8 @@ def judge(fmt, ref, evidence, model):
         blocks.append(f"=== COUNTRY {m.upper()} ({TEXT[m]['lang_name']}) ===\n"
                       f"EXAMPLE VIDEO {ev['source_id']}:\n{ev['example'][:3500]}\n\n"
                       f"OUR SCRIPT (spoken/on-screen text only):\n{ev['script'][:3500]}\n\n"
+                      f"THE SAME SCRIPT WITH ITS FILMING CUES ([CUE: ...] = a link marker telling the creator to show "
+                      f"the app/asset there, NOT spoken; (...) = stage direction):\n{ev.get('marked', '')[:4000]}\n\n"
                       f"OUR FILMING DIRECTIONS:\n{ev['directions'][:1500]}")
     prompt = f"""REFERENCE DEFINITION of format {fmt['id']} ("{fmt.get('title', '')}"):
 {json.dumps(ref, ensure_ascii=False, indent=1)}
@@ -180,7 +194,9 @@ other. Be strict:
 - features_claims: only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
   guaranteed ATS passage, no guaranteed interviews/jobs.
 - directions_match: do the filming directions match the script (no quotes of lines that are not in the script, no
-  contradictions, no features Parakeet AI lacks)?
+  contradictions, no features Parakeet AI lacks) and cover the reference's filming/demonstration sequence? Cue
+  markers the directions refer to are the [CUE: ...] markers. The brand counts as spoken only where it is in the
+  spoken text; a [CUE: ...] marker shows it on screen.
 
 {chr(10).join(blocks)}
 
@@ -362,7 +378,7 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
         if set(failing) & {'format_consistency', 'script_matches_example', 'independent_wording', 'features_claims'}:
             st, why = align.align_page(fmt, pid, lang, cfg, links, feedback=issues)
             changed.append(f'{m}: script rewritten' if st == 'ok' else f'{m}: rewrite refused ({why})')
-        elif 'directions_match' in failing:
-            st, why = reword.fix_directions(fmt, pid, lang, cfg['models']['classify'], issues)
+        if set(failing) & {'format_consistency', 'directions_match'}:
+            st, why = reword.fix_directions(fmt, pid, lang, cfg['models']['build'], issues)
             changed.append(f'{m}: directions fixed' if st == 'ok' else f'{m}: directions not changed ({why})')
     return changed, awaiting

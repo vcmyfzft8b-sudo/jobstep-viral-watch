@@ -551,13 +551,12 @@
    "title_en": "LinkedIn last-hour job-search trick",
    "canonical_source": "7689223891197136148",
    "accepted_sources": [
-    "7689223891197136148",
-    "7690964265083079942"
+    "7689223891197136148"
    ],
-   "accepted_notes": {
-    "7690964265083079942": "Same hook ('since when can LinkedIn do this?'), same steps in the same order (24h filter -> 86400 in URL -> change to 3600 -> copy job link -> paste into tool -> tailored CV). Delivery variant: silent on-screen text with music, brand only shown, ends on the CV reveal instead of the 'apply among the first' line. Use one delivery mode across markets where strict parity is required."
+   "accepted_notes": {},
+   "rejected_sources": {
+    "7690964265083079942": "silent on-screen variant: no spoken intro/conclusion, brand never named, ends on the CV reveal and drops the 'apply among the first' payoff - one delivery mode (voiceover) across all three countries"
    },
-   "rejected_sources": {},
    "hook": "'Sorry, but since when can LinkedIn do this?'",
    "premise": "A LinkedIn URL hack (86400 -> 3600) surfaces jobs posted in the last hour; paste the link into the tool to get a CV tailored to that job and apply first.",
    "beats": [
@@ -581,7 +580,6 @@
    },
    "allowed_localisation": [
     "LinkedIn UI language",
-    "delivery as voiceover (canonical) or silent on-screen text with the same steps",
     "softened outcome claim ('better chance of an interview')"
    ],
    "not_allowed": [

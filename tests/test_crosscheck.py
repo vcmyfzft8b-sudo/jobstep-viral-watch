@@ -164,3 +164,12 @@ def test_rejected_sources_are_remembered_and_blocked(monkeypatch):
     assert '701' in meta['group_rejected']['N07']           # the wrong-story video is remembered
     assert crosscheck.blocked_sources('N07', meta) >= {'701', '555'}  # reference + earlier checks: never re-added
     assert crosscheck.blocked_sources('L1', meta) == set()
+
+
+def test_reviewer_sees_cue_markers_but_not_as_spoken_words():
+    b = {'type': 'paragraph', 'paragraph': {'rich_text': [
+        {'plain_text': 'Ich lade ihn hoch ', 'text': {'content': 'Ich lade ihn hoch '}},
+        {'plain_text': '(Parakeet AI · Resume Maker)', 'text': {'content': '(Parakeet AI · Resume Maker)', 'link': {'url': 'p'}}}]}}
+    assert crosscheck.cue_text(b) == 'Ich lade ihn hoch [CUE: (Parakeet AI · Resume Maker)]'
+    from watcher import reword as rw
+    assert 'Parakeet' not in rw.spoken_text([b])

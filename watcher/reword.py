@@ -202,6 +202,8 @@ def fix_directions(fmt, page_id, lang, model, issues=''):
     cue really in the script. Lines may be removed. Returns (status, why)."""
     T = TEXT[lang]
     script = '\n'.join(_plain(b) for b in script_blocks(page_id))
+    from . import crosscheck
+    filming = (crosscheck.reference(fmt['id']) or {}).get('filming', '')
     enc = [(b, *encode(b)) for b in direction_blocks(page_id)]
     enc = [(b, t, l) for b, t, l in enc if t is not None]
     if not enc:
@@ -213,11 +215,15 @@ SCRIPT:
 
 DIRECTIONS:
 {numbered}
+{('How this format is filmed (reference, all countries): ' + filming) if filming else ''}
 {('A reviewer found: ' + issues) if issues else ''}
 Fix the directions so they match the script exactly: remove duplicate or contradicting lines; mention "X"/"Y" only
 if they appear in the script (only X -> only X); a direction that quotes a script line must quote the script's
-actual wording; keep everything else as it is (same language, same tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged.
-Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...]}} - one item per line."""
+actual wording; never refer to markers the script does not have; keep everything else as it is (same language, same
+tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged. If a shot of the reference filming sequence or something the reviewer
+names is missing, add short new lines for it ("add", in {T['lang_name']}, no links) - only what the script needs.
+Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...],
+"add": ["<new direction line>", ...]}} - one item per existing line; "add" may be empty."""
     r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt, timeout=900)
     items = {int(x['index']): x.get('text') for x in r.get('lines', []) if str(x.get('index', '')).isdigit()}
     if set(items) != set(range(len(enc))):
@@ -235,6 +241,11 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
             if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(new)]:
                 continue  # keep that line rather than lose a link
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(new, links)}})
+    add = [str(t).strip() for t in (r.get('add') or []) if str(t).strip() and '⟦' not in str(t)][:4]
+    if add:
+        notion.api('PATCH', f'/blocks/{page_id}/children', {'after': enc[-1][0]['id'], 'children': [
+            {'object': 'block', 'type': 'bulleted_list_item', 'bulleted_list_item': {'rich_text': [notion.rt(t)]}}
+            for t in add]})
     return 'ok', ''
 
 

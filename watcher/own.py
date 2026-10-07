@@ -143,7 +143,9 @@ def check_account(handle, max_days=30):
 def refresh_accounts(accounts):
     """Every few days: new Parakeet AI accounts (Lightreel, any market) + pause/revive. Returns (added, paused, revived)."""
     added, paused, revived = [], [], []
-    for h in sorted(discover.lightreel_handles(set(accounts), QUESTION) - set(accounts)):
+    hint = ("\nOnly look at this market: {market}. Search captions, hashtags (#parakeetai, #partnerparakeetai, "
+            "#parakeetaiad), on-screen text and spoken mentions. List only accounts NOT in the known list.")
+    for h in sorted(discover.lightreel_handles(set(accounts), QUESTION, hint=hint) - set(accounts)):
         if check_account(h) == 'active':
             accounts[h] = {'status': 'active', 'since': int(time.time()), 'source': 'lightreel',
                            'market': discover.language(h)}

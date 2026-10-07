@@ -99,6 +99,8 @@ def replace_video(page_id, src, d, lang):
 def add_section(page_id, d, lang):
     """Page without an inspiration video (older FR/ES pages): add the whole section at the top in its language."""
     T = TEXT[lang]
+    if any(b['type'] == 'video' for b in notion.children(page_id)):
+        return  # never add a second section
     work = tempfile.mkdtemp(prefix='inspo-')
     try:
         upload = notion.upload_video(media.for_notion(media.download(d['url'], work), work))
@@ -133,6 +135,8 @@ def example_text(url):
             pass
         finally:
             shutil.rmtree(work, ignore_errors=True)
+    if not (text or '').strip() and not (d.get('sticker') or '').strip():
+        return ''  # nothing could be read (TikTok/Tor hiccup) - callers treat this as 'unknown', never as 'wrong'
     return f"ON-SCREEN: {d.get('sticker', '')}\nSPEECH: {text}"
 
 
@@ -144,6 +148,9 @@ def set_note(page_id, lang, same_lang, own=False):
         return
     for b in blocks[i + 1:i + 4]:
         if b['type'] == 'callout':
+            if b.get('has_children'):  # older pages keep the 2nd note line as a child block -> it would show twice
+                for c in notion.children(b['id']):
+                    notion.api('DELETE', f"/blocks/{c['id']}")
             notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
                 notion.inspo_note(lang, same_lang, own)))}})
             return
@@ -190,7 +197,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                 src = current_source(pid)
                 if src and src['url'] and src['url'] not in exclude and langs.get(_handle(src['url'])) == lang:
                     cur = tiktok.video_detail(_handle(src['url']), re.search(r'/video/(\d+)', src['url']).group(1))
-                    if cur and cur['views'] >= MIN_VIEWS:
+                    if cur and cur['views'] >= MIN_VIEWS and ok(confirm(cur, f, lang, cfg['models']['build']), lang):
                         f.setdefault('inspo', {})[m] = {'url': src['url'], 'views': cur['views'], 'at': int(now), 'strict': True}
                         if not (f.get('reworded') or {}).get(m):
                             finish(f, m, pid, lang, src['url'], cfg)
@@ -247,7 +254,7 @@ def recheck(fmts, mkts, history, accounts, meta, cfg, page_of, now=None):
             print('failed strict check:', f['title'], m, x['url'], c.get('reason', ''))
             prev = x.get('prev')
             f['inspo'].pop(m)
-            r = run([f], [mk], history, accounts, meta, cfg, page_of, now)  # tries the next candidates (strict)
+            r = run([f], [mk], history, accounts, meta, cfg, page_of, now, exclude={x['url']})  # next candidates (strict)
             if r and r[0][2] in ('replaced', 'kept'):
                 report.append(r[0])
                 continue

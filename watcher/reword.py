@@ -120,11 +120,13 @@ def _validate(enc, new):
 
 
 def apply(changes):
-    backup = state.load('script_backup.json', {})
+    with state.LOCK:  # backup first (so the original text is never lost), then write to Notion
+        backup = state.load('script_backup.json', {})
+        for b, old, text, links in changes:
+            backup.setdefault(b['id'], b[b['type']]['rich_text'])
+        state.save('script_backup.json', backup)
     for b, old, text, links in changes:
-        backup.setdefault(b['id'], b[b['type']]['rich_text'])
         notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(text, links)}})
-    state.save('script_backup.json', backup)
 
 
 def run(fmts, mkts, cfg, page_of, originals=None, dry=False):

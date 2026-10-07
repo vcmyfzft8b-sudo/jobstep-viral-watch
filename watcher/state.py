@@ -6,6 +6,8 @@ state/log.json      what the watcher did (alerts, pages built)
 """
 import json
 import os
+import tempfile
+import threading
 import time
 
 DIR = os.environ.get('STATE_DIR', 'state')
@@ -19,16 +21,20 @@ def load(name, default):
     try:
         with open(_path(name)) as f:
             return json.load(f)
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return default
 
 
+LOCK = threading.RLock()  # several worker threads (audit) may save at the same time
+
+
 def save(name, data):
-    os.makedirs(DIR, exist_ok=True)
-    tmp = _path(name) + '.tmp'
-    with open(tmp, 'w') as f:
-        json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
-    os.replace(tmp, _path(name))
+    with LOCK:
+        os.makedirs(DIR, exist_ok=True)
+        fd, tmp = tempfile.mkstemp(dir=DIR, prefix=name + '.', suffix='.tmp')
+        with os.fdopen(fd, 'w') as f:
+            json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
+        os.replace(tmp, _path(name))
 
 
 def log(entry):

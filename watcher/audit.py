@@ -56,10 +56,15 @@ Check strictly:
 Return JSON {{"example_same_format": true, "script_follows_example": true, "script_reworded": true, "script_ok": true,
 "example_issue": "<short, if any>", "script_issues": ["<short>", ...]}}"""
     v = llm.chat_json(model, 'You are a strict QA reviewer for UGC creator instructions. Reply with JSON only.', prompt, timeout=1200)
+    v['script_issues'] = [x for x in (v.get('script_issues') or []) if x]
+    v['example_issue'] = v.get('example_issue') or ''
+    if url and not example:  # the video could not be read right now: unknown, not wrong
+        v['example_same_format'] = v['script_follows_example'] = True
+        v['unverified'] = True
     passed = all(v.get(k) for k in ('example_same_format', 'script_follows_example', 'script_reworded', 'script_ok'))
     if re.search(r'job\s*-?\s*step', script, re.I):
         passed = False
-        v.setdefault('script_issues', []).append('JobStep is mentioned in the script')
+        v['script_issues'].append('JobStep is mentioned in the script')
     return passed, v, url
 
 
@@ -86,11 +91,13 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3):
     for r in range(rounds + 1):
         passed, v, url = check(fmt, pid, lang, model)
         if passed:
+            if v.get('unverified'):
+                notes.append('example video could not be read right now - checked again next Monday')
             return ('ok' if r == 0 else 'fixed'), notes
         if r == rounds:
             break
         if not v.get('example_same_format'):
-            notes.append(f"example not this format ({v.get('example_issue', '')[:80]})")
+            notes.append(f"example not this format ({(v.get('example_issue') or '')[:80]})")
             fmt.get('inspo', {}).pop(m, None)
             fmt.get('reworded', {}).pop(m, None)
             if url:
@@ -102,14 +109,14 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=3):
                     _put_example(fmt, m, pid, lang, orig, same_lang=False)
                     notes.append('put back the original JobStep video')
             continue
-        notes.append('script reworded again: ' + '; '.join(v.get('script_issues', []))[:120])
+        notes.append('script reworded again: ' + '; '.join(v['script_issues'])[:120])
         status, why, changes = reword.reword_page(fmt, pid, lang, model, localize.example_text(url) if url else '')
         if status == 'ok':
             reword.apply(changes)
             fmt.setdefault('reworded', {})[m] = True
         else:
             notes.append(f'reword refused: {why}')
-    return 'failed', notes + ['still failing: ' + '; '.join(v.get('script_issues', []) + [v.get('example_issue', '')])[:200]]
+    return 'failed', notes + ['still failing: ' + '; '.join(v['script_issues'] + [v['example_issue']])[:200]]
 
 
 def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=4):

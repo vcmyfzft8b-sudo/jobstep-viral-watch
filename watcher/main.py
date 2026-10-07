@@ -12,6 +12,7 @@ import argparse
 import datetime
 import json
 import os
+import re
 import shutil
 import tempfile
 import time
@@ -223,7 +224,9 @@ def run(dry_run=False, only_detect=False):
     # 4c. Monday: weekly clean-up - formats that perform badly leave the list
     if not dry_run and not only_detect:
         is_due, week_id = lineup.due(meta, now)
-        if is_due:
+        if is_due:  # mark the Monday work as done first, so it never repeats (even if a step fails or times out)
+            meta['lineup'] = week_id
+            state.save('meta.json', meta)
             try:
                 p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
                 print('clean-up:', [f['title'] for f, _, _ in p['out']])
@@ -756,7 +759,7 @@ def accounts_sync(path):
         v = verdicts.get(h, {})
         if v.get('verdict') in ('other_app', 'not_ugc') and h != 'jobstep.io':
             accounts[h].update({'status': 'inactive', 'blocked': True,
-                                'blocked_reason': f"{v['verdict']}: {v.get('other_app') or ''} {v.get('reason', '')}".strip()})
+                                'blocked_reason': f"{v['verdict']}: {v.get('other_app') or ''} {v.get('reason') or ''}".strip()})
             blocked.append((h, v))
         elif v.get('verdict') == 'jobstep_ugc':
             accounts[h]['checked_ugc'] = True
@@ -766,14 +769,14 @@ def accounts_sync(path):
         accounts.setdefault(h, {'status': 'inactive', 'since': int(now), 'source': src})
     state.save('accounts.json', accounts)
     for h, v in verdicts.items():
-        print(f"{h:24} {v.get('verdict', '?'):12} {v.get('other_app', '')[:18]:18} {v.get('reason', '')[:100]}")
+        print(f"{h:24} {v.get('verdict') or '?':12} {(v.get('other_app') or '')[:18]:18} {(v.get('reason') or '')[:100]}")
     n, sorted_n = backfill(added, fmts, history, cfg, now)
     state.save('history.json', history)
     active = sum(1 for a in accounts.values() if a['status'] in ('active', 'manual'))
     summary = (f"{active} active JobStep UGC accounts now tracked – every one checked by Claude (latest videos: caption, "
                f"on-screen text, speech).\n+{len(added)} new: {', '.join('@' + h for h in added) or '-'}\n"
                + (f"Removed {len(blocked)} (not JobStep UGC):\n" + '\n'.join(
-                   f"• @{h} – {v.get('other_app') or v['verdict']}: {v.get('reason', '')[:90]}" for h, v in blocked) + '\n' if blocked else '')
+                   f"• @{h} – {v.get('other_app') or v['verdict']}: {(v.get('reason') or '')[:90]}" for h, v in blocked) + '\n' if blocked else '')
                + (f"Could not decide (kept): {', '.join('@' + h for h in unclear)}\n" if unclear else '')
                + f"Pulled in {n} older videos of the new accounts ({sorted_n} match one of our formats).")
     print(summary)
@@ -783,6 +786,72 @@ def accounts_sync(path):
     state.save('formats.json', fmts)
     state.save('meta.json', meta)
     localize_report(rep)
+
+
+def _plain_text(b):
+    return ''.join(x.get('plain_text', '') for x in (b.get(b['type'], {}) or {}).get('rich_text', []) or []).strip()
+
+
+def standardize(only=None):
+    """Every active format page in every market in the current layout, without leftovers:
+    - pages in the old layout (no example video or no resources section) are rebuilt from their example video
+      (same-language strict example if there is one, else the format's original JobStep video) - reworded script;
+    - duplicates are removed: a 2nd example video, repeated links/lines outside the script."""
+    from . import audit as _audit, reword as _reword
+    cfg, fmts = load_config(), load_formats()
+    origs = _audit.originals()
+    report = []
+    for f in [f for f in fmts if f.get('status') == 'active']:
+        for mk in M.load(cfg):
+            m = mk['key']
+            pid = page_of(f, m)
+            if not pid or (only and f['id'] not in only):
+                continue
+            try:
+                blocks = notion.children(pid)
+                has_video = any(b['type'] == 'video' for b in blocks)
+                has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
+                if not (has_video and has_res):
+                    ex = (f.get('inspo') or {}).get(m, {})
+                    url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
+                    h, vid = re.search(r'@([^/]+)/video/(\d+)', url).groups()
+                    v = tiktok.video_detail(h, vid)
+                    if not v:
+                        report.append((f['title'], m, 'error', f'example video unavailable: {url}'))
+                        continue
+                    page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid)
+                    if problems:
+                        report.append((f['title'], m, 'not rebuilt', '; '.join(problems)[:150]))
+                        continue
+                    f.setdefault('reworded', {})[m] = True
+                    f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict')), 'rebuilt': True}
+                    report.append((f['title'], m, 'rebuilt', url))
+                    state.save('formats.json', fmts)
+                    continue
+                # duplicates outside the script section
+                script_ids = {b['id'] for b in _reword.script_blocks(pid)}
+                seen, removed, videos = set(), 0, 0
+                for b in blocks:
+                    if b['type'] == 'video':
+                        videos += 1
+                        if videos > 1:
+                            notion.api('DELETE', f"/blocks/{b['id']}")
+                            removed += 1
+                        continue
+                    t = _plain_text(b)
+                    if b['id'] in script_ids or len(t) < 15 or b['type'] not in ('paragraph', 'bulleted_list_item'):
+                        continue
+                    if (b['type'], t) in seen:
+                        notion.api('DELETE', f"/blocks/{b['id']}")
+                        removed += 1
+                    seen.add((b['type'], t))
+                report.append((f['title'], m, 'ok', f'{removed} duplicate blocks removed' if removed else 'clean'))
+            except Exception as e:
+                report.append((f['title'], m, 'error', str(e)[:150]))
+    state.save('formats.json', fmts)
+    for r in report:
+        print(' | '.join(str(x) for x in r))
+    return report
 
 
 def main():
@@ -803,6 +872,7 @@ def main():
     ap.add_argument('--reword', action='store_true', help='reword all page scripts (similar, not 1:1) - writes to Notion')
     ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
     ap.add_argument('--audit', action='store_true', help='check every page (example video, script) and fix until it passes')
+    ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -932,6 +1002,9 @@ def main():
         notify.push('✅ Page audit (example video + script)', f"{len(rep) - len(bad)}/{len(rep)} pages check out "
                     f"({sum(1 for r in rep if r[2] == 'fixed')} fixed now)."
                     + ('\n\nStill failing:\n' + '\n'.join(f"{flags[m]} {t} – {' / '.join(n)[:160]}" for t, m, _, n in bad) if bad else ''))
+        return
+    if a.standardize:
+        standardize()
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

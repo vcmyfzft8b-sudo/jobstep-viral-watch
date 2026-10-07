@@ -112,7 +112,7 @@ Return JSON {{"results": [{{"handle": "<handle without @>", "verdict": "...", "o
     return out
 
 
-def lightreel_handles(known, question=None):
+def lightreel_handles(known, question=None, hint=None):
     """Handles Lightreel names for every market (asked in parallel), minus nothing - the caller filters known ones."""
     import concurrent.futures as cf
     key = os.environ.get('LIGHTREEL_API_KEY')
@@ -120,7 +120,7 @@ def lightreel_handles(known, question=None):
         return set()
     q = (question or QUESTION).format(today=time.strftime('%d %B %Y'), known=', '.join('@' + h for h in sorted(known)))
     with cf.ThreadPoolExecutor(6) as ex:
-        answers = list(ex.map(lambda m: _ask(key, q + MARKET_HINT.format(market=m)), MARKETS))
+        answers = list(ex.map(lambda m: _ask(key, q + (hint or MARKET_HINT).format(market=m)), MARKETS))
     return {h.lower().rstrip('.') for a in answers for h in re.findall(r'@([A-Za-z0-9._]{2,30})', a)}
 
 

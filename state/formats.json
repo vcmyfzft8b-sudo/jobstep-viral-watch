@@ -10,17 +10,26 @@
     "views": 513800
    },
    "es": {
-    "at": 1791371942,
-    "prev": null,
+    "rebuilt": true,
     "strict": true,
     "url": "https://www.tiktok.com/@ferni.tips/video/7693601460084362516",
-    "views": 30300
+    "views": 31300
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emasavetuje/video/7692884328304479495",
+    "views": 126600
    }
   },
   "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5",
   "pages": {
    "es": "3f0958b0-fc14-8066-bf07-fe40cc899cb7",
    "fr": "3d6958b0-fc14-8081-9ed6-cef70d0e34df"
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
   },
   "script": "Niemand liest deinen Lebenslauf. Sorry, dass ich's so direkt sagen muss, aber niemand liest deinen Lebenslauf. Und das sag ich, obwohl ich selbst lange nicht kapiert hab, warum ich mit so viel Berufserfahrung, Praktika und Abschluss nicht ein einziges Vorstellungsgespräch bekommen hab. Und stell dir meinen Schock vor, als ich gehört hab, dass Menschen Lebensläufe gar nicht mehr lesen. Das macht jetzt KI. (Parakeet AI · Resume Maker) Ich fand diesen Lebenslauf richtig gut. Sag du mir: „Was fehlt hier?“ (Parakeet AI · Resume Maker) Dann hab ich diese Seite gefunden, Parakeet AI, und lad den Lebenslauf hoch, um zu sehen, welche Punktzahl ich krieg. (Parakeet AI · Resume Maker) Und ich krieg X von 100. Also nichts, echt gar nichts ist gut. (Parakeet AI · Resume Maker) Aber wenn du ihn auf der Seite verbessern lässt, beantwortest du Fragen zu dir und zu dem Job, den du willst, und es macht d",
   "status": "active",
@@ -36,6 +45,18 @@
     "strict": true,
     "url": "https://www.tiktok.com/@salii.jobtipps/video/7662355491695152417",
     "views": 95700
+   },
+   "es": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+    "views": 158900
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+    "views": 158900
    }
   },
   "page_id": "3f0958b0fc14816aadb3f7c783ee29c9",
@@ -44,7 +65,9 @@
    "fr": "3f0958b0-fc14-80a7-b99b-d1bdcb5e0628"
   },
   "reworded": {
-   "de": true
+   "de": true,
+   "es": true,
+   "fr": true
   },
   "script": "Wie soll ich meinen Eltern bitte erklären, dass ich 2026 mit dem Studium fertig bin und einfach keinen Job finde? Und warum sagt einem eigentlich keiner, wie schwer so ein Lebenslauf ist? (Parakeet AI · Resume Maker) Ich fand meinen Lebenslauf echt gut, richtig schön gemacht – (Parakeet AI · Resume Maker) bis ich Parakeet AI entdeckt hab. Das bewertet deinen Lebenslauf und macht ihn besser. (Parakeet AI · Resume Maker) Leute, ich hatte X von 100. Ich hatte null Ahnung, dass der so schlecht ist. Es gibt nämlich ein bestimmtes Format für Lebensläufe, und das kannte ich nicht – deswegen kamen bei mir nur Absagen. (Parakeet AI · Resume Maker) Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch. (Parakeet AI · Resume Maker) Das ganze Format macht es für dich, und klar kannst du",
   "status": "active",
@@ -68,17 +91,19 @@
   "id": "N02",
   "inspo": {
    "es": {
-    "at": 1791371942,
-    "prev": null,
+    "rebuilt": true,
     "strict": true,
     "url": "https://www.tiktok.com/@ferni.tips/video/7690964265083079942",
-    "views": 610300
+    "views": 610800
    }
   },
   "page_id": "3f0958b0fc148181bcdde9677a8e051e",
   "pages": {
    "es": "3f0958b0-fc14-8055-a0a0-f2a0abb631b0",
    "fr": "3f0958b0-fc14-8062-b0d7-f22c1ceec5b2"
+  },
+  "reworded": {
+   "es": true
   },
   "script": "Sorry, aber seit wann kann LinkedIn bitte das? (LinkedIn-Jobsuche) Geh auf „Jobs“ und stell ein, dass nur Stellen aus den letzten 24 Stunden angezeigt werden – dann steht oben im Link 86400, das sind einfach die Sekunden von einem Tag. (LinkedIn-Jobsuche) Ersetz das durch 3600, und schon siehst du nur die Jobs aus der letzten Stunde. (LinkedIn-Jobsuche) Dann kopierst du dir die Stellenbeschreibung (Parakeet AI · Resume Maker) und packst sie in Parakeet AI. (Parakeet AI · Resume Maker) Parakeet AI baut dir daraus einen neuen Lebenslauf, der genau auf diese Stelle passt. So bist du unter den Ersten, die sich bewerben, und dein Lebenslauf kommt durch alle Filter – damit kriegst du den Job auf jeden Fall. 🎬",
   "status": "active",
@@ -91,12 +116,28 @@
    "de": {
     "at": 1791371836,
     "url": "https://www.tiktok.com/@franzi.jobtipps/video/7690098834302586145"
+   },
+   "es": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7688735719120014600",
+    "views": 119800
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7688735719120014600",
+    "views": 119800
    }
   },
   "page_id": "3f0958b0fc14819f99f8f24903aeaeb3",
   "pages": {
    "es": "3f0958b0-fc14-8011-99fa-cae338d3228d",
    "fr": "3f0958b0-fc14-80fb-956e-c9a57d8d6d55"
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
   },
   "script": "Texteinblendungen – nicht sprechen: (überraschte Reaktion, Musik) pov: Ich verstehe ENDLICH, warum ALLE ChatGPT löschen 😭🤯 (LinkedIn-Jobsuche) 1. Kopier dir die Stellenbeschreibung (Parakeet AI · Resume Maker) 2. Ab auf diese Seite (Parakeet AI · Resume Maker) 3. Reinkopieren und Parakeet AI deinen Lebenslauf fixen lassen … (Parakeet AI · Resume Maker) … und genau auf deine Stelle anpassen (Parakeet AI · Resume Maker) Und dann sieht dein Lebenslauf sooo aus Die Seite: parakeet-ai.com/resume-maker 🎬",
   "status": "active",
@@ -107,17 +148,26 @@
   "id": "N04",
   "inspo": {
    "es": {
-    "at": 1791371942,
-    "prev": null,
+    "rebuilt": true,
     "strict": true,
     "url": "https://www.tiktok.com/@jimena.ruizf/video/7691177962904800520",
     "views": 65000
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
+    "views": 56800
    }
   },
   "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef",
   "pages": {
    "es": "3f0958b0-fc14-8009-9338-d666a6b9fb0a",
    "fr": "3f0958b0-fc14-808d-b0f2-cfff9682c186"
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
   },
   "script": "Ich such jetzt schon seit Monaten einen Job. Und mit Monaten mein ich wirklich Monate. Ich schick meinen Lebenslauf auf jede einzelne Anzeige raus und hab nicht eine einzige Antwort bekommen. (Gmail-Aufnahme) Und jetzt guckt euch mal heute mein Postfach an, Leute. Guckt, wie viele Antworten ich bekommen hab – echt auf jede Stelle, auf die ich mich beworben hab. Ich dachte ja: „Die haben doch alle irgendwelche Kontakte“, aber in Wahrheit war mein Lebenslauf, sagen wir mal, eine Katastrophe. (Parakeet AI · Resume Maker) Das war mein Lebenslauf, (Parakeet AI · Resume Maker) und mit dem bin ich auf diese Seite. Rein in Parakeet AI, Lebenslauf hochgeladen, (Parakeet AI · Resume Maker) und dann kam die Bewertung – die schlechteste Punktzahl überhaupt. Da war echt fast nichts gut. (Parakeet AI · Resume Maker) Die App hat mich gefragt, was ich schon gearbeitet hab, wer ich bin, wo ich hin will",
   "status": "active",
@@ -127,9 +177,14 @@
   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
   "id": "N07",
   "inspo": {
+   "es": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
+    "views": 39300
+   },
    "fr": {
-    "at": 1791371942,
-    "prev": null,
+    "rebuilt": true,
     "strict": true,
     "url": "https://www.tiktok.com/@marine.realfakephotos/video/7691252438875098400",
     "views": 144900
@@ -141,6 +196,7 @@
    "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472"
   },
   "reworded": {
+   "es": true,
    "fr": true
   },
   "script": "Mein Bruder ist Recruiter, und ich zeig dir, wie du in 24 Stunden einen Job findest. Als Erstes muss dein Lebenslauf gut sein und eine gute Punktzahl haben. Am einfachsten checkst du das, (Parakeet AI · Resume Maker) indem du auf diese Seite gehst und deine Daten eingibst. (Parakeet AI · Resume Maker) So sieht mein Lebenslauf gerade aus. (Parakeet AI · Resume Maker) Nach jeder Frage kommt ein neuer Teil vom Lebenslauf dazu, und der ist echt wichtig. (Parakeet AI · Resume Maker) Und hier ist er. Meine Endpunktzahl ist Y, und so sieht der Lebenslauf jetzt aus. (Parakeet AI · Resume Maker) Vorher sah er so aus. (Parakeet AI · Resume Maker) Und das war seine Punktzahl. 🎬",
@@ -219,12 +275,21 @@
    "de": {
     "at": 1791371836,
     "url": "https://www.tiktok.com/@sarinajobstep/video/7692749898785099040"
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673",
+    "views": 181300
    }
   },
   "page_id": "3f1958b0-fc14-8109-965a-ddda9e24cd16",
   "pages": {
    "es": "3f1958b0-fc14-8141-8dac-f54a97131d3f",
    "fr": "3e2958b0-fc14-80e7-b625-c1d444186ff5"
+  },
+  "reworded": {
+   "fr": true
   },
   "script": "(Parakeet AI · Resume Maker) Zwei Kandidaten bewerben sich mit ihrem Lebenslauf auf genau dieselbe Stelle: Kandidat 1 und Kandidat 2. Was meinst du, welcher Kandidat wird zum Vorstellungsgespräch eingeladen?  Und zwar der hier. Und warum? Weil dieser Lebenslauf hier lauter Icons und Diagramme hat, die das ATS-System nicht lesen kann. Und außerdem fehlen ihm ganz viele Keywords, die du brauchst, um durch diese Filter zu kommen.  Der hier dagegen ist im richtigen Format, also im ATS-Format. (Parakeet AI · Resume Maker) Und so einen kannst du zum Beispiel mit so einem Tool machen: parakeet-ai.com/resume-maker. Das geht im Chat deine ganze Erfahrung mit dir durch, stellt dir ganz viele Fragen dazu und macht dir dann deinen ATS-sicheren Lebenslauf.  (Parakeet AI · Resume Maker) Und wie du hier bei der Berufserfahrung siehst, stehen da zum Beispiel auch richtig klar die Ergebnisse dabei. Der",
   "source_video": "https://www.tiktok.com/@emma_jobtips/video/7690984077121424673",
@@ -455,6 +520,12 @@
   "description": "Ex-HR-insider secret: a creator who claims to have worked in corporate HR reveals the hidden trick of sharing and copying a job link, pasting it into Parakeet AI via 'Job hinzufügen' and getting an auto-tailored CV. Examples: 'Personaler wollen nicht, dass du das weißt 😳😳'",
   "id": "X16",
   "inspo": {
+   "es": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
+    "views": 165700
+   },
    "fr": {
     "at": 1791371836,
     "url": "https://www.tiktok.com/@charline.jobstep.io/video/7692439494859050272"
@@ -469,6 +540,9 @@
    "at": 1791296449,
    "because": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
    "views": 159500
+  },
+  "reworded": {
+   "es": true
   },
   "script": "Ich hab gerade meinen Job im HR gekündigt, also verrat ich dir jetzt alle ihre Geheimnisse. Der Grund, warum gerade so viele Leute keinen Job finden, ist eigentlich ganz einfach. Schuld ist dein Lebenslauf, Leute. Die meisten Lebensläufe sind einfach Canva-Vorlagen. Das sagt dir keiner, aber dein Lebenslauf muss eigentlich super schlicht, fast schon hässlich sein. Und noch ein Geheimnis: Oft schaut sich am Anfang kein einziger Mensch aus dem HR deinen Lebenslauf an. Das machen alles ATS-Filter. So was wie künstliche Intelligenz. Und damit ich dir wirklich helfe, zeig ich dir die Seite, mit der du bessere Chancen hast, durch diese Filter zu kommen. Du gehst auf Parakeet AI. Da siehst du alles auf einen Blick. Du klickst auf „Neuer Job“ und fügst die Stellenanzeige ein. Mir hat diese Anzeige hier gefallen. Die kopier ich hier rein. Die KI analysiert deinen Lebenslauf und gibt dir eine erst",
   "source": "DACH archive (old formats)",
@@ -533,12 +607,21 @@
     "strict": true,
     "url": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
     "views": 265400
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
+    "views": 266700
    }
   },
   "page_id": "3f1958b0-fc14-81ef-aa77-e32183b89f91",
   "pages": {
    "es": "3f1958b0-fc14-81dc-b34d-c0a486a8c4d3",
    "fr": "3d5958b0-fc14-80e1-8ab6-d13fc35db8c1"
+  },
+  "reworded": {
+   "fr": true
   },
   "script": "Lügt in eurem Lebenslauf. Und ich sag's nochmal: Lügt in eurem Lebenslauf. Und nein, damit mein ich nicht, dass ihr irgendwelche Jobs erfinden sollt, die ihr nie gemacht habt. Es geht einfach nur um die kleinen Details, die am Ende doch den großen Unterschied machen. Ich wusste nämlich auch überhaupt nicht, was ich in meinen Lebenslauf schreiben soll. Bis mir eine Freundin von diesem Tool hier erzählt hat, Parakeet AI. Da lädst du einfach deinen alten Lebenslauf hoch. Und dann fügst du hier einfach die Stellenausschreibung ein. Und Leute, ihr werdet mir das vielleicht nicht glauben, aber dann wird euer Lebenslauf einfach passend zur Stellenausschreibung angepasst. Wie krass ist das bitte? Probiert's aus: parakeet-ai.com/resume-maker.",
   "source_video": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",

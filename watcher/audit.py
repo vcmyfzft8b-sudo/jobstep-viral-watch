@@ -203,8 +203,9 @@ def _note_is_same(note, lang):
 
 
 def _put_example(fmt, m, page_id, lang, url, same_lang):
-    if align.approved_script(fmt['id'], lang):
-        return False  # changing the example must never silently revoke a script approval
+    locked = align.approved_script(fmt['id'], lang)
+    if locked and locked.get('example', '').split('?')[0] != url.split('?')[0]:
+        return False  # changing the example must never silently revoke a script approval (unless the approval names it)
     h, vid = localize._handle(url), re.search(r'/video/(\d+)', url).group(1)
     d = tiktok.video_detail(h, vid)
     if not d:

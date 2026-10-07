@@ -265,3 +265,16 @@ def test_direction_blocks_never_include_the_example_link(monkeypatch):
     monkeypatch.setattr(notion, 'children', lambda pid: page)
     got = [reword._plain(b) for b in reword.direction_blocks('p')]
     assert got == ['Ca. 32 Sekunden', 'Halte die Lebensläufe in die Kamera.']
+
+
+def test_apply_approvals_switches_example_then_writes_approved_script(monkeypatch):
+    pages = {'N10_de': {'src': '999'}, 'N10_fr': {'src': '111'}, 'N10_es': {'src': '112'}}
+    w = World(monkeypatch, pages)
+    ok = {'example': 'https://www.tiktok.com/@a/video/111', 'script': [], 'voiceover': True}
+    monkeypatch.setattr(align, 'approved_script', lambda fid, lang: ok if (fid, lang) == ('N10', 'de') else None)
+    order = []
+    monkeypatch.setattr(align, 'align_page', lambda f, pid, lang, cfg, links, feedback='': (order.append(('write', pid)) or ('ok', 'approved script')))
+    out = crosscheck.apply_approvals([fmt('N10')], MKTS, CFG, page_of, {},
+                                     put_example=lambda f, m, pid, lang, url: order.append(('example', pid, url)))
+    assert order == [('example', 'N10_de', ok['example']), ('write', 'N10_de')]   # only the approved page
+    assert len(out) == 2

@@ -437,3 +437,26 @@ def approval_drafts(fmts, mkts, cfg, page_of, meta):
                                      'why': '' if st == 'draft' else spec, 'at': int(time.time())}
             print(f"{f['id']} {m}: {st}", flush=True)
     return out
+
+
+def apply_approvals(fmts, mkts, cfg, page_of, meta, put_example=None):
+    """After the user approved new locked scripts (registry/approved_scripts.json): the page gets the approved example
+    (if it differs) and the approved script; directions are matched to it. Only approved entries are touched."""
+    put_example = put_example or default_put_example
+    out = []
+    for f in [f for f in fmts if f.get('status') == 'active']:
+        for mk in mkts:
+            m, lang = mk['key'], mk['lang']
+            pid, ok = page_of(f, m), align.approved_script(f['id'], lang)
+            if not pid or not ok:
+                continue
+            cur = (localize.current_source(pid) or {}).get('url') or ''
+            if cur.split('?')[0] != ok['example'].split('?')[0]:
+                put_example(f, m, pid, lang, ok['example'])
+                out.append(f"{f['id']} {m}: example -> {ok['example']}")
+            st, why = align.align_page(f, pid, lang, cfg, cfg['links'])
+            if why != 'approved script unchanged':
+                out.append(f"{f['id']} {m}: {st} ({why})")
+    for line in out:
+        print(line, flush=True)
+    return out

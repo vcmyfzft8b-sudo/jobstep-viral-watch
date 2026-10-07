@@ -53,6 +53,8 @@ Check strictly:
 3. script_reworded: is the script reworded rather than a word-for-word transcription/translation of the example?
    (very similar is good; identical sentences are not)
 4. script_ok: natural {lang_name}, mentions Parakeet AI (never JobStep), no promises nobody can guarantee.
+Note: X and Y in the script are intentional placeholders - the creator says the score the app shows them. They are
+correct; never ask to replace them with numbers.
 Return JSON {{"example_same_format": true, "script_follows_example": true, "script_reworded": true, "script_ok": true,
 "example_issue": "<short, if any>", "script_issues": ["<short>", ...]}}"""
     v = llm.chat_json(model, 'You are a strict QA reviewer for UGC creator instructions. Reply with JSON only.', prompt, timeout=1200)

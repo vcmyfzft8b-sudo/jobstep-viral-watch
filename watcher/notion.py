@@ -24,7 +24,11 @@ def api(method, path, body=None, version=None):
         h = _headers()
         if version:
             h['Notion-Version'] = version
-        r = requests.request(method, API + path, headers=h, json=body, timeout=60)
+        try:
+            r = requests.request(method, API + path, headers=h, json=body, timeout=120)
+        except (requests.Timeout, requests.ConnectionError):
+            time.sleep(5 + attempt * 5)  # Notion was slow: try again
+            continue
         if r.status_code == 429 or r.status_code >= 500:
             time.sleep(float(r.headers.get('Retry-After', 2 + attempt * 3)))
             continue

@@ -29,10 +29,22 @@
  {
   "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'.",
   "id": "N01",
+  "inspo": {
+   "de": {
+    "at": 1791372321,
+    "prev": "https://www.tiktok.com/@emasavetuje/video/7692550993833151762",
+    "strict": true,
+    "url": "https://www.tiktok.com/@salii.jobtipps/video/7662355491695152417",
+    "views": 95700
+   }
+  },
   "page_id": "3f0958b0fc14816aadb3f7c783ee29c9",
   "pages": {
    "es": "3f0958b0-fc14-8066-9ac1-da9ddefec788",
    "fr": "3f0958b0-fc14-80a7-b99b-d1bdcb5e0628"
+  },
+  "reworded": {
+   "de": true
   },
   "script": "Wie soll ich meinen Eltern bitte erklären, dass ich 2026 mit dem Studium fertig bin und einfach keinen Job finde? Und warum sagt einem eigentlich keiner, wie schwer so ein Lebenslauf ist? (Parakeet AI · Resume Maker) Ich fand meinen Lebenslauf echt gut, richtig schön gemacht – (Parakeet AI · Resume Maker) bis ich Parakeet AI entdeckt hab. Das bewertet deinen Lebenslauf und macht ihn besser. (Parakeet AI · Resume Maker) Leute, ich hatte X von 100. Ich hatte null Ahnung, dass der so schlecht ist. Es gibt nämlich ein bestimmtes Format für Lebensläufe, und das kannte ich nicht – deswegen kamen bei mir nur Absagen. (Parakeet AI · Resume Maker) Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch. (Parakeet AI · Resume Maker) Das ganze Format macht es für dich, und klar kannst du",
   "status": "active",
@@ -127,6 +139,9 @@
   "pages": {
    "es": "3f0958b0-fc14-800e-a255-eb7b885dad4d",
    "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472"
+  },
+  "reworded": {
+   "fr": true
   },
   "script": "Mein Bruder ist Recruiter, und ich zeig dir, wie du in 24 Stunden einen Job findest. Als Erstes muss dein Lebenslauf gut sein und eine gute Punktzahl haben. Am einfachsten checkst du das, (Parakeet AI · Resume Maker) indem du auf diese Seite gehst und deine Daten eingibst. (Parakeet AI · Resume Maker) So sieht mein Lebenslauf gerade aus. (Parakeet AI · Resume Maker) Nach jeder Frage kommt ein neuer Teil vom Lebenslauf dazu, und der ist echt wichtig. (Parakeet AI · Resume Maker) Und hier ist er. Meine Endpunktzahl ist Y, und so sieht der Lebenslauf jetzt aus. (Parakeet AI · Resume Maker) Vorher sah er so aus. (Parakeet AI · Resume Maker) Und das war seine Punktzahl. 🎬",
   "status": "active",
@@ -236,14 +251,19 @@
   "id": "A202610061334",
   "inspo": {
    "es": {
-    "at": 1791371524,
-    "url": "https://www.tiktok.com/@luworks/video/7692607504752135432"
+    "at": 1791372321,
+    "strict": true,
+    "url": "https://www.tiktok.com/@luworks/video/7692607504752135432",
+    "views": 142600
    }
   },
   "page_id": "3f1958b0-fc14-81de-8b2c-f04f93c7caee",
   "pages": {
    "es": "3f1958b0-fc14-81dc-b082-ef034500b188",
    "fr": "3f1958b0-fc14-81de-9596-f60bb33c85fa"
+  },
+  "reworded": {
+   "es": true
   },
   "script": "Also, Oktober ist offiziell da – und das ist der beste Monat, um einen Job zu suchen. Genau jetzt bereiten sich nämlich alle auf das vor, was im Dezember kommt. Also bleib dran, ich geb dir einen richtig krassen Tipp, damit du endlich aus der Arbeitslosigkeit rauskommst.  (Handy in die Hand nehmen, als würdest du deinen Canva-Lebenslauf schließen) Als Erstes machst du diesen Lebenslauf zu, den du in Canva hast, und stattdessen machst du einen im Harvard-Stil. Und wenn du nicht weißt, was das ist, dann wird's echt Zeit, aufzuwachen – wahrscheinlich hast du genau deswegen noch keinen Job.  (Parakeet AI · Resume Maker) Geh auf diese Seite, die heißt Parakeet AI. (Parakeet AI · Resume Maker) Das ist mega einfach: Du lädst deinen Lebenslauf hoch und kriegst eine komplette Analyse. (Parakeet AI · Resume Maker) Das hier kam raus, als ich meinen Lebenslauf zum ersten Mal hochgeladen hab – X von",
   "source_video": "https://www.tiktok.com/@luworks/video/7692607504752135432",
@@ -509,8 +529,10 @@
   "id": "A20261006183623",
   "inspo": {
    "de": {
-    "at": 1791371524,
-    "url": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633"
+    "at": 1791372321,
+    "strict": true,
+    "url": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
+    "views": 265400
    }
   },
   "page_id": "3f1958b0-fc14-81ef-aa77-e32183b89f91",

@@ -1,0 +1,736 @@
+{
+ "3f0958b0-fc14-8029-8420-e7b75c32f69b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Si tu envoies exactement le même CV à toutes les entreprises depuis des mois, c’est peut-être le moment de le revoir.",
+   "text": {
+    "content": "Si tu envoies exactement le même CV à toutes les entreprises depuis des mois, c’est peut-être le moment de le revoir.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f0958b0-fc14-8052-9832-d099dae675e6": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Moi, je pensais qu’il était très bien, mais en réalité, je n’en savais rien.",
+   "text": {
+    "content": "Moi, je pensais qu’il était très bien, mais en réalité, je n’en savais rien.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f0958b0-fc14-8077-b03b-e5355d8bab6d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Alors j’ai ajouté mes informations sur ParakeetAI et j’ai répondu aux questions une par une. À chaque étape, l’outil construisait une nouvelle partie de mon CV.",
+   "text": {
+    "content": "Alors j’ai ajouté mes informations sur ParakeetAI et j’ai répondu aux questions une par une. À chaque étape, l’outil construisait une nouvelle partie de mon CV.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f0958b0-fc14-80bf-bc1f-c8c9c825069d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "À la fin, j’ai obtenu un score de 95, et la différence entre l’ancienne et la nouvelle version était énorme.",
+   "text": {
+    "content": "À la fin, j’ai obtenu un score de 95, et la différence entre l’ancienne et la nouvelle version était énorme.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f0958b0-fc14-80fc-98e6-d132a284e1ff": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Mon frère travaille dans le recrutement et la première chose qu’il m’a dite, c’est de vérifier si mon CV était vraiment clair et facile à lire. (Montre en même temps ton ancien cv)",
+   "text": {
+    "content": "Mon frère travaille dans le recrutement et la première chose qu’il m’a dite, c’est de vérifier si mon CV était vraiment clair et facile à lire. (Montre en même temps ton ancien cv)",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f1958b0-fc14-8107-a8d2-c0247e456a35": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Entra en esta página que se llama Parakeet AI. (",
+   "text": {
+    "content": ") Entra en esta página que se llama Parakeet AI. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Es superfácil, porque subes tu CV y te hace un análisis completo. (",
+   "text": {
+    "content": ") Es superfácil, porque subes tu CV y te hace un análisis completo. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Esto es lo que me salió nada más subir mi CV, un X de 100, así que le doy a mejorar. (",
+   "text": {
+    "content": ") Esto es lo que me salió nada más subir mi CV, un X de 100, así que le doy a mejorar. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Vas al editor con IA… (",
+   "text": {
+    "content": ") Vas al editor con IA… (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Y listo, me ha hecho un CV estilo Harvard optimizado. (",
+   "text": {
+    "content": ") Y listo, me ha hecho un CV estilo Harvard optimizado. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Y ahora sí, mi CV tiene un Y de 100. Pruébalo en parakeet-ai.com/resume-maker. ",
+   "text": {
+    "content": ") Y ahora sí, mi CV tiene un Y de 100. Pruébalo en parakeet-ai.com/resume-maker. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f1958b0-fc14-8151-97c4-ca90f71a2e3a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "A ver, octubre ya está aquí, y es oficialmente el mejor mes para buscar trabajo. Justo ahora todas las empresas se están preparando para todo lo que viene en diciembre, así que quédate, que te voy a dar un tipazo para que salgas del paro. ",
+   "text": {
+    "content": "A ver, octubre ya está aquí, y es oficialmente el mejor mes para buscar trabajo. Justo ahora todas las empresas se están preparando para todo lo que viene en diciembre, así que quédate, que te voy a dar un tipazo para que salgas del paro. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f1958b0-fc14-8152-b404-e3c209b31e97": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Cierra algo con un gesto exagerado (una caja, una libreta, la tapa de un estuche)) Primero, cierra ese CV que tienes en Canva, y lo que vas a hacer es uno estilo Harvard. Si no sabes lo que es, espabila, porque igual es justo por eso que no te llaman. ",
+   "text": {
+    "content": "(Cierra algo con un gesto exagerado (una caja, una libreta, la tapa de un estuche)) Primero, cierra ese CV que tienes en Canva, y lo que vas a hacer es uno estilo Harvard. Si no sabes lo que es, espabila, porque igual es justo por eso que no te llaman. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "497746d1-5b5b-450f-ad48-def116e1fea0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Wenn's bei dir mit der Jobsuche also nicht klappt, liegt's vielleicht einfach am Lebenslauf. Probier die Seite auf jeden Fall aus, mir hat sie echt geholfen. Ich hatte endlich ein Vorstellungsgespräch. ",
+   "text": {
+    "content": "Wenn's bei dir mit der Jobsuche also nicht klappt, liegt's vielleicht einfach am Lebenslauf. Probier die Seite auf jeden Fall aus, mir hat sie echt geholfen. Ich hatte endlich ein Vorstellungsgespräch. ",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "http://parakeet-ai.com/resume-maker",
+   "plain_text": "parakeet-ai.com/resume-maker",
+   "text": {
+    "content": "parakeet-ai.com/resume-maker",
+    "link": {
+     "url": "http://parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  }
+ ],
+ "64df0d77-b613-4f00-926f-f0bb2efcde33": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Ich fand meinen Lebenslauf echt gut, richtig schön gemacht – (",
+   "text": {
+    "content": ") Ich fand meinen Lebenslauf echt gut, richtig schön gemacht – (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") bis ich Parakeet AI entdeckt hab. Das bewertet deinen Lebenslauf und macht ihn besser. (",
+   "text": {
+    "content": ") bis ich Parakeet AI entdeckt hab. Das bewertet deinen Lebenslauf und macht ihn besser. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Leute, ich hatte X von 100. Ich hatte null Ahnung, dass der so schlecht ist.",
+   "text": {
+    "content": ") Leute, ich hatte X von 100. Ich hatte null Ahnung, dass der so schlecht ist.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "a7f39b4c-7101-4b1b-869f-5aed3cdfdb3d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Das ganze Format macht es für dich, und klar kannst du noch alles ändern, was du willst. (",
+   "text": {
+    "content": ") Das ganze Format macht es für dich, und klar kannst du noch alles ändern, was du willst. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Aber guck mal, wie viel besser und professioneller der jetzt aussieht. (",
+   "text": {
+    "content": ") Aber guck mal, wie viel besser und professioneller der jetzt aussieht. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Und der kommt durch alle Systeme, sogar durch die KI-Systeme, die Lebensläufe bewerten – und dann landest du direkt bei HR.",
+   "text": {
+    "content": ") Und der kommt durch alle Systeme, sogar durch die KI-Systeme, die Lebensläufe bewerten – und dann landest du direkt bei HR.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "b276b988-6684-40c7-b2e5-00b825cee527": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Wie soll ich meinen Eltern bitte erklären, dass ich 2026 mit dem Studium fertig bin und einfach keinen Job finde? Und warum sagt einem eigentlich keiner, wie schwer so ein Lebenslauf ist?",
+   "text": {
+    "content": "Wie soll ich meinen Eltern bitte erklären, dass ich 2026 mit dem Studium fertig bin und einfach keinen Job finde? Und warum sagt einem eigentlich keiner, wie schwer so ein Lebenslauf ist?",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "dc7cd813-7630-4ce7-9a7d-79d71330efac": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Es gibt nämlich ein bestimmtes Format für Lebensläufe, und das kannte ich nicht – deswegen kamen bei mir nur Absagen. (",
+   "text": {
+    "content": "Es gibt nämlich ein bestimmtes Format für Lebensläufe, und das kannte ich nicht – deswegen kamen bei mir nur Absagen. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch.",
+   "text": {
+    "content": ") Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ]
+}

@@ -20,9 +20,11 @@ Parakeet AI, in the creators' language. Reply with JSON only."""
 RULES = """RULES
 - Output language for ALL creator-facing text (page_title, title_hook, script, visual_hook_first, extra_hook_lines,
   asset names/descriptions, directions): {lang}. Script style: {style}. Same meaning, same beats, same order, roughly
-  the same length as the original speech (±25%). If the original is already in {lang}, keep the wording close and
-  only change what is needed for Parakeet AI. The example pages below are German - copy their STYLE and STRUCTURE,
-  but write in {lang}.
+  the same length as the original speech (±25%) - but REWORDED, never a 1:1 transcription or literal translation:
+  say each beat in your own words (other phrasing, other sentence structure, other filler words), so the video feels
+  very similar but is clearly not a copy of the JobStep creator. This applies even more when the original is already
+  in {lang}: then no sentence may match the original word for word. Keep the hook idea and on-screen title punchy
+  (they may stay close). The example pages below are German - copy their STYLE and STRUCTURE, but write in {lang}.
 - Replace JobStep with Parakeet AI everywhere (jobstep.io -> parakeet-ai.com/resume-maker). The words "JobStep" or
   "Job Step" must not appear anywhere in your output.
 - Concrete scores/percentages the app shows become X (before) and Y (after) - creators read their own numbers.

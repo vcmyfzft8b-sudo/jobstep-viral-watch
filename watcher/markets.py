@@ -20,6 +20,9 @@ TEXT = {
             'Im Video wird JobStep genutzt. Mach es genau gleich, nur mit Parakeet AI: Zeig alles, was im Inspirationsvideo '
             'gezeigt wird – öffne Parakeet AI an den Stellen, an denen JobStep geöffnet wird, und zeig es genauso. JobStep darf '
             'in deinem Video nirgends zu sehen oder zu hören sein.'],
+        'inspo_note_same': '**Wichtig:** Das Inspirationsvideo ist auf Deutsch und zeigt genau dieses Format – nimm es als Vorbild '
+                           'für Tempo, Vibe, Licht, Kamerawinkel und dafür, wie die App gezeigt wird. Sprich aber unser Skript '
+                           'unten, nicht den Text aus dem Video.',
         'title_h': 'TITEL', 'script_h': '💬SKRIPT', 'hook_h': '🎬 VISUELLER HOOK', 'res_h': 'RESSOURCEN',
         'sub_voice': 'Automatische Untertitel', 'sub_silent': 'Musik aus der Plattform-Bibliothek, kein Voiceover',
         'silent_label': 'Texteinblendungen – nicht sprechen:',
@@ -58,6 +61,9 @@ TEXT = {
             'Dans la vidéo, c’est JobStep qui est utilisé. Fais exactement pareil, mais avec Parakeet AI : montre tout ce '
             'qui est montré dans la vidéo d’inspiration – ouvre Parakeet AI aux moments où JobStep est ouvert et montre-le '
             'de la même façon. JobStep ne doit apparaître ni être entendu nulle part dans ta vidéo.'],
+        'inspo_note_same': '**Important :** La vidéo d’inspiration est en français et montre exactement ce format – prends-la '
+                           'comme modèle pour le rythme, l’ambiance, la lumière, les angles de caméra et la façon de montrer '
+                           'l’app. Mais dis notre script ci-dessous, pas le texte de la vidéo.',
         'title_h': 'TITRE', 'script_h': '💬SCRIPT', 'hook_h': '🎬 ACCROCHE VISUELLE', 'res_h': 'RESSOURCES',
         'sub_voice': 'Sous-titres automatiques', 'sub_silent': 'Musique de la bibliothèque de la plateforme, sans voix off',
         'silent_label': 'Textes à l’écran – ne pas parler :',
@@ -96,6 +102,9 @@ TEXT = {
             'En el vídeo se usa JobStep. Hazlo exactamente igual, pero con Parakeet AI: enseña todo lo que se ve en el vídeo '
             'de inspiración – abre Parakeet AI en los momentos en que se abre JobStep y enséñalo de la misma forma. JobStep no '
             'puede verse ni oírse en ningún momento de tu vídeo.'],
+        'inspo_note_same': '**Importante:** El vídeo de inspiración está en español y muestra exactamente este formato – tómalo '
+                           'como modelo para el ritmo, el ambiente, la luz, los ángulos de cámara y cómo enseñar la app. Pero '
+                           'di nuestro guion de abajo, no el texto del vídeo.',
         'title_h': 'TÍTULO', 'script_h': '💬GUION', 'hook_h': '🎬 GANCHO VISUAL', 'res_h': 'RECURSOS',
         'sub_voice': 'Subtítulos automáticos', 'sub_silent': 'Música de la biblioteca de la plataforma, sin voz en off',
         'silent_label': 'Textos en pantalla – no hablar:',

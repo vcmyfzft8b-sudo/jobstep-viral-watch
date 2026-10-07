@@ -91,7 +91,15 @@ def upload_video(path):
 
 # ---------- page content (same layout as our existing format pages) ----------
 
-def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None):
+def inspo_note(lang, same_lang=False, own=False):
+    """The note under the inspiration video: same-language example = 'use it as the model, say our script';
+    otherwise 'film from our script, the video shows pacing/look'. The JobStep line only for JobStep videos."""
+    T = TEXT[lang]
+    first = T['inspo_note_same'] if same_lang else T['inspo_note'][0]
+    return [first] if own else [first, T['inspo_note'][1]]
+
+
+def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, same_lang=False):
     T = TEXT[lang]
     cue_links = {'parakeet': ('Parakeet AI · Resume Maker', links['parakeet']),
                  'linkedin': (T['cue_linkedin'], links['linkedin'])}
@@ -99,7 +107,7 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None):
     if file_upload_id:
         blocks.append(block('video', type='file_upload', file_upload={'id': file_upload_id}))
     blocks.append(para([rt(T['source'], link=video['url'])]))
-    note = T['inspo_note'][:1] if video.get('own') else T['inspo_note']  # our own creator's video: no JobStep line
+    note = inspo_note(lang, same_lang, own=video.get('own'))
     blocks.append(block('callout', md('\n'.join(note)),
                         icon={'type': 'emoji', 'emoji': '⚠️'}, color='gray_background'))
 

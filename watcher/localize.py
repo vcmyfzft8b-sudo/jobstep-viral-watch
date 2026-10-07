@@ -15,7 +15,7 @@ import shutil
 import tempfile
 import time
 
-from . import discover, llm, media, notion, tiktok
+from . import discover, llm, media, notion, soniox, tiktok
 from .markets import TEXT
 
 LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish'}
@@ -118,6 +118,48 @@ def add_section(page_id, d, lang):
         notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section})
 
 
+def example_text(url):
+    """What is said / written in an example video (TikTok subtitles, else Soniox), for rewording against it."""
+    h, vid = _handle(url), re.search(r'/video/(\d+)', url or '')
+    if not h or not vid:
+        return ''
+    d = tiktok.video_detail(h, vid.group(1)) or {}
+    text = d.get('subtitles', '')
+    if len(text) < 40:
+        work = tempfile.mkdtemp(prefix='ex-')
+        try:
+            text = soniox.transcribe(media.audio(media.download(url, work), work)).get('text', '') or text
+        except Exception:
+            pass
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+    return f"ON-SCREEN: {d.get('sticker', '')}\nSPEECH: {text}"
+
+
+def set_note(page_id, lang, same_lang, own=False):
+    """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model')."""
+    blocks = notion.children(page_id)
+    i = next((k for k, b in enumerate(blocks) if b['type'] == 'video'), None)
+    if i is None:
+        return
+    for b in blocks[i + 1:i + 4]:
+        if b['type'] == 'callout':
+            notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
+                notion.inspo_note(lang, same_lang, own)))}})
+            return
+
+
+def finish(f, m, pid, lang, url, cfg):
+    """After a same-language example is on the page: note says so, script reworded against that example."""
+    from . import reword
+    set_note(pid, lang, True)
+    status, why, changes = reword.reword_page(f, pid, lang, cfg['models']['build'], example_text(url))
+    if status == 'ok':
+        reword.apply(changes)
+        f.setdefault('reworded', {})[m] = True
+    return status, why
+
+
 def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
     """Returns [(format title, market, status, detail)]. status: kept | replaced | missing | no page | error."""
     now = now or time.time()
@@ -136,15 +178,24 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
             if not pid:
                 report.append((f['title'], m, 'no page', ''))
                 continue
-            if (f.get('inspo') or {}).get(m):
+            if (f.get('inspo') or {}).get(m, {}).get('strict'):
+                if not (f.get('reworded') or {}).get(m):  # example in place: note + script follow it
+                    try:
+                        finish(f, m, pid, lang, f['inspo'][m]['url'], cfg)
+                    except Exception as e:
+                        print('finish failed', f['title'], m, str(e)[:150])
                 report.append((f['title'], m, 'kept', f['inspo'][m]['url']))
-                continue
+                continue  # entries from before the strict check are looked at again
             try:
                 src = current_source(pid)
                 if src and src['url'] and langs.get(_handle(src['url'])) == lang:
-                    f.setdefault('inspo', {})[m] = {'url': src['url'], 'at': int(now)}
-                    report.append((f['title'], m, 'kept', src['url']))
-                    continue
+                    cur = tiktok.video_detail(_handle(src['url']), re.search(r'/video/(\d+)', src['url']).group(1))
+                    if cur and cur['views'] >= MIN_VIEWS:
+                        f.setdefault('inspo', {})[m] = {'url': src['url'], 'views': cur['views'], 'at': int(now), 'strict': True}
+                        if not (f.get('reworded') or {}).get(m):
+                            finish(f, m, pid, lang, src['url'], cfg)
+                        report.append((f['title'], m, 'kept', src['url']))
+                        continue  # right language and proven; otherwise look for a better one below
                 found = None
                 for vid, v in [(vid, v) for vid, v in ranked if langs.get(v['handle']) == lang and v['views'] >= MIN_VIEWS][:tries]:
                     d = tiktok.video_detail(v['handle'], vid)
@@ -163,7 +214,10 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
                     add_section(pid, found, lang)
                 f.setdefault('inspo', {})[m] = {'url': found['url'], 'views': found['views'], 'at': int(now),
                                                 'prev': src['url'] if src else None, 'strict': True}
-                report.append((f['title'], m, 'replaced', f"{found['url']} ({found['views'] // 1000}k views)"))
+                f.setdefault('reworded', {}).pop(m, None)
+                rw = finish(f, m, pid, lang, found['url'], cfg)  # note + script now follow this example
+                report.append((f['title'], m, 'replaced', f"{found['url']} ({found['views'] // 1000}k views)"
+                               + ('' if rw[0] == 'ok' else f" – script not reworded: {rw[1]}")))
             except Exception as e:
                 report.append((f['title'], m, 'error', str(e)[:150]))
     return report
@@ -193,7 +247,7 @@ def recheck(fmts, mkts, history, accounts, meta, cfg, page_of, now=None):
             prev = x.get('prev')
             f['inspo'].pop(m)
             r = run([f], [mk], history, accounts, meta, cfg, page_of, now)  # tries the next candidates (strict)
-            if r and r[0][2] == 'replaced':
+            if r and r[0][2] in ('replaced', 'kept'):
                 report.append(r[0])
                 continue
             back = prev or f.get('source_video')

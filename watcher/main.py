@@ -17,7 +17,7 @@ import tempfile
 import time
 import traceback
 
-from . import builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, soniox, state, tiktok, weekly
+from . import builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -435,7 +435,8 @@ def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None):
         if replace_page and problems:
             return None, spec, problems
         upload_id = notion.upload_video(media.for_notion(video_file, work))
-        blocks = notion.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'], lab_url=mk['visual_hook_lab'])
+        blocks = notion.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'], lab_url=mk['visual_hook_lab'],
+                                    same_lang=(transcript.get('language') or '')[:2] == mk['lang'])
     finally:
         if own:
             shutil.rmtree(work, ignore_errors=True)
@@ -792,6 +793,8 @@ def main():
     ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
     ap.add_argument('--localize', action='store_true', help='inspiration videos in each market language (missing ones only)')
     ap.add_argument('--localize-recheck', action='store_true', help='strictly re-check every swapped inspiration video')
+    ap.add_argument('--reword', action='store_true', help='reword all page scripts (similar, not 1:1) - writes to Notion')
+    ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -895,6 +898,21 @@ def main():
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
         localize_report(rep)
+        return
+    if a.reword or a.reword_dry:
+        cfg, fmts = load_config(), load_formats()
+        rep = reword.run(fmts, M.load(cfg), cfg, page_of, dry=a.reword_dry)
+        for t, m, status, why, changes in rep:
+            print(f'== {t} | {m} | {status} {why}')
+            for b, old, new, _ in changes[:30]:
+                print('   OLD:', old[:300].replace('\n', ' '))
+                print('   NEW:', new[:300].replace('\n', ' '))
+        if not a.reword_dry:
+            state.save('formats.json', fmts)
+            ok = [r for r in rep if r[2] == 'ok']
+            bad = [r for r in rep if r[2] != 'ok']
+            notify.push('✍️ Scripts reworded (similar, not 1:1)', f"{len(ok)} pages reworded"
+                        + (f"\nNot changed ({len(bad)}): " + '; '.join(f"{t} {m}: {why}" for t, m, _, why, _ in bad) if bad else ''))
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

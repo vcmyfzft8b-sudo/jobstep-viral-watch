@@ -67,7 +67,7 @@ def _examples():
     return '\n'.join(out)
 
 
-def build_spec(video, transcript, frames, model, lang='de'):
+def build_spec(video, transcript, frames, model, lang='de', feedback=''):
     """video: tiktok.video_detail dict; transcript: soniox result; frames: [(seconds, path)]; lang: de | fr | es."""
     T = TEXT[lang]
     rules = RULES.format(lang=T['lang_name'], style=T['style'], country=COUNTRY[lang])
@@ -86,7 +86,7 @@ SPEECH WITH TIMESTAMPS (Soniox):
 The following images are contact sheets of frames from the video; every tile is labelled with its timestamp in
 seconds (red). Use them to see the visual hook, what is shown on screen and when the app appears.
 
-{SCHEMA}"""}]
+{SCHEMA}{chr(10) + 'Your previous attempt was rejected: ' + feedback + ' Fix exactly that.' if feedback else ''}"""}]
     from . import media
     for t0, t1, path in media.contact_sheets(frames, os.path.dirname(frames[0][1])):
         content.append({'type': 'text', 'text': f'Frames {t0:.1f}s – {t1:.1f}s:'})

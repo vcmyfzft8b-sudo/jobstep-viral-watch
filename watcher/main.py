@@ -436,12 +436,17 @@ def _prepare(v, prepared):
     return work, video_file, transcript, media.frames(video_file, work), True
 
 
-def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None):
+def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None, attempts=1):
     """Build one market's page (its language, current layout). Returns (page_id_or_url, spec, problems)."""
     work, video_file, transcript, frames, own = _prepare(v, prepared)
     try:
-        spec = builder.build_spec(v, transcript, frames, cfg['models']['build'], lang=mk['lang'])
-        problems = builder.validate(spec, transcript, lang=mk['lang'])
+        feedback = ''
+        for _ in range(attempts):  # rebuilds may retry with the reason the last attempt was rejected
+            spec = builder.build_spec(v, transcript, frames, cfg['models']['build'], lang=mk['lang'], feedback=feedback)
+            problems = builder.validate(spec, transcript, lang=mk['lang'])
+            if not problems:
+                break
+            feedback = '; '.join(problems)
         if replace_page and problems:
             return None, spec, problems
         upload_id = notion.upload_video(media.for_notion(video_file, work))
@@ -829,7 +834,7 @@ def rebuild_page(fmt, mk, url):
     v = tiktok.video_detail(*m.groups()) if m else None
     if not v:
         return False, 'example video unavailable'
-    page, spec, problems = make_page(v, mk, cfg, None, replace_page=page_of(fmt, mk['key']))
+    page, spec, problems = make_page(v, mk, cfg, None, replace_page=page_of(fmt, mk['key']), attempts=3)
     if problems:
         return False, '; '.join(problems)[:150]
     fmt.setdefault('reworded', {})[mk['key']] = True
@@ -863,7 +868,7 @@ def standardize(only=None):
                     if not v:
                         report.append((f['title'], m, 'error', f'example video unavailable: {url}'))
                         continue
-                    page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid)
+                    page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid, attempts=3)
                     if problems:
                         report.append((f['title'], m, 'not rebuilt', '; '.join(problems)[:150]))
                         continue

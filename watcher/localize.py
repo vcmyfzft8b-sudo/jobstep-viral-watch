@@ -174,7 +174,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
         if a.get('lang'):
             langs.setdefault(h, a['lang'])
     report = []
-    for f in [f for f in fmts if f.get('status') == 'active']:
+    for f in [f for f in fmts if f.get('status') in ('active', 'pending')]:
         ranked = sorted(((vid, v) for vid, v in history.items() if v.get('format') == f['id']), key=lambda x: -x[1]['views'])[:60]
         for h in {v['handle'] for _, v in ranked} - set(langs):
             langs[h] = discover.language(h)

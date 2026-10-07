@@ -18,10 +18,24 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, detect, discover, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
+from . import align, audit, builder, classify, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
+
+
+CTX = {}  # meta + accounts of the current run (the quality gate needs them)
+
+
+def _gate(fmt, mkts, fmts, history, cfg, kind):
+    """Quality gate for a built/revived format: (published, position, reasons)."""
+    meta, accounts = CTX.get('meta', {}), CTX.get('accounts') or state.load('accounts.json', {})
+    ok, reasons = gate.check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild_page)
+    if ok:
+        gate.publish(fmt, mkts, page_of)
+        return True, rerank(mkts, fmts, history, cfg).index(fmt['id']) + 1, []
+    gate.hold(fmt, reasons, kind)
+    return False, None, reasons
 
 
 def load_config():
@@ -105,6 +119,8 @@ def run(dry_run=False, only_detect=False):
     german = local_accounts(account_info, cfg, 'de')
     accounts = [h for h, a in account_info.items() if a['status'] in ('active', 'manual')]
     radar_page = cfg['notion']['radar_page']
+
+    CTX.update({'meta': meta, 'accounts': account_info})
 
     # 1. new videos
     fresh, embed_views = 0, {}
@@ -215,6 +231,14 @@ def run(dry_run=False, only_detect=False):
                 print('re-judge failed', v['id'], str(e)[:150])
             finally:
                 shutil.rmtree(work, ignore_errors=True)
+
+    # 4a. formats waiting at the quality gate: checked again, published once every language page passes
+    if not dry_run and not only_detect:
+        try:
+            gate.retry_pending(fmts, mkts, cfg, history, account_info, meta, page_of, set_page, make_page, rebuild_page, rerank)
+            state.save('formats.json', fmts)
+        except Exception as e:
+            print('gate retry failed:', str(e)[:200])
 
     # 4b. our own creators: new videos, views, formats (feeds the ranking: how each format does for US)
     own_accounts, own_videos = own.load()
@@ -411,8 +435,11 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
             elif blocked:
                 outcome = f"📦 *Already in Notion* – in the archive: *{known['title']}* – not brought back ({blocked})"
             else:
-                pos = revive_format(known, v, mkts, fmts, history, cfg, prepared=prepared)
-                outcome = f"♻️ *Was in the archive → brought back as #{pos}* in all lists: *{known['title']}* ({market_links(known, mkts)})"
+                ok, pos, reasons = revive_format(known, v, mkts, fmts, history, cfg, prepared=prepared)
+                outcome = (f"♻️ *Was in the archive → checked & brought back as #{pos}* in all lists: *{known['title']}* "
+                           f"({market_links(known, mkts)})" if ok else
+                           f"♻️ *Was in the archive* – *{known['title']}* – ⏳ *held back until every language page passes "
+                           f"the check* (tried again next run):\n" + '\n'.join(reasons))
         else:
             set_format(v, history, None, judged=True)
             if blocked:
@@ -421,8 +448,10 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False):
                 fmt, problems, position = build_format(v, mkts, fmts, history, cfg, prepared=prepared,
                                                        description=verdict.get('new_format_description', ''))
                 result.update({'built': fmt['id'], 'problems': problems, 'position': position})
-                outcome = (f"🆕 *NEW format → added as #{position}* in all lists: *{fmt['title']}* ({market_links(fmt, mkts)})"
-                           + (f"\n⚠️ drafts to check: {'; '.join(problems)}" if problems else ''))
+                outcome = (f"🆕 *NEW format → checked & added as #{position}* in all lists: *{fmt['title']}* ({market_links(fmt, mkts)})"
+                           if position else
+                           f"🆕 *NEW format* – *{fmt['title']}* – ⏳ *held back until every language page passes the check* "
+                           f"(tried again next run):\n" + '\n'.join(problems))
         result['format'] = v.get('format')
         script = (verdict.get('english_script') or '').strip() or '(no speech / text found)'
         quoted = '\n'.join('> ' + line for line in script.splitlines() if line.strip())
@@ -487,14 +516,23 @@ def set_page(fmt, m, page_id):
 
 
 def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
-    """A format in the list that is missing in a market gets that market's page (built from this viral video)."""
+    """A listed format missing a market's page gets one - built in the staging page, checked, and only then moved
+    into that market's format folder (and list)."""
     added = []
+    meta, accounts = CTX.get('meta', {}), CTX.get('accounts') or state.load('accounts.json', {})
     for mk in mkts:
-        if not page_of(fmt, mk['key']):
-            pid, spec, problems = make_page(v, mk, cfg, prepared)
-            if not problems:
-                set_page(fmt, mk['key'], pid)
-                added.append(mk['T']['flag'])
+        if page_of(fmt, mk['key']):
+            continue
+        pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
+        if problems:
+            continue
+        set_page(fmt, mk['key'], pid)
+        status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rebuild=rebuild_page)
+        if status in ('ok', 'fixed'):
+            notion.move_page(pid, mk['holder_page'])
+            added.append(mk['T']['flag'])
+        else:  # not good enough yet: not linked anywhere, tried again with the next video
+            set_page(fmt, mk['key'], None)
     if added:
         rerank(mkts, fmts, history, cfg)
     return added
@@ -504,10 +542,10 @@ def build_format(v, mkts, fmts, history, cfg, prepared=None, description=''):
     """New format: build its page in every market's language (DE/FR/ES) and add it to every list.
     Returns (format entry, problems, position)."""
     fid = 'A' + datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d%H%M%S')
-    entry = {'id': fid, 'source_video': v['url'], 'created': int(time.time()), 'pages': {}, 'status': 'active'}
+    entry = {'id': fid, 'source_video': v['url'], 'created': int(time.time()), 'pages': {}, 'status': 'pending'}
     problems = []
-    for mk in mkts:
-        pid, spec, probs = make_page(v, mk, cfg, prepared)
+    for mk in mkts:  # built where creators can't see it yet (private staging page) - the gate publishes it
+        pid, spec, probs = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
         if probs:
             problems.append(f"{mk['T']['flag']} {'; '.join(probs)}")
             continue
@@ -518,42 +556,40 @@ def build_format(v, mkts, fmts, history, cfg, prepared=None, description=''):
         assets = spec.get('assets_needed') or []
         if assets and mk['key'] == mkts[0]['key']:
             notify.push('📎 New format needs a resource', f"{spec['page_title']}: " + ', '.join(a['name'] for a in assets))
-    if not entry.get('page_id'):  # DACH page failed: keep it as a draft entry, don't list it
-        entry['status'] = 'draft'
-        entry.setdefault('title', v.get('hook_en') or 'draft')
+    entry.setdefault('title', v.get('hook_en') or 'new format')
     fmts.append(entry)
     set_format(v, history, fid, judged=True)
-    position = None
-    if entry['status'] == 'active':
-        position = rerank(mkts, fmts, history, cfg).index(fid) + 1
+    published, position, reasons = _gate(entry, mkts, fmts, history, cfg, 'new')
+    problems = reasons
     state.log({'type': 'format_built', 'format': fid, 'pages': entry.get('pages'), 'page_de': entry.get('page_id'),
                'problems': problems, 'position': position})
     return entry, problems, position
 
 
 def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
-    """Archived format went viral again: in every market move its page back from the archive into the format folder
-    (refreshed to the current layout with the new video); markets without a page get one. Returns its position."""
+    """Archived format went viral again: its pages are refreshed where they are (still in the archive, invisible in
+    the lists), missing markets are built in the staging page, then the quality gate checks every page. Only if all
+    pass do they move into the format folders and the format is listed again. Returns (published, position, reasons)."""
     for mk in mkts:
         m = mk['key']
         pid = page_of(fmt, m)
         try:
             if pid:
-                notion.move_page(pid, mk['holder_page'])
-                make_page(v, mk, cfg, prepared, replace_page=pid)
+                make_page(v, mk, cfg, prepared, replace_page=pid, attempts=3)
             else:
-                new_pid, spec, problems = make_page(v, mk, cfg, prepared)
+                new_pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
                 if not problems:
                     set_page(fmt, m, new_pid)
         except Exception as e:
             notify.radar(cfg['notion']['radar_page'], f"{mk['T']['flag']} revive issue for {fmt['title']}: {str(e)[:150]}")
-    fmt['status'] = 'active'
-    fmt.pop('archived_reason', None)
+    fmt.pop('market_only', None)
     fmt['revived'] = {'at': int(time.time()), 'because': v['url'], 'views': v['views']}
+    fmt.setdefault('source_video', v['url'])
     set_format(v, history, fmt['id'], judged=True)
-    position = rerank(mkts, fmts, history, cfg).index(fmt['id']) + 1
-    state.log({'type': 'format_revived', 'format': fmt['id'], 'video': v['id'], 'position': position})
-    return position
+    published, position, reasons = _gate(fmt, mkts, fmts, history, cfg, 'revive')
+    state.log({'type': 'format_revived' if published else 'format_held', 'format': fmt['id'], 'video': v['id'],
+               'position': position, 'reasons': reasons})
+    return published, position, reasons
 
 
 def rerank(mkts, fmts, history, cfg, force=False):

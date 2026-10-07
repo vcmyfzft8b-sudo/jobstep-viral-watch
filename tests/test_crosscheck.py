@@ -38,6 +38,9 @@ class World:
         monkeypatch.setattr(align, 'matches_approved', lambda pid, lang, links, spec: True)
         monkeypatch.setattr(align, 'align_page', lambda fmt, pid, lang, cfg, links, feedback='': (self.rewrites.append((fmt['id'], lang)) or ('ok', '')))
         monkeypatch.setattr(reword, 'fix_directions', lambda *a, **k: ('ok', ''))
+        self.titles = {}
+        monkeypatch.setattr(crosscheck, 'page_title', lambda pid: self.pages[pid].get('title', 'Titel'))
+        monkeypatch.setattr(crosscheck, 'set_title', lambda pid, t: self.titles.__setitem__(pid, t) or True)
 
         def chat_json(model, system, prompt, **kw):
             self.calls += 1
@@ -298,3 +301,14 @@ def test_new_format_gets_a_reference_from_its_source_video(monkeypatch, tmp_path
     assert res['status'] == 'pass'
     saved = state.load('format_references.json', {})['NEW']
     assert saved['canonical_source'] == '800' and saved['accepted_sources'] == ['800']
+
+
+def test_title_with_invented_result_is_fixed_even_on_a_locked_page(monkeypatch):
+    pages = {'L1_de': {'src': '500', 'title': 'Ich habe 20 VORSTELLUNGSGESPRÄCHE bekommen?'},
+             'L1_fr': {'src': '501'}, 'L1_es': {'src': '502'}}
+    w = World(monkeypatch, pages, locked={('L1', 'de')})
+    good = llm.chat_json
+    monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: {**good(*a, **k), 'titles': {'de': 'Plötzlich Einladungen? 😳'}})
+    res, changed, awaiting = crosscheck.group_cycle(fmt('L1'), MKTS, CFG, page_of, {})
+    assert w.titles == {'L1_de': 'Plötzlich Einladungen? 😳'} and ('L1', 'de') not in w.rewrites
+    assert any('title' in c for c in changed)

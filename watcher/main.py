@@ -977,7 +977,8 @@ def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
     results, dups = crosscheck.run(fmts, mkts, cfg, page_of, meta, force=force)
     notes = []
     if fix:
-        for f in [f for f in fmts if results.get(f['id'], {}).get('status') == 'fail']:
+        for f in [f for f in fmts if results.get(f['id'], {}).get('status') == 'fail'
+                  or results.get(f['id'], {}).get('title_fixes')]:
             try:
                 res, changed, awaiting = crosscheck.group_cycle(f, mkts, cfg, page_of, meta)
             except Exception as e:  # one format's error never stops the others

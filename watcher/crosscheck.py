@@ -31,7 +31,7 @@ from . import align, audit, llm, localize, notion, reword
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-07.3'
+AUDIT_VERSION = 'group-2026-10-08.1'
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wording', 'features_claims',
               'directions_match')
@@ -196,8 +196,30 @@ def _evidence(fmt, mk, inp):
     script = reword.spoken_text(blocks)
     marked = '\n'.join(cue_text(b) for b in blocks)
     directions = '\n'.join(reword._plain(b) for b in reword.direction_blocks(pid))
-    return {'example': example, 'script': script, 'marked': marked, 'directions': directions,
+    return {'example': example, 'script': script, 'marked': marked, 'directions': directions, 'title': page_title(pid),
             'source_id': inp['source_id']}
+
+
+def _title_block(page_id):
+    blocks = notion.children(page_id)
+    i = next((k for k, b in enumerate(blocks) if b['type'].startswith('heading') and '📲' in reword._plain(b)), None)
+    if i is None:
+        return None
+    return next((b for b in blocks[i + 1:i + 3] if b['type'] == 'paragraph' and reword._plain(b).strip()), None)
+
+
+def page_title(page_id):
+    """The on-screen title creators put on the video (📲 section)."""
+    b = _title_block(page_id)
+    return reword._plain(b).strip() if b else ''
+
+
+def set_title(page_id, text):
+    b = _title_block(page_id)
+    if not b or reword._plain(b).strip() == text.strip():
+        return False
+    notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [notion.rt(text, bold=True)]}})
+    return True
 
 
 def cue_text(b):
@@ -226,7 +248,8 @@ def judge(fmt, ref, evidence, model):
                       f"OUR SCRIPT (spoken/on-screen text only):\n{ev['script'][:3500]}\n\n"
                       f"THE SAME SCRIPT WITH ITS FILMING CUES ([CUE: ...] = a link marker telling the creator to show "
                       f"the app/asset there, NOT spoken; (...) = stage direction):\n{ev.get('marked', '')[:4000]}\n\n"
-                      f"OUR FILMING DIRECTIONS:\n{ev['directions'][:4000]}")
+                      f"OUR FILMING DIRECTIONS:\n{ev['directions'][:4000]}\n\n"
+                      f"OUR ON-SCREEN TITLE: {ev.get('title', '')}")
     prompt = f"""REFERENCE DEFINITION of format {fmt['id']} ("{fmt.get('title', '')}"):
 {json.dumps(ref, ensure_ascii=False, indent=1)}
 
@@ -241,7 +264,7 @@ other. Be strict:
 - script_matches_example: does the script tell what this country's example shows (beats, order, product timing)?
 - independent_wording: is the script independently written? FAIL if most sentences are translations or light
   rewrites of the example's sentences with the brand swapped. Same beats are expected; same sentences are not.
-- features_claims: only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
+- features_claims (script AND on-screen title): only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
   guaranteed ATS passage, no guaranteed interviews/jobs.
 - directions_match: do the filming directions match the script (no quotes of lines that are not in the script, no
   contradictions, no features Parakeet AI lacks) and cover the reference's filming/demonstration sequence? Cue
@@ -251,7 +274,9 @@ other. Be strict:
 {chr(10).join(blocks)}
 
 Never put the character " inside an issue text (write ' or « » instead) - the answer must be valid JSON.
-Return JSON {{"results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
+If a country's on-screen title makes a claim we can't make (an invented number of interviews, a time promise, a
+guaranteed result), put a fixed title for it in "titles" (same language and style, same hook idea), else leave it out.
+Return JSON {{"titles": {{"<country>": "<fixed title>"}}, "results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
 "summary": "<one sentence>"}} with every dimension {list(DIMENSIONS)} for every country {sorted(evidence)}."""
     for attempt in range(3):  # an unreadable answer is asked again, never guessed
         try:
@@ -262,7 +287,8 @@ Return JSON {{"results": {{"<dimension>": {{"<country>": {{"pass": true, "issue"
             continue
         results = r.get('results') or {}
         if all(isinstance((results.get(d) or {}).get(m), dict) for d in DIMENSIONS for m in evidence):
-            return results, r.get('summary', '')
+            titles = {m: t for m, t in (r.get('titles') or {}).items() if m in evidence and isinstance(t, str) and t.strip()}
+            return results, r.get('summary', ''), titles
         err = ValueError('incomplete review answer')
     raise err
 
@@ -309,7 +335,7 @@ def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
         store[fmt['id']] = {**res, 'key': key}
         return res
     try:
-        results, summary = judge(fmt, ref, evidence, cfg['models']['build'])
+        results, summary, titles = judge(fmt, ref, evidence, cfg['models']['build'])
     except Exception as e:  # no verdict -> unverified (stays in staging), and checked again next time (no cache key)
         res = {**base, 'status': 'unverified', 'passed': False, 'deterministic': hard,
                'reasons': reasons + [f'reviewer failed: {str(e)[:160]}']}
@@ -328,7 +354,7 @@ def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
                     for d in dups]
     status = 'unverified' if not complete else ('pass' if not failed and not dups else 'fail')
     res = {**base, 'status': status, 'passed': status == 'pass', 'reasons': reasons, 'results': results,
-           'summary': summary, 'deterministic': hard}
+           'summary': summary, 'deterministic': hard, 'title_fixes': titles}
     store[fmt['id']] = {**res, 'key': key}
     return res
 
@@ -397,7 +423,7 @@ def group_cycle(fmt, mkts, cfg, page_of, meta, put_example=None):
     """Check the group; if it fails, repair what may be repaired automatically and check again (once).
     Returns (result, changed, awaiting_approval)."""
     res = check_group(fmt, mkts, cfg, page_of, meta)
-    if res['status'] != 'fail':
+    if res['status'] != 'fail' and not res.get('title_fixes'):
         return res, [], []
     changed, awaiting = fix_group(fmt, mkts, cfg, page_of, meta, res, put_example or default_put_example, cfg['links'])
     if changed:
@@ -414,6 +440,10 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
     ref = reference(fmt['id']) or {}
     results = res.get('results') or {}
     changed, awaiting = [], []
+    for m, t in (res.get('title_fixes') or {}).items():
+        pid = page_of(fmt, m)
+        if pid and set_title(pid, t):  # a title is not part of a script approval
+            changed.append(f'{m}: title -> {t[:60]}')
     for mk in mkts:
         m, lang = mk['key'], mk['lang']
         pid = page_of(fmt, m)
@@ -504,6 +534,8 @@ def apply_approvals(fmts, mkts, cfg, page_of, meta, put_example=None):
             if cur.split('?')[0] != ok['example'].split('?')[0]:
                 put_example(f, m, pid, lang, ok['example'])
                 out.append(f"{f['id']} {m}: example -> {ok['example']}")
+            if ok.get('title') and set_title(pid, ok['title']):
+                out.append(f"{f['id']} {m}: title -> {ok['title']}")
             st, why = align.align_page(f, pid, lang, cfg, cfg['links'])
             if why != 'approved script unchanged':
                 out.append(f"{f['id']} {m}: {st} ({why})")

@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, align, standardize, accounts-add, accounts-sync, init-fr, init-es]
+        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, standardize, accounts-add, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -124,6 +124,7 @@ jobs:
             group-fix)   python -m watcher.main --group-fix ;;
             approval-drafts) python -m watcher.main --approval-drafts ;;
             apply-approved) python -m watcher.main --apply-approved ;;
+            gate-rehearsal) python -m watcher.main --gate-rehearsal ;;
             align)       python -m watcher.main --align ;;
             standardize) python -m watcher.main --standardize ;;
             accounts-add) python -m watcher.main --accounts-add registry/accounts_add.json ;;

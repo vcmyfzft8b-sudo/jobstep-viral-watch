@@ -1018,6 +1018,7 @@ def main():
     ap.add_argument('--set-example', default='', help='FORMAT_ID:market:tiktok_url - put this example video on that page')
     ap.add_argument('--group-audit', action='store_true', help='cross-country check of all formats (report only)')
     ap.add_argument('--group-fix', action='store_true', help='cross-country check + automatic repairs of failing groups')
+    ap.add_argument('--gate-rehearsal', action='store_true', help='run the publication gate on passing live formats (no publish)')
     ap.add_argument('--apply-approved', action='store_true', help='write approved scripts (and their examples) to the pages')
     ap.add_argument('--approval-drafts', action='store_true', help='replacement drafts for approval-locked scripts that '
                     'fail the cross-country check (nothing written to Notion)')
@@ -1188,6 +1189,23 @@ def main():
         bad = [r for r in rep if r[2] != 'ok']
         notify.push('✍️ Scripts rewritten sentence by sentence', f"{len(rep) - len(bad)}/{len(rep)} pages rewritten"
                     + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
+        return
+    if a.gate_rehearsal:
+        # controlled end-to-end check of the publication gate on live formats whose group already passes:
+        # page audit of every country + cross-country check, exactly as for a new format - but nothing is published
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        history, account_info = state.load('history.json', {}), state.load('accounts.json', {})
+        mkts = M.load(cfg)
+        lines = []
+        for f in [f for f in fmts if f.get('status') == 'active'
+                  and (meta.get('group_audit') or {}).get(f['id'], {}).get('status') == 'pass']:
+            before = f.get('status')
+            ok, reasons = gate.check(f, mkts, cfg, history, account_info, meta, page_of, set_page, make_page, rebuild_page)
+            assert f.get('status') == before  # the rehearsal never changes publication state
+            lines.append(f"{f['title']}: {'PASS' if ok else 'HELD'} " + '; '.join(reasons)[:300])
+        print('\n'.join(lines) or 'no passing group to rehearse', flush=True)
+        state.save('meta.json', meta)
+        notify.push('🧪 Gate rehearsal (nothing published)', '\n'.join(lines)[:3500] or 'no passing group')
         return
     if a.apply_approved:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})

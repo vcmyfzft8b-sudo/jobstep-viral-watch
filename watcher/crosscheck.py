@@ -31,7 +31,7 @@ from . import align, audit, llm, localize, notion, reword
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-07.2'
+AUDIT_VERSION = 'group-2026-10-07.3'
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wording', 'features_claims',
               'directions_match')
@@ -176,7 +176,7 @@ def judge(fmt, ref, evidence, model):
                       f"OUR SCRIPT (spoken/on-screen text only):\n{ev['script'][:3500]}\n\n"
                       f"THE SAME SCRIPT WITH ITS FILMING CUES ([CUE: ...] = a link marker telling the creator to show "
                       f"the app/asset there, NOT spoken; (...) = stage direction):\n{ev.get('marked', '')[:4000]}\n\n"
-                      f"OUR FILMING DIRECTIONS:\n{ev['directions'][:1500]}")
+                      f"OUR FILMING DIRECTIONS:\n{ev['directions'][:4000]}")
     prompt = f"""REFERENCE DEFINITION of format {fmt['id']} ("{fmt.get('title', '')}"):
 {json.dumps(ref, ensure_ascii=False, indent=1)}
 

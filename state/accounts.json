@@ -6,6 +6,14 @@
   "source": "tiktok-search",
   "status": "active"
  },
+ "abis.luv6": {
+  "checked_ugc": true,
+  "evidence": "publi; speech 'esta web que se llama jobstep punto i o' (1d, 2d); screen 'Se llama jobstep.io' (6d)",
+  "lang": "es",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
  "adriana_jobs": {
   "checked_ugc": true,
   "lang": "",
@@ -39,6 +47,14 @@
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "alinaibarra13": {
+  "checked_ugc": true,
+  "evidence": "speech 'después jobstep te va a dar tu CV totalmente perfecto' (2d, 260k views)",
+  "lang": "es",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
   "status": "active"
  },
  "anniaelina": {
@@ -81,8 +97,18 @@
   "source": "tiktok-search",
   "status": "active"
  },
- "catita.tipss": {
+ "careerbydilara": {
+  "checked_ugc": true,
+  "evidence": "Turkish; speech 'jobstep'e giriyoruz' (5d); 'jobStep'e giriyosun' (10d); only 2 videos",
   "lang": "",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
+ "catita.tipss": {
+  "checked_ugc": true,
+  "evidence": "speech 'yo por ejemplo uso jobstep... la pego acá en jobstep' (1d); 'se llama jobstep punto i o' (6d)",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
@@ -122,9 +148,19 @@
   "status": "active"
  },
  "chloejobtips": {
-  "lang": "",
+  "checked_ugc": true,
+  "evidence": "Publicité; speech 'vous allez dans jobstep point you' (1d, 41.8k views); 'l'appli job step' (14d)",
+  "lang": "fr",
   "since": 1791288684,
   "source": "lightreel",
+  "status": "active"
+ },
+ "claucreate": {
+  "checked_ugc": true,
+  "evidence": "publi; speech 'esta web que se llama jobstep te vienes a nueva oferta' (12d), 'Jobstep la conocí' (11d), 'se llama jobstep' (14d)",
+  "lang": "es",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
   "status": "active"
  },
  "cv.tipps": {
@@ -160,11 +196,27 @@
   "source": "search-2026-10-07",
   "status": "active"
  },
+ "diann1770": {
+  "checked_ugc": true,
+  "evidence": "speech 'uno que se llamaba jobstep' (0d); 'un sitio que se llama jobstep' (3d); 'se fuera a jobstep' (8d)",
+  "lang": "es",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
  "dorcsyy_jobstep": {
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "dymphy.tiktok": {
+  "checked_ugc": true,
+  "evidence": "#partnerschap; speech 'deze website van jobstep punt e o' (11d); paste-link workflow 1-9d",
+  "lang": "",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
   "status": "active"
  },
  "edda.anneli": {
@@ -175,6 +227,8 @@
   "status": "active"
  },
  "elisa.jobtipps": {
+  "checked_ugc": true,
+  "evidence": "speech 'ich soll jobstep ... ausprobieren' (19d); screen 'optimiere ich jede Bewerbung vorher mit Jobstep.io' (46d); low posting frequency",
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -208,12 +262,16 @@
   "status": "active"
  },
  "emma.jobtips": {
-  "lang": "",
+  "checked_ugc": true,
+  "evidence": "publicité; speech 'on va sur le site jobstep point you' (5d, 58.8k); 'ça s'appelle jobstep point yo' (7d)",
+  "lang": "fr",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "emma_jobtips": {
+  "checked_ugc": true,
+  "evidence": "advertentie; speech 'met zo'n tool jobstep punt o' (10d, 523k views); paste-link workflow 1-9d",
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -241,7 +299,9 @@
   "status": "active"
  },
  "ferni.tips": {
-  "lang": "",
+  "checked_ugc": true,
+  "evidence": "screen 'Rehice mi CV con Jobstep.io' (7d, 83.8k); paste-link workflow 1-5d",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
@@ -262,9 +322,10 @@
  },
  "fridaempleotips": {
   "lang": "",
+  "paused_reason": "account no longer exists",
   "since": 1791288684,
   "source": "lightreel",
-  "status": "active"
+  "status": "inactive"
  },
  "gabbolab": {
   "checked_ugc": true,
@@ -318,6 +379,14 @@
   "source": "tiktok-search",
   "status": "active"
  },
+ "itshelin03": {
+  "checked_ugc": true,
+  "evidence": "Anzeige; speech 'dein Lebenslauf mit jobstep überprüfen lassen' (1d); 'mit jobstep zu arbeiten' (3d)",
+  "lang": "de",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
  "itssophiatalea": {
   "checked_ugc": true,
   "lang": "de",
@@ -360,6 +429,14 @@
   "source": "search-2026-10-07",
   "status": "active"
  },
+ "joaocareer": {
+  "checked_ugc": true,
+  "evidence": "speech 'vais aqui à job step adicionas o trabalho' (10d, 72k); same workflow 1-9d",
+  "lang": "",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
  "job.by.niki": {
   "checked_ugc": true,
   "lang": "",
@@ -380,6 +457,8 @@
   "status": "inactive"
  },
  "jobfluesterin": {
+  "checked_ugc": true,
+  "evidence": "Anzeige; speech 'hab ihn bei jobstep hochgeladen' (21d); 'dieses Tool ... jobstep I O' (26d); last post 21d",
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
@@ -494,6 +573,14 @@
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "active"
+ },
+ "laviniateol1": {
+  "checked_ugc": true,
+  "evidence": "speech 'questo sito che si chiama jobstep' (4d); 'la copio qui su jobstep.io' (8d)",
+  "lang": "",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
   "status": "active"
  },
  "lea.jobtips": {
@@ -628,6 +715,14 @@
   "source": "lightreel",
   "status": "active"
  },
+ "marietipsapply": {
+  "checked_ugc": true,
+  "evidence": "speech 'esta página web jobstep punto i...' (2d, 291k views); 'este sitio web JobStep' (5d)",
+  "lang": "es",
+  "since": 1791373926,
+  "source": "checked-2026-10-07",
+  "status": "active"
+ },
  "marine.realfakephotos": {
   "checked_ugc": true,
   "lang": "",
@@ -643,6 +738,8 @@
   "status": "active"
  },
  "mary.jobtipps": {
+  "checked_ugc": true,
+  "evidence": "#jobstep on all videos 18-31d; speech 'gehst du auf jobster Punkt Io' (27d); last post 18d",
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",

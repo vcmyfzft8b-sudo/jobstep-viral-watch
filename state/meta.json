@@ -1319,7 +1319,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791407483,
+   "checked_at": 1791408995,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1336,20 +1336,19 @@
      "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
     }
    },
-   "key": "d280216ad910f01ed2daaa42cad8ad08527d5c9944dedc8b6e46252e846ef409",
+   "key": "c74e01e8e2694d82f5556ff0890d8c560223b2842fa31d57ec1dbb70aabdab91",
    "passed": false,
    "reasons": [
-    "format_consistency de: Close beat drops the score Y and instead claims 'deutlich bessere Chancen auf eine Einladung', which frames the result as a hiring likelihood rather than a better-prepared CV with score Y.",
-    "independent_wording de: Almost every sentence is a direct translation of the example speech with the brand swapped (best month, December prep, close the Canva CV, wake up, upload for a full analysis, 'das kam bei mir raus', 'ab in den KI-Editor').",
-    "independent_wording fr: Most sentences are light rewrites of the example (meilleure période, décembre, ferme ton CV Canva, analyse complète, 'voilà mon premier résultat, donc je demande une amélioration'). Only the chat-IA step and the closing line are new.",
-    "features_claims de: Has no score Y placeholder and claims much better chances of an interview invitation, so it implies the tool improves hiring odds.",
-    "features_claims es: Closing line links the score to 'muchas más opciones de que me llamen', a claim about interview likelihood that goes against 'not a hiring probability'. The X/Y placeholders and chat features are fine."
+    "format_consistency de: The close drops the score Y and replaces it with 'deutlich bessere Chancen auf eine Einladung', which is a hiring-chance close. The reference ends on a better-prepared CV with score Y. The score/analysis is also never named as a score.",
+    "independent_wording de: Almost every sentence translates the example line by line ('offiziell der beste Monat', 'aus der Arbeitslosigkeit rauskommst', 'Dann wird's Zeit aufzuwachen', 'Das kam bei mir beim ersten Mal raus', 'Ab in den KI-Editor'). Only the brand is swapped.",
+    "features_claims de: There are no X/Y score placeholders. The ending implies better interview chances instead of a CV score, with no note that this is not a hiring probability.",
+    "directions_match de: The directions do not cover a starting and final score screen, because the script has no score. They mention an on-screen title that the script does not contain."
    ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "",
-      "pass": true
+      "issue": "The directions do not cover a starting and final score screen, because the script has no score. They mention an on-screen title that the script does not contain.",
+      "pass": false
      },
      "es": {
       "issue": "",
@@ -1362,12 +1361,12 @@
     },
     "features_claims": {
      "de": {
-      "issue": "Has no score Y placeholder and claims much better chances of an interview invitation, so it implies the tool improves hiring odds.",
+      "issue": "There are no X/Y score placeholders. The ending implies better interview chances instead of a CV score, with no note that this is not a hiring probability.",
       "pass": false
      },
      "es": {
-      "issue": "Closing line links the score to 'muchas más opciones de que me llamen', a claim about interview likelihood that goes against 'not a hiring probability'. The X/Y placeholders and chat features are fine.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
       "issue": "",
@@ -1376,7 +1375,7 @@
     },
     "format_consistency": {
      "de": {
-      "issue": "Close beat drops the score Y and instead claims 'deutlich bessere Chancen auf eine Einladung', which frames the result as a hiring likelihood rather than a better-prepared CV with score Y.",
+      "issue": "The close drops the score Y and replaces it with 'deutlich bessere Chancen auf eine Einladung', which is a hiring-chance close. The reference ends on a better-prepared CV with score Y. The score/analysis is also never named as a score.",
       "pass": false
      },
      "es": {
@@ -1390,7 +1389,7 @@
     },
     "independent_wording": {
      "de": {
-      "issue": "Almost every sentence is a direct translation of the example speech with the brand swapped (best month, December prep, close the Canva CV, wake up, upload for a full analysis, 'das kam bei mir raus', 'ab in den KI-Editor').",
+      "issue": "Almost every sentence translates the example line by line ('offiziell der beste Monat', 'aus der Arbeitslosigkeit rauskommst', 'Dann wird's Zeit aufzuwachen', 'Das kam bei mir beim ersten Mal raus', 'Ab in den KI-Editor'). Only the brand is swapped.",
       "pass": false
      },
      "es": {
@@ -1398,8 +1397,8 @@
       "pass": true
      },
      "fr": {
-      "issue": "Most sentences are light rewrites of the example (meilleure période, décembre, ferme ton CV Canva, analyse complète, 'voilà mon premier résultat, donc je demande une amélioration'). Only the chat-IA step and the closing line are new.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -1418,7 +1417,7 @@
     }
    },
    "status": "fail",
-   "summary": "ES is independently written but suggests better interview chances. FR follows the format and claims correctly but its wording copies the example too closely. DE translates the example almost line by line and swaps the score-Y close for a claim about interview chances.",
+   "summary": "ES and FR pass every check. DE is close to a direct translation of the example, and it replaces the score Y close with an implied interview-chance claim, so it needs a rewrite.",
    "version": "group-2026-10-07.3"
   },
   "A20261006183623": {
@@ -2400,7 +2399,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791407715,
+   "checked_at": 1791409116,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2417,16 +2416,17 @@
      "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
     }
    },
-   "key": "0a018d7a64e20a3f2ceb2a61c771315792ca4753ad4f308d9c8971a009a46941",
+   "key": "e2bbf03fad0a2525247d2e55e8a1ffda25d7d5a8e49f1887b03a001aed849be8",
    "passed": false,
    "reasons": [
-    "independent_wording fr: Most FR sentences are light rewrites of the example: the hook ('Trois conseils pour enfin décrocher un boulot'), 'Va plutôt sur des plateformes plus petites… moins de concurrence', 'Les modèles Canva pleins de couleurs, ça ne t'apporte quasiment rien', 'filtrent les CV avec un logiciel ATS qui écarte ceux sans les bons mots-clés' and 'Avec ce que tu sais faire, et même si t'apprends encore, vise toujours plus haut, ok ?' all follow the Spanish lines closely."
+    "independent_wording fr: Most sentences are light rewrites of the example: the hook (« Trois conseils pour enfin trouver du taf »), the Canva line, the ATS keyword sentence, « j'utilise ce site pour ajuster mon CV », and the closing « vise plus haut, d'accord ? ».",
+    "directions_match de: The third Resume Maker cue (« Am Ende geh ich trotzdem selbst nochmal drüber… ») has no direction to show the user editing the CV by hand. The directions also never ask for an on-screen hook overlay, which the reference's numbered-overlay format uses."
    ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "",
-      "pass": true
+      "issue": "The third Resume Maker cue (« Am Ende geh ich trotzdem selbst nochmal drüber… ») has no direction to show the user editing the CV by hand. The directions also never ask for an on-screen hook overlay, which the reference's numbered-overlay format uses.",
+      "pass": false
      },
      "es": {
       "issue": "",
@@ -2475,7 +2475,7 @@
       "pass": true
      },
      "fr": {
-      "issue": "Most FR sentences are light rewrites of the example: the hook ('Trois conseils pour enfin décrocher un boulot'), 'Va plutôt sur des plateformes plus petites… moins de concurrence', 'Les modèles Canva pleins de couleurs, ça ne t'apporte quasiment rien', 'filtrent les CV avec un logiciel ATS qui écarte ceux sans les bons mots-clés' and 'Avec ce que tu sais faire, et même si t'apprends encore, vise toujours plus haut, ok ?' all follow the Spanish lines closely.",
+      "issue": "Most sentences are light rewrites of the example: the hook (« Trois conseils pour enfin trouver du taf »), the Canva line, the ATS keyword sentence, « j'utilise ce site pour ajuster mon CV », and the closing « vise plus haut, d'accord ? ».",
       "pass": false
      }
     },
@@ -2495,7 +2495,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries keep the X13 structure, with three tips in order, the product only inside tip 2, the brand not spoken, no CTA and correct directions, but the FR script fails independent wording because it closely paraphrases the Spanish example sentence by sentence.",
+   "summary": "All three countries follow X13's beats, product timing, and no-CTA ending with real Parakeet AI features, but FR's wording stays too close to the example and DE's directions don't cover showing the user editing the CV.",
    "version": "group-2026-10-07.3"
   },
   "X15": {
@@ -2504,7 +2504,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791407802,
+   "checked_at": 1791409226,
    "deterministic": {},
    "duplicates": [
     {
@@ -2550,10 +2550,9 @@
      "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     }
    },
-   "key": "0b9a70c78cc1bc2f878eea386924a6eb3329fd8058d501bf9d56d0af78572fe0",
+   "key": "181a552806ebd3dfb5fea4b1ddf87aead3a19b2f179707654cb11507af836629",
    "passed": false,
    "reasons": [
-    "directions_match fr: The laptop directions cover only the chat questions and the score. They never show entering your basic info ('Direction ce site, où tu rentres tes infos de base'), and they describe one subtitle overlay where the script has three CUE markers.",
     "possible duplicate (source_id 7682028282191105312) shared with N10",
     "possible duplicate (video_identity sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2) shared with N10"
    ],
@@ -2568,8 +2567,8 @@
       "pass": true
      },
      "fr": {
-      "issue": "The laptop directions cover only the chat questions and the score. They never show entering your basic info ('Direction ce site, où tu rentres tes infos de base'), and they describe one subtitle overlay where the script has three CUE markers.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2630,7 +2629,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow X15 with the printed old-vs-new CV comparison, a short ATS mention with a softened claim, the brand only on screen, and the details-plus-chat-plus-score demo; the only flaw is that the FR filming directions skip the step of entering basic info.",
+   "summary": "All three countries pass every check: each follows the X15 beats in order, holds the printed old and new CVs side by side, softens the ATS claim, shows the brand only on screen, and ends on CV creation and a real score, with no invented features or guarantees. DE and FR directions never give the ~32s length (it appears only in the ES directions), and DE replaces 'enter your details' with uploading the old CV, which Parakeet AI supports.",
    "version": "group-2026-10-07.3"
   },
   "X16": {

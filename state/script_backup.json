@@ -5903,6 +5903,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8112-95a2-ec565c99d1f8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Aquí lo tienes: estilo Harvard, ordenado y sin florituras», enseña el currículum reescrito en pantalla.",
+   "text": {
+    "content": "En «Aquí lo tienes: estilo Harvard, ordenado y sin florituras», enseña el currículum reescrito en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8112-a40e-e1814bc121a0": [
   {
    "annotations": {
@@ -6141,6 +6160,25 @@
    "plain_text": "Beim LinkedIn-Link filmst du, wie du eine Stellenanzeige kopierst. Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
    "text": {
     "content": "Beim LinkedIn-Link filmst du, wie du eine Stellenanzeige kopierst. Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-811e-9b96-c1604e18b659": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "N'affiche l'app en incrustation que pendant le deuxième conseil ; le reste du temps, reste face caméra.",
+   "text": {
+    "content": "N'affiche l'app en incrustation que pendant le deuxième conseil ; le reste du temps, reste face caméra.",
     "link": null
    },
    "type": "text"
@@ -13595,6 +13633,25 @@
    "plain_text": "Mi hermano trabaja de reclutador y te voy a contar el truco que me dio para encontrar curro mucho más rápido. Lo primero: asegúrate de que tu CV está bien hecho y saca buena nota. ¿Y cómo lo sabes? Lo más fácil es meterte en esta página, parakeet-ai.com/resume-maker, y poner tus datos. ",
    "text": {
     "content": "Mi hermano trabaja de reclutador y te voy a contar el truco que me dio para encontrar curro mucho más rápido. Lo primero: asegúrate de que tu CV está bien hecho y saca buena nota. ¿Y cómo lo sabes? Lo más fácil es meterte en esta página, parakeet-ai.com/resume-maker, y poner tus datos. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81d2-85e5-e84f0a8a3a30": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «el mío arrancó con un X sobre 100», enseña en pantalla la nota inicial real que te da la app.",
+   "text": {
+    "content": "En «el mío arrancó con un X sobre 100», enseña en pantalla la nota inicial real que te da la app.",
     "link": null
    },
    "type": "text"

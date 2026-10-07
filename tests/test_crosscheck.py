@@ -232,3 +232,21 @@ def test_evidence_pin_of_a_rejected_source_is_inactive(monkeypatch, tmp_path):
     monkeypatch.setattr(crosscheck, 'references', lambda: REFS)
     assert localize.embedded_record('p1') is None          # pinned to the rejected different-story video
     assert localize.embedded_record('p2')['page_id'] == 'p-2'  # Codex's verified pins stay in force
+
+
+def test_asset_cue_is_not_decorated_twice():
+    from watcher import notion
+    assert notion.asset_label('📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos') == 'Bandeja de Gmail'
+    assert notion.asset_label('(📎 Gmail-Aufnahme – siehe Ressourcen)') == 'Gmail-Aufnahme'
+    assert notion.asset_label('Gmail inbox') == 'Gmail inbox'
+
+
+def test_fix_asset_cues_repairs_piled_up_decoration(monkeypatch):
+    from watcher import notion
+    t = 'Y ahora (📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos) Y ahora echa un ojo.'
+    blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
+    monkeypatch.setattr(reword, 'script_blocks', lambda pid: [blk])
+    sent = []
+    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
+    assert reword.fix_asset_cues('p') == 1
+    assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Y ahora (📎 Bandeja de Gmail – ver Recursos) Y ahora echa un ojo.'

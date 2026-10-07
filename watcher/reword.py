@@ -249,6 +249,33 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
     return 'ok', ''
 
 
+def fix_asset_cues(page_id):
+    """Repairs script cues that were decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos')."""
+    fixed = 0
+    for b in script_blocks(page_id):
+        rich = b[b['type']].get('rich_text', [])
+        changed = False
+        for x in rich:
+            t = (x.get('text') or {}).get('content', '')
+            for m in re.finditer(r'\((📎[^()]*)\)', t):
+                if m.group(1).count('📎') > 1:
+                    lang = next(l for l in TEXT if TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') in m.group(1)) \
+                        if any(TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') in m.group(1) for l in TEXT) else None
+                    if lang:
+                        clean = TEXT[lang]['asset_cue'].format(name=notion.asset_label(m.group(1))).strip()
+                        t = t.replace(m.group(0), clean)
+                        changed = True
+            if changed:
+                x['text']['content'] = t
+                x.pop('plain_text', None)
+                x.pop('href', None)
+        if changed:
+            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [
+                {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich]}})
+            fixed += 1
+    return fixed
+
+
 def spoken_text(blocks):
     """What is actually said/shown as script text: without link labels, (cue) brackets and the silent label."""
     out = []

@@ -111,7 +111,7 @@ recording is shown, and the asset names):
 
 Write our new {T['lang_name']} script ({T['style']}) for the SAME FORMAT, independently worded:
 1. Same beats in the same order as the original (and the reference), the product introduced at the same beat, about
-   the same length. The whole script must have {int(n_orig * 0.8)}-{int(n_orig * 1.1)} words (the original has
+   the same length. The whole script must have {int(n_orig * 0.8)}-{max_words(n_orig)} words (the original has
    {n_orig}). Add no new beats, claims or features.
 2. Write every beat in your OWN words, as a creator would tell it from scratch: do NOT translate or paraphrase the
    original's sentences one by one, do not keep its sentence structure, images or turns of phrase (only the hook
@@ -175,14 +175,19 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
     return 'ok', info
 
 
+def max_words(n_orig):
+    """110% of the original; very short on-screen scripts get a few words more (articles in FR/ES/DE)."""
+    return int(n_orig * 1.1) if n_orig >= 60 else max(int(n_orig * 1.1), n_orig + 8)
+
+
 def _validate(spec, n_orig, source=None):
     script = spec.get('script') or []
     if not script:
         return 'empty script'
     text = ' '.join(s.get('text', '') for s in script)
     n = _words(text)
-    if not 0.8 * n_orig <= n <= 1.10 * n_orig:
-        return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{int(n_orig * 1.1)}'
+    if not 0.8 * n_orig <= n <= max_words(n_orig):
+        return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{max_words(n_orig)}'
     if JOBSTEP.search(text):
         return 'JobStep is mentioned'
     want = len(JOBSTEP.findall(source)) if source is not None else int(spec.get('jobstep_mentions_in_original') or 0)

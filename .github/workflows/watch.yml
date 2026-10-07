@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, accounts-sync, init-fr, init-es]
+        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, lineup, lineup-apply, localize, localize-recheck, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -108,6 +108,7 @@ jobs:
             lineup)      python -m watcher.main --lineup ;;
             lineup-apply) python -m watcher.main --lineup-apply ;;
             localize)    python -m watcher.main --localize ;;
+            localize-recheck) python -m watcher.main --localize-recheck ;;
             accounts-sync) python -m watcher.main --accounts-sync registry/accounts_sync.json ;;
             init-fr)     python -m watcher.main --init-market fr ;;
             init-es)     python -m watcher.main --init-market es ;;

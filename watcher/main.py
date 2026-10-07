@@ -690,7 +690,7 @@ def localize_report(rep, only_changes=False):
     for r in rep:
         print(' | '.join(str(x) for x in r))
     flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}
-    done = [r for r in rep if r[2] == 'replaced']
+    done = [r for r in rep if r[2] in ('replaced', 'restored')]
     miss = [r for r in rep if r[2] in ('missing', 'error')]
     if done or (miss and not only_changes):
         notify.push('🌍 Inspiration videos in the creators\' language',
@@ -788,6 +788,7 @@ def main():
     ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
     ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
     ap.add_argument('--localize', action='store_true', help='inspiration videos in each market language (missing ones only)')
+    ap.add_argument('--localize-recheck', action='store_true', help='strictly re-check every swapped inspiration video')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -877,6 +878,13 @@ def main():
         return
     if a.accounts_sync:
         accounts_sync(a.accounts_sync)
+        return
+    if a.localize_recheck:
+        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        rep = localize.recheck(fmts, M.load(cfg), state.load('history.json', {}), state.load('accounts.json', {}), meta, cfg, page_of)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
+        localize_report(rep)
         return
     if a.localize:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})

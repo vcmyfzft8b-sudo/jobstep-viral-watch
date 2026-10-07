@@ -41,19 +41,29 @@ def current_source(page_id):
 
 
 def confirm(d, fmt, lang, model):
-    prompt = f"""Our format: {fmt['title']} - {fmt.get('description', '')}
-Script on our page (excerpt): {(fmt.get('script') or '')[:700]}
+    """Strict check with the strong model: the video must be the SAME format as our page (full script compared),
+    in the market's language, and promote JobStep. Returns the verdict dict; ok() decides."""
+    prompt = f"""OUR FORMAT: {fmt['title']}
+What it is: {fmt.get('description', '')}
+Full script on our page:
+{(fmt.get('script') or '')[:2500]}
 
-TikTok video by @{d['handle']}:
+CANDIDATE TikTok video by @{d['handle']}:
 CAPTION: {d.get('desc') or '-'}
 ON-SCREEN TEXT: {d.get('sticker') or '-'}
-SPEECH: {(d.get('subtitles') or '-')[:1500]}
+SPEECH: {(d.get('subtitles') or '-')[:2500]}
 
-1) Which language is the video in (speech, else on-screen text)?
-2) Is it the SAME format as ours (same premise / hook idea and structure - same topic alone is not enough)?
-3) Does it promote JobStep (the CV app)?
-Return JSON {{"language": "<English name of the language>", "same_format": true, "jobstep": true, "reason": "<short>"}}"""
-    return llm.chat_json(model, 'You check TikTok videos for a marketing team. Reply with JSON only.', prompt, timeout=600)
+Creators will copy this video's pacing, visuals and structure while saying OUR script, so it must really be the
+same format: same premise, same hook idea, same story/structure (e.g. same "problem -> reveal -> app" beats). Same
+topic alone (CVs, ATS, job search) is NOT enough. Be strict.
+Return JSON {{"language": "<English name of the video's language>", "match": "same|similar|different",
+"confidence": "high|medium|low", "jobstep": true, "reason": "<one sentence>"}}"""
+    return llm.chat_json(model, 'You check TikTok videos for a marketing team. Reply with JSON only.', prompt, timeout=900)
+
+
+def ok(c, lang):
+    return (c.get('match') == 'same' and c.get('confidence') == 'high' and c.get('jobstep')
+            and LANG_NAME[lang].lower() in str(c.get('language', '')).lower())
 
 
 def _relink(block, url):
@@ -120,16 +130,56 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4):
                     d = tiktok.video_detail(v['handle'], vid)
                     if not d:
                         continue
-                    c = confirm(d, f, lang, cfg['models']['classify'])
-                    if c.get('same_format') and c.get('jobstep') and LANG_NAME[lang].lower() in str(c.get('language', '')).lower():
+                    c = confirm(d, f, lang, cfg['models']['build'])
+                    if ok(c, lang):
                         found = d
                         break
                 if not found:
                     report.append((f['title'], m, 'missing', f'no {LANG_NAME[lang]} JobStep video of this format yet'))
                     continue
                 replace_video(pid, src, found, lang)
-                f.setdefault('inspo', {})[m] = {'url': found['url'], 'views': found['views'], 'at': int(now)}
+                f.setdefault('inspo', {})[m] = {'url': found['url'], 'views': found['views'], 'at': int(now),
+                                                'prev': src['url'], 'strict': True}
                 report.append((f['title'], m, 'replaced', f"{found['url']} ({found['views'] // 1000}k views)"))
             except Exception as e:
                 report.append((f['title'], m, 'error', str(e)[:150]))
+    return report
+
+
+def recheck(fmts, mkts, history, accounts, meta, cfg, page_of, now=None):
+    """Re-checks every video an earlier (less strict) run put on a page. If it does not pass the strict check it is
+    replaced by one that does, or - if there is none - the page gets its previous video back (format first,
+    language second). Returns the report like run()."""
+    now = now or time.time()
+    report = []
+    for f in [f for f in fmts if f.get('status') == 'active']:
+        for mk in mkts:
+            m, lang = mk['key'], mk['lang']
+            x = (f.get('inspo') or {}).get(m)
+            if not x or x.get('strict') or 'views' not in x:
+                continue  # nothing replaced, or already strictly checked
+            h = _handle(x['url'])
+            vid = re.search(r'/video/(\d+)', x['url']).group(1)
+            d = tiktok.video_detail(h, vid)
+            c = confirm(d, f, lang, cfg['models']['build']) if d else {}
+            if d and ok(c, lang):
+                x['strict'] = True
+                report.append((f['title'], m, 'confirmed', x['url']))
+                continue
+            print('failed strict check:', f['title'], m, x['url'], c.get('reason', ''))
+            prev = x.get('prev')
+            f['inspo'].pop(m)
+            r = run([f], [mk], history, accounts, meta, cfg, page_of, now)  # tries the next candidates (strict)
+            if r and r[0][2] == 'replaced':
+                report.append(r[0])
+                continue
+            back = prev or f.get('source_video')
+            pid = page_of(f, m)
+            src = current_source(pid)
+            bd = tiktok.video_detail(_handle(back), re.search(r'/video/(\d+)', back).group(1)) if back else None
+            if bd and src:
+                replace_video(pid, src, bd, lang)
+                report.append((f['title'], m, 'restored', f"{back} (no {LANG_NAME[lang]} video passed the strict check)"))
+            else:
+                report.append((f['title'], m, 'error', 'failed strict check and the previous video could not be restored'))
     return report

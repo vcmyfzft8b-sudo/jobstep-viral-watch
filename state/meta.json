@@ -2294,7 +2294,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791405258,
+   "checked_at": 1791406157,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2311,16 +2311,17 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "e1c47b43125fb2b3ad809a08dd01a3cafb3c8ea772fe112fe7896f7bf4734349",
+   "key": "2a372b5dad17e7c65298a8903d396141a3a92b5ace6dfba4af513ffbb9c6f55b",
    "passed": false,
    "reasons": [
-    "independent_wording fr: Almost every line is a close French translation of the Polish example with the brand swapped. Examples: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... pokażę' -> 'J'ai bossé dans une grande entreprise... les RH préféreraient... je te montre tout'; 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' -> 'C'est déjà beaucoup mieux, mais je retouche encore deux trucs'; 'takim sposobem aplikujecie na wszystkie interesujące ogłoszenia' -> 'tu répètes ça pour chaque offre qui te plaît'."
+    "independent_wording fr: Almost every sentence is a light rewrite of the Polish example: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... wam pokażę' becomes 'J'ai bossé dans une grosse boîte... je te montre tout'. 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' becomes 'Ça change déjà tout, et derrière, je corrige deux ou trois détails'. 'wynik wzrost do' becomes 'le score monte à Y'. The close is also near-literal.",
+    "directions_match de: The directions say to film Indeed, but the script and cues use StepStone. They quote 'Danach öffnest du Parakeet AI.', which is not in the script (the script says 'Jetzt öffnest du Parakeet AI'). They add a raised index finger and a face filter that the script cues do not mention. The last sentence is cut off ('Bestehen eines AT')."
    ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "",
-      "pass": true
+      "issue": "The directions say to film Indeed, but the script and cues use StepStone. They quote 'Danach öffnest du Parakeet AI.', which is not in the script (the script says 'Jetzt öffnest du Parakeet AI'). They add a raised index finger and a face filter that the script cues do not mention. The last sentence is cut off ('Bestehen eines AT').",
+      "pass": false
      },
      "es": {
       "issue": "",
@@ -2369,7 +2370,7 @@
       "pass": true
      },
      "fr": {
-      "issue": "Almost every line is a close French translation of the Polish example with the brand swapped. Examples: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... pokażę' -> 'J'ai bossé dans une grande entreprise... les RH préféreraient... je te montre tout'; 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' -> 'C'est déjà beaucoup mieux, mais je retouche encore deux trucs'; 'takim sposobem aplikujecie na wszystkie interesujące ogłoszenia' -> 'tu répètes ça pour chaque offre qui te plaît'.",
+      "issue": "Almost every sentence is a light rewrite of the Polish example: 'pracowałam w dużej firmie... HR nie chcą żebyście wiedzieli... wam pokażę' becomes 'J'ai bossé dans une grosse boîte... je te montre tout'. 'już jest zdecydowanie lepiej ale jeszcze drobne zmiany' becomes 'Ça change déjà tout, et derrière, je corrige deux ou trois détails'. 'wynik wzrost do' becomes 'le score monte à Y'. The close is also near-literal.",
       "pass": false
      }
     },
@@ -2389,7 +2390,7 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow X03 and use only real Parakeet AI features, but the FR script fails independent wording because it is mostly a line-by-line translation of the Polish example.",
+   "summary": "All three countries follow X03's hook, beats, product timing and CTA with real Parakeet AI features only, but FR's script is a light rewrite of the Polish example's sentences and DE's filming directions contradict the script (Indeed vs StepStone, a misquoted line, a cut-off sentence).",
    "version": "group-2026-10-07.2"
   },
   "X13": {
@@ -2500,7 +2501,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791404662,
+   "checked_at": 1791406390,
    "deterministic": {},
    "duplicates": [
     {
@@ -2511,6 +2512,7 @@
      "kind": "source_id",
      "pages": [
       "N10:de",
+      "X15:de",
       "X15:fr",
       "X15:es"
      ],
@@ -2533,7 +2535,7 @@
    ],
    "inputs": {
     "de": {
-     "source_id": null,
+     "source_id": "7682028282191105312",
      "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     },
     "es": {
@@ -2545,12 +2547,87 @@
      "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     }
    },
-   "key": "6d63375f411b5e6e5e048bc66baf4bf4ce5950c1291eb59a58869054c2de8ac5",
+   "key": "3030245a2e49a5fd56cec1f07c11e2e47bd0af7bddfce92b0aabbd9935db76c4",
    "passed": false,
    "reasons": [
-    "de: example video could not be read (no evidence)"
+    "directions_match fr: The laptop demo directions only mention the chat questions and the real score. They leave out showing yourself entering your details and the CV being built, which the script says at «Direction ce site, où tu rentres tes infos de base» and «elle construit ton CV». The reference demo sequence (enter details, AI questions, CV created, score) is therefore not fully covered. One line is also generic boilerplate («selon les cadrages et incrustations précisés sur cette page»).",
+    "possible duplicate (source_id 7682028282191105312) shared with N10",
+    "possible duplicate (video_identity sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2) shared with N10"
    ],
-   "status": "unverified",
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "The laptop demo directions only mention the chat questions and the real score. They leave out showing yourself entering your details and the CV being built, which the script says at «Direction ce site, où tu rentres tes infos de base» and «elle construit ton CV». The reference demo sequence (enter details, AI questions, CV created, score) is therefore not fully covered. One line is also generic boilerplate («selon les cadrages et incrustations précisés sur cette page»).",
+      "pass": false
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "DE, FR and ES all follow the X15 beats, product timing and softened ATS claim with the brand shown but not spoken, and only FR fails: its filming directions skip the details-entry and CV-creation steps of the demo.",
    "version": "group-2026-10-07.2"
   },
   "X16": {
@@ -2667,6 +2744,7 @@
    "kind": "source_id",
    "pages": [
     "N10:de",
+    "X15:de",
     "X15:fr",
     "X15:es"
    ],

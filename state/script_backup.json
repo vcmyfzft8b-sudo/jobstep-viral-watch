@@ -407,6 +407,25 @@
    "type": "text"
   }
  ],
+ "3d5958b0-fc14-80e9-bb97-cf62150c7790": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Halte am Anfang deine alten ausgedruckten Lebensläufe nacheinander in die Kamera. Zeig danach deinen neuen, schlichten Lebenslauf zum Vergleich. Erst bei „Du öffnest diese Seite“ wechselst du zur eigenen Laptop-Demo: Angaben eingeben, Fragen beantworten, fertigen Lebenslauf und Bewertung zeigen. Bleib für die letzten beiden Sätze bei der App. Nutze eigene Lebensläufe; verdecke private Kontaktdaten.",
+   "text": {
+    "content": "Halte am Anfang deine alten ausgedruckten Lebensläufe nacheinander in die Kamera. Zeig danach deinen neuen, schlichten Lebenslauf zum Vergleich. Erst bei „Du öffnest diese Seite“ wechselst du zur eigenen Laptop-Demo: Angaben eingeben, Fragen beantworten, fertigen Lebenslauf und Bewertung zeigen. Bleib für die letzten beiden Sätze bei der App. Nutze eigene Lebensläufe; verdecke private Kontaktdaten.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f0958b0-fc14-8001-b6c3-f4a260e26040": [
   {
    "annotations": {
@@ -7343,6 +7362,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8143-865a-edecd3bb0b24": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Bei „Ich hab erst später von ATS-Filtern erfahren“ erklärst du kurz, dass diese Filter Lebensläufe automatisch einlesen, und hältst dabei noch einmal die schlichte Version hoch.",
+   "text": {
+    "content": "Bei „Ich hab erst später von ATS-Filtern erfahren“ erklärst du kurz, dass diese Filter Lebensläufe automatisch einlesen, und hältst dabei noch einmal die schlichte Version hoch.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8143-91d6-d1c11203c518": [
   {
    "annotations": {
@@ -8150,6 +8188,25 @@
    "plain_text": "Halte deinen neuen, schlichten Lebenslauf (ausgedruckt) neben deine alten, hübscheren Lebensläufe und vergleiche sie nebeneinander in der Kamera.",
    "text": {
     "content": "Halte deinen neuen, schlichten Lebenslauf (ausgedruckt) neben deine alten, hübscheren Lebensläufe und vergleiche sie nebeneinander in der Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8156-bc2e-f21684f6f0c6": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Bei der ersten Einblendung (Parakeet AI · Resume Maker) wechselst du zum Laptop: Zeig die Seite, wie du deine Angaben einträgst und dir daraus den Lebenslauf erstellen lässt.",
+   "text": {
+    "content": "Bei der ersten Einblendung (Parakeet AI · Resume Maker) wechselst du zum Laptop: Zeig die Seite, wie du deine Angaben einträgst und dir daraus den Lebenslauf erstellen lässt.",
     "link": null
    },
    "type": "text"
@@ -11172,6 +11229,44 @@
    "plain_text": "Pour la dernière phrase, reviens face caméra.",
    "text": {
     "content": "Pour la dernière phrase, reviens face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-819b-97b3-cec053521e7c": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Bei der zweiten Einblendung (Parakeet AI · Resume Maker) zeigst du, wie die KI Fragen zu deiner Erfahrung stellt, und zum Schluss die echte Bewertung deines Lebenslaufs auf dem Bildschirm.",
+   "text": {
+    "content": "Bei der zweiten Einblendung (Parakeet AI · Resume Maker) zeigst du, wie die KI Fragen zu deiner Erfahrung stellt, und zum Schluss die echte Bewertung deines Lebenslaufs auf dem Bildschirm.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-819c-af2d-f72214841310": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "No digas el nombre de la web en voz alta; aparece solo en el texto en pantalla.",
+   "text": {
+    "content": "No digas el nombre de la web en voz alta; aparece solo en el texto en pantalla.",
     "link": null
    },
    "type": "text"

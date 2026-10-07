@@ -1082,8 +1082,15 @@ def main():
         fid, m, url = a.set_example.split(':', 2)
         f = next(x for x in fmts if x['id'] == fid)
         mk = next(x for x in M.load(cfg) if x['key'] == m)
-        print('example set:', audit._put_example(f, m, page_of(f, m), mk['lang'], url, same_lang=False))
-        print('script:', align.align_page(f, page_of(f, m), mk['lang'], cfg, cfg['links']))
+        same = discover.language(re.search(r'@([^/]+)/', url).group(1)) == mk['lang']
+        print('example set:', audit._put_example(f, m, page_of(f, m), mk['lang'], url, same_lang=same))
+        st = align.align_page(f, page_of(f, m), mk['lang'], cfg, cfg['links'])
+        print('script:', st)
+        if st[0] == 'ok':
+            f.setdefault('reworded', {})[m] = True
+        meta = state.load('meta.json', {})
+        meta.setdefault('audit', {}).pop(f'{fid}:{m}', None)
+        state.save('meta.json', meta)
         state.save('formats.json', fmts)
         return
     if a.align:

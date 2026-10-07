@@ -185,7 +185,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
                 report.append((f['title'], m, 'no page', ''))
                 continue
             if (f.get('inspo') or {}).get(m, {}).get('strict'):
-                if not (f.get('reworded') or {}).get(m):  # example in place: note + script follow it
+                if not (f.get('reworded') or {}).get(m) and langs.get(_handle(f['inspo'][m]['url'])) == lang:
                     try:
                         finish(f, m, pid, lang, f['inspo'][m]['url'], cfg)
                     except Exception as e:

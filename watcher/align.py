@@ -103,6 +103,15 @@ Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceo
 
 def _write(fmt, page_id, lang, cfg, links, spec, info):
     blocks = reword.script_blocks(page_id)
+    if not blocks:
+        return 'skipped', 'no script section'
+    T = TEXT[lang]
+    sub = T['sub_voice'] if spec.get('voiceover', True) else T['sub_silent']
+    for b in notion.children(page_id):  # the subtitle line under the title must match (voiceover or not)
+        if b['type'] == 'bulleted_list_item' and reword._plain(b).strip() in (T['sub_voice'], T['sub_silent']):
+            if reword._plain(b).strip() != sub:
+                notion.api('PATCH', f"/blocks/{b['id']}", {'bulleted_list_item': {'rich_text': [notion.rt(sub)]}})
+            break
     for seg in spec['script']:
         if seg.get('cue') in ('null', 'None', ''):
             seg['cue'] = None
@@ -147,6 +156,8 @@ def run(fmts, mkts, cfg, page_of, workers=3):
             status, why = align_page(f, page_of(f, mk['key']), mk['lang'], cfg, cfg['links'])
         except Exception as e:
             status, why = 'error', str(e)[:200]
+        if status == 'ok':
+            f.setdefault('reworded', {})[mk['key']] = True
         print(f"{f['title'][:45]} | {mk['key']} | {status} | {why}", flush=True)
         return f['title'], mk['key'], status, why
     with cf.ThreadPoolExecutor(workers) as ex:

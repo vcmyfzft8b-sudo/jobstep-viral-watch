@@ -96,6 +96,8 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     same = localize.LANG_NAME[lang].lower() in str(v.get('example_language', '')).lower()
     v['note_ok'] = bool(note) and ((same and _note_is_same(note, lang)) or (not same and not _note_is_same(note, lang)))
     v['same_lang'] = same
+    if v.get('unverified'):
+        v['note_ok'] = True  # language of the example unknown right now - don't touch the note
     v['views_ok'] = v['views'] < 0 or v['views'] >= localize.MIN_VIEWS or url == originals().get(fmt['id'])
     v['title_block'] = title_block
     v['approved'] = bool(align.approved(fmt['id'], lang, url))
@@ -104,7 +106,8 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
         v['script_issues'] = []
     spoken = example.split('SPEECH:', 1)[-1] if example else ''
     base = spoken if align._words(spoken) >= 15 else example
-    v['length_ok'] = v['approved'] or not example or align._words(script) <= 1.15 * max(align._words(base), 1)
+    spoken = reword.spoken_text(reword.script_blocks(page_id))
+    v['length_ok'] = v['approved'] or not example or align._words(spoken) <= 1.15 * max(align._words(base), 1)
     if not title_block:
         v['title_ok'] = True
     passed = all(v.get(k) for k in ('example_same_format', 'script_follows_example', 'script_reworded', 'script_ok',
@@ -165,6 +168,8 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
                                              or not v.get('script_follows_example')) and not rebuilt:
             rebuilt = True  # script too long / too close / not following: mirror the example sentence by sentence
             st, why = align.align_page(fmt, pid, lang, cfg, cfg['links'])
+            if st == 'ok':
+                fmt.setdefault('reworded', {})[m] = True
             notes.append(f'script rewritten sentence by sentence ({why})' if st == 'ok' else f'rewrite refused: {why}')
             continue
         if not v.get('title_ok') and v.get('title_suggestion') and v.get('title_block'):
@@ -196,6 +201,9 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
             notes.append('page rebuilt from its example video' if ok else f'rebuild refused: {why}')
             if ok:
                 continue
+        if v.get('approved') or all(v.get(k) for k in ('script_ok', 'script_reworded', 'script_follows_example', 'length_ok')):
+            notes.append('nothing left that a rewrite could fix: ' + '; '.join(v['direction_issues'] + [v['example_issue']])[:120])
+            continue
         notes.append('script reworded again: ' + '; '.join(v['script_issues'])[:120])
         status, why, changes = reword.reword_page(fmt, pid, lang, model, localize.example_text(url) if url else '',
                                                   feedback='; '.join(v['script_issues']))

@@ -217,3 +217,19 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
                 continue  # keep that line rather than lose a link
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(new, links)}})
     return 'ok', ''
+
+
+def spoken_text(blocks):
+    """What is actually said/shown as script text: without link labels, (cue) brackets and the silent label."""
+    out = []
+    for b in blocks:
+        parts = []
+        for x in b[b['type']].get('rich_text', []):
+            if ((x.get('text') or {}).get('link') or {}).get('url'):
+                continue  # cue link label
+            parts.append(x.get('plain_text', ''))
+        t = re.sub(r'\([^)]*\)\s*', '', ''.join(parts))
+        if any(t.strip().startswith(TEXT[l]['silent_label']) for l in TEXT):
+            continue
+        out.append(t)
+    return '\n'.join(out)

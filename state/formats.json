@@ -96,6 +96,12 @@
     "strict": true,
     "url": "https://www.tiktok.com/@ferni.tips/video/7690964265083079942",
     "views": 610800
+   },
+   "fr": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@revekaonline/video/7689223891197136148",
+    "views": 126800
    }
   },
   "page_id": "3f0958b0fc148181bcdde9677a8e051e",
@@ -105,7 +111,8 @@
   },
   "reworded": {
    "de": true,
-   "es": true
+   "es": true,
+   "fr": true
   },
   "script": "Sorry, aber seit wann kann LinkedIn bitte das? (LinkedIn-Jobsuche) Geh auf „Jobs“ und stell ein, dass nur Stellen aus den letzten 24 Stunden angezeigt werden – dann steht oben im Link 86400, das sind einfach die Sekunden von einem Tag. (LinkedIn-Jobsuche) Ersetz das durch 3600, und schon siehst du nur die Jobs aus der letzten Stunde. (LinkedIn-Jobsuche) Dann kopierst du dir die Stellenbeschreibung (Parakeet AI · Resume Maker) und packst sie in Parakeet AI. (Parakeet AI · Resume Maker) Parakeet AI baut dir daraus einen neuen Lebenslauf, der genau auf diese Stelle passt. So bist du unter den Ersten, die sich bewerben, und dein Lebenslauf kommt durch alle Filter – damit kriegst du den Job auf jeden Fall. 🎬",
   "status": "active",

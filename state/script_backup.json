@@ -4537,6 +4537,25 @@
    "type": "text"
   }
  ],
+ "3f1958b0-fc14-81d0-b6f5-e4822137cd50": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sitz am Tisch und schneid beim Reden einen Apfel mit einem Pizzaschneider. Sprich in die Kamera und blende den Titel von oben ein.",
+   "text": {
+    "content": "Sitz am Tisch und schneid beim Reden einen Apfel mit einem Pizzaschneider. Sprich in die Kamera und blende den Titel von oben ein.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f1958b0-fc14-81d9-9a53-d0d121a2172a": [
   {
    "annotations": {

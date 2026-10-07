@@ -1073,7 +1073,11 @@ def main():
         state.save('formats.json', fmts)
         return
     if a.align:
-        cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
+        cfg = load_config()
+        for mk in M.load(cfg):  # first: every active format gets its missing language pages
+            if any(f.get('status') == 'active' and not page_of(f, mk['key']) for f in load_formats()):
+                fill_market(mk['key'])
+        fmts, meta = load_formats(), state.load('meta.json', {})
         rep = align.run(fmts, M.load(cfg), cfg, page_of)
         meta['audit'] = {k: v for k, v in meta.get('audit', {}).items() if False}  # all pages changed -> audit again
         state.save('formats.json', fmts)

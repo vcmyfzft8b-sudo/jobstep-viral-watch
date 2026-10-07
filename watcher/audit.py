@@ -16,6 +16,7 @@ import os
 import re
 
 from . import align, llm, localize, notion, reword, tiktok
+from .builder import PARAKEET_FACTS
 
 ORIGINALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'originals.json')
 
@@ -72,6 +73,8 @@ Check strictly:
    no stray formatting characters (backticks, asterisks) in what is said or shown.
 7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h') and is not a
    word-for-word copy of the example's on-screen text when the example is in {lang_name}.
+{PARAKEET_FACTS}
+script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
 Note: X and Y in the script are intentional placeholders - the creator says the score the app shows them. They are
 correct; never ask to replace them with numbers.
 Return JSON {{"example_same_format": true, "script_follows_example": true, "script_reworded": true, "script_ok": true,

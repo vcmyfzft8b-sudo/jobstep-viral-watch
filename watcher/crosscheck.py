@@ -422,6 +422,9 @@ def approval_drafts(fmts, mkts, cfg, page_of, meta):
             url = source_url(ref, vid)
             if not url:
                 continue
+            prev = out.get(f"{f['id']}:{m}") or {}
+            if prev.get('status') == 'draft' and prev.get('example') == url:
+                continue  # a draft for this example is already waiting for approval
             try:
                 st, spec = align.align_page(f, pid, lang, cfg, cfg['links'],
                                             feedback='; '.join(x.get('issue', '') for x in fails.values()), draft_url=url)

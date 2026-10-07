@@ -102,5 +102,11 @@ counts as a pass.
 - New and changed groups stay in staging (quality gate) until the group passes. Failing groups are repaired
   automatically where allowed (canonical example, independently worded rewrite, directions); approval-locked scripts
   are only reported for approval.
-- Modes: `group-audit` (report), `group-audit-force` (ignore cache), `group-fix` (repair + re-check). The Monday run
-  does the cached check with repairs.
+- The on-screen title is reviewed too; a title with an invented result or promise is fixed (titles are not part of a
+  script approval).
+- New or revived formats without a reviewed definition get one generated from their source video
+  (`state/format_references.json`); reviewed definitions in the registry always win.
+- Modes: `group-audit` (report), `group-audit-force` (ignore cache), `group-fix` (repair + re-check),
+  `approval-drafts` (replacement drafts for approval-locked scripts that fail - nothing written to Notion),
+  `apply-approved` (write approved scripts, and the example/title the approval names), `gate-rehearsal` (run the
+  publication gate on passing live formats without publishing). The Monday run does the cached check with repairs.

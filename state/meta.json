@@ -94,6 +94,1723 @@
   "X16:fr": "32dfbc9f316d51bc9d84876e5f3c5ebaaddb65651dd9fbc2b8de7f4edb41897e"
  },
  "discovered_at": 1791288746,
+ "group_audit": {
+  "A202610061328": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398007,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7691756700235369730",
+     "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
+    },
+    "es": {
+     "source_id": "7691756700235369730",
+     "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
+    },
+    "fr": {
+     "source_id": "7691756700235369730",
+     "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
+    }
+   },
+   "key": "916bbf3412633aecba54db91c0abcecfc43f51a8b34135b1b821fd6e4ebb6b85",
+   "passed": false,
+   "reasons": [
+    "format_consistency de: Directions ask for full-screen app recordings between camera takes, but the reference uses an app inset. The employer list only needs to be 'bekannter Arbeitgeber' and an 'aktuelles Ranking' is just an example ('z. B.'), so a real, sourced ranking is not required and no source is shown on screen.",
+    "independent_wording de: Most sentences are light rewrites of the Greek, sentence by sentence (boss OK/team a disaster, good work is valued, 'na ja, you know', 'Warte kurz'). Only the brand is swapped.",
+    "independent_wording fr: Follows the example sentence for sentence with light rewording ('patron réglo et accessible', 'Quand tu bosses bien, oui, c'est reconnu. Si tu fais rien… tu vois', 'Attends'). This is not independent writing.",
+    "independent_wording es: Nearly a direct translation: 'Se dice que estas son las mejores empresas para trabajar en España', 'Tu jefe debería ser serio y cercano', 'Si haces bien tu trabajo, claro que se valora', 'espera', 'súbelo y te da una puntuación'."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "Directions ask for full-screen app recordings between camera takes, but the reference uses an app inset. The employer list only needs to be 'bekannter Arbeitgeber' and an 'aktuelles Ranking' is just an example ('z. B.'), so a real, sourced ranking is not required and no source is shown on screen.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Most sentences are light rewrites of the Greek, sentence by sentence (boss OK/team a disaster, good work is valued, 'na ja, you know', 'Warte kurz'). Only the brand is swapped.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Nearly a direct translation: 'Se dice que estas son las mejores empresas para trabajar en España', 'Tu jefe debería ser serio y cercano', 'Si haces bien tu trabajo, claro que se valora', 'espera', 'súbelo y te da una puntuación'.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Follows the example sentence for sentence with light rewording ('patron réglo et accessible', 'Quand tu bosses bien, oui, c'est reconnu. Si tu fais rien… tu vois', 'Attends'). This is not independent writing.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three follow the beats, product timing and claims correctly, but every script is a sentence-by-sentence rewrite of the Greek original. DE also fails format consistency because it uses full-screen app recordings instead of an inset and does not require a real, sourced local ranking.",
+   "version": "group-2026-10-07.1"
+  },
+  "A202610061331": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398061,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7690984077121424673",
+     "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
+    },
+    "es": {
+     "source_id": "7690984077121424673",
+     "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
+    },
+    "fr": {
+     "source_id": "7690984077121424673",
+     "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
+    }
+   },
+   "key": "ea4b54e623f67e55058d11beb540cd9597ad03bd3c1912cf7c7a2d5d2f68b74c",
+   "passed": false,
+   "reasons": [
+    "format_consistency es: At beat 5 the script says only 'Parakeet AI' ('una herramienta como Parakeet AI'), but the reference says a spoken website goes there (parakeet-ai.com/resume-maker).",
+    "independent_wording de: Almost every sentence is a direct translation of the Dutch example ('Der hier dagegen ist im richtigen Format – im ATS-Format. So einen machst du zum Beispiel mit…', 'der Inhalt passt also viel besser und sagt viel mehr über dich'). Only the brand is swapped.",
+    "independent_wording fr: Most sentences are close translations of the example ('Le chat revient sur tes expériences, te pose des questions, puis construit…', 'le contenu correspond mieux et en dit beaucoup plus sur toi').",
+    "independent_wording es: It follows the example sentence by sentence with only light rewording ('una herramienta como', 'te hace preguntas sobre ella', 'cuenta mucho mejor quién eres'). The hook is rewritten a little, but the rest is close to a translation.",
+    "directions_match fr: The laptop part is generic placeholder text: 'Aux liens Parakeet AI du script' and 'cadrages… précisés sur cette page' point to things that don't exist, and the script has no parentheses to skip. Nothing tells the creator to show the chat or the close-up of the experience section, which the reference requires.",
+    "directions_match es: The directions point to markers ('en cada marcador (Parakeet AI · Resume Maker)') that are not in the script, and they never say to show the chat questions at the line about the chat."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "The directions point to markers ('en cada marcador (Parakeet AI · Resume Maker)') that are not in the script, and they never say to show the chat questions at the line about the chat.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The laptop part is generic placeholder text: 'Aux liens Parakeet AI du script' and 'cadrages… précisés sur cette page' point to things that don't exist, and the script has no parentheses to skip. Nothing tells the creator to show the chat or the close-up of the experience section, which the reference requires.",
+      "pass": false
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "At beat 5 the script says only 'Parakeet AI' ('una herramienta como Parakeet AI'), but the reference says a spoken website goes there (parakeet-ai.com/resume-maker).",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Almost every sentence is a direct translation of the Dutch example ('Der hier dagegen ist im richtigen Format – im ATS-Format. So einen machst du zum Beispiel mit…', 'der Inhalt passt also viel besser und sagt viel mehr über dich'). Only the brand is swapped.",
+      "pass": false
+     },
+     "es": {
+      "issue": "It follows the example sentence by sentence with only light rewording ('una herramienta como', 'te hace preguntas sobre ella', 'cuenta mucho mejor quién eres'). The hook is rewritten a little, but the rest is close to a translation.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Most sentences are close translations of the example ('Le chat revient sur tes expériences, te pose des questions, puis construit…', 'le contenu correspond mieux et en dit beaucoup plus sur toi').",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three scripts keep the reference's beats and product timing, but each one is close to a translation of the Dutch example. ES also says only the brand name where the reference wants the website spoken, and the FR and ES filming directions are vague or point to markers and page content that don't exist.",
+   "version": "group-2026-10-07.1"
+  },
+  "A202610061334": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398098,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692607504752135432",
+     "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
+    },
+    "es": {
+     "source_id": "7692607504752135432",
+     "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
+    },
+    "fr": {
+     "source_id": "7692607504752135432",
+     "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
+    }
+   },
+   "key": "225d1a31739d7fbbb1c468691ab32451626f7d70088930bff9dc8d581d6759fe",
+   "passed": false,
+   "reasons": [
+    "format_consistency de: The close drops the CV score (Y) and replaces it with 'deutlich bessere Chancen auf eine Einladung', an outcome or probability claim instead of a better-prepared CV.",
+    "independent_wording de: Almost every sentence is a direct translation of the example speech, with only the brand swapped.",
+    "independent_wording fr: Hook, December line, Canva/Harvard advice and 'premier résultat → amélioration' are light rewrites of the example sentences, and only the close is new.",
+    "independent_wording es: Many lines copy the Spanish example almost word for word ('cierra ese CV que tienes en Canva', 'Quédate, que te cuento…', 'Esto me salió al subir el mío'), keeping its sentence order.",
+    "features_claims de: No score Y placeholder, and the line about better chances of an interview invitation implies an interview or hiring outcome.",
+    "directions_match de: The directions say to film 'an jeder Stelle mit Link im Skript', but the script has no link markers.",
+    "directions_match es: The directions point to markers '(Parakeet AI · Resume Maker)' in the script, but the script has none."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "The directions say to film 'an jeder Stelle mit Link im Skript', but the script has no link markers.",
+      "pass": false
+     },
+     "es": {
+      "issue": "The directions point to markers '(Parakeet AI · Resume Maker)' in the script, but the script has none.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "No score Y placeholder, and the line about better chances of an interview invitation implies an interview or hiring outcome.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "The close drops the CV score (Y) and replaces it with 'deutlich bessere Chancen auf eine Einladung', an outcome or probability claim instead of a better-prepared CV.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Almost every sentence is a direct translation of the example speech, with only the brand swapped.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Many lines copy the Spanish example almost word for word ('cierra ese CV que tienes en Canva', 'Quédate, que te cuento…', 'Esto me salió al subir el mío'), keeping its sentence order.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Hook, December line, Canva/Harvard advice and 'premier résultat → amélioration' are light rewrites of the example sentences, and only the close is new.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three pages keep the format's beats, but every script reads largely like a translation or copy of the example, DE swaps the score close for an interview-chance claim, and the DE/ES directions refer to link or marker labels that are not in the scripts.",
+   "version": "group-2026-10-07.1"
+  },
+  "A20261006183623": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398303,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692141310198713633",
+     "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
+    },
+    "es": {
+     "source_id": "7692141310198713633",
+     "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
+    },
+    "fr": {
+     "source_id": "7692141310198713633",
+     "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
+    }
+   },
+   "key": "ce0bcf3d53b3e1f00528c857496f4e0ff2cccb5553c729d778f5f1b6efc2755a",
+   "passed": false,
+   "reasons": [
+    "format_consistency fr: The filming directions leave out the talking-head shot with a kitchen task or other activity. Only the screen recording and the final reaction are described, so the filming sequence differs from the reference.",
+    "format_consistency es: The filming directions leave out the talking-head shot with a kitchen task or other activity. Only the app recording and the final reaction are described, so the filming sequence differs from the reference.",
+    "independent_wording de: Most sentences are light rewrites of the example: 'Lügt in eurem Lebenslauf', 'kleine Details/großer Unterschied', 'Bis mir eine Freundin dieses Tool hier…', 'alten Lebenslauf hoch…Link…einfügen'. The close 'Wie krass ist das bitte?' is word for word the same.",
+    "independent_wording fr: The script translates the example sentence by sentence: mens/je te le répète, pas inventer des postes, petits détails/grosse différence, j'avais aucune idée, une amie me parle de cet outil, importes…colle ici le lien, crois-le ou non.",
+    "independent_wording es: Almost every sentence is translated directly from the example: miente/otra vez, no trabajos inventados, pequeños detalles, yo tampoco tenía ni idea, una amiga me habló de esta herramienta de aquí, subes…pegas aquí el enlace, aunque cueste creerlo.",
+    "directions_match fr: The directions mention 'liens Parakeet AI du script' and 'indications entre parenthèses', but the script contains neither. They also say twice to return to the camera for the last sentence."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "The directions mention 'liens Parakeet AI du script' and 'indications entre parenthèses', but the script contains neither. They also say twice to return to the camera for the last sentence.",
+      "pass": false
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "The filming directions leave out the talking-head shot with a kitchen task or other activity. Only the app recording and the final reaction are described, so the filming sequence differs from the reference.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The filming directions leave out the talking-head shot with a kitchen task or other activity. Only the screen recording and the final reaction are described, so the filming sequence differs from the reference.",
+      "pass": false
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Most sentences are light rewrites of the example: 'Lügt in eurem Lebenslauf', 'kleine Details/großer Unterschied', 'Bis mir eine Freundin dieses Tool hier…', 'alten Lebenslauf hoch…Link…einfügen'. The close 'Wie krass ist das bitte?' is word for word the same.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Almost every sentence is translated directly from the example: miente/otra vez, no trabajos inventados, pequeños detalles, yo tampoco tenía ni idea, una amiga me habló de esta herramienta de aquí, subes…pegas aquí el enlace, aunque cueste creerlo.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The script translates the example sentence by sentence: mens/je te le répète, pas inventer des postes, petits détails/grosse différence, j'avais aucune idée, une amie me parle de cet outil, importes…colle ici le lien, crois-le ou non.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three scripts keep the format's beats and stick to real features, but each one is mostly a translation or light rewrite of the example. The FR and ES directions also leave out the talking-head shot with an activity, and the FR directions refer to links and parentheses the script doesn't contain.",
+   "version": "group-2026-10-07.1"
+  },
+  "ESX11": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398334,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    },
+    "es": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    },
+    "fr": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    }
+   },
+   "key": "4fa58b48200c29a2ddd02b33e6edcb714cdc5f420dd8a9b7be7ac2c7f02b7114",
+   "passed": false,
+   "reasons": [
+    "independent_wording de: Nearly every sentence outside the tool demo is a direct translation of the example: the hook, the 3-hours line, save this video, copy the link, it's under Share, and the sign-off.",
+    "independent_wording fr: Mostly sentence-by-sentence translation of the example: 'J'ai un conseil ultra toxique', 'Là, je suis sur Indeed', 'Il est généralement dans le bouton de partage', 'C'est tout, bonne chance, salut'.",
+    "independent_wording es: Same language as the example and mostly light rewrites of its lines: 'tan tóxico que casi no vas a tener ni que pensar', 'Suele estar en el botón de compartir', 'Y eso es todo. ¡Mucha suerte, chao!'."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Nearly every sentence outside the tool demo is a direct translation of the example: the hook, the 3-hours line, save this video, copy the link, it's under Share, and the sign-off.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Same language as the example and mostly light rewrites of its lines: 'tan tóxico que casi no vas a tener ni que pensar', 'Suele estar en el botón de compartir', 'Y eso es todo. ¡Mucha suerte, chao!'.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Mostly sentence-by-sentence translation of the example: 'J'ai un conseil ultra toxique', 'Là, je suis sur Indeed', 'Il est généralement dans le bouton de partage', 'C'est tout, bonne chance, salut'.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three countries follow the toxic-tip format with the correct brand timing, real features only and directions that fit the scripts, but every script is a close translation or light rewrite of the example's sentences, so independent wording fails for DE, FR and ES.",
+   "version": "group-2026-10-07.1"
+  },
+  "N01": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397743,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    },
+    "es": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    },
+    "fr": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    }
+   },
+   "key": "20448b4176311539b8a5868de466452ca90351e45cb6552aa84db4751bf83e16",
+   "passed": false,
+   "reasons": [
+    "format_consistency fr: Filming directions say to cut back to the selfie camera between every laptop step. The reference keeps the laptop on screen from the score through the CV reveal and only returns to selfie for the closing recommendation.",
+    "script_matches_example es: Beat 4 is weakened: 'that is why I was rejected everywhere' becomes 'ahí estaba parte del problema', so the rejection payoff of the format revelation is lost.",
+    "independent_wording de: Close sentence-by-sentence translation of the example with the brand swapped (e.g. 'Auf den ersten Blick fand ich meinen top, richtig schön – bis ich auf … gestoßen bin, wo er bewertet und verbessert wird', 'Das ganze Format übernimmt es für dich, ändern kannst du natürlich trotzdem alles…').",
+    "independent_wording fr: Near-literal translation of the example (e.g. 'Au premier coup d'œil, je trouvais mon CV super, vraiment joli, jusqu'à ma découverte de…, un site qui l'évalue et t'aide à l'améliorer', 'Il prépare toute la mise en page ; bien sûr, tu peux modifier ce que tu veux, mais regarde comme il fait plus pro').",
+    "independent_wording es: Mostly light rewrites of the example's sentences (e.g. 'Yo pensaba que el mío estaba genial, al menos de aspecto. Hasta que descubrí…, que te puntúa el CV y te ayuda a mejorarlo', 'Te prepara el formato y puedes retocar lo que quieras. Mira cuánto más… profesional queda')."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Minor: the directions point to mentions of 'Parakeet AI · Resume Maker', but the script only ever says 'Parakeet AI'.",
+      "pass": true
+     },
+     "fr": {
+      "issue": "Minor: the directions say not to read the parentheses, but the script has none.",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "Filming directions say to cut back to the selfie camera between every laptop step. The reference keeps the laptop on screen from the score through the CV reveal and only returns to selfie for the closing recommendation.",
+      "pass": false
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Close sentence-by-sentence translation of the example with the brand swapped (e.g. 'Auf den ersten Blick fand ich meinen top, richtig schön – bis ich auf … gestoßen bin, wo er bewertet und verbessert wird', 'Das ganze Format übernimmt es für dich, ändern kannst du natürlich trotzdem alles…').",
+      "pass": false
+     },
+     "es": {
+      "issue": "Mostly light rewrites of the example's sentences (e.g. 'Yo pensaba que el mío estaba genial, al menos de aspecto. Hasta que descubrí…, que te puntúa el CV y te ayuda a mejorarlo', 'Te prepara el formato y puedes retocar lo que quieras. Mira cuánto más… profesional queda').",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Near-literal translation of the example (e.g. 'Au premier coup d'œil, je trouvais mon CV super, vraiment joli, jusqu'à ma découverte de…, un site qui l'évalue et t'aide à l'améliorer', 'Il prépare toute la mise en page ; bien sûr, tu peux modifier ce que tu veux, mais regarde comme il fait plus pro').",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Beat 4 is weakened: 'that is why I was rejected everywhere' becomes 'ahí estaba parte del problema', so the rejection payoff of the format revelation is lost.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three scripts keep the reference beats, brand timing and CTA, but every one is a near-literal translation of the Serbian example and fails independent wording; FR also breaks the reference filming sequence and ES weakens the 'rejected everywhere' beat.",
+   "version": "group-2026-10-07.1"
+  },
+  "N02": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397813,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7689223891197136148",
+     "video_identity": "sha256:3a4e358e86756ec4b1703a7a648ebc180afa04b3ef025a155952d2fb8e56086a"
+    },
+    "es": {
+     "source_id": "7690964265083079942",
+     "video_identity": "sha256:7f98eb7e3368480c7608165083ca7d949ba30ebbf093062aab8c19405cbfb50b"
+    },
+    "fr": {
+     "source_id": "7689223891197136148",
+     "video_identity": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12"
+    }
+   },
+   "key": "9a39c9ceb6ebafbef0340189a4f39744e0822a52e79a788d81b6f5c61683c413",
+   "passed": false,
+   "reasons": [
+    "format_consistency es: Silent on-screen delivery while DE/FR use voiceover, which breaks the reference's one-delivery-mode parity note. It also ends on the CV reveal and drops the apply-among-the-first payoff beat, and the brand is never named in the text.",
+    "independent_wording es: Nearly every on-screen line is a light same-language rewrite of the example's captions, e.g. 'Copia el enlace que te interese 🔗', 'Analiza tu CV' (identical), 'Lo adapta al puesto ✨', 'Cámbialo por 3600'.",
+    "directions_match es: Directions say to film at each line marked '(Parakeet AI · Resume Maker)', but no script line is marked or names the brand. The script says 'esta web', so the silent version never identifies the product."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Directions say to film at each line marked '(Parakeet AI · Resume Maker)', but no script line is marked or names the brand. The script says 'esta web', so the silent version never identifies the product.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Silent on-screen delivery while DE/FR use voiceover, which breaks the reference's one-delivery-mode parity note. It also ends on the CV reveal and drops the apply-among-the-first payoff beat, and the brand is never named in the text.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Nearly every on-screen line is a light same-language rewrite of the example's captions, e.g. 'Copia el enlace que te interese 🔗', 'Analiza tu CV' (identical), 'Lo adapta al puesto ✨', 'Cámbialo por 3600'.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "DE and FR follow N02 with the brand spoken twice and a softened payoff. ES fails on format parity (silent delivery, missing apply-first payoff), copies the example's captions almost line for line, and its directions point to brand-marked lines that the script doesn't have.",
+   "version": "group-2026-10-07.1"
+  },
+  "N03": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397867,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7688735719120014600",
+     "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
+    },
+    "es": {
+     "source_id": "7688735719120014600",
+     "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
+    },
+    "fr": {
+     "source_id": "7688735719120014600",
+     "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
+    }
+   },
+   "key": "80f98fe7f311331d1ca1f2d1d7bc88ef0be80baa1c54baee291f37f91ba5066f",
+   "passed": false,
+   "reasons": [
+    "independent_wording de: Every line is a direct translation of the example's Serbian overlays with Jobstep swapped for Parakeet AI (e.g. 'JETZT versteh ich, warum ALLE ChatGPT löschen', 'Ab auf diese Seite', 'und dann sieht dein Lebenslauf sooo aus', 'Die Seite: …').",
+    "independent_wording fr: Most lines are light rewrites of the example's overlays with only the brand swapped (e.g. 'je capte ENFIN pourquoi tout le monde zappe ChatGPT', 'Copie le lien de l'offre', 'Ouvre cette page', 'pour ce poste', 'Le site : …'). Only 'Ton nouveau CV 😍' differs.",
+    "independent_wording es: Most lines are close translations of the example's overlays with only the brand swapped (e.g. 'Ya entiendo por qué TODOS borran ChatGPT', 'Copia el enlace de una oferta', 'Abre esta web', 'adaptado al puesto', 'La web: …').",
+    "directions_match es: The directions skip the finished-CV reveal ('¡Y así queda tu CV!') and the end card with the URL. They also refer to scenes 'marcada (Parakeet AI · Resume Maker)' that are not marked anywhere in the script."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "The directions skip the finished-CV reveal ('¡Y así queda tu CV!') and the end card with the URL. They also refer to scenes 'marcada (Parakeet AI · Resume Maker)' that are not marked anywhere in the script.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Every line is a direct translation of the example's Serbian overlays with Jobstep swapped for Parakeet AI (e.g. 'JETZT versteh ich, warum ALLE ChatGPT löschen', 'Ab auf diese Seite', 'und dann sieht dein Lebenslauf sooo aus', 'Die Seite: …').",
+      "pass": false
+     },
+     "es": {
+      "issue": "Most lines are close translations of the example's overlays with only the brand swapped (e.g. 'Ya entiendo por qué TODOS borran ChatGPT', 'Copia el enlace de una oferta', 'Abre esta web', 'adaptado al puesto', 'La web: …').",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Most lines are light rewrites of the example's overlays with only the brand swapped (e.g. 'je capte ENFIN pourquoi tout le monde zappe ChatGPT', 'Copie le lien de l'offre', 'Ouvre cette page', 'pour ce poste', 'Le site : …'). Only 'Ton nouveau CV 😍' differs.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three countries follow the N03 beats, product timing and on-screen-only URL CTA with valid feature claims, but every script is a near-literal translation of the example's overlays, and the ES filming directions leave out the CV reveal and the end card.",
+   "version": "group-2026-10-07.1"
+  },
+  "N04": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397916,
+   "deterministic": {
+    "es": "example 7691177962904800520 is a different story: Different demo and order: opens on the inbox result, ATS reason is hearsay, unnamed website where details are entered - no old-CV upload, no bad-score reveal, no before/after; adds a '3-4 days' reply claim and ends with a casual 'try it' without a spoken brand/URL. Also missing the 'blamed connections' beat."
+   },
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692125028871146760",
+     "video_identity": "sha256:be143d2219312814ce14c5a33fecaefaccecaadcd9c44820cbc674d50ec53ff6"
+    },
+    "es": {
+     "source_id": "7691177962904800520",
+     "video_identity": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0"
+    },
+    "fr": {
+     "source_id": "7692125028871146760",
+     "video_identity": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb"
+    }
+   },
+   "key": "1ad9ee6391b063023448bcf8b9c72aee411589cf757fdcef7b067773c4367f09",
+   "passed": false,
+   "reasons": [
+    "format_consistency de: Beats and order match, but the script says 'Der hier kommt durch und landet bei einem Menschen', a guaranteed 'gets through to a human' claim that is explicitly not allowed (only a softened ATS claim is).",
+    "format_consistency fr: Script beats match, but the directions put the closing URL/CTA on the app screen instead of going back to selfie for the conclusion as the reference filming requires.",
+    "format_consistency es: example 7691177962904800520 is a different story: Different demo and order: opens on the inbox result, ATS reason is hearsay, unnamed website where details are entered - no old-CV upload, no bad-score reveal, no before/after; adds a '3-4 days' reply claim and ends with a casual 'try it' without a spoken brand/URL. Also missing the 'blamed connections' beat.",
+    "independent_wording de: Most sentences are light rewrites of the Serbian original ('sagen wir's nett, eine Katastrophe' = 'blago rečeno, užasan'; 'Schaut mal, wie anders der aussieht' = 'pogledajte koliko je on drugačiji'; 'aber am wichtigsten war das Format' = 'ali najbitnije: format').",
+    "independent_wording fr: Mostly translated from the example ('celui que j'ai envoyé sur ce site' = 'poslala sam ga na ovu stranicu'; 'Il n'y avait quasiment rien qui allait' = 'Bukvalno skoro ništa nije bilo dobro'; 'regarde la différence').",
+    "independent_wording es: Close sentence-by-sentence rewrite of the Spanish example ('después de varios días', 'bueno, para trabajar todavía no: para hacer entrevistas', 'es esta de aquí', 'tres o cuatro días', 'Estoy contentísima', 'si te viene bien, pruébalo').",
+    "features_claims de: Guarantees the CV gets through and reaches a human ('kommt durch und landet bei einem Menschen'), which is a guaranteed ATS-passage claim.",
+    "features_claims es: Specific reply-time promise ('en apenas tres o cuatro días me llegaron un montón de respuestas') and an implied ATS-passage claim ('CV pensado para los ATS' fixing a 'blocked' CV); the product is never named.",
+    "directions_match es: Directions say 'En cuanto entre Parakeet AI · Resume Maker … en cada enlace del guion', but the script never names Parakeet AI and contains no link markers."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Directions say 'En cuanto entre Parakeet AI · Resume Maker … en cada enlace del guion', but the script never names Parakeet AI and contains no link markers.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "Guarantees the CV gets through and reaches a human ('kommt durch und landet bei einem Menschen'), which is a guaranteed ATS-passage claim.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Specific reply-time promise ('en apenas tres o cuatro días me llegaron un montón de respuestas') and an implied ATS-passage claim ('CV pensado para los ATS' fixing a 'blocked' CV); the product is never named.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "Beats and order match, but the script says 'Der hier kommt durch und landet bei einem Menschen', a guaranteed 'gets through to a human' claim that is explicitly not allowed (only a softened ATS claim is).",
+      "pass": false
+     },
+     "es": {
+      "issue": "example 7691177962904800520 is a different story: Different demo and order: opens on the inbox result, ATS reason is hearsay, unnamed website where details are entered - no old-CV upload, no bad-score reveal, no before/after; adds a '3-4 days' reply claim and ends with a casual 'try it' without a spoken brand/URL. Also missing the 'blamed connections' beat.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Script beats match, but the directions put the closing URL/CTA on the app screen instead of going back to selfie for the conclusion as the reference filming requires.",
+      "pass": false
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Most sentences are light rewrites of the Serbian original ('sagen wir's nett, eine Katastrophe' = 'blago rečeno, užasan'; 'Schaut mal, wie anders der aussieht' = 'pogledajte koliko je on drugačiji'; 'aber am wichtigsten war das Format' = 'ali najbitnije: format').",
+      "pass": false
+     },
+     "es": {
+      "issue": "Close sentence-by-sentence rewrite of the Spanish example ('después de varios días', 'bueno, para trabajar todavía no: para hacer entrevistas', 'es esta de aquí', 'tres o cuatro días', 'Estoy contentísima', 'si te viene bien, pruébalo').",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Mostly translated from the example ('celui que j'ai envoyé sur ce site' = 'poslala sam ga na ovu stranicu'; 'Il n'y avait quasiment rien qui allait' = 'Bukvalno skoro ništa nije bilo dobro'; 'regarde la différence').",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "No country passes cleanly: ES copies the rejected source (no named tool, no upload or score reveal, '3-4 days' promise, mismatched directions), DE has a guaranteed 'reaches a human' claim, FR's directions put the closing CTA on the app instead of selfie, and all three scripts are close translations of their example.",
+   "version": "group-2026-10-07.1"
+  },
+  "N07": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397964,
+   "deterministic": {
+    "fr": "example 7691252438875098400 is a different story: Different story: mother's HR friend criticises a standard Canva CV, surprise + 'save this video' CTA, spoken URL, upload -> poor score -> long chat demo, ATS percentage, 'so easy and fast' ending; 67.7s vs 29.8s and no reverse before/after reveal."
+   },
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7689479710677470471",
+     "video_identity": "sha256:a63cf9bd9dc13c02a700703291a9f1f7cf9651f71a44d6ff23bc7a6443f03508"
+    },
+    "es": {
+     "source_id": "7689479710677470471",
+     "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
+    },
+    "fr": {
+     "source_id": "7691252438875098400",
+     "video_identity": "sha256:9f6b460f98f5b47d285c18cb6dac808a6ce5d579b77697ff71654177f5d796ea"
+    }
+   },
+   "key": "9bde90d9169b80cf8d82f3425a1d7da829965b55d93eb54ba4200b53b98fd261",
+   "passed": false,
+   "reasons": [
+    "format_consistency fr: example 7691252438875098400 is a different story: Different story: mother's HR friend criticises a standard Canva CV, surprise + 'save this video' CTA, spoken URL, upload -> poor score -> long chat demo, ATS percentage, 'so easy and fast' ending; 67.7s vs 29.8s and no reverse before/after reveal.",
+    "independent_wording de: Almost every sentence is a direct German translation of the Serbian example, e.g. 'So sieht mein Lebenslauf gerade aus' and 'Mit jeder Frage kommt ein neuer, wichtiger Teil dazu'.",
+    "independent_wording fr: The script is a close sentence-by-sentence paraphrase of the French example with the brand swapped. It keeps the 'sidérée/bluffée' frame and the 'Garde cette vidéo' line.",
+    "independent_wording es: Most sentences are light rewrites of the example, e.g. 'Así está mi CV al empezar', 'Con cada respuesta aparece otra parte importante' and 'Antes, mi CV era este. Y esta era su nota'. Only the hook is reworded."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "example 7691252438875098400 is a different story: Different story: mother's HR friend criticises a standard Canva CV, surprise + 'save this video' CTA, spoken URL, upload -> poor score -> long chat demo, ATS percentage, 'so easy and fast' ending; 67.7s vs 29.8s and no reverse before/after reveal.",
+      "pass": false
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Almost every sentence is a direct German translation of the Serbian example, e.g. 'So sieht mein Lebenslauf gerade aus' and 'Mit jeder Frage kommt ein neuer, wichtiger Teil dazu'.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Most sentences are light rewrites of the example, e.g. 'Así está mi CV al empezar', 'Con cada respuesta aparece otra parte importante' and 'Antes, mi CV era este. Y esta era su nota'. Only the hook is reworded.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The script is a close sentence-by-sentence paraphrase of the French example with the brand swapped. It keeps the 'sidérée/bluffée' frame and the 'Garde cette vidéo' line.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "DE and ES follow the N07 beats but are near-translations of the Serbian example; FR is built on the rejected HR-friend source (wrong format, spoken URL, save-video CTA, no reverse reveal) and is also a paraphrase of its example.",
+   "version": "group-2026-10-07.1"
+  },
+  "N10": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791397705,
+   "deterministic": {
+    "de": "example 7682028282191105312 is a different story: This is X15's story, not N10: 'rejected, rejected, rejected' opening, printed old CVs vs plain new CV, unnamed website with entering details and AI questions, score at the end. No 'nobody reads it' hook, no upload and low-score reveal, no template step, no HR-friend explanation, no spoken brand or CTA.",
+    "es": "example 7693601460084362516 is a different story: Different story and demo: hook is 'my CVs never reached a real person' with an imagined human rejection; demo is paste job link + upload + apply suggested keywords with a rising score; no question-driven rebuild, no template choice, no HR-friend beat, tool never named in speech; ends on a claimed reply."
+   },
+   "duplicates": [
+    {
+     "formats": [
+      "N10",
+      "X15"
+     ],
+     "kind": "source_id",
+     "pages": [
+      "N10:de",
+      "X15:de",
+      "X15:fr"
+     ],
+     "value": "7682028282191105312"
+    },
+    {
+     "formats": [
+      "N10",
+      "X15"
+     ],
+     "kind": "video_identity",
+     "pages": [
+      "N10:de",
+      "X15:de",
+      "X15:fr"
+     ],
+     "value": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+    }
+   ],
+   "inputs": {
+    "de": {
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+    },
+    "es": {
+     "source_id": "7693601460084362516",
+     "video_identity": "sha256:ed2984b0007c6f81be6bb78123dbf579b4828ae7edf9c026f7ca1e1918d3e15b"
+    },
+    "fr": {
+     "source_id": "7692884328304479495",
+     "video_identity": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b"
+    }
+   },
+   "key": "931fd368e99eec10ffa0b11abc64d51e7277db2b81b9fb24fad7296daaa0f78d",
+   "passed": false,
+   "reasons": [
+    "format_consistency de: example 7682028282191105312 is a different story: This is X15's story, not N10: 'rejected, rejected, rejected' opening, printed old CVs vs plain new CV, unnamed website with entering details and AI questions, score at the end. No 'nobody reads it' hook, no upload and low-score reveal, no template step, no HR-friend explanation, no spoken brand or CTA.",
+    "format_consistency es: example 7693601460084362516 is a different story: Different story and demo: hook is 'my CVs never reached a real person' with an imagined human rejection; demo is paste job link + upload + apply suggested keywords with a rising score; no question-driven rebuild, no template choice, no HR-friend beat, tool never named in speech; ends on a claimed reply.",
+    "independent_wording de: The script is a light rewrite of the example, sentence by sentence. Examples: 'abgelehnt x3' becomes 'Absage x3', 'Stitch' becomes 'aesthetic', and 'Inhalt is krass', 'Geld keepen/Gatekeepen' and 'diese Webseite, Daten eintragen' carry over almost unchanged.",
+    "independent_wording fr: The script is mostly a close translation of the Serbian speech with the brand swapped. Examples: 'Désolée de te le dire comme ça', 'Dis-moi ce qui manque, toi', 'regarde comme il paraît différent et plus pro' and 'Heureusement que j'ai trouvé…'.",
+    "independent_wording es: Almost every sentence paraphrases the example in the same order: '¿Por qué no me lo dijiste antes?', the imagined rejection, 'ni a recursos humanos', 'aquí pegas/aquí subes', 'la nota va subiendo' and 'pruébalo'.",
+    "features_claims de: 'dieser hier kommt durch – die alten nicht' implies the CV is guaranteed to pass ATS. The tool is also never named.",
+    "features_claims es: 'Mi CV ya llegó a una persona y recibí una respuesta' is an invented testimonial that suggests a guaranteed outcome.",
+    "directions_match es: The directions point to «(Parakeet AI · Resume Maker)» markers, but the script contains no such markers and never names the tool.",
+    "possible duplicate (source_id 7682028282191105312) shared with X15",
+    "possible duplicate (video_identity sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2) shared with X15"
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "The directions point to «(Parakeet AI · Resume Maker)» markers, but the script contains no such markers and never names the tool.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "'dieser hier kommt durch – die alten nicht' implies the CV is guaranteed to pass ATS. The tool is also never named.",
+      "pass": false
+     },
+     "es": {
+      "issue": "'Mi CV ya llegó a una persona y recibí una respuesta' is an invented testimonial that suggests a guaranteed outcome.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "example 7682028282191105312 is a different story: This is X15's story, not N10: 'rejected, rejected, rejected' opening, printed old CVs vs plain new CV, unnamed website with entering details and AI questions, score at the end. No 'nobody reads it' hook, no upload and low-score reveal, no template step, no HR-friend explanation, no spoken brand or CTA.",
+      "pass": false
+     },
+     "es": {
+      "issue": "example 7693601460084362516 is a different story: Different story and demo: hook is 'my CVs never reached a real person' with an imagined human rejection; demo is paste job link + upload + apply suggested keywords with a rising score; no question-driven rebuild, no template choice, no HR-friend beat, tool never named in speech; ends on a claimed reply.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "The script is a light rewrite of the example, sentence by sentence. Examples: 'abgelehnt x3' becomes 'Absage x3', 'Stitch' becomes 'aesthetic', and 'Inhalt is krass', 'Geld keepen/Gatekeepen' and 'diese Webseite, Daten eintragen' carry over almost unchanged.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Almost every sentence paraphrases the example in the same order: '¿Por qué no me lo dijiste antes?', the imagined rejection, 'ni a recursos humanos', 'aquí pegas/aquí subes', 'la nota va subiendo' and 'pruébalo'.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The script is mostly a close translation of the Serbian speech with the brand swapped. Examples: 'Désolée de te le dire comme ça', 'Dis-moi ce qui manque, toi', 'regarde comme il paraît différent et plus pro' and 'Heureusement que j'ai trouvé…'.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "Only FR follows the N10 format. DE uses X15 and ES uses another rejected source. All three scripts reuse too much of their example's wording, and DE and ES make claims they can't make: guaranteed ATS passage in DE and an invented reply in ES.",
+   "version": "group-2026-10-07.1"
+  },
+  "X03": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398131,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7685281585674849569",
+     "video_identity": "sha256:0d9864c4693d9f8b450659fe7a82a8450c61d6c96c85e30ac4be3dec1179dc74"
+    },
+    "es": {
+     "source_id": "7692059934875340064",
+     "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
+    },
+    "fr": {
+     "source_id": "7692059934875340064",
+     "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
+    }
+   },
+   "key": "60d43d1540fa6111996e4b46996a389e0822d42f944dfc31ccc85ccc99bd7917",
+   "passed": false,
+   "reasons": [
+    "independent_wording fr: Most sentences closely translate the Polish example (hook, 'n'importe quel poste', 'copie le lien', 'correspond assez mal', 'C'est mieux ; encore quelques retouches', closing line).",
+    "independent_wording es: Most sentences closely translate the Polish example ('me voy a chivar', 'Lo más importante', 'Ya está mucho mejor', 'Retoco unos detalles y la nota sube a Y', closing line) with only the brand swapped.",
+    "directions_match de: There are no real filming directions, only 'Original auf TikTok'. Nothing covers the talking head with an object, the tablet or laptop demo, the Indeed link copy, or how to show the X/Y scores."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "There are no real filming directions, only 'Original auf TikTok'. Nothing covers the talking head with an object, the tablet or laptop demo, the Indeed link copy, or how to show the X/Y scores.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Most sentences closely translate the Polish example ('me voy a chivar', 'Lo más importante', 'Ya está mucho mejor', 'Retoco unos detalles y la nota sube a Y', closing line) with only the brand swapped.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Most sentences closely translate the Polish example (hook, 'n'importe quel poste', 'copie le lien', 'correspond assez mal', 'C'est mieux ; encore quelques retouches', closing line).",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three scripts follow the X03 format with only real features. DE (based on the accepted variant) has no filming directions, and FR and ES are mostly close translations of the Polish example video.",
+   "version": "group-2026-10-07.1"
+  },
+  "X13": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398169,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    },
+    "es": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    },
+    "fr": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    }
+   },
+   "key": "108ad4eb58273181d7370b1e49fba9c3491c75ebba0d458d706a794c9ae141e7",
+   "passed": false,
+   "reasons": [
+    "format_consistency de: The directions never ask for numbered tip overlays. The reference requires them; DE only has hand-counting plus a portal overlay.",
+    "format_consistency es: Keeps the quantified time promise 'En unos veinte minutos', which the reference does not allow (the time estimate must be removed or softened).",
+    "independent_wording fr: Almost a sentence-by-sentence translation of the example, e.g. 'arrête… LinkedIn et Indeed : c'est saturé', 'À la place de Canva, ouvre ce site', 'même s'il t'en manque encore, tu peux toujours viser plus haut'.",
+    "independent_wording es: Most sentences lightly rewrite the Spanish original, e.g. 'haz un CV feo', 'En vez de gastar todo tu tiempo ahí', 'valórate', the minimum-wage line and the 20-minute line.",
+    "features_claims es: 'En unos veinte minutos puedes tener tu currículum listo' is a quantified speed promise.",
+    "directions_match es: Says to film the app 'en cada enlace del guion', but the script has no link markers, so the demo timing is undefined."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Says to film the app 'en cada enlace del guion', but the script has no link markers, so the demo timing is undefined.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "'En unos veinte minutos puedes tener tu currículum listo' is a quantified speed promise.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "The directions never ask for numbered tip overlays. The reference requires them; DE only has hand-counting plus a portal overlay.",
+      "pass": false
+     },
+     "es": {
+      "issue": "Keeps the quantified time promise 'En unos veinte minutos', which the reference does not allow (the time estimate must be removed or softened).",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Most sentences lightly rewrite the Spanish original, e.g. 'haz un CV feo', 'En vez de gastar todo tu tiempo ahí', 'valórate', the minimum-wage line and the 20-minute line.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "Almost a sentence-by-sentence translation of the example, e.g. 'arrête… LinkedIn et Indeed : c'est saturé', 'À la place de Canva, ouvre ce site', 'même s'il t'en manque encore, tu peux toujours viser plus haut'.",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "FR keeps the format but is close to a translation of the example; DE is independently written but lacks the numbered overlays in its directions; ES fails on wording, on the 20-minute speed promise and on directions that point to link markers the script doesn't have.",
+   "version": "group-2026-10-07.1"
+  },
+  "X15": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398204,
+   "deterministic": {
+    "es": "example 7667662711190195489 is a different story: Same rejection hook but different middle and demo: no printed old-vs-new CV comparison; replaced by a long ATS explanation (online/large employers, structure, keywords), a spoken brand, and a score-threshold 'assurance' ending; no entering-details + AI-questions demo. 57s vs 32s."
+   },
+   "duplicates": [
+    {
+     "formats": [
+      "N10",
+      "X15"
+     ],
+     "kind": "source_id",
+     "pages": [
+      "N10:de",
+      "X15:de",
+      "X15:fr"
+     ],
+     "value": "7682028282191105312"
+    },
+    {
+     "formats": [
+      "N10",
+      "X15"
+     ],
+     "kind": "video_identity",
+     "pages": [
+      "N10:de",
+      "X15:de",
+      "X15:fr"
+     ],
+     "value": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+    }
+   ],
+   "inputs": {
+    "de": {
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+    },
+    "es": {
+     "source_id": "7667662711190195489",
+     "video_identity": "sha256:1da00dc8b56532454c65efbad543bb139eadd84a9b72d1066d8432cc0f3a7e51"
+    },
+    "fr": {
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+    }
+   },
+   "key": "1fb22b056fa68bb6ee81d563aaacd93ea83388af44ce42086127104005b41a8c",
+   "passed": false,
+   "reasons": [
+    "format_consistency es: example 7667662711190195489 is a different story: Same rejection hook but different middle and demo: no printed old-vs-new CV comparison; replaced by a long ATS explanation (online/large employers, structure, keywords), a spoken brand, and a score-threshold 'assurance' ending; no entering-details + AI-questions demo. 57s vs 32s.",
+    "independent_wording fr: The script is a sentence-by-sentence French translation of the German example ('Refusé x3… ils servent à rien', 'moins joli… côté contenu', 'comment j'ai pu postuler avec ça', 'je vais pas garder ça pour moi', 'tu renseignes tes infos… l'IA te pose quelques questions… donne même une note').",
+    "independent_wording es: Almost every sentence is a light rewrite of the ES example, with the brand changed from JobStep.io to Parakeet AI (rechazado x5, 'es así de fácil… no están funcionando', 'te enseño…', 'sobre todo si buscas trabajo por internet o en empresas grandes…', 'clasifican… según su estructura').",
+    "directions_match de: The directions are only 'Original auf TikTok'. Nothing covers holding up the printed CVs, the old-vs-new comparison, or the Parakeet AI laptop demo with the real questions and score.",
+    "directions_match fr: The directions put an on-screen title 'Ne fais pas ça !!' that is not in the script. They also refer to 'liens Parakeet AI du script' and framings 'précisés sur cette page', but the script has no such links or cues.",
+    "possible duplicate (source_id 7682028282191105312) shared with N10",
+    "possible duplicate (video_identity sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2) shared with N10"
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "The directions are only 'Original auf TikTok'. Nothing covers holding up the printed CVs, the old-vs-new comparison, or the Parakeet AI laptop demo with the real questions and score.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "The directions put an on-screen title 'Ne fais pas ça !!' that is not in the script. They also refer to 'liens Parakeet AI du script' and framings 'précisés sur cette page', but the script has no such links or cues.",
+      "pass": false
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "example 7667662711190195489 is a different story: Same rejection hook but different middle and demo: no printed old-vs-new CV comparison; replaced by a long ATS explanation (online/large employers, structure, keywords), a spoken brand, and a score-threshold 'assurance' ending; no entering-details + AI-questions demo. 57s vs 32s.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "Almost every sentence is a light rewrite of the ES example, with the brand changed from JobStep.io to Parakeet AI (rechazado x5, 'es así de fácil… no están funcionando', 'te enseño…', 'sobre todo si buscas trabajo por internet o en empresas grandes…', 'clasifican… según su estructura').",
+      "pass": false
+     },
+     "fr": {
+      "issue": "The script is a sentence-by-sentence French translation of the German example ('Refusé x3… ils servent à rien', 'moins joli… côté contenu', 'comment j'ai pu postuler avec ça', 'je vais pas garder ça pour moi', 'tu renseignes tes infos… l'IA te pose quelques questions… donne même une note').",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "DE follows the format, but its filming directions are a placeholder. FR follows the format, but its script is a near-translation of the German example and its directions contain mismatches. ES is built on a rejected source with a lecture-style ATS script, so it breaks the format and copies its example's wording.",
+   "version": "group-2026-10-07.1"
+  },
+  "X16": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791398238,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    },
+    "es": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    },
+    "fr": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    }
+   },
+   "key": "6b832809160834dcce1b439a8ae34f43460c1d313e3582d27f41ff9a17f50d37",
+   "passed": false,
+   "reasons": [
+    "independent_wording de: Mostly a close translation of the source sentence by sentence (e.g. 'Der Grund ist ganz simpel: dein Lebenslauf, Leute', 'Sagt dir keiner, aber…', 'Damit's dir wirklich was bringt, zeig ich dir die Seite', 'die hier fand ich gut', 'Achtung – Y %'), with only the brand and the unsupported steps swapped.",
+    "independent_wording fr: Most lines are light rewrites that follow the source sentence by sentence ('Personne te le dit, mais…', 'Autre secret : … aucun recruteur ne le lit', 'Moi, celle-ci m'intéresse. Je colle son lien ici', 'Je corrige quelques détails. C'est prêt. Attention, maintenant…')."
+   ],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "Mostly a close translation of the source sentence by sentence (e.g. 'Der Grund ist ganz simpel: dein Lebenslauf, Leute', 'Sagt dir keiner, aber…', 'Damit's dir wirklich was bringt, zeig ich dir die Seite', 'die hier fand ich gut', 'Achtung – Y %'), with only the brand and the unsupported steps swapped.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "Most lines are light rewrites that follow the source sentence by sentence ('Personne te le dit, mais…', 'Autre secret : … aucun recruteur ne le lit', 'Moi, celle-ci m'intéresse. Je colle son lien ici', 'Je corrige quelques détails. C'est prêt. Attention, maintenant…').",
+      "pass": false
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "All three countries keep the ex-HR premise, the Canva and ATS secrets, the X→Y score demo and only real Parakeet AI features, but the DE and FR scripts are close translations of the source and need independent rewording.",
+   "version": "group-2026-10-07.1"
+  }
+ },
+ "group_duplicates": [
+  {
+   "formats": [
+    "N10",
+    "X15"
+   ],
+   "kind": "source_id",
+   "pages": [
+    "N10:de",
+    "X15:de",
+    "X15:fr"
+   ],
+   "value": "7682028282191105312"
+  },
+  {
+   "formats": [
+    "N10",
+    "X15"
+   ],
+   "kind": "video_identity",
+   "pages": [
+    "N10:de",
+    "X15:de",
+    "X15:fr"
+   ],
+   "value": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
+  }
+ ],
  "handle_lang": {
   "aime_aqui": "es",
   "ale.jobtips": "",
@@ -192,5 +1909,52 @@
   "N10",
   "X16",
   "N01"
- ]
+ ],
+ "video_hashes": {
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/000ece9a-4c09-4032-8ce9-a20be54ff78f/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/05141a93-5ace-4ab2-8b23-cea31deaddff/7685281585674849569.mp4": "sha256:0d9864c4693d9f8b450659fe7a82a8450c61d6c96c85e30ac4be3dec1179dc74",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/0699bac6-f46a-4ffa-beb6-db71cb973cbf/04-Balkan-Beispiel.mp4": "sha256:be143d2219312814ce14c5a33fecaefaccecaadcd9c44820cbc674d50ec53ff6",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/0f88fc16-8fe2-4f86-9c4e-f5d1873e3b63/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/132c8e2f-abae-4fa2-a50f-f3f9dacab7da/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/1944cb5e-cec4-4eb0-8f8a-3cc3a7513b2d/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/1ad5f220-eaad-48e2-863c-67cd67e7ec28/video.mp4": "sha256:7f98eb7e3368480c7608165083ca7d949ba30ebbf093062aab8c19405cbfb50b",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/1dbaacce-b4b3-4cb8-91b0-475fcc402b11/video.mp4": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/20f9368a-5b1f-47c4-b5ce-069721a66f54/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/25786b4a-4c12-4747-bc34-98936d20c3b5/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/2cfa3313-a7e3-42e0-ba65-74586d3d56b6/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/31e47fb1-fc85-425e-805d-3028909f5156/video.mp4": "sha256:ed2984b0007c6f81be6bb78123dbf579b4828ae7edf9c026f7ca1e1918d3e15b",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/320c34de-a144-404e-9d14-bbdeb4a06020/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/339495cb-e58d-48df-9df6-29f05f0999d4/video.mp4": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/36aeb856-42c4-4462-b25c-0c584287d2f5/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/3737043f-80d8-479b-adbc-5376a6bd7502/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/37fe0930-375e-4141-91f5-8b25a039724f/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/38b2afe0-949a-41c9-88d2-a2be68047191/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/3d046988-8c4d-4c7a-811a-80211c83d7b0/02-Balkan-Beispiel.mp4": "sha256:3a4e358e86756ec4b1703a7a648ebc180afa04b3ef025a155952d2fb8e56086a",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/54e2aae2-e1a4-4872-8b8c-f7b9cbf29093/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/56ce8796-f8ca-4f04-b9d7-380cde672326/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6498f88d-fc10-4402-b3fe-3e6ea9f70e23/v2_Beispielvideo.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/67e04d74-7a91-439c-a987-3199ac07054f/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a4b7c94-b438-4965-afdc-a77a04450d14/video.mp4": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be66b80-20ba-4b54-8f7b-7cb560c76f7b/video.mp4": "sha256:1da00dc8b56532454c65efbad543bb139eadd84a9b72d1066d8432cc0f3a7e51",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be81953-145e-4ffc-b6ba-9d75e93aac0d/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/7157d548-35b1-4743-a69a-cbb83e7fec02/video.mp4": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/7606dd1b-7ae0-472a-9816-33261f994e70/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/7cc2ed46-3db4-4588-bbb2-5b598641e1cf/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/7d5af0fc-cb20-4f54-b14a-6a6b3a39570f/video.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/7f82ea32-2855-499b-916f-0e275de77664/video.mp4": "sha256:9f6b460f98f5b47d285c18cb6dac808a6ce5d579b77697ff71654177f5d796ea",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/8460923d-df08-4bab-8127-eabf156feae4/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/95941ff9-d15b-4894-8d00-172063f6b0dd/example.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/9853b267-ed5a-4990-b036-1c5a87962d04/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/b1cf54ef-2b2b-4d3d-9f00-0821a3973834/07-Balkan-Beispiel.mp4": "sha256:a63cf9bd9dc13c02a700703291a9f1f7cf9651f71a44d6ff23bc7a6443f03508",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba404da2-5ed9-409c-bc5c-c4dc41281093/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba720d8d-c80d-4678-832f-a11e792a9adf/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/cb2acc1e-571c-4da9-9d73-ab82498c1962/video.mp4": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/cf28a0fd-a304-4189-93bc-d88042602dba/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/d1524a5a-30a8-44ef-ac32-fc16c5d40f06/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/d69a580d-53b8-4621-8549-17ff4e8cbe8c/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/d84f0240-0182-4981-86c2-fcd8651d7518/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e2f56fbc-d684-4a3a-88e1-fda644e249f4/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e539427b-cec1-454e-bf53-f27892c83f19/video.mp4": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e67b57d0-f37e-4307-89b5-d00c184fa7eb/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
+ }
 }

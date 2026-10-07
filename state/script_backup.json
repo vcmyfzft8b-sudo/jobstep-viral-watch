@@ -6214,6 +6214,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8120-bb4f-ca3c8b9cbcec": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Tras contar que una IA revisa el CV, pon cara de susto con la mano en la frente.",
+   "text": {
+    "content": "Tras contar que una IA revisa el CV, pon cara de susto con la mano en la frente.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8124-9f74-ebb52913e196": [
   {
    "annotations": {
@@ -6909,6 +6928,25 @@
    "plain_text": "X e Y en el guion: lee la puntuación que te muestra la app.",
    "text": {
     "content": "X e Y en el guion: lee la puntuación que te muestra la app.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-813a-b073-f74352e51c0d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Cierra con un selfie a cámara, con complicidad, diciendo la conclusión: te plantas entre los primeros en presentarte y con un CV que te da muchas más opciones.",
+   "text": {
+    "content": "Cierra con un selfie a cámara, con complicidad, diciendo la conclusión: te plantas entre los primeros en presentarte y con un CV que te da muchas más opciones.",
     "link": null
    },
    "type": "text"
@@ -8178,6 +8216,25 @@
    "plain_text": ") En Parakeet AI literalmente fui contestando las preguntas que me hacía, me sacó un currículum totalmente nuevo, y con ese CV me llamaron por fin para mi primera entrevista. ",
    "text": {
     "content": ") En Parakeet AI literalmente fui contestando las preguntas que me hacía, me sacó un currículum totalmente nuevo, y con ese CV me llamaron por fin para mi primera entrevista. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8160-8f6f-cb14c9b25e40": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Cuando digas que mires la diferencia, muestra en pantalla la nota del CV antiguo y el CV nuevo, uno junto al otro.",
+   "text": {
+    "content": "Cuando digas que mires la diferencia, muestra en pantalla la nota del CV antiguo y el CV nuevo, uno junto al otro.",
     "link": null
    },
    "type": "text"
@@ -9776,6 +9833,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8180-bbb8-e5b9184648c5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Montre à l'écran l'ancien CV, puis le nouveau CV réécrit par l'IA.",
+   "text": {
+    "content": "Montre à l'écran l'ancien CV, puis le nouveau CV réécrit par l'IA.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8181-bf4a-c38787842467": [
   {
    "annotations": {
@@ -10524,6 +10600,25 @@
    "plain_text": ") … ton CV est directement adapté à l'offre. ",
    "text": {
     "content": ") … ton CV est directement adapté à l'offre. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8194-9edb-cb09b2d1c120": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Après l'annonce du score, reviens face caméra avec une grimace gênée, puis retourne sur l'écran.",
+   "text": {
+    "content": "Après l'annonce du score, reviens face caméra avec une grimace gênée, puis retourne sur l'écran.",
     "link": null
    },
    "type": "text"
@@ -11487,6 +11582,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81b9-b563-f2235beb6432": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Para la explicación de la amiga de recursos humanos, vuelve al selfie y acércate a cámara como quien cuenta un secreto.",
+   "text": {
+    "content": "Para la explicación de la amiga de recursos humanos, vuelve al selfie y acércate a cámara como quien cuenta un secreto.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81b9-bdf3-f18e6f216b30": [
   {
    "annotations": {
@@ -12262,6 +12376,25 @@
    "plain_text": "Bei „Danach gehst du auf diese Seite“ zeigst du mit dem Finger direkt auf die Parakeet-AI-Seite am Laptop-Bildschirm. Beim letzten Satz bleibst du auf deinem neuen Lebenslauf und winkst mit der Hand vor dem Bildschirm.",
    "text": {
     "content": "Bei „Danach gehst du auf diese Seite“ zeigst du mit dem Finger direkt auf die Parakeet-AI-Seite am Laptop-Bildschirm. Beim letzten Satz bleibst du auf deinem neuen Lebenslauf und winkst mit der Hand vor dem Bildschirm.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81d9-9d04-e0ab2d2f1539": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Enseña a cámara tu CV antiguo y señálalo en pantalla cuando hables de él.",
+   "text": {
+    "content": "Enseña a cámara tu CV antiguo y señálalo en pantalla cuando hables de él.",
     "link": null
    },
    "type": "text"
@@ -20863,6 +20996,338 @@
     "plain_text": "Desde entonces no envío ni una candidatura sin pasarla por aquí, y ya me ha respondido gente de verdad. Si estás en plena búsqueda, échale un ojo: parakeet-ai.com/resume-maker.",
     "text": {
      "content": "Desde entonces no envío ni una candidatura sin pasarla por aquí, y ya me ha respondido gente de verdad. Si estás en plena búsqueda, échale un ojo: parakeet-ai.com/resume-maker.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f0958b0-fc14-808d-b0f2-cfff9682c186": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ça fait des mois que je cherche du travail : des mois à envoyer mon CV à chaque offre, sans obtenir une seule réponse. (",
+    "text": {
+     "content": "Ça fait des mois que je cherche du travail : des mois à envoyer mon CV à chaque offre, sans obtenir une seule réponse. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://drive.google.com/file/d/1GhmYS_2960Z-5ozUZFWlY-FhYA3mO-N0/view",
+    "plain_text": "Enregistrement Gmail",
+    "text": {
+     "content": "Enregistrement Gmail",
+     "link": {
+      "url": "https://drive.google.com/file/d/1GhmYS_2960Z-5ozUZFWlY-FhYA3mO-N0/view"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Et aujourd'hui, regarde mes mails : presque toutes les entreprises auxquelles j'ai postulé m'ont répondu !",
+    "text": {
+     "content": ") Et aujourd'hui, regarde mes mails : presque toutes les entreprises auxquelles j'ai postulé m'ont répondu !",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Je pensais que les autres avaient tous des contacts, alors que mon CV était franchement catastrophique.",
+    "text": {
+     "content": "Je pensais que les autres avaient tous des contacts, alors que mon CV était franchement catastrophique.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Voilà mon ancien CV, celui que j'ai envoyé sur ce site. (",
+    "text": {
+     "content": ") Voilà mon ancien CV, celui que j'ai envoyé sur ce site. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") J'ai ouvert Parakeet AI, importé le document, puis reçu une note franchement désastreuse. Il n'y avait quasiment rien qui allait.",
+    "text": {
+     "content": ") J'ai ouvert Parakeet AI, importé le document, puis reçu une note franchement désastreuse. Il n'y avait quasiment rien qui allait.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") L'app m'a demandé mes expériences, mon profil, le poste visé, mais surtout, il fallait revoir le format. (",
+    "text": {
+     "content": ") L'app m'a demandé mes expériences, mon profil, le poste visé, mais surtout, il fallait revoir le format. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") J'ai saisi mes infos : nouveau CV, regarde la différence.",
+    "text": {
+     "content": ") J'ai saisi mes infos : nouveau CV, regarde la différence.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Le format compte : des logiciels de tri, les ATS, analysent les candidatures et certains CV n'arrivent jamais chez un recruteur. Le mien est maintenant mieux adapté à ces filtres : il a plus de chances d'être lu, d'où ces invitations.",
+    "text": {
+     "content": "Le format compte : des logiciels de tri, les ATS, analysent les candidatures et certains CV n'arrivent jamais chez un recruteur. Le mien est maintenant mieux adapté à ces filtres : il a plus de chances d'être lu, d'où ces invitations.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Essaie parakeet-ai.com/resume-maker : le site analyse tout ton CV pour améliorer tes chances de trouver un poste.",
+    "text": {
+     "content": ") Essaie parakeet-ai.com/resume-maker : le site analyse tout ton CV pour améliorer tes chances de trouver un poste.",
      "link": null
     },
     "type": "text"

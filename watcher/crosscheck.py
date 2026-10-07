@@ -449,6 +449,8 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
         pid = page_of(fmt, m)
         if not pid:
             continue
+        if not align.approved_script(fmt['id'], lang) and reword.fix_asset_cues(pid):
+            changed.append(f'{m}: script cues cleaned (resources)')
         fails = {d: ((results.get(d) or {}).get(m) or {}) for d in DIMENSIONS}
         failing = [d for d, x in fails.items() if x and not x.get('pass')]
         if m in (res.get('deterministic') or {}) and 'format_consistency' not in failing:
@@ -459,8 +461,6 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
             awaiting.append(f"{m}: approved script - needs your approval to change ({', '.join(failing)})")
             continue
         issues = '; '.join(x.get('issue', '') for d, x in fails.items() if d in failing and x.get('issue'))
-        if reword.fix_asset_cues(pid):
-            changed.append(f'{m}: repeated asset cue cleaned')
         if 'format_consistency' in failing:
             canon = ref.get('canonical_source')
             url = source_url(ref, canon)

@@ -249,6 +249,7 @@ def test_fix_asset_cues_repairs_piled_up_decoration(monkeypatch):
     t = 'Y ahora (📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos) Y ahora echa un ojo.'
     blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: [blk])
+    monkeypatch.setattr(reword, 'resources_text', lambda pid: 'grabación de gmail en español')
     sent = []
     monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
@@ -312,3 +313,15 @@ def test_title_with_invented_result_is_fixed_even_on_a_locked_page(monkeypatch):
     res, changed, awaiting = crosscheck.group_cycle(fmt('L1'), MKTS, CFG, page_of, {})
     assert w.titles == {'L1_de': 'Plötzlich Einladungen? 😳'} and ('L1', 'de') not in w.rewrites
     assert any('title' in c for c in changed)
+
+
+def test_cue_pointing_to_missing_resource_becomes_a_stage_direction(monkeypatch):
+    from watcher import notion
+    t = 'Copia (📎 InfoJobs – ver Recursos) el enlace.'
+    blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
+    monkeypatch.setattr(reword, 'script_blocks', lambda pid: [blk])
+    monkeypatch.setattr(reword, 'resources_text', lambda pid: 'parakeet ai · resume maker')
+    sent = []
+    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
+    assert reword.fix_asset_cues('p') == 1
+    assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Copia (InfoJobs) el enlace.'

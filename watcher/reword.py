@@ -256,29 +256,56 @@ Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it
     return 'ok', ''
 
 
+def resources_text(page_id):
+    """Plain text of the page's 🔧 resources section (what a '📎 … – see resources' cue may point to)."""
+    out, inside = [], False
+    for b in notion.children(page_id):
+        if b['type'].startswith('heading'):
+            inside = '🔧' in _plain(b)
+            continue
+        if inside and b['type'] != 'divider':
+            out.append(_plain(b))
+    return ' '.join(out).lower()
+
+
+def in_resources(name, resources):
+    """True if the asset is really in the resources section (e.g. 'Gmail inbox' -> 'Gmail recording')."""
+    words = [w for w in re.findall(r'\w+', (name or '').lower()) if len(w) >= 4]
+    return any(w in resources for w in words)
+
+
 def fix_asset_cues(page_id):
-    """Repairs script cues that were decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos')."""
+    """Repairs script cues: decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos'), or pointing to the
+    resources section for something that is not there (then it is a plain stage direction '(InfoJobs)')."""
+    suffixes = {l: TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') for l in TEXT}
+    resources = None
     fixed = 0
     for b in script_blocks(page_id):
         rich = b[b['type']].get('rich_text', [])
         changed = False
         for x in rich:
-            t = (x.get('text') or {}).get('content', '')
+            if not x.get('text'):
+                continue
+            t = x['text'].get('content', '')
             for m in re.finditer(r'\((📎[^()]*)\)', t):
-                if m.group(1).count('📎') > 1:
-                    lang = next(l for l in TEXT if TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') in m.group(1)) \
-                        if any(TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') in m.group(1) for l in TEXT) else None
-                    if lang:
-                        clean = TEXT[lang]['asset_cue'].format(name=notion.asset_label(m.group(1))).strip()
-                        t = t.replace(m.group(0), clean)
-                        changed = True
-            if changed:
-                x['text']['content'] = t
-                x.pop('plain_text', None)
-                x.pop('href', None)
+                lang = next((l for l, suf in suffixes.items() if suf in m.group(1)), None)
+                if not lang:
+                    continue
+                name = notion.asset_label(m.group(1))
+                if resources is None:
+                    resources = resources_text(page_id)
+                if not in_resources(name, resources):
+                    clean = f'({name})'
+                elif m.group(1).count('📎') > 1:
+                    clean = TEXT[lang]['asset_cue'].format(name=name).strip()
+                else:
+                    continue
+                t = t.replace(m.group(0), clean)
+                changed = True
+            x['text']['content'] = t
         if changed:
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [
-                {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich]}})
+                {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich if x.get('text')]}})
             fixed += 1
     return fixed
 

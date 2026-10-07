@@ -974,8 +974,14 @@ def standardize(only=None):
 def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
     """Cross-country check of all formats; with fix=True failing groups are repaired (never approved scripts) and
     checked again. Sends one Slack report with the result types kept separate."""
-    results, dups = crosscheck.run(fmts, mkts, cfg, page_of, meta, force=force)
     notes = []
+    if fix:  # script cues that point to nothing in the resources become stage directions (all unlocked pages)
+        for f in [f for f in fmts if f.get('status') in ('active', 'pending')]:
+            for mk in mkts:
+                pid = page_of(f, mk['key'])
+                if pid and not align.approved_script(f['id'], mk['lang']) and reword.fix_asset_cues(pid):
+                    notes.append(f"{f['title']}: {mk['key']}: script cues cleaned (resources)")
+    results, dups = crosscheck.run(fmts, mkts, cfg, page_of, meta, force=force)
     if fix:
         for f in [f for f in fmts if results.get(f['id'], {}).get('status') == 'fail'
                   or results.get(f['id'], {}).get('title_fixes')]:

@@ -2,8 +2,9 @@
 
 The list ranking uses this to see how a format does for US, not only for JobStep (see rank.scores).
 
-- Accounts: seeded from the Megasheet export (registry/own_seed.json, DACH), completed every few days via Lightreel
-  (any market) and checked on TikTok: posted in the last 30 days AND Parakeet AI in captions or videos.
+- Accounts: every run read live from Megasheet (DACH, France, Spain campaigns - see megasheet.py; the export in
+  registry/own_seed.json is the fallback), completed every few days via Lightreel (any market) and checked on TikTok:
+  posted in the last 30 days AND Parakeet AI in captions or videos.
 - Videos: every run the creator embed gives the latest ~10 videos with views (free). Videos up to 10 days old that
   dropped out of the embed get one full check per day, so their views keep growing.
 - Formats: once a video is 48h old it is sorted into our formats by Claude (same batch sorting as the JobStep videos).
@@ -26,14 +27,37 @@ MAX_DETAILS = 60  # full video checks per run (old videos after the seed, missin
 
 
 def load():
-    accounts = state.load('own_accounts.json', None)
-    videos = state.load('own.json', None)
-    if accounts is None or videos is None:
-        with open(SEED) as f:
-            seed = json.load(f)
-        accounts = accounts or {h: {'status': 'active', 'since': int(time.time()), **a} for h, a in seed['accounts'].items()}
-        videos = videos or {vid: {**v, 'ours': True} for vid, v in seed['videos'].items()}
+    """State + anything in the seed that the state does not have yet (a newer export adds creators and videos;
+    entries already in the state are left alone - the live Megasheet sync keeps those up to date)."""
+    accounts = state.load('own_accounts.json', None) or {}
+    videos = state.load('own.json', None) or {}
+    with open(SEED) as f:
+        seed = json.load(f)
+    for h, a in seed['accounts'].items():
+        accounts.setdefault(h, {'status': 'active', 'since': int(time.time()), **a})
+    for vid, v in seed['videos'].items():
+        videos.setdefault(vid, {**v, 'ours': True})
     return accounts, videos
+
+
+def sync_megasheet(accounts, videos, now, full=False):
+    """Live creator + video list from Megasheet (see megasheet.py). Never raises: the rest of the run goes on."""
+    from . import megasheet, notify
+    try:
+        s = megasheet.sync(accounts, videos, now, full=full)
+    except megasheet.LoginError as e:
+        print('megasheet:', e)
+        if megasheet.should_warn(now):
+            notify.push('🔑 Megasheet login needed', f'{e}. Our creators are not refreshed from Megasheet until then.')
+        return None
+    except Exception as e:
+        print('megasheet sync failed:', str(e)[:200])
+        return None
+    print('megasheet:', 'no login saved - skipped' if s is None else s)
+    if s:
+        state.save('own.json', videos)
+        state.save('own_accounts.json', accounts)
+    return s
 
 
 def update(accounts, videos, fmts, cfg, now, max_details=MAX_DETAILS):

@@ -5848,6 +5848,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-810e-a68e-f82a0aedc0a5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Je tombe sur parakeet-ai.com/resume-maker », montre l'import de ton CV, puis l'écran de la note.",
+   "text": {
+    "content": "Sur « Je tombe sur parakeet-ai.com/resume-maker », montre l'import de ton CV, puis l'écran de la note.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-810f-97ff-ffb66dccb2c1": [
   {
    "annotations": {
@@ -6437,6 +6456,25 @@
    "plain_text": "Pour chaque conseil, mets son numéro en texte en haut de l'écran (« 1. Oublie LinkedIn et Indeed », « 2. Fais un CV moche », « 3. Valorise-toi »). Sur « va sur des plateformes plus petites », ajoute au milieu de l'écran la liste HelloWork, Welcome to the Jungle, Jobteaser, StudentJob.",
    "text": {
     "content": "Pour chaque conseil, mets son numéro en texte en haut de l'écran (« 1. Oublie LinkedIn et Indeed », « 2. Fais un CV moche », « 3. Valorise-toi »). Sur « va sur des plateformes plus petites », ajoute au milieu de l'écran la liste HelloWork, Welcome to the Jungle, Jobteaser, StudentJob.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8127-8359-f9ec45136558": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Franchement, j'étais fière du mien, regarde-le. » et « Tu vois ce qui cloche, toi ? », montre ton ancien CV ouvert sur ton ordinateur, avant d'aller sur le site.",
+   "text": {
+    "content": "Sur « Franchement, j'étais fière du mien, regarde-le. » et « Tu vois ce qui cloche, toi ? », montre ton ancien CV ouvert sur ton ordinateur, avant d'aller sur le site.",
     "link": null
    },
    "type": "text"
@@ -7137,6 +7175,25 @@
    "plain_text": "Pour « Étape un : tu copies l'annonce du poste qui t'intéresse » et « moi, là, je suis sur Indeed », ouvre une offre sur fr.indeed.com au laptop et filme l'écran pendant que tu cliques sur le bouton partager pour copier le lien.",
    "text": {
     "content": "Pour « Étape un : tu copies l'annonce du poste qui t'intéresse » et « moi, là, je suis sur Indeed », ouvre une offre sur fr.indeed.com au laptop et filme l'écran pendant que tu cliques sur le bouton partager pour copier le lien.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8138-b0ab-ff3b9bfdbb3b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Montre les questions sur ton parcours et le poste visé, et tes réponses dans le chat.",
+   "text": {
+    "content": "Montre les questions sur ton parcours et le poste visé, et tes réponses dans le chat.",
     "link": null
    },
    "type": "text"
@@ -11183,6 +11240,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-818b-a06b-ffcdee0657bf": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Montre l'écran où tu corriges tes infos, puis le choix du modèle.",
+   "text": {
+    "content": "Montre l'écran où tu corriges tes infos, puis le choix du modèle.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-818c-b279-fa6ee881689b": [
   {
    "annotations": {
@@ -13733,6 +13809,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81cd-9a48-dcded7b9472d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Titre à l'écran : garde l'accroche de ta sœur recruteuse (par ex. « L'astuce de ma sœur recruteuse pour décrocher un job vite fait »), pas un titre générique sur les secrets des RH.",
+   "text": {
+    "content": "Titre à l'écran : garde l'accroche de ta sœur recruteuse (par ex. « L'astuce de ma sœur recruteuse pour décrocher un job vite fait »), pas un titre générique sur les secrets des RH.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81cd-abf2-ed09cf23ffa5": [
   {
    "annotations": {
@@ -15440,6 +15535,63 @@
    "plain_text": ") En gros, il passe en revue toute ton expérience avec toi dans un chat, il te pose plein de questions dessus, et à la fin il te sort ton CV compatible ATS. ",
    "text": {
     "content": ") En gros, il passe en revue toute ton expérience avec toi dans un chat, il te pose plein de questions dessus, et à la fin il te sort ton CV compatible ATS. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-8110-963a-cc29f676c08f": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Cuando la app termine, enseña tu CV nuevo en pantalla con su nota alta (Y), señalando el número con el dedo.",
+   "text": {
+    "content": "Cuando la app termine, enseña tu CV nuevo en pantalla con su nota alta (Y), señalando el número con el dedo.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-8134-88ff-de30f9278bd5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « En fait, plein de boîtes font trier les CV par un logiciel ATS », tiens les deux CV et explique face caméra.",
+   "text": {
+    "content": "Sur « En fait, plein de boîtes font trier les CV par un logiciel ATS », tiens les deux CV et explique face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-81f2-91b2-ec3f117334fe": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Bon, je garde pas le plan pour moi. », ouvre le site sur l'ordi avec le texte à l'écran « Le site s'appelle Parakeet AI ».",
+   "text": {
+    "content": "Sur « Bon, je garde pas le plan pour moi. », ouvre le site sur l'ordi avec le texte à l'écran « Le site s'appelle Parakeet AI ».",
     "link": null
    },
    "type": "text"

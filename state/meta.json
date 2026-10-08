@@ -1110,7 +1110,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791416945,
+   "checked_at": 1791419644,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1127,16 +1127,14 @@
      "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
     }
    },
-   "key": "f56c413dc44c010d505669aee2af36240e15a809713f66ecc536b49e09288391",
-   "passed": false,
-   "reasons": [
-    "directions_match de: The directions only suggest a public ranking as an example ('z. B.'). They don't require a real, current German ranking in its exact order with the source shown on screen, as the allowed localisation requires. That leaves room for an invented or copied list. Also, the directions name the marker '(Parakeet AI · Resume Maker)', but the script uses [CUE: Parakeet AI · Resume Maker]."
-   ],
+   "key": "474b4b074f7016da08bbddbbc24ac162cbaaf10659aed6cfc80794b67ad863b5",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "The directions only suggest a public ranking as an example ('z. B.'). They don't require a real, current German ranking in its exact order with the source shown on screen, as the allowed localisation requires. That leaves room for an invented or copied list. Also, the directions name the marker '(Parakeet AI · Resume Maker)', but the script uses [CUE: Parakeet AI · Resume Maker].",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
@@ -1204,10 +1202,10 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "All three countries follow the reference beats, product timing and good-luck sign-off with independent wording and only real features; DE fails directions_match because its directions don't require a real, sourced German ranking in exact order with the source on screen.",
+   "status": "pass",
+   "summary": "All three countries follow the reference beats in order (local sourced ranking, boss-vs-team debate, viewer question, 'wait' pivot, then link-to-tailored-CV and upload-for-score, then a good-luck sign-off), use their own wording, make only hedged ATS claims, and have directions that match the scripts.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "A202610061331": {
    "approval": {
@@ -1215,7 +1213,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791416990,
+   "checked_at": 1791418831,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1232,7 +1230,7 @@
      "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
     }
    },
-   "key": "1d063a07545ba02c028f3932374f7a8771dfb8353dc172e7bfd2bacdb3ff4848",
+   "key": "295102d0d1fbdc6dc9ca5cdeece50b042552c1588e766bf7aab2b2ee93966cc7",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1308,9 +1306,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three pages follow the reference: faceless guess hook, beats in the same order, brand spoken once at the chat beat (beat 5), the experience close-up kept, and no CTA. Their scripts and directions are written independently, match each other and stay within Parakeet AI's real features. One note: the DE line 'deutlich bessere Chancen' is soft but promises no result.",
+   "summary": "All three countries pass every check: each keeps the faceless two-CV guessing hook, the same six beats in order, says the brand only once at the chat beat, ends on the experience close-up, is written independently, makes no invented claims, and has filming directions that match the script.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "A202610061334": {
    "approval": {
@@ -1318,7 +1316,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417882,
+   "checked_at": 1791419700,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1335,11 +1333,9 @@
      "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
     }
    },
-   "key": "3fbf6fec4cffbaff38ddf2d03db14193bbd0853d2403d7200552a057f8325f22",
-   "passed": false,
-   "reasons": [
-    "features_claims fr: The close 'rien n'est garanti, mais j'ai clairement de meilleures chances' presents score Y as better hiring chances. The reference wants a better-prepared CV, not a hiring probability. Suggested rewrite: 'Maintenant je suis à Y sur 100 : mon CV est bien mieux préparé pour la saison des candidatures.'"
-   ],
+   "key": "9164430bcf6efba5373668896468441769bdfdfd56d007ecf9c38a41d6b0afec",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "de": {
@@ -1347,7 +1343,7 @@
       "pass": true
      },
      "es": {
-      "issue": "",
+      "issue": "Minor: closing a notebook at «olvídate del currículum de Canva» does not clearly show a Canva CV, and «como en el ejemplo» is not confirmed by the example. Holding an object is still covered.",
       "pass": true
      },
      "fr": {
@@ -1365,8 +1361,8 @@
       "pass": true
      },
      "fr": {
-      "issue": "The close 'rien n'est garanti, mais j'ai clairement de meilleures chances' presents score Y as better hiring chances. The reference wants a better-prepared CV, not a hiring probability. Suggested rewrite: 'Maintenant je suis à Y sur 100 : mon CV est bien mieux préparé pour la saison des candidatures.'",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "format_consistency": {
@@ -1412,10 +1408,10 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "All three countries follow the reference beats, timing and filming, but FR's close turns score Y into a claim of better hiring chances and must be reworded to a better-prepared CV.",
+   "status": "pass",
+   "summary": "DE, FR and ES all follow the October hiring-season format: October/December hook, Canva to Harvard-style advice, brand spoken first at the analysis step, X and Y score placeholders, AI chat rewrite and a close with no hiring-probability claim. Each script is independently worded, and the only note is a minor one about the ES notebook prop.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "A20261006183623": {
    "approval": {
@@ -1423,7 +1419,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417263,
+   "checked_at": 1791419011,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1440,7 +1436,7 @@
      "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
     }
    },
-   "key": "800ffafd71288debaf0f885e58bce9816583f9c7468cc6f38c8bcb324e996b09",
+   "key": "0171eaf95d93408c59021a17d34aabad47efd102dfb23a6d2e8aa36f77c9e9b8",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1516,9 +1512,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow the reference beats in order: the repeated 'lie' hook, the no-invented-jobs qualification, small details, not knowing what to write, the friend's tool, upload plus job-ad link, the tailored CV and a rhetorical surprise close, with only real Parakeet AI features, independent wording and matching directions.",
+   "summary": "All three countries follow the reference: each repeats the 'lie on your CV' hook, then gives the no-invented-jobs qualification, the friend recommendation, the upload-and-paste-link demo, the tailored-CV result and a surprised close, in the original order. The scripts are written independently, use only real Parakeet AI features, and have no title fixes needed. Minor notes that did not fail any check: the DE directions add a close-up selfie shot the reference doesn't have, the FR directions leave the kitchen-prop setup to the stage directions, and the FR script promises a result in 'a few seconds'.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "ESX11": {
    "approval": {
@@ -1526,7 +1522,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418118,
+   "checked_at": 1791419040,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1543,11 +1539,9 @@
      "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
     }
    },
-   "key": "c0821af2054377ad827a189562b278e73e5b77ec1668e2083367791cb5e959c8",
-   "passed": false,
-   "reasons": [
-    "independent_wording fr: Most sentences are light rewrites of the example: the hook ('j'ai une astuce ultra toxique pour trouver du taf' = 'tengo un consejo supertóxico si estás buscando trabajo'), 'garde bien cette vidéo, parce que… t'auras même pas besoin de réfléchir' (= 'guardar este video porque… ni siquiera vas a poder utilizar el cerebro'), 'moi je suis sur Indeed… via le bouton partager' (= 'ahora mismo estoy en Indeed… opciones de compartir'), and 'Et voilà, rien de plus, bonne chance… ciao' (= 'eso sería todo, éxitos, bye'). Rewrite these in your own words and keep the beats."
-   ],
+   "key": "1adde51624b5b5088127eeb5860fb969651bbcae2640d7ae3e9ffd60d09c0fa0",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "de": {
@@ -1601,8 +1595,8 @@
       "pass": true
      },
      "fr": {
-      "issue": "Most sentences are light rewrites of the example: the hook ('j'ai une astuce ultra toxique pour trouver du taf' = 'tengo un consejo supertóxico si estás buscando trabajo'), 'garde bien cette vidéo, parce que… t'auras même pas besoin de réfléchir' (= 'guardar este video porque… ni siquiera vas a poder utilizar el cerebro'), 'moi je suis sur Indeed… via le bouton partager' (= 'ahora mismo estoy en Indeed… opciones de compartir'), and 'Et voilà, rien de plus, bonne chance… ciao' (= 'eso sería todo, éxitos, bye'). Rewrite these in your own words and keep the beats.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -1620,10 +1614,10 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "All three countries follow ESX11's beats, product timing, spoken-URL placement and real Parakeet AI features with no cover-letter claims, but FR's script is mostly a light rewrite of the example's sentences and needs independent wording.",
+   "status": "pass",
+   "summary": "All three countries pass. Each keeps the reference order: the toxic-tip hook and save-this-video line, copying the job-ad link through the share button on a local job board (LinkedIn for DE, Indeed for FR, InfoJobs for ES), the URL spoken once at the start of the demo, then upload CV, paste link, AI tailoring, review and edit, download, and a good-luck sign-off. All three correctly drop the cover-letter and New-job features. Minor note: in the FR and ES filming directions the save-this-video line is listed last, but it is explicitly placed right after the hook.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "N01": {
    "approval": {
@@ -1631,7 +1625,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417522,
+   "checked_at": 1791419346,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1648,19 +1642,16 @@
      "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
     }
    },
-   "key": "acc01aa646451cd46af70de91fc786e7053ab007e6af3ee7284d8fe10ea141ae",
+   "key": "80359f042971d1601e7a182c4f0a7bc37b961e0a25b2f7abc0812def578d94f3",
    "passed": false,
    "reasons": [
-    "format_consistency de: The first-interview payoff, which is not allowed to be dropped, is missing. 'zum ersten Mal war ich wirklich zufrieden damit' replaces the interview, and the CTA ('mein Lebenslauf ist jetzt endlich richtig vorbereitet') also drops 'it got me an interview'.",
-    "script_matches_example de: The example's beat 5 ends with the first interview invitation, and its closing recommendation mentions it again. The script ends with 'satisfied with my CV' instead, so the payoff beat does not match.",
-    "independent_wording es: Most sentences are close translations of the example. Examples: 'te analiza el CV y te dice qué cambiar' (oceni i unapredi), 'no sabía que estaba tan mal' (nisam imala pojma da je ovoliko loše), 'hay un formato... me descartaban en todas partes' (postoji format... odbijena sa svakog posla), 'incluso los de IA... llegar a recursos humanos', and 'Prueba esta web, que a mí me ha ayudado muchísimo y por fin tengo entrevista' (probajte ovu stranicu, baš mi je pomogla, konačno intervju).",
-    "directions_match de: The directions say to go back to camera for the whole last paragraph (from 'Wenn bei dir also auf jede Bewerbung nur Funkstille kommt…'). The script's stage direction '(zurück im Selfie…)' only comes before 'Probier die Seite…', so the two disagree on when the selfie starts."
+    "independent_wording es: Most sentences are close translations of the example with the brand swapped: 'una web que te revisa el CV y te dice cómo mejorarlo' (= 'koja treba da ti oceni tvoj CV i da ga unapredi'), 'no sabía que fuera tan malo' (= 'nisam imala pojma da je ovo ovoliko loše'), 'hay un formato concreto para los CV, y al no seguirlo me rechazaban en todos lados', 'me limité a contestar las preguntas que me iba soltando', 'te los deja montados, aunque tú puedes cambiar cualquier cosa', 'se ve muchísimo más serio y profesional', 'igual el fallo está en el CV. Prueba esta web'. Rewrite these in your own words."
    ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "The directions say to go back to camera for the whole last paragraph (from 'Wenn bei dir also auf jede Bewerbung nur Funkstille kommt…'). The script's stage direction '(zurück im Selfie…)' only comes before 'Probier die Seite…', so the two disagree on when the selfie starts.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
@@ -1687,8 +1678,8 @@
     },
     "format_consistency": {
      "de": {
-      "issue": "The first-interview payoff, which is not allowed to be dropped, is missing. 'zum ersten Mal war ich wirklich zufrieden damit' replaces the interview, and the CTA ('mein Lebenslauf ist jetzt endlich richtig vorbereitet') also drops 'it got me an interview'.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
@@ -1705,7 +1696,7 @@
       "pass": true
      },
      "es": {
-      "issue": "Most sentences are close translations of the example. Examples: 'te analiza el CV y te dice qué cambiar' (oceni i unapredi), 'no sabía que estaba tan mal' (nisam imala pojma da je ovoliko loše), 'hay un formato... me descartaban en todas partes' (postoji format... odbijena sa svakog posla), 'incluso los de IA... llegar a recursos humanos', and 'Prueba esta web, que a mí me ha ayudado muchísimo y por fin tengo entrevista' (probajte ovu stranicu, baš mi je pomogla, konačno intervju).",
+      "issue": "Most sentences are close translations of the example with the brand swapped: 'una web que te revisa el CV y te dice cómo mejorarlo' (= 'koja treba da ti oceni tvoj CV i da ga unapredi'), 'no sabía que fuera tan malo' (= 'nisam imala pojma da je ovo ovoliko loše'), 'hay un formato concreto para los CV, y al no seguirlo me rechazaban en todos lados', 'me limité a contestar las preguntas que me iba soltando', 'te los deja montados, aunque tú puedes cambiar cualquier cosa', 'se ve muchísimo más serio y profesional', 'igual el fallo está en el CV. Prueba esta web'. Rewrite these in your own words.",
       "pass": false
      },
      "fr": {
@@ -1715,8 +1706,8 @@
     },
     "script_matches_example": {
      "de": {
-      "issue": "The example's beat 5 ends with the first interview invitation, and its closing recommendation mentions it again. The script ends with 'satisfied with my CV' instead, so the payoff beat does not match.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
@@ -1726,13 +1717,12 @@
       "issue": "",
       "pass": true
      }
-    },
-    "summary": "FR passes all five checks. ES follows the format but its wording is mostly a close translation of the example. DE drops the first-interview payoff (in beat 5 and the CTA), and its directions disagree on when to return to selfie."
+    }
    },
    "status": "fail",
-   "summary": "",
+   "summary": "All three countries follow the N01 beats, product timing, brand placement and CTA with valid features, softened claims and an X placeholder; the only failure is ES, where most script sentences are near-translations of the example and need independent rewording.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "N02": {
    "approval": {
@@ -1740,7 +1730,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417648,
+   "checked_at": 1791418598,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1757,7 +1747,7 @@
      "video_identity": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12"
     }
    },
-   "key": "c8b853bd84260beae4c3414caf897ce837303b498cb144d3a33b867ccb050ace",
+   "key": "dec9b3b432d4ac0f12af5ec26a8d7b935619936a2c1fc66205538bfdf83727e7",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1833,9 +1823,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass every check: each follows the reference's six beats in order, includes the 86400 to 3600 URL edit, introduces Parakeet AI at beat 4 and names it twice, replaces the example's guaranteed-job line with a softened better-chances payoff, and has independently worded scripts with matching filming directions and acceptable titles.",
+   "summary": "All three countries follow N02 in the same order: hook, 24-hour filter, 86400 changed to 3600, link pasted into Parakeet AI with the brand spoken twice, tailored CV, apply-first payoff; the original's guaranteed-job claim is softened, the wording is independent, the titles are acceptable, and the directions match the scripts.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "N03": {
    "approval": {
@@ -1843,7 +1833,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791416793,
+   "checked_at": 1791418643,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1860,21 +1850,21 @@
      "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
     }
    },
-   "key": "d984da61e441b6ab784f0bf12118e1a5c8d608520bace9d7ba929657bbe52c9b",
+   "key": "6870e48a06736196fab3526d24e164dd67a44c59da0d553b5621796f5e30327c",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "Minor: steps 2 and 3 only say 'use the app'. They don't explicitly say to paste the job link in step 3.",
+      "issue": "",
       "pass": true
      },
      "es": {
-      "issue": "Minor: the Parakeet scenes don't explicitly tell the creator to paste the job link in step 3.",
+      "issue": "",
       "pass": true
      },
      "fr": {
-      "issue": "Minor: the directions describe steps 2 and 3 before step 1, which is confusing to read. Nothing contradicts the script.",
+      "issue": "",
       "pass": true
      }
     },
@@ -1912,7 +1902,7 @@
       "pass": true
      },
      "es": {
-      "issue": "Borderline: the hook ('TODO el mundo está borrando ChatGPT') and step 2 ('entra en esta web') are close to literal translations. The other lines are reworded enough to pass.",
+      "issue": "",
       "pass": true
      },
      "fr": {
@@ -1936,17 +1926,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass every check: each keeps the silent ChatGPT hook, the three numbered steps, the CV reveal and the URL end card, makes only real feature claims, and has on-screen titles identical to the first script line. The ES wording is the closest to a direct translation, and the DE and ES directions could say more clearly to paste the link.",
+   "summary": "All three countries follow the silent format: a ChatGPT hook over a reaction, three numbered steps from job link to tailored CV in Parakeet AI, the result reveal and a URL end card. The wording is localised rather than copied, the claims stay within real features, and the directions match the scripts. Minor note: the DE and ES directions don't explicitly tell the creator to film pasting the link in step 3.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "N04": {
    "approval": {
-    "de": "locked_changed",
+    "de": "locked_preserved",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791416841,
+   "checked_at": 1791419473,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1963,9 +1953,12 @@
      "video_identity": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb"
     }
    },
-   "key": "c962de7721578af534dcebadb88e79106af9375886b5b1c906aed957c138dc5b",
-   "passed": true,
-   "reasons": [],
+   "key": "f37d9ee43aad83111d8364a7187385f78d2d41d34704a4733470421c516619db",
+   "passed": false,
+   "reasons": [
+    "format_consistency es: The spoken script follows the reference beats, but the on-screen title 'Mi bandeja de entrada ahora mismo 😳📩 ¡AYUDAAA!' opens on the inbox result. A result-first opening is not allowed, and the title drops the 'months without replies' hook.",
+    "directions_match es: The directions ask for an opening title like «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» and say not to open with the result. The actual on-screen title does open with the inbox result, so it contradicts the directions."
+   ],
    "results": {
     "directions_match": {
      "de": {
@@ -1973,8 +1966,8 @@
       "pass": true
      },
      "es": {
-      "issue": "",
-      "pass": true
+      "issue": "The directions ask for an opening title like «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» and say not to open with the result. The actual on-screen title does open with the inbox result, so it contradicts the directions.",
+      "pass": false
      },
      "fr": {
       "issue": "",
@@ -2001,8 +1994,8 @@
       "pass": true
      },
      "es": {
-      "issue": "",
-      "pass": true
+      "issue": "The spoken script follows the reference beats, but the on-screen title 'Mi bandeja de entrada ahora mismo 😳📩 ¡AYUDAAA!' opens on the inbox result. A result-first opening is not allowed, and the title drops the 'months without replies' hook.",
+      "pass": false
      },
      "fr": {
       "issue": "",
@@ -2038,10 +2031,12 @@
      }
     }
    },
-   "status": "pass",
-   "summary": "All three countries follow the canonical N04 format: same hook, all seven beats in order, brand spoken at the upload/score step, URL CTA at the end, softened ATS claims, independent wording, and directions that match the scripts.",
-   "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "status": "fail",
+   "summary": "DE and FR pass every check, while ES has a compliant script but fails format consistency and directions match because its on-screen title opens result-first, so it gets a replacement title.",
+   "title_fixes": {
+    "es": "Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯"
+   },
+   "version": "group-2026-10-08.2"
   },
   "N07": {
    "approval": {
@@ -2049,7 +2044,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417721,
+   "checked_at": 1791419589,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2066,25 +2061,24 @@
      "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
     }
    },
-   "key": "fdbf333109575c67609274c9b96ca42c6624331fac74d458ce88362d2629e4e2",
+   "key": "31241dae8ee5cfc9623ec3f99278fb80e74ab48d1c1237ac23ba8b224827f67a",
    "passed": false,
    "reasons": [
-    "directions_match de: A broken stage direction fragment (', locker in die Kamera reden)') has leaked into the start of the spoken script. Remove it so the creator does not read it aloud.",
-    "directions_match es: The directions only say 'grábate usando la app' and do not ask for the question screens, where each answer adds a new section to the CV. That step is part of the reference sequence."
+    "directions_match fr: For the reverse reveal, the directions move back to the selfie camera with the old CV and its score X as a small inset for about 2 seconds, instead of showing the old CV and its score on the laptop like the reference's before/after sequence. Show the old CV with X on the laptop screen right after the final CV with Y."
    ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "A broken stage direction fragment (', locker in die Kamera reden)') has leaked into the start of the spoken script. Remove it so the creator does not read it aloud.",
-      "pass": false
-     },
-     "es": {
-      "issue": "The directions only say 'grábate usando la app' and do not ask for the question screens, where each answer adds a new section to the CV. That step is part of the reference sequence.",
-      "pass": false
-     },
-     "fr": {
       "issue": "",
       "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "For the reverse reveal, the directions move back to the selfie camera with the old CV and its score X as a small inset for about 2 seconds, instead of showing the old CV and its score on the laptop like the reference's before/after sequence. Show the old CV with X on the laptop screen right after the final CV with Y.",
+      "pass": false
      }
     },
     "features_claims": {
@@ -2111,7 +2105,7 @@
       "pass": true
      },
      "fr": {
-      "issue": "The page metadata lists the rejected source 7691252438875098400 for FR, but the example and script follow the canonical format. Update the source reference.",
+      "issue": "",
       "pass": true
      }
     },
@@ -2145,9 +2139,9 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow N07's beats, product timing and before/after reveal with their own wording and valid claims, but DE has a stage direction fragment in the spoken text and ES's directions leave out the question-by-question screens.",
+   "summary": "All three countries follow N07's recruiter-relative hook, beats, product timing at beat 3, missing CTA and Y-then-X reverse reveal, with independent wording and valid claims. The only problem is FR's directions, which shrink the old-CV reveal to a short inset over the selfie shot instead of showing it on the laptop.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "N10": {
    "approval": {
@@ -2155,7 +2149,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417337,
+   "checked_at": 1791419163,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2172,22 +2166,26 @@
      "video_identity": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b"
     }
    },
-   "key": "f01f797b192917f9e306eeb07054e5910588a1edb50476e67c758444d6b28976",
-   "passed": true,
-   "reasons": [],
+   "key": "30f775341193f281601e623eb13871d7044b9c2bb975e033e2c036218632ff42",
+   "passed": false,
+   "reasons": [
+    "independent_wording fr: Most sentences are close translations of the example in the same order. 'Désolée d'être aussi directe' = 'Izvini što moram ovako da ti kažem'. 'Moi, je le trouvais parfait, ce CV' = 'Ja sam mislila da je ovaj CV top'. 'Dis-moi franchement ce qui manque' = 'Evo vi meni kažete šta ovde fali'. 'je lance l'amélioration' = 'kliknete na Improve'. 'Je retouche mes infos, je choisis le modèle que je préfère' = 'editujete svoje podatke, birate template'. 'Je vais encore ajuster quelques phrases pour que ce soit vraiment ma voix, mais la mise en forme est top' = 'editujem da zvuči kao da sam ga ja napisala, ali format je predobar'. The HR-friend lines are also near-literal. Rewrite them in your own words.",
+    "directions_match de: The directions put the new CV with score Y right after the template step, before the HR-friend selfie. In the script, Y comes only after the HR-friend explanation. Show the comparison at 'Und jetzt vergleich mal' and the Y score after the selfie part.",
+    "directions_match fr: The script puts Parakeet AI cue markers on « Moi, je le trouvais parfait, ce CV, regarde. » and « Dis-moi franchement ce qui manque. ». The directions say to show the old CV on the computer there, before going to the site. Remove those two cues or align them with the directions."
+   ],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "",
-      "pass": true
+      "issue": "The directions put the new CV with score Y right after the template step, before the HR-friend selfie. In the script, Y comes only after the HR-friend explanation. Show the comparison at 'Und jetzt vergleich mal' and the Y score after the selfie part.",
+      "pass": false
      },
      "es": {
       "issue": "",
       "pass": true
      },
      "fr": {
-      "issue": "",
-      "pass": true
+      "issue": "The script puts Parakeet AI cue markers on « Moi, je le trouvais parfait, ce CV, regarde. » and « Dis-moi franchement ce qui manque. ». The directions say to show the old CV on the computer there, before going to the site. Remove those two cues or align them with the directions.",
+      "pass": false
      }
     },
     "features_claims": {
@@ -2228,8 +2226,8 @@
       "pass": true
      },
      "fr": {
-      "issue": "",
-      "pass": true
+      "issue": "Most sentences are close translations of the example in the same order. 'Désolée d'être aussi directe' = 'Izvini što moram ovako da ti kažem'. 'Moi, je le trouvais parfait, ce CV' = 'Ja sam mislila da je ovaj CV top'. 'Dis-moi franchement ce qui manque' = 'Evo vi meni kažete šta ovde fali'. 'je lance l'amélioration' = 'kliknete na Improve'. 'Je retouche mes infos, je choisis le modèle que je préfère' = 'editujete svoje podatke, birate template'. 'Je vais encore ajuster quelques phrases pour que ce soit vraiment ma voix, mais la mise en forme est top' = 'editujem da zvuči kao da sam ga ja napisala, ali format je predobar'. The HR-friend lines are also near-literal. Rewrite them in your own words.",
+      "pass": false
      }
     },
     "script_matches_example": {
@@ -2247,10 +2245,10 @@
      }
     }
    },
-   "status": "pass",
-   "summary": "All three countries follow the canonical N10 story in the same order: the blunt 'nobody reads your CV' hook, credentials with no interviews, the brand named at upload with the low X score, the brand named again for the question-driven rebuild, editing and picking a template, the HR friend's explanation, the higher Y score with the speaker tweaking a few sentences herself, and the brand named a third time in the closing recommendation. Each script is written in its own words, makes no invented feature or guarantee claims, and has directions consistent with its script; small points that were not counted as failures: in DE the Y score is shown on screen before it is spoken, FR puts app cues on the old-CV lines but its directions resolve this, and ES refers to the cue markers with parentheses instead of brackets.",
+   "status": "fail",
+   "summary": "All three countries follow the N10 beats and brand timing with real features and X/Y placeholders, but FR's script is mostly a translation of the example, and the DE and FR directions don't match the script's order and cue markers in one place each.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "X03": {
    "approval": {
@@ -2258,7 +2256,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417086,
+   "checked_at": 1791418880,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2275,7 +2273,7 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "abcd90ec4022300cd4dd4730537a8208492111cea7975507e8be2e2e0c5b14bb",
+   "key": "af8eaadd65cf206a750ad5845b06aa37b5825ab4670af599282960299d216fd0",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2351,9 +2349,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow the X03 reference: ex-employee HR-secret hook, any-position premise, copy link, Parakeet AI upload and paste, score X, AI rework plus own edits, score Y, repeat for every job; the wording is independent, only real features are used, and the directions match the scripts.",
+   "summary": "All three countries pass every check: each keeps the ex-employee HR secret hook, the 'works for any job' premise, the copy link -> Parakeet AI upload and paste -> low score X -> AI rewrite plus small own edits -> higher score Y order, says the brand only at the demo start and ends with the 'repeat for every job' close; scripts are independently worded, use only real Parakeet AI features with X/Y placeholders and no guarantees (DE's line about low scores leading to quick rejections is a general claim, not a promise), and the filming directions match the scripts.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
   "X13": {
    "approval": {
@@ -2361,7 +2359,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791417122,
+   "checked_at": 1791419776,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2378,116 +2376,10 @@
      "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
     }
    },
-   "key": "2079711331a72f198ad51f703ab412f0664fa2af7cb846d601e8b0964b3b4365",
-   "passed": true,
-   "reasons": [],
-   "results": {
-    "directions_match": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "features_claims": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "script_matches_example": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    }
-   },
-   "status": "pass",
-   "summary": "All three countries pass every check: they keep the three tips in the reference order, show the product only inside tip 2 without saying its name, end on the self-worth tip with no CTA, drop the 20-minute claim and mention only real Parakeet AI features. ES opens with a pain point ('nobody is replying to your CVs') and FR stays close to the example's sentence structure, but both are still within the allowed range.",
-   "title_fixes": {},
-   "version": "group-2026-10-08.1"
-  },
-  "X15": {
-   "approval": {
-    "de": "not_locked",
-    "es": "not_locked",
-    "fr": "not_locked"
-   },
-   "checked_at": 1791417960,
-   "deterministic": {},
-   "duplicates": [],
-   "inputs": {
-    "de": {
-     "source_id": "7682028282191105312",
-     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
-    },
-    "es": {
-     "source_id": "7682028282191105312",
-     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
-    },
-    "fr": {
-     "source_id": "7682028282191105312",
-     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
-    }
-   },
-   "key": "5fd9b94b20928caea2c7a68f79e7962a3b5721e21f63dc14f4600ae1697ffd06",
+   "key": "1923d6d3d0f3b73619d9741ec12ce19ff67525b38d6b31b61b01810ddbbf5858",
    "passed": false,
    "reasons": [
-    "features_claims fr: «Direction ce site, où tu rentres tes infos de base» copies JobStep's step of entering your details in a form. Parakeet AI doesn't list that feature. Replace it with a real step, e.g. «tu importes ton ancien CV» (upload your old CV), as DE does.",
-    "features_claims es: «Rellenas lo básico sobre ti, tipo estudios y trabajos» copies JobStep's step of filling in your details in a form. Parakeet AI doesn't list that feature. Replace it with an equivalent real step, e.g. «Subes tu CV de antes» (upload your CV).",
-    "directions_match fr: The directions for the first cue say «montre la saisie de tes infos de base», which demonstrates the details form that Parakeet AI doesn't have. They should show uploading the CV instead. The ~32s length from the reference is also missing.",
-    "directions_match es: The laptop directions say «muestra cómo metes tus datos en Parakeet AI», which demonstrates the details form that Parakeet AI doesn't have. They should show uploading the CV instead, matching the fixed script line."
+    "independent_wording es: Tips 1 and 3 closely follow the example's sentences. Tip 1 uses 'deja de... LinkedIn o Indeed', then 'portales más pequeños' with the exact same InfoJobs/DomestikaJobs/Job Today/StudentJob list, then 'menos competencia'. Tip 3 tracks 'valórate', 'no te conformes con el sueldo mínimo', 'aunque estés empezando, apunta siempre un poco más alto, ¿vale?' line by line against 'valórate... lo mínimo... aunque no los tengas, aspirar a más, ¿okay?'. The ATS sentence is also a light rewrite. Rewrite these in the creator's own phrasing and use a different selection of smaller job boards."
    ],
    "results": {
     "directions_match": {
@@ -2496,12 +2388,12 @@
       "pass": true
      },
      "es": {
-      "issue": "The laptop directions say «muestra cómo metes tus datos en Parakeet AI», which demonstrates the details form that Parakeet AI doesn't have. They should show uploading the CV instead, matching the fixed script line.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
-      "issue": "The directions for the first cue say «montre la saisie de tes infos de base», which demonstrates the details form that Parakeet AI doesn't have. They should show uploading the CV instead. The ~32s length from the reference is also missing.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2510,12 +2402,12 @@
       "pass": true
      },
      "es": {
-      "issue": "«Rellenas lo básico sobre ti, tipo estudios y trabajos» copies JobStep's step of filling in your details in a form. Parakeet AI doesn't list that feature. Replace it with an equivalent real step, e.g. «Subes tu CV de antes» (upload your CV).",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
-      "issue": "«Direction ce site, où tu rentres tes infos de base» copies JobStep's step of entering your details in a form. Parakeet AI doesn't list that feature. Replace it with a real step, e.g. «tu importes ton ancien CV» (upload your old CV), as DE does.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "format_consistency": {
@@ -2538,8 +2430,8 @@
       "pass": true
      },
      "es": {
-      "issue": "",
-      "pass": true
+      "issue": "Tips 1 and 3 closely follow the example's sentences. Tip 1 uses 'deja de... LinkedIn o Indeed', then 'portales más pequeños' with the exact same InfoJobs/DomestikaJobs/Job Today/StudentJob list, then 'menos competencia'. Tip 3 tracks 'valórate', 'no te conformes con el sueldo mínimo', 'aunque estés empezando, apunta siempre un poco más alto, ¿vale?' line by line against 'valórate... lo mínimo... aunque no los tengas, aspirar a más, ¿okay?'. The ATS sentence is also a light rewrite. Rewrite these in the creator's own phrasing and use a different selection of smaller job boards.",
+      "pass": false
      },
      "fr": {
       "issue": "",
@@ -2562,34 +2454,34 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow the X15 beats, product timing and no-spoken-brand rule, but FR and ES keep JobStep's details-form step, which Parakeet AI doesn't have, so their script line and demo need to show uploading the CV instead, as DE does.",
+   "summary": "All three countries keep the three-tip structure, put the product inside tip 2 without speaking the brand, end on tip 3 and make only real Parakeet AI claims; the one failure is ES's independent wording, where tips 1 and 3 are light rewrites of the example and reuse its exact job-board list.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
   },
-  "X16": {
+  "X15": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418007,
+   "checked_at": 1791419928,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
     "de": {
-     "source_id": "7691061952071716118",
-     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     },
     "es": {
-     "source_id": "7691061952071716118",
-     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     },
     "fr": {
-     "source_id": "7691061952071716118",
-     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+     "source_id": "7682028282191105312",
+     "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     }
    },
-   "key": "13a0dc00307f424384d5d824a1c9b97e09c688c984a1b91fa900451073a08e50",
+   "key": "fd04f5d41d197da7a6e8330d2d1fe9750d22c43a0ff6871766698cd5ba2ac354",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2665,9 +2557,112 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries keep the ex-HR hook, the 'decorative CVs fail, keep it plain' secret and the ATS secret, say the brand at the demo start, and follow upload -> job link -> X score -> AI tailoring -> Y score -> download/edit. They replace the unsupported JobStep features (applications dashboard, 'New job' button, cover letter) with real Parakeet AI steps, and their directions match the scripts. DE does not name Canva, but its plain-CV point carries the same idea.",
+   "summary": "All three countries pass on every dimension. Each follows X15 in order: the rejection hook, the printed new-vs-old CV comparison, a softened ATS line, the 'not gatekeeping' turn, then the upload, chat questions, new CV and score demo. The brand is only shown, never spoken, and there is no CTA. Scripts are written independently and claim no features Parakeet AI lacks. DE's hook leans on 'nothing back' more than 'the CVs are rubbish', but this stays within the hook idea.",
    "title_fixes": {},
-   "version": "group-2026-10-08.1"
+   "version": "group-2026-10-08.2"
+  },
+  "X16": {
+   "approval": {
+    "de": "locked_preserved",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791418966,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    },
+    "es": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    },
+    "fr": {
+     "source_id": "7691061952071716118",
+     "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
+    }
+   },
+   "key": "11f8199becacd8be8e157d73de870d0518d561b722dca13e95f0e7c1ce0ffcb0",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three countries pass every check. Each keeps the ex-HR hook, the plain-CV and ATS secrets, and the brand spoken at the demo start. Each also keeps the sequence of upload, local job-ad link, X score, AI tailoring, Y score and download. The Jobstep dashboard, 'New job' button and cover letter are replaced with real Parakeet AI features. The scripts are worded independently, and the titles need no fix. The DE script never names Canva but describes colourful designs instead, which still keeps the secret.",
+   "title_fixes": {},
+   "version": "group-2026-10-08.2"
   }
  },
  "group_duplicates": [],

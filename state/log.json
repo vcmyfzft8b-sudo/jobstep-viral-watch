@@ -1476,5 +1476,60 @@
   ],
   "ts": 1791415223,
   "type": "rerank"
+ },
+ {
+  "format": "N10",
+  "level": "viral",
+  "ts": 1791440766,
+  "type": "alert",
+  "video": "7693601460084362516",
+  "views": 101000
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791440770,
+  "type": "alert",
+  "video": "7694030632824917256",
+  "views": 36400
+ },
+ {
+  "error": "Extra data: line 3 column 1 (char 450)",
+  "ts": 1791440773,
+  "type": "error",
+  "video": "7693927531522641174"
+ },
+ {
+  "count": 5,
+  "format": "N10",
+  "market": "de",
+  "ts": 1791440791,
+  "type": "hot_announced"
+ },
+ {
+  "count": 5,
+  "format": "N10",
+  "ts": 1791440791,
+  "type": "hot"
+ },
+ {
+  "order": [
+   "N10",
+   "X16",
+   "N01",
+   "A202610061328",
+   "X13",
+   "A20261006183623",
+   "A202610061334",
+   "N07",
+   "N02",
+   "X03",
+   "X15",
+   "ESX11",
+   "A202610061331",
+   "N03",
+   "N04"
+  ],
+  "ts": 1791440817,
+  "type": "rerank"
  }
 ]

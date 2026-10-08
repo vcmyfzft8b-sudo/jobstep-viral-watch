@@ -248,6 +248,7 @@ def run(dry_run=False, only_detect=False):
     # 4b. our own creators: new videos, views, formats (feeds the ranking: how each format does for US)
     own_accounts, own_videos = own.load()
     if not dry_run:
+        own.sync_megasheet(own_accounts, own_videos, now)
         try:
             print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, now))
             state.save('own.json', own_videos)
@@ -1009,7 +1010,7 @@ def main():
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
     ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
     ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
-    ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (more video checks), then re-sort')
+    ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (full Megasheet read, more video checks), then re-sort')
     ap.add_argument('--lineup', action='store_true', help='show the current form of every format and what Monday would take out (no changes)')
     ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
     ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
@@ -1091,6 +1092,7 @@ def main():
     if a.own_sync:
         cfg, fmts = load_config(), load_formats()
         own_accounts, own_videos = own.load()
+        own.sync_megasheet(own_accounts, own_videos, time.time(), full=True)
         print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, time.time(), max_details=300))
         state.save('own.json', own_videos)
         state.save('own_accounts.json', own_accounts)

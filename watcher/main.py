@@ -1010,6 +1010,7 @@ def main():
     ap.add_argument('--test-discord', action='store_true', help='check the Discord webhooks WITHOUT posting')
     ap.add_argument('--edit-discord', default='', help='DACH message id: rewrite that hot announcement with the current text')
     ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
+    ap.add_argument('--megasheet-check', action='store_true', help='only read our creators from Megasheet (fails if it does not work)')
     ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (full Megasheet read, more video checks), then re-sort')
     ap.add_argument('--lineup', action='store_true', help='show the current form of every format and what Monday would take out (no changes)')
     ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
@@ -1088,6 +1089,11 @@ def main():
         own_accounts, own_videos = own.load()
         weekly.maybe_send({}, state.load('history.json', {}), own_videos, own_accounts, load_formats(), load_config(),
                           time.time(), force=True)
+        return
+    if a.megasheet_check:
+        own_accounts, own_videos = own.load()
+        if not own.sync_megasheet(own_accounts, own_videos, time.time(), full=True):
+            raise SystemExit(1)
         return
     if a.own_sync:
         cfg, fmts = load_config(), load_formats()

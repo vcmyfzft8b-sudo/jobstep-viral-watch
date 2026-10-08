@@ -194,8 +194,11 @@ def create_page(parent_id, title, icon, blocks):
 
 
 def replace_content(page_id, blocks):
-    """Replace everything on a page with new blocks (title and page link stay the same)."""
+    """Replace everything on a page with new blocks (title and page link stay the same). Sub-pages and databases on
+    the page are never deleted (deleting the block would put e.g. a Visual Hook Lab page into the trash)."""
     for b in children(page_id):
+        if b['type'] in ('child_page', 'child_database'):
+            continue
         api('DELETE', f"/blocks/{b['id']}")
     while blocks:
         api('PATCH', f'/blocks/{page_id}/children', {'children': blocks[:90]})

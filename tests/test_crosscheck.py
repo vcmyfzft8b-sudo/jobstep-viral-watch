@@ -340,3 +340,14 @@ def test_locked_page_gets_directions_fixed_but_never_its_script(monkeypatch):
     monkeypatch.setattr(llm, 'chat_json', chat)
     res, changed, awaiting = crosscheck.group_cycle(fmt('L1'), MKTS, CFG, page_of, {})
     assert 'L1_de' in fixed and ('L1', 'de') not in w.rewrites and awaiting == []
+
+
+def test_page_rebuild_never_trashes_sub_pages(monkeypatch):
+    from watcher import notion
+    page = [{'id': 'p1', 'type': 'paragraph'}, {'id': 'lab', 'type': 'child_page'}, {'id': 'db', 'type': 'child_database'}]
+    monkeypatch.setattr(notion, 'children', lambda pid: page)
+    calls = []
+    monkeypatch.setattr(notion, 'api', lambda method, path, body=None, **k: calls.append((method, path)))
+    notion.replace_content('page', [{'type': 'paragraph'}])
+    deleted = [p for m, p in calls if m == 'DELETE']
+    assert deleted == ['/blocks/p1']   # the Visual Hook Lab sub-page and databases stay

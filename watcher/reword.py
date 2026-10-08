@@ -265,6 +265,8 @@ def resources_text(page_id):
             continue
         if inside and b['type'] != 'divider':
             out.append(_plain(b))
+            if b.get('has_children'):  # e.g. the Gmail link sits inside the resources callout
+                out += [_plain(c) for c in notion.children(b['id']) if c.get(c['type'], {}).get('rich_text') is not None]
     return ' '.join(out).lower()
 
 

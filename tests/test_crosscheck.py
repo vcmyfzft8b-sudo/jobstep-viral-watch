@@ -325,3 +325,18 @@ def test_cue_pointing_to_missing_resource_becomes_a_stage_direction(monkeypatch)
     monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
     assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Copia (InfoJobs) el enlace.'
+
+
+def test_locked_page_gets_directions_fixed_but_never_its_script(monkeypatch):
+    pages = {'L1_de': {'src': '500'}, 'L1_fr': {'src': '501'}, 'L1_es': {'src': '502'}}
+    w = World(monkeypatch, pages, locked={('L1', 'de')})
+    fixed = []
+    monkeypatch.setattr(reword, 'fix_directions', lambda fmt, pid, *a, **k: (fixed.append(pid) or ('ok', '')))
+
+    def chat(model, system, prompt, **kw):
+        w.calls += 1
+        return {'results': {d: {m: {'pass': not (d == 'directions_match' and m == 'de'), 'issue': 'x'}
+                                for m in ('de', 'fr', 'es')} for d in crosscheck.DIMENSIONS}, 'summary': ''}
+    monkeypatch.setattr(llm, 'chat_json', chat)
+    res, changed, awaiting = crosscheck.group_cycle(fmt('L1'), MKTS, CFG, page_of, {})
+    assert 'L1_de' in fixed and ('L1', 'de') not in w.rewrites and awaiting == []

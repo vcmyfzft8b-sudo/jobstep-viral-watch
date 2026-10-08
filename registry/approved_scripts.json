@@ -170,7 +170,7 @@
     },
     {
      "cue": "parakeet",
-     "text": "Daraus hat die KI meinen Lebenslauf komplett neu geschrieben – und zum ersten Mal war ich wirklich zufrieden damit.",
+     "text": "Daraus hat die KI meinen Lebenslauf komplett neu geschrieben, und damit hab ich zum ersten Mal eine Einladung zum Vorstellungsgespräch bekommen.",
      "asset_name": "",
      "new_paragraph": false
     },
@@ -200,7 +200,7 @@
     },
     {
      "cue": "direction",
-     "text": "Probier die Seite auf jeden Fall aus – mein Lebenslauf ist jetzt endlich richtig vorbereitet.",
+     "text": "Probier die Seite auf jeden Fall aus, ich hab dadurch endlich mein erstes Gespräch bekommen.",
      "asset_name": "zurück im Selfie, überzeugt nicken",
      "new_paragraph": false
     }
@@ -543,7 +543,7 @@
     {
      "cue": "direction",
      "text": "Mein Bruder ist Recruiter und hat mir verraten, wie du schnell bessere Jobchancen kriegst.",
-     "asset_name": "Selfie, Hände nebenbei beschäftigt (z. B. Schmuck sortieren), locker in die Kamera reden",
+     "asset_name": "Selfie, Hände nebenbei beschäftigt, z. B. Schmuck sortieren, locker in die Kamera reden",
      "new_paragraph": false
     },
     {
@@ -579,7 +579,7 @@
     {
      "cue": "parakeet",
      "text": "Und jetzt halt dich fest, das war mein alter Lebenslauf…",
-     "asset_name": "Parakeet AI · Resume Maker – zum alten CV zurückwechseln (Reverse Reveal)",
+     "asset_name": "Parakeet AI · Resume Maker – zum alten CV zurückwechseln, Reverse Reveal",
      "new_paragraph": false
     },
     {

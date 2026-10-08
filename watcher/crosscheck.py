@@ -31,7 +31,7 @@ from . import align, audit, llm, localize, notion, reword
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-08.1'
+AUDIT_VERSION = 'group-2026-10-08.2'
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wording', 'features_claims',
               'directions_match')
@@ -459,6 +459,13 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
         if not failing:
             continue
         if align.approved_script(fmt['id'], lang):
+            if 'directions_match' in failing:  # directions are not part of a script approval
+                st, why = reword.fix_directions(fmt, pid, lang, cfg['models']['build'],
+                                                (fails.get('directions_match') or {}).get('issue', ''))
+                changed.append(f'{m}: directions fixed' if st == 'ok' else f'{m}: directions not changed ({why})')
+                failing = [d for d in failing if d != 'directions_match']
+            if not failing:
+                continue
             awaiting.append(f"{m}: approved script - needs your approval to change ({', '.join(failing)})")
             continue
         issues = '; '.join(x.get('issue', '') for d, x in fails.items() if d in failing and x.get('issue'))

@@ -15,6 +15,7 @@ def login_secret(refresh='r1', client='c1'):
 class Resp:
     def __init__(self, status=200, body=None, text='', headers=None):
         self.status_code, self._body, self.text = status, body, text
+        self.content = (text or (json.dumps(body) if body is not None else '')).encode()
         self.headers = headers or {'content-type': 'application/json'}
 
     def json(self):
@@ -93,6 +94,27 @@ class ClientTests(unittest.TestCase):
         r = Resp(text='event: message\ndata: {"jsonrpc":"2.0","id":3,"result":{"ok":1}}\n\n',
                  headers={'content-type': 'text/event-stream'})
         self.assertEqual(megasheet._message(r, 3), {'jsonrpc': '2.0', 'id': 3, 'result': {'ok': 1}})
+
+    def test_event_stream_variants(self):
+        sse = {'content-type': 'text/event-stream'}
+        crlf = Resp(text='event: message\r\nid: 1\r\ndata: {"jsonrpc":"2.0","id":"2","result":{"ok":1}}\r\n\r\n',
+                    headers=sse)
+        self.assertEqual(megasheet._message(crlf, 2)['result'], {'ok': 1})  # CRLF, id as text
+        split = Resp(text='data: {"jsonrpc":"2.0",\ndata: "id":4,"result":{}}\n\n', headers=sse)
+        self.assertEqual(megasheet._message(split, 4)['result'], {})  # one answer over two data lines
+        noise = Resp(text='data: {"jsonrpc":"2.0","method":"notifications/message","params":{}}\n\n'
+                          'data:{"jsonrpc":"2.0","id":5,"result":{"a":1}}', headers=sse)
+        self.assertEqual(megasheet._message(noise, 5)['result'], {'a': 1})  # log first, no space, no final blank
+        batch = Resp(body=[{'jsonrpc': '2.0', 'id': 6, 'result': {'b': 2}}])
+        self.assertEqual(megasheet._message(batch, 6)['result'], {'b': 2})
+
+    def test_missing_answer_names_only_the_shape(self):
+        r = Resp(text='data: {"jsonrpc":"2.0","id":9,"result":{"secret":"creator data"}}\n\n',
+                 headers={'content-type': 'text/event-stream'})
+        with self.assertRaises(RuntimeError) as e:
+            megasheet._message(r, 1, 'tools/call')
+        self.assertIn('tools/call', str(e.exception))
+        self.assertNotIn('creator data', str(e.exception))
 
     def test_tool_call_and_pages(self):
         pages = {1: {'data': [1, 2], 'pagination': {'total_pages': 2}},

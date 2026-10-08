@@ -124,7 +124,7 @@ class Client:
     def _rpc(self, method, params):
         self.n += 1
         r = self._post({'jsonrpc': '2.0', 'id': self.n, 'method': method, 'params': params})
-        msg = _message(r, self.n)
+        msg = _message(r, self.n, method)
         if 'error' in msg:
             raise RuntimeError(f"megasheet {method}: {msg['error'].get('message', msg['error'])}")
         return msg['result']
@@ -146,19 +146,43 @@ class Client:
             page += 1
 
 
-def _message(r, rid):
-    """The JSON-RPC answer with our id - the server may answer as plain JSON or as an event stream."""
-    if 'text/event-stream' not in r.headers.get('content-type', ''):
-        return r.json()
-    for line in r.text.splitlines():
-        if line.startswith('data:'):
+def _events(text):
+    """Server-sent events -> list of (event name, data): events end at a blank line, data lines are joined."""
+    out, name, data = [], 'message', []
+    for line in text.replace('\r\n', '\n').replace('\r', '\n').split('\n') + ['']:
+        if not line:
+            if data:
+                out.append((name, '\n'.join(data)))
+            name, data = 'message', []
+        elif line.startswith('data:'):
+            data.append(line[5:][1:] if line[5:6] == ' ' else line[5:])
+        elif line.startswith('event:'):
+            name = line[6:].strip()
+    return out
+
+
+def _message(r, rid, method=''):
+    """The JSON-RPC answer with our id - the server may answer as plain JSON (single or batch) or as an event stream.
+    When nothing matches, the error names only the shape of the answer (never its data: the run log is public)."""
+    ctype = r.headers.get('content-type', '')
+    body = r.content.decode('utf-8', 'replace')
+    if 'text/event-stream' in ctype:
+        events = _events(body)
+        msgs = []
+        for _, data in events:
             try:
-                msg = json.loads(line[5:].strip())
+                msgs.append(json.loads(data))
             except ValueError:
-                continue
-            if msg.get('id') == rid:
-                return msg
-    raise RuntimeError('megasheet: no answer in the event stream')
+                pass
+    else:
+        events, msgs = [], [json.loads(body)] if body.strip() else []
+    flat = [m for x in msgs for m in (x if isinstance(x, list) else [x]) if isinstance(m, dict)]
+    for m in flat:
+        if str(m.get('id')) == str(rid) and ('result' in m or 'error' in m):
+            return m
+    shape = [{'id': m.get('id'), 'method': m.get('method'), 'keys': sorted(m)[:6]} for m in flat][:5]
+    raise RuntimeError(f'megasheet {method}: no answer (status {r.status_code}, {ctype or "no type"}, {len(body)} chars, '
+                       f'{len(events)} events, {len(msgs)} parsed, {shape})')
 
 
 # --- merge into our state -----------------------------------------------------------------------------------------

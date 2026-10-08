@@ -1092,6 +1092,9 @@
   "X03:de": "58c0f0e900d934894e0edc55d5ca720eed5435c556d9d9cca22a2c3af62e4328",
   "X03:es": "b926744c79fa84ea5af5ec3d7bbcd12ab20fd41609ab32968047d122aa5e56e4",
   "X03:fr": "f78e2034a1e6f4b0b52379e5924ba8db5433cb9d9f659a34e49877aeb9951dde",
+  "X08:de": "79b827d6b615a0075766ff8eced2dc2fe3db8edc2bcd0a33017b8c85a61a7f7f",
+  "X08:es": "f9b91a98016c5ba41a824c18790bbb52e463c187ecf505730161f596c9c042d8",
+  "X08:fr": "a21aa51e41aface5aa4961591a07a8532bf8c688acad3fa4190719916dbad7cd",
   "X13:de": "32d0a272bae74ba1fa2618579ef833cbbdd0ad62a807c613f2efbe193133cae6",
   "X13:es": "62f0a9731fc9539060d2d3ad3194d8edbb901f26655d8910507e3a109ba83666",
   "X13:fr": "66ba55020843d5a7a98518a4d09aa0b6cd32249d07b6c107b91afeff75d36f7b",
@@ -2353,6 +2356,111 @@
    "title_fixes": {},
    "version": "group-2026-10-08.2"
   },
+  "X08": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791468841,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    },
+    "es": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    },
+    "fr": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    }
+   },
+   "key": "a5ff9efa3a11e76cf9662b61ff8067313806758866a20dce646db4e433eac8e8",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "independent_wording": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "DE, FR and ES all follow the reference format. They keep the beat order, mention the brand only at beat 4 and use only real Parakeet AI features. The only fix is the ES title: 'dos carreras' does not match the script's 'un grado y un máster', so it now says 'grado y máster'.",
+   "title_fixes": {
+    "es": "POV: con grado y máster y ni para cajera me han cogido 🤡"
+   },
+   "version": "group-2026-10-08.2"
+  },
   "X13": {
    "approval": {
     "de": "not_locked",
@@ -2770,7 +2878,7 @@
    "since": 1791440790
   }
  },
- "last_run": 1791439950,
+ "last_run": 1791467183,
  "manual_review": {
   "approved_german_exact": 11,
   "checked_at": "2026-10-07T15:58:35.104117+00:00",
@@ -2815,6 +2923,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/54e2aae2-e1a4-4872-8b8c-f7b9cbf29093/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/56ce8796-f8ca-4f04-b9d7-380cde672326/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/5b5a225a-4275-42d0-8972-519c64cb8051/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6482cb32-bfdd-4b94-97e7-be63a7d58d02/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6498f88d-fc10-4402-b3fe-3e6ea9f70e23/v2_Beispielvideo.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/67e04d74-7a91-439c-a987-3199ac07054f/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a4b7c94-b438-4965-afdc-a77a04450d14/video.mp4": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0",
@@ -2830,6 +2939,8 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/8ed79840-0650-49ad-8967-0b278e9e5a38/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/95941ff9-d15b-4894-8d00-172063f6b0dd/example.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/9853b267-ed5a-4990-b036-1c5a87962d04/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/9e18475c-fa25-4b74-9c10-d49dcac0bb82/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/a89f8e80-7b02-40a5-bb3f-30e19d46a224/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a9017d88-998d-4459-bc5f-ffd4d0aad30b/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/b1cf54ef-2b2b-4d3d-9f00-0821a3973834/07-Balkan-Beispiel.mp4": "sha256:a63cf9bd9dc13c02a700703291a9f1f7cf9651f71a44d6ff23bc7a6443f03508",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba404da2-5ed9-409c-bc5c-c4dc41281093/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",

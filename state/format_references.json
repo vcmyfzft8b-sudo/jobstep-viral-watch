@@ -1,0 +1,65 @@
+{
+ "X08": {
+  "accepted_sources": [
+   "7693731193187011872"
+  ],
+  "allowed_localisation": [
+   "The qualification named (DE: 1.3 Abi / Bachelor; FR: bac+5 / Master; ES: Grado / Máster / nota media alta)",
+   "The type of employer or job (DE: EDEKA/Rewe summer job or cashier; FR: caissière at Carrefour/Leclerc; ES: cajera/reponedor at Mercadona/Carrefour). Real brand names only as the place of rejection, never implying wrongdoing",
+   "The creator's situation (student looking for a summer job vs. unemployed graduate)",
+   "Who gave the HR hint (friend, cousin, former HR colleague)",
+   "Local slang, emoji and the wording of the POV text",
+   "The CV language and the template or field chosen (finance, admin, retail, etc.)",
+   "The exact score numbers, as long as they are what the product really shows",
+   "How long it takes for the rejection to arrive (minutes / same day)"
+  ],
+  "beats": [
+   "1. HOOK: POV on-screen text ('POV: rejected as a cashier' / 'Rejected at EDEKA with a 1.3 Abi 🤡'). Creator says they are job-hunting and just got rejected for a simple job, adds 'not that I have anything against this job', then names their high qualification.",
+   "2. SUSPICION: the rejections arrive within minutes of applying. They asked a friend who used to work in HR.",
+   "3. REVEAL: the friend says the CV is not getting through the automated applicant filters. The creator says 'so they never even saw my CV, and yes, they really didn't'.",
+   "4. PRODUCT IN: 'So here I'm uploading my CV to Parakeet AI, a site that was recommended to me.' Screen recording of the CV upload.",
+   "5. BAD SCORE: Parakeet AI analyses the CV and gives a score. It's not great, and the creator explains it's a Canva-style CV with lots of icons.",
+   "6. REWRITE: the AI reworks and optimises the CV very quickly and asks questions in the chat.",
+   "7. TEMPLATE: the creator picks a clean template suited to their field (the original's 'finance' format), and the CV is rebuilt in it.",
+   "8. TAILOR: the creator pastes the job ad (link or text) so the AI tailors the CV to the posting, 'to have a better chance of being picked'.",
+   "9. CHAT: the creator answers the AI's questions and accepts or edits its suggestions (replaces the JobStep assistant 'Lia').",
+   "10. RESULT: the new, much higher score is shown on screen, and the final optimised CV is scrolled through with 'so yeah, much better chances now'."
+  ],
+  "canonical_source": "7693731193187011872",
+  "filming": "About 45–60 s, vertical 9:16, one take or loosely cut, phone selfie at home with natural light, casual and unpolished. Beats 1–3: talking head with the POV text overlay for the first 3 s. Beats 4–10: screen recording of Parakeet AI with the creator's voice-over (face in a small overlay or green screen is optional). Demo order: upload CV → score/analysis (low) → AI rewrite + questions in chat → choose template → paste job ad to tailor → answer in chat / edit → new score + final CV scroll. Subtitles burned in, no music or only quiet music.",
+  "generated": 1791468612,
+  "hook": "On-screen POV text plus a deadpan, slightly exasperated line to camera: the creator got rejected for a basic, low-barrier job (summer job at a supermarket or cashier) even though they have a top qualification (e.g. 1.3 Abitur / bac+5). Example title: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
+  "not_allowed": [
+   "Adding a CTA, discount code, link-in-bio push or a spoken URL (that would make it an ad format)",
+   "Introducing the product before the rejection story and the filter reveal (beats 1–3 must come first)",
+   "Turning it into a step-by-step tutorial or listicle, or dropping the outrage or irony hook",
+   "Showing or mentioning features Parakeet AI does not have: an application overview or tracker, a 'New job' button, cover letters, or a named assistant like 'Lia'",
+   "Calling it JobStep or keeping any JobStep UI or wording",
+   "Claiming the CV is guaranteed to pass applicant filters, or guaranteeing interviews or a job",
+   "Showing a made-up score (e.g. a fixed '96%') that the product didn't actually produce, or calling it an official 'ATS score' unless the UI labels it that way",
+   "Saying the employer (EDEKA etc.) uses a specific filter software or acted unfairly or illegally",
+   "Presenting the HR friend's hint as verified fact about that specific employer. It stays a personal anecdote ('she told me it's probably…')",
+   "Implying Parakeet AI sends applications or contacts employers"
+  ],
+  "premise": "An overqualified creator vents about being rejected for an entry-level job and says they have nothing against the job itself. They find out from someone with HR experience that their CV was probably never seen by a person because it did not get past automated filters. They then fix the CV on screen with Parakeet AI's Resume Maker, going from a weak score to a strong one. The tone is ironic disbelief that turns into a practical fix. It is one personal anecdote, not a tutorial.",
+  "product": {
+   "cta": "none",
+   "features_used": [
+    "Upload your CV",
+    "CV score/analysis",
+    "Paste a job ad (link or text) to tailor the CV",
+    "Answer questions in the chat",
+    "AI rewrites/tailors the CV to the job",
+    "Pick a template",
+    "Edit everything yourself"
+   ],
+   "introduced_at_beat": 4,
+   "spoken_brand": "Beat 4, said once in passing ('I'm uploading my CV to Parakeet AI, a site that was recommended to me'). The brand may also appear on screen during the demo. No URL is spoken."
+  },
+  "rejected_sources": {},
+  "source_urls": {
+   "7693731193187011872": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872"
+  },
+  "title_en": "Rejected for a simple job despite top grades 🤡: the CV never got past the filter"
+ }
+}

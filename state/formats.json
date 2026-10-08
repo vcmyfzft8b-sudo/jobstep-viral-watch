@@ -459,13 +459,26 @@
  {
   "description": "Outrage rejection story: the creator vents that even with a 1.3 Abitur they got rejected for a summer job at EDEKA, learns their application was never received (filtered out), then shows fixing their CV with Parakeet AI. Examples: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
   "id": "X08",
+  "listed_at": 1791468949,
   "page_id": "3d5958b0-fc14-8142-ba86-d4195599a81a",
   "pages": {
+   "es": "3f3958b0-fc14-8140-8f92-fcec88617e86",
    "fr": "3d5958b0-fc14-80de-b575-c1f0d84f692e"
+  },
+  "revived": {
+   "at": 1791468183,
+   "because": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872",
+   "views": 103900
+  },
+  "reworded": {
+   "de": true,
+   "es": true,
+   "fr": true
   },
   "script": "(DEUTSCH) Kann mir jemand mal bitte erklären, warum es so schwer ist, 2026 einen Job zu finden? Ich habe mein Abi mit 1,3 bestanden und ich habe mich versucht, bei Edeka zu bewerben, einfach dass ich was für den Sommer habe, dass ich arbeiten kann. Und ich wurde bei Edeka abgelehnt. Mein 1,3 Abi wurde bei Edeka abgelehnt. Leute, ich war schockiert, das kann doch nicht sein.  Als ich mich dann bei Edeka gemeldet habe und gefragt habe, warum sie mich nicht angenommen haben, meinten sie: “Sie haben meine Bewerbung erst gar nicht erhalten.” Und ich meinte: “Hä, wie? Ihr habt meine Bewerbung nicht erhalten?” Die so: “Ja, wir haben so ein neues System, dein Bewerbungs- also dein Formular muss halt nach diesem ATS-Format sein.”  Und ich hatte gar keine Ahnung, was überhaupt ein ATS-Format ist. Und sie meinten, es gibt so eine Website, die heißt Parakeet AI, so sieht das Ganze aus, Parakeet AI,",
   "source": "DACH archive (old formats)",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872",
+  "status": "active",
   "title": "Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡"
  },
  {

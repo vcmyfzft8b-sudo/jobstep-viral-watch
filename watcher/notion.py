@@ -169,7 +169,7 @@ def script_paragraphs(spec, links, lang='de'):
         elif cue == 'asset':
             parts.append(rt(T['asset_cue'].format(name=asset_label(seg.get('asset_name')) or '📎')))
         elif cue == 'direction' and seg.get('asset_name'):
-            parts.append(rt(f"({seg['asset_name']}) "))
+            parts.append(rt(f"({re.sub(r'[()]', '', seg['asset_name']).strip()}) "))  # brackets inside would cut it
         parts.append(rt(seg['text'].strip() + ' ', bold=silent))
         if silent:
             paragraphs.append(parts)

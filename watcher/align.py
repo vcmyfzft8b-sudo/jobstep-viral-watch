@@ -160,11 +160,11 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
             if reword._plain(b).strip() != sub:
                 notion.api('PATCH', f"/blocks/{b['id']}", {'bulleted_list_item': {'rich_text': [notion.rt(sub)]}})
             break
-    resources = reword.resources_text(page_id)
+    resources = None if locked else reword.resources_text(page_id)  # approved scripts are rendered exactly as approved
     for seg in spec['script']:
         if seg.get('cue') in ('null', 'None', ''):
             seg['cue'] = None
-        if seg.get('cue') == 'asset' and not reword.in_resources(notion.asset_label(seg.get('asset_name')), resources):
+        if resources is not None and seg.get('cue') == 'asset' and not reword.in_resources(notion.asset_label(seg.get('asset_name')), resources):
             seg['cue'] = 'direction'  # nothing in the resources to point to -> a plain stage direction
             seg['asset_name'] = notion.asset_label(seg.get('asset_name'))
     new_blocks = notion.script_paragraphs(spec, links, lang)

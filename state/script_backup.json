@@ -7751,6 +7751,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8148-9144-f55ee4c385eb": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig zum Schluss den neuen Lebenslauf mit seiner Punktzahl (Y) und danach deinen alten Lebenslauf mit seiner Punktzahl (X).",
+   "text": {
+    "content": "Zeig zum Schluss den neuen Lebenslauf mit seiner Punktzahl (Y) und danach deinen alten Lebenslauf mit seiner Punktzahl (X).",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8149-a37d-db0acbd5af2b": [
   {
    "annotations": {
@@ -8190,6 +8209,25 @@
    "plain_text": "Einstieg: Halte nacheinander zwei ausgedruckte Absagen in die Kamera – „Schon wieder eine Absage. Und noch eine.“",
    "text": {
     "content": "Einstieg: Halte nacheinander zwei ausgedruckte Absagen in die Kamera – „Schon wieder eine Absage. Und noch eine.“",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8150-a47d-eaace64a81e5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig am Laptop die Fragebildschirme, bei denen du Frage für Frage antwortest und der Lebenslauf Abschnitt für Abschnitt wächst.",
+   "text": {
+    "content": "Zeig am Laptop die Fragebildschirme, bei denen du Frage für Frage antwortest und der Lebenslauf Abschnitt für Abschnitt wächst.",
     "link": null
    },
    "type": "text"
@@ -8926,6 +8964,25 @@
    "plain_text": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
    "text": {
     "content": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8161-91ad-f81954e85841": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig am Laptop den Bildschirm mit der Punktzahl der Lebenslauf-Analyse, nachdem du deinen Lebenslauf hochgeladen hast.",
+   "text": {
+    "content": "Zeig am Laptop den Bildschirm mit der Punktzahl der Lebenslauf-Analyse, nachdem du deinen Lebenslauf hochgeladen hast.",
     "link": null
    },
    "type": "text"
@@ -12323,6 +12380,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81a7-a426-e58e1d6ee012": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig die Vorlagenauswahl und den neu geschriebenen Lebenslauf im Vergleich zum alten.",
+   "text": {
+    "content": "Zeig die Vorlagenauswahl und den neu geschriebenen Lebenslauf im Vergleich zum alten.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81a8-b822-fc80fbfdbf5e": [
   {
    "annotations": {
@@ -14026,6 +14102,25 @@
    "plain_text": "Avant de filmer, imprime deux CV : ton ancien CV (ou un CV très « design » avec photo, icônes et barres de compétences) et le CV que tu as créé dans Parakeet AI. Pendant la première partie, filme seulement les feuilles d'en haut et montre du doigt les détails dont tu parles.",
    "text": {
     "content": "Avant de filmer, imprime deux CV : ton ancien CV (ou un CV très « design » avec photo, icônes et barres de compétences) et le CV que tu as créé dans Parakeet AI. Pendant la première partie, filme seulement les feuilles d'en haut et montre du doigt les détails dont tu parles.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81da-837d-e84828af283a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig den Chat, in dem die App dir Fragen stellt, und wie du sie beantwortest.",
+   "text": {
+    "content": "Zeig den Chat, in dem die App dir Fragen stellt, und wie du sie beantwortest.",
     "link": null
    },
    "type": "text"

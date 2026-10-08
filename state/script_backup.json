@@ -7751,6 +7751,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8149-a37d-db0acbd5af2b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "El título inicial en pantalla es «¡No hagas esto!»; no pongas ningún otro texto de relleno como título.",
+   "text": {
+    "content": "El título inicial en pantalla es «¡No hagas esto!»; no pongas ningún otro texto de relleno como título.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-814b-99b5-f506d7dc05ae": [
   {
    "annotations": {
@@ -9423,6 +9442,25 @@
    "plain_text": ") Et là, il te fait un nouveau CV adapté pile à ce poste. ",
    "text": {
     "content": ") Et là, il te fait un nouveau CV adapté pile à ce poste. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8167-aaeb-d9ebb1ad30c5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "X dans le script : lis la note réelle de départ du CV affichée par l'app après l'analyse.",
+   "text": {
+    "content": "X dans le script : lis la note réelle de départ du CV affichée par l'app après l'analyse.",
     "link": null
    },
    "type": "text"
@@ -13452,6 +13490,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81c7-8840-d10fda39667b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Termine face caméra, en souriant, pour ta recommandation finale.",
+   "text": {
+    "content": "Termine face caméra, en souriant, pour ta recommandation finale.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81c7-aca3-df3a0d02982e": [
   {
    "annotations": {
@@ -13576,6 +13633,25 @@
    "plain_text": "Ponte muy cerca de la cámara con el dedo índice levantado y los ojos bien abiertos, como si fueras a soltar un secreto, y empieza a hablar con el título en pantalla.",
    "text": {
     "content": "Ponte muy cerca de la cámara con el dedo índice levantado y los ojos bien abiertos, como si fueras a soltar un secreto, y empieza a hablar con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81cc-8ea4-e200a041c40b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Toujours face caméra, lunettes sur le nez, enchaîne avec « Si t'as pas envie de cramer trois heures par jour sur tes candidatures, enregistre cette vidéo, parce que là ton cerveau peut carrément rester éteint. » et insiste bien sur « enregistre cette vidéo ».",
+   "text": {
+    "content": "Toujours face caméra, lunettes sur le nez, enchaîne avec « Si t'as pas envie de cramer trois heures par jour sur tes candidatures, enregistre cette vidéo, parce que là ton cerveau peut carrément rester éteint. » et insiste bien sur « enregistre cette vidéo ».",
     "link": null
    },
    "type": "text"

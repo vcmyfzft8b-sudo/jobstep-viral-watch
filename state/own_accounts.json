@@ -213,7 +213,7 @@
   "market": "de",
   "since": 1791465487,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "jobswithandreaia": {
   "market": "es",
@@ -375,7 +375,7 @@
   "market": "de",
   "since": 1791465487,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "pierrick.tips": {
   "market": "fr",
@@ -386,6 +386,12 @@
  "rafaela.1270": {
   "market": "es",
   "since": 1791465487,
+  "source": "megasheet",
+  "status": "active"
+ },
+ "sarahbllt02": {
+  "market": "fr",
+  "since": 1791469274,
   "source": "megasheet",
   "status": "active"
  },

@@ -1916,5 +1916,36 @@
   ],
   "ts": 1791584334,
   "type": "rerank"
+ },
+ {
+  "format": "A20261009204851",
+  "reasons": [
+   "cross-country check fail: directions_match de: Part of a stage direction ('– siehe Ressourcen)') has leaked into the spoken reveal line before 'Gekauft hat das Feld übrigens Parakeet AI', so the creator would read it out. Also, 'Sobald Parakeet AI ins Spiel kommt, klappst du den Laptop auf' is ambiguous: the brand is first s"
+  ],
+  "tries": 3,
+  "ts": 1791585977,
+  "type": "format_held"
+ },
+ {
+  "order": [
+   "N10",
+   "N01",
+   "X16",
+   "A202610061334",
+   "X08",
+   "A202610061328",
+   "X13",
+   "N07",
+   "N02",
+   "A20261006183623",
+   "X03",
+   "ESX11",
+   "N03",
+   "X15",
+   "A202610061331",
+   "N04"
+  ],
+  "ts": 1791586429,
+  "type": "rerank"
  }
 ]

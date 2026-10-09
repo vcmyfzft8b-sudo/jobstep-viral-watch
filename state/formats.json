@@ -1002,10 +1002,10 @@
   "pending": {
    "kind": "new",
    "reasons": [
-    "🇫🇷 script reworded again: The original says the brand out loud twice ('gekauft wurde dieses Feld von studyflash, ich erzähl euch gleich mehr dazu' / reword refused"
+    "cross-country check fail: directions_match de: Part of a stage direction ('– siehe Ressourcen)') has leaked into the spoken reveal line before 'Gekauft hat das Feld übrigens Parakeet AI', so the creator would read it out. Also, 'Sobald Parakeet AI ins Spiel kommt, klappst du den Laptop auf' is ambiguous: the brand is first s"
    ],
    "since": 1791580000,
-   "tries": 2
+   "tries": 3
   },
   "reworded": {
    "de": true,

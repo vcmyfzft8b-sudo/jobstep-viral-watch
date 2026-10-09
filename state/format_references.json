@@ -1,4 +1,65 @@
 {
+ "A20261009204851": {
+  "accepted_sources": [
+   "7692061360221457686"
+  ],
+  "allowed_localisation": [
+   "Language of the speech and any on-screen text (German, French or Spanish)",
+   "Currency formatting and the specific price values in the grid, as long as several clearly different prices stay visible",
+   "Laptop model and how the creator names it (for example 'MacBook' or 'laptop')",
+   "Local filler phrasing in the reveal beat (for example 'good enough', 'it works')",
+   "Local job-ad examples pasted in the demo (local job boards and typical local job titles)",
+   "Local CV conventions shown in the template step (for example photo or no photo, length)",
+   "Creator's look, setting and handwriting style of the grid"
+  ],
+  "beats": [
+   "Hook, 1 sentence: back of the laptop to camera. 'I'm selling the space on the back of my laptop for ads, and I already have my first buyer.'",
+   "Price grid, 1 sentence: close-up of the laptop lid covered in drawn fields, each with a different price, for example 5 €, 20 €, 50 € or 100 €. The creator points at one field: 'You can see lots of different prices here, and exactly this field was bought.'",
+   "Reveal, 2–3 short sentences: the creator cuts out or peels off the drawn field, says something like 'Let's try to get this off, I hope it actually comes off… okay, I'd say that's good enough', then sticks the cut-out Parakeet AI logo on and says: 'And this field was bought by Parakeet AI, I'll tell you more in a second.' This is the first spoken brand mention.",
+   "Brand intro, 1 sentence, the second spoken brand mention: 'Parakeet AI has a Resume Maker that helps you turn your CV into an application that fits the exact job you want.' This replaces the original's founding-year and 'known for' sentence. No founding date, no user numbers and no awards.",
+   "How it works, 1 sentence, laptop open and screen recording: 'You simply upload your CV, get a score with an analysis, and paste the link or text of the job ad you want.' This mirrors the original's 'upload your documents, choose your target grade, get a study plan'.",
+   "Features, 1 sentence, screen recording: 'Then you answer a few questions in the chat, the AI tailors your CV to the job, you pick a template, can still edit everything yourself, and download it.' This mirrors the original's 'flashcards, quizzes and even podcasts' list.",
+   "CTA, 1 sentence, back of the laptop to camera with the logo and the remaining priced fields visible: 'So go check it out, and comment below who you think will buy the next spot.'"
+  ],
+  "canonical_source": "7692061360221457686",
+  "filming": "Length: 35–50 seconds, one continuous talking voice, no music required. Shots: (1) medium shot of the creator holding the closed laptop with the lid facing the camera; (2) close-up of the hand-drawn price grid on the lid, which can be paper taped on or a removable sticker, never permanent marker on the device; (3) close-up of cutting or peeling the bought field and sticking on a printed Parakeet AI logo cut to the field's size; (4) laptop opened, screen recording or over-the-shoulder shot of the demo; (5) back to the closed lid with the logo in the grid for the CTA. Demo order: upload CV → score/analysis shown → paste job ad link or text → answer questions in the chat → AI tailors the CV → pick a template → quick manual edit → download. Handheld, natural light, casual phone-camera look.",
+  "generated": 1791585686,
+  "hook": "Creator holds up the closed laptop, back facing the camera, and says (local language): 'I'm selling the space on the back of my laptop for ads, and I already have my first buyer.'",
+  "not_allowed": [
+   "Dropping the ad-spot-on-laptop premise, the priced-fields grid, or the cut-out and stick-on logo reveal",
+   "Revealing the brand any way other than replacing a priced field with the logo, or before the reveal beat",
+   "Leaving out the 'guess who buys the next spot' comment CTA, or replacing it with a different CTA",
+   "Changing the beat order, adding or removing beats, or changing the sentence count per beat",
+   "Speaking 'Parakeet AI' more or fewer than two times",
+   "Showing or naming Studyflash, JobStep or any other brand, app or logo anywhere, including other fields in the grid labelled with real brand names",
+   "Claiming a founding year, user numbers, rankings, awards, partnerships or 'known for' statements about Parakeet AI",
+   "Showing or mentioning features Parakeet AI doesn't have: an applications overview, a 'New job' button, cover letters, study or learning features (flashcards, quizzes, podcasts, study plans, target grades)",
+   "Promising results such as guaranteed interviews, guaranteed jobs or passing ATS",
+   "Stating the logo spot was actually paid for at a specific real price as fact. It stays a playful bit, with no claims about real money exchanged",
+   "Permanently damaging the laptop on camera (no marker straight on the device, no scratching)"
+  ],
+  "premise": "The creator treats the back of their laptop like an ad billboard. It is divided into hand-drawn fields, each with a price. They say one field has been 'bought', cut it out and stick the Parakeet AI logo in its place. Then they open the laptop and demo the Resume Maker on screen. They end by asking viewers to comment who they think will buy the next spot. Parakeet AI fills every spot the original buyer (Studyflash) filled, the same number of times, and no other brand ever appears.",
+  "product": {
+   "cta": "Go check out Parakeet AI ('check it out'), and comment below who you think will buy the next ad spot.",
+   "features_used": [
+    "Upload your CV",
+    "CV score/analysis",
+    "Paste the link or text of a job ad",
+    "Answer questions in a chat",
+    "AI rewrites/tailors the CV to the job",
+    "Pick a template",
+    "Edit everything yourself",
+    "Download the CV"
+   ],
+   "introduced_at_beat": 3,
+   "spoken_brand": "Spoken exactly twice, matching the original's two 'Studyflash' mentions: beat 3 ('bought by Parakeet AI') and beat 4 (brand-intro sentence). Visible as the logo stuck on the laptop lid from beat 3 to the end, and in the app UI during the demo. No URL is spoken."
+  },
+  "rejected_sources": {},
+  "source_urls": {
+   "7692061360221457686": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686"
+  },
+  "title_en": "I sold ad space on my laptop 🤑"
+ },
  "X08": {
   "accepted_sources": [
    "7693731193187011872"

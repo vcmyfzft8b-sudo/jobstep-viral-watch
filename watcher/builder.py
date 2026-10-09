@@ -7,6 +7,7 @@ from . import llm
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXAMPLES = os.path.join(HERE, '..', 'registry', 'examples')
 
+from .brands import OTHER_NOTE, SOURCE_RE
 from .markets import TEXT
 
 # Kept for older callers (DACH texts); the per-language texts live in markets.TEXT.
@@ -56,7 +57,7 @@ PARAKEET_FACTS = """What Parakeet AI's Resume Maker can do (only show/mention th
 paste the link (or text) of a job ad, answer questions in a chat, let the AI rewrite/tailor the CV to the job, pick a
 template, edit everything yourself, download it. It does NOT have: an overview of your applications, a "New job"
 button, cover letters. If the original shows a JobStep feature Parakeet AI doesn't have, replace that sentence with an
-equivalent step that exists (keep the sentence count)."""
+equivalent step that exists (keep the sentence count).""" + OTHER_NOTE
 
 
 COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
@@ -155,7 +156,7 @@ def validate(spec, transcript, lang='de'):
     texts += [s.get('text', '') + ' ' + (s.get('asset_name') or '') for s in spec.get('script', [])]
     texts += spec.get('extra_hook_lines', [])
     blob = ' '.join(texts)
-    if re.search(r'job\s*-?\s*step', blob, re.I):
+    if SOURCE_RE.search(blob):
         problems.append('"JobStep" appears in the page text')
     stop = set(T['stopwords'].split())
     words = re.findall(r"[a-zäöüßàâçéèêëîïôûùüÿœñáíóú’']+", ' '.join(s.get('text', '') for s in spec.get('script', [])).lower())

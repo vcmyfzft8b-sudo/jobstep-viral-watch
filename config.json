@@ -199,5 +199,8 @@
     "min_formats": 8,
     "protect_days": 14,
     "half_life_days": 21
+  },
+  "other_apps": {
+    "Studyflash": "study\\s*-?\\s*flash"
   }
 }

@@ -11,6 +11,7 @@ import json
 import re
 
 from . import llm, notion, state
+from .brands import SOURCE_RE
 from .markets import TEXT
 
 TOKEN = re.compile(r'⟦(\d+)⟧(.*?)⟦/\1⟧', re.S)
@@ -126,7 +127,7 @@ def _validate(enc, new, original=''):
     for i, ((b, old, links), text) in enumerate(zip(enc, new)):
         if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(text)]:
             return f'paragraph {i}: the link tokens must stay exactly the same and in the same order', []
-        if re.search(r'job\s*-?\s*step', text, re.I):
+        if SOURCE_RE.search(text):
             return f'paragraph {i}: JobStep appeared', []
         if len(old) > 60 and not 0.75 <= len(text) / len(old) <= 1.25:
             return f'paragraph {i}: length changed too much ({len(text)} vs {len(old)} characters)', []

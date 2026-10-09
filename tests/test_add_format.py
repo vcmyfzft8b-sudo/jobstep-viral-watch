@@ -59,3 +59,10 @@ class AddFormatFailureTests(unittest.TestCase):
                 main.add_format(['https://www.tiktok.com/@a/video/1'])
         self.assertIn('session limit', str(e.exception))
         push.assert_called_once()
+
+
+class OtherAppBrandTests(unittest.TestCase):
+    def test_the_app_of_a_hand_added_format_counts_like_jobstep(self):
+        from watcher import align, builder
+        self.assertEqual(len(align.JOBSTEP.findall('Das Feld hat Studyflash gekauft. Study Flash hilft. JobStep auch.')), 3)
+        self.assertIn('Studyflash', builder.PARAKEET_FACTS)

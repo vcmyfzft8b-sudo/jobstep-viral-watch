@@ -186,7 +186,7 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     if locked and not v['approved_matches']:
         passed = False
         v['script_issues'].append('live script or example differs from the approved version')
-    if re.search(r'job\s*-?\s*step', script, re.I):
+    if align.JOBSTEP.search(script):
         passed = False
         v['script_issues'].append('JobStep is mentioned in the script')
     if passed and fingerprint(page_id) != observed_fingerprint:

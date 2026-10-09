@@ -18,7 +18,7 @@ from . import llm, localize, notion, reword, state
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-JOBSTEP = re.compile(r'job\s*-?\s*st[ae]p|jopstep|jobset|jobster|job stay|jobs beget', re.I)
+from .brands import SOURCE_RE as JOBSTEP  # JobStep and the apps of hand-added formats
 
 
 def _words(t):

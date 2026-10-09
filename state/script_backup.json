@@ -17082,6 +17082,547 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8131-b456-efac37da679f": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Laptop mit Preisfeldern auf dem Deckel in die Kamera halten) Hinten auf meinem Laptop vermiete ich jetzt Werbeplätze – und das erste Feld ist schon weg. Jeder Platz kostet was anderes, und genau dieses Feld hier hat tatsächlich jemand bezahlt. (Preis im gekauften Feld wegwischen) Ich mach den Preis jetzt mal weg, hoffentlich klebt der nicht für immer fest. Na gut, ein bisschen was bleibt, aber das lass ich so. Und gesichert hat sich den Platz ein KI-Tool, zu dem ich euch direkt mehr erzähle. ",
+   "text": {
+    "content": "(Laptop mit Preisfeldern auf dem Deckel in die Kamera halten) Hinten auf meinem Laptop vermiete ich jetzt Werbeplätze – und das erste Feld ist schon weg. Jeder Platz kostet was anderes, und genau dieses Feld hier hat tatsächlich jemand bezahlt. (Preis im gekauften Feld wegwischen) Ich mach den Preis jetzt mal weg, hoffentlich klebt der nicht für immer fest. Na gut, ein bisschen was bleibt, aber das lass ich so. Und gesichert hat sich den Platz ein KI-Tool, zu dem ich euch direkt mehr erzähle. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8135-84e4-e32e0f2948b8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pour la dernière phrase, reviens face caméra.",
+   "text": {
+    "content": "Pour la dernière phrase, reviens face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-813a-a877-cad27f2b5342": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Ihr ladet euren aktuellen Lebenslauf hoch, fügt die Anzeige von eurem Wunschjob ein – natürlich der absolute Traumjob – und die KI schneidet alles genau darauf zu. (",
+   "text": {
+    "content": ") Ihr ladet euren aktuellen Lebenslauf hoch, fügt die Anzeige von eurem Wunschjob ein – natürlich der absolute Traumjob – und die KI schneidet alles genau darauf zu. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Danach klärt ihr im Chat noch ein paar Fragen und schnappt euch eine Vorlage, die euch gefällt. (",
+   "text": {
+    "content": ") Danach klärt ihr im Chat noch ein paar Fragen und schnappt euch eine Vorlage, die euch gefällt. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Am Ende feilt ihr selbst noch ein bisschen dran rum und ladet ihn runter, das klappt sogar nebenbei in der Bahn. ",
+   "text": {
+    "content": ") Am Ende feilt ihr selbst noch ein bisschen dran rum und ladet ihn runter, das klappt sogar nebenbei in der Bahn. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8151-b1e8-d888332b0aa9": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Découpe le logo imprimé aux ciseaux) Celui qui a raflé cette case, c'est cette boîte-là, je vous raconte ça juste après. C'est un outil IA qui a percé en aidant plein de gens à monter un CV vraiment taillé pour le poste qu'ils visent. ",
+   "text": {
+    "content": "(Découpe le logo imprimé aux ciseaux) Celui qui a raflé cette case, c'est cette boîte-là, je vous raconte ça juste après. C'est un outil IA qui a percé en aidant plein de gens à monter un CV vraiment taillé pour le poste qu'ils visent. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-815f-8e4b-e631684a2db4": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(",
+   "text": {
+    "content": "(",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Vous balancez votre CV dedans, vous collez le lien de l'offre qui vous plaît, et l'IA vous l'adapte pile à ce job. (",
+   "text": {
+    "content": ") Vous balancez votre CV dedans, vous collez le lien de l'offre qui vous plaît, et l'IA vous l'adapte pile à ce job. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Vous avez un score avec l'analyse, un chat qui vous questionne pour compléter, et des modèles à retoucher vous-même puis à télécharger. ",
+   "text": {
+    "content": ") Vous avez un score avec l'analyse, un chat qui vous questionne pour compléter, et des modèles à retoucher vous-même puis à télécharger. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8160-8bb5-e4947b882095": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Prépare le dos de ton laptop avec du scotch de masquage ou du papier (pas de feutre directement sur l'ordi) : dessine une grille avec des prix (par exemple 200 €, 500 €, 600 €, 799 €, 999 €), comme ça tu peux effacer une case sur « Bon, j'essaie d'effacer ça ».",
+   "text": {
+    "content": "Prépare le dos de ton laptop avec du scotch de masquage ou du papier (pas de feutre directement sur l'ordi) : dessine une grille avec des prix (par exemple 200 €, 500 €, 600 €, 799 €, 999 €), comme ça tu peux effacer une case sur « Bon, j'essaie d'effacer ça ».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8175-902a-c4e4ab3299b5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Druck das Parakeet-AI-Logo aus. Bei „Parakeet AI ist ein KI-Tool …“ schneidest du es vor der Kamera mit der Schere aus, und bei „Also, schaut's euch mal an …“ klebst du es auf das freie Feld und hältst den Laptop wieder in die Kamera.",
+   "text": {
+    "content": "Druck das Parakeet-AI-Logo aus. Bei „Parakeet AI ist ein KI-Tool …“ schneidest du es vor der Kamera mit der Schere aus, und bei „Also, schaut's euch mal an …“ klebst du es auf das freie Feld und hältst den Laptop wieder in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-817b-a020-f46696ea2ac0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
+   "text": {
+    "content": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8189-a2aa-d95df90fa200": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
+   "text": {
+    "content": "Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-818a-a291-e5f49dc37cd0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Colle le logo sur la case vendue, puis face caméra) Bref, allez faire un tour dessus, et dites-moi en commentaire qui va s'offrir la prochaine case d'après vous. ",
+   "text": {
+    "content": "(Colle le logo sur la case vendue, puis face caméra) Bref, allez faire un tour dessus, et dites-moi en commentaire qui va s'offrir la prochaine case d'après vous. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-818a-b7c8-f1c6a5323788": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Für den letzten Satz wieder zurück in die Kamera.",
+   "text": {
+    "content": "Für den letzten Satz wieder zurück in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81a4-b578-e9ff74a406a5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Halt in den ersten Sekunden die Rückseite von deinem Laptop mit den aufgemalten Preisfeldern direkt in die Kamera, sprich dabei frontal in die Kamera, der Titel ist eingeblendet.",
+   "text": {
+    "content": "Halt in den ersten Sekunden die Rückseite von deinem Laptop mit den aufgemalten Preisfeldern direkt in die Kamera, sprich dabei frontal in die Kamera, der Titel ist eingeblendet.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81a5-8e6b-f29b515ecb6a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Tiens ton laptop fermé face caméra, avec au dos une grille au feutre et un prix dans chaque case, et parle directement à la caméra pendant que le titre « Premier acheteur 🤑 » s'affiche.",
+   "text": {
+    "content": "Tiens ton laptop fermé face caméra, avec au dos une grille au feutre et un prix dans chaque case, et parle directement à la caméra pendant que le titre « Premier acheteur 🤑 » s'affiche.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81b3-aad2-c73139321266": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Imprime le logo Parakeet AI sur une feuille, découpe-le aux ciseaux sur « Et la case, c'est Parakeet AI qui l'a prise », puis colle-le sur la case vendue sur « Allez jeter un œil ».",
+   "text": {
+    "content": "Imprime le logo Parakeet AI sur une feuille, découpe-le aux ciseaux sur « Et la case, c'est Parakeet AI qui l'a prise », puis colle-le sur la case vendue sur « Allez jeter un œil ».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81bd-aa7f-c953567307a7": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pointe les prix de la grille, puis la grande case au-dessus du logo, sur « Chaque case a son petit prix, et c'est la plus grosse, juste là, qui a trouvé preneur ».",
+   "text": {
+    "content": "Pointe les prix de la grille, puis la grande case au-dessus du logo, sur « Chaque case a son petit prix, et c'est la plus grosse, juste là, qui a trouvé preneur ».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81c6-a5d6-fc82af690202": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Bereite vorher deinen Laptop-Deckel vor: Mal mit abwischbarem Marker (oder auf Klebefolie) gestrichelte Felder mit Preisen auf (z. B. 200 € bis 999 €). Bei „Mal gucken, ob das wirklich abgeht …“ wischst du den Preis im großen Feld oben in der Mitte weg.",
+   "text": {
+    "content": "Bereite vorher deinen Laptop-Deckel vor: Mal mit abwischbarem Marker (oder auf Klebefolie) gestrichelte Felder mit Preisen auf (z. B. 200 € bis 999 €). Bei „Mal gucken, ob das wirklich abgeht …“ wischst du den Preis im großen Feld oben in der Mitte weg.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81d3-be13-fad74c0e7edf": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Schaut also gern mal rein und schreibt in die Kommentare, wer als Nächstes einen Platz kauft. ",
+   "text": {
+    "content": "Schaut also gern mal rein und schreibt in die Kommentare, wer als Nächstes einen Platz kauft. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81ec-ad8f-cbc97eea04e9": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Face caméra, laptop fermé, montre le dos avec la grille de prix) J'ai transformé le dos de mon MacBook en panneau publicitaire, et y'a déjà quelqu'un qui a craqué. (Pointe les prix, puis la grande case au-dessus du logo) Chaque case a son petit prix, et c'est la plus grosse, juste là, qui a trouvé preneur. (Efface le prix de la case avec un chiffon) Attendez, je vire le prix, pourvu que ça s'efface… bon, c'est pas parfait, mais ça ira. ",
+   "text": {
+    "content": "(Face caméra, laptop fermé, montre le dos avec la grille de prix) J'ai transformé le dos de mon MacBook en panneau publicitaire, et y'a déjà quelqu'un qui a craqué. (Pointe les prix, puis la grande case au-dessus du logo) Chaque case a son petit prix, et c'est la plus grosse, juste là, qui a trouvé preneur. (Efface le prix de la case avec un chiffon) Attendez, je vire le prix, pourvu que ça s'efface… bon, c'est pas parfait, mais ça ira. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81f9-8fd3-ec8f3c9d3966": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Das Tool ist noch recht neu, aber gerade überall, weil es beim Lebenslauf für Bewerbungen hilft. ",
+   "text": {
+    "content": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Das Tool ist noch recht neu, aber gerade überall, weil es beim Lebenslauf für Bewerbungen hilft. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "46d32100-ae94-4c6a-84b2-24bb0196be24": [
   {
    "annotations": {
@@ -32610,6 +33151,342 @@
     "plain_text": ") Y aquí lo tienes: un CV enfocado a mi sector con toda la info optimizada. Pues eso. ",
     "text": {
      "content": ") Y aquí lo tienes: un CV enfocado a mi sector con toda la info optimizada. Pues eso. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f4958b0-fc14-8129-8287-c28b792e1514": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(Face caméra, tu tiens le laptop fermé : au dos, une grille dessinée avec un prix dans chaque case) Je vends l'arrière de mon MacBook comme espace pub, et devinez quoi : j'ai déjà mon premier acheteur. (Montre les prix du doigt, puis la grande case au-dessus du logo) Vous voyez tous ces prix différents ? Eh ben c'est pile cette case-là qui est partie. (Efface le prix de la case avec la main ou un chiffon) Bon, j'essaie d'effacer ça, j'espère vraiment que ça va partir. Allez, on va dire que ça passe. ",
+    "text": {
+     "content": "(Face caméra, tu tiens le laptop fermé : au dos, une grille dessinée avec un prix dans chaque case) Je vends l'arrière de mon MacBook comme espace pub, et devinez quoi : j'ai déjà mon premier acheteur. (Montre les prix du doigt, puis la grande case au-dessus du logo) Vous voyez tous ces prix différents ? Eh ben c'est pile cette case-là qui est partie. (Efface le prix de la case avec la main ou un chiffon) Bon, j'essaie d'effacer ça, j'espère vraiment que ça va partir. Allez, on va dire que ça passe. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(Découpe aux ciseaux le logo Parakeet AI imprimé sur une feuille) Et la case, c'est Parakeet AI qui l'a prise, je vous explique tout de suite. Parakeet AI, c'est un outil IA qui s'est fait connaître parce qu'il aide les gens à faire un CV qui colle vraiment au poste visé. ",
+    "text": {
+     "content": "(Découpe aux ciseaux le logo Parakeet AI imprimé sur une feuille) Et la case, c'est Parakeet AI qui l'a prise, je vous explique tout de suite. Parakeet AI, c'est un outil IA qui s'est fait connaître parce qu'il aide les gens à faire un CV qui colle vraiment au poste visé. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu y importes ton CV, tu colles l'annonce du job qui te fait envie, et l'IA te le réécrit sur mesure. (",
+    "text": {
+     "content": ") Tu y importes ton CV, tu colles l'annonce du job qui te fait envie, et l'IA te le réécrit sur mesure. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") T'as une note avec l'analyse de ton CV, un chat qui te pose des questions pour le compléter, et même des modèles au choix que tu peux retoucher puis télécharger. ",
+    "text": {
+     "content": ") T'as une note avec l'analyse de ton CV, un chat qui te pose des questions pour le compléter, et même des modèles au choix que tu peux retoucher puis télécharger. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(Colle le logo Parakeet AI sur la case vendue, puis reparle face caméra) Allez jeter un œil, et dites-moi en commentaire qui va acheter la prochaine case selon vous. ",
+    "text": {
+     "content": "(Colle le logo Parakeet AI sur la case vendue, puis reparle face caméra) Allez jeter un œil, et dites-moi en commentaire qui va acheter la prochaine case selon vous. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f4958b0-fc14-81a5-a35a-dfc43f3065f0": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(Laptop mit Preisfeldern auf dem Deckel in die Kamera halten) Die Rückseite von meinem Laptop vermiete ich jetzt als Werbefläche – und rate mal, der erste Käufer ist schon da. Jedes Feld hier hat seinen eigenen Preis, und genau das hier hat sich jemand geschnappt. (Preis im gekauften Feld wegwischen) Mal gucken, ob das wirklich abgeht, ich versuch's einfach mal wegzuwischen. Okay, passt schon, oder? Und wer hat's gekauft? Parakeet AI – was das ist, sag ich dir gleich. ",
+    "text": {
+     "content": "(Laptop mit Preisfeldern auf dem Deckel in die Kamera halten) Die Rückseite von meinem Laptop vermiete ich jetzt als Werbefläche – und rate mal, der erste Käufer ist schon da. Jedes Feld hier hat seinen eigenen Preis, und genau das hier hat sich jemand geschnappt. (Preis im gekauften Feld wegwischen) Mal gucken, ob das wirklich abgeht, ich versuch's einfach mal wegzuwischen. Okay, passt schon, oder? Und wer hat's gekauft? Parakeet AI – was das ist, sag ich dir gleich. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Parakeet AI ist ein KI-Tool, das gerade viele kennen, weil es Leuten hilft, ihren Lebenslauf bewerbungsfit zu machen. ",
+    "text": {
+     "content": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Parakeet AI ist ein KI-Tool, das gerade viele kennen, weil es Leuten hilft, ihren Lebenslauf bewerbungsfit zu machen. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Du lädst einfach deinen alten Lebenslauf hoch, packst die Anzeige von deinem Traumjob rein – logisch, der beste – und lässt ihn genau darauf zuschneiden. (",
+    "text": {
+     "content": ") Du lädst einfach deinen alten Lebenslauf hoch, packst die Anzeige von deinem Traumjob rein – logisch, der beste – und lässt ihn genau darauf zuschneiden. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Dann beantwortest du ein paar Fragen im Chat, suchst dir eine Vorlage aus, (",
+    "text": {
+     "content": ") Dann beantwortest du ein paar Fragen im Chat, suchst dir eine Vorlage aus, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") passt alles selbst an und lädst ihn am Ende direkt runter – geht sogar easy unterwegs im Bus. ",
+    "text": {
+     "content": ") passt alles selbst an und lädst ihn am Ende direkt runter – geht sogar easy unterwegs im Bus. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Also, schaut's euch mal an und schreibt mir in die Kommentare, wer sich eurer Meinung nach den nächsten Platz holt. ",
+    "text": {
+     "content": "Also, schaut's euch mal an und schreibt mir in die Kommentare, wer sich eurer Meinung nach den nächsten Platz holt. ",
      "link": null
     },
     "type": "text"

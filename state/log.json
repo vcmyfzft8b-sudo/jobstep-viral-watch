@@ -1859,5 +1859,62 @@
   "type": "alert",
   "video": "7692061360221457686",
   "views": 1100000
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791583237,
+  "type": "alert",
+  "video": "7694454154869181729",
+  "views": 45800
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791583241,
+  "type": "alert",
+  "video": "7694696093623389462",
+  "views": 20900
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791583254,
+  "type": "alert",
+  "video": "7694663727924120864",
+  "views": 17600
+ },
+ {
+  "format": "A20261009204851",
+  "reasons": [
+   "🇫🇷 script reworded again: The original says the brand out loud twice ('gekauft wurde dieses Feld von studyflash, ich erzähl euch gleich mehr dazu' / reword refused"
+  ],
+  "tries": 2,
+  "ts": 1791583746,
+  "type": "format_held"
+ },
+ {
+  "format": "N10",
+  "ts": 1791584299,
+  "type": "hot_cooled"
+ },
+ {
+  "order": [
+   "N10",
+   "N01",
+   "X16",
+   "A202610061334",
+   "X08",
+   "A202610061328",
+   "X13",
+   "N07",
+   "N02",
+   "A20261006183623",
+   "X03",
+   "ESX11",
+   "N03",
+   "X15",
+   "A202610061331",
+   "N04"
+  ],
+  "ts": 1791584334,
+  "type": "rerank"
  }
 ]

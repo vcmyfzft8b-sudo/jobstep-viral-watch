@@ -1002,12 +1002,10 @@
   "pending": {
    "kind": "new",
    "reasons": [
-    "🇩🇪 script rewritten sentence by sentence (165 words (original 155)) / script reworded again: The example names the buyer brand out loud twice: 'gekauft wurde diese",
-    "🇫🇷 script rewritten sentence by sentence (169 words (original 155)) / script reworded again: Too close to the example: about half the sentences are direct translat",
-    "🇪🇸 script rewritten sentence by sentence (160 words (original 155)) / script reworded again: Too close to the German original: about half the sentences are direct "
+    "🇫🇷 script reworded again: The original says the brand out loud twice ('gekauft wurde dieses Feld von studyflash, ich erzähl euch gleich mehr dazu' / reword refused"
    ],
    "since": 1791580000,
-   "tries": 1
+   "tries": 2
   },
   "reworded": {
    "de": true,

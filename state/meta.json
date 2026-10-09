@@ -1021,8 +1021,8 @@
   "A20261006183623:de": "ok",
   "A20261006183623:es": "ok",
   "A20261006183623:fr": "ok",
-  "A20261009204851:de": "failed",
-  "A20261009204851:es": "failed",
+  "A20261009204851:de": "fixed",
+  "A20261009204851:es": "fixed",
   "A20261009204851:fr": "failed",
   "ESX11:de": "ok",
   "ESX11:es": "fixed",
@@ -1071,6 +1071,8 @@
   "A20261006183623:de": "331882ac78516c1bf4661eba218a2c6be56cbd4714b462658906e9cfbf964dd4",
   "A20261006183623:es": "ca06e94e5bbf2114220237f790e9618ec5cead703849adca5e61a239058e4e47",
   "A20261006183623:fr": "79b79571493a2204c86afc93cdd800184edfb6e1dc7a1b06556950d4c2edb4c1",
+  "A20261009204851:de": "0d881f5410450166b64131a52dc703186ed3a1c718e0612d58494fc173e00a1b",
+  "A20261009204851:es": "bc69865e4a266c229165475d8c3fd09c7c67059349371fc784d366da0f2bc403",
   "ESX11:de": "1f477cd33f9c4a4be93b5570ec17836445da6aa7fb50064874352a233da23d08",
   "ESX11:es": "5246e47b7f2a3b080c5cea2ab94fe4c83be94051aa3f50828bbec378e7f2bf79",
   "ESX11:fr": "d8d4071e61d1da683914f27bdbbbb2da1648023875d9607c2aeb0a2ea7532692",
@@ -2868,20 +2870,8 @@
   "tsvetelina.tips": "",
   "zorica.djurdjevic21": ""
  },
- "hot": {
-  "N10": {
-   "announced": {
-    "de": true
-   },
-   "count": 5,
-   "creators": {},
-   "messages": {
-    "de": "1557640315005960265"
-   },
-   "since": 1791440790
-  }
- },
- "last_run": 1791552236,
+ "hot": {},
+ "last_run": 1791582738,
  "manual_review": {
   "approved_german_exact": 11,
   "checked_at": "2026-10-07T15:58:35.104117+00:00",

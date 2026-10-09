@@ -17528,6 +17528,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8167-a38d-e2a638a0a846": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Bei „Wenn du magst, guck's dir an“ hältst du den Laptop mit dem aufgeklebten Logo nochmal in die Kamera.",
+   "text": {
+    "content": "Bei „Wenn du magst, guck's dir an“ hältst du den Laptop mit dem aufgeklebten Logo nochmal in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-8169-bea9-f77fc092d1b1": [
   {
    "annotations": {

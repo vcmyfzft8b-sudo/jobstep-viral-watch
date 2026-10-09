@@ -201,6 +201,6 @@
     "half_life_days": 21
   },
   "other_apps": {
-    "Studyflash": "study\\s*-?\\s*flash"
+    "Studyflash": "stud(?:y|io|ie|i)\\s*-?\\s*fl[ae]sh"
   }
 }

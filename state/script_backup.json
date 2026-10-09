@@ -17082,6 +17082,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8105-96cf-ed5568ff9ae7": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Enseña la tapa cerrada del portátil a cámara) Pues nada, he convertido la tapa de mi MacBook en un cartel publicitario y ya tengo a mi primer comprador. ",
+   "text": {
+    "content": "(Enseña la tapa cerrada del portátil a cámara) Pues nada, he convertido la tapa de mi MacBook en un cartel publicitario y ya tengo a mi primer comprador. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-8108-a641-d47041867cda": [
   {
    "annotations": {
@@ -17139,6 +17158,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8114-8a2b-fc84ab2753a0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Y en el guion: lee la puntuación que te muestra la app.",
+   "text": {
+    "content": "Y en el guion: lee la puntuación que te muestra la app.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-8116-877a-f5157d4648f3": [
   {
    "annotations": {
@@ -17153,6 +17191,25 @@
    "plain_text": "(Pega el logo en la casilla vacía y habla a cámara) Así que dale una vuelta y déjame en comentarios quién crees que va a pillar el siguiente hueco. ",
    "text": {
     "content": "(Pega el logo en la casilla vacía y habla a cámara) Así que dale una vuelta y déjame en comentarios quién crees que va a pillar el siguiente hueco. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-811a-a237-ffbbb20393ae": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Siéntate frente a la cámara sujetando el portátil cerrado con la tapa hacia la cámara, dividida en huecos con cinta y precios escritos, y habla directamente a cámara mientras el título «Primer comprador🤑» está en pantalla.",
+   "text": {
+    "content": "Siéntate frente a la cámara sujetando el portátil cerrado con la tapa hacia la cámara, dividida en huecos con cinta y precios escritos, y habla directamente a cámara mientras el título «Primer comprador🤑» está en pantalla.",
     "link": null
    },
    "type": "text"
@@ -17282,6 +17339,44 @@
    "plain_text": ") Luego respondes unas preguntas en el chat, la IA lo reescribe para ese trabajo, escoges plantilla, retocas lo que quieras y te lo bajas ya con un Y. ",
    "text": {
     "content": ") Luego respondes unas preguntas en el chat, la IA lo reescribe para ese trabajo, escoges plantilla, retocas lo que quieras y te lo bajas ya con un Y. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8128-9660-f4987f53ca59": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Imprime el logo de Parakeet AI desde parakeet-ai.com/resume-maker. Recórtalo con tijeras delante de la cámara en «Parakeet AI es una herramienta con IA…» y pégalo en el hueco vendido en «Así que pásate a echarle un ojo…».",
+   "text": {
+    "content": "Imprime el logo de Parakeet AI desde parakeet-ai.com/resume-maker. Recórtalo con tijeras delante de la cámara en «Parakeet AI es una herramienta con IA…» y pégalo en el hueco vendido en «Así que pásate a echarle un ojo…».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-812c-b6dc-ef644e838d40": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Avant de filmer, prépare ton MacBook : recouvre le couvercle de papier blanc ou de scotch de masquage, trace des cases au feutre noir avec des prix (ex. 999 €, 799 €, 600 €, 500 €, 200 €), et colle un morceau de papier amovible sur la case du milieu pour pouvoir l'arracher sur « Bon, j'essaie de l'arracher… ».",
+   "text": {
+    "content": "Avant de filmer, prépare ton MacBook : recouvre le couvercle de papier blanc ou de scotch de masquage, trace des cases au feutre noir avec des prix (ex. 999 €, 799 €, 600 €, 500 €, 200 €), et colle un morceau de papier amovible sur la case du milieu pour pouvoir l'arracher sur « Bon, j'essaie de l'arracher… ».",
     "link": null
    },
    "type": "text"
@@ -17547,6 +17642,116 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8148-9c52-cf618f22173c": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pour la dernière phrase, reviens face caméra.",
+   "text": {
+    "content": "Pour la dernière phrase, reviens face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-814e-8a4b-efba766b5a3a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Parakeet AI tiene un Resume Maker que convierte tu currículum en una candidatura hecha a medida para el curro que de verdad quieres. (",
+   "text": {
+    "content": "Parakeet AI tiene un Resume Maker que convierte tu currículum en una candidatura hecha a medida para el curro que de verdad quieres. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Lo único que haces es subir tu CV, te saca una puntuación con su análisis y metes el enlace o el texto de la oferta que te interesa. (",
+   "text": {
+    "content": ") Lo único que haces es subir tu CV, te saca una puntuación con su análisis y metes el enlace o el texto de la oferta que te interesa. (",
+    "link": null
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": "https://www.parakeet-ai.com/resume-maker",
+   "plain_text": "Parakeet AI · Resume Maker",
+   "text": {
+    "content": "Parakeet AI · Resume Maker",
+    "link": {
+     "url": "https://www.parakeet-ai.com/resume-maker"
+    }
+   },
+   "type": "text"
+  },
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": ") Luego te hace unas preguntas por chat, la IA adapta el currículum a ese puesto, eliges plantilla, todavía puedes retocar lo que quieras y lo descargas. ",
+   "text": {
+    "content": ") Luego te hace unas preguntas por chat, la IA adapta el currículum a ese puesto, eliges plantilla, todavía puedes retocar lo que quieras y lo descargas. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-814f-b9db-dc2bd0d7296d": [
   {
    "annotations": {
@@ -17638,6 +17843,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8151-ac10-e02f5aad67a5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Vorbereitung: Mal mit abwischbarem Marker (oder Malerkrepp) gestrichelte Felder mit Preisen auf deinen Laptop-Deckel. Bei „Das wisch ich jetzt mal weg“ wischst du ein Feld vor der Kamera leer.",
+   "text": {
+    "content": "Vorbereitung: Mal mit abwischbarem Marker (oder Malerkrepp) gestrichelte Felder mit Preisen auf deinen Laptop-Deckel. Bei „Das wisch ich jetzt mal weg“ wischst du ein Feld vor der Kamera leer.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-8151-b1e8-d888332b0aa9": [
   {
    "annotations": {
@@ -17671,6 +17895,25 @@
    "plain_text": "(Laptop-Rückseite mit Preisfeldern in die Kamera halten) Die Rückseite von meinem Laptop ist ab jetzt Werbefläche zum Mieten – und rate mal, jemand hat schon zugeschlagen. Jedes Kästchen hier hat seinen eigenen Preis, und dieses eine ist offiziell weg. (Feld in der Mitte abziehen bzw. wegwischen) Moment, das muss ich erst mal abknibbeln, bitte lass das sauber runtergehen. Na ja, nicht perfekt, aber das reicht völlig. Geschnappt hat sich den Platz diese Seite hier, gleich erzähl ich dir mehr. ",
    "text": {
     "content": "(Laptop-Rückseite mit Preisfeldern in die Kamera halten) Die Rückseite von meinem Laptop ist ab jetzt Werbefläche zum Mieten – und rate mal, jemand hat schon zugeschlagen. Jedes Kästchen hier hat seinen eigenen Preis, und dieses eine ist offiziell weg. (Feld in der Mitte abziehen bzw. wegwischen) Moment, das muss ich erst mal abknibbeln, bitte lass das sauber runtergehen. Na ja, nicht perfekt, aber das reicht völlig. Geschnappt hat sich den Platz diese Seite hier, gleich erzähl ich dir mehr. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-815a-9aff-f92590ab3106": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Señala un recuadro concreto de la cuadrícula de precios) Mira, cada recuadro tiene su precio, desde cinco hasta cien euros, y justo este de aquí ya tiene dueño. (Despega la etiqueta con el precio del hueco vendido) Venga, lo arranco con cuidado, a ver si sale entero. Vale, tampoco ha quedado tan mal. (Pega el logo de Parakeet AI en el hueco vendido de la tapa) Y quien se ha llevado el hueco es Parakeet AI, ahora te explico de qué va. ",
+   "text": {
+    "content": "(Señala un recuadro concreto de la cuadrícula de precios) Mira, cada recuadro tiene su precio, desde cinco hasta cien euros, y justo este de aquí ya tiene dueño. (Despega la etiqueta con el precio del hueco vendido) Venga, lo arranco con cuidado, a ver si sale entero. Vale, tampoco ha quedado tan mal. (Pega el logo de Parakeet AI en el hueco vendido de la tapa) Y quien se ha llevado el hueco es Parakeet AI, ahora te explico de qué va. ",
     "link": null
    },
    "type": "text"
@@ -17933,6 +18176,25 @@
    "plain_text": "Dès la première seconde, tiens l'écran de ton laptop face caméra, avec l'arrière couvert de cases et de prix, et parle directement à la caméra, le titre « Premier acheteur 🤑 » affiché.",
    "text": {
     "content": "Dès la première seconde, tiens l'écran de ton laptop face caméra, avec l'arrière couvert de cases et de prix, et parle directement à la caméra, le titre « Premier acheteur 🤑 » affiché.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-817c-9aa7-e40f4885a32b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "(Vuelve a enseñar la tapa cerrada con el logo y los demás huecos con precio) Así que échale un vistazo y cuéntame en comentarios quién crees que se va a pillar el próximo hueco. ",
+   "text": {
+    "content": "(Vuelve a enseñar la tapa cerrada con el logo y los demás huecos con precio) Así que échale un vistazo y cuéntame en comentarios quién crees que se va a pillar el próximo hueco. ",
     "link": null
    },
    "type": "text"
@@ -18255,6 +18517,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8197-a615-e1ba1d706d5f": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Fíjate en la cuadrícula, hay huecos de cinco, de veinte, de cien euros… y este ya está vendido.», haz un primer plano de la cuadrícula de precios de la tapa mientras señalas el hueco vendido.",
+   "text": {
+    "content": "En «Fíjate en la cuadrícula, hay huecos de cinco, de veinte, de cien euros… y este ya está vendido.», haz un primer plano de la cuadrícula de precios de la tapa mientras señalas el hueco vendido.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-819a-9578-f0b393a56f10": [
   {
    "annotations": {
@@ -18458,6 +18739,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-81a5-adff-f27f0ec55b1b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Para la última frase, vuelve a mirar a cámara.",
+   "text": {
+    "content": "Para la última frase, vuelve a mirar a cámara.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-81a5-b256-cea9d63e55eb": [
   {
    "annotations": {
@@ -18529,6 +18829,44 @@
    "plain_text": "En cuanto entre Parakeet AI, grábate usando la app en el portátil – en cada enlace del guion. Corta los tiempos de carga.",
    "text": {
     "content": "En cuanto entre Parakeet AI, grábate usando la app en el portátil – en cada enlace del guion. Corta los tiempos de carga.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81ab-9e06-e975b152afd6": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Halt direkt den Deckel von deinem Laptop in die Kamera, auf dem du mit Strichen Felder mit verschiedenen Preisen (z. B. 999 €, 600 €, 200 €) aufgemalt hast, sprich dabei in die Kamera, der Titel ist eingeblendet.",
+   "text": {
+    "content": "Halt direkt den Deckel von deinem Laptop in die Kamera, auf dem du mit Strichen Felder mit verschiedenen Preisen (z. B. 999 €, 600 €, 200 €) aufgemalt hast, sprich dabei in die Kamera, der Titel ist eingeblendet.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81ad-8287-f11ff91eb67b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Prepara antes la tapa del portátil: divídela en huecos con cinta de pintor o rotulador y escribe un precio en cada uno (p. ej. 200 €, 500 €, 999 €). En el hueco que «se ha vendido» pega una etiqueta con el precio que puedas despegar en «Voy a intentar quitarlo, a ver si de verdad se despega».",
+   "text": {
+    "content": "Prepara antes la tapa del portátil: divídela en huecos con cinta de pintor o rotulador y escribe un precio en cada uno (p. ej. 200 €, 500 €, 999 €). En el hueco que «se ha vendido» pega una etiqueta con el precio que puedas despegar en «Voy a intentar quitarlo, a ver si de verdad se despega».",
     "link": null
    },
    "type": "text"
@@ -18718,6 +19056,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-81bf-a35f-d033dee787ea": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
+   "text": {
+    "content": "Dès que Parakeet AI entre en jeu, filme-toi en train d’utiliser l’app sur ton ordinateur – à chaque lien dans le script. Coupe les temps de chargement.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-81c6-a5d6-fc82af690202": [
   {
    "annotations": {
@@ -18737,6 +19094,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-81cb-81bb-dd0bda021a1f": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Für den letzten Satz wieder zurück in die Kamera.",
+   "text": {
+    "content": "Für den letzten Satz wieder zurück in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-81cc-9570-ff646f395f94": [
   {
    "annotations": {
@@ -18751,6 +19127,25 @@
    "plain_text": "(Sujeta el portátil cerrado hacia la cámara, tapa dividida en casillas con precios) He puesto en venta la tapa de mi MacBook como espacio publicitario y ya tengo primer comprador. (Señala con el dedo la casilla del centro) Mira, cada cuadradito tiene su precio, y el que se han quedado es justo este. (Despega la casilla del centro de la tapa) Voy a intentar arrancarlo, a ver si se despega sin romperse... Vale, no ha quedado perfecto, pero me sirve. ¿Y quién ha pagado por él? Una herramienta de la que te hablo ahora mismo. ",
    "text": {
     "content": "(Sujeta el portátil cerrado hacia la cámara, tapa dividida en casillas con precios) He puesto en venta la tapa de mi MacBook como espacio publicitario y ya tengo primer comprador. (Señala con el dedo la casilla del centro) Mira, cada cuadradito tiene su precio, y el que se han quedado es justo este. (Despega la casilla del centro de la tapa) Voy a intentar arrancarlo, a ver si se despega sin romperse... Vale, no ha quedado perfecto, pero me sirve. ¿Y quién ha pagado por él? Una herramienta de la que te hablo ahora mismo. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81cd-88b2-f67c54cfb1e7": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Assieds-toi face caméra, ton MacBook fermé tenu devant toi avec le couvercle divisé en cases et des prix écrits dessus, et parle directement à la caméra pendant que le titre « PREMIER ACHETEUR 🤑 » s'affiche.",
+   "text": {
+    "content": "Assieds-toi face caméra, ton MacBook fermé tenu devant toi avec le couvercle divisé en cases et des prix écrits dessus, et parle directement à la caméra pendant que le titre « PREMIER ACHETEUR 🤑 » s'affiche.",
     "link": null
    },
    "type": "text"
@@ -18813,6 +19208,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-81d7-9f68-f93da72060df": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En cuanto entre Parakeet AI, grábate usando la app en el portátil – en cada enlace del guion. Corta los tiempos de carga.",
+   "text": {
+    "content": "En cuanto entre Parakeet AI, grábate usando la app en el portátil – en cada enlace del guion. Corta los tiempos de carga.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-81da-925f-d0750186c893": [
   {
    "annotations": {
@@ -18827,6 +19241,25 @@
    "plain_text": "(Ouvre le laptop) Parakeet AI a un Resume Maker qui t'aide à faire de ton CV une candidature qui colle pile au poste que tu vises. ",
    "text": {
     "content": "(Ouvre le laptop) Parakeet AI a un Resume Maker qui t'aide à faire de ton CV une candidature qui colle pile au poste que tu vises. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81e0-b6fd-f085a7edda52": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
+   "text": {
+    "content": "Sobald Parakeet AI ins Spiel kommt, filmst du dich selbst, wie du die App am Laptop nutzt – an jeder Stelle mit Link im Skript. Ladezeiten schneidest du raus.",
     "link": null
    },
    "type": "text"

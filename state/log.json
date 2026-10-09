@@ -1817,5 +1817,47 @@
   "revived": [],
   "ts": 1791558592,
   "type": "own_discovery"
+ },
+ {
+  "format": "A20261009204851",
+  "reasons": [
+   "🇩🇪 script rewritten sentence by sentence (165 words (original 155)) / script reworded again: The example names the buyer brand out loud twice: 'gekauft wurde diese",
+   "🇫🇷 script rewritten sentence by sentence (169 words (original 155)) / script reworded again: Too close to the example: about half the sentences are direct translat",
+   "🇪🇸 script rewritten sentence by sentence (160 words (original 155)) / script reworded again: Too close to the German original: about half the sentences are direct "
+  ],
+  "tries": 1,
+  "ts": 1791580000,
+  "type": "format_held"
+ },
+ {
+  "format": "A20261009204851",
+  "page_de": "3f4958b0-fc14-816d-8ac7-d4558fc728f5",
+  "pages": {
+   "es": "3f4958b0-fc14-8191-9c6a-e172e4435d96",
+   "fr": "3f4958b0-fc14-81c6-80c0-cb26c557709d"
+  },
+  "position": null,
+  "problems": [
+   "🇩🇪 script rewritten sentence by sentence (165 words (original 155)) / script reworded again: The example names the buyer brand out loud twice: 'gekauft wurde diese",
+   "🇫🇷 script rewritten sentence by sentence (169 words (original 155)) / script reworded again: Too close to the example: about half the sentences are direct translat",
+   "🇪🇸 script rewritten sentence by sentence (160 words (original 155)) / script reworded again: Too close to the German original: about half the sentences are direct "
+  ],
+  "ts": 1791580000,
+  "type": "format_built"
+ },
+ {
+  "built": "A20261009204851",
+  "format": "A20261009204851",
+  "level": "viral",
+  "position": null,
+  "problems": [
+   "🇩🇪 script rewritten sentence by sentence (165 words (original 155)) / script reworded again: The example names the buyer brand out loud twice: 'gekauft wurde diese",
+   "🇫🇷 script rewritten sentence by sentence (169 words (original 155)) / script reworded again: Too close to the example: about half the sentences are direct translat",
+   "🇪🇸 script rewritten sentence by sentence (160 words (original 155)) / script reworded again: Too close to the German original: about half the sentences are direct "
+  ],
+  "ts": 1791580000,
+  "type": "alert",
+  "video": "7692061360221457686",
+  "views": 1100000
  }
 ]

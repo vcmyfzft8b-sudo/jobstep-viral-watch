@@ -989,5 +989,34 @@
   "script": "📲 TEXTO ESCRITO ¿Cómo hacer un CV que pase los filtros ATS? 😳 💬 GUION ¿Cómo se hace un currículum que pase el filtro ATS? algunos me habeis preguntado, así que te lo dejo en tres reglas y una herramienta. Primera: olvídate de los CV súper diseñados, con fotos, barras de idiomas o gráficos. A nosotras nos encantan, pero al programa lo confunden. Cuanto más sencillo y limpio, mejor. Segunda: no te inventes los títulos de las secciones. Pon \"Experiencia\", \"Formación\", \"Habilidades\"…, que es lo que el sistema busca. Y la tercera, la que más gente falla: copia el idioma de la oferta. Si piden \"generación de leads\" y tú pusiste \"estrategias de captación\", para el ATS no es lo mismo. Y eso significa que cada oferta necesita un CV un poquito distinto. Y claro, ¿quién tiene tiempo de reescribirlo para cada oferta? Yo no. Por eso uso Parakeet AI. Pego la oferta que me interesa y me lo ajusta a ese",
   "status": "archived",
   "title": "¿CÓMO PASAR FILTROS ATS?"
+ },
+ {
+  "created": 1791578931,
+  "description": "Creator 'sells' ad spots drawn as priced fields on the back of their laptop, reveals the first buyer by cutting out and sticking on the app logo, then demos the app on the laptop screen and asks viewers to guess the next buyer.",
+  "id": "A20261009204851",
+  "page_id": "3f4958b0-fc14-816d-8ac7-d4558fc728f5",
+  "pages": {
+   "es": "3f4958b0-fc14-8191-9c6a-e172e4435d96",
+   "fr": "3f4958b0-fc14-81c6-80c0-cb26c557709d"
+  },
+  "pending": {
+   "kind": "new",
+   "reasons": [
+    "🇩🇪 script rewritten sentence by sentence (165 words (original 155)) / script reworded again: The example names the buyer brand out loud twice: 'gekauft wurde diese",
+    "🇫🇷 script rewritten sentence by sentence (169 words (original 155)) / script reworded again: Too close to the example: about half the sentences are direct translat",
+    "🇪🇸 script rewritten sentence by sentence (160 words (original 155)) / script reworded again: Too close to the German original: about half the sentences are direct "
+   ],
+   "since": 1791580000,
+   "tries": 1
+  },
+  "reworded": {
+   "de": true,
+   "es": true,
+   "fr": true
+  },
+  "script": "Ich vermiete die Rückseite von meinem Laptop als Werbefläche – und stell dir vor, der erste Käufer ist schon da. Hier siehst du jede Menge Felder mit unterschiedlichen Preisen, und genau das hier hat sich jemand geschnappt. Dann versuch ich mal, das wegzukriegen – hoffentlich geht das auch wirklich ab. Okay, passt schon, oder? Und wer hat sich das Feld geholt? Parakeet AI – dazu gleich mehr. Parakeet AI ist eine KI-Seite, und bekannt geworden ist sie vor allem dadurch, dass sie Leuten bei Lebenslauf und Bewerbung hilft. Du lädst einfach deinen Lebenslauf hoch, packst den Link zur Stellenanzeige dazu und lässt die KI alles genau auf den Job zuschneiden. Dazu kriegst du eine Bewertung, die dir zeigt, was noch fehlt, einen Chat, der dir Fragen zu dir und deinem Wunschjob stellt, und sogar Vorlagen, aus denen du dir eine aussuchst, bevor du den fertigen Lebenslauf direkt runterlädst. Also sc",
+  "source_video": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686",
+  "status": "pending",
+  "title": "Werbeplatz auf meinem Laptop verkauft 🤑"
  }
 ]

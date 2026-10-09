@@ -425,7 +425,7 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         try:
             verdict = classify.judge(v, fmts, cfg['models']['build'], transcript.get('text', ''))
         except Exception as e:
-            if 'viral_basic' not in v['notified']:
+            if 'viral_basic' not in v['notified'] and not force:  # added by hand: add_format sends its own alert
                 notify.push(title, f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – the full check + English script "
                             'will follow in the next run (6 h).', click=v['url'])
                 v['notified'].append('viral_basic')
@@ -1024,6 +1024,11 @@ def add_format(urls):
     state.save('history.json', history)
     state.save('formats.json', fmts)
     state.save('meta.json', meta)
+    if result.get('error') or not fid:  # never fail silently: an alert, and the GitHub run turns red
+        why = result.get('error') or 'no format was built (video unavailable?)'
+        notify.push('⚠️ Format NOT added', f"{first['url']}\n{why}\nNothing was built - run add_format again later.",
+                    click=first['url'])
+        raise SystemExit(f'add-format failed: {why}')
     pos = None
     if fid and next((f for f in fmts if f['id'] == fid), {}).get('status') == 'active':
         ids = rerank(mkts, fmts, history, cfg)

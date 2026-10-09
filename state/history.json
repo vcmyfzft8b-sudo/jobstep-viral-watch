@@ -14190,6 +14190,17 @@
   "views": 117500,
   "views_7d": 117500
  },
+ "7692061360221457686": {
+  "created": 1790947608,
+  "format": null,
+  "german": false,
+  "handle": "lern.mit.domi",
+  "hook": "",
+  "judged": false,
+  "mature": false,
+  "views": 1000000,
+  "views_7d": 1000000
+ },
  "7692065243706510624": {
   "created": 1790948508,
   "format": "N01",
@@ -16916,6 +16927,17 @@
   "mature": false,
   "views": 319700,
   "views_7d": 319700
+ },
+ "7693171738707807491": {
+  "created": 1791206136,
+  "format": null,
+  "german": false,
+  "handle": "lern.mit.domi",
+  "hook": "",
+  "judged": true,
+  "mature": false,
+  "views": 290800,
+  "views_7d": 290800
  },
  "7693172181454408992": {
   "created": 1791206234,

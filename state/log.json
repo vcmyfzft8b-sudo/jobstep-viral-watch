@@ -1741,5 +1741,11 @@
   ],
   "ts": 1791528417,
   "type": "rerank"
+ },
+ {
+  "error": "Claude Code: You've hit your session limit · resets 11:40am (UTC)",
+  "ts": 1791536169,
+  "type": "judge_failed",
+  "video": "7692061360221457686"
  }
 ]

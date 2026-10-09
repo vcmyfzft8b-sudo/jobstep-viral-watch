@@ -1101,6 +1101,7 @@ def main():
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
     ap.add_argument('--fill-market', default='', help='fr | es: build missing pages of active formats')
+    ap.add_argument('--reset-pending', action='store_true', help='formats waiting at the gate get their 4 tries back (after a fix), then are checked again')
     ap.add_argument('--add-format', default='', help='TikTok link(s), comma-separated: add this format by hand (any app), first link = example')
     ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
     a = ap.parse_args()
@@ -1309,6 +1310,19 @@ def main():
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)
+        return
+    if a.reset_pending:
+        cfg, fmts = load_config(), load_formats()
+        mkts = M.load(cfg)
+        history, meta, accounts = state.load('history.json', {}), state.load('meta.json', {}), state.load('accounts.json', {})
+        CTX.update({'meta': meta, 'accounts': accounts})
+        for f in fmts:
+            if f.get('status') == 'pending' and f.get('pending'):
+                f['pending']['tries'] = 0
+        state.save('formats.json', fmts)
+        gate.retry_pending(fmts, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild_page, rerank)
+        state.save('formats.json', fmts)
+        state.save('meta.json', meta)
         return
     if a.add_format:
         add_format([u for u in a.add_format.split(',') if u.strip()])

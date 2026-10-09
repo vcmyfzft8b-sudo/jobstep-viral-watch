@@ -861,7 +861,7 @@ def accounts_sync(path):
             added.append(h)
     for h in tracked:
         v = verdicts.get(h, {})
-        if v.get('verdict') in ('other_app', 'not_ugc') and h != 'jobstep.io':
+        if v.get('verdict') in ('other_app', 'not_ugc') and h != 'jobstep.io' and not accounts[h].get('added_format'):
             accounts[h].update({'status': 'inactive', 'blocked': True,
                                 'blocked_reason': f"{v['verdict']}: {v.get('other_app') or ''} {v.get('reason') or ''}".strip()})
             blocked.append((h, v))
@@ -1006,6 +1006,12 @@ def add_format(urls):
         vids.append(d)
     if not vids:
         raise SystemExit('add-format: no video available')
+    for h in dict.fromkeys(v['handle'] for v in vids):  # its creators are followed from now on: their new videos keep
+        a = accounts.get(h) or {}                          # moving the format on the list (never paused or blocked)
+        accounts[h] = {**a, 'status': 'manual', 'source': a.get('source') or 'added-by-hand', 'since': a.get('since', int(now)),
+                       'lang': a.get('lang') or discover.language(h), 'added_format': True}
+        accounts[h].pop('blocked', None)
+    state.save('accounts.json', accounts)
     german = {v['handle'] for v in vids if discover.language(v['handle']) == 'de'}
     for v in vids:
         to_history(history, v, german, now)

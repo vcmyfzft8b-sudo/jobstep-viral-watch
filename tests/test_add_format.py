@@ -31,9 +31,12 @@ class AddFormatTests(unittest.TestCase):
                 mock.patch.object(main, 'rerank', return_value=['NEW', 'OLD']) as rerank:
             main.add_format(['https://www.tiktok.com/@lern.mit.domi/video/1', 'https://www.tiktok.com/@lern.mit.domi/video/2'])
             history = state.load('history.json', {})
+            accounts = state.load('accounts.json', {})
         self.assertEqual({history['1']['format'], history['2']['format']}, {'NEW'})
         self.assertTrue(history['2']['judged'] and history['1']['german'])
         rerank.assert_called_once()
+        self.assertEqual(accounts['lern.mit.domi']['status'], 'manual')  # followed from now on, never paused
+        self.assertTrue(accounts['lern.mit.domi']['added_format'])
 
 
 if __name__ == '__main__':

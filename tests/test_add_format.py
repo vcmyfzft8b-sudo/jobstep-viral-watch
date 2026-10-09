@@ -41,3 +41,21 @@ class AddFormatTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class AddFormatFailureTests(unittest.TestCase):
+    def test_a_failed_build_alerts_and_exits_non_zero(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        video = {'id': '1', 'handle': 'a', 'created': 1, 'views': 10, 'shares': 0, 'saves': 0, 'url': 'https://www.tiktok.com/@a/video/1'}
+        with mock.patch.object(state, 'DIR', tmp.name), \
+                mock.patch.object(main, 'load_config', return_value={'markets': {}, 'notion': {}}), \
+                mock.patch.object(main.M, 'load', return_value=[]), mock.patch.object(main, 'load_formats', return_value=[]), \
+                mock.patch.object(main.tiktok, 'video_detail', return_value=dict(video)), \
+                mock.patch.object(main.discover, 'language', return_value=''), \
+                mock.patch.object(main, 'handle_viral', return_value={'video': '1', 'error': 'session limit'}), \
+                mock.patch.object(main.notify, 'push') as push:
+            with self.assertRaises(SystemExit) as e:
+                main.add_format(['https://www.tiktok.com/@a/video/1'])
+        self.assertIn('session limit', str(e.exception))
+        push.assert_called_once()

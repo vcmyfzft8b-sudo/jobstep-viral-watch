@@ -80,3 +80,18 @@ class OriginalSubtitleTests(unittest.TestCase):
             d = main.tiktok.video_detail('a', '1')
         self.assertEqual(got, ['asr'])
         self.assertEqual(d['subtitles'], 'Hallo')
+
+
+class ReviveTests(unittest.TestCase):
+    def test_a_format_coming_back_from_the_archive_gets_fresh_attempts(self):
+        fmt = {'id': 'F', 'status': 'archived', 'title': 't', 'pending': {'tries': 4, 'kind': 'new', 'reasons': ['old']}}
+        seen = {}
+
+        def gate(f, *a, **k):
+            seen['pending'] = dict(f.get('pending') or {})
+            return False, None, ['still failing']
+        with mock.patch.object(main, 'page_of', return_value=None), mock.patch.object(main, 'make_page', return_value=(None, {}, ['x'])), \
+                mock.patch.object(main, '_gate', side_effect=gate), mock.patch.object(main.state, 'log'), \
+                mock.patch.object(main, 'set_format'):
+            main.revive_format(fmt, {'id': '1', 'url': 'u', 'views': 1}, [], [fmt], {}, {'notion': {'radar_page': 'r'}})
+        self.assertEqual(seen['pending'], {})

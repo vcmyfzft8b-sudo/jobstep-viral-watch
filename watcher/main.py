@@ -593,6 +593,7 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
     """Archived format went viral again: its pages are refreshed where they are (still in the archive, invisible in
     the lists), missing markets are built in the staging page, then the quality gate checks every page. Only if all
     pass do they move into the format folders and the format is listed again. Returns (published, position, reasons)."""
+    fmt.pop('pending', None)  # a comeback starts with fresh quality-check attempts (old ones led to the archive)
     for mk in mkts:
         m = mk['key']
         pid = page_of(fmt, m)

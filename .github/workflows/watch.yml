@@ -22,6 +22,10 @@ on:
         description: 'Optional: id of a DACH hot announcement -> rewrite it with the current text (no new ping)'
         required: false
         default: ''
+      add_format:
+        description: 'Optional: TikTok link(s), comma-separated -> add this format by hand (any app; first link = example video)'
+        required: false
+        default: ''
       test_video:
         description: 'Optional: TikTok video URL -> build a TEST format page into the private radar page (nothing public)'
         required: false
@@ -94,7 +98,9 @@ jobs:
           TEST_VIRAL: ${{ github.event.inputs.test_viral }}
           DISCORD_MESSAGE_ID: ${{ github.event.inputs.discord_message_id }}
           EXAMPLE: ${{ github.event.inputs.example }}
+          ADD_FORMAT: ${{ github.event.inputs.add_format }}
         run: |
+          if [ -n "$ADD_FORMAT" ]; then python -m watcher.main --add-format "$ADD_FORMAT"; exit 0; fi
           if [ -n "$EXAMPLE" ]; then python -m watcher.main --set-example "$EXAMPLE"; exit 0; fi
           if [ -n "$DISCORD_MESSAGE_ID" ]; then python -m watcher.main --edit-discord "$DISCORD_MESSAGE_ID"; exit 0; fi
           if [ -n "$TEST_VIRAL" ]; then python -m watcher.main --test-viral "$TEST_VIRAL"; exit 0; fi

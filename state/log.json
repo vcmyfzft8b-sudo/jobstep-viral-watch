@@ -1747,5 +1747,75 @@
   "ts": 1791536169,
   "type": "judge_failed",
   "video": "7692061360221457686"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791554900,
+  "type": "alert",
+  "video": "7694383325053455638",
+  "views": 25200
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791554903,
+  "type": "alert",
+  "video": "7694294590358129952",
+  "views": 21700
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791554909,
+  "type": "alert",
+  "video": "7694572258936786198",
+  "views": 17900
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791554916,
+  "type": "alert",
+  "video": "7694615419709099296",
+  "views": 10700
+ },
+ {
+  "order": [
+   "N10",
+   "N01",
+   "X16",
+   "A202610061334",
+   "X08",
+   "A202610061328",
+   "X13",
+   "A20261006183623",
+   "N07",
+   "N02",
+   "X03",
+   "ESX11",
+   "X15",
+   "N03",
+   "A202610061331",
+   "N04"
+  ],
+  "ts": 1791556272,
+  "type": "rerank"
+ },
+ {
+  "added": [
+   "laraworking"
+  ],
+  "paused": [
+   "avazdagbok"
+  ],
+  "revived": [],
+  "ts": 1791558379,
+  "type": "discovery"
+ },
+ {
+  "added": [
+   "kerstinxugc"
+  ],
+  "paused": [],
+  "revived": [],
+  "ts": 1791558592,
+  "type": "own_discovery"
  }
 ]

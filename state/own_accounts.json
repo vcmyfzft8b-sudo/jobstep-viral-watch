@@ -11,6 +11,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "ailecaraujobs": {
+  "market": "es",
+  "since": 1791552236,
+  "source": "megasheet",
+  "status": "active"
+ },
  "alex_ugc01": {
   "market": "fr",
   "since": 1791465487,
@@ -50,6 +56,12 @@
  "aureknowsintervie": {
   "market": "fr",
   "since": 1791465487,
+  "source": "megasheet",
+  "status": "active"
+ },
+ "beatriz.jobs": {
+  "market": "es",
+  "since": 1791552236,
   "source": "megasheet",
   "status": "active"
  },
@@ -93,7 +105,7 @@
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "clara_job2026_": {
   "market": "fr",
@@ -273,6 +285,12 @@
   "market": "de",
   "since": 1791324501,
   "source": "megasheet",
+  "status": "active"
+ },
+ "kerstinxugc": {
+  "market": "de",
+  "since": 1791558585,
+  "source": "lightreel",
   "status": "active"
  },
  "kimy.businessthings": {

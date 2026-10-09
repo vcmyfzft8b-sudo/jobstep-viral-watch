@@ -130,6 +130,9 @@ def video_detail(handle, video_id):
     sticker = ' / '.join(t for st in (item.get('stickersOnItem') or []) for t in st.get('stickerText', []))
     subtitles = ''
     infos = item.get('video', {}).get('subtitleInfos') or []
+    # TikTok often lists its machine translation (Source "MT", in the viewer's language) first - the original speech is
+    # the "ASR" track. Scripts and brand counts must follow what is really said.
+    infos = sorted(infos, key=lambda s: s.get('Source') != 'ASR')
     if infos:
         vtt = _get(infos[0]['Url'], tries=1) or ''
         subtitles = ' '.join(line for line in vtt.splitlines()

@@ -991,6 +991,7 @@
   "title": "¿CÓMO PASAR FILTROS ATS?"
  },
  {
+  "archived_reason": "did not pass the page check: 🇪🇸 script rewritten sentence by sentence (163 words (original 155)) / script reworded again: Several sentences are near-direct translations of the German original,",
   "created": 1791578931,
   "description": "Creator 'sells' ad spots drawn as priced fields on the back of their laptop, reveals the first buyer by cutting out and sticking on the app logo, then demos the app on the laptop screen and asks viewers to guess the next buyer.",
   "id": "A20261009204851",
@@ -1002,10 +1003,10 @@
   "pending": {
    "kind": "new",
    "reasons": [
-    "cross-country check fail: directions_match de: Part of a stage direction ('– siehe Ressourcen)') has leaked into the spoken reveal line before 'Gekauft hat das Feld übrigens Parakeet AI', so the creator would read it out. Also, 'Sobald Parakeet AI ins Spiel kommt, klappst du den Laptop auf' is ambiguous: the brand is first s"
+    "🇪🇸 script rewritten sentence by sentence (163 words (original 155)) / script reworded again: Several sentences are near-direct translations of the German original,"
    ],
    "since": 1791580000,
-   "tries": 3
+   "tries": 4
   },
   "reworded": {
    "de": true,
@@ -1014,7 +1015,7 @@
   },
   "script": "Ich vermiete die Rückseite von meinem Laptop als Werbefläche – und stell dir vor, der erste Käufer ist schon da. Hier siehst du jede Menge Felder mit unterschiedlichen Preisen, und genau das hier hat sich jemand geschnappt. Dann versuch ich mal, das wegzukriegen – hoffentlich geht das auch wirklich ab. Okay, passt schon, oder? Und wer hat sich das Feld geholt? Parakeet AI – dazu gleich mehr. Parakeet AI ist eine KI-Seite, und bekannt geworden ist sie vor allem dadurch, dass sie Leuten bei Lebenslauf und Bewerbung hilft. Du lädst einfach deinen Lebenslauf hoch, packst den Link zur Stellenanzeige dazu und lässt die KI alles genau auf den Job zuschneiden. Dazu kriegst du eine Bewertung, die dir zeigt, was noch fehlt, einen Chat, der dir Fragen zu dir und deinem Wunschjob stellt, und sogar Vorlagen, aus denen du dir eine aussuchst, bevor du den fertigen Lebenslauf direkt runterlädst. Also sc",
   "source_video": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686",
-  "status": "pending",
+  "status": "archived",
   "title": "Werbeplatz auf meinem Laptop verkauft 🤑"
  }
 ]

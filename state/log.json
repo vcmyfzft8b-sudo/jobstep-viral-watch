@@ -1947,5 +1947,36 @@
   ],
   "ts": 1791586429,
   "type": "rerank"
+ },
+ {
+  "format": "A20261009204851",
+  "reasons": [
+   "🇪🇸 script rewritten sentence by sentence (163 words (original 155)) / script reworded again: Several sentences are near-direct translations of the German original,"
+  ],
+  "tries": 4,
+  "ts": 1791587493,
+  "type": "format_held"
+ },
+ {
+  "order": [
+   "N10",
+   "N01",
+   "X16",
+   "A202610061334",
+   "X08",
+   "A202610061328",
+   "X13",
+   "N07",
+   "N02",
+   "A20261006183623",
+   "X03",
+   "ESX11",
+   "N03",
+   "X15",
+   "A202610061331",
+   "N04"
+  ],
+  "ts": 1791587882,
+  "type": "rerank"
  }
 ]

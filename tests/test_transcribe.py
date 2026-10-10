@@ -76,3 +76,18 @@ def test_fix_directions_refuses_long_hook(monkeypatch):
     monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: {'hook': 'Eins. Zwei. Drei.'})
     monkeypatch.setattr(notion, 'api', lambda *a, **k: (_ for _ in ()).throw(AssertionError('must not write')))
     assert reword.fix_directions({'id': 'X'}, 'page', 'de', 'sonnet')[0] == 'skipped'
+
+
+def test_old_line_mentioning_the_lab_is_a_direction(monkeypatch):
+    blocks = [notion.block('heading_2', [notion.rt(TEXT['de']['hook_h'])]),
+              notion.para([notion.rt('Such dir einen Hook aus dem Visual Hook Lab aus.')]),
+              notion.para([notion.rt('Starte als Selfie.')]),
+              notion.para([notion.rt(TEXT['de']['required_line'])]),
+              notion.para([notion.rt('Visual Hook Lab', link='https://notion.so/lab')]),
+              notion.divider()]
+    for b in blocks:
+        for x in b.get(b['type'], {}).get('rich_text', []):
+            x['plain_text'] = x['text']['content']
+    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    assert [_plain(b) for b in reword.direction_blocks('page')] == [
+        'Such dir einen Hook aus dem Visual Hook Lab aus.', 'Starte als Selfie.']

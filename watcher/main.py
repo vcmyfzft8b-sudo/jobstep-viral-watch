@@ -1089,7 +1089,8 @@ def main():
     ap.add_argument('--audit-failed', action='store_true', help='audit only the pages that did not pass last time')
     ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
     ap.add_argument('--accounts-add', default='', help='JSON file of checked accounts to add (with evidence)')
-    ap.add_argument('--align', action='store_true', help='rewrite every script sentence by sentence against its example')
+    ap.add_argument('--align', action='store_true', help='transcribe every script from its example + short visual hook')
+    ap.add_argument('--short-hooks', action='store_true', help='shorten every visual hook section that has more than one line')
     ap.add_argument('--set-example', default='', help='FORMAT_ID:market:tiktok_url - put this example video on that page')
     ap.add_argument('--group-audit', action='store_true', help='cross-country check of all formats (report only)')
     ap.add_argument('--group-fix', action='store_true', help='cross-country check + automatic repairs of failing groups')
@@ -1246,6 +1247,14 @@ def main():
         meta.setdefault('audit', {}).pop(f'{fid}:{m}', None)
         state.save('meta.json', meta)
         state.save('formats.json', fmts)
+        return
+    if a.short_hooks:
+        cfg = load_config()
+        rep = reword.shorten_hooks(load_formats(), M.load(cfg), cfg, page_of)
+        bad = [r for r in rep if r[2] not in ('ok',)]
+        notify.push('🎬 Visual hooks shortened', f"{sum(1 for r in rep if r[3] == '')} pages shortened, "
+                    f"{sum(1 for r in rep if r[3] == 'already short')} already short"
+                    + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
         return
     if a.align:
         cfg = load_config()

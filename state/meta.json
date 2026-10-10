@@ -2975,7 +2975,7 @@
   "zorica.djurdjevic21": ""
  },
  "hot": {},
- "last_run": 1791611946,
+ "last_run": 1791635942,
  "manual_review": {
   "approved_german_exact": 11,
   "checked_at": "2026-10-07T15:58:35.104117+00:00",
@@ -2993,8 +2993,8 @@
  },
  "top3": [
   "N10",
-  "N01",
-  "X16"
+  "X16",
+  "N01"
  ],
  "video_hashes": {
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/000ece9a-4c09-4032-8ce9-a20be54ff78f/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",

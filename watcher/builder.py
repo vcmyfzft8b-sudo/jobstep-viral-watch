@@ -14,50 +14,55 @@ from .markets import TEXT
 INSPO_NOTE = TEXT['de']['inspo_note']
 REQUIRED_LINE = TEXT['de']['required_line']
 
+TRANSCRIBE = """- The SCRIPT IS THE ORIGINAL'S OWN WORDS - never reword it:
+  * original in {lang}: the script is the original's transcript, word for word (fix only obvious speech-to-text
+    mistakes; filler like "ähm" may go);
+  * original in another language: translate it faithfully and closely, sentence by sentence, into natural spoken
+    {lang} ({style}) - no rewording beyond what the translation needs; adapt country-specific things (job sites,
+    companies, places) to {country}.
+  Same sentences, same order, add nothing, drop nothing. The ONLY changes:
+  * JobStep -> "Parakeet AI" exactly where (and as often as) the original names it, jobstep.io ->
+    parakeet-ai.com/resume-maker. If the original only shows the app ("this tool here"), only show it too. The words
+    "JobStep" or "Job Step" must not appear anywhere in your output.
+  * a JobStep feature Parakeet AI does not have -> the closest Parakeet AI feature (change as few words as possible);
+  * concrete scores/percentages the app shows -> X (before) and Y (after) - creators read their own numbers;
+  * a promise nobody can guarantee (e.g. "guaranteed job in 24h") -> the smallest change that makes it honest
+    ("better chances")."""
+
+VISUAL_HOOK = """1-2 short sentences (no more) on the visual hook: if the original does something specific in
+  its first seconds (an action, a prop, a place, a text on screen), tell the creator to copy exactly that, like in the
+  example video; if it does nothing special, tell them to pick a hook from the Visual Hook Lab (linked right below)."""
+
 SYSTEM = """You write creator instructions for Parakeet AI (an AI CV maker, https://www.parakeet-ai.com/resume-maker)
-UGC campaigns. You adapt viral videos made by JobStep creators (a competing CV app) into the same format for
-Parakeet AI, in the creators' language. Reply with JSON only."""
+UGC campaigns. You turn viral videos made by JobStep creators (a competing CV app) into the same video for Parakeet AI:
+the script is the original's transcript (translated if needed), only with Parakeet AI instead of JobStep. Reply with
+JSON only."""
 
 RULES = """RULES
-- Output language for ALL creator-facing text (page_title, title_hook, script, visual_hook_first, extra_hook_lines,
-  asset names/descriptions, directions): {lang}. Script style: {style}. Mirror the original SENTENCE BY SENTENCE:
-  exactly one sentence of ours per sentence of the original, same order, about the same length - the whole script at
-  most 110% of the original speech, add nothing. Same meaning, but build every sentence differently (other word
-  order, question instead of statement, other words) - never a 1:1 transcription or literal translation, even more
-  so when the original is already in {lang}. Name "Parakeet AI" exactly where (and as often as) the original names
-  JobStep; if the original only shows the app ("this tool here"), only show it too. A website/call to action at the
-  end only if the original has one. Keep the hook idea and on-screen title punchy. The example pages below are German
-  - copy their STYLE and STRUCTURE, but write in {lang}.
-- Replace JobStep with Parakeet AI everywhere (jobstep.io -> parakeet-ai.com/resume-maker). The words "JobStep" or
-  "Job Step" must not appear anywhere in your output.
-- Concrete scores/percentages the app shows become X (before) and Y (after) - creators read their own numbers.
-- Adapt country-specific things to {country} (job sites, companies, places) when the original names local ones.
-- Tone down promises nobody can guarantee (e.g. "guaranteed job in 24h").
+- Output language for ALL creator-facing text (page_title, title_hook, script, visual_hook_first, asset
+  names/descriptions, directions): {lang}.
+""" + TRANSCRIBE + """
 - Every moment where the original video SHOWS the CV app on screen gets cue "parakeet". Where it shows LinkedIn job
-  search, cue "linkedin". Plain stage directions (e.g. surprised reaction, music) use cue "direction" with the
-  direction as text in asset_name. Otherwise cue null. Put the cue on the segment where that screen starts.
+  search, cue "linkedin". Plain stage directions (e.g. surprised reaction, music, "open google.com") use cue
+  "direction" with the direction as text in asset_name. Otherwise cue null. Put the cue on the segment where that
+  screen starts.
 - CVs are NEVER assets: creators show their own old CV and the CV they make in Parakeet AI (cue "parakeet").
 - Public websites/apps the creator can simply open and film (a discount page, a job board, Google) are NOT assets:
-  use cue "direction" with a short direction and add one extra_hook_lines entry with the exact page to open.
+  use cue "direction" with the exact page to open as asset_name.
 - Only things a creator cannot make or open themselves count as assets (cue "asset", e.g. an email inbox full of
-  interview invites). For every asset, add one extra_hook_lines entry that says how to show it.
-- Address creators neutrally (informal "you"), never with a gendered word for "creator".
+  interview invites).
 - No voiceover videos (only on-screen text + music): set voiceover=false; each script segment is one text overlay.
-- title_hook: the on-screen hook/title of the original, adapted to punchy {lang} (keep caps/emojis style).
+- title_hook: the original's on-screen hook/title - word for word if it is in {lang}, else translated (keep
+  caps/emojis style), JobStep -> Parakeet AI.
 - page_title: short {lang} hook for the Notion page name + one emoji at the end.
-- visual_hook_first: one sentence telling the creator what to do in the first seconds, based on what the original
-  creator does in the first 3 seconds (action/prop + speaking to camera + title on screen).
-- return_to_camera: true if the original goes back to talking to the camera for the last line(s).
-- extra_hook_lines: 0-2 extra lines only if the original needs special filming instructions. Never mention X/Y scores
-  or going back to the camera at the end (both are added automatically). Every direction must refer to a line that is
-  really in YOUR script (quote your own wording, not the original's). Never repeat the standard
-  line about filming Parakeet AI on the laptop at every link and cutting loading times - it is added automatically."""
+- Address creators neutrally (informal "you"), never with a gendered word for "creator".
+- visual_hook_first: """ + VISUAL_HOOK
 
 PARAKEET_FACTS = """What Parakeet AI's Resume Maker can do (only show/mention these): upload your CV, get a score/analysis,
 paste the link (or text) of a job ad, answer questions in a chat, let the AI rewrite/tailor the CV to the job, pick a
 template, edit everything yourself, download it. It does NOT have: an overview of your applications, a "New job"
 button, cover letters. If the original shows a JobStep feature Parakeet AI doesn't have, replace that sentence with an
-equivalent step that exists (keep the sentence count).""" + OTHER_NOTE
+equivalent step that exists (keep the sentence count, change as few words as possible).""" + OTHER_NOTE
 
 
 COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
@@ -65,7 +70,7 @@ COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
 SCHEMA = """Return JSON:
 {"page_title": "...", "icon": "<one emoji>", "title_hook": "...", "voiceover": true,
  "script": [{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "...", "new_paragraph": false}],
- "visual_hook_first": "...", "return_to_camera": true, "extra_hook_lines": [],
+ "visual_hook_first": "<1-2 short sentences>",
  "has_scores": false, "assets_needed": [{"name": "...", "description": "<what it must show>"}],
  "registry_description": "<one English sentence describing the format, for matching future videos>",
  "summary_en": "<2 sentences: what the original video does and why it works>"}"""
@@ -84,7 +89,7 @@ def build_spec(video, transcript, frames, model, lang='de', feedback=''):
     T = TEXT[lang]
     rules = RULES.format(lang=T['lang_name'], style=T['style'], country=COUNTRY[lang])
     timed = '\n'.join(f"[{s['start']:.1f}-{s['end']:.1f}s] {s['text']}" for s in transcript.get('segments', [])) or '(no speech)'
-    content = [{'type': 'text', 'text': f"""Our existing pages (German - follow this style and structure, write in {T['lang_name']}):
+    content = [{'type': 'text', 'text': f"""Our existing pages (German - follow their structure (cues, title, page layout), write in {T['lang_name']}):
 {_examples()}
 
 {rules}
@@ -112,33 +117,9 @@ seconds (red). Use them to see the visual hook, what is shown on screen and when
 
 
 def hook_lines(spec, lang='de'):
-    T = TEXT[lang]
-    cues = {s.get('cue') for s in spec.get('script', [])}
-    lines = [spec['visual_hook_first']]
-    app = T['app_line'] if 'parakeet' in cues else ''
-    if 'linkedin' in cues:
-        app = T['linkedin_line'] + app
-    if app.strip():
-        lines.append(app.strip())
-    text = ' '.join(s['text'] for s in spec.get('script', []))
-    has_x, has_y = bool(re.search(r'\bX\b', text)), bool(re.search(r'\bY\b', text))
-    # the model's own extra lines must not repeat the standard lines (scores / back to camera)
-    extra = [l for l in spec.get('extra_hook_lines', [])
-             if not re.search(r'\bX\b|\bY\b', l) and not (spec.get('return_to_camera') and _similar(l, T['return_line']))]
-    lines += extra
-    if spec.get('return_to_camera'):
-        lines.append(T['return_line'])
-    if has_x or has_y:
-        line = T['scores_line']
-        if not (has_x and has_y):  # only one score in the script -> only name that one
-            line = re.sub(r'X\s+(und|et|e|y)\s+Y', 'X' if has_x else 'Y', line)
-        lines.append(line)
-    return lines
-
-
-def _similar(a, b):
-    wa, wb = set(re.findall(r'\w{4,}', a.lower())), set(re.findall(r'\w{4,}', b.lower()))
-    return bool(wa and wb) and len(wa & wb) / min(len(wa), len(wb)) >= 0.5
+    """The visual hook section: 1-2 short sentences (copy the example's opening, or pick one from the Visual Hook Lab).
+    The Visual Hook Lab link itself is added below by the page layout."""
+    return [spec['visual_hook_first'].strip()] if spec.get('visual_hook_first', '').strip() else []
 
 
 # Letters that must not appear in the finished text (leftovers from Balkan/Polish/Czech originals).
@@ -154,7 +135,6 @@ def validate(spec, transcript, lang='de'):
             problems.append(f'missing {key}')
     texts = [spec.get('page_title', ''), spec.get('title_hook', ''), spec.get('visual_hook_first', '')]
     texts += [s.get('text', '') + ' ' + (s.get('asset_name') or '') for s in spec.get('script', [])]
-    texts += spec.get('extra_hook_lines', [])
     blob = ' '.join(texts)
     if SOURCE_RE.search(blob):
         problems.append('"JobStep" appears in the page text')
@@ -168,8 +148,12 @@ def validate(spec, transcript, lang='de'):
     new_words = sum(len(s.get('text', '').split()) for s in spec.get('script', []))
     if spec.get('voiceover', True) and orig_words >= 20:
         ratio = new_words / orig_words
-        if not 0.8 <= ratio <= 1.12:
-            problems.append(f'script length is {ratio:.0%} of the original (allowed 80–110%)')
+        same = (transcript.get('language') or '')[:2] == lang  # a translation may need a few more words
+        top, allowed = (1.12, '110%') if same else (1.25, '125%')
+        if not 0.8 <= ratio <= top:
+            problems.append(f'script length is {ratio:.0%} of the original (allowed 80–{allowed})')
+    if len(re.findall(r'[.!?](\s|$)', spec.get('visual_hook_first', '').strip())) > 2:
+        problems.append('visual hook is longer than 2 sentences')
     if not any(s.get('cue') == 'parakeet' for s in spec.get('script', [])):
         problems.append('no Parakeet AI moment in the script')
     return problems

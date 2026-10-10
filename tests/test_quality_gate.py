@@ -70,7 +70,7 @@ class QualityGateTests(unittest.TestCase):
         self.patch(localize, 'example_text', return_value='ON-SCREEN: Tool\nSPEECH: ' + 'Original Satz. ' * 30)
         self.patch(audit.tiktok, 'video_detail', return_value={'views': 20000})
         self.patch(notion, 'children', return_value=blocks or page())
-        verdict = {k: True for k in ('example_same_format', 'script_follows_example', 'script_reworded',
+        verdict = {k: True for k in ('example_same_format', 'script_follows_example', 'script_faithful',
                                     'script_ok', 'directions_ok', 'title_ok')}
         verdict.update(example_language='German', script_issues=[], direction_issues=[], example_issue='')
         self.llm.side_effect = None
@@ -336,7 +336,7 @@ class QualityGateTests(unittest.TestCase):
         self.patch(notion, 'children', return_value=blocks)
         self.patch(localize, 'current_source', return_value={'video': video['id'], 'url': None})
         self.llm.side_effect = None
-        self.llm.return_value = {k: True for k in ('example_same_format', 'script_follows_example', 'script_reworded',
+        self.llm.return_value = {k: True for k in ('example_same_format', 'script_follows_example', 'script_faithful',
                                                   'script_ok', 'directions_ok', 'title_ok')}
         self.llm.return_value.update(example_language='Spanish', script_issues=[], direction_issues=[], example_issue='')
         return blocks, record

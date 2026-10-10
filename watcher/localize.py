@@ -158,7 +158,7 @@ def add_section(page_id, d, lang):
 
 
 def example_text(url, page_id=None):
-    """What is said / written in an example video (TikTok subtitles, else Soniox), for rewording against it."""
+    """What is said / written in an example video (TikTok subtitles, else Soniox), for transcribing it into a script."""
     if page_id:
         record = verified_embedded_example(page_id, source_url=url)
         if record:
@@ -214,6 +214,16 @@ def set_note(page_id, lang, same_lang, own=False):
             notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
                 notion.inspo_note(lang, same_lang, own)))}})
             return
+
+
+def refresh_note(page_id, lang):
+    """Rewrite the ⚠️ note in the current wording, keeping its kind (same-language example or not, JobStep line or not)."""
+    note = next((''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', [])) for b in notion.children(page_id)
+                 if b['type'] == 'callout' and '⚠' in str(b['callout'].get('icon'))), '')
+    if not note:
+        return
+    same = note.replace('**', '')[:30] == TEXT[lang]['inspo_note_same'].replace('**', '')[:30]
+    set_note(page_id, lang, same, own='JobStep' not in note)
 
 
 def finish(f, m, pid, lang, url, cfg):

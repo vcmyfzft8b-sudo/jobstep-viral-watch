@@ -5658,6 +5658,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8102-b6a0-d34fdba9d654": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Fíjate en el cambio», enseña el CV antiguo y el nuevo uno al lado del otro.",
+   "text": {
+    "content": "En «Fíjate en el cambio», enseña el CV antiguo y el nuevo uno al lado del otro.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8103-acad-e2916fefdbdd": [
   {
    "annotations": {
@@ -5672,6 +5691,25 @@
    "plain_text": "Sans parler, réagis environ 3 secondes face caméra : d'abord la main sur le front, l'air dépité, puis la main sur la bouche, choqué·e. Le titre POV est affiché à l'écran et une musique de la bibliothèque de la plateforme tourne en fond.",
    "text": {
     "content": "Sans parler, réagis environ 3 secondes face caméra : d'abord la main sur le front, l'air dépité, puis la main sur la bouche, choqué·e. Le titre POV est affiché à l'écran et une musique de la bibliothèque de la plateforme tourne en fond.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8104-849d-d80441bcaec3": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Si pasas de dejarte media vida mandando candidaturas, guárdate este vídeo ya mismo», sigue con las gafas puestas, señala a la cámara y remarca bien lo de guardar el vídeo.",
+   "text": {
+    "content": "En «Si pasas de dejarte media vida mandando candidaturas, guárdate este vídeo ya mismo», sigue con las gafas puestas, señala a la cámara y remarca bien lo de guardar el vídeo.",
     "link": null
    },
    "type": "text"
@@ -6108,6 +6146,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8115-910f-f84f20e64742": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Gesto de complicidad a cámara», mira a cámara y haz un gesto cómplice, como un guiño o una sonrisa, mientras sigues comiendo.",
+   "text": {
+    "content": "En «Gesto de complicidad a cámara», mira a cámara y haz un gesto cómplice, como un guiño o una sonrisa, mientras sigues comiendo.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8116-b5b7-db7a8029e29a": [
   {
    "annotations": {
@@ -6179,6 +6236,25 @@
    "plain_text": "Au passage « Tu ouvres ce site », filme l'écran de ton laptop au téléphone ; affiche « Parakeet AI · Resume Maker » en sous-titre, sans le prononcer, puis montre les questions et la note réelle.",
    "text": {
     "content": "Au passage « Tu ouvres ce site », filme l'écran de ton laptop au téléphone ; affiche « Parakeet AI · Resume Maker » en sous-titre, sans le prononcer, puis montre les questions et la note réelle.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-811b-9d92-d173aba8795c": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Zoome sur la rubrique expériences », fais un gros plan sur cette rubrique du CV pour qu'on lise les résultats concrets et chiffrés sous chaque job.",
+   "text": {
+    "content": "Sur « Zoome sur la rubrique expériences », fais un gros plan sur cette rubrique du CV pour qu'on lise les résultats concrets et chiffrés sous chaque job.",
     "link": null
    },
    "type": "text"
@@ -6418,6 +6494,25 @@
    "plain_text": "Tras contar que una IA revisa el CV, pon cara de susto con la mano en la frente.",
    "text": {
     "content": "Tras contar que una IA revisa el CV, pon cara de susto con la mano en la frente.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8123-bce1-f228c88b3e53": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Am Anfang filmst du dich in der Selfie-Kamera, wie du ungläubig ins Handy schaust.",
+   "text": {
+    "content": "Am Anfang filmst du dich in der Selfie-Kamera, wie du ungläubig ins Handy schaust.",
     "link": null
    },
    "type": "text"
@@ -7476,6 +7571,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8141-83e5-de5cf0f1c2d6": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Antes de subirlo, enseña en el portátil tu CV antiguo tal y como lo tenías.",
+   "text": {
+    "content": "Antes de subirlo, enseña en el portátil tu CV antiguo tal y como lo tenías.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8141-8af0-c10559b2f487": [
   {
    "annotations": {
@@ -7638,6 +7752,25 @@
    "plain_text": "2. Va sur ce site ",
    "text": {
     "content": "2. Va sur ce site ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8145-9b65-e03419dd099a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pour l'étape 3, colle le lien de l'annonce dans Parakeet AI et montre le CV réécrit pour ce job, avec « Résultat : un CV de rêve 😍 » à l'écran.",
+   "text": {
+    "content": "Pour l'étape 3, colle le lien de l'annonce dans Parakeet AI et montre le CV réécrit pour ce job, avec « Résultat : un CV de rêve 😍 » à l'écran.",
     "link": null
    },
    "type": "text"
@@ -9227,6 +9360,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8163-a631-da31926c9fdd": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Filme die Selfie-Teile (Einstieg, Erklärung der Freundin aus dem Personalbereich, Schlussempfehlung) direkt in die Kamera in deinem Zimmer.",
+   "text": {
+    "content": "Filme die Selfie-Teile (Einstieg, Erklärung der Freundin aus dem Personalbereich, Schlussempfehlung) direkt in die Kamera in deinem Zimmer.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8163-b9bc-fdc70c7c0e40": [
   {
    "annotations": {
@@ -9780,6 +9932,25 @@
    "plain_text": "Die Seite: parakeet-ai.com/resume-maker ",
    "text": {
     "content": "Die Seite: parakeet-ai.com/resume-maker ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-8170-8776-f2c2327ad352": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «me fui al chat con la IA, contesté un par de preguntas», enseña en pantalla el chat de la app con tus respuestas.",
+   "text": {
+    "content": "En «me fui al chat con la IA, contesté un par de preguntas», enseña en pantalla el chat de la app con tus respuestas.",
     "link": null
    },
    "type": "text"
@@ -11644,6 +11815,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-8192-b459-f5be29dae466": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Empieza sosteniendo la libreta en la mano mientras hablas a cámara.",
+   "text": {
+    "content": "Empieza sosteniendo la libreta en la mano mientras hablas a cámara.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-8192-b735-c54033bef036": [
   {
    "annotations": {
@@ -12104,6 +12294,25 @@
    "plain_text": "Y te salen solo las ofertas que se publicaron hace menos de 1 hora ",
    "text": {
     "content": "Y te salen solo las ofertas que se publicaron hace menos de 1 hora ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81a3-a426-ca24db3eb7c1": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pendant la phrase sur le chat, montre le chat qui te pose des questions sur tes anciens postes et quelques-unes de tes réponses, puis le CV compatible ATS terminé à l'écran.",
+   "text": {
+    "content": "Pendant la phrase sur le chat, montre le chat qui te pose des questions sur tes anciens postes et quelques-unes de tes réponses, puis le CV compatible ATS terminé à l'écran.",
     "link": null
    },
    "type": "text"
@@ -12633,6 +12842,44 @@
    "plain_text": ") Je vais encore le retoucher un peu pour qu'il sonne vraiment comme moi, mais niveau format, c'est parfait. ",
    "text": {
     "content": ") Je vais encore le retoucher un peu pour qu'il sonne vraiment comme moi, mais niveau format, c'est parfait. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81ab-a3dc-c8b4f3d5b8b1": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeige den fertigen, auf die Stelle zugeschnittenen Lebenslauf groß im Bild.",
+   "text": {
+    "content": "Zeige den fertigen, auf die Stelle zugeschnittenen Lebenslauf groß im Bild.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81ab-bd79-d38c1df91c9c": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Am Ende filmst du dich wieder frontal in die Kamera und winkst lässig zum Abschied.",
+   "text": {
+    "content": "Am Ende filmst du dich wieder frontal in die Kamera und winkst lässig zum Abschied.",
     "link": null
    },
    "type": "text"
@@ -13847,6 +14094,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81cd-b468-fae6b5f2859d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Graba el chat de Parakeet AI haciéndote preguntas sobre ti, tu experiencia y el puesto al que quieres optar, y cómo la IA reescribe el CV adaptado a ese trabajo.",
+   "text": {
+    "content": "Graba el chat de Parakeet AI haciéndote preguntas sobre ti, tu experiencia y el puesto al que quieres optar, y cómo la IA reescribe el CV adaptado a ese trabajo.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81ce-a01a-ef1e7c61d6a6": [
   {
    "annotations": {
@@ -13880,6 +14146,25 @@
    "plain_text": "(Les deux CV imprimés posés côte à côte, tu les montres du doigt) Imagine : deux personnes envoient leur CV pour exactement le même poste. Candidat numéro 1, candidat numéro 2. À ton avis, c'est qui qui décroche l'entretien ? ",
    "text": {
     "content": "(Les deux CV imprimés posés côte à côte, tu les montres du doigt) Imagine : deux personnes envoient leur CV pour exactement le même poste. Candidat numéro 1, candidat numéro 2. À ton avis, c'est qui qui décroche l'entretien ? ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81d0-99d4-cd90b16fad4a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig am Laptop zuerst deinen alten Lebenslauf im Bild, danach den Upload bei Parakeet AI und den Bewertungsscreen mit dem Ergebnis X.",
+   "text": {
+    "content": "Zeig am Laptop zuerst deinen alten Lebenslauf im Bild, danach den Upload bei Parakeet AI und den Bewertungsscreen mit dem Ergebnis X.",
     "link": null
    },
    "type": "text"
@@ -14424,6 +14709,25 @@
    "type": "text"
   }
  ],
+ "3f2958b0-fc14-81de-a2f5-c9db61ae0e2c": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sur « Pour te faire le même, va sur parakeet-ai.com/resume-maker », filme l'écran de ton ordinateur avec la page Resume Maker ouverte.",
+   "text": {
+    "content": "Sur « Pour te faire le même, va sur parakeet-ai.com/resume-maker », filme l'écran de ton ordinateur avec la page Resume Maker ouverte.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f2958b0-fc14-81df-8ba9-f4371c29157d": [
   {
    "annotations": {
@@ -14438,6 +14742,25 @@
    "plain_text": "Acabo de dejar mi trabajo en recursos humanos, así que hoy os lo voy a contar todo. ",
    "text": {
     "content": "Acabo de dejar mi trabajo en recursos humanos, así que hoy os lo voy a contar todo. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81e0-8c64-ff9573c19867": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Muestra cómo editas tus datos y eliges la plantilla que más te guste.",
+   "text": {
+    "content": "Muestra cómo editas tus datos y eliges la plantilla que más te guste.",
     "link": null
    },
    "type": "text"
@@ -14829,6 +15152,25 @@
    "plain_text": ") et ensuite, tu colles simplement le lien de l'offre d'emploi qui te plaît. ",
    "text": {
     "content": ") et ensuite, tu colles simplement le lien de l'offre d'emploi qui te plaît. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f2958b0-fc14-81eb-93bb-ddca977ff6b8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Zeig im Resume Maker nacheinander den Chat mit den Fragen, die Bearbeitung und die Designauswahl, danach den neuen Lebenslauf im Vergleich zum alten mit dem Ergebnis Y.",
+   "text": {
+    "content": "Zeig im Resume Maker nacheinander den Chat mit den Fragen, die Bearbeitung und die Designauswahl, danach den neuen Lebenslauf im Vergleich zum alten mit dem Ergebnis Y.",
     "link": null
    },
    "type": "text"
@@ -15635,6 +15977,25 @@
    "type": "text"
   }
  ],
+ "3f3958b0-fc14-8125-ba6b-f858f2ba3318": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Pon al inicio un título en pantalla que plantee el gancho de meses sin respuesta y ahora entrevistas, por ejemplo: «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» (no abras con el resultado).",
+   "text": {
+    "content": "Pon al inicio un título en pantalla que plantee el gancho de meses sin respuesta y ahora entrevistas, por ejemplo: «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» (no abras con el resultado).",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f3958b0-fc14-812f-ba4e-f78821f7f389": [
   {
    "annotations": {
@@ -15764,6 +16125,63 @@
    "type": "text"
   }
  ],
+ "3f3958b0-fc14-8136-98f1-eac0b07b6419": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Den Anfang sprichst du als Selfie direkt in die Kamera.",
+   "text": {
+    "content": "Den Anfang sprichst du als Selfie direkt in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-813b-8955-fde475cee69e": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Elijo una plantilla limpita para finanzas», que se vea cómo eliges la plantilla de finanzas en la app.",
+   "text": {
+    "content": "En «Elijo una plantilla limpita para finanzas», que se vea cómo eliges la plantilla de finanzas en la app.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-813f-9871-c8874d516233": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Graba las pantallas de preguntas de la app mientras vas contestando, y enseña cómo cada respuesta añade un bloque nuevo a tu currículum.",
+   "text": {
+    "content": "Graba las pantallas de preguntas de la app mientras vas contestando, y enseña cómo cada respuesta añade un bloque nuevo a tu currículum.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f3958b0-fc14-8140-937d-f378d5583dfa": [
   {
    "annotations": {
@@ -15797,6 +16215,25 @@
    "plain_text": "Termine en montrant le nouveau score (Y), puis fais défiler le CV final.",
    "text": {
     "content": "Termine en montrant le nouveau score (Y), puis fais défiler le CV final.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-814b-a84c-ff7255a65dac": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sigue este orden en la grabación de pantalla: subir el currículum → puntuación y análisis (baja) → la IA lo reescribe y te hace preguntas en el chat → eliges la plantilla → pegas la oferta para adaptarlo → contestas en el chat y editas a mano → nueva puntuación y scroll del currículum final.",
+   "text": {
+    "content": "Sigue este orden en la grabación de pantalla: subir el currículum → puntuación y análisis (baja) → la IA lo reescribe y te hace preguntas en el chat → eliges la plantilla → pegas la oferta para adaptarlo → contestas en el chat y editas a mano → nueva puntuación y scroll del currículum final.",
     "link": null
    },
    "type": "text"
@@ -16073,6 +16510,25 @@
    "type": "text"
   }
  ],
+ "3f3958b0-fc14-8166-8416-e90d95303822": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Après l'analyse, montre l'IA qui retravaille ton CV et ses questions dans le chat pour compléter.",
+   "text": {
+    "content": "Après l'analyse, montre l'IA qui retravaille ton CV et ses questions dans le chat pour compléter.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f3958b0-fc14-8166-b293-e9f4bca3a45d": [
   {
    "annotations": {
@@ -16168,6 +16624,25 @@
    "type": "text"
   }
  ],
+ "3f3958b0-fc14-8187-b7ee-e131f0cc49d7": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Después pego el enlace de la oferta», que se vea cómo pegas el enlace de la oferta en la app.",
+   "text": {
+    "content": "En «Después pego el enlace de la oferta», que se vea cómo pegas el enlace de la oferta en la app.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f3958b0-fc14-818b-8a3a-c88281bf909c": [
   {
    "annotations": {
@@ -16254,6 +16729,25 @@
    "plain_text": ") Jetzt hab ich einen richtigen Finance-Lebenslauf, in dem alle wichtigen Infos drinstehen und endlich auch gut rüberkommen. So, das wär's von mir. ",
    "text": {
     "content": ") Jetzt hab ich einen richtigen Finance-Lebenslauf, in dem alle wichtigen Infos drinstehen und endlich auch gut rüberkommen. So, das wär's von mir. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-818e-8417-d3d2388a7ca0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Aux trois passages Parakeet AI, filme l'écran de ton laptop au téléphone et affiche à chaque fois « Parakeet AI · Resume Maker » en sous-titre, sans le prononcer, et coupe les temps de chargement : sur « Tu vas sur ce site et tu importes ton ancien CV. », montre l'import de ton ancien CV ; sur « Ensuite, l'IA te pose quelques questions dans le chat et te construit un CV tout neuf. », montre les questions du chat et le CV généré ; sur « Et cerise sur le gâteau, à la fin elle te note ton CV. », montre la note réelle.",
+   "text": {
+    "content": "Aux trois passages Parakeet AI, filme l'écran de ton laptop au téléphone et affiche à chaque fois « Parakeet AI · Resume Maker » en sous-titre, sans le prononcer, et coupe les temps de chargement : sur « Tu vas sur ce site et tu importes ton ancien CV. », montre l'import de ton ancien CV ; sur « Ensuite, l'IA te pose quelques questions dans le chat et te construit un CV tout neuf. », montre les questions du chat et le CV généré ; sur « Et cerise sur le gâteau, à la fin elle te note ton CV. », montre la note réelle.",
     "link": null
    },
    "type": "text"
@@ -16644,6 +17138,25 @@
    "type": "text"
   }
  ],
+ "3f3958b0-fc14-81cc-8d4a-f24582877911": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En ese mismo plano de la plantilla, enseña un momento en la app cómo se elige o se cambia la plantilla antes de ver el diseño final.",
+   "text": {
+    "content": "En ese mismo plano de la plantilla, enseña un momento en la app cómo se elige o se cambia la plantilla antes de ver el diseño final.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f3958b0-fc14-81df-8a3f-e9db0b836046": [
   {
    "annotations": {
@@ -16806,6 +17319,44 @@
    "plain_text": "Sur « Bon, je garde pas le plan pour moi. », ouvre le site sur l'ordi avec le texte à l'écran « Le site s'appelle Parakeet AI ».",
    "text": {
     "content": "Sur « Bon, je garde pas le plan pour moi. », ouvre le site sur l'ordi avec le texte à l'écran « Le site s'appelle Parakeet AI ».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-81f4-bed4-eecaf28d2d32": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Al final, haz scroll por el currículum terminado mientras dices «Y fíjate cómo queda».",
+   "text": {
+    "content": "Al final, haz scroll por el currículum terminado mientras dices «Y fíjate cómo queda».",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f3958b0-fc14-81f6-acd1-d49461c7f7a5": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Quand tu dis « Là, c'est mon CV au départ. », montre à l'écran le CV de départ dans l'app.",
+   "text": {
+    "content": "Quand tu dis « Là, c'est mon CV au départ. », montre à l'écran le CV de départ dans l'app.",
     "link": null
    },
    "type": "text"
@@ -17496,6 +18047,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8139-a0d5-e338fe22ddc3": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En «Estoy vendiendo la parte de atrás de mi MacBook para anuncios, y ya tengo a mi primer comprador.», cuéntalo en tono de broma, sin decir que te han pagado dinero de verdad.",
+   "text": {
+    "content": "En «Estoy vendiendo la parte de atrás de mi MacBook para anuncios, y ya tengo a mi primer comprador.», cuéntalo en tono de broma, sin decir que te han pagado dinero de verdad.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-813a-a877-cad27f2b5342": [
   {
    "annotations": {
@@ -18100,6 +18670,25 @@
    "plain_text": "(Tapa cerrada con el logo pegado y las demás casillas con precio a la vista) Pásate a cotillearlo y dime en comentarios quién crees que se quedará el próximo hueco. ",
    "text": {
     "content": "(Tapa cerrada con el logo pegado y las demás casillas con precio a la vista) Pásate a cotillearlo y dime en comentarios quién crees que se quedará el próximo hueco. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8172-9c35-dee7b683f184": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Fais un gros plan sur ta main qui découpe ou décolle la case du milieu, puis qui colle le logo Parakeet AI découpé dans la case.",
+   "text": {
+    "content": "Fais un gros plan sur ta main qui découpe ou décolle la case du milieu, puis qui colle le logo Parakeet AI découpé dans la case.",
     "link": null
    },
    "type": "text"
@@ -19018,6 +19607,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-81b7-a891-feccde4801cb": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Fais un gros plan sur la grille de prix et pointe la case du milieu du doigt.",
+   "text": {
+    "content": "Fais un gros plan sur la grille de prix et pointe la case du milieu du doigt.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-81bc-8eee-d10d9dadf3b5": [
   {
    "annotations": {
@@ -19537,6 +20145,25 @@
    "plain_text": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Das Tool ist noch recht neu, aber gerade überall, weil es beim Lebenslauf für Bewerbungen hilft. ",
    "text": {
     "content": "(📎 Parakeet-AI-Logo zum Ausdrucken – siehe Ressourcen) Das Tool ist noch recht neu, aber gerade überall, weil es beim Lebenslauf für Bewerbungen hilft. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-81fd-ac13-d4f8840cb13d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "En la demo sigue este orden: subir el CV → ver la nota y el análisis → pegar el enlace o el texto de la oferta → contestar las preguntas del chat → la IA ajusta el CV → elegir un diseño → hacer un cambio rápido → descargarlo.",
+   "text": {
+    "content": "En la demo sigue este orden: subir el CV → ver la nota y el análisis → pegar el enlace o el texto de la oferta → contestar las preguntas del chat → la IA ajusta el CV → elegir un diseño → hacer un cambio rápido → descargarlo.",
     "link": null
    },
    "type": "text"

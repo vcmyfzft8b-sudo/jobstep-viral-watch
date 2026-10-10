@@ -99,7 +99,7 @@ def check(fmt, page_id, lang, model, links=None):
     ti = next((k for k, b in enumerate(blocks_all) if b['type'].startswith('heading') and '📲' in reword._plain(b)), None)
     title_block = next((b for b in blocks_all[ti + 1:ti + 3] if b['type'] == 'paragraph' and reword._plain(b).strip()), None) if ti is not None else None
     title = reword._plain(title_block) if title_block else ''
-    note = next((reword._plain(b) for b in notion.children(page_id) if b['type'] == 'callout' and '⚠' in str(b['callout'].get('icon'))), '')
+    note = localize.note_text(page_id)
     if not script.strip():
         return False, {'missing_script': True, 'script_issues': ['no script section found']}, url
     lang_name = localize.LANG_NAME[lang]
@@ -131,8 +131,10 @@ Check strictly:
    it contradicts the example/script or is longer than 2 sentences - never ask for more lines.
 6. example_language: the language of the example video (English name).
 4. script_ok: natural {lang_name}, never mentions JobStep, no promises nobody can guarantee; scores and
-   percentages the app shows are ALWAYS the placeholders X / Y, never concrete numbers (e.g. "64 %", "40 sobre 100"
-   is wrong); one consistent form of address ({ {'de': 'du', 'fr': 'tu', 'es': 'tú (never vosotros)'}[lang] });
+   percentages the app shows are ALWAYS the placeholders X / Y, never concrete numbers (e.g. "64 %" or "40 sobre 100"
+   is wrong; "X von 100" / "X sur 100" / "X de 100" is RIGHT - 100 is only the scale); the viewer is addressed the
+   way the ORIGINAL addresses them (one person: du/tu/tú, a group: ihr/vous/vosotros, or switching where the
+   original switches) - never flag ihr/vous/vosotros or a switch the original has;
    no stray formatting characters (backticks, asterisks) in what is said or shown.
    Mirror the original's spoken brand mentions in count and story position: substitute Parakeet AI only where the
    original says JobStep, and the Parakeet URL only where it says the JobStep URL. If the original never names the

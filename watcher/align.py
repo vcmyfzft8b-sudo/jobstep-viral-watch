@@ -2,7 +2,7 @@
 
 Rules:
 - original in the page's language: its transcript word for word; other language: a faithful, close translation;
-  same sentences in the same order, nothing added (at most 110% of the original, 125% for a translation);
+  same sentences in the same order, nothing added (at most 110% of the original, 135% for a translation - French needs more words);
 - "Parakeet AI" is said/written exactly where the original says/writes JobStep (same number of times). If the original
   only SHOWS the app without naming it, we only show it too ("this tool here");
 - a website / call to action only where the original has one (jobstep.io -> parakeet-ai.com/resume-maker);
@@ -171,9 +171,9 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
 
 
 def max_words(n_orig, translated=False):
-    """110% of the original (125% for a translation); very short on-screen scripts get a few words more (articles in
+    """110% of the original (135% for a translation); very short on-screen scripts get a few words more (articles in
     FR/ES/DE)."""
-    k = 1.25 if translated else 1.1
+    k = 1.35 if translated else 1.1
     return int(n_orig * k) if n_orig >= 60 else max(int(n_orig * k), n_orig + 8)
 
 

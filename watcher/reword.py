@@ -123,8 +123,8 @@ def direction_blocks(page_id):
         has_link = any(((x.get('text') or {}).get('link') or {}).get('url', '').startswith('http') and
                        'parakeet-ai.com' not in ((x.get('text') or {}).get('link') or {}).get('url', '')
                        for x in b.get(b['type'], {}).get('rich_text', []))
-        if inside and b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t \
-                and 'Visual Hook Lab' not in t and not has_link:  # the example's TikTok link is never a direction
+        # the Visual Hook Lab / example TikTok links are never directions; a plain line that only MENTIONS the lab is one
+        if inside and b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t and not has_link:
             out.append(b)
     return out
 
@@ -239,3 +239,22 @@ def spoken_text(blocks):
             continue
         out.append(t)
     return '\n'.join(out)
+
+
+def shorten_hooks(fmts, mkts, cfg, page_of):
+    """Every active page whose 🎬 section still has more than one direction line gets the short visual hook.
+    Pages that already have one line are not touched (no Claude call). Returns [(title, market, status, why)]."""
+    out = []
+    for f in [f for f in fmts if f.get('status') == 'active']:
+        for mk in mkts:
+            pid = page_of(f, mk['key'])
+            if not pid:
+                continue
+            try:
+                n = len(direction_blocks(pid))
+                st, why = fix_directions(f, pid, mk['lang'], cfg['models']['classify']) if n > 1 else ('ok', 'already short')
+            except Exception as e:
+                st, why = 'error', str(e)[:150]
+            print(f"{f['title'][:45]} | {mk['key']} | {st} | {why}", flush=True)
+            out.append((f['title'], mk['key'], st, why))
+    return out

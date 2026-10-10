@@ -126,8 +126,9 @@ ABBREV = re.compile(r'\b(z|d|u|o|v|s|ca|bzw|etc|evtl|ggf|inkl|usw|vs|ex|ej|p|cf|
 
 
 def sentences(text):
-    """Number of sentences ('z. B.', 'p. ex.', '...' and emojis do not end a sentence)."""
-    t = ABBREV.sub('', text or '')
+    """Number of sentences ('z. B.', 'p. ex.', '...', quotes and emojis do not end a sentence)."""
+    t = re.sub(r'„[^“”"]*[“”"]|"[^"]*"|«[^»]*»|“[^”]*”', 'Q', text or '')  # a quote from the video is one phrase
+    t = ABBREV.sub('', t)
     t = re.sub(r'\.{2,}|…', ',', t)
     return len([x for x in re.split(r'[.!?]+(?:\s|$)', t.strip()) if re.search(r'\w', x)])
 

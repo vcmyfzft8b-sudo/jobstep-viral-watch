@@ -98,3 +98,4 @@ def test_sentence_count_ignores_abbreviations():
     assert builder.sentences('Copia el gancho (p. ej. un CV). Sonríe.') == 2
     assert builder.sentences('Wow... echt krass! Los geht’s 😍') == 2
     assert builder.sentences('Eins. Zwei. Drei.') == 3
+    assert builder.sentences('Halte Absagen in die Kamera und sag „Absage. Absage. Und noch eine.“ Dann lach.') == 2

@@ -165,10 +165,10 @@
     "views": 65000
    },
    "fr": {
-    "rebuilt": true,
-    "strict": false,
+    "audit": true,
+    "strict": true,
     "url": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
-    "views": 56800
+    "views": 57900
    }
   },
   "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef",

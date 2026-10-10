@@ -9,9 +9,9 @@ against each other. A similar topic alone never makes two videos the same format
 Results are reported per dimension and country, separately:
   format_consistency      - example + script follow the reference (same hook, beats, order, demo, product timing)
   script_matches_example  - the script tells what the example shows
-  independent_wording     - wording is independently written (not translated sentences with the brand swapped)
+  faithful_transcript     - the script is the example's own words (transcript / close translation, brand swapped)
   features_claims         - only real Parakeet AI features, no invented testimonials / guaranteed ATS or hiring
-  directions_match        - filming directions match the script
+  directions_match        - the short visual hook (1-2 sentences) fits the example and the script
   approval                - approval-lock status (preserved / changed / not locked) - NEVER part of 'passed'
 
 A group result is cached under a key built from all three pages' content fingerprints, their example source IDs and
@@ -31,9 +31,9 @@ from . import align, audit, llm, localize, notion, reword
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-08.2'
+AUDIT_VERSION = 'group-2026-10-10.transcribe'
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
-DIMENSIONS = ('format_consistency', 'script_matches_example', 'independent_wording', 'features_claims',
+DIMENSIONS = ('format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims',
               'directions_match')
 
 
@@ -262,14 +262,17 @@ other. Be strict:
   the brand/URL spoken only where the reference says so, the same CTA? Only the listed allowed localisation
   differences may differ. A similar topic (CV, ATS, job search) alone is NOT the same format.
 - script_matches_example: does the script tell what this country's example shows (beats, order, product timing)?
-- independent_wording: is the script independently written? FAIL if most sentences are translations or light
-  rewrites of the example's sentences with the brand swapped. Same beats are expected; same sentences are not.
+- faithful_transcript: is the script this country's example in its OWN WORDS - its transcript when the example is in
+  the country's language, else a faithful close translation - same sentences, same order, nothing added or dropped?
+  The only allowed changes: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores
+  -> X/Y, an impossible promise softened. FAIL if the script is reworded or retold in other words.
 - features_claims (script AND on-screen title): only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
   guaranteed ATS passage, no guaranteed interviews/jobs.
-- directions_match: do the filming directions match the script (no quotes of lines that are not in the script, no
-  contradictions, no features Parakeet AI lacks) and cover the reference's filming/demonstration sequence? Cue
-  markers the directions refer to are the [CUE: ...] markers. The brand counts as spoken only where it is in the
-  spoken text; a [CUE: ...] marker shows it on screen.
+- directions_match: the filming directions are only a short visual hook (1-2 sentences: copy what the example does
+  in its first seconds, or pick a hook from the Visual Hook Lab). PASS if it fits the example and the script and
+  names no feature Parakeet AI lacks; FAIL only if it contradicts them or is longer than 2 sentences. Never ask for
+  more filming lines (the script's [CUE: ...] markers already say where the app is shown). The brand counts as spoken
+  only where it is in the spoken text; a [CUE: ...] marker shows it on screen.
 
 {chr(10).join(blocks)}
 
@@ -435,8 +438,8 @@ def group_cycle(fmt, mkts, cfg, page_of, meta, put_example=None):
 def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
     """Automatic repairs for a failed group - never on approval-locked pages (those are reported for approval).
     1. a country whose example is not this format -> the reference's canonical example
-    2. script not following the example / not independently worded / wrong claims -> rewritten (align_page)
-    3. directions not matching -> directions rewritten
+    2. script not following the example / reworded instead of transcribed / wrong claims -> transcribed (align_page)
+    3. directions not matching -> shortened to the visual hook
     Returns (changed, awaiting_approval)."""
     ref = reference(fmt['id']) or {}
     results = res.get('results') or {}
@@ -481,9 +484,9 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
             if url and (not cur or cur_id not in (ref.get('accepted_sources') or [])):
                 put_example(fmt, m, pid, lang, url)
                 changed.append(f'{m}: example -> canonical {canon}')
-        if set(failing) & {'format_consistency', 'script_matches_example', 'independent_wording', 'features_claims'}:
+        if set(failing) & {'format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims'}:
             st, why = align.align_page(fmt, pid, lang, cfg, links, feedback=issues)
-            changed.append(f'{m}: script rewritten' if st == 'ok' else f'{m}: rewrite refused ({why})')
+            changed.append(f'{m}: script transcribed' if st == 'ok' else f'{m}: transcription refused ({why})')
         if set(failing) & {'format_consistency', 'directions_match'}:
             st, why = reword.fix_directions(fmt, pid, lang, cfg['models']['build'], issues)
             changed.append(f'{m}: directions fixed' if st == 'ok' else f'{m}: directions not changed ({why})')
@@ -492,7 +495,7 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
 
 def approval_drafts(fmts, mkts, cfg, page_of, meta):
     """Approval-locked scripts that fail the group check get a replacement DRAFT (nothing is written to Notion): same
-    beats and product timing as the reference's canonical example, independently worded. Stored in
+    beats and product timing as the reference's canonical example, transcribed from it. Stored in
     meta['approval_drafts'] for the user to approve."""
     out = meta.setdefault('approval_drafts', {})
     for f in fmts:

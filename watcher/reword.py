@@ -1,10 +1,9 @@
-"""Reword the scripts on the existing format pages: very similar to the JobStep original (same beats, same order,
-same length, same hook idea), but not a 1:1 transcription / literal translation.
+"""Script-section helpers (blocks, link tokens, spoken text) and the short visual hook section.
 
-Only the script section of a page changes (from the 💬 heading to the next divider/heading). Every link cue in it
-(Parakeet AI, LinkedIn, Gmail, ...) and every bold on-screen line stays where it is: the text is sent to Claude with
-the links as numbered tokens, and a reworded paragraph is only written back if all tokens come back unchanged and
-in the same order and the length stays within ±20%. The old text of every changed block is kept in
+Rewording is OFF since 2026-10-10: scripts are the example video's own words (align.align_page transcribes them).
+reword_page is kept as a no-op so old callers do nothing.
+
+Link cues travel as numbered tokens ⟦n⟧label⟦/n⟧ (encode/decode). The old text of every changed block is kept in
 state/script_backup.json, so a page can be restored.
 """
 import json
@@ -71,53 +70,7 @@ def decode(text, links):
 
 
 def reword_page(fmt, page_id, lang, model, original='', feedback=''):
-    from . import align
-    if align.approved_script(fmt['id'], lang):
-        return 'skipped', 'approved script is locked', []
-    if not original:
-        return 'skipped', 'source evidence required for sentence-aligned rewrite', []
-    blocks = script_blocks(page_id)
-    enc = [(b, *encode(b)) for b in blocks]
-    enc = [(b, t, l) for b, t, l in enc if t is not None]
-    if not enc:
-        return 'skipped', 'no script section found', []
-    T = TEXT[lang]
-    numbered = '\n'.join(f'{i}: {t}' for i, (_, t, _) in enumerate(enc))
-    prompt = f"""This is the {T['lang_name']} script of a UGC video format ("{fmt['title']}") for Parakeet AI, an AI CV
-maker. It was adapted from a viral JobStep video and is currently almost a 1:1 transcription/translation of it.
-{('The example video on the page (use it as the reference for the beats - do NOT copy its wording): ' + original[:2500]) if original else ''}
-
-Rewrite EVERY paragraph with exactly one adapted sentence per original sentence, in the same order. Keep the same
-story, beats, meaning, hook idea and tone ({T['style']}); add no story beats, examples, filler or CTA. Change each
-sentence's wording and structure naturally, without merging or splitting source sentences. The whole script must
-be at most 110% of the original word count. Only the hook line may stay close. A native viewer who saw the JobStep
-video must NOT recognise its sentences. Keep it natural spoken {T['lang_name']}.
-Rules:
-- Keep every token ⟦n⟧...⟦/n⟧ exactly as it is (same number, same text inside) and in the same order and paragraph.
-- Keep **bold** lines bold (they are on-screen texts). Scores/percentages the app shows are ALWAYS X (before) and Y
-  (after) - replace any concrete number like "64 %" or "40 sobre 100" with X or Y.
-- Address the viewer consistently as { {'de': 'du', 'fr': 'tu', 'es': 'tú (never vosotros)'}[lang] }. No backticks.
-- Mirror the ORIGINAL's spoken brand mentions exactly in count and story position: replace JobStep with Parakeet
-  AI, and its spoken URL with parakeet-ai.com/resume-maker, only where present in the source. Zero spoken brand
-  mentions in the original means zero in ours. Linked cue labels are filming directions, not spoken words. For
-  silent videos compare on-screen text instead. Never add a CTA or website absent from the original.
-- The spoken/on-screen script must not exceed 110% of the original word count. Never mention JobStep.
-- No promises nobody can guarantee (e.g. "you will definitely get the job") - say "better chances" instead.
-
-{('A reviewer found these problems - fix them: ' + feedback) if feedback else ''}
-
-Paragraphs:
-{numbered}
-
-Return JSON {{"paragraphs": ["<reworded paragraph 0>", "<reworded paragraph 1>", ...]}} with exactly {len(enc)} items."""
-    why = ''
-    for attempt in range(3):
-        extra = f'\n\nYour previous attempt was rejected: {why}. Fix exactly that.' if why else ''
-        r = llm.chat_json(model, 'You are a senior UGC script writer. Reply with JSON only.', prompt + extra, timeout=1200)
-        why, changes = _validate(enc, r.get('paragraphs', []), original)
-        if not why:
-            return 'ok', '', changes
-    return 'skipped', why, []
+    return 'skipped', 'rewording is off - scripts are transcribed from the example video', []
 
 
 def _validate(enc, new, original=''):
@@ -155,33 +108,6 @@ def apply(changes):
         notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(text, links)}})
 
 
-def run(fmts, mkts, cfg, page_of, originals=None, dry=False):
-    """Returns [(format title, market, status, detail, changes)]."""
-    import concurrent.futures as cf
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts
-            if page_of(f, mk['key']) and not (f.get('reworded') or {}).get(mk['key'])]
-
-    def one(job):
-        f, mk = job
-        try:
-            from . import localize
-            pid = page_of(f, mk['key'])
-            src = localize.current_source(pid)
-            ref = localize.example_text(src.get('url') if src else None, page_id=pid) or (originals or {}).get(f['id'], '')
-            status, why, changes = reword_page(f, pid, mk['lang'], cfg['models']['build'], ref)
-            return f, mk, status, why, changes
-        except Exception as e:
-            return f, mk, 'error', str(e)[:150], []
-    out = []
-    with cf.ThreadPoolExecutor(3) as ex:
-        for f, mk, status, why, changes in ex.map(one, jobs):
-            if status == 'ok' and not dry:
-                apply(changes)
-                f.setdefault('reworded', {})[mk['key']] = True
-            out.append((f['title'], mk['key'], status, why, changes))
-    return out
-
-
 def direction_blocks(page_id):
     """Blocks of the 🎬 filming-directions section (without the mandatory 🚨 line and the Visual Hook Lab link)."""
     blocks = notion.children(page_id)
@@ -204,56 +130,42 @@ def direction_blocks(page_id):
 
 
 def fix_directions(fmt, page_id, lang, model, issues=''):
-    """Rewrite the filming directions so they match the script: no duplicates, X/Y only as in the script, every quoted
-    cue really in the script. Lines may be removed. Returns (status, why)."""
+    """Shrink the 🎬 section to the short visual hook: ONE line of 1-2 sentences (copy what the example video does in
+    its first seconds, or pick a hook from the Visual Hook Lab), followed by the 🚨 line and the Visual Hook Lab link.
+    All other direction lines are removed (backed up first). Returns (status, why)."""
+    from .builder import VISUAL_HOOK
     T = TEXT[lang]
-    script = '\n'.join(_plain(b) for b in script_blocks(page_id))
-    from . import crosscheck
-    filming = (crosscheck.reference(fmt['id']) or {}).get('filming', '')
     enc = [(b, *encode(b)) for b in direction_blocks(page_id)]
     enc = [(b, t, l) for b, t, l in enc if t is not None]
     if not enc:
         return 'skipped', 'no directions found'
-    numbered = '\n'.join(f'{i}: {t}' for i, (_, t, _) in enumerate(enc))
-    prompt = f"""These are the filming directions ({T['lang_name']}) of a UGC format page, and the script they belong to.
-SCRIPT:
-{script[:4000]}
-
-DIRECTIONS:
-{numbered}
-{('How this format is filmed (reference, all countries): ' + filming) if filming else ''}
+    from . import crosscheck
+    filming = (crosscheck.reference(fmt['id']) or {}).get('filming', '')
+    lines = '\n'.join(re.sub(r'⟦/?\d+⟧', '', t) for _, t, _ in enc)
+    prompt = f"""These are the filming directions ({T['lang_name']}) of a UGC format page ("{fmt.get('title', '')}").
+They are far too long. Keep only the visual hook, written as {VISUAL_HOOK}
+CURRENT DIRECTIONS:
+{lines[:3000]}
+{('How the example video is filmed: ' + filming) if filming else ''}
 {('A reviewer found: ' + issues) if issues else ''}
-Fix the directions so they match the script exactly: remove duplicate or contradicting lines; mention "X"/"Y" only
-if they appear in the script (only X -> only X); a direction that quotes a script line must quote the script's
-actual wording; never refer to markers the script does not have; keep everything else as it is (same language, same
-tone). Keep tokens ⟦n⟧...⟦/n⟧ unchanged. If a shot of the reference filming sequence or something the reviewer
-names is missing, add short new lines for it ("add", in {T['lang_name']}, no links) - only what the script needs.
-Return JSON {{"lines": [{{"index": 0, "text": "<fixed line, or null to delete it>"}}, ...],
-"add": ["<new direction line>", ...]}} - one item per existing line; "add" may be empty."""
+Write it in {T['lang_name']}, address the creator informally ({ {'de': 'du', 'fr': 'tu', 'es': 'tú'}[lang] }), no links,
+no X/Y scores, nothing about filming the app (the script's links already say that).
+Return JSON {{"hook": "<1-2 short sentences>"}}"""
     r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt, timeout=900)
-    items = {int(x['index']): x.get('text') for x in r.get('lines', []) if str(x.get('index', '')).isdigit()}
-    if set(items) != set(range(len(enc))):
-        return 'skipped', 'directions answer incomplete'
+    hook = str(r.get('hook') or '').strip()
+    if not hook or len(re.findall(r'[.!?](\s|$)', hook)) > 2 or '⟦' in hook or SOURCE_RE.search(hook):
+        return 'skipped', 'no usable short hook'
+    if len(enc) == 1 and enc[0][1] == hook:
+        return 'ok', 'unchanged'
     with state.LOCK:
         backup = state.load('script_backup.json', {})
         for b, _, _ in enc:
             backup.setdefault(b['id'], b[b['type']]['rich_text'])
         state.save('script_backup.json', backup)
-    for i, (b, old, links) in enumerate(enc):
-        new = items[i]
-        if new is None or not str(new).strip():
-            if links:
-                continue  # a line with a link is never deleted
-            notion.api('DELETE', f"/blocks/{b['id']}")
-        elif new != old:
-            if [m.group(1) for m in TOKEN.finditer(old)] != [m.group(1) for m in TOKEN.finditer(new)]:
-                continue  # keep that line rather than lose a link
-            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(new, links)}})
-    add = [str(t).strip() for t in (r.get('add') or []) if str(t).strip() and '⟦' not in str(t)][:4]
-    if add:
-        notion.api('PATCH', f'/blocks/{page_id}/children', {'after': enc[-1][0]['id'], 'children': [
-            {'object': 'block', 'type': 'bulleted_list_item', 'bulleted_list_item': {'rich_text': [notion.rt(t)]}}
-            for t in add]})
+    first = enc[0][0]
+    notion.api('PATCH', f"/blocks/{first['id']}", {first['type']: {'rich_text': [notion.rt(hook)]}})
+    for b, _, _ in enc[1:]:
+        notion.api('DELETE', f"/blocks/{b['id']}")
     return 'ok', ''
 
 

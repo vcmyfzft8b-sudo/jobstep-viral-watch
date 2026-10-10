@@ -12,17 +12,18 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 TEXT = {
     'de': {
         'flag': '🇩🇪', 'name': 'DACH', 'lang_name': 'German',
-        'style': 'casual spoken German like a real TikTok creator (du-Form, natural, not formal, not a literal translation)',
+        'style': 'natural spoken German as a TikTok creator would say it (du-Form)',
         'video_heading': 'Inspirationsvideo', 'source': 'Original auf TikTok',
         'inspo_note': [
-            '**Wichtig:** Dreh dein Video nach dem deutschen Skript unten. Das Inspirationsvideo zeigt dir nur Tempo, Vibe, '
-            'Licht und Kamerawinkel – und was du auf dem Bildschirm zeigst und wie du die App zeigst.',
+            '**Wichtig:** Dreh dein Video nach dem deutschen Skript unten – es ist der Text aus dem Inspirationsvideo, '
+            'auf Deutsch übersetzt. Das Video zeigt dir Tempo, Vibe, Licht und Kamerawinkel – und was du auf dem '
+            'Bildschirm zeigst und wie du die App zeigst.',
             'Im Video wird JobStep genutzt. Mach es genau gleich, nur mit Parakeet AI: Zeig alles, was im Inspirationsvideo '
             'gezeigt wird – öffne Parakeet AI an den Stellen, an denen JobStep geöffnet wird, und zeig es genauso. JobStep darf '
             'in deinem Video nirgends zu sehen oder zu hören sein.'],
         'inspo_note_same': '**Wichtig:** Das Inspirationsvideo ist auf Deutsch und zeigt genau dieses Format – nimm es als Vorbild '
-                           'für Tempo, Vibe, Licht, Kamerawinkel und dafür, wie die App gezeigt wird. Sprich aber unser Skript '
-                           'unten, nicht den Text aus dem Video.',
+                           'für Tempo, Vibe, Licht, Kamerawinkel und dafür, wie die App gezeigt wird. Das Skript unten ist '
+                           'der Text aus dem Video – mit Parakeet AI als App.',
         'title_h': 'TITEL', 'script_h': '💬SKRIPT', 'hook_h': '🎬 VISUELLER HOOK', 'res_h': 'RESSOURCEN',
         'sub_voice': 'Automatische Untertitel', 'sub_silent': 'Musik aus der Plattform-Bibliothek, kein Voiceover',
         'silent_label': 'Texteinblendungen – nicht sprechen:',
@@ -52,18 +53,18 @@ TEXT = {
     },
     'fr': {
         'flag': '🇫🇷', 'name': 'France', 'lang_name': 'French',
-        'style': 'casual spoken French like a real TikTok creator (tutoiement, natural, not formal, not a literal translation)',
+        'style': 'natural spoken French as a TikTok creator would say it (tutoiement)',
         'video_heading': 'Vidéo d’inspiration', 'source': 'Original sur TikTok',
         'inspo_note': [
-            '**Important :** Tourne ta vidéo d’après le script en français ci-dessous. La vidéo d’inspiration te montre '
-            'seulement le rythme, l’ambiance, la lumière et les angles de caméra – ce que tu montres à l’écran et comment '
-            'tu montres l’app.',
+            '**Important :** Tourne ta vidéo d’après le script en français ci-dessous – c’est le texte de la vidéo '
+            'd’inspiration, traduit en français. La vidéo te montre le rythme, l’ambiance, la lumière et les angles de '
+            'caméra – ce que tu montres à l’écran et comment tu montres l’app.',
             'Dans la vidéo, c’est JobStep qui est utilisé. Fais exactement pareil, mais avec Parakeet AI : montre tout ce '
             'qui est montré dans la vidéo d’inspiration – ouvre Parakeet AI aux moments où JobStep est ouvert et montre-le '
             'de la même façon. JobStep ne doit apparaître ni être entendu nulle part dans ta vidéo.'],
         'inspo_note_same': '**Important :** La vidéo d’inspiration est en français et montre exactement ce format – prends-la '
                            'comme modèle pour le rythme, l’ambiance, la lumière, les angles de caméra et la façon de montrer '
-                           'l’app. Mais dis notre script ci-dessous, pas le texte de la vidéo.',
+                           'l’app. Le script ci-dessous est le texte de la vidéo – avec Parakeet AI comme app.',
         'title_h': 'TITRE', 'script_h': '💬SCRIPT', 'hook_h': '🎬 ACCROCHE VISUELLE', 'res_h': 'RESSOURCES',
         'sub_voice': 'Sous-titres automatiques', 'sub_silent': 'Musique de la bibliothèque de la plateforme, sans voix off',
         'silent_label': 'Textes à l’écran – ne pas parler :',
@@ -94,17 +95,18 @@ TEXT = {
     },
     'es': {
         'flag': '🇪🇸', 'name': 'España', 'lang_name': 'Spanish',
-        'style': 'casual spoken Spanish from Spain like a real TikTok creator (tú, natural, not formal, not a literal translation)',
+        'style': 'natural spoken Spanish from Spain as a TikTok creator would say it (tú)',
         'video_heading': 'Vídeo de inspiración', 'source': 'Original en TikTok',
         'inspo_note': [
-            '**Importante:** Graba tu vídeo con el guion en español de abajo. El vídeo de inspiración solo te muestra el '
-            'ritmo, el ambiente, la luz y los ángulos de cámara – qué enseñas en pantalla y cómo enseñas la app.',
+            '**Importante:** Graba tu vídeo con el guion en español de abajo – es el texto del vídeo de inspiración, '
+            'traducido al español. El vídeo te muestra el ritmo, el ambiente, la luz y los ángulos de cámara – qué '
+            'enseñas en pantalla y cómo enseñas la app.',
             'En el vídeo se usa JobStep. Hazlo exactamente igual, pero con Parakeet AI: enseña todo lo que se ve en el vídeo '
             'de inspiración – abre Parakeet AI en los momentos en que se abre JobStep y enséñalo de la misma forma. JobStep no '
             'puede verse ni oírse en ningún momento de tu vídeo.'],
         'inspo_note_same': '**Importante:** El vídeo de inspiración está en español y muestra exactamente este formato – tómalo '
-                           'como modelo para el ritmo, el ambiente, la luz, los ángulos de cámara y cómo enseñar la app. Pero '
-                           'di nuestro guion de abajo, no el texto del vídeo.',
+                           'como modelo para el ritmo, el ambiente, la luz, los ángulos de cámara y cómo enseñar la app. El '
+                           'guion de abajo es el texto del vídeo – con Parakeet AI como app.',
         'title_h': 'TÍTULO', 'script_h': '💬GUION', 'hook_h': '🎬 GANCHO VISUAL', 'res_h': 'RECURSOS',
         'sub_voice': 'Subtítulos automáticos', 'sub_silent': 'Música de la biblioteca de la plataforma, sin voz en off',
         'silent_label': 'Textos en pantalla – no hablar:',

@@ -4,11 +4,12 @@ For each page Claude (strong model) compares three things: the FORMAT, the page'
 shown in it) and the page's SCRIPT.
   1. Is the example video really this format?
   2. Does the script follow the example's beats (same story, same order)?
-  3. Is the script reworded (not a 1:1 transcription), in the market's language, without JobStep or guarantees?
+  3. Is the script the example's own words (transcript, or a close translation), in the market's language, with
+     Parakeet AI instead of JobStep and no guarantees?
 Fixes, then the page is checked again (max 3 rounds):
   - wrong example -> a strictly checked same-language JobStep video of the format, else the format's original
     JobStep video (registry/originals.json, the video the script was built from)
-  - script off -> reworded again against the example video
+  - script off -> transcribed again from the example video
 Pages that still fail after 3 rounds are reported with the reason.
 """
 import json
@@ -121,12 +122,13 @@ Check strictly:
 1. example_same_format: is the example video really THIS format (same premise, hook idea and structure - same topic
    alone is not enough)? false if there is no example video.
 2. script_follows_example: does the script tell the same story with the same beats in the same order as the example?
-3. script_reworded: is the script reworded rather than a transcription/translation of the example? Very similar
-   story is good, but if more than about a third of the sentences are direct translations/transcriptions of the
-   example's sentences (same structure, same images), it is NOT reworded. Be strict - a native viewer must not
-   recognise the example's sentences.
-5. directions_ok: do the filming directions match the script - no duplicate or contradicting lines, X/Y mentioned
-   only as they appear in the script, every quoted line really in the script?
+3. script_faithful: is the script the example's OWN WORDS - its transcript if the example is in {lang_name}, else a
+   faithful close translation - same sentences in the same order, nothing added or dropped? Allowed (and required)
+   changes only: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores -> X/Y,
+   an impossible promise softened. false if the script is reworded or retold in other words.
+5. directions_ok: the filming directions are just a short visual hook (1-2 sentences: copy what the example does in
+   its first seconds, or pick a hook from the Visual Hook Lab) that fits the example and the script. false only if
+   it contradicts the example/script or is longer than 2 sentences - never ask for more lines.
 6. example_language: the language of the example video (English name).
 4. script_ok: natural {lang_name}, never mentions JobStep, no promises nobody can guarantee; scores and
    percentages the app shows are ALWAYS the placeholders X / Y, never concrete numbers (e.g. "64 %", "40 sobre 100"
@@ -137,13 +139,12 @@ Check strictly:
    brand, our spoken script must not name it either. Parenthesized linked cue labels are filming instructions,
    not spoken words. For silent videos compare on-screen text instead. Never add a CTA or website if the original
    has none; preserve its placement when one exists.
-7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h') and is not a
-   word-for-word copy of the example's on-screen text when the example is in {lang_name}.
+7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h').
 {PARAKEET_FACTS}
 script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
 Note: X and Y in the script are intentional placeholders - the creator says the score the app shows them. They are
 correct; never ask to replace them with numbers.
-Return JSON {{"example_same_format": true, "script_follows_example": true, "script_reworded": true, "script_ok": true,
+Return JSON {{"example_same_format": true, "script_follows_example": true, "script_faithful": true, "script_ok": true,
 "directions_ok": true, "title_ok": true, "example_language": "<language>", "example_issue": "<short, if any>",
 "title_suggestion": "<if title_ok is false: a fixed title in the same style, else empty>",
 "script_issues": ["<short>", ...], "direction_issues": ["<short>", ...]}}"""
@@ -170,18 +171,18 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     v['approved'] = bool(align.approved(fmt['id'], lang, url))
     v['approved_matches'] = bool(v['approved'] and links and align.matches_approved(page_id, lang, links, locked))
     if v['approved_matches']:
-        v.update({'script_follows_example': True, 'script_reworded': True, 'script_ok': True})
+        v.update({'script_follows_example': True, 'script_faithful': True, 'script_ok': True})
         v['script_issues'] = []
     base = align.source_script(example)
     spoken = reword.spoken_text(reword.script_blocks(page_id))
-    v['length_ok'] = v['approved_matches'] or align._words(spoken) <= 1.10 * max(align._words(base), 1)
+    v['length_ok'] = v['approved_matches'] or align._words(spoken) <= (1.10 if same else 1.25) * max(align._words(base), 1)
     want, have = len(align.JOBSTEP.findall(base)), len(re.findall(r'parakeet', spoken, re.I))
     v['brand_count_ok'] = v['approved_matches'] or have == want
     if not v['brand_count_ok']:
         v['script_issues'].append(f'spoken brand count is {have}; source requires {want}; linked filming cues do not count')
     if not title_block:
         v['title_ok'] = True
-    passed = all(v.get(k) is True for k in ('example_same_format', 'script_follows_example', 'script_reworded', 'script_ok',
+    passed = all(v.get(k) is True for k in ('example_same_format', 'script_follows_example', 'script_faithful', 'script_ok',
                                     'directions_ok', 'note_ok', 'views_ok', 'title_ok', 'length_ok', 'brand_count_ok'))
     if locked and not v['approved_matches']:
         passed = False
@@ -260,20 +261,20 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
             localize.set_note(pid, lang, v['same_lang'])
             notes.append('note under the video corrected')
             continue
-        if v.get('example_same_format') and (not v.get('length_ok') or not v.get('script_reworded')
+        if v.get('example_same_format') and (not v.get('length_ok') or not v.get('script_faithful')
                                              or not v.get('script_follows_example')) and not rebuilt:
-            rebuilt = True  # script too long / too close / not following: mirror the example sentence by sentence
+            rebuilt = True  # script too long / reworded / not following: transcribe the example again
             st, why = align.align_page(fmt, pid, lang, cfg, cfg['links'])
             if st == 'ok':
                 fmt.setdefault('reworded', {})[m] = True
-            notes.append(f'script rewritten sentence by sentence ({why})' if st == 'ok' else f'rewrite refused: {why}')
+            notes.append(f'script transcribed from the example ({why})' if st == 'ok' else f'transcription refused: {why}')
             continue
         if not v.get('title_ok') and v.get('title_suggestion') and v.get('title_block'):
             tb = v['title_block']
             notion.api('PATCH', f"/blocks/{tb['id']}", {tb['type']: {'rich_text': [notion.rt(v['title_suggestion'], bold=True)]}})
             notes.append(f"title fixed: {v['title_suggestion'][:60]}")
             continue
-        if not v.get('directions_ok') and v.get('example_same_format') and v.get('script_reworded') and v.get('script_follows_example'):
+        if not v.get('directions_ok') and v.get('example_same_format') and v.get('script_faithful') and v.get('script_follows_example'):
             st, why = reword.fix_directions(fmt, pid, lang, model, '; '.join(v['direction_issues']))
             notes.append('filming directions corrected' if st == 'ok' else f'directions not changed: {why}')
             continue
@@ -291,23 +292,21 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
                     notes.append('put back the original JobStep video')
             continue
         if not v.get('script_follows_example') and url and rebuild and not rebuilt:
-            # the example tells the format in another order: build the page from the example (reworded script)
+            # the example tells the format in another order: build the page from the example (transcribed script)
             rebuilt = True
             ok, why = rebuild(fmt, mk, url)
             notes.append('page rebuilt from its example video' if ok else f'rebuild refused: {why}')
             if ok:
                 continue
-        if v.get('approved') or all(v.get(k) for k in ('script_ok', 'script_reworded', 'script_follows_example', 'length_ok', 'brand_count_ok')):
+        if v.get('approved') or all(v.get(k) for k in ('script_ok', 'script_faithful', 'script_follows_example', 'length_ok', 'brand_count_ok')):
             notes.append('nothing left that a rewrite could fix: ' + '; '.join(v['direction_issues'] + [v['example_issue']])[:120])
             continue
-        notes.append('script reworded again: ' + '; '.join(v['script_issues'])[:120])
-        status, why, changes = reword.reword_page(fmt, pid, lang, model, localize.example_text(url, page_id=pid),
-                                                  feedback='; '.join(v['script_issues']))
-        if status == 'ok':
-            reword.apply(changes)
+        notes.append('script transcribed again: ' + '; '.join(v['script_issues'])[:120])
+        st, why = align.align_page(fmt, pid, lang, cfg, cfg['links'], feedback='; '.join(v['script_issues']))
+        if st == 'ok':
             fmt.setdefault('reworded', {})[m] = True
         else:
-            notes.append(f'reword refused: {why}')
+            notes.append(f'transcription refused: {why}')
     return 'failed', notes + ['still failing: ' + '; '.join(v.get('script_issues', []) + v.get('direction_issues', []) + [v.get('example_issue', '')])[:200]]
 
 

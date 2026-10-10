@@ -286,7 +286,7 @@ def run(dry_run=False, only_detect=False):
                 state.save('formats.json', fmts)
             except Exception as e:
                 print('localize failed:', str(e)[:200])
-            try:  # Monday: every page must check out (example video = format, script follows it, reworded)
+            try:  # Monday: every page must check out (example video = format, script = its transcript)
                 bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page, only_failed=True) if r[2] not in ('ok', 'fixed')]
                 state.save('formats.json', fmts)
                 if bad:
@@ -898,7 +898,7 @@ def _plain_text(b):
 
 
 def rebuild_page(fmt, mk, url):
-    """Rebuild one market page (current layout, reworded script) from the given example video. -> (ok, reason)"""
+    """Rebuild one market page (current layout, transcribed script) from the given example video. -> (ok, reason)"""
     cfg = load_config()
     m = re.search(r'@([^/]+)/video/(\d+)', url)
     v = tiktok.video_detail(*m.groups()) if m else None
@@ -914,7 +914,7 @@ def rebuild_page(fmt, mk, url):
 def standardize(only=None):
     """Every active format page in every market in the current layout, without leftovers:
     - pages in the old layout (no example video or no resources section) are rebuilt from their example video
-      (same-language strict example if there is one, else the format's original JobStep video) - reworded script;
+      (same-language strict example if there is one, else the format's original JobStep video) - transcribed script;
     - duplicates are removed: a 2nd example video, repeated links/lines outside the script."""
     from . import audit as _audit, reword as _reword
     cfg, fmts = load_config(), load_formats()
@@ -1083,8 +1083,8 @@ def main():
     ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
     ap.add_argument('--localize', action='store_true', help='inspiration videos in each market language (missing ones only)')
     ap.add_argument('--localize-recheck', action='store_true', help='strictly re-check every swapped inspiration video')
-    ap.add_argument('--reword', action='store_true', help='reword all page scripts (similar, not 1:1) - writes to Notion')
-    ap.add_argument('--reword-dry', action='store_true', help='show reworded scripts without writing')
+    ap.add_argument('--reword', action='store_true', help='off (scripts are transcribed now)')
+    ap.add_argument('--reword-dry', action='store_true', help='off (scripts are transcribed now)')
     ap.add_argument('--audit', action='store_true', help='check every page (example video, script) and fix until it passes')
     ap.add_argument('--audit-failed', action='store_true', help='audit only the pages that did not pass last time')
     ap.add_argument('--standardize', action='store_true', help='all pages in the current layout, duplicates removed')
@@ -1211,19 +1211,7 @@ def main():
         localize_report(rep)
         return
     if a.reword or a.reword_dry:
-        cfg, fmts = load_config(), load_formats()
-        rep = reword.run(fmts, M.load(cfg), cfg, page_of, dry=a.reword_dry)
-        for t, m, status, why, changes in rep:
-            print(f'== {t} | {m} | {status} {why}')
-            for b, old, new, _ in changes[:30]:
-                print('   OLD:', old[:300].replace('\n', ' '))
-                print('   NEW:', new[:300].replace('\n', ' '))
-        if not a.reword_dry:
-            state.save('formats.json', fmts)
-            ok = [r for r in rep if r[2] == 'ok']
-            bad = [r for r in rep if r[2] != 'ok']
-            notify.push('✍️ Scripts reworded (similar, not 1:1)', f"{len(ok)} pages reworded"
-                        + (f"\nNot changed ({len(bad)}): " + '; '.join(f"{t} {m}: {why}" for t, m, _, why, _ in bad) if bad else ''))
+        print('rewording is off: scripts are transcribed from the example video (use mode align to redo all pages)')
         return
     if a.audit or a.audit_failed:
         cfg, fmts, meta = load_config(), load_formats(), state.load('meta.json', {})
@@ -1270,7 +1258,7 @@ def main():
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
         bad = [r for r in rep if r[2] != 'ok']
-        notify.push('✍️ Scripts rewritten sentence by sentence', f"{len(rep) - len(bad)}/{len(rep)} pages rewritten"
+        notify.push('✍️ Scripts transcribed, visual hooks shortened', f"{len(rep) - len(bad)}/{len(rep)} pages transcribed"
                     + ('\nNot changed: ' + '; '.join(f"{t} {m}: {w}" for t, m, _, w in bad) if bad else ''))
         return
     if a.gate_rehearsal:

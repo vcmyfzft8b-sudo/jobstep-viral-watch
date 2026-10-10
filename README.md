@@ -11,8 +11,10 @@ Every 6 hours (GitHub Actions) this watcher:
    - "weak" is added when shares + saves are below 1.5 % of views
 4. **Builds a new format page** when a viral video (good engagement) uses a format that is not on the DACH
    instructions page yet:
-   video download → Soniox transcription → frames → Claude writes the German page (casual German, JobStep → Parakeet AI,
-   Parakeet links at every app moment, title, visual hook, resources) → automatic checks → Notion page in exactly the
+   video download → Soniox transcription → frames → Claude writes the German page: the script is the video's own
+   words (German video: its transcript word for word; other languages: a close translation) with only JobStep →
+   Parakeet AI and missing features swapped – no rewording; Parakeet links at every app moment, title, a 1–2 sentence
+   visual hook (copy the example's opening, or pick one from the Visual Hook Lab) + Visual Hook Lab link, resources) → automatic checks → Notion page in exactly the
    same layout as the existing ones → added to the numbered list at its ranked position.
    If a check fails (e.g. "JobStep" left in the text, not German, script length off by more than 25 %), the page is
    created as a private draft on the radar page instead and you get a notification with the reason.
@@ -66,8 +68,10 @@ are tied to live page content; external edits and changes during an audit requir
 page audit saves its state immediately.
 
 `registry/approved_scripts.json` locks exact approved scripts and their examples. Automation can restore the
-approved rendering but cannot rewrite it or replace its example. Source-aligned scripts have at most 110% of the
-source word count and preserve spoken brand mentions; linked filming cues do not count as speech.
+approved rendering but cannot rewrite it or replace its example. Scripts are transcribed from their example (at most
+110% of the source word count, 125% for a translation) and preserve spoken brand mentions; linked filming cues do not
+count as speech. Rewording is off (since 10 Oct 2026); mode `align` re-transcribes every page and shortens its visual
+hook.
 
 `registry/verified_embedded_examples.json` records reviewed evidence pinned to the video block ID and
 edit timestamp. A record with `source_url` additionally requires that exact live TikTok source and a verified live
@@ -102,8 +106,8 @@ python -m unittest discover -s tests -v
 `watcher/crosscheck.py` compares the three countries of every format **together** against the format's reference
 definition in `registry/format_references.json` (hook and premise, ordered story beats, filming and demonstration
 sequence, product introduction with spoken brand/URL placement and CTA, allowed localisation differences). Results are
-reported separately per dimension and country: format consistency, script matching its example, independent
-wording, Parakeet features and claims, filming directions; approval-lock status is reported on its own and never
+reported separately per dimension and country: format consistency, script matching its example, faithful
+transcript, Parakeet features and claims, visual hook; approval-lock status is reported on its own and never
 counts as a pass.
 
 - A group result is cached under a key built from all three pages' content fingerprints, their example source IDs,
@@ -111,7 +115,7 @@ counts as a pass.
 - Missing evidence (no page, unreadable example, unknown video bytes, no reference) makes the group `unverified`.
 - The same source video or uploaded video under different format IDs is flagged as a possible duplicate (never deleted).
 - New and changed groups stay in staging (quality gate) until the group passes. Failing groups are repaired
-  automatically where allowed (canonical example, independently worded rewrite, directions); approval-locked scripts
+  automatically where allowed (canonical example, transcribed script, short visual hook); approval-locked scripts
   are only reported for approval.
 - The on-screen title is reviewed too; a title with an invented result or promise is fixed (titles are not part of a
   script approval).

@@ -1,9 +1,8 @@
-"""Sentence-aligned scripts: every page's script mirrors its example video sentence by sentence.
+"""Transcribed scripts: every page's script is its example video's own words (rule since 2026-10-10 - no rewording).
 
-Rules (agreed 2026-10-07):
-- one sentence of ours per sentence of the original, about the same length; the whole script at most 110% of the
-  original (and at least 80%) - nothing added;
-- same meaning, but built differently (other word order, question instead of statement, other words);
+Rules:
+- original in the page's language: its transcript word for word; other language: a faithful, close translation;
+  same sentences in the same order, nothing added (at most 110% of the original, 125% for a translation);
 - "Parakeet AI" is said/written exactly where the original says/writes JobStep (same number of times). If the original
   only SHOWS the app without naming it, we only show it too ("this tool here");
 - a website / call to action only where the original has one (jobstep.io -> parakeet-ai.com/resume-maker);
@@ -15,7 +14,7 @@ import json
 import re
 
 from . import llm, localize, notion, reword, state
-from .builder import PARAKEET_FACTS
+from .builder import COUNTRY, PARAKEET_FACTS, TRANSCRIBE
 from .markets import TEXT
 
 from .brands import SOURCE_RE as JOBSTEP  # JobStep and the apps of hand-added formats
@@ -109,33 +108,25 @@ recording is shown, and the asset names):
 
 {('REFERENCE DEFINITION of this format (beats, product moment, brand/CTA rules): ' + json.dumps(ref, ensure_ascii=False)) if ref else ''}
 
-Write our new {T['lang_name']} script ({T['style']}) for the SAME FORMAT, independently worded:
-1. Same beats in the same order as the original (and the reference), the product introduced at the same beat, about
-   the same length. The whole script must have {int(n_orig * 0.8)}-{max_words(n_orig)} words (the original has
-   {n_orig}). Add no new beats, claims or features.
-2. Write every beat in your OWN words, as a creator would tell it from scratch: do NOT translate or paraphrase the
-   original's sentences one by one, do not keep its sentence structure, images or turns of phrase (only the hook
-   idea may stay close). A native viewer who saw the original must not recognise any sentence.
-3. Where the original says or writes JobStep / jobstep.io, write "Parakeet AI" / parakeet-ai.com/resume-maker -
-   exactly as often and at the same spots. Where the original only shows the app without naming it (e.g. "this tool
-   here"), do the same: do NOT name it. Never mention JobStep.
-4. A website / call to action at the end only if the original has one.
-5. Scores/percentages the app shows are X (before) and Y (after). No promises nobody can keep ("you will get the
-   job", "passes every filter") - say "better chances" instead. Address the viewer as
-   { {'de': 'du', 'fr': 'tu', 'es': 'tú (never vosotros)'}[lang] } consistently (or "ihr/vous" if the original speaks to a
-   group - but then consistently).
-6. Cues: put cue "parakeet" on the sentence where the original shows the app/site, "linkedin" where it shows LinkedIn
-   job search, "asset" (with asset_name exactly as in our current script) where it shows something like a Gmail
-   inbox, "direction" (asset_name = short stage direction) for important acting moments, else null.
-Return JSON {{"jobstep_mentions_in_original": <number>, "voiceover": {str(voiceover).lower()},
+Write our {T['lang_name']} script for this video: the original's own words, NOT reworded.
+{TRANSCRIBE.format(lang=T['lang_name'], style=T['style'], country=COUNTRY[lang])}
+The whole script must have {int(n_orig * 0.8)}-{max_words(n_orig, translated=True)} words (the original has {n_orig};
+a word-for-word transcript in the same language stays within {max_words(n_orig)}). Address the viewer exactly as the
+original does.
+Cues: put cue "parakeet" on the sentence where the original shows the app/site, "linkedin" where it shows LinkedIn
+job search, "asset" (with asset_name exactly as in our current script) where it shows something like a Gmail
+inbox, "direction" (asset_name = short stage direction) for important acting moments, else null.
+Return JSON {{"original_language": "<English name>", "jobstep_mentions_in_original": <number>,
+"voiceover": {str(voiceover).lower()},
 "script": [{{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "<one sentence>",
 "new_paragraph": false}}]}}"""
     why = feedback
     for attempt in range(5):
         extra = f'\n\nA reviewer rejected the current/previous version: {why}. Fix exactly that.' if why else ''
-        spec = llm.chat_json(cfg['models']['build'], 'You are a senior UGC script writer. Reply with JSON only.',
-                             prompt + extra, timeout=1200)
-        why = _validate(spec, n_orig, base)
+        spec = llm.chat_json(cfg['models']['build'], 'You are a precise transcriber and translator of UGC videos. '
+                             'Reply with JSON only.', prompt + extra, timeout=1200)
+        same = T['lang_name'].lower() in str(spec.get('original_language', '')).lower()
+        why = _validate(spec, n_orig, base, translated=not same)
         if not why:
             break
     else:
@@ -179,19 +170,21 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
     return 'ok', info
 
 
-def max_words(n_orig):
-    """110% of the original; very short on-screen scripts get a few words more (articles in FR/ES/DE)."""
-    return int(n_orig * 1.1) if n_orig >= 60 else max(int(n_orig * 1.1), n_orig + 8)
+def max_words(n_orig, translated=False):
+    """110% of the original (125% for a translation); very short on-screen scripts get a few words more (articles in
+    FR/ES/DE)."""
+    k = 1.25 if translated else 1.1
+    return int(n_orig * k) if n_orig >= 60 else max(int(n_orig * k), n_orig + 8)
 
 
-def _validate(spec, n_orig, source=None):
+def _validate(spec, n_orig, source=None, translated=False):
     script = spec.get('script') or []
     if not script:
         return 'empty script'
     text = ' '.join(s.get('text', '') for s in script)
     n = _words(text)
-    if not 0.8 * n_orig <= n <= max_words(n_orig):
-        return f'the script has {n} words, it must have {int(n_orig * 0.85)}-{max_words(n_orig)}'
+    if not 0.8 * n_orig <= n <= max_words(n_orig, translated):
+        return f'the script has {n} words, it must have {int(n_orig * 0.8)}-{max_words(n_orig, translated)}'
     if JOBSTEP.search(text):
         return 'JobStep is mentioned'
     want = len(JOBSTEP.findall(source)) if source is not None else int(spec.get('jobstep_mentions_in_original') or 0)
@@ -209,8 +202,12 @@ def run(fmts, mkts, cfg, page_of, workers=8):
 
     def one(job):
         f, mk = job
+        pid = page_of(f, mk['key'])
         try:
-            status, why = align_page(f, page_of(f, mk['key']), mk['lang'], cfg, cfg['links'])
+            status, why = align_page(f, pid, mk['lang'], cfg, cfg['links'])
+            if status != 'ok' or why == 'approved script unchanged':  # script untouched -> the hook still gets short
+                reword.fix_directions(f, pid, mk['lang'], cfg['models']['classify'])
+            localize.refresh_note(pid, mk['lang'])
         except Exception as e:
             status, why = 'error', str(e)[:200]
         if status == 'ok':

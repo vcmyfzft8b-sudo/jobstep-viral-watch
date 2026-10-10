@@ -396,6 +396,14 @@
  {
   "description": "HR insider-secret hook: a self-described ex-big-company 'snitch' reveals what HR hides, demoing how to copy an Indeed job link, paste it into Parakeet AI and get an analyzed, tailored CV. Follow the actual example ending; do not add a comment CTA. Examples: 'Was HR nicht will, dass du weißt 🤫'",
   "id": "X03",
+  "inspo": {
+   "de": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@marine.realfakephotos/video/7685281585674849569",
+    "views": 870900
+   }
+  },
   "page_id": "3eb958b0-fc14-8060-8097-fe191b2eca39",
   "pages": {
    "es": "3f2958b0-fc14-8128-b155-d5d455c6627f",
@@ -564,6 +572,12 @@
   "description": "Rejected-rejected-rejected warning: the creator flips through their pretty but empty old CVs, contrasts them with a plain but content-rich new CV that passes ATS filters, and refuses to gatekeep by showing Parakeet AI. Examples: 'Mach das nicht!!'",
   "id": "X15",
   "inspo": {
+   "de": {
+    "rebuilt": true,
+    "strict": false,
+    "url": "https://www.tiktok.com/@emy.jobstep.io/video/7682028282191105312",
+    "views": 517300
+   },
    "es": {
     "audit": true,
     "strict": true,

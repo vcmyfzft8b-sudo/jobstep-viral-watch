@@ -91,3 +91,10 @@ def test_old_line_mentioning_the_lab_is_a_direction(monkeypatch):
     monkeypatch.setattr(notion, 'children', lambda pid: blocks)
     assert [_plain(b) for b in reword.direction_blocks('page')] == [
         'Such dir einen Hook aus dem Visual Hook Lab aus.', 'Starte als Selfie.']
+
+
+def test_sentence_count_ignores_abbreviations():
+    assert builder.sentences('Halte z. B. deinen CV hoch. Dann lächeln.') == 2
+    assert builder.sentences('Copia el gancho (p. ej. un CV). Sonríe.') == 2
+    assert builder.sentences('Wow... echt krass! Los geht’s 😍') == 2
+    assert builder.sentences('Eins. Zwei. Drei.') == 3

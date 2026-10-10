@@ -122,6 +122,16 @@ def hook_lines(spec, lang='de'):
     return [spec['visual_hook_first'].strip()] if spec.get('visual_hook_first', '').strip() else []
 
 
+ABBREV = re.compile(r'\b(z|d|u|o|v|s|ca|bzw|etc|evtl|ggf|inkl|usw|vs|ex|ej|p|cf|env|aprox)\.\s?(?:[a-zA-Z]{1,2}\.)?', re.I)
+
+
+def sentences(text):
+    """Number of sentences ('z. B.', 'p. ex.', '...' and emojis do not end a sentence)."""
+    t = ABBREV.sub('', text or '')
+    t = re.sub(r'\.{2,}|…', ',', t)
+    return len([x for x in re.split(r'[.!?]+(?:\s|$)', t.strip()) if re.search(r'\w', x)])
+
+
 # Letters that must not appear in the finished text (leftovers from Balkan/Polish/Czech originals).
 FOREIGN = 'čćđšłąęńśźżř'
 
@@ -152,7 +162,7 @@ def validate(spec, transcript, lang='de'):
         top, allowed = (1.12, '110%') if same else (1.35, '135%')
         if not 0.8 <= ratio <= top:
             problems.append(f'script length is {ratio:.0%} of the original (allowed 80–{allowed})')
-    if len(re.findall(r'[.!?](\s|$)', spec.get('visual_hook_first', '').strip())) > 2:
+    if sentences(spec.get('visual_hook_first', '')) > 2:
         problems.append('visual hook is longer than 2 sentences')
     if not any(s.get('cue') == 'parakeet' for s in spec.get('script', [])):
         problems.append('no Parakeet AI moment in the script')

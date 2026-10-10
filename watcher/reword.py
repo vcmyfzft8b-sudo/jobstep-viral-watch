@@ -151,10 +151,20 @@ CURRENT DIRECTIONS:
 Write it in {T['lang_name']}, address the creator informally ({ {'de': 'du', 'fr': 'tu', 'es': 'tú'}[lang] }), no links,
 no X/Y scores, nothing about filming the app (the script's links already say that).
 Return JSON {{"hook": "<1-2 short sentences>"}}"""
-    r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt, timeout=900)
-    hook = str(r.get('hook') or '').strip()
-    if not hook or len(re.findall(r'[.!?](\s|$)', hook)) > 2 or '⟦' in hook or SOURCE_RE.search(hook):
-        return 'skipped', 'no usable short hook'
+    from .builder import sentences
+    why = ''
+    for _ in range(3):
+        extra = f'\n\nYour previous answer was rejected: {why}. Fix exactly that.' if why else ''
+        r = llm.chat_json(model, 'You are a precise editor of creator instructions. Reply with JSON only.', prompt + extra,
+                          timeout=900)
+        hook = str(r.get('hook') or '').strip().replace('⟦', '').replace('⟧', '')
+        n = sentences(hook)
+        why = ('empty' if not hook else f'it has {n} sentences, at most 2 are allowed' if n > 2
+               else 'it names JobStep - never mention it' if SOURCE_RE.search(hook) else '')
+        if not why:
+            break
+    else:
+        return 'skipped', f'no usable short hook ({why}): {hook[:120]}'
     if len(enc) == 1 and enc[0][1] == hook:
         return 'ok', 'unchanged'
     with state.LOCK:

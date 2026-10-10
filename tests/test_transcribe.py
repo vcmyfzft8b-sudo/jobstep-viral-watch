@@ -99,3 +99,17 @@ def test_sentence_count_ignores_abbreviations():
     assert builder.sentences('Wow... echt krass! Los geht’s 😍') == 2
     assert builder.sentences('Eins. Zwei. Drei.') == 3
     assert builder.sentences('Halte Absagen in die Kamera und sag „Absage. Absage. Und noch eine.“ Dann lach.') == 2
+
+
+def test_note_is_the_box_under_the_video(monkeypatch):
+    from watcher import localize
+    warn = {'type': 'emoji', 'emoji': '⚠️'}
+    blocks = [notion.block('callout', [notion.rt('Für alle App-Demos nutz bitte diesen Link')], icon=warn),
+              notion.block('video', type='file', file={'url': 'https://x'}),
+              notion.para([notion.rt('Original auf TikTok', link='https://tiktok.com')]),
+              notion.block('callout', [notion.rt(TEXT['de']['inspo_note_same'])], icon=warn)]
+    for b in blocks:
+        for x in b.get(b['type'], {}).get('rich_text', []):
+            x['plain_text'] = x['text']['content']
+    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    assert localize.note_text('page') == TEXT['de']['inspo_note_same']

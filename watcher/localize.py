@@ -200,26 +200,37 @@ def example_text(url, page_id=None):
     return f"ON-SCREEN: {d.get('sticker', '')}\nSPEECH: {text}"
 
 
+def note_block(page_id):
+    """The ⚠️ note callout right under the inspiration video (old pages may have another ⚠️ box at the top);
+    without one there, the first ⚠️ callout of the page."""
+    blocks = notion.children(page_id)
+    i = next((k for k, b in enumerate(blocks) if b['type'] == 'video'), None)
+    under = next((b for b in blocks[i + 1:i + 4] if b['type'] == 'callout'), None) if i is not None else None
+    return under or next((b for b in blocks if b['type'] == 'callout' and '⚠' in str(b['callout'].get('icon'))), None)
+
+
+def note_text(page_id):
+    b = note_block(page_id)
+    return ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', [])) if b else ''
+
+
 def set_note(page_id, lang, same_lang, own=False):
     """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model')."""
     blocks = notion.children(page_id)
-    i = next((k for k, b in enumerate(blocks) if b['type'] == 'video'), None)
-    if i is None:
+    i = next((k for k, x in enumerate(blocks) if x['type'] == 'video'), None)
+    b = next((x for x in blocks[i + 1:i + 4] if x['type'] == 'callout'), None) if i is not None else None
+    if not b:  # only the note right under the video is ever rewritten
         return
-    for b in blocks[i + 1:i + 4]:
-        if b['type'] == 'callout':
-            if b.get('has_children'):  # older pages keep the 2nd note line as a child block -> it would show twice
-                for c in notion.children(b['id']):
-                    notion.api('DELETE', f"/blocks/{c['id']}")
-            notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
-                notion.inspo_note(lang, same_lang, own)))}})
-            return
+    if b.get('has_children'):  # older pages keep the 2nd note line as a child block -> it would show twice
+        for c in notion.children(b['id']):
+            notion.api('DELETE', f"/blocks/{c['id']}")
+    notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
+        notion.inspo_note(lang, same_lang, own)))}})
 
 
 def refresh_note(page_id, lang):
     """Rewrite the ⚠️ note in the current wording, keeping its kind (same-language example or not, JobStep line or not)."""
-    note = next((''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', [])) for b in notion.children(page_id)
-                 if b['type'] == 'callout' and '⚠' in str(b['callout'].get('icon'))), '')
+    note = note_text(page_id)
     if not note:
         return
     same = note.replace('**', '')[:30] == TEXT[lang]['inspo_note_same'].replace('**', '')[:30]

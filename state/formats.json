@@ -134,10 +134,10 @@
     "views": 119800
    },
    "fr": {
-    "rebuilt": true,
-    "strict": false,
+    "audit": true,
+    "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7688735719120014600",
-    "views": 119800
+    "views": 120200
    }
   },
   "page_id": "3f0958b0fc14819f99f8f24903aeaeb3",

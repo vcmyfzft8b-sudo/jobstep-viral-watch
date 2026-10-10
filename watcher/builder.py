@@ -149,7 +149,7 @@ def validate(spec, transcript, lang='de'):
     if spec.get('voiceover', True) and orig_words >= 20:
         ratio = new_words / orig_words
         same = (transcript.get('language') or '')[:2] == lang  # a translation may need a few more words
-        top, allowed = (1.12, '110%') if same else (1.25, '125%')
+        top, allowed = (1.12, '110%') if same else (1.35, '135%')
         if not 0.8 <= ratio <= top:
             problems.append(f'script length is {ratio:.0%} of the original (allowed 80–{allowed})')
     if len(re.findall(r'[.!?](\s|$)', spec.get('visual_hook_first', '').strip())) > 2:

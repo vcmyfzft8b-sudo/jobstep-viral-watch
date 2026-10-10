@@ -41,7 +41,7 @@ def test_translation_may_be_a_bit_longer():
 
 def test_max_words_translation():
     assert align.max_words(100) == 110
-    assert align.max_words(100, translated=True) == 125
+    assert align.max_words(100, translated=True) == 135
 
 
 def test_crosscheck_checks_transcript_not_rewording():

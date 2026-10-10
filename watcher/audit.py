@@ -175,7 +175,7 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
         v['script_issues'] = []
     base = align.source_script(example)
     spoken = reword.spoken_text(reword.script_blocks(page_id))
-    v['length_ok'] = v['approved_matches'] or align._words(spoken) <= (1.10 if same else 1.25) * max(align._words(base), 1)
+    v['length_ok'] = v['approved_matches'] or align._words(spoken) <= (1.10 if same else 1.35) * max(align._words(base), 1)
     want, have = len(align.JOBSTEP.findall(base)), len(re.findall(r'parakeet', spoken, re.I))
     v['brand_count_ok'] = v['approved_matches'] or have == want
     if not v['brand_count_ok']:

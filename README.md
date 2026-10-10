@@ -69,7 +69,7 @@ page audit saves its state immediately.
 
 `registry/approved_scripts.json` locks exact approved scripts and their examples. Automation can restore the
 approved rendering but cannot rewrite it or replace its example. Scripts are transcribed from their example (at most
-110% of the source word count, 125% for a translation) and preserve spoken brand mentions; linked filming cues do not
+110% of the source word count, 135% for a translation) and preserve spoken brand mentions; linked filming cues do not
 count as speech. Rewording is off (since 10 Oct 2026); mode `align` re-transcribes every page and shortens its visual
 hook.
 

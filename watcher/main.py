@@ -933,6 +933,10 @@ def standardize(only=None):
                 if not (has_video and has_res):
                     ex = (f.get('inspo') or {}).get(m, {})
                     url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
+                    url = url or (localize.current_source(pid) or {}).get('url')  # old pages: the video on the page
+                    if not url or not re.search(r'@([^/]+)/video/(\d+)', url):
+                        report.append((f['title'], m, 'error', 'no example video link to rebuild from'))
+                        continue
                     h, vid = re.search(r'@([^/]+)/video/(\d+)', url).groups()
                     v = tiktok.video_detail(h, vid)
                     if not v:

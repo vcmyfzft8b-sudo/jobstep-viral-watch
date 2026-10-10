@@ -17914,6 +17914,25 @@
    "type": "text"
   }
  ],
+ "3f4958b0-fc14-8126-9267-c578fb2a0146": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Nahaufnahme vom Preisraster: Zeig mit dem Finger auf ein Feld und dann auf das Feld unten links, das verkauft ist.",
+   "text": {
+    "content": "Nahaufnahme vom Preisraster: Zeig mit dem Finger auf ein Feld und dann auf das Feld unten links, das verkauft ist.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f4958b0-fc14-8128-9660-f4987f53ca59": [
   {
    "annotations": {
@@ -18465,6 +18484,25 @@
    "plain_text": "(Découpe le logo imprimé aux ciseaux) Celui qui a raflé cette case, c'est cette boîte-là, je vous raconte ça juste après. C'est un outil IA qui a percé en aidant plein de gens à monter un CV vraiment taillé pour le poste qu'ils visent. ",
    "text": {
     "content": "(Découpe le logo imprimé aux ciseaux) Celui qui a raflé cette case, c'est cette boîte-là, je vous raconte ça juste après. C'est un outil IA qui a percé en aidant plein de gens à monter un CV vraiment taillé pour le poste qu'ils visent. ",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f4958b0-fc14-8152-b4ac-d071c5e8a22b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Nahaufnahme: Klebe das ausgeschnittene Parakeet-AI-Logo, passend auf die Feldgröße zugeschnitten, auf das abgezogene Feld.",
+   "text": {
+    "content": "Nahaufnahme: Klebe das ausgeschnittene Parakeet-AI-Logo, passend auf die Feldgröße zugeschnitten, auf das abgezogene Feld.",
     "link": null
    },
    "type": "text"

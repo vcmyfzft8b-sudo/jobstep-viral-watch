@@ -18,6 +18,25 @@
    "type": "text"
   }
  ],
+ "1661d80f-3b14-4a41-b620-252ccdbfae16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sprich direkt in die Kamera, der Titel ist eingeblendet. Such dir einen Visual Hook aus dem Visual Hook Lab aus und mach ihn weiter, während du sprichst.",
+   "text": {
+    "content": "Sprich direkt in die Kamera, der Titel ist eingeblendet. Such dir einen Visual Hook aus dem Visual Hook Lab aus und mach ihn weiter, während du sprichst.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "1fed9b10-7e33-498b-9f1a-ec78089ef3ce": [
   {
    "annotations": {
@@ -20164,6 +20183,25 @@
    "plain_text": "En la demo sigue este orden: subir el CV → ver la nota y el análisis → pegar el enlace o el texto de la oferta → contestar las preguntas del chat → la IA ajusta el CV → elegir un diseño → hacer un cambio rápido → descargarlo.",
    "text": {
     "content": "En la demo sigue este orden: subir el CV → ver la nota y el análisis → pegar el enlace o el texto de la oferta → contestar las preguntas del chat → la IA ajusta el CV → elegir un diseño → hacer un cambio rápido → descargarlo.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "4347a0c2-a5a7-4b12-ae33-7538f6f23682": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Starte mit einem geschockten Gesicht direkt in die Kamera, der Titel ist eingeblendet. Such dir einen Visual Hook aus dem Visual Hook Lab aus und mach ihn weiter, während du sprichst.",
+   "text": {
+    "content": "Starte mit einem geschockten Gesicht direkt in die Kamera, der Titel ist eingeblendet. Such dir einen Visual Hook aus dem Visual Hook Lab aus und mach ihn weiter, während du sprichst.",
     "link": null
    },
    "type": "text"

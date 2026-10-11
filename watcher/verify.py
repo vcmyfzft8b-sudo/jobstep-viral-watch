@@ -67,7 +67,8 @@ def check_page(pid, lang, links, live=True):
     if SOURCE_RE.search(reword.spoken_text(script)):
         out.append('JobStep (or the other app) named in the script')
     hook = reword.direction_blocks(pid)
-    if len(hook) != 1 or 'Visual Hook Lab' not in ' '.join(_plain(b) for b in blocks):
+    lab = ' '.join(_plain(b) + (b.get('child_page') or {}).get('title', '') for b in blocks)  # link or sub-page
+    if len(hook) != 1 or 'Visual Hook Lab' not in lab:
         out.append(f'visual hook section is not "one hook line + Visual Hook Lab" ({len(hook)} lines)')
     return out
 

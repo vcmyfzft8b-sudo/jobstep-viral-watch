@@ -231,11 +231,22 @@ def set_note(page_id, lang, same_lang, own=False):
 
 
 def refresh_note(page_id, lang):
-    """Rewrite the ⚠️ note in the current wording, keeping its kind (same-language example or not). Returns True if
-    the text changed. The 'other app' line is generic now (it names no app), so every note gets it."""
-    note = note_text(page_id)
-    if not note:
-        return False
+    """The ⚠️ note right under the inspiration video in the current wording, keeping its kind (same-language example or
+    not). Old pages without a note under the video get one (the 'other language' kind; added, nothing is deleted).
+    Only the box under the video is looked at - never another ⚠️ box the user made. Returns True if anything changed."""
+    blocks = notion.children(page_id)
+    i = next((k for k, x in enumerate(blocks) if x['type'] == 'video'), None)
+    if i is None:
+        return False  # no inspiration video -> no note
+    b = next((x for x in blocks[i + 1:i + 4] if x['type'] == 'callout'), None)
+    if not b:
+        link = next((x for x in blocks[i + 1:i + 3] if any('tiktok.com/@' in (((r.get('text') or {}).get('link') or {})
+                     .get('url') or '') for r in (x.get(x['type']) or {}).get('rich_text', []) or [])), None)
+        notion.api('PATCH', f'/blocks/{page_id}/children', {'after': (link or blocks[i])['id'], 'children': [
+            notion.block('callout', notion.md('\n'.join(notion.inspo_note(lang, False))),
+                         icon={'type': 'emoji', 'emoji': '⚠️'}, color='gray_background')]})
+        return True
+    note = ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', []))
     same = note_is_same(note, lang)
     if note.replace('**', '').strip() == '\n'.join(notion.inspo_note(lang, same)).replace('**', '').strip():
         return False

@@ -35,7 +35,8 @@ here (repo, Notion, Discord, secrets, state are all separate).
 
 ## Modes added 11 Oct 2026
 - `strip-directions` – bracketed tips leave every script (live, waiting, archived).
-- `renote` – current note text on every page.
+- `renote` – current note text on every page (old pages without a note under the video get one added).
+- `refs` – generated format references rebuilt now where the script rules changed (else on their next check).
 - `verify` – read-only: lists = live formats (numbered), every page: no stage directions, current note; live pages
   also video, TikTok link, Parakeet link, no JobStep, short hook section. Prints "VERIFY PROBLEMS: none" when clean.
 - `export` – every script as one Markdown file, encrypted to state/scripts_export.enc (same key as the Memo export);

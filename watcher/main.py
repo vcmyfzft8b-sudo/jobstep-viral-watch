@@ -1046,7 +1046,7 @@ def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
     """Cross-country check of all formats; with fix=True failing groups are repaired (never approved scripts) and
     checked again. Sends one Slack report with the result types kept separate."""
     notes = []
-    if fix:  # script cues that point to nothing in the resources become stage directions (all unlocked pages)
+    if fix:  # script cues that point to nothing in the resources are removed (all unlocked pages)
         for f in [f for f in fmts if f.get('status') in ('active', 'pending')]:
             for mk in mkts:
                 pid = page_of(f, mk['key'])
@@ -1103,6 +1103,10 @@ def main():
     ap.add_argument('--approval-drafts', action='store_true', help='replacement drafts for approval-locked scripts that '
                     'fail the cross-country check (nothing written to Notion)')
     ap.add_argument('--force', action='store_true', help='with --group-audit/--group-fix: ignore cached group results')
+    ap.add_argument('--strip-directions', action='store_true', help='every page (live, waiting, archived): bracketed stage directions / acting tips leave the scripts (approved scripts: via the registry + apply-approved)')
+    ap.add_argument('--renote', action='store_true', help='every page (live, waiting, archived): the note under the inspiration video gets the current text')
+    ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
+    ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -1309,6 +1313,43 @@ def main():
         group_report(fmts, M.load(cfg), cfg, meta, fix=a.group_fix, force=a.force)
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
+        return
+    if a.strip_directions:
+        cfg, n = load_config(), 0
+        for f in load_formats():
+            for mk in M.load(cfg):
+                pid = page_of(f, mk['key'])
+                if not pid or align.approved_script(f['id'], mk['lang']):
+                    continue  # approval-locked scripts change only through registry/approved_scripts.json + apply-approved
+                try:
+                    k = reword.strip_directions(pid)
+                    n += k
+                    if k:
+                        print(f"{f['title'][:45]} | {mk['key']} | {k} paragraphs cleaned", flush=True)
+                except Exception as e:
+                    print('strip failed:', f['title'], mk['key'], str(e)[:150], flush=True)
+        print(f'strip-directions: {n} paragraphs cleaned')
+        return
+    if a.renote:
+        cfg, n = load_config(), 0
+        for f in load_formats():
+            for mk in M.load(cfg):
+                pid = page_of(f, mk['key'])
+                if not pid:
+                    continue
+                try:
+                    n += bool(localize.refresh_note(pid, mk['lang']))
+                except Exception as e:
+                    print('renote failed:', f['title'], mk['key'], str(e)[:150], flush=True)
+        print(f'renote: {n} notes updated')
+        return
+    if a.verify:
+        from . import verify
+        verify.run(load_config(), load_formats(), page_of)
+        return
+    if a.export:
+        from . import export
+        export.run(load_config(), load_formats(), page_of)
         return
     if a.relist:
         rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)

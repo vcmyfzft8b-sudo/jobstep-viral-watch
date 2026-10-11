@@ -315,7 +315,7 @@ def test_title_with_invented_result_is_fixed_even_on_a_locked_page(monkeypatch):
     assert any('title' in c for c in changed)
 
 
-def test_cue_pointing_to_missing_resource_becomes_a_stage_direction(monkeypatch):
+def test_cue_pointing_to_missing_resource_is_removed(monkeypatch):
     from watcher import notion
     t = 'Copia (📎 InfoJobs – ver Recursos) el enlace.'
     blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
@@ -324,7 +324,7 @@ def test_cue_pointing_to_missing_resource_becomes_a_stage_direction(monkeypatch)
     sent = []
     monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
-    assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Copia (InfoJobs) el enlace.'
+    assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Copia el enlace.'
 
 
 def test_locked_page_gets_directions_fixed_but_never_its_script(monkeypatch):

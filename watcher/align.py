@@ -17,7 +17,7 @@ from . import llm, localize, notion, reword, state
 from .builder import COUNTRY, PARAKEET_FACTS, TRANSCRIBE
 from .markets import TEXT
 
-from .brands import SOURCE_RE as JOBSTEP  # JobStep and the apps of hand-added formats
+from .brands import NO_DIRECTIONS, SOURCE_RE as JOBSTEP  # JobStep and the apps of hand-added formats
 
 
 def _words(t):
@@ -115,10 +115,10 @@ a word-for-word transcript in the same language stays within {max_words(n_orig)}
 original does.
 Cues: put cue "parakeet" on the sentence where the original shows the app/site, "linkedin" where it shows LinkedIn
 job search, "asset" (with asset_name exactly as in our current script) where it shows something like a Gmail
-inbox, "direction" (asset_name = short stage direction) for important acting moments, else null.
+inbox, else null. {NO_DIRECTIONS}
 Return JSON {{"original_language": "<English name>", "jobstep_mentions_in_original": <number>,
 "voiceover": {str(voiceover).lower()},
-"script": [{{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "<one sentence>",
+"script": [{{"cue": "parakeet|linkedin|asset|null", "asset_name": "", "text": "<one sentence>",
 "new_paragraph": false}}]}}"""
     why = feedback
     for attempt in range(5):
@@ -153,11 +153,10 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
             break
     resources = None if locked else reword.resources_text(page_id)  # approved scripts are rendered exactly as approved
     for seg in spec['script']:
-        if seg.get('cue') in ('null', 'None', ''):
+        if seg.get('cue') in ('null', 'None', '', 'direction'):  # no stage directions (brands.NO_DIRECTIONS)
             seg['cue'] = None
         if resources is not None and seg.get('cue') == 'asset' and not reword.in_resources(notion.asset_label(seg.get('asset_name')), resources):
-            seg['cue'] = 'direction'  # nothing in the resources to point to -> a plain stage direction
-            seg['asset_name'] = notion.asset_label(seg.get('asset_name'))
+            seg['cue'], seg['asset_name'] = None, ''  # nothing in the resources to point to -> no cue
     new_blocks = notion.script_paragraphs(spec, links, lang)
     with state.LOCK:
         backup = state.load('script_backup.json', {})

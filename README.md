@@ -71,7 +71,9 @@ page audit saves its state immediately.
 approved rendering but cannot rewrite it or replace its example. Scripts are transcribed from their example (at most
 110% of the source word count, 135% for a translation) and preserve spoken brand mentions; linked filming cues do not
 count as speech. Rewording is off (since 10 Oct 2026); mode `align` re-transcribes every page and shortens its visual
-hook.
+hook. Scripts have no stage directions (since 11 Oct 2026): the only brackets are the link cues and 📎 material cues
+(`brands.NO_DIRECTIONS`); mode `strip-directions` cleans existing pages, `renote` updates the note under the
+inspiration video, `verify` reports leftovers (read-only) and `export` saves all scripts encrypted (see CLAUDE.md).
 
 `registry/verified_embedded_examples.json` records reviewed evidence pinned to the video block ID and
 edit timestamp. A record with `source_url` additionally requires that exact live TikTok source and a verified live

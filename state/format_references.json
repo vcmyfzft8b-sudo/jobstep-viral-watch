@@ -4,123 +4,118 @@
    "7692061360221457686"
   ],
   "allowed_localisation": [
-   "Language of the speech and any on-screen text (German, French or Spanish)",
-   "Currency formatting and the specific price values in the grid, as long as several clearly different prices stay visible",
-   "Laptop model and how the creator names it (for example 'MacBook' or 'laptop')",
-   "Local filler phrasing in the reveal beat (for example 'good enough', 'it works')",
-   "Local job-ad examples pasted in the demo (local job boards and typical local job titles)",
-   "Local CV conventions shown in the template step (for example photo or no photo, length)",
-   "Creator's look, setting and handwriting style of the grid"
+   "Language of the speech and caption (DE/FR/ES), with natural colloquial phrasing in each language",
+   "Laptop brand in the hook (MacBook or any other laptop the creator owns)",
+   "Price amounts and currency style on the fields (€, local number format)",
+   "Small changes to the casual filler lines in beat 3 ('I hope it comes off', 'good enough')",
+   "Job ad on the screen from a job board that is common in that country (example ad, no real employer criticism)",
+   "Grade/wording examples in the CV adapted to the local job market (e.g. CV vs. Lebenslauf vs. currículum)",
+   "Order of the features inside beats 6–7 may shift slightly, as long as the demo follows the real flow"
   ],
   "beats": [
-   "Hook, 1 sentence: back of the laptop to camera. 'I'm selling the space on the back of my laptop for ads, and I already have my first buyer.'",
-   "Price grid, 1 sentence: close-up of the laptop lid covered in drawn fields, each with a different price, for example 5 €, 20 €, 50 € or 100 €. The creator points at one field: 'You can see lots of different prices here, and exactly this field was bought.'",
-   "Reveal, 2–3 short sentences: the creator cuts out or peels off the drawn field, says something like 'Let's try to get this off, I hope it actually comes off… okay, I'd say that's good enough', then sticks the cut-out Parakeet AI logo on and says: 'And this field was bought by Parakeet AI, I'll tell you more in a second.' This is the first spoken brand mention.",
-   "Brand intro, 1 sentence, the second spoken brand mention: 'Parakeet AI has a Resume Maker that helps you turn your CV into an application that fits the exact job you want.' This replaces the original's founding-year and 'known for' sentence. No founding date, no user numbers and no awards.",
-   "How it works, 1 sentence, laptop open and screen recording: 'You simply upload your CV, get a score with an analysis, and paste the link or text of the job ad you want.' This mirrors the original's 'upload your documents, choose your target grade, get a study plan'.",
-   "Features, 1 sentence, screen recording: 'Then you answer a few questions in the chat, the AI tailors your CV to the job, you pick a template, can still edit everything yourself, and download it.' This mirrors the original's 'flashcards, quizzes and even podcasts' list.",
-   "CTA, 1 sentence, back of the laptop to camera with the logo and the remaining priced fields visible: 'So go check it out, and comment below who you think will buy the next spot.'"
+   "1. Hook: 'I'm selling the space on the back of my [laptop] for ads, and I already have my first buyer.' The laptop lid with the drawn, priced fields is in shot.",
+   "2. Show the grid: 'You can see lots of different prices here, and this exact field was bought.' The creator points at one field.",
+   "3. Hands-on moment: 'Let me try to get this off. I really hope it comes off.' The field is cut or peeled out, followed by a casual 'I'd say that's good enough.' The imperfection stays in.",
+   "4. Reveal: 'And this field was bought by Parakeet AI, I'll tell you more in a second.' The Parakeet AI logo is stuck into the field. LINK CUE: logo.",
+   "5. Short intro, one sentence, with no founding year and no invented company facts: 'Parakeet AI is a tool that helps people applying for jobs with their CV.'",
+   "6. Demo part 1, on the opened laptop screen: 'You just upload your CV, paste the link to the job ad, and the AI tailors your CV to that exact job.' LINK CUE: app on screen.",
+   "7. Demo part 2: 'You get a score with an analysis of your CV, you answer a few questions in the chat so it can tailor everything better, and you can even pick a template, edit everything yourself and download it at the end.' LINK CUE: app on screen.",
+   "8. CTA plus engagement question: 'So feel free to check it out, and comment below who you think will buy the next spot.'"
   ],
   "canonical_source": "7692061360221457686",
-  "filming": "Length: 35–50 seconds, one continuous talking voice, no music required. Shots: (1) medium shot of the creator holding the closed laptop with the lid facing the camera; (2) close-up of the hand-drawn price grid on the lid, which can be paper taped on or a removable sticker, never permanent marker on the device; (3) close-up of cutting or peeling the bought field and sticking on a printed Parakeet AI logo cut to the field's size; (4) laptop opened, screen recording or over-the-shoulder shot of the demo; (5) back to the closed lid with the logo in the grid for the CTA. Demo order: upload CV → score/analysis shown → paste job ad link or text → answer questions in the chat → AI tailors the CV → pick a template → quick manual edit → download. Handheld, natural light, casual phone-camera look.",
-  "generated": 1791585686,
-  "hook": "Creator holds up the closed laptop, back facing the camera, and says (local language): 'I'm selling the space on the back of my laptop for ads, and I already have my first buyer.'",
+  "filming": "Length about 40–55 s, one continuous selfie or handheld feel, no voice-over studio look. Shot 1: close-up of the back of the closed laptop. Paper or tape covers the lid, and a marker grid of fields carries different prices (e.g. €5, €20, €50, €100), with one field marked as 'sold'. Shot 2: hands cut or peel out that field, deliberately a bit messy. Shot 3: the Parakeet AI logo, printed and cut out, is stuck into the gap. The camera holds on it for about 1–2 s. Shot 4: the laptop is opened and the camera films the screen directly (no clean screen recording). The demo runs in this order: upload CV → score/analysis → paste the job ad link → answer questions in the chat → the AI tailors the CV → pick a template → edit by yourself → download. Shot 5: back to the laptop lid with the logo, or to the creator, for the comment question. Copy the example video's camera work, pace and handmade look as closely as possible. Text overlay only as the title/caption 'I'm selling ad space on my laptop 🤑' in the country's language.",
+  "generated": 1791679001,
+  "hook": "Opens on the back of the creator's closed laptop, covered with a hand-drawn grid of fields, each with a different price. The first spoken line: 'I'm selling the space on the back of my laptop for ads, and I already have my first buyer.' The creator points at the many prices and the one field that was 'bought', then starts cutting or peeling it out on camera.",
   "not_allowed": [
-   "Dropping the ad-spot-on-laptop premise, the priced-fields grid, or the cut-out and stick-on logo reveal",
-   "Revealing the brand any way other than replacing a priced field with the logo, or before the reveal beat",
-   "Leaving out the 'guess who buys the next spot' comment CTA, or replacing it with a different CTA",
-   "Changing the beat order, adding or removing beats, or changing the sentence count per beat",
-   "Speaking 'Parakeet AI' more or fewer than two times",
-   "Showing or naming Studyflash, JobStep or any other brand, app or logo anywhere, including other fields in the grid labelled with real brand names",
-   "Claiming a founding year, user numbers, rankings, awards, partnerships or 'known for' statements about Parakeet AI",
-   "Showing or mentioning features Parakeet AI doesn't have: an applications overview, a 'New job' button, cover letters, study or learning features (flashcards, quizzes, podcasts, study plans, target grades)",
-   "Promising results such as guaranteed interviews, guaranteed jobs or passing ATS",
-   "Stating the logo spot was actually paid for at a specific real price as fact. It stays a playful bit, with no claims about real money exchanged",
-   "Permanently damaging the laptop on camera (no marker straight on the device, no scratching)"
+   "Mentioning or showing Studyflash or JobStep anywhere (speech, logo, screen, caption)",
+   "Dropping the ad-space-on-the-laptop frame, the priced fields, the cut-out/stick-on reveal or the 'who buys next' question. Without these it is a different format",
+   "Revealing the brand before the cut-out moment, or presenting it as a plain review/tutorial",
+   "Stating a founding year, user numbers, 'famous/known for', ratings or any other company facts that have not been checked",
+   "Features Parakeet AI does not have: overview of your applications, a 'New job' button, cover letters, flashcards/quizzes/podcasts/study plans",
+   "Promises of results such as 'guaranteed job', 'guaranteed interview', 'passes every ATS' or a specific success rate",
+   "Mentioning other Parakeet AI products outside the Resume Maker",
+   "Adding stage directions or acting/filming notes in brackets to the script",
+   "Pretending the ad is not paid. The paid-placement framing stays, and the country's ad labelling rules apply"
   ],
-  "premise": "The creator treats the back of their laptop like an ad billboard. It is divided into hand-drawn fields, each with a price. They say one field has been 'bought', cut it out and stick the Parakeet AI logo in its place. Then they open the laptop and demo the Resume Maker on screen. They end by asking viewers to comment who they think will buy the next spot. Parakeet AI fills every spot the original buyer (Studyflash) filled, the same number of times, and no other brand ever appears.",
+  "premise": "The creator acts as if the lid of their own laptop were a billboard and sells ad fields on it. The first 'buyer' is Parakeet AI. Its logo gets cut out and stuck into the bought field. The creator then opens the laptop and shows on the screen what the app does. The video ends by asking viewers to guess in the comments who will buy the next spot. The joke is that this is an honest paid placement, and that framing carries the ad.",
   "product": {
-   "cta": "Go check out Parakeet AI ('check it out'), and comment below who you think will buy the next ad spot.",
+   "cta": "'Feel free to check it out' plus 'Comment below who you think will buy the next spot.'",
    "features_used": [
     "Upload your CV",
     "CV score/analysis",
-    "Paste the link or text of a job ad",
-    "Answer questions in a chat",
+    "Paste a job ad link or text",
+    "Answer questions in the chat",
     "AI rewrites/tailors the CV to the job",
     "Pick a template",
     "Edit everything yourself",
     "Download the CV"
    ],
-   "introduced_at_beat": 3,
-   "spoken_brand": "Spoken exactly twice, matching the original's two 'Studyflash' mentions: beat 3 ('bought by Parakeet AI') and beat 4 (brand-intro sentence). Visible as the logo stuck on the laptop lid from beat 3 to the end, and in the app UI during the demo. No URL is spoken."
+   "introduced_at_beat": 4,
+   "spoken_brand": "Said by name 'Parakeet AI' at the reveal (beat 4) and once more in the short intro (beat 5), in the same places and as often as Studyflash in the original. No URL is spoken. The logo is visible on the lid from beat 4 to the end."
   },
   "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
   "source_urls": {
    "7692061360221457686": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686"
   },
-  "title_en": "I sold ad space on my laptop 🤑"
+  "title_en": "I'm selling ad space on my laptop 🤑"
  },
  "X08": {
   "accepted_sources": [
    "7693731193187011872"
   ],
   "allowed_localisation": [
-   "The qualification named (DE: 1.3 Abi / Bachelor; FR: bac+5 / Master; ES: Grado / Máster / nota media alta)",
-   "The type of employer or job (DE: EDEKA/Rewe summer job or cashier; FR: caissière at Carrefour/Leclerc; ES: cajera/reponedor at Mercadona/Carrefour). Real brand names only as the place of rejection, never implying wrongdoing",
-   "The creator's situation (student looking for a summer job vs. unemployed graduate)",
-   "Who gave the HR hint (friend, cousin, former HR colleague)",
-   "Local slang, emoji and the wording of the POV text",
-   "The CV language and the template or field chosen (finance, admin, retail, etc.)",
-   "The exact score numbers, as long as they are what the product really shows",
-   "How long it takes for the rejection to arrive (minutes / same day)"
+   "The job and employer: EDEKA summer job (DE), cashier at a supermarket chain such as Carrefour or Leclerc (FR), cashier or summer job at Mercadona, Lidl or Dia (ES). The job must stay a low-barrier job, and the brand may be swapped for a local equivalent.",
+   "The qualification: 1.3 Abitur / Master (DE), bac+5 (FR), 'nota media de 9' / máster or carrera (ES). It must clearly be over the bar for the job.",
+   "Student vs. unemployed status",
+   "Gender of the creator and of the HR friend",
+   "Natural slang, filler words and emoji in the POV text ('🤡', 'je vous mens pas', 'no os miento')",
+   "The exact score numbers, which must be the real ones shown in the app",
+   "The CV style that caused the low score (Canva, icons, two columns, photo-heavy)",
+   "Small wording changes needed for a natural spoken flow in each language, keeping the same number of sentences"
   ],
   "beats": [
-   "1. HOOK: POV on-screen text ('POV: rejected as a cashier' / 'Rejected at EDEKA with a 1.3 Abi 🤡'). Creator says they are job-hunting and just got rejected for a simple job, adds 'not that I have anything against this job', then names their high qualification.",
-   "2. SUSPICION: the rejections arrive within minutes of applying. They asked a friend who used to work in HR.",
-   "3. REVEAL: the friend says the CV is not getting through the automated applicant filters. The creator says 'so they never even saw my CV, and yes, they really didn't'.",
-   "4. PRODUCT IN: 'So here I'm uploading my CV to Parakeet AI, a site that was recommended to me.' Screen recording of the CV upload.",
-   "5. BAD SCORE: Parakeet AI analyses the CV and gives a score. It's not great, and the creator explains it's a Canva-style CV with lots of icons.",
-   "6. REWRITE: the AI reworks and optimises the CV very quickly and asks questions in the chat.",
-   "7. TEMPLATE: the creator picks a clean template suited to their field (the original's 'finance' format), and the CV is rebuilt in it.",
-   "8. TAILOR: the creator pastes the job ad (link or text) so the AI tailors the CV to the posting, 'to have a better chance of being picked'.",
-   "9. CHAT: the creator answers the AI's questions and accepts or edits its suggestions (replaces the JobStep assistant 'Lia').",
-   "10. RESULT: the new, much higher score is shown on screen, and the final optimised CV is scrolled through with 'so yeah, much better chances now'."
+   "1. HOOK / OUTRAGE: The POV text is on screen. The creator says they are unemployed or a student and just got rejected for a simple job (summer job at EDEKA / cashier). They add 'nothing against the job, but' they have top qualifications (1.3 Abitur / bac+5), and they can't believe it.",
+   "2. THE REVEAL: They asked a friend who used to work in HR. She said their CV is probably not getting through the ATS filters. That fits: the rejections come about 5 minutes after applying. 'I thought, no way, they didn't even see my CV. And yes, they really didn't.'",
+   "3. PRODUCT INTRO: 'So here I'm uploading my CV to Parakeet AI, the site she recommended.' It analyses the CV and gives a score. Theirs isn't great because it's a Canva CV with lots of icons.",
+   "4. THE FIX: Parakeet AI rewrites and restructures it very quickly and asks questions in the chat. The creator picks a clean template. They paste the job ad so the CV is tailored to it, which gives a better chance of being shortlisted.",
+   "5. RESULT: They chat with the AI and it suggests improvements. The final score is much higher (only the number the app actually shows). The CV is clean and complete, with all the information optimised. A short wrap-up: 'so yeah'."
   ],
   "canonical_source": "7693731193187011872",
-  "filming": "About 45–60 s, vertical 9:16, one take or loosely cut, phone selfie at home with natural light, casual and unpolished. Beats 1–3: talking head with the POV text overlay for the first 3 s. Beats 4–10: screen recording of Parakeet AI with the creator's voice-over (face in a small overlay or green screen is optional). Demo order: upload CV → score/analysis (low) → AI rewrite + questions in chat → choose template → paste job ad to tailor → answer in chat / edit → new score + final CV scroll. Subtitles burned in, no music or only quiet music.",
-  "generated": 1791468612,
-  "hook": "On-screen POV text plus a deadpan, slightly exasperated line to camera: the creator got rejected for a basic, low-barrier job (summer job at a supermarket or cashier) even though they have a top qualification (e.g. 1.3 Abitur / bac+5). Example title: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
+  "filming": "About 60–80 s, vertical 9:16, matching the original video. Beats 1–2 are a selfie talking-head shot in a casual home setting, with the POV text overlay held during the hook. Beats 3–5 are a screen recording of Parakeet AI's Resume Maker with continuous voiceover (the face can stay as a small corner insert or be cut). Demo sequence: (1) upload the CV, (2) the analysis and a low score appear, (3) the AI rewrites the CV and asks questions in the chat while the creator answers, (4) pick a template, (5) paste the job ad link or text so the CV is tailored, (6) the higher score and the finished CV are shown, optionally with the download. Keep the cuts fast and the tone casual, venting, then relieved.",
+  "generated": 1791678969,
+  "hook": "On-screen POV text plus an angry opening line to camera: 'Rejected for a simple student or entry-level job (EDEKA summer job / cashier) even with top qualifications (1.3 Abitur / bac+5).' Example: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡' / 'POV : j'ai été refusée en tant que caissière'. The tone is disbelief and venting, with a clown or eye-roll vibe.",
   "not_allowed": [
-   "Adding a CTA, discount code, link-in-bio push or a spoken URL (that would make it an ad format)",
-   "Introducing the product before the rejection story and the filter reveal (beats 1–3 must come first)",
-   "Turning it into a step-by-step tutorial or listicle, or dropping the outrage or irony hook",
-   "Showing or mentioning features Parakeet AI does not have: an application overview or tracker, a 'New job' button, cover letters, or a named assistant like 'Lia'",
-   "Calling it JobStep or keeping any JobStep UI or wording",
-   "Claiming the CV is guaranteed to pass applicant filters, or guaranteeing interviews or a job",
-   "Showing a made-up score (e.g. a fixed '96%') that the product didn't actually produce, or calling it an official 'ATS score' unless the UI labels it that way",
-   "Saying the employer (EDEKA etc.) uses a specific filter software or acted unfairly or illegally",
-   "Presenting the HR friend's hint as verified fact about that specific employer. It stays a personal anecdote ('she told me it's probably…')",
-   "Implying Parakeet AI sends applications or contacts employers"
+   "Changing the core story: overqualified → rejected for a simple job → HR friend explains the ATS filter → fixed CV with Parakeet AI. Without the outrage hook or the 'they never even saw my CV' reveal, it becomes a different format.",
+   "Naming JobStep, Studyflash, 'Lia' or any other app or assistant name. The assistant is just 'the AI' or 'the chat', and Parakeet AI replaces JobStep at exactly the same spots and the same number of times.",
+   "Showing or mentioning features Parakeet AI doesn't have: an overview of your applications, a 'New job' button, cover letters, auto-apply, job search",
+   "Claiming a guaranteed ATS pass, a guaranteed interview or a guaranteed job, or making up pass-rate percentages. Only the score the app shows may be read out, framed as 'more chance'.",
+   "Stating as fact that a specific named employer (EDEKA etc.) uses ATS or rejected the creator automatically. It must stay the creator's personal story and the friend's assumption.",
+   "Insulting the job or the people who do it (keep 'nothing against the job, but')",
+   "Adding a CTA, discount code or link-in-bio push the original doesn't have",
+   "Stage directions or filming notes inside the script"
   ],
-  "premise": "An overqualified creator vents about being rejected for an entry-level job and says they have nothing against the job itself. They find out from someone with HR experience that their CV was probably never seen by a person because it did not get past automated filters. They then fix the CV on screen with Parakeet AI's Resume Maker, going from a weak score to a strong one. The tone is ironic disbelief that turns into a practical fix. It is one personal anecdote, not a tutorial.",
+  "premise": "A creator with strong qualifications gets rejected for a low-barrier job. They vent about it and then learn from a friend who worked in HR that their CV probably never reached a human, because it failed the automated (ATS) filters. That explains the rejections that arrive minutes after applying. The friend recommended Parakeet AI. The creator uploads their CV, gets a weak score (a Canva CV with lots of icons), and the AI rewrites and tailors it through a short chat. The final CV scores much higher, has clean formatting and contains all the information, now optimised.",
   "product": {
    "cta": "none",
    "features_used": [
     "Upload your CV",
-    "CV score/analysis",
-    "Paste a job ad (link or text) to tailor the CV",
-    "Answer questions in the chat",
-    "AI rewrites/tailors the CV to the job",
+    "CV score and analysis",
+    "Answer questions in a chat with the AI",
+    "AI rewrites and optimises the CV",
     "Pick a template",
-    "Edit everything yourself"
+    "Paste the job ad link or text to tailor the CV",
+    "Edit the CV yourself",
+    "Download the CV"
    ],
-   "introduced_at_beat": 4,
-   "spoken_brand": "Beat 4, said once in passing ('I'm uploading my CV to Parakeet AI, a site that was recommended to me'). The brand may also appear on screen during the demo. No URL is spoken."
+   "introduced_at_beat": 3,
+   "spoken_brand": "Beat 3: 'Parakeet AI, the site she (the HR friend) recommended', said once while uploading. It may be repeated once in beat 4 where the original repeats the app name. The app is never named in the hook."
   },
   "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
   "source_urls": {
    "7693731193187011872": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872"
   },
-  "title_en": "Rejected for a simple job despite top grades 🤡: the CV never got past the filter"
+  "title_en": "Rejected for a simple job despite top grades: outrage story with a CV fix"
  }
 }

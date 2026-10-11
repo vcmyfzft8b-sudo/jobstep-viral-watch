@@ -178,5 +178,31 @@ def test_verify_reports_stage_directions(monkeypatch):
 def test_new_modes_are_in_the_workflow():
     with open(os.path.join(os.path.dirname(__file__), '..', '.github', 'workflows', 'watch.yml')) as f:
         wf = f.read()
-    for mode in ('strip-directions', 'renote', 'verify', 'export'):
+    for mode in ('strip-directions', 'renote', 'refs', 'verify', 'export'):
         assert f'{mode})' in wf and f'--{mode}' in wf
+
+
+def test_renote_adds_a_missing_note_under_the_video_and_leaves_other_boxes_alone(monkeypatch):
+    user_box = notion.block('callout', [notion.rt('Für alle App-Demos nutz bitte diesen Link')], icon=WARN)
+    blocks = _live([user_box, notion.block('video', type='file', file={'url': 'https://x'}),
+                    notion.para([notion.rt('Original sur TikTok', link='https://www.tiktok.com/@a/video/1')]),
+                    notion.block('heading_2', [notion.rt('📲 TEXTE')])])
+    sent = []
+    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append((method, path, body)))
+    assert verify.note_problem(blocks, 'fr') == 'no note under the inspiration video'
+    assert localize.refresh_note('p', 'fr') is True
+    (method, path, body), = sent
+    assert (method, path, body['after']) == ('PATCH', '/blocks/p/children', 'b2')  # right after the TikTok link
+    added = ''.join(x['text']['content'] for x in body['children'][0]['callout']['rich_text'])
+    assert added == '\n'.join(notion.inspo_note('fr', False)).replace('**', '')
+
+
+def test_verify_accepts_the_visual_hook_lab_as_a_sub_page(monkeypatch):
+    blocks = _page_with_note('\n'.join(notion.inspo_note('es', False)).replace('**', '')) + [
+        {'id': 'lab', 'type': 'child_page', 'child_page': {'title': 'Visual Hook Lab'}}]
+    script = [_blk(('Hola. ', None), ('Parakeet AI · Resume Maker', LINKS['parakeet']))]
+    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    monkeypatch.setattr(reword, 'script_blocks', lambda pid: script)
+    monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [_blk(('Empieza en plano selfie.', None))])
+    assert verify.check_page('p', 'es', LINKS) == []

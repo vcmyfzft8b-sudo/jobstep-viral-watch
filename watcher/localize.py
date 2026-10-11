@@ -223,18 +223,29 @@ def set_note(page_id, lang, same_lang, own=False):
         return
     if b.get('has_children'):  # older pages keep the 2nd note line as a child block -> it would show twice
         for c in notion.children(b['id']):
-            notion.api('DELETE', f"/blocks/{c['id']}")
+            t = ''.join(x.get('plain_text', '') for x in (c.get(c['type']) or {}).get('rich_text', []) or [])
+            if c['type'] == 'paragraph' and re.search(r'JobStep|Parakeet AI', t):  # never a block the user added
+                notion.api('DELETE', f"/blocks/{c['id']}")
     notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
         notion.inspo_note(lang, same_lang, own)))}})
 
 
 def refresh_note(page_id, lang):
-    """Rewrite the ⚠️ note in the current wording, keeping its kind (same-language example or not, JobStep line or not)."""
+    """Rewrite the ⚠️ note in the current wording, keeping its kind (same-language example or not). Returns True if
+    the text changed. The 'other app' line is generic now (it names no app), so every note gets it."""
     note = note_text(page_id)
     if not note:
-        return
-    same = note.replace('**', '')[:30] == TEXT[lang]['inspo_note_same'].replace('**', '')[:30]
-    set_note(page_id, lang, same, own='JobStep' not in note)
+        return False
+    same = note_is_same(note, lang)
+    if note.replace('**', '').strip() == '\n'.join(notion.inspo_note(lang, same)).replace('**', '').strip():
+        return False
+    set_note(page_id, lang, same)
+    return True
+
+
+def note_is_same(note, lang):
+    """True for the 'same language' note (its first ~30 characters differ from the 'other language' one)."""
+    return note.replace('**', '')[:30] == TEXT[lang]['inspo_note_same'].replace('**', '')[:30]
 
 
 def finish(f, m, pid, lang, url, cfg):

@@ -28,10 +28,12 @@ import time
 from urllib.parse import urlsplit
 
 from . import align, audit, llm, localize, notion, reword
+from .brands import NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-10.transcribe'
+AUDIT_VERSION = 'group-2026-10-11.no-directions'
+REF_RULES = 'no-directions-2026-10-11'  # scripts without stage directions (brands.NO_DIRECTIONS)
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims',
               'directions_match')
@@ -54,8 +56,8 @@ def ensure_reference(fmt, page_of, cfg):
     from its source video. Returns the reference or None (then the group stays unverified and is tried again)."""
     from . import state
     ref = reference(fmt['id'])
-    if ref:
-        return ref
+    if ref and ('generated' not in ref or ref.get('rules') == REF_RULES):
+        return ref  # a generated definition is rebuilt when the script rules changed (reviewed ones never)
     url = fmt.get('source_video') or (fmt.get('revived') or {}).get('because')
     pid = page_of(fmt, 'de')
     if not url and pid:
@@ -72,6 +74,7 @@ VIDEO ({url}):
 {example[:4000]}
 
 {PARAKEET_FACTS}
+{NO_DIRECTIONS} (So the reference never requires stage directions in the script.)
 
 Write the format's reference definition that all three countries must follow. Return JSON {{"title_en": "", "hook": "",
 "premise": "", "beats": ["<beat 1>", "..."], "filming": "<length, shots, demo sequence>",
@@ -87,7 +90,7 @@ and claims we must not make>"]}}"""
     if not (isinstance(r.get('beats'), list) and r['beats'] and r.get('hook') and isinstance(r.get('product'), dict)):
         return None
     ref = {**r, 'canonical_source': vid, 'accepted_sources': [vid], 'rejected_sources': {}, 'source_urls': {vid: url},
-           'generated': int(time.time())}
+           'generated': int(time.time()), 'rules': REF_RULES}
     with state.LOCK:
         generated = state.load('format_references.json', {})
         generated[fmt['id']] = ref
@@ -247,13 +250,15 @@ def judge(fmt, ref, evidence, model):
                       f"EXAMPLE VIDEO {ev['source_id']}:\n{ev['example'][:3500]}\n\n"
                       f"OUR SCRIPT (spoken/on-screen text only):\n{ev['script'][:3500]}\n\n"
                       f"THE SAME SCRIPT WITH ITS FILMING CUES ([CUE: ...] = a link marker telling the creator to show "
-                      f"the app/asset there, NOT spoken; (...) = stage direction):\n{ev.get('marked', '')[:4000]}\n\n"
+                      f"the app/asset there, NOT spoken):\n{ev.get('marked', '')[:4000]}\n\n"
                       f"OUR FILMING DIRECTIONS:\n{ev['directions'][:4000]}\n\n"
                       f"OUR ON-SCREEN TITLE: {ev.get('title', '')}")
     prompt = f"""REFERENCE DEFINITION of format {fmt['id']} ("{fmt.get('title', '')}"):
 {json.dumps(ref, ensure_ascii=False, indent=1)}
 
 {PARAKEET_FACTS}
+
+{NO_DIRECTIONS}
 
 Below are the three countries' pages of this format. Compare them TOGETHER against the reference and against each
 other. Be strict:
@@ -300,7 +305,7 @@ Return JSON {{"titles": {{"<country>": "<fixed title>"}}, "results": {{"<dimensi
 def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
     """Returns the group result (also cached in meta['group_audit'][format_id])."""
     store = meta.setdefault('group_audit', {})
-    ref = reference(fmt['id']) or ensure_reference(fmt, page_of, cfg)
+    ref = ensure_reference(fmt, page_of, cfg)  # existing (a generated one is rebuilt when the script rules changed)
     inputs = page_inputs(fmt, mkts, page_of, meta)
     approval = approval_status(fmt, mkts, page_of, cfg['links'])
     dups = [d for d in (dup_list or []) if fmt['id'] in d['formats']]

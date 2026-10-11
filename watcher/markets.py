@@ -14,16 +14,21 @@ TEXT = {
         'flag': '🇩🇪', 'name': 'DACH', 'lang_name': 'German',
         'style': 'natural spoken German as a TikTok creator would say it (du-Form)',
         'video_heading': 'Inspirationsvideo', 'source': 'Original auf TikTok',
+        # The first ~30 characters of 'inspo_note'[0] and 'inspo_note_same' tell "other language" and "same language"
+        # apart (audit._note_is_same) - keep those starts as they are.
         'inspo_note': [
-            '**Wichtig:** Dreh dein Video nach dem deutschen Skript unten – es ist der Text aus dem Inspirationsvideo, '
-            'auf Deutsch übersetzt. Das Video zeigt dir Tempo, Vibe, Licht und Kamerawinkel – und was du auf dem '
-            'Bildschirm zeigst und wie du die App zeigst.',
-            'Im Video wird JobStep genutzt. Mach es genau gleich, nur mit Parakeet AI: Zeig alles, was im Inspirationsvideo '
-            'gezeigt wird – öffne Parakeet AI an den Stellen, an denen JobStep geöffnet wird, und zeig es genauso. JobStep darf '
-            'in deinem Video nirgends zu sehen oder zu hören sein.'],
-        'inspo_note_same': '**Wichtig:** Das Inspirationsvideo ist auf Deutsch und zeigt genau dieses Format – nimm es als Vorbild '
-                           'für Tempo, Vibe, Licht, Kamerawinkel und dafür, wie die App gezeigt wird. Das Skript unten ist '
-                           'der Text aus dem Video – mit Parakeet AI als App.',
+            '**Wichtig:** Dreh dein Video nach dem Skript unten. Das Inspirationsvideo ist von einer anderen Marke und '
+            'NICHT das Video, das du drehen sollst. Übernimm davon SO GENAU WIE MÖGLICH den Vibe, die Kamerawinkel, wie '
+            'gefilmt wird, den Schnitt und die Momente, in denen die App gezeigt wird (Demo) – genau dafür sind '
+            'Inspirationsvideos da.',
+            'Im Video wird eine andere App genutzt. Mach alles genauso, nur mit Parakeet AI: Öffne Parakeet AI an den '
+            'Stellen, an denen im Video diese App geöffnet wird, und zeig es genauso. Diese App darf in deinem Video '
+            'nirgends zu sehen oder zu hören sein.'],
+        'inspo_note_same': '**Wichtig:** Das Inspirationsvideo ist auf Deutsch und zeigt genau dieses Format, ist aber von '
+                           'einer anderen Marke und NICHT das Video, das du drehen sollst. Übernimm davon SO GENAU WIE '
+                           'MÖGLICH den Vibe, die Kamerawinkel, wie gefilmt wird, den Schnitt und die Momente, in denen die '
+                           'App gezeigt wird (Demo) – genau dafür sind Inspirationsvideos da. Dreh dein eigenes Video nach '
+                           'dem Skript unten.',
         'title_h': 'TITEL', 'script_h': '💬SKRIPT', 'hook_h': '🎬 VISUELLER HOOK', 'res_h': 'RESSOURCEN',
         'sub_voice': 'Automatische Untertitel', 'sub_silent': 'Musik aus der Plattform-Bibliothek, kein Voiceover',
         'silent_label': 'Texteinblendungen – nicht sprechen:',
@@ -56,15 +61,18 @@ TEXT = {
         'style': 'natural spoken French as a TikTok creator would say it (tutoiement)',
         'video_heading': 'Vidéo d’inspiration', 'source': 'Original sur TikTok',
         'inspo_note': [
-            '**Important :** Tourne ta vidéo d’après le script en français ci-dessous – c’est le texte de la vidéo '
-            'd’inspiration, traduit en français. La vidéo te montre le rythme, l’ambiance, la lumière et les angles de '
-            'caméra – ce que tu montres à l’écran et comment tu montres l’app.',
-            'Dans la vidéo, c’est JobStep qui est utilisé. Fais exactement pareil, mais avec Parakeet AI : montre tout ce '
-            'qui est montré dans la vidéo d’inspiration – ouvre Parakeet AI aux moments où JobStep est ouvert et montre-le '
-            'de la même façon. JobStep ne doit apparaître ni être entendu nulle part dans ta vidéo.'],
-        'inspo_note_same': '**Important :** La vidéo d’inspiration est en français et montre exactement ce format – prends-la '
-                           'comme modèle pour le rythme, l’ambiance, la lumière, les angles de caméra et la façon de montrer '
-                           'l’app. Le script ci-dessous est le texte de la vidéo – avec Parakeet AI comme app.',
+            '**Important :** Tourne ta vidéo d’après le script ci-dessous. La vidéo d’inspiration vient d’une autre '
+            'marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT POSSIBLE l’ambiance (vibe), les '
+            'angles de caméra, la façon de filmer, le montage et les moments où l’app est montrée (démo) – c’est à ça que '
+            'servent les vidéos d’inspiration.',
+            'Dans la vidéo, c’est une autre app qui est utilisée. Fais tout pareil, mais avec Parakeet AI : ouvre Parakeet '
+            'AI aux moments où cette app est ouverte dans la vidéo et montre-le de la même façon. Cette app ne doit '
+            'apparaître ni être entendue nulle part dans ta vidéo.'],
+        'inspo_note_same': '**Important :** La vidéo d’inspiration est en français et montre exactement ce format, mais elle '
+                           'vient d’une autre marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT '
+                           'POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments '
+                           'où l’app est montrée (démo) – c’est à ça que servent les vidéos d’inspiration. Tourne ta propre '
+                           'vidéo d’après le script ci-dessous.',
         'title_h': 'TITRE', 'script_h': '💬SCRIPT', 'hook_h': '🎬 ACCROCHE VISUELLE', 'res_h': 'RESSOURCES',
         'sub_voice': 'Sous-titres automatiques', 'sub_silent': 'Musique de la bibliothèque de la plateforme, sans voix off',
         'silent_label': 'Textes à l’écran – ne pas parler :',
@@ -98,15 +106,18 @@ TEXT = {
         'style': 'natural spoken Spanish from Spain as a TikTok creator would say it (tú)',
         'video_heading': 'Vídeo de inspiración', 'source': 'Original en TikTok',
         'inspo_note': [
-            '**Importante:** Graba tu vídeo con el guion en español de abajo – es el texto del vídeo de inspiración, '
-            'traducido al español. El vídeo te muestra el ritmo, el ambiente, la luz y los ángulos de cámara – qué '
-            'enseñas en pantalla y cómo enseñas la app.',
-            'En el vídeo se usa JobStep. Hazlo exactamente igual, pero con Parakeet AI: enseña todo lo que se ve en el vídeo '
-            'de inspiración – abre Parakeet AI en los momentos en que se abre JobStep y enséñalo de la misma forma. JobStep no '
-            'puede verse ni oírse en ningún momento de tu vídeo.'],
-        'inspo_note_same': '**Importante:** El vídeo de inspiración está en español y muestra exactamente este formato – tómalo '
-                           'como modelo para el ritmo, el ambiente, la luz, los ángulos de cámara y cómo enseñar la app. El '
-                           'guion de abajo es el texto del vídeo – con Parakeet AI como app.',
+            '**Importante:** Graba tu vídeo con el guion de abajo. El vídeo de inspiración es de otra marca y NO es el '
+            'vídeo que tienes que hacer. Cópiale LO MÁS FIELMENTE POSIBLE el ambiente (vibe), los ángulos de cámara, '
+            'cómo está grabado, el montaje y los momentos en que se enseña la app (demo) – para eso sirven los vídeos de '
+            'inspiración.',
+            'En el vídeo se usa otra app. Hazlo todo igual, pero con Parakeet AI: abre Parakeet AI en los momentos en que '
+            'se abre esa app en el vídeo y enséñalo de la misma forma. Esa app no puede verse ni oírse en ningún momento '
+            'de tu vídeo.'],
+        'inspo_note_same': '**Importante:** El vídeo de inspiración está en español y muestra exactamente este formato, '
+                           'pero es de otra marca y NO es el vídeo que tienes que hacer. Cópiale LO MÁS FIELMENTE POSIBLE '
+                           'el ambiente (vibe), los ángulos de cámara, cómo está grabado, el montaje y los momentos en que '
+                           'se enseña la app (demo) – para eso sirven los vídeos de inspiración. Graba tu propio vídeo con '
+                           'el guion de abajo.',
         'title_h': 'TÍTULO', 'script_h': '💬GUION', 'hook_h': '🎬 GANCHO VISUAL', 'res_h': 'RECURSOS',
         'sub_voice': 'Subtítulos automáticos', 'sub_silent': 'Música de la biblioteca de la plataforma, sin voz en off',
         'silent_label': 'Textos en pantalla – no hablar:',

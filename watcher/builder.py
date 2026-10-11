@@ -7,7 +7,7 @@ from . import llm
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXAMPLES = os.path.join(HERE, '..', 'registry', 'examples')
 
-from .brands import OTHER_NOTE, SOURCE_RE
+from .brands import NO_DIRECTIONS, OTHER_NOTE, SOURCE_RE
 from .markets import TEXT
 
 # Kept for older callers (DACH texts); the per-language texts live in markets.TEXT.
@@ -42,13 +42,13 @@ RULES = """RULES
 - Output language for ALL creator-facing text (page_title, title_hook, script, visual_hook_first, asset
   names/descriptions, directions): {lang}.
 """ + TRANSCRIBE + """
+- """ + NO_DIRECTIONS + """
 - Every moment where the original video SHOWS the CV app on screen gets cue "parakeet". Where it shows LinkedIn job
-  search, cue "linkedin". Plain stage directions (e.g. surprised reaction, music, "open google.com") use cue
-  "direction" with the direction as text in asset_name. Otherwise cue null. Put the cue on the segment where that
-  screen starts.
+  search, cue "linkedin". Otherwise cue null. Put the cue on the segment where that screen starts. No stage
+  directions, no brackets in the text.
 - CVs are NEVER assets: creators show their own old CV and the CV they make in Parakeet AI (cue "parakeet").
 - Public websites/apps the creator can simply open and film (a discount page, a job board, Google) are NOT assets:
-  use cue "direction" with the exact page to open as asset_name.
+  cue null (the example video shows them).
 - Only things a creator cannot make or open themselves count as assets (cue "asset", e.g. an email inbox full of
   interview invites).
 - No voiceover videos (only on-screen text + music): set voiceover=false; each script segment is one text overlay.
@@ -69,7 +69,7 @@ COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
 
 SCHEMA = """Return JSON:
 {"page_title": "...", "icon": "<one emoji>", "title_hook": "...", "voiceover": true,
- "script": [{"cue": "parakeet|linkedin|asset|direction|null", "asset_name": "", "text": "...", "new_paragraph": false}],
+ "script": [{"cue": "parakeet|linkedin|asset|null", "asset_name": "", "text": "...", "new_paragraph": false}],
  "visual_hook_first": "<1-2 short sentences>",
  "has_scores": false, "assets_needed": [{"name": "...", "description": "<what it must show>"}],
  "registry_description": "<one English sentence describing the format, for matching future videos>",
@@ -111,6 +111,8 @@ seconds (red). Use them to see the visual hook, what is shown on screen and when
         content.append(llm.image_part(path))
     spec = llm.chat_json(model, SYSTEM, content, max_tokens=8000, temperature=0.4)
     for seg in spec.get('script', []):
+        if seg.get('cue') == 'direction':  # no stage directions (brands.NO_DIRECTIONS)
+            seg['cue'], seg['asset_name'] = None, ''
         if seg.get('cue') in ('null', 'None', ''):
             seg['cue'] = None
     return spec

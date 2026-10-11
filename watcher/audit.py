@@ -19,6 +19,7 @@ import re
 from urllib.parse import urlsplit
 
 from . import align, llm, localize, notion, reword, state, tiktok
+from .brands import NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 
 ORIGINALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'originals.json')
@@ -144,6 +145,7 @@ Check strictly:
 7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h').
 {PARAKEET_FACTS}
 script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
+{NO_DIRECTIONS}
 Note: X and Y in the script are intentional placeholders - the creator says the score the app shows them. They are
 correct; never ask to replace them with numbers.
 Return JSON {{"example_same_format": true, "script_follows_example": true, "script_faithful": true, "script_ok": true,
@@ -201,8 +203,7 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
 
 
 def _note_is_same(note, lang):
-    from .markets import TEXT
-    return note.replace('**', '')[:30] == TEXT[lang]['inspo_note_same'].replace('**', '')[:30]
+    return localize.note_is_same(note, lang)
 
 
 def _put_example(fmt, m, page_id, lang, url, same_lang):

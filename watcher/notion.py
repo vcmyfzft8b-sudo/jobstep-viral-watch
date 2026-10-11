@@ -97,7 +97,8 @@ def upload_video(path):
 
 def inspo_note(lang, same_lang=False, own=False):
     """The note under the inspiration video: same-language example = 'use it as the model, say our script';
-    otherwise 'film from our script, the video shows pacing/look'. The JobStep line only for JobStep videos."""
+    otherwise 'film from our script'. Both say: another brand's video - copy vibe, angles, filming, editing and the demo
+    moments as closely as possible. The second line ('another app is used - do the same with Parakeet AI') names no app."""
     T = TEXT[lang]
     first = T['inspo_note_same'] if same_lang else T['inspo_note'][0]
     return [first] if own else [first, T['inspo_note'][1]]
@@ -151,6 +152,14 @@ def asset_label(name):
         t = new
 
 
+DIRECTION_RE = re.compile(r'\((?!\s*📎)[^()]*\)\s*')
+
+
+def strip_directions(text):
+    """Script text without bracketed stage directions / acting tips (the 📎 material cues stay)."""
+    return re.sub(r'\s{2,}', ' ', DIRECTION_RE.sub('', text or '')).strip()
+
+
 def script_paragraphs(spec, links, lang='de'):
     """The script section's paragraphs (cue links in front of the line where the app/LinkedIn/asset appears)."""
     T = TEXT[lang]
@@ -168,9 +177,11 @@ def script_paragraphs(spec, links, lang='de'):
             parts += [rt('('), rt(label, link=url), rt(') ')]
         elif cue == 'asset':
             parts.append(rt(T['asset_cue'].format(name=asset_label(seg.get('asset_name')) or '📎')))
-        elif cue == 'direction' and seg.get('asset_name'):
-            parts.append(rt(f"({re.sub(r'[()]', '', seg['asset_name']).strip()}) "))  # brackets inside would cut it
-        parts.append(rt(seg['text'].strip() + ' ', bold=silent))
+        # cue 'direction' (stage directions) is never rendered: scripts have no acting tips (brands.NO_DIRECTIONS)
+        text = strip_directions(seg.get('text'))
+        if not text and not parts:
+            continue
+        parts.append(rt(text + ' ', bold=silent))
         if silent:
             paragraphs.append(parts)
             continue

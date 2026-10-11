@@ -201,7 +201,7 @@ def in_resources(name, resources):
 
 def fix_asset_cues(page_id):
     """Repairs script cues: decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos'), or pointing to the
-    resources section for something that is not there (then it is a plain stage direction '(InfoJobs)')."""
+    resources section for something that is not there (then the cue is removed - scripts have no stage directions)."""
     suffixes = {l: TEXT[l]['asset_cue'].split('{name}')[1].strip(' )') for l in TEXT}
     resources = None
     fixed = 0
@@ -220,12 +220,12 @@ def fix_asset_cues(page_id):
                 if resources is None:
                     resources = resources_text(page_id)
                 if not in_resources(name, resources):
-                    clean = f'({name})'
+                    clean = ''  # nothing in the resources to point to -> no cue (brands.NO_DIRECTIONS)
                 elif m.group(1).count('📎') > 1:
                     clean = TEXT[lang]['asset_cue'].format(name=name).strip()
                 else:
                     continue
-                t = t.replace(m.group(0), clean)
+                t = re.sub(r' {2,}', ' ', t.replace(m.group(0), clean))
                 changed = True
             x['text']['content'] = t
         if changed:
@@ -233,6 +233,52 @@ def fix_asset_cues(page_id):
                 {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich if x.get('text')]}})
             fixed += 1
     return fixed
+
+
+def directions_left(page_id):
+    """Bracketed stage directions / acting tips still in the script (not a link cue, not a 📎 material cue)."""
+    found = []
+    for b in script_blocks(page_id):
+        for x in b[b['type']].get('rich_text', []):
+            if x.get('type') == 'text' and not ((x.get('text') or {}).get('link') or {}).get('url'):
+                found += [m.group(0).strip() for m in notion.DIRECTION_RE.finditer(x.get('plain_text', ''))]
+    return found
+
+
+def strip_directions(page_id):
+    """Removes bracketed stage directions / acting tips from the script (user's decision, 11 Oct 2026): only the link
+    cues (Parakeet AI, LinkedIn) and 📎 material cues stay in brackets. The old text is backed up first; a paragraph
+    that was only a direction is deleted. Returns how many paragraphs changed."""
+    changed = 0
+    for b in script_blocks(page_id):
+        rich, out, touched = b[b['type']].get('rich_text', []), [], False
+        for x in rich:
+            if x.get('type') == 'text' and not ((x.get('text') or {}).get('link') or {}).get('url'):
+                t = x.get('plain_text', '')
+                new = re.sub(r' {2,}', ' ', notion.DIRECTION_RE.sub('', t))
+                if new != t:
+                    touched = True
+                if new:
+                    out.append({'type': 'text', 'text': {'content': new}, 'annotations': x.get('annotations', {})})
+            elif x.get('type') == 'text':
+                out.append({'type': 'text', 'text': {'content': x['plain_text'], 'link': x['text']['link']},
+                            'annotations': x.get('annotations', {})})
+            else:
+                out.append({k: v for k, v in x.items() if k in ('type', 'mention', 'equation', 'annotations')})
+        if not touched:
+            continue
+        with state.LOCK:
+            backup = state.load('script_backup.json', {})
+            backup.setdefault('directions:' + b['id'], rich)
+            state.save('script_backup.json', backup)
+        if out and out[0]['type'] == 'text':
+            out[0]['text']['content'] = out[0]['text']['content'].lstrip()
+        if not ''.join(o.get('text', {}).get('content', '') for o in out).strip():
+            notion.api('DELETE', f"/blocks/{b['id']}")  # the paragraph was only a direction
+        else:
+            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': out}})
+        changed += 1
+    return changed
 
 
 def spoken_text(blocks):

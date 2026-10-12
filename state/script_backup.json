@@ -20283,6 +20283,25 @@
    "type": "text"
   }
  ],
+ "3f7958b0-fc14-8160-93c9-d1d6ecf9530d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Como en el vídeo de ejemplo: habla muy cerca a cámara con un micro de solapa en la mano y pon en los primeros segundos los stickers de texto \"NO TE VAN A CONTRATAR\" y luego \"POR ESTE ERROR\" con un emoji de megáfono 📢.",
+   "text": {
+    "content": "Como en el vídeo de ejemplo: habla muy cerca a cámara con un micro de solapa en la mano y pon en los primeros segundos los stickers de texto \"NO TE VAN A CONTRATAR\" y luego \"POR ESTE ERROR\" con un emoji de megáfono 📢.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f7958b0-fc14-8169-abaa-c95624986b8d": [
   {
    "annotations": {
@@ -30531,6 +30550,213 @@
     "plain_text": ") Et le top, c'est que chaque poste montre des chiffres, pas juste une liste de tâches. Un recruteur capte en trois secondes ce que tu apportes.",
     "text": {
      "content": ") Et le top, c'est que chaque poste montre des chiffres, pas juste une liste de tâches. Un recruteur capte en trois secondes ce que tu apportes.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3e6958b0-fc14-80b2-9be1-e5711abc8dcb": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ninguna empresa te va a contratar por este error. Y lo peor es que ni siquiera te vas a enterar de que lo estás cometiendo. ",
+    "text": {
+     "content": "Ninguna empresa te va a contratar por este error. Y lo peor es que ni siquiera te vas a enterar de que lo estás cometiendo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "La mayoría de las empresas, sobre todo las grandes y las medianas, utilizan un sistema llamado ATS que filtra los currículums incluso antes de que los vea un humano. Y si tu currículum no pasa ese filtro, va directo a la basura. ",
+    "text": {
+     "content": "La mayoría de las empresas, sobre todo las grandes y las medianas, utilizan un sistema llamado ATS que filtra los currículums incluso antes de que los vea un humano. Y si tu currículum no pasa ese filtro, va directo a la basura. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Y cuál es el error? Que pecamos de hacer currículums súper bonitos y currados en Canva, pero cuando pasan por un ATS, el sistema no entiende nada. Y como no entiende nada, te descarta automáticamente. ",
+    "text": {
+     "content": "¿Y cuál es el error? Que pecamos de hacer currículums súper bonitos y currados en Canva, pero cuando pasan por un ATS, el sistema no entiende nada. Y como no entiende nada, te descarta automáticamente. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "La solución que te doy es hacer un currículum ATS-friendly: texto plano, sin ninguna columna, sin iconos raros, ni fuentes raras. Y lo más importante: con las palabras clave de la oferta, porque el sistema busca coincidencias literales. ",
+    "text": {
+     "content": "La solución que te doy es hacer un currículum ATS-friendly: texto plano, sin ninguna columna, sin iconos raros, ni fuentes raras. Y lo más importante: con las palabras clave de la oferta, porque el sistema busca coincidencias literales. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y para no montar todo esto a mano, yo utilizo una plataforma llamada Parakeet AI. (",
+    "text": {
+     "content": "Y para no montar todo esto a mano, yo utilizo una plataforma llamada Parakeet AI. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Búsqueda de empleo en LinkedIn",
+    "text": {
+     "content": "Búsqueda de empleo en LinkedIn",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Le dices el puesto al que quieres optar, (",
+    "text": {
+     "content": ") Le dices el puesto al que quieres optar, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") y su creador de currículums te genera un currículum ya adaptado a esa oferta, en una columna, limpio, y con las palabras clave que ese ATS quiere ver. ",
+    "text": {
+     "content": ") y su creador de currículums te genera un currículum ya adaptado a esa oferta, en una columna, limpio, y con las palabras clave que ese ATS quiere ver. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y para no enviar el mismo currículum para todas las ofertas, tienes uno personalizado en segundos. ",
+    "text": {
+     "content": "Y para no enviar el mismo currículum para todas las ofertas, tienes uno personalizado en segundos. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Así que si te estás hartando de echar currículums y no te llama ninguna empresa, este vídeo es perfecto para ti. Comenta \"currículum\" y te paso el enlace. ",
+    "text": {
+     "content": "Así que si te estás hartando de echar currículums y no te llama ninguna empresa, este vídeo es perfecto para ti. Comenta \"currículum\" y te paso el enlace. ",
      "link": null
     },
     "type": "text"

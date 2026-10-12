@@ -58,7 +58,9 @@ def ensure_reference(fmt, page_of, cfg):
     ref = reference(fmt['id'])
     if ref and ('generated' not in ref or ref.get('rules') == REF_RULES):
         return ref  # a generated definition is rebuilt when the script rules changed (reviewed ones never)
-    url = fmt.get('source_video') or (fmt.get('revived') or {}).get('because')
+    because = (fmt.get('revived') or {}).get('because') or ''  # a URL, or a reason text ("proven for our creators")
+    url = (fmt.get('source_video') or (because if source_id(because) else None)
+           or next((x['url'] for x in (fmt.get('inspo') or {}).values() if x.get('strict') and x.get('url')), None))
     pid = page_of(fmt, 'de') or next(iter((fmt.get('pages') or {}).values()), None)
     if not url and pid:
         url = (localize.current_source(pid) or {}).get('url')

@@ -1131,7 +1131,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791837988,
+   "checked_at": 1791838487,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1144,12 +1144,9 @@
      "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
     }
    },
-   "key": "8d0c218c36d2891962d561340f91a167dafd76c58a464d1db5d3c15769a74f9a",
-   "passed": false,
-   "reasons": [
-    "format_consistency fr: Script and title claim a French ranking (« les meilleures pour bosser en France », « Le TOP 10 des employeurs en France »), but the page gives no real, sourced French top-10 list. The only list is the Greek one in the example, so the creator could present it as a French ranking, which is not allowed. Add a sourced French list for the on-screen text. Beats, order, product timing and the sign-off with no CTA otherwise match.",
-    "format_consistency es: Script and title say «las mejores para trabajar en España» / «Las 10 MEJORES empresas», but the page gives no real, sourced Spanish top-10 list. The only list is the Greek one in the example (Papastratos, Onassis…), so the creator could present it as a Spanish ranking, which is not allowed. Add a sourced Spanish list for the on-screen text. Beats, order, product timing and the sign-off with no CTA otherwise match."
-   ],
+   "key": "cd78b8a79866f903c5387c3c262c91abcfd9ea3f768251694892a1db203d261f",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "es": {
@@ -1183,12 +1180,12 @@
     },
     "format_consistency": {
      "es": {
-      "issue": "Script and title say «las mejores para trabajar en España» / «Las 10 MEJORES empresas», but the page gives no real, sourced Spanish top-10 list. The only list is the Greek one in the example (Papastratos, Onassis…), so the creator could present it as a Spanish ranking, which is not allowed. Add a sourced Spanish list for the on-screen text. Beats, order, product timing and the sign-off with no CTA otherwise match.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "fr": {
-      "issue": "Script and title claim a French ranking (« les meilleures pour bosser en France », « Le TOP 10 des employeurs en France »), but the page gives no real, sourced French top-10 list. The only list is the Greek one in the example, so the creator could present it as a French ranking, which is not allowed. Add a sourced French list for the on-screen text. Beats, order, product timing and the sign-off with no CTA otherwise match.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -1202,8 +1199,8 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "Both scripts are faithful, close translations of the Greek example: Jobstep is correctly replaced by Parakeet AI, the ATS promise is softened, and all beats and the product timing are kept. Both fail format consistency only because neither page gives a real, sourced local top-10 employer list, so there is a risk of reusing the Greek ranking as the French or Spanish one.",
+   "status": "pass",
+   "summary": "Both FR and ES follow the reference beat for beat: the employer list is swapped for a local LinkedIn ranking with a source, the boss-vs-team debate and viewer question stay, Parakeet AI is spoken once after the 'wait' pivot, the scripts are close translations with Jobstep replaced and the ATS promise softened, and only real features are mentioned (paste job-ad link, tailored CV, upload, score).",
    "title_fixes": {},
    "version": "group-2026-10-11.no-directions"
   },
@@ -1602,7 +1599,8 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791837902,
+   "checked_at": 1791838802,
+   "deterministic": {},
    "duplicates": [],
    "inputs": {
     "es": {
@@ -1614,12 +1612,64 @@
      "video_identity": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636"
     }
    },
-   "key": null,
-   "passed": false,
-   "reasons": [
-    "no reference definition for this format"
-   ],
-   "status": "unverified",
+   "key": "82ac866165eba30b4596aecf1bb9730284e1957417a5df89a8784c2eb499d86a",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "Both the ES and FR pages follow ESX28 closely: the grade question is asked twice, a mediocre localised grade (5,5 / 11 sur 20) is set against a six-figure job, the Meta friend's trick comes next, Parakeet AI is named once at beat 7 and the CV comment CTA closes the video; both titles and directions are fine, and the only changes are small wording fixes for natural speech.",
+   "title_fixes": {},
    "version": "group-2026-10-11.no-directions"
   },
   "FRX22": {
@@ -1627,7 +1677,8 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791837883,
+   "checked_at": 1791838785,
+   "deterministic": {},
    "duplicates": [],
    "inputs": {
     "es": {
@@ -1639,12 +1690,64 @@
      "video_identity": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad"
     }
    },
-   "key": null,
-   "passed": false,
-   "reasons": [
-    "no reference definition for this format"
-   ],
-   "status": "unverified",
+   "key": "264dfc660907069371358cbe6f44ebc21da6f6f1beab4737da8a20862237304a",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "Both pages pass every dimension: the FR script is a clean transcript of the example, the ES script is a close, natural translation with the same 5 beats and Parakeet AI only in beat 3, and both have a soft CTA, no outcome promises and a short visual hook that fits the example.",
+   "title_fixes": {},
    "version": "group-2026-10-11.no-directions"
   },
   "N01": {
@@ -2198,7 +2301,8 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791837761,
+   "checked_at": 1791838752,
+   "deterministic": {},
    "duplicates": [],
    "inputs": {
     "es": {
@@ -2210,12 +2314,66 @@
      "video_identity": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97"
     }
    },
-   "key": null,
+   "key": "583e203cf8158bb9fa4abe9cdafb74e2565450bba849511562395a67a29094f3",
    "passed": false,
    "reasons": [
-    "no reference definition for this format"
+    "directions_match es: The directions say 'No pongas texto en pantalla', which contradicts the on-screen title '¡¡Evitad este error!!' that the reference hook requires. Drop that sentence or ask the creator to show the title at the top of the screen."
    ],
-   "status": "unverified",
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "The directions say 'No pongas texto en pantalla', which contradicts the on-screen title '¡¡Evitad este error!!' that the reference hook requires. Drop that sentence or ask the creator to show the title at the top of the screen.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "fail",
+   "summary": "FR passes on every dimension, and ES passes everywhere except directions_match, because its directions ban on-screen text even though the format requires the title '¡¡Evitad este error!!'.",
+   "title_fixes": {},
    "version": "group-2026-10-11.no-directions"
   },
   "X08": {

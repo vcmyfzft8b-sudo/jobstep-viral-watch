@@ -60,6 +60,178 @@
   },
   "title_en": "I'm selling ad space on my laptop 🤑"
  },
+ "ESX28": {
+  "accepted_sources": [
+   "7693228875035282720"
+  ],
+  "allowed_localisation": [
+   "Language of all spoken lines and on-screen texts (natural, colloquial translation; keep the mild swear 'damn months' at an equivalent mild level)",
+   "The grade, shown on the national scale as a clearly mediocre result (ES e.g. 5.5/10, FR e.g. 11/20, DE e.g. 3,3)",
+   "The 'six figures' phrase, as the natural local expression (e.g. DE 'sechsstelliges Gehalt', FR 'un salaire à six chiffres')",
+   "The comment keyword in the CTA, in the local word for CV",
+   "The fruit, kitchen setting and the creator's look and outfit",
+   "The example job ad used in the demo (a local, realistic job posting) and the Parakeet AI interface language",
+   "Year in the hook text may be the current year",
+   "Minor wording changes for natural speech, as long as the sentence count and beat order stay the same"
+  ],
+  "beats": [
+   "Interviewer asks twice: 'What was your average grade at uni?' The creator keeps cutting fruit.",
+   "Creator answers with a low grade (localised to the national scale) 'but I got a job paying over six figures right after graduating.'",
+   "Interviewer: 'How?'",
+   "Creator: they applied to 100 job offers every single day for 2 damn months.",
+   "Creator: it was all thanks to a friend who now works at Meta and shared a trick that changed both their lives.",
+   "Creator: they won't keep this to themselves, so 'let me show you first.'",
+   "Creator: 'Go to this website called Parakeet AI and paste the job ad you want to apply to. This is super important.' [link cue: Parakeet AI Resume Maker on screen, job ad link/text pasted]",
+   "Creator: the AI will optimise your CV for ATS filters by using keywords and tailoring it to that specific job offer. [link cue: AI rewriting/tailoring the CV]",
+   "Creator: 'Now you can send CVs with total confidence.' [link cue: finished tailored CV / download]",
+   "CTA: 'Comment CV if you want me to send you the direct link.'"
+  ],
+  "canonical_source": "7693228875035282720",
+  "filming": "Vertical 9:16, about 35–45 s, fast cuts, no pauses. Part 1 (beats 1–6, about 15–20 s): one static medium close-up at a kitchen counter or table. The creator cuts fruit on a board the whole time and looks up at the camera to answer. The questions are an off-camera voice or the creator's own voiceover with caption text. The hook text 'Getting a job in 2026 😳:' stays on screen during the opening. Part 2 (beats 7–9, about 15–20 s): screen recording of Parakeet AI's Resume Maker, with the creator's voice continuing over it (optional small face-cam corner). Demo sequence: (1) open the Parakeet AI site, (2) paste the job ad link or text, (3) show the AI rewriting/tailoring the CV for that job, optionally the CV score/analysis, (4) show the finished tailored CV in a template and the download. Close with the creator back on camera or on the final CV screen for the comment CTA. Use burned-in captions throughout, copied from the example video's style.",
+  "generated": 1791838669,
+  "hook": "On-screen text 'Getting a job in 2026 😳:' (localised) over the creator calmly cutting fruit at a kitchen counter. Before the creator says anything, the question 'What was your average grade at uni?' is asked twice, off-camera or as a voiceover in the same interviewer voice. The surprise is the contrast: a mediocre grade, then a six-figure job straight after graduating.",
+  "not_allowed": [
+   "Dropping the Q&A structure (the grade question asked twice), the fruit-cutting action, or the low-grade-vs-six-figure-job contrast; these define the format",
+   "Changing the 'friend at Meta shared a trick' origin to another source, or reordering the beats",
+   "Introducing Parakeet AI before beat 7, or saying the brand more often than the original says the app",
+   "Mentioning or showing JobStep, Studyflash or any other CV/job app",
+   "Showing or naming features Parakeet AI does not have: an overview/tracker of your applications, a 'New job' button, cover letters, auto-applying to jobs",
+   "Claiming Parakeet AI guarantees a job, interviews, a salary or passing every ATS filter, or that the app alone got the six-figure job",
+   "Implying that Meta endorses, uses, partners with or built Parakeet AI, or showing Meta logos and branding",
+   "Inventing statistics, success rates or user numbers not in the original",
+   "Adding stage directions or bracketed acting/filming notes to the script (only spoken words plus link cues)"
+  ],
+  "premise": "A recent graduate is asked about their weak university grade. Without stopping cutting fruit, they say it didn't matter: they got a six-figure job right after graduating. Sending 100 applications a day for 2 months didn't work. A friend who works at Meta then shared a trick that changed things for both of them. The creator won't keep it to themselves and shows it: Parakeet AI, where you paste the job ad and the AI tailors your CV for that specific job and its ATS keywords.",
+  "product": {
+   "cta": "Comment the localised keyword for 'CV' (e.g. DE 'Lebenslauf', FR 'CV', ES 'currículum') to get the direct link",
+   "features_used": [
+    "Paste the link or text of a job ad",
+    "AI rewrites/tailors the CV to the specific job (keywords for ATS)",
+    "CV score/analysis (optional on screen)",
+    "Pick a template (optional on screen)",
+    "Download the CV"
+   ],
+   "introduced_at_beat": 7,
+   "spoken_brand": "Beat 7: 'this website called Parakeet AI' (said once, as the website name where JobStep stood in the original). It is not said in the hook or before beat 7."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7693228875035282720": "https://www.tiktok.com/@nataliagonzalezga38/video/7693228875035282720"
+  },
+  "title_en": "UNIVERSITY GRADE – Q&A skit while cutting fruit: low uni grade, six-figure job thanks to a friend at Meta's trick, then the app"
+ },
+ "FRX22": {
+  "accepted_sources": [
+   "7687619784669695265"
+  ],
+  "allowed_localisation": [
+   "Language, wording and natural fillers/colloquialisms per country (DE/FR/ES), keeping the same 5 beats and the same number of sentences",
+   "The exact duration of unemployment may be adjusted slightly (e.g. 5–8 months) if the creator's real story differs, but it must stay a long, frustrating search",
+   "The design tool named for the old CV (Canva or a generic 'design/template CV' equivalent common in that country), always as the creator's own past choice",
+   "Local term for the ATS/applicant filters (e.g. 'ATS-Filter', 'filtres ATS', 'filtros ATS')",
+   "On-screen hook text translated into the local language",
+   "Creator, setting, outfit and the specific CV contents/job field",
+   "UI language of the Parakeet AI app shown in the demo"
+  ],
+  "beats": [
+   "1. Hook / result: after 6 months unemployed, I finally found a job, and I changed only one thing, so I know that's what worked. (On-screen hook text is visible.)",
+   "2. Before / mistake: my CV used to be a Canva CV. I kept hearing it doesn't get through ATS filters, but I didn't want to listen.",
+   "3. The change + product: then I applied to a company with an ATS CV I made on Parakeet AI. I uploaded my Canva CV and it gave me back this CV. (Link cue: show the Parakeet AI Resume Maker – upload of the old CV → AI rewrite → resulting ATS CV on screen.)",
+   "4. Payoff: it actually went super fast.",
+   "5. Direct address + soft CTA: have you been searching for a long time and nothing works? Change your CV, you'll see, the end may be much closer than you think."
+  ],
+  "canonical_source": "7687619784669695265",
+  "filming": "About 25–35 s, vertical 9:16, selfie talking head, single location (home, natural light), casual and authentic, close to the example video. The hook text sits on screen from frame 1. Mostly one continuous to-camera take, with natural hesitations ('euh', 'bon bah') kept. Demo sequence during beat 3 (screen recording or phone shown to camera / green-screen overlay): open the Parakeet AI Resume Maker → upload the old design CV → (optionally the score/analysis) → AI rewrites it into an ATS-friendly CV / pick a template → show the resulting CV ('this CV'), optionally download. Cut back to the face for beats 4–5. Optional: briefly show the old colourful CV next to the new one. No other apps shown.",
+  "generated": 1791838615,
+  "hook": "On-screen text over the first frame: 'After 6 months unemployed, I finally found a job' (FR original: 'après 6 mois de chômage, j'ai enfin trouvé un emploi'). The creator speaks to camera from the first second, with a relieved, matter-of-fact 'well, here we go' tone: 'Well, after 6 months unemployed I finally found a job, and I only changed one single thing.'",
+  "not_allowed": [
+   "Changing the core story: it must stay '6 months unemployed → changed only one thing (the CV, via Parakeet AI) → hired'. Making it a tutorial, a list of tips, a product review or a before/after-only video makes it a different format",
+   "Adding more changes (new LinkedIn, networking, cover letter, etc.): the point is that ONE change made the difference",
+   "Mentioning or showing JobStep, Studyflash or any competing CV/job app as the solution; Parakeet AI must be the only app credited",
+   "Showing or claiming features Parakeet AI doesn't have: an application overview/tracker, a 'New job' button, cover-letter generation",
+   "Guaranteeing outcomes: no 'you will get a job', 'guaranteed to pass ATS', 'hired in X days', interview/job rates or statistics. The hiring must stay a personal experience ('I know it's what worked for me'), and the CTA stays 'the end may be closer than you think'",
+   "Claiming as fact that all Canva/design CVs are rejected by ATS, or disparaging Canva beyond the creator's own hearsay ('I kept hearing…')",
+   "Claiming that Parakeet AI applies to jobs or sends applications for the user",
+   "Inventing extra specifics (company names, salary, number of applications) presented as typical results",
+   "Adding stage directions or bracketed acting/filming notes to the script (the script holds spoken words plus link cues only)"
+  ],
+  "premise": "A job seeker who was unemployed for six months tells viewers what changed. They had used a nice-looking design CV (made in Canva), ignored repeated warnings that such CVs don't get through ATS filters, then made an ATS-friendly CV with Parakeet AI by uploading the old CV. They applied with it and got the job, quickly. Because it was the only thing they changed, they are sure it was what worked. They end by encouraging long-term job seekers to change their CV too. It is a personal testimonial (one person's experience), not a promise.",
+  "product": {
+   "cta": "Soft, implicit CTA in beat 5: 'Change your CV, you'll see, the end may be much closer than you think' (no explicit link or download instruction spoken)",
+   "features_used": [
+    "Upload your existing CV",
+    "AI rewrites the CV into an ATS-friendly version",
+    "Pick a template",
+    "Download the CV",
+    "Optional: CV score/analysis"
+   ],
+   "introduced_at_beat": 3,
+   "spoken_brand": "Beat 3: 'an ATS CV I made on Parakeet AI' – the brand is said once, no URL spoken"
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7687619784669695265": "https://www.tiktok.com/@jobeasilybylucie7/video/7687619784669695265"
+  },
+  "title_en": "After six months unemployed, I finally found a job – and I only changed one thing (my CV)"
+ },
+ "X06": {
+  "accepted_sources": [
+   "7688707702813429024"
+  ],
+  "allowed_localisation": [
+   "Language, filler words and slang (DE 'äh/ehrlich', FR 'euh/franchement', ES 'eh/en serio') and the creator's gender agreement ('die/der Einzige', 'la seule/le seul', 'la única/el único')",
+   "The on-screen title, translated naturally as 'Avoid this mistake!!' while keeping the double exclamation mark",
+   "Local CV conventions in the 'old-style' CV shown, e.g. a German Lebenslauf with photo and table layout, a French CV with photo and icons, a Spanish CV with design elements",
+   "Local wording for ATS (it may be called e.g. 'ATS-Filter', 'filtres ATS', 'filtros ATS'), with the same one-sentence explanation",
+   "Feature and button names exactly as they appear in the Parakeet AI interface for that language",
+   "The before/after score numbers, which must be the real ones from the creator's own recording",
+   "Small wording changes needed to sound natural while keeping the same number of sentences and the same order"
+  ],
+  "beats": [
+   "1. Hook question: 'Am I the only one who didn't know you shouldn't apply with CVs like this anymore?' The old-style designed CV is shown.",
+   "2. Outrage/warning: 'Honestly, nobody talks about it.' CVs like this are no longer what you should send, because they don't get through ATS filters.",
+   "3. Explainer: for anyone who wants to know, an ATS filter is an AI that decides whether your CV goes to HR or not, and it doesn't cope well with icons, too much information, etc.",
+   "4. Bridge: so you have to make your CV so that it gets through the ATS filter, and 'I found a site that can do it for you.'",
+   "5. Demo step 1: 'You go to Parakeet AI, you open the Resume Maker, you upload your CV, even if it's from Canva, no problem.'",
+   "6. Demo step 2: one sentence on why (the AI optimises the CV for ATS filters, with no guarantee), then 'you add it and wait a few seconds for your CV to be generated.'",
+   "7. Payoff: 'As you can see, my ATS score is [real score A], and once I apply all the changes the AI suggests, it goes up to [real score B].' The video ends on the higher score."
+  ],
+  "canonical_source": "7688707702813429024",
+  "filming": "About 35–50 seconds, vertical 9:16, a single creator with no cuts or only jump cuts. The delivery is spontaneous and a bit hesitant ('uh', 'honestly'), like a confession or warning to friends, not an ad. Shot 1 (beats 1–4): selfie talking head at home, phone handheld or propped up, natural light. In beat 1 the creator holds up or shows on screen an old-style designed CV. Shot 2 (beats 5–7): screen recording of the creator's own Parakeet AI session, optionally with the creator's face as a small overlay or a green-screen cut-out. The demo order is fixed: open Parakeet AI → Resume Maker → upload the existing CV (ideally a Canva one) → wait a few seconds while it generates → the ATS score/analysis appears (score A) → apply the AI's suggested changes → the new score appears (score B). Link cues go where Parakeet AI is first shown on screen (beat 5) and on the score screens (beat 7). The script contains only the spoken words and the link cues, with no stage directions. Filming and acting follow the example video as closely as possible.",
+  "generated": 1791838547,
+  "hook": "The creator looks into the camera and says, a little stunned and hesitant: 'Am I the only one who didn't know you're not supposed to apply with CVs like this anymore?' At the same moment they show an old-style, heavily designed CV with icons, columns, photo and a Canva look. The on-screen title is the format name in the local language (DE: 'Vermeidet diesen Fehler!!', FR: 'Évitez cette erreur !!', ES: '¡¡Evitad este error!!').",
+  "not_allowed": [
+   "Changing the hook from the 'Am I the only one who didn't know…?' confession/warning to another structure (e.g. a tutorial intro, a listicle or a 'POV')",
+   "Leaving out the ATS explanation or the before/after score payoff",
+   "Mentioning or showing JobStep, Studyflash or any other app. Parakeet AI is the only product named.",
+   "Showing or mentioning features Parakeet AI doesn't have: an application overview/tracker, a 'New job' button, cover letters",
+   "Claiming a guarantee: the AI 'gets you through all ATS filters', '100% pass rate', guaranteed interviews, invitations or jobs. The original's 'the AI will get it through all ATS filters' must be softened to 'the AI optimises it for ATS filters'.",
+   "Made-up or edited scores, or scores not shown in the creator's real screen recording",
+   "Claiming that every designed CV is always automatically rejected, or naming specific companies that use or reject CVs",
+   "Stage directions or acting instructions in the script (by design, not a defect)",
+   "Turning it into a scripted ad with a polished voiceover, a hard sales pitch, discount codes or prices"
+  ],
+  "premise": "A job seeker shares something they've just found out, as a warning to their peers: the nicely designed CV everyone sends no longer works because ATS filters (an AI that decides whether a CV ever reaches HR) struggle with icons and overloaded layouts. They then show, as a quick personal tip, how to turn the CV into an ATS-friendly one with Parakeet AI's Resume Maker. The proof is the ATS score going up after applying the AI's suggestions.",
+  "product": {
+   "cta": "Implicit instruction-style CTA inside the demo: 'Go to Parakeet AI, open the Resume Maker, upload your CV.' There is no separate end card or 'link in bio' request.",
+   "features_used": [
+    "Upload your existing CV (including Canva/designed CVs) to the Resume Maker",
+    "AI-generated CV and ATS score/analysis",
+    "AI suggestions/rewrite applied to the CV to make it ATS-friendlier",
+    "Updated ATS score after applying the changes"
+   ],
+   "introduced_at_beat": 4,
+   "spoken_brand": "Beat 5: 'go to Parakeet AI' (said once, then 'the AI' is used afterwards). The feature name 'Resume Maker' is said in the same beat."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7688707702813429024": "https://www.tiktok.com/@jobeasilybylucie7/video/7688707702813429024"
+  },
+  "title_en": "Avoid this mistake!! – 'Am I the only one who didn't know?' ATS CV warning"
+ },
  "X08": {
   "accepted_sources": [
    "7693731193187011872"

@@ -20245,6 +20245,25 @@
    "type": "text"
   }
  ],
+ "3f7958b0-fc14-810a-9706-ffdcc10a8bcb": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Igual que en el vídeo de ejemplo: siéntate en tu escritorio con una libreta y hojas sueltas delante y, mientras hablas a cámara desde los primeros segundos, mueve una brocha de maquillaje muy cerca del objetivo (y luego unas pinzas o un boli) con el título en pantalla.",
+   "text": {
+    "content": "Igual que en el vídeo de ejemplo: siéntate en tu escritorio con una libreta y hojas sueltas delante y, mientras hablas a cámara desde los primeros segundos, mueve una brocha de maquillaje muy cerca del objetivo (y luego unas pinzas o un boli) con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f7958b0-fc14-8142-bd2d-cfda8327e036": [
   {
    "annotations": {
@@ -20278,6 +20297,25 @@
    "plain_text": "Copie exactement le début de la vidéo d'inspiration : face caméra, tu défroisses un billet de 20 € froissé avec un lisseur pendant que tu parles, puis tu montres le billet tout lisse sur « Oh, il est tout lisse. Parfait. »",
    "text": {
     "content": "Copie exactement le début de la vidéo d'inspiration : face caméra, tu défroisses un billet de 20 € froissé avec un lisseur pendant que tu parles, puis tu montres le billet tout lisse sur « Oh, il est tout lisse. Parfait. »",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-815f-9686-c9f01299d12e": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copie exactement le début de la vidéo d'exemple : tu épluches une carotte dans ta cuisine en parlant à la caméra filmée en contre-plongée, avec le titre affiché en haut. Quand tu dis « des CV comme ça », fais apparaître ton ancien CV à côté de toi et pointe-le du doigt.",
+   "text": {
+    "content": "Copie exactement le début de la vidéo d'exemple : tu épluches une carotte dans ta cuisine en parlant à la caméra filmée en contre-plongée, avec le titre affiché en haut. Quand tu dis « des CV comme ça », fais apparaître ton ancien CV à côté de toi et pointe-le du doigt.",
     "link": null
    },
    "type": "text"
@@ -20335,6 +20373,25 @@
    "plain_text": "Igual que en el vídeo de ejemplo: al empezar, alisa con una plancha de pelo un billete arrugado de 20 € mientras hablas a la cámara, y luego enséñalo ya liso («Oh, se ha alisado. Perfecto»).",
    "text": {
     "content": "Igual que en el vídeo de ejemplo: al empezar, alisa con una plancha de pelo un billete arrugado de 20 € mientras hablas a la cámara, y luego enséñalo ya liso («Oh, se ha alisado. Perfecto»).",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-818e-99d5-f83fb69833c8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'exemple : pose ton téléphone à plat sur la table, filmé en contre-plongée, et commence la main devant la bouche avant de sourire à la caméra, les mains jointes sur la table, avec le titre affiché.",
+   "text": {
+    "content": "Comme dans la vidéo d'exemple : pose ton téléphone à plat sur la table, filmé en contre-plongée, et commence la main devant la bouche avant de sourire à la caméra, les mains jointes sur la table, avec le titre affiché.",
     "link": null
    },
    "type": "text"
@@ -29842,6 +29899,488 @@
     "plain_text": "Alors si tes candidatures restent sans réponse en ce moment, va jeter un œil à parakeet-ai.com/resume-maker : ça peut clairement mettre plus de chances de ton côté.",
     "text": {
      "content": "Alors si tes candidatures restent sans réponse en ce moment, va jeter un œil à parakeet-ai.com/resume-maker : ça peut clairement mettre plus de chances de ton côté.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3d6958b0-fc14-80c2-8349-ed1807a6a77a": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Je suis la seule à ne pas savoir qu'il fallait plus postuler (",
+    "text": {
+     "content": "Je suis la seule à ne pas savoir qu'il fallait plus postuler (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") avec des CV comme ça. ",
+    "text": {
+     "content": ") avec des CV comme ça. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Enfin, franchement, personne n'en parle, alors qu'en fait c'est plus du tout des CV comme ça qu'il faut envoyer. Parce qu'en fait, ces CV-là, ils ne passent pas du tout les filtres ATS. ",
+    "text": {
+     "content": "Enfin, franchement, personne n'en parle, alors qu'en fait c'est plus du tout des CV comme ça qu'il faut envoyer. Parce qu'en fait, ces CV-là, ils ne passent pas du tout les filtres ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Alors, pour ceux qui veulent savoir, les filtres ATS, c'est une IA qui choisit en fait si ton CV va chez la RH ou pas, et qui est pas mal fâchée avec tout ce qui est pictogrammes, beaucoup d'informations, etc. ",
+    "text": {
+     "content": "Alors, pour ceux qui veulent savoir, les filtres ATS, c'est une IA qui choisit en fait si ton CV va chez la RH ou pas, et qui est pas mal fâchée avec tout ce qui est pictogrammes, beaucoup d'informations, etc. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Du coup, il faut faire ton CV pour qu'il passe le filtre ATS. Et j'ai trouvé un site qui peut te le faire. Attends, je vais te montrer. ",
+    "text": {
+     "content": "Du coup, il faut faire ton CV pour qu'il passe le filtre ATS. Et j'ai trouvé un site qui peut te le faire. Attends, je vais te montrer. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu vas sur Parakeet AI, tu vas dans le Resume Maker, tu vas importer ton CV, même s'il vient de Canva. (",
+    "text": {
+     "content": ") Tu vas sur Parakeet AI, tu vas dans le Resume Maker, tu vas importer ton CV, même s'il vient de Canva. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Pas de souci, parce que du coup l'IA va t'aider à passer les filtres ATS. Tu l'ajoutes, tu attends quelques secondes que ton CV soit généré. ",
+    "text": {
+     "content": ") Pas de souci, parce que du coup l'IA va t'aider à passer les filtres ATS. Tu l'ajoutes, tu attends quelques secondes que ton CV soit généré. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Là, comme tu peux le voir, du coup, mon score ATS, il est de X, (",
+    "text": {
+     "content": ") Là, comme tu peux le voir, du coup, mon score ATS, il est de X, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") et lorsque je vais importer toutes les modifications proposées par l'IA, il passe à Y. ",
+    "text": {
+     "content": ") et lorsque je vais importer toutes les modifications proposées par l'IA, il passe à Y. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3d8958b0-fc14-8024-bea3-d5fcb04410d4": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bon, bah, après 6 mois de chômage, j'ai enfin trouvé un travail. Et j'ai changé qu'un seul truc, donc je sais que c'est ça qui a fonctionné. ",
+    "text": {
+     "content": "Bon, bah, après 6 mois de chômage, j'ai enfin trouvé un travail. Et j'ai changé qu'un seul truc, donc je sais que c'est ça qui a fonctionné. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Avant, mon CV, c'était un CV Canva. J'entendais beaucoup « ouais, ça passe pas les filtres ATS », etc. J'ai rien voulu écouter. ",
+    "text": {
+     "content": "Avant, mon CV, c'était un CV Canva. J'entendais beaucoup « ouais, ça passe pas les filtres ATS », etc. J'ai rien voulu écouter. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et là, j'ai candidaté dans une entreprise, avec un CV ATS, (",
+    "text": {
+     "content": "Et là, j'ai candidaté dans une entreprise, avec un CV ATS, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") que j'ai fait sur Parakeet AI. (",
+    "text": {
+     "content": ") que j'ai fait sur Parakeet AI. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") J'ai envoyé mon CV Canva, et ça m'a ressorti ce CV-là. (",
+    "text": {
+     "content": ") J'ai envoyé mon CV Canva, et ça m'a ressorti ce CV-là. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") En fait, ça a été super rapide. ",
+    "text": {
+     "content": ") En fait, ça a été super rapide. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ça fait longtemps que tu cherches, et qu'il n'y a rien qui fonctionne. Change ton CV, tu verras, la fin est peut-être beaucoup plus proche que tu ne le penses. ",
+    "text": {
+     "content": "Ça fait longtemps que tu cherches, et qu'il n'y a rien qui fonctionne. Change ton CV, tu verras, la fin est peut-être beaucoup plus proche que tu ne le penses. ",
      "link": null
     },
     "type": "text"

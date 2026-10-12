@@ -211,7 +211,8 @@
     "remove_below": 1.0,
     "min_formats": 8,
     "protect_days": 14,
-    "half_life_days": 21
+    "half_life_days": 21,
+    "never_revive": ["X01"]
   },
   "other_apps": {
     "Studyflash": "stud(?:y|io|ie|i)\\s*-?\\s*fl[ae]sh"

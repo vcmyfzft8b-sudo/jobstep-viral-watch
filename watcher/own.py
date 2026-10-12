@@ -9,6 +9,8 @@ The list ranking uses this to see how a format does for US, not only for JobStep
   dropped out of the embed get one full check per day, so their views keep growing.
 - Formats: once a video is 48h old it is sorted into our formats by Claude (same batch sorting as the JobStep videos).
   Videos without Parakeet AI in caption, on-screen text or speech are ignored (not a campaign video).
+  registry/own_formats.json holds hand-checked formats (12 Oct 2026, Spain + France): they always win over the
+  automatic sorting (apply_hand_tags, on every load).
 
 state/own_accounts.json  {handle: {status, market, since, source}}
 state/own.json           {video_id: {handle, market, created, views, desc, format, checked, ours, platform, creator}}
@@ -24,6 +26,7 @@ from . import classify, discover, state, tiktok
 
 BRAND = re.compile(r'parakeet', re.I)
 SEED = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'own_seed.json')
+HAND = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'own_formats.json')
 TRACK_DAYS = 10
 MAX_DETAILS = 60  # full video checks per run (old videos after the seed, missing views)
 
@@ -39,7 +42,36 @@ def load():
         accounts.setdefault(h, {'status': 'active', 'since': int(time.time()), **a})
     for vid, v in seed['videos'].items():
         videos.setdefault(vid, {**v, 'ours': True})
+    apply_hand_tags(videos)
     return accounts, videos
+
+
+def hand_tags():
+    try:
+        with open(HAND) as f:
+            return json.load(f).get('videos', {})
+    except FileNotFoundError:
+        return {}
+
+
+def apply_hand_tags(videos, tags=None):
+    """Hand-checked formats (registry/own_formats.json) override the automatic sorting. Returns how many changed."""
+    changed = 0
+    for vid, t in (hand_tags() if tags is None else tags).items():
+        v = videos.get(vid)
+        if v is None:
+            continue
+        if v.get('format') != t['format']:
+            changed += 1
+        v.update({'format': t['format'], 'checked': True, 'ours': True, 'format_by': 'hand'})
+    return changed
+
+
+def videos_now():
+    """state/own.json with the hand-checked formats applied (for readers that skip load())."""
+    videos = state.load('own.json', {})
+    apply_hand_tags(videos)
+    return videos
 
 
 def sync_megasheet(accounts, videos, now, full=False, markets=None):

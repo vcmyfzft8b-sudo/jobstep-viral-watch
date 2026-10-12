@@ -30,6 +30,10 @@ Every 6 hours (GitHub Actions) this watcher:
    in that market → bottom, even when JobStep goes viral with it). Inside each tier the JobStep order (hot, what goes
    viral, form). Formats move up right away, down only on Monday (`state/own_tiers.json`). Thresholds:
    `config.json → ranking.own_tiers`. The Monday Slack report shows each market's top and its weak formats.
+   Our videos' formats: `registry/own_formats.json` (hand-checked 12 Oct 2026, Spain + France) always wins over the
+   automatic sorting. An archived format that is proven for us (tier 1) in a running market comes back into the
+   lists by itself (pages move back from the archive; `lineup.never_revive` keeps one out – X01 "rendez-vous": many
+   views, almost no signups) and the Monday clean-up never takes a proven format out.
 
 ## Setup
 

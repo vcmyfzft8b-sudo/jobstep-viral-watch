@@ -309,6 +309,11 @@ def run(dry_run=False, only_detect=False):
             try:
                 lead = next((m for m in mkts if m['key'] == 'de'), mkts[0])  # the market whose top is reported
                 before_top = meta.get('top3', []) if meta.get('top3_market', 'de') == lead['key'] else []
+                try:  # archived formats that are proven for OUR creators come back before the lists are drawn
+                    if own_comebacks(mkts, fmts, cfg):
+                        state.save('formats.json', fmts)
+                except Exception as e:
+                    print('own comebacks failed:', str(e)[:200])
                 ids = rerank(mkts, fmts, history, cfg)
                 meta['top3'], meta['top3_market'] = ids[:3], lead['key']
                 if before_top and ids[:3] != before_top:
@@ -628,7 +633,7 @@ def own_tiers(mkts, fmts, cfg, force=False, now=None):
     new_week = force or snap.get('week') != week
     if new_week:
         snap = {'week': week, 'at': int(now), 'markets': {}}
-    own_videos = state.load('own.json', {})
+    own_videos = own.videos_now()
     moved = []
     for mk in mkts:
         m = mk['key']
@@ -652,6 +657,44 @@ def own_tiers(mkts, fmts, cfg, force=False, now=None):
     if moved:
         state.log({'type': 'own_tiers', 'week': week, 'changes': moved})
     return snap['markets']
+
+
+def own_comebacks(mkts, fmts, cfg, tiers=None, now=None):
+    """An archived format that is PROVEN for our creators in a running market (own.tiers tier 1: our videos of it
+    average 10k+, or one passed 100k in 14 days) comes back into the lists right away - JobStep does not have to go
+    viral with it again. Its pages move from each market's archive back to that market's format folder (nothing is
+    rebuilt; a market without a page gets one on Monday like any listed format). lineup.never_revive keeps a format
+    out on purpose. Returns the formats that came back."""
+    now = now or time.time()
+    tiers = tiers if tiers is not None else own_tiers(mkts, fmts, cfg)
+    never = set(cfg.get('lineup', {}).get('never_revive', []))
+    back = []
+    for f in fmts:
+        if f.get('status') != 'archived' or f['id'] in never:
+            continue
+        proven = [(mk, tiers.get(mk['key'], {}).get(f['id'])) for mk in mkts
+                  if tiers.get(mk['key'], {}).get(f['id'], {}).get('tier') == 1]
+        if not proven:
+            continue
+        for mk in mkts:
+            pid = page_of(f, mk['key'])
+            if pid:
+                try:
+                    notion.move_page(pid, mk['holder_page'])
+                except Exception as e:
+                    print('comeback: move failed', mk['key'], f['title'], str(e)[:150])
+        why = ', '.join(f"{mk['key']}: our {x['n']} videos average {fmt_views(x['avg'])}, best {fmt_views(x['best'])}"
+                        for mk, x in proven)
+        f['status'] = 'active'
+        f['listed_at'] = int(now)
+        f['revived'] = {'at': int(now), 'because': f'proven for our creators ({why})'}
+        f.pop('archived_reason', None)
+        state.log({'type': 'format_revived_own', 'format': f['id'], 'because': why})
+        back.append((f, why))
+    if back:
+        notify.push('♻️ Formats back in the lists – proven for our creators', '\n'.join(
+            f"➕ *{f['title']}* – {why}" for f, why in back))
+    return [f for f, _ in back]
 
 
 def rerank(mkts, fmts, history, cfg, force=False):
@@ -1417,7 +1460,11 @@ def main():
         export.run(load_config(), load_formats(), page_of)
         return
     if a.relist:
-        rerank(M.load(load_config()), load_formats(), state.load('history.json', {}), load_config(), force=True)
+        cfg, fmts = load_config(), load_formats()
+        mkts = M.load(cfg)
+        if own_comebacks(mkts, fmts, cfg, tiers=own_tiers(mkts, fmts, cfg, force=True)):
+            state.save('formats.json', fmts)
+        rerank(mkts, fmts, state.load('history.json', {}), cfg, force=True)
         return
     if a.reset_pending:
         cfg, fmts = load_config(), load_formats()

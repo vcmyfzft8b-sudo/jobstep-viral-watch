@@ -1,0 +1,5856 @@
+{
+ "note": "Hand-checked format of our own Spain/France videos (TikTok ids + Instagram ig_<shortcode>), checked 12 Oct 2026 against the Notion format pages (live + archive) from each video's first-frame hook and caption. These win over the automatic sorting (own.apply_hand_tags). Videos posted after 12 Oct are sorted automatically as before.",
+ "checked": "2026-10-12",
+ "videos": {
+  "7685335302675631382": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685423816914292001": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685446949251648790": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685450339398503702": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685450859689397536": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685508272215821590": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685634623728012566": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685729988020030742": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685730308188015905": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685779722952822048": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685786628584983841": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685787245156125984": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685792124175928609": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685801894631017761": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685839162783599904": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685842778609356034": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7685860107921411350": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686027992170024225": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686042979420605718": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686087216992374049": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686097528256777504": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686119561350925600": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686132252383759649": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686157090544536865": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686159336661323040": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686186342421695776": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686196713287142689": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686199854124584225": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686225572493577494": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686376827014630689": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686409374641786145": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686455260709227809": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686462807134555425": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686469789409398019": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686504569282579745": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686504861579365654": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686531227142081824": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686540264843889952": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686545247513365792": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686559640519232800": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686560218594987286": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686568143677918497": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686570713666440480": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686585936167193888": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686588611948481824": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686802896746269985": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686834698101755168": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686836369783639329": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686845863041338626": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686863321735220502": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686876964333915425": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686881732968189216": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686913544192871712": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686915587796192534": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686932923773095200": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686940187091356960": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686963629517704481": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686965766586912033": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7686978357942045984": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687158568360971542": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687169243846036768": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687173088005360929": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687183152313404704": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687183833082449185": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687195262174956822": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687263889536388384": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687277841712532758": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687280912215624993": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687283286325890337": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687286338172800288": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687288809557413153": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687293164553506080": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687311225386061089": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687336342514142497": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687356403601689888": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687532964489596193": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687561691030146336": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687564665521442070": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687573831489293600": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687594564902800672": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687619784669695265": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687624914118921494": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687635641043143968": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687636691112283424": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687649689365171488": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687664150239005985": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687665068846189846": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687665156704242966": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687682616908074273": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687688354707655968": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687721981508078880": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687722142913334560": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687882011851214112": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687921307832339734": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687931605691796769": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687934015650663713": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687949879351594272": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687950104812080417": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687988390083546371": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687991959415180576": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7687994523254820129": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688015796311788832": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688021707323493654": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688030640301706518": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688050564193635617": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688053452320066848": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688053942181219616": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688083859354684704": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688085028257008929": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688092069004414240": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688245371696467232": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688248766217981207": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688269268781255969": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688295680212782369": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688305827697954081": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688318031612693792": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688325466456984865": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688325500518812960": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688329762351090977": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688332022623833376": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688334737017965856": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688339152068283670": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688387496593345814": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688400239589461270": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688410105582325024": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688410106169396512": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688423899658325281": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688455393810353440": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688479697537174816": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688510718387260705": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688640121360370976": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688654400973229344": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688659977896054049": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688668140376509718": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688682650600574240": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688693680336653600": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688698501672291616": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688702886871715104": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688707702813429024": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688709500416625953": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688713137821863190": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688724124457340193": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688735783645105441": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688752415125900577": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688766055271124256": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688774136902044961": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688789322358590742": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688792614459542807": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688794622755212577": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688836368335686944": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688843687698140449": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688994363304660257": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7688998987810000161": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689020664031792406": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689038408437599510": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689045175296920864": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689046004900941088": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689055489597934881": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689075665735273760": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689101090754776352": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689101256886914337": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689113959315557664": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689121587433360662": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689126441086225696": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689143250438901024": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689147480818076961": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689159302686215456": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689160686869499169": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689166341370072342": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689173861883039009": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689189508008381728": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689208494947421472": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689239845083991303": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689355729291021601": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689391397362814241": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689393623087058208": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689428899083701536": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689431257876401441": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689435438196509974": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689435809673399585": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689445737888746784": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689462666909289750": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689467018730376480": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689475620648062241": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689486248351730966": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689489931894394145": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689495201663995169": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689524546847657249": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689537721143971105": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689541201279733024": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689550770902994208": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689556152216014112": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689574613164084513": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689611643054984466": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689730315534748961": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689737717113949462": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689773781379714336": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689792080784280854": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689804292361899286": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689805788491058465": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689810265310825760": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689814872036527392": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689821840520318240": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689823944420887841": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689833538300022049": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689875667831328032": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689890486949055777": {
+   "format": "FRX31",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689891030732229920": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689892147499126049": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689895045415046432": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689899856822897952": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689906750484417824": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689931641359207713": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689935889400696086": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7689978651604978952": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690130136955456800": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690144358099651862": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690145108133530912": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690164262429396256": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690166065996778774": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690169193945124118": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690177919896833312": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690210051885124897": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690211648451153184": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690221830715542806": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690226825619885345": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690240829050342688": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690246247231360288": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690254051358821664": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690269199750516000": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690270055648496918": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690270768931884321": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690278704345287968": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690280391701269792": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690292289242975520": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690298134378859808": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690304249711922465": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690326715960184072": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690470188063493409": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690524406954724640": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690524447148657942": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690559722906242336": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690565512153074976": {
+   "format": "N05",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690568846024920353": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690584179389599009": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690606380159421729": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690618179772550433": {
+   "format": "N05",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690627024515288342": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690634806211743008": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690636665664113922": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690638130629594401": {
+   "format": "FRX35",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690645624596827425": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690649652554714400": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690652508506623254": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690653879825927457": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690656527799061782": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690656747987455264": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690690347214802199": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690709197050137889": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690743525805215009": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690754258148494600": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690897794197982486": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690908062344891680": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690909025378045217": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690909284204383521": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690925123406253334": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690925775477919008": {
+   "format": "FRX31",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690931397954899233": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690947177148894497": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690958001410198816": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690983902898294049": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690989577032568097": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7690998708204309793": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691005707310664982": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691016454354799904": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691024038218435873": {
+   "format": "FRX36",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691031074503200032": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691032779873701142": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691054155393158403": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691061290088844577": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691062784846548257": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691063937281871126": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691078135810526466": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691079855156333846": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691108168507624712": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691216256363498784": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691224388011592982": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691227371386539296": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691276640562859296": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691290669444320545": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691292155377208608": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691303608947625238": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691304025534369046": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691315275572006177": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691328554096741654": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691335704391028000": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691336962032143638": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691345225083702560": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691367543688187168": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691392068006022432": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691400592224193814": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691403540018924822": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691404806660967712": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691406973673180448": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691407645814639894": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691497738617441543": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691573168519007510": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691636769221053729": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691641681376070934": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691645399932669217": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691667662346128672": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691676480618663200": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691685067642522913": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691696292468165921": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691707693211372832": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691708957152398625": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691711663036239126": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691717123877489952": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691720087652371734": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691724991502552352": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691728920198024480": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691731067753057558": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691736439960145184": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691744035697954070": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691751748737813793": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691758353227255042": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691759521055706400": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691760741925342496": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691775325381954849": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691779519853759777": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691796049479945494": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691809642518777110": {
+   "format": "FRX39",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691820377231592726": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691885508535831815": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7691954465250856225": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692013942616378657": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692015043591949590": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692026749760097569": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692032951592308001": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692044435999214870": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692045997844794657": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692053185191595296": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692057664292982048": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692059020479253782": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692071884019698967": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692073118759783712": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692073995352427798": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692079761446669600": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692082836152667424": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692102253544574230": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692104607190797600": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692110914245446944": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692112610216496406": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692117307857931542": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692122538314386721": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692123196182596886": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692129655637249313": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692135572449578272": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692147400349338883": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692201551061978390": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692249497786699016": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692364953826708768": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692377909423639841": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692381325134794017": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692383610946456865": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692386292197313814": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692387957646314784": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692398935100443936": {
+   "format": "N04",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692400531746131233": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692413669698702625": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692419491157921056": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692420959025777952": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692431370764717344": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692438128291810582": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692458403561475360": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692463058177789206": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692467219883756833": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692467398636522785": {
+   "format": "X16",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692467820495604994": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692473924357066006": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692474410774596887": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692476196436643105": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692482773839301920": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692489582318750998": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692489719610936598": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692490846507240726": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692496043593813270": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692533970289904929": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692536701155036438": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692540002068090144": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692557342650469664": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692641058626276609": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692731645945810209": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692738642392976672": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692751416967925024": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692756669108931862": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692758529156893984": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692776472834034966": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692779935227759894": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692782038771895574": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692784709612424481": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692796286067625249": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692800074048392481": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692804302582189344": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692817277430811937": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692829857314606369": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692830212073082134": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692843169997720865": {
+   "format": "X11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692844850852416790": {
+   "format": "X18",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692845340118043926": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692861881782062358": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692869400050847009": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692873740408900886": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692891590016191776": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692892008955776288": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692895500063804705": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692902552651697441": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692902753420479777": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692903860980993312": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692908757860338976": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7692941807671463175": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693120878967606550": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693130207292656928": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693132796436499744": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693139821061049633": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693158309871766817": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693159129044520225": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693172025497554209": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693176086414462231": {
+   "format": "FRX39",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693178908534902048": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693181609138343200": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693184843571629334": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693205143550135575": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693209388252794144": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693215154292460822": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693215452427783456": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693216612681288992": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693228875035282720": {
+   "format": "ESX28",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693236339403181344": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693246696247135521": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693252669074328854": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693255588175793441": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693259209332346134": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693262990648331542": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693263051931290902": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693266534877236512": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693268268903042336": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693282654380248353": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693285733620043041": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693288194246216993": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693302302161095958": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693313726761504018": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693445310080683286": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693465247981587734": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693497666377927958": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693499000619535649": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693509520173124886": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693513758605544737": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693539600064695585": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693540842132245792": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693541992516685078": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693552471884582177": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693552715347004694": {
+   "format": "X06",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693556718856310049": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693560098110606624": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693563742142909728": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693567866653642006": {
+   "format": "X09",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693577244320615713": {
+   "format": "X15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693582154734816544": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693585644265770273": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693586829127306518": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693589853694446880": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693589864851328289": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693605189646863649": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693608194152631584": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693608481055640864": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693608559560494369": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693618627618016534": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693627482607504662": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693628117407010070": {
+   "format": "X11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693629595731463456": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693641054402170134": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693644607275486496": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693660190259957025": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693717786459245825": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693814682171231510": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693838222752763169": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693846847135272225": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693876029433171233": {
+   "format": "N05",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693878228993281282": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693888179887213846": {
+   "format": "X17",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693891335287229729": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693897100005854497": {
+   "format": "N07",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693908974831160608": {
+   "format": "N07",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693917511988940065": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693921546020195606": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693944304472968481": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693950749042167073": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693954513597746454": {
+   "format": "N02",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693957091442068768": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693958065611115798": {
+   "format": "N02",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693959888392785185": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693967110866865441": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693968481808567574": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693972702113107232": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693975236710108438": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693979189027917078": {
+   "format": "N02",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693984167339543841": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693991325229747489": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693991921965878561": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693993154856422678": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7693999080053198113": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694004944315190550": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694018358806596886": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694019366375017750": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694021345419562262": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694025130846063905": {
+   "format": "N02",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694026451347049750": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694040043404463393": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694188892521630998": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694236819143003414": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694239853512232225": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694244688840232224": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694263154469031201": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694263964020051232": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694269402283248929": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694282643591941398": {
+   "format": "X03",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694301001687239969": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694308383817485601": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694311795154046241": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694328956635385110": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694333522403708192": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694341757168831776": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694343292367949089": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694343604428393760": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694346815092690198": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694347036560297248": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694356738325220630": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694365793261227286": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694367016148274464": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694370947888975126": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694376936457424160": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694384899582725398": {
+   "format": "N02",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694385910103674144": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694407098569887009": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694419310470499606": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694603311374290208": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694607980205002017": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694625305750768928": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694626237834136854": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694636338867358998": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694654388123553056": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694658079253712160": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694658707128339734": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694663877874683158": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694699988865076502": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694700392881392918": {
+   "format": "N02",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694701588966903073": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694713257294187798": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694713646856817952": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694713947362004257": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694715191379922208": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694715658369502497": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694726120800783649": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694729906432789793": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694735212370054422": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694739979536305440": {
+   "format": "N03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694745014928264480": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694746789986979105": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694756796388478241": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694954818569325846": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694957394605919521": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694976482359201057": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694977778747247905": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694978682456182049": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694982360001023265": {
+   "format": "X09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694994833236167958": {
+   "format": "A202610061328",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694995783644433686": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7694995838636084483": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695000348406074656": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695015202252688672": {
+   "format": "X08",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695016316721220896": {
+   "format": "N01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695016682267364630": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695050803668716833": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695050907507035424": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695063975565806880": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695069400646405409": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695070718899342614": {
+   "format": "A202610061328",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695076659220794657": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695080313705303318": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695083706205097238": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695097104649424151": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695104947762875680": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695108738230816033": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695113086482664736": {
+   "format": "X03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695116077092703520": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695118729092418849": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695129415331695904": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695291761471573281": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695307601508158742": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695335664505638177": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695342364008746272": {
+   "format": "X01",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695352358976408865": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695359854906461462": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695369255327436065": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695381367718235414": {
+   "format": "N10",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695389958302928161": {
+   "format": "X13",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695405954082311426": {
+   "format": "X13",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695408271200472353": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695423942751718678": {
+   "format": "X16",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695425147448167712": {
+   "format": "N10",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695429990090837281": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695436870901157142": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695437330231872801": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695443585923075350": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695445551491452192": {
+   "format": "X06",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695453491434704161": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695463379577752865": {
+   "format": "X08",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695464032173624608": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695467281173826838": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695469450002304289": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695470139440991510": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695472784587164960": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695481167230913824": {
+   "format": "N09",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695482027709058337": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695490965120863520": {
+   "format": "X14",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695493947195477280": {
+   "format": "N03",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695509528808312096": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695694172250049825": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695708955628014881": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695734942109830402": {
+   "format": "X08",
+   "market": "es",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "7695740187602652448": {
+   "format": "X16",
+   "market": "fr",
+   "by": "hand (on-screen hook + caption)"
+  },
+  "ig_Dd-22flNWyX": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd-YJt4xIq3": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd07956IfZh": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd07mSqoqWK": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd11BoExDWO": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd11ujDR8Ho": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1I4qMiFKa": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1Q4jaIxyL": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1TlOXILOf": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1hKukiAgN": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1k8IBjS6f": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_Dd1lApqoB1V": {
+   "format": "N05",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1o3TlKj_b": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1rWmrqj98": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1sScOhLic": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1tVUZoTWF": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1tywgN721": {
+   "format": "FRX35",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd1zAFLsbYK": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd2D9XvRS9l": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd2FDm1A6WF": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd2bgvVorBm": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd2hli6pdUP": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd33F8ysaZe": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3hZl-Ixin": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3iLwao0ar": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3ieJVK5rs": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3mmgZoqhI": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3nS04KLd5": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3sUbLIVaP": {
+   "format": "FRX31",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd3vrDNiQTg": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4HZzYMxoU": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4J3KJodgH": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4Jsxzj7W-": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_Dd4OJy5NXRE": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4QrXYCMg1": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4WsdRx991": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4X629KwzV": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_Dd4ZR-aiAPg": {
+   "format": "FRX36",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4cOoLsfWo": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4dfYROryr": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4phWTIUYM": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4qXvZRxxV": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4xQUltuBt": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd4xeXlgglG": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd5JvayR_1f": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd5yMQesxub": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd68wBfIfH4": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6JkeTCc-X": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6Pp-8oM3k": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6VcLPqnNN": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6VlUiA2Ft": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6anSroZ6Z": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6bDwTCeUx": {
+   "format": "N09",
+   "market": "fr",
+   "by": "Megasheet label"
+  },
+  "ig_Dd6gUNqNR1k": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6j_HdtJa8": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6nkZsIXTB": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6oCYtsp9b": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd6uQnmCYga": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_Dd6yFlBsnPt": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7AUM-oESK": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7CroHxeIM": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7CuZEq7wS": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7DBJGxnKJ": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7FrQuoL7o": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7d8o3K_Wl": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd7ssRUx0Cc": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd86-CrMiPP": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd8pUI_Ii6J": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd8rfd4ien8": {
+   "format": "X01",
+   "market": "fr",
+   "by": "Megasheet label"
+  },
+  "ig_Dd8rvXRoRAj": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd8sfAnolPs": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd91caaAoGc": {
+   "format": "FRX39",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9Bgr9CO9A": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9D4LpNRYT": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9I4VrMrgu": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9Jio6IcYm": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9N2LpIcbv": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9NpYtM3Fj": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9S_Mnj12H": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9ZBD8iXzy": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9cUAfM4gl": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9f5LCO7TI": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9f6hksh9B": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9gv1EiTUA": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9mQBrRylA": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9oA9Zxj37": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9sKkFxmeO": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd9wN7eKOgv": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdQ7KNeRX5Q": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdR5r8ut0Rj": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdRrtQ2AUoC": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdRt76kIX6o": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdRtuOuKUu8": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdT5Ci8oG_j": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdT6l34MF3Y": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdTGAXPILP-": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdTqYd4tDAv": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUAN52iKtO": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUD2PfIv7-": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUEHuPsyXR": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUKCzUqslX": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUakRFqAcJ": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUc-gCoK-O": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdUj3uyg3gw": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdV0zlvxtJq": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdVurwRI-2B": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWI3gBCtVQ": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWM6dJsbsw": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWhbMxHMGk": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWoPvlMS1d": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWowZjowbh": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdWzZMbAP80": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYKkK8MaE7": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYXZIhxDa5": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYpb5jIBq6": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYumxyA5OQ": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYuzLWiCdi": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdYvjB9In2k": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZCDzmDW8_": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZCaabqzak": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZOfdpCqcO": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZRXqCtks7": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZUa0QI2aQ": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZYr2OqBc3": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZarSvSrvb": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZej8votgd": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZf0MBqiQp": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZn0dEguvE": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdZn2VXym6b": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_-CEhMxXL": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_327jgVn2": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_5bS9qmZf": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_74ySNctX": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_8x5ciZwJ": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_RcJLijLG": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_X6njC5WG": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_aT1YoW8i": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_e6JHNqht": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_eaUOg8ns": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_hjgWssG3": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_jNnJsgBV": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_kxs-s9EG": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_qUhXCckc": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_r1SgI6ok": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_rNZQI1jV": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_uItYsuxN": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dd_uxhWI5Pp": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddb0xNXj9kV": {
+   "format": "X13",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_Ddb3LXKssDh": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddb4JjMieeb": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbF5Gii-Pn": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbPRwot8PA": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbU1Bos_OU": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbYyxVCvhh": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbfKzrq0Ko": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdbppzdIbJs": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdcBGkZCOUo": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdcD9eKI8zr": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdcORiuAi1k": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddd0xKmil5F": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DddeR50SqEi": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DddkFC4q-dy": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DddlbQ6slXh": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DddqfdXRhlC": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dddv_PQiZrr": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dde8XuUic_u": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdeLRN8sDqG": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdeTrq5I7UM": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdeZ9LvMKYJ": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdeZWvQAZAG": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdednnLM7AE": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddef0J4xdCx": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdeoXPAo3gn": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdezCWXAPYJ": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddg-os2thhY": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddg4t7wsfGE": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddg5O2gq6QD": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdgKyMzMurd": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdgW6SLuZit": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdgYXuXiXol": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdgdPfCi95C": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddgl0mStUQL": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdgxzWooNUK": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddgzfe3gEra": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdhFClMqorm": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdhHfj2oBTB": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdhP9zSo8qF": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddhe-uUAC7C": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddi21ymi29a": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddi9UsuNQOW": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdikMSrs6qe": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddj--NAAHZw": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjC8uYqsms": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjGkRBifCT": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjWss-swNo": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjY460oS5b": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjeH_9oZe2": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjhL0SibHi": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjjImMDBaN": {
+   "format": "X03",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DdjjXPIigW0": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjnbkkKIhN": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddjo8Imyx3u": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddjwn0zI8lE": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjyBD2NSmC": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdjyIX3oQiD": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlITrlK8P8": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlR6cGRp69": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlZvJsSOAa": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlgZFxi0qz": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddlndt7oq-M": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlrJ-0ogFB": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlrQ3doytx": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlsqFFsdvZ": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdltUn9MZlj": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlvLnNtv-U": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdlwiP_CyXC": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddm56_EsRoA": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdmL8mYiqta": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdmQf5QCvW1": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdmRFm2qd4_": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdmWmGDoDre": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddmj9WHAIup": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddn4q1SqGrz": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddn8kw1MLUj": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdnxRuLya0f": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddo4WXFK4O2": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddo54mrqyP6": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddo7GKfIIle": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoDPUBiUtx": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoNvcZtl3q": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoRJ_DidaZ": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoRw_LsFJG": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoU2APILy4": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoVzMQRhrT": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddoc11QNW1o": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdohDCooRhg": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddosu89Ep18": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DdovFUOi23h": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdoyTSTsDS9": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdpM6-0I5OG": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddq1Fhoi3PK": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddq39CHs6Aq": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdqV1c9IC_5": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddqa-mDqwsi": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdqlM7LyUG1": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddqno_1inJl": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdqpRvBx5fj": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrDPb-oA0e": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrDw1WNM9d": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrJwBfiMDq": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrO53CM-9d": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdreCGvA1EO": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdreH-gNpXf": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrfBf2iNCS": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdrjgMuMd-E": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdryUBKgSUr": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Dds0T3Ry2EJ": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdsButvyj6T": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddt2OfVHEZU": {
+   "format": "X03",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DdtEK5LCA7K": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtEpHJgbq9": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtLLgUild1": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtUBC6olkT": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtWO5ysJVq": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtXqDxibIU": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddtb6Z1Cg8d": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtcLi4IVLM": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtjzzxofvB": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtwJrqMV97": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtxMimq-yf": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdtyckfM9uB": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DduFkK8q7GG": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DduGmKhoFGP": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DduK-KxtJj_": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdumpgtSrmd": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddv-H_qIs-R": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddv2B1NqLIK": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddv8lZaS2TL": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdvUmTzsTXE": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdvcBI-KHdJ": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwBeaAK11X": {
+   "format": "FRX24",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwDrDuoABr": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwEORwql8E": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwFpbAq5YO": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwJCPSMXEH": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwVCBiEbPd": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DdwbNzBIZm1": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwiDSrtsmr": {
+   "format": "FRX31",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwiIkGAPJ8": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwjBZ4MXR0": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwkiTJyaeE": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddwo-NDoR9S": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdwyGx-I-U3": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdxJHtLS1Qb": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddy066XsFph": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdyMY06K774": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdyMoPjCxWH": {
+   "format": "FRX14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdySr0YIv9M": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdyTp48IIt8": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddy_HaLN5uf": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddy_vRCk4Sy": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DdyaxW4xExD": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdydLYpCi_7": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddyex1gKy6e": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdyvV2oxdKK": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdywUdBIwiM": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_Ddz83mWJB1A": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzBCNDigi5": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzDMf1IJE9": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzKWM4otH6": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzKh-LNic4": {
+   "format": "FRX34",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzLvPoMR1P": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzNraRRShc": {
+   "format": "X17",
+   "market": "es",
+   "by": "Megasheet label (caption: currículum feo)"
+  },
+  "ig_DdzORg6o8n2": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzWNfIxFo6": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DdzZPhvRFoY": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeA7KqfxaMh": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeAB6C_uC-m": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeABvQ6oQG3": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeAENjtoFlI": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeAGvZOCETx": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeAJzujI3Pu": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeALrH_IzgA": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "Megasheet label"
+  },
+  "ig_DeAkzjFNeHS": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeB0k0fOsOf": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeB2Mgpi-aF": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeB2mAxR5Tm": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeB8X86tr91": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeB8r6uIYfW": {
+   "format": "N04",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeBtkhxiTmQ": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeBx5PRIlkb": {
+   "format": "FRX33",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeC2oOEodAS": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeC6aD7IFzH": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCE0ZGIP9Z": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCFkNrMKoF": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCKKzHMhwn": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCXTnSoSPD": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCYLwKNpno": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCZT3vI04R": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCZh63NfdH": {
+   "format": "X16",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCZuuTsVkG": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCaXEniLZ6": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCc5gkDOtF": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCgw9oKr-s": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeChHKYIZT8": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCi2N2oSC1": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCj63yMKNg": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCjKFuuOZl": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeCjpWYgoFa": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeDnTjaRvrR": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeE2HNlMIoR": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeE74VviZxZ": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeE87EzoVha": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeESxiIiBvQ": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeETp3fCyWW": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEXWJmKpGD": {
+   "format": "ESX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEX_juxYMH": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEaznlCfsm": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEbeQToIUY": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEjX9ogDkb": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEnYm_uwjf": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEsynhIXLM": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEt0LbIJbs": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeEuHUSIslQ": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFA8AdRFgy": {
+   "format": "X11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFBnA9gGOV": {
+   "format": "X18",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFC55Uo3YZ": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFJtxLtHvn": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFME1Xs1h2": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFOylqOfX9": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFWxlAIakC": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFYfxOtlBp": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFar2IIfYR": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFcNcuiasb": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFeP5PxGPJ": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeFuFfzyqio": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeG8-6Wi3iU": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeG_bPuiRHp": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH0NYmtZ7e": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH2WXmCXnm": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH4JAeIBOT": {
+   "format": "FRX22",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH5DXVxFOZ": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH5ul6x-0a": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeH7hOgODl6": {
+   "format": "FRX24",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHAxsPIW3b": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHM0esMgG_": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHNMtHMQvt": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHVH2woB9H": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHWYtYokn6": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHXRP9qlb7": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHYGgtoqPq": {
+   "format": "FRX39",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHmDEzDbzv": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHnDGOspsD": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHnQIGOt3A": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeHtMK_oMB4": {
+   "format": "ESX28",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeIEKaOomsD": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeIGlqKiG-N": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeIKzFjqA6m": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DeIM7jlgB-z": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeITeITy6p4": {
+   "format": "ESX25",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJ2UtWodZu": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJ2et7spE8": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJ7gE6Mfed": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DeJ8nY2I2xQ": {
+   "format": "X06",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJVaU-o3IN": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJjhI6C81c": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJlOjqCwCs": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJpAHKNQ_p": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeJrOr_I8eT": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKAqV5M9ox": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKCfMdivwB": {
+   "format": "X09",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKGpmcseA1": {
+   "format": "X15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKK4aNuXOr": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKLF66FZJo": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKMl2tqEFh": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKTgmENHhK": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKUtlNsRnu": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKVpQko1qN": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKWF9-CPgD": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKZYGBxFOs": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKd5WDOSkm": {
+   "format": "X11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKdSnEgG-r": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKeU8RIKCj": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeKk02RIfic": {
+   "format": "ESX11",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeL-_9couyZ": {
+   "format": "A20261006183623",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeL6_BRskHc": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeLDvYBJvTk": {
+   "format": "A202610061335",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeLvQ2gKWLL": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM-zeIxUym": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM0-ytiWH3": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM2Ejfon-o": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM34qBuJkP": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM6KgjoHMO": {
+   "format": "N02",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM8pbhxzvg": {
+   "format": "ESX21",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMMYeFi7Pb": {
+   "format": "N05",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMMdj9i1JM": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMRhUatQyp": {
+   "format": "X17",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMSbttNaRr": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMVlXsIIzf": {
+   "format": "N07",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeM_rxgRVk_": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMatM0IsYS": {
+   "format": "N07",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMgA50Ip30": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMuo9VgprF": {
+   "format": "N02",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMv-rhEvnE": {
+   "format": "N02",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeMwV3BNzK9": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeNLFpbK8tQ": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeNUgdrsuFI": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeO4GrNiIIz": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeO6dI4ol3P": {
+   "format": "FRX32",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeOsE_Wi0nG": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeOtSvBI6iZ": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeOtuztiMx7": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeP86BogzHe": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePBGsjtTsK": {
+   "format": "X03",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePH-XGsJCN": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePSK72qt80": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePUjy_Iq9s": {
+   "format": "N07",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePUsc-gcMT": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePW4UZOC72": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePa_iOtc_7": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePbbKmijQv": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePcvDVMpTI": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePeuItIBXS": {
+   "format": "FRX30",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePgZi9IfID": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePl1dcIDeq": {
+   "format": "FRX30",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePmmjGusLY": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePnqugI99S": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DePtgohog-s": {
+   "format": "FRX25",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR5UO8ilDW": {
+   "format": "N02",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR5au7lIGA": {
+   "format": "A20261006183623",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR63Bnsp5h": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR6WnXId2f": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRPXzOoxQD": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRQ_UBqWle": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRY9dhNICj": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR_SeEpXw8": {
+   "format": "FRX38",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR_cRsstE0": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeR_lhdAW6D": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRaMubiqLw": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRdauCiOrC": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRlbEUxafo": {
+   "format": "A202610061335",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRnPdzoEtd": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeRnaKlo-ub": {
+   "format": "FRX29",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeSHEsdR98v": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeSJe-Nuw4W": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeSLemBoqM5": {
+   "format": "N03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeSNlIbIh0U": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeSXOZRR4Ct": {
+   "format": "FRX19",
+   "market": "es",
+   "by": "Megasheet label"
+  },
+  "ig_DeT1HONinbU": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeT1MbIoBZs": {
+   "format": "X06",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeT1sIbulxS": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeT28Tzsl1U": {
+   "format": "X09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeT9iHkNnxL": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeT_wuhiXVF": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeTpRxXIesT": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeTr-ZvKtUB": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeU1vKbRcia": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUANb5tH73": {
+   "format": "A202610061328",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUEP4eCCV5": {
+   "format": "N01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUGE-oIfN3": {
+   "format": "X08",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUR085s4ip": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUVmjECuXE": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUbQEIOmzK": {
+   "format": "A202610061331",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUcyYgIZUa": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUdnmAt1Vh": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUeCwgFW7R": {
+   "format": "A202610061328",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUg1LSikW8": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUir50OPGE": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUjmBLInHi": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUp9eZA3jX": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUthP9IK17": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUwxdeRTjS": {
+   "format": "X03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeUzFeGITsV": {
+   "format": "ESX11",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeW-MtKoM9a": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeW0bX7uKJd": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeW8EH-CcVQ": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWAfpEqVEf": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWEzdSov6d": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWUCU9Mml7": {
+   "format": "N10",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWW3yEue5m": {
+   "format": "X01",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWaWCbi2lb": {
+   "format": "FRX14",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWeRheIFey": {
+   "format": "X16",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWnranoacQ": {
+   "format": "N10",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWsYuMs4wH": {
+   "format": "X13",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeWzIFRtjUE": {
+   "format": "X13",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXBAzouzGP": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXHaJsiKC-": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXMmTDMaG4": {
+   "format": "X08",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXNK9DoUuG": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXPO-KCEZX": {
+   "format": "ESX15",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXPlsFA9ZM": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXRheQxgJM": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXUMcqOMwz": {
+   "format": "N09",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXUVjEoB5-": {
+   "format": "A202610061334",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXY1f0sD9n": {
+   "format": "X14",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXZlvDxk0r": {
+   "format": "N03",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeXgpdRoZTf": {
+   "format": "FRX19",
+   "market": "fr",
+   "by": "TikTok twin (same creator, same day)"
+  },
+  "ig_DeY6QKTOPnc": {
+   "format": "A202610061334",
+   "market": "es",
+   "by": "TikTok twin (same creator, same day)"
+  }
+ }
+}

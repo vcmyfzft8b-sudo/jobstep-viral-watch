@@ -41,3 +41,12 @@ here (repo, Notion, Discord, secrets, state are all separate).
   also video, TikTok link, Parakeet link, no JobStep, short hook section. Prints "VERIFY PROBLEMS: none" when clean.
 - `export` – every script as one Markdown file, encrypted to state/scripts_export.enc (same key as the Memo export);
   read it with `scripts/read_export.sh`.
+
+## Our formats and comebacks (12 Oct 2026)
+- `registry/own_formats.json` = hand-checked format of every Spain/France video of ours up to 12 Oct (TikTok ids +
+  Instagram `ig_<shortcode>`); `own.apply_hand_tags` applies it on every load and in tiers/ranking. Newer videos are
+  sorted automatically as before.
+- `main.own_comebacks`: archived + tier 1 for us in a running market -> pages move back to the format folders, status
+  active (each normal run and `relist`). `lineup.never_revive` keeps formats out (X01 – user's choice, low signups).
+- The Monday clean-up protects formats that are tier 1 for us.
+

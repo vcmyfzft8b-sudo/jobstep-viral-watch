@@ -97,7 +97,7 @@ def form(history, formats, cfg, own_stats=None, now=None):
 
 def own_stats(formats, market=None):
     from . import own, state
-    return own.stats(state.load('own.json', {}), formats, time.time(), market=market)
+    return own.stats(own.videos_now(), formats, time.time(), market=market)
 
 
 def section(tier, hot_now):

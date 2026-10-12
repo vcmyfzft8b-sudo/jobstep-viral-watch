@@ -814,6 +814,13 @@
   "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
   "id": "FRX22",
   "inspo": {
+   "es": {
+    "built": true,
+    "own": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7687619784669695265",
+    "views": 157400
+   },
    "fr": {
     "own": true,
     "rebuilt": true,
@@ -825,13 +832,16 @@
   "listed_at": 1791814818,
   "market_only": "fr",
   "pages": {
+   "es": "3f7958b0-fc14-81b5-9685-c2a589d96510",
    "fr": "3d8958b0-fc14-8024-bea3-d5fcb04410d4"
   },
+  "pending_pages": {},
   "revived": {
    "at": 1791814818,
    "because": "proven for our creators (fr: our 14 videos average 15k, best 157k)"
   },
   "reworded": {
+   "es": true,
    "fr": true
   },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Après six mois de chômage, j’ai enfin trouvé un emploi Un seul changement a tout changé Mon ancien CV était joli, mais il n’était pas compatible avec les ATS La première entreprise à laquelle j’ai postulé m’a embauchée Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué. On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes. Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV. Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même. Le nouveau, lui, c'est tout l'i",
@@ -1061,13 +1071,22 @@
     "strict": true,
     "url": "https://www.tiktok.com/@nataliagonzalezga38/video/7693228875035282720",
     "views": 44100
+   },
+   "fr": {
+    "built": true,
+    "own": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@nataliagonzalezga38/video/7693228875035282720",
+    "views": 44300
    }
   },
   "listed_at": 1791814818,
   "market_only": "es",
   "pages": {
-   "es": "3ee958b0-fc14-8015-ae8b-efbb383ec8da"
+   "es": "3ee958b0-fc14-8015-ae8b-efbb383ec8da",
+   "fr": "3f7958b0-fc14-819d-a5a1-f0824cbbb05e"
   },
+  "pending_pages": {},
   "revived": {
    "at": 1791814818,
    "because": "proven for our creators (es: our 2 videos average 33k, best 44k)"

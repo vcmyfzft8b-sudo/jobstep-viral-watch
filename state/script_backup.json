@@ -20245,6 +20245,25 @@
    "type": "text"
   }
  ],
+ "3f7958b0-fc14-8142-bd2d-cfda8327e036": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Fais exactement comme dans la vidéo d'exemple : assis·e à ton bureau devant un cahier, tu joues dès la première seconde avec un gros pinceau de maquillage devant la caméra, puis avec une pince pour déchirer des feuilles pendant que tu parles. La question du début est dite par une deuxième voix, et tu y réponds face caméra.",
+   "text": {
+    "content": "Fais exactement comme dans la vidéo d'exemple : assis·e à ton bureau devant un cahier, tu joues dès la première seconde avec un gros pinceau de maquillage devant la caméra, puis avec une pince pour déchirer des feuilles pendant que tu parles. La question du début est dite par une deuxième voix, et tu y réponds face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f7958b0-fc14-814b-bc4e-c59d4de875a1": [
   {
    "annotations": {
@@ -20335,6 +20354,25 @@
    "plain_text": "Igual que en el vídeo de ejemplo: habla muy cerca de la cámara mientras estiras y aprietas un slime naranja con las dos manos, con el título en pantalla.",
    "text": {
     "content": "Igual que en el vídeo de ejemplo: habla muy cerca de la cámara mientras estiras y aprietas un slime naranja con las dos manos, con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-81fe-89e5-cd593b287f4a": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copia exactamente el inicio del vídeo de ejemplo: el móvil apoyado muy bajo en la mesa, grabándote desde abajo, con las manos juntas sobre la mesa, sonriendo a cámara y el título en pantalla. Cuando dices «me sacó este CV», muestra tu nuevo CV de Parakeet AI superpuesto encima de ti, como en el vídeo de ejemplo.",
+   "text": {
+    "content": "Copia exactamente el inicio del vídeo de ejemplo: el móvil apoyado muy bajo en la mesa, grabándote desde abajo, con las manos juntas sobre la mesa, sonriendo a cámara y el título en pantalla. Cuando dices «me sacó este CV», muestra tu nuevo CV de Parakeet AI superpuesto encima de ti, como en el vídeo de ejemplo.",
     "link": null
    },
    "type": "text"
@@ -41475,6 +41513,156 @@
     "plain_text": "(Colle le logo Parakeet AI sur la case vendue) Va jeter un œil, et dis-moi en commentaire qui va acheter la prochaine case d'après toi. ",
     "text": {
      "content": "(Colle le logo Parakeet AI sur la case vendue) Va jeter un œil, et dis-moi en commentaire qui va acheter la prochaine case d'après toi. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f7958b0-fc14-81b5-9685-c2a589d96510": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bueno, pues después de 6 meses en paro, por fin he encontrado trabajo. Y solo he cambiado una cosa, así que sé que es eso lo que ha funcionado. ",
+    "text": {
+     "content": "Bueno, pues después de 6 meses en paro, por fin he encontrado trabajo. Y solo he cambiado una cosa, así que sé que es eso lo que ha funcionado. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Antes, mi CV era un CV de Canva. Oía mucho «ya, eso no pasa los filtros ATS», etc. No quise escuchar a nadie. ",
+    "text": {
+     "content": "Antes, mi CV era un CV de Canva. Oía mucho «ya, eso no pasa los filtros ATS», etc. No quise escuchar a nadie. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y esta vez me he postulado a una empresa con un CV ATS (",
+    "text": {
+     "content": "Y esta vez me he postulado a una empresa con un CV ATS (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") que hice en Parakeet AI. (",
+    "text": {
+     "content": ") que hice en Parakeet AI. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Le pasé mi CV de Canva y me sacó este CV. La verdad es que fue superrápido. ",
+    "text": {
+     "content": ") Le pasé mi CV de Canva y me sacó este CV. La verdad es que fue superrápido. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Llevas mucho tiempo buscando y no te funciona nada. Cambia tu CV, ya verás, el final quizá está mucho más cerca de lo que piensas. ",
+    "text": {
+     "content": "Llevas mucho tiempo buscando y no te funciona nada. Cambia tu CV, ya verás, el final quizá está mucho más cerca de lo que piensas. ",
      "link": null
     },
     "type": "text"

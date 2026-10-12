@@ -206,3 +206,16 @@ def test_verify_accepts_the_visual_hook_lab_as_a_sub_page(monkeypatch):
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: script)
     monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [_blk(('Empieza en plano selfie.', None))])
     assert verify.check_page('p', 'es', LINKS) == []
+
+
+def test_revived_own_format_reference_comes_from_its_example(monkeypatch):
+    stored = {}
+    monkeypatch.setattr(crosscheck, 'references', lambda: stored)
+    monkeypatch.setattr(localize, 'example_text', lambda url, page_id=None: 'SPEECH: hi')
+    monkeypatch.setattr(state, 'load', lambda name, default: stored)
+    monkeypatch.setattr(state, 'save', lambda name, data: None)
+    monkeypatch.setattr(llm, 'chat_json', lambda model, system, prompt, **k: {'beats': ['b'], 'hook': 'h', 'product': {}})
+    fmt = {'id': 'FRX22', 'revived': {'because': 'proven for our creators (fr: our 14 videos average 15k)'},
+           'inspo': {'fr': {'url': 'https://www.tiktok.com/@lucie/video/77', 'strict': True, 'own': True}}}
+    ref = crosscheck.ensure_reference(fmt, lambda f, m: None, {'models': {'build': 'opus'}})
+    assert ref['canonical_source'] == '77'  # the reason text is not a video

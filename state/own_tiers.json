@@ -1,0 +1,570 @@
+{
+ "at": 1791802988,
+ "markets": {
+  "es": {
+   "A202610061331": {
+    "avg": 352,
+    "best": 407,
+    "hit": 0,
+    "market_median": 620,
+    "n": 3,
+    "tier": 3
+   },
+   "A202610061332": {
+    "avg": 43813,
+    "best": 77682,
+    "hit": 0,
+    "market_median": 620,
+    "n": 2,
+    "tier": 1
+   },
+   "A202610061334": {
+    "avg": 9718,
+    "best": 9718,
+    "hit": 0,
+    "market_median": 620,
+    "n": 1,
+    "tier": 3
+   },
+   "A202610061335": {
+    "avg": 836,
+    "best": 1390,
+    "hit": 0,
+    "market_median": 620,
+    "n": 2,
+    "tier": 3
+   },
+   "A20261006183623": {
+    "avg": 1075,
+    "best": 1897,
+    "hit": 0,
+    "market_median": 620,
+    "n": 4,
+    "tier": 3
+   },
+   "ESX11": {
+    "avg": 4144,
+    "best": 55687,
+    "hit": 0,
+    "market_median": 620,
+    "n": 17,
+    "tier": 2
+   },
+   "ESX15": {
+    "avg": 1014,
+    "best": 4540,
+    "hit": 0,
+    "market_median": 620,
+    "n": 25,
+    "tier": 3
+   },
+   "ESX21": {
+    "avg": 4308,
+    "best": 64463,
+    "hit": 0,
+    "market_median": 620,
+    "n": 22,
+    "tier": 2
+   },
+   "ESX24": {
+    "avg": 898,
+    "best": 2074,
+    "hit": 0,
+    "market_median": 620,
+    "n": 8,
+    "tier": 3
+   },
+   "ESX25": {
+    "avg": 1850,
+    "best": 13680,
+    "hit": 0,
+    "market_median": 620,
+    "n": 12,
+    "tier": 3
+   },
+   "ESX28": {
+    "avg": 9725,
+    "best": 44000,
+    "hit": 0,
+    "market_median": 620,
+    "n": 9,
+    "tier": 2
+   },
+   "ESX29": {
+    "avg": 526,
+    "best": 838,
+    "hit": 0,
+    "market_median": 620,
+    "n": 4,
+    "tier": 3
+   },
+   "FRX15": {
+    "avg": 9350,
+    "best": 147229,
+    "hit": 1,
+    "market_median": 620,
+    "n": 18,
+    "tier": 1
+   },
+   "FRX24": {
+    "avg": 4593,
+    "best": 42839,
+    "hit": 0,
+    "market_median": 620,
+    "n": 12,
+    "tier": 2
+   },
+   "N01": {
+    "avg": 1035,
+    "best": 2874,
+    "hit": 0,
+    "market_median": 620,
+    "n": 13,
+    "tier": 3
+   },
+   "N02": {
+    "avg": 976,
+    "best": 2453,
+    "hit": 0,
+    "market_median": 620,
+    "n": 5,
+    "tier": 3
+   },
+   "N04": {
+    "avg": 636,
+    "best": 1165,
+    "hit": 0,
+    "market_median": 620,
+    "n": 3,
+    "tier": 3
+   },
+   "N07": {
+    "avg": 603,
+    "best": 946,
+    "hit": 0,
+    "market_median": 620,
+    "n": 2,
+    "tier": 3
+   },
+   "N10": {
+    "avg": 727,
+    "best": 1926,
+    "hit": 0,
+    "market_median": 620,
+    "n": 20,
+    "tier": 4
+   },
+   "X06": {
+    "avg": 4984,
+    "best": 40943,
+    "hit": 0,
+    "market_median": 620,
+    "n": 10,
+    "tier": 2
+   },
+   "X09": {
+    "avg": 813,
+    "best": 2245,
+    "hit": 0,
+    "market_median": 620,
+    "n": 9,
+    "tier": 3
+   },
+   "X11": {
+    "avg": 3090,
+    "best": 22549,
+    "hit": 0,
+    "market_median": 620,
+    "n": 14,
+    "tier": 2
+   },
+   "X13": {
+    "avg": 2665,
+    "best": 28115,
+    "hit": 0,
+    "market_median": 620,
+    "n": 30,
+    "tier": 2
+   },
+   "X15": {
+    "avg": 2721,
+    "best": 53689,
+    "hit": 0,
+    "market_median": 620,
+    "n": 31,
+    "tier": 2
+   },
+   "X16": {
+    "avg": 1223,
+    "best": 4991,
+    "hit": 0,
+    "market_median": 620,
+    "n": 24,
+    "tier": 3
+   },
+   "X17": {
+    "avg": 3418,
+    "best": 38167,
+    "hit": 0,
+    "market_median": 620,
+    "n": 18,
+    "tier": 2
+   }
+  },
+  "fr": {
+   "A202610061331": {
+    "avg": 1343,
+    "best": 5062,
+    "hit": 0,
+    "market_median": 750,
+    "n": 9,
+    "tier": 3
+   },
+   "A202610061332": {
+    "avg": 2780,
+    "best": 4857,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 2
+   },
+   "A202610061334": {
+    "avg": 740,
+    "best": 973,
+    "hit": 0,
+    "market_median": 750,
+    "n": 2,
+    "tier": 3
+   },
+   "A202610061335": {
+    "avg": 1100,
+    "best": 2324,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 3
+   },
+   "A20261006183623": {
+    "avg": 1726,
+    "best": 3044,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 3
+   },
+   "ESX21": {
+    "avg": 270,
+    "best": 327,
+    "hit": 0,
+    "market_median": 750,
+    "n": 2,
+    "tier": 3
+   },
+   "ESX29": {
+    "avg": 1240,
+    "best": 2131,
+    "hit": 0,
+    "market_median": 750,
+    "n": 2,
+    "tier": 3
+   },
+   "FRX14": {
+    "avg": 380,
+    "best": 544,
+    "hit": 0,
+    "market_median": 750,
+    "n": 5,
+    "tier": 3
+   },
+   "FRX15": {
+    "avg": 706,
+    "best": 836,
+    "hit": 0,
+    "market_median": 750,
+    "n": 3,
+    "tier": 3
+   },
+   "FRX19": {
+    "avg": 1299,
+    "best": 4382,
+    "hit": 0,
+    "market_median": 750,
+    "n": 7,
+    "tier": 3
+   },
+   "FRX22": {
+    "avg": 20744,
+    "best": 156955,
+    "hit": 0,
+    "market_median": 750,
+    "n": 10,
+    "tier": 1
+   },
+   "FRX24": {
+    "avg": 865,
+    "best": 3532,
+    "hit": 0,
+    "market_median": 750,
+    "n": 19,
+    "tier": 4
+   },
+   "FRX25": {
+    "avg": 671,
+    "best": 2034,
+    "hit": 0,
+    "market_median": 750,
+    "n": 11,
+    "tier": 4
+   },
+   "FRX26": {
+    "avg": 2481,
+    "best": 18799,
+    "hit": 0,
+    "market_median": 750,
+    "n": 15,
+    "tier": 2
+   },
+   "FRX29": {
+    "avg": 468,
+    "best": 892,
+    "hit": 0,
+    "market_median": 750,
+    "n": 15,
+    "tier": 4
+   },
+   "FRX30": {
+    "avg": 749,
+    "best": 2225,
+    "hit": 0,
+    "market_median": 750,
+    "n": 27,
+    "tier": 4
+   },
+   "FRX31": {
+    "avg": 588,
+    "best": 1619,
+    "hit": 0,
+    "market_median": 750,
+    "n": 8,
+    "tier": 4
+   },
+   "FRX32": {
+    "avg": 4399,
+    "best": 40907,
+    "hit": 0,
+    "market_median": 750,
+    "n": 13,
+    "tier": 2
+   },
+   "FRX33": {
+    "avg": 1010,
+    "best": 1783,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 3
+   },
+   "FRX34": {
+    "avg": 683,
+    "best": 2134,
+    "hit": 0,
+    "market_median": 750,
+    "n": 7,
+    "tier": 4
+   },
+   "FRX35": {
+    "avg": 1211,
+    "best": 2530,
+    "hit": 0,
+    "market_median": 750,
+    "n": 11,
+    "tier": 3
+   },
+   "FRX36": {
+    "avg": 1123,
+    "best": 2041,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 3
+   },
+   "FRX38": {
+    "avg": 887,
+    "best": 1491,
+    "hit": 0,
+    "market_median": 750,
+    "n": 3,
+    "tier": 3
+   },
+   "FRX39": {
+    "avg": 495,
+    "best": 1051,
+    "hit": 0,
+    "market_median": 750,
+    "n": 3,
+    "tier": 3
+   },
+   "N01": {
+    "avg": 866,
+    "best": 3532,
+    "hit": 0,
+    "market_median": 750,
+    "n": 31,
+    "tier": 4
+   },
+   "N02": {
+    "avg": 195,
+    "best": 266,
+    "hit": 0,
+    "market_median": 750,
+    "n": 2,
+    "tier": 3
+   },
+   "N03": {
+    "avg": 332,
+    "best": 335,
+    "hit": 0,
+    "market_median": 750,
+    "n": 2,
+    "tier": 3
+   },
+   "N05": {
+    "avg": 922,
+    "best": 2625,
+    "hit": 0,
+    "market_median": 750,
+    "n": 23,
+    "tier": 3
+   },
+   "N07": {
+    "avg": 7986,
+    "best": 65323,
+    "hit": 0,
+    "market_median": 750,
+    "n": 9,
+    "tier": 2
+   },
+   "N09": {
+    "avg": 69,
+    "best": 153,
+    "hit": 0,
+    "market_median": 750,
+    "n": 3,
+    "tier": 3
+   },
+   "N10": {
+    "avg": 838,
+    "best": 2383,
+    "hit": 0,
+    "market_median": 750,
+    "n": 23,
+    "tier": 4
+   },
+   "X01": {
+    "avg": 20804,
+    "best": 218218,
+    "hit": 0,
+    "market_median": 750,
+    "n": 16,
+    "tier": 1
+   },
+   "X03": {
+    "avg": 1381,
+    "best": 3454,
+    "hit": 0,
+    "market_median": 750,
+    "n": 4,
+    "tier": 3
+   },
+   "X05": {
+    "avg": 908,
+    "best": 2102,
+    "hit": 0,
+    "market_median": 750,
+    "n": 5,
+    "tier": 3
+   },
+   "X06": {
+    "avg": 19474,
+    "best": 171261,
+    "hit": 0,
+    "market_median": 750,
+    "n": 18,
+    "tier": 1
+   },
+   "X08": {
+    "avg": 5404,
+    "best": 28965,
+    "hit": 0,
+    "market_median": 750,
+    "n": 7,
+    "tier": 2
+   },
+   "X09": {
+    "avg": 1123,
+    "best": 1845,
+    "hit": 0,
+    "market_median": 750,
+    "n": 7,
+    "tier": 3
+   },
+   "X11": {
+    "avg": 1272,
+    "best": 3935,
+    "hit": 0,
+    "market_median": 750,
+    "n": 6,
+    "tier": 3
+   },
+   "X13": {
+    "avg": 7161,
+    "best": 100688,
+    "hit": 0,
+    "market_median": 750,
+    "n": 28,
+    "tier": 2
+   },
+   "X14": {
+    "avg": 1206,
+    "best": 2351,
+    "hit": 0,
+    "market_median": 750,
+    "n": 5,
+    "tier": 3
+   },
+   "X15": {
+    "avg": 2035,
+    "best": 5694,
+    "hit": 0,
+    "market_median": 750,
+    "n": 5,
+    "tier": 2
+   },
+   "X16": {
+    "avg": 1250,
+    "best": 4098,
+    "hit": 0,
+    "market_median": 750,
+    "n": 12,
+    "tier": 3
+   },
+   "X17": {
+    "avg": 1083,
+    "best": 1888,
+    "hit": 0,
+    "market_median": 750,
+    "n": 5,
+    "tier": 3
+   },
+   "X20": {
+    "avg": 2133,
+    "best": 12125,
+    "hit": 0,
+    "market_median": 750,
+    "n": 18,
+    "tier": 2
+   }
+  }
+ },
+ "week": "2026-W42"
+}

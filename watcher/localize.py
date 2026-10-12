@@ -248,7 +248,8 @@ def refresh_note(page_id, lang):
         return True
     note = ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', []))
     same = note_is_same(note, lang)
-    if note.replace('**', '').strip() == '\n'.join(notion.inspo_note(lang, same)).replace('**', '').strip():
+    if note.replace('**', '').strip() in ['\n'.join(notion.inspo_note(lang, same, own)).replace('**', '').strip()
+                                          for own in (False, True)]:
         return False
     set_note(page_id, lang, same)
     return True

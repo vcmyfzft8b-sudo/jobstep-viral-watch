@@ -15,7 +15,8 @@ TEXT = {
         'style': 'natural spoken German as a TikTok creator would say it (du-Form)',
         'video_heading': 'Inspirationsvideo', 'source': 'Original auf TikTok',
         # The first ~30 characters of 'inspo_note'[0] and 'inspo_note_same' tell "other language" and "same language"
-        # apart (audit._note_is_same) - keep those starts as they are.
+        # apart (audit._note_is_same) - keep those starts as they are. 'inspo_note_own' (example = our own creator's video)
+        # starts like 'inspo_note_same'.
         'inspo_note': [
             '**Wichtig:** Dreh dein Video nach dem Skript unten. Das Inspirationsvideo ist von einer anderen Marke und '
             'NICHT das Video, das du drehen sollst. Übernimm davon SO GENAU WIE MÖGLICH den Vibe, die Kamerawinkel, wie '
@@ -24,6 +25,10 @@ TEXT = {
             'Im Video wird eine andere App genutzt. Mach alles genauso, nur mit Parakeet AI: Öffne Parakeet AI an den '
             'Stellen, an denen im Video diese App geöffnet wird, und zeig es genauso. Diese App darf in deinem Video '
             'nirgends zu sehen oder zu hören sein.'],
+        'inspo_note_own': '**Wichtig:** Das Inspirationsvideo ist von einem unserer eigenen Creator (mit Parakeet AI) und '
+                          'lief sehr gut – es ist trotzdem NICHT das Video, das du 1:1 kopieren sollst. Übernimm davon SO '
+                          'GENAU WIE MÖGLICH den Vibe, die Kamerawinkel, wie gefilmt wird, den Schnitt und die Momente, in '
+                          'denen Parakeet AI gezeigt wird (Demo). Dreh dein eigenes Video nach dem Skript unten.',
         'inspo_note_same': '**Wichtig:** Das Inspirationsvideo ist auf Deutsch und zeigt genau dieses Format, ist aber von '
                            'einer anderen Marke und NICHT das Video, das du drehen sollst. Übernimm davon SO GENAU WIE '
                            'MÖGLICH den Vibe, die Kamerawinkel, wie gefilmt wird, den Schnitt und die Momente, in denen die '
@@ -68,6 +73,10 @@ TEXT = {
             'Dans la vidéo, c’est une autre app qui est utilisée. Fais tout pareil, mais avec Parakeet AI : ouvre Parakeet '
             'AI aux moments où cette app est ouverte dans la vidéo et montre-le de la même façon. Cette app ne doit '
             'apparaître ni être entendue nulle part dans ta vidéo.'],
+        'inspo_note_own': '**Important :** La vidéo d’inspiration vient d’un de nos créateurs (avec Parakeet AI) et a très '
+                          'bien marché – mais ce n’est PAS une vidéo à recopier telle quelle. Reprends-en LE PLUS FIDÈLEMENT '
+                          'POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments où '
+                          'Parakeet AI est montré (démo). Tourne ta propre vidéo d’après le script ci-dessous.',
         'inspo_note_same': '**Important :** La vidéo d’inspiration est en français et montre exactement ce format, mais elle '
                            'vient d’une autre marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT '
                            'POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments '
@@ -113,6 +122,10 @@ TEXT = {
             'En el vídeo se usa otra app. Hazlo todo igual, pero con Parakeet AI: abre Parakeet AI en los momentos en que '
             'se abre esa app en el vídeo y enséñalo de la misma forma. Esa app no puede verse ni oírse en ningún momento '
             'de tu vídeo.'],
+        'inspo_note_own': '**Importante:** El vídeo de inspiración es de uno de nuestros creadores (con Parakeet AI) y '
+                          'funcionó muy bien, pero NO es un vídeo para copiar tal cual. Cópiale LO MÁS FIELMENTE POSIBLE el '
+                          'ambiente (vibe), los ángulos de cámara, cómo está grabado, el montaje y los momentos en que se '
+                          'enseña Parakeet AI (demo). Graba tu propio vídeo con el guion de abajo.',
         'inspo_note_same': '**Importante:** El vídeo de inspiración está en español y muestra exactamente este formato, '
                            'pero es de otra marca y NO es el vídeo que tienes que hacer. Cópiale LO MÁS FIELMENTE POSIBLE '
                            'el ambiente (vibe), los ángulos de cámara, cómo está grabado, el montaje y los momentos en que '

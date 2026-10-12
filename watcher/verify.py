@@ -33,7 +33,8 @@ def note_problem(blocks, lang):
     if not b:
         return 'no note under the inspiration video'
     note = _plain(b).replace('**', '').strip()
-    want = ['\n'.join(notion.inspo_note(lang, same)).replace('**', '').strip() for same in (False, True)]
+    want = ['\n'.join(notion.inspo_note(lang, same, own)).replace('**', '').strip()
+            for same, own in ((False, False), (True, False), (True, True))]
     if note not in want or b.get('has_children') and any(
             c['type'] == 'paragraph' and re.search(r'JobStep|Parakeet AI', _plain(c)) for c in notion.children(b['id'])):
         return 'note under the inspiration video is not the current text'

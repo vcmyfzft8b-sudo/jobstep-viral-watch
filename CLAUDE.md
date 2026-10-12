@@ -50,3 +50,8 @@ here (repo, Notion, Discord, secrets, state are all separate).
   active (each normal run and `relist`). `lineup.never_revive` keeps formats out (X01 – user's choice, low signups).
 - The Monday clean-up protects formats that are tier 1 for us.
 
+
+## Alerts (12 Oct 2026)
+- One Slack alert per video: only 🟢 VIRAL pings. 🟡 taking off goes on the Notion radar page only (user's request:
+  no "taking off" today and "viral" tomorrow for the same video). A failed Claude check is retried quietly; after
+  `main.JUDGE_TRIES` runs one basic alert, then no second one. add_format marks a watchlist video as alerted.

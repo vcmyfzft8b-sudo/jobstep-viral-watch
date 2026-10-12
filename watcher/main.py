@@ -174,19 +174,16 @@ def run(dry_run=False, only_detect=False):
           f'views_only={sum(1 for x in videos.values() if x.get("detail_missing"))} markets={[m["key"] for m in mkts]}')
 
     # 3./4. alerts
-    actions, backlog = [], []
+    actions = []
     for vid, v in sorted(videos.items(), key=lambda x: -x[1].get('views', 0)):
         if 'created' not in v:
             continue
         lvl = detect.level(v, now, detect.creator_baseline(history, v['handle']), th)
         if not lvl or 'viral' in v['notified'] or (lvl == 'taking_off' and 'taking_off' in v['notified']):
             continue
-        quiet = lvl == 'taking_off' and v.get('first_seen') == int(now) and now - v['created'] > 48 * 3600
         try:
-            result = handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect, quiet=quiet)
+            result = handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect)
             actions.append(result)
-            if quiet:
-                backlog.append(result)
             if lvl == 'taking_off' and not dry_run:
                 v['notified'].append(lvl)
             if not dry_run:  # save right away, so a video is never reported twice (even if the run crashes later)
@@ -202,9 +199,6 @@ def run(dry_run=False, only_detect=False):
                    if e.get('ts', 0) >= now and e.get('type') in ('format_built', 'format_revived')}
         for key in [k for k in meta.get('audit', {}) if k.split(':')[0] in changed]:
             meta['audit'].pop(key, None)
-    if backlog and not dry_run:
-        notify.push(f'📋 {len(backlog)} older "taking off" videos from newly added accounts',
-                    'Last 7 days – details on the Notion radar page')
 
     if not dry_run:
         # Sort every video into our formats once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
@@ -367,8 +361,12 @@ def run(dry_run=False, only_detect=False):
     print('actions:', json.dumps(actions, ensure_ascii=False))
 
 
-def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect, quiet=False):
-    """Taking off: short message. Viral: see handle_viral."""
+JUDGE_TRIES = 3  # runs (6 h apart) the Claude check may fail before the basic viral alert goes out
+
+
+def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect):
+    """Taking off: a line on the Notion radar page only (no Slack ping - one Slack alert per video, the viral one).
+    Viral: see handle_viral."""
     if now - v['created'] > cfg['watch_days'] * 86400:  # never alert on old videos
         return {'video': v['id'], 'level': lvl, 'skipped': 'older than watch window'}
     if dry_run:
@@ -386,8 +384,6 @@ def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect, qu
                 if known else f"Possibly new format: {v.get('hook_en') or '?'}")
     msg = (f"@{v['handle']} – {fmt_views(v['views'])} views after {age_h:.0f} h · shares+saves {detect.engagement(v):.1%}\n"
            f"{fmt_text}\n(Full check with script follows if it goes viral.)")
-    if not quiet:
-        notify.push('🟡 Taking off: JobStep video', msg, click=v['url'])
     notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟡 – "
                  f"{msg.replace(chr(10), ' – ')}", link=v['url'], link_label='Video')
     result = {'video': v['id'], 'level': lvl, 'views': v['views']}
@@ -431,9 +427,11 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         try:
             verdict = classify.judge(v, fmts, cfg['models']['build'], transcript.get('text', ''))
         except Exception as e:
-            if 'viral_basic' not in v['notified'] and not force:  # added by hand: add_format sends its own alert
-                notify.push(title, f"{stats}\n⚠️ Claude check failed ({str(e)[:120]}) – the full check + English script "
-                            'will follow in the next run (6 h).', click=v['url'])
+            v['judge_fails'] = v.get('judge_fails', 0) + 1
+            if v['judge_fails'] >= JUDGE_TRIES and 'viral_basic' not in v['notified'] and not force:
+                # added by hand (force): add_format sends its own alert
+                notify.push(title, f"{stats}\n⚠️ Claude check failed {v['judge_fails']}x ({str(e)[:120]}) – the watcher "
+                            'keeps trying; the result will be on the Notion radar page.', click=v['url'])
                 v['notified'].append('viral_basic')
             state.log({'type': 'judge_failed', 'video': v['id'], 'error': str(e)[:300]})
             result['error'] = str(e)[:200]
@@ -474,7 +472,8 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         quoted = '\n'.join('> ' + line for line in script.splitlines() if line.strip())
         msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>{note}\n\n*Format check (Claude):* {outcome}\n"
                f"_{verdict.get('reason', '')}_\n\n*Script (English):*\n{quoted[:3500]}")
-        notify.push(title, msg)
+        if 'viral_basic' not in v['notified']:  # one Slack alert per video: none if the basic one already went out
+            notify.push(title, msg)
         notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟢 VIRAL – "
                      f"@{v['handle']} {fmt_views(v['views'])} – {outcome.split(chr(10))[0]}", link=v['url'], link_label='Video')
         v['notified'].append('viral')
@@ -1122,6 +1121,10 @@ def add_format(urls):
     fid = first.get('format')
     for v in vids[1:]:
         set_format(v, history, fid, judged=True)
+    watch = state.load('videos.json', {})  # already on the watchlist: the normal run must not alert on it again
+    for v in [watch[v['id']] for v in vids if v['id'] in watch]:
+        v['notified'] = list(dict.fromkeys(v.get('notified', []) + ['taking_off', 'viral']))
+    state.save('videos.json', watch)
     state.save('history.json', history)
     state.save('formats.json', fmts)
     state.save('meta.json', meta)

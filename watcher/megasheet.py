@@ -292,8 +292,9 @@ def merge_videos(videos, rows, now):
     return new
 
 
-def sync(accounts, videos, now, full=False):
-    """Reads the campaigns and merges them in. Returns a summary dict, or None when no login is saved."""
+def sync(accounts, videos, now, full=False, markets=None):
+    """Reads the campaigns of the given markets (default: all) and merges them in. Returns a summary dict, or None
+    when no login is saved. Creators of a stopped market (not in markets) are paused - their old videos stay."""
     token = access_token()
     if token is None:
         return None
@@ -304,6 +305,8 @@ def sync(accounts, videos, now, full=False):
     acc_rows, vid_rows = [], []
     since = time.strftime('%Y-%m-%d', time.gmtime(now - RECENT_DAYS * 86400))
     for name, market in CAMPAIGNS.items():
+        if markets is not None and market not in markets:
+            continue
         if name not in camps:
             raise RuntimeError(f'megasheet: campaign "{name}" not found')
         acc_rows += [(market, a) for a in c.pages('account_getMany', campaignId=camps[name], filters=TIKTOK)]
@@ -313,6 +316,7 @@ def sync(accounts, videos, now, full=False):
     new = merge_videos(videos, vid_rows, now)
     if full:
         info['full_sync'] = int(now)
+    info['last_ok'] = int(now)
     state.save(INFO_FILE, info)
     return {'accounts': len(acc_rows), 'videos': len(vid_rows), 'new_videos': new, 'added': added,
             'paused': paused, 'revived': revived, 'full': full}

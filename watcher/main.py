@@ -248,7 +248,7 @@ def run(dry_run=False, only_detect=False):
     # 4b. our own creators: new videos, views, formats (feeds the ranking: how each format does for US)
     own_accounts, own_videos = own.load()
     if not dry_run:
-        own.sync_megasheet(own_accounts, own_videos, now)
+        own.sync_megasheet(own_accounts, own_videos, now, markets=[m['key'] for m in mkts])
         try:
             print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, now))
             state.save('own.json', own_videos)
@@ -307,13 +307,14 @@ def run(dry_run=False, only_detect=False):
             print('hot update failed:', str(e)[:200])
         if not dry_run:
             try:
-                before_top = meta.get('top3', [])
+                lead = next((m for m in mkts if m['key'] == 'de'), mkts[0])  # the market whose top is reported
+                before_top = meta.get('top3', []) if meta.get('top3_market', 'de') == lead['key'] else []
                 ids = rerank(mkts, fmts, history, cfg)
-                meta['top3'] = ids[:3]
+                meta['top3'], meta['top3_market'] = ids[:3], lead['key']
                 if before_top and ids[:3] != before_top:
                     by = {f['id']: f for f in fmts}
                     recent = rank.recent_viral(history, fmts, cfg)
-                    notify.push('🔁 New top of the DACH format list', '\n'.join(
+                    notify.push(f"🔁 New top of the {lead['T']['flag']} format list", '\n'.join(
                         f"{n}. {by[i]['title']} – {recent.get(i, 0)} viral in 7 days" for n, i in enumerate(ids[:5], 1)))
             except Exception as e:
                 print('re-sort failed:', str(e)[:200])
@@ -732,10 +733,14 @@ def _page_text(page_id):
 
 
 def source_video(fmt):
-    """The TikTok inspiration video of a format (stored, or the 'Original auf TikTok' link on its DACH page)."""
+    """The TikTok inspiration video of a format (stored, or the 'Original auf TikTok' link on its DACH page, or on
+    another market's page for formats built after DACH stopped)."""
     if fmt.get('source_video'):
         return fmt['source_video']
-    for b in notion.children(fmt['page_id']):
+    pid = fmt.get('page_id') or next(iter((fmt.get('pages') or {}).values()), None)
+    if not pid:
+        return None
+    for b in notion.children(pid):
         for x in (b.get(b['type'], {}) or {}).get('rich_text', []) or []:
             url = ((x.get('text') or {}).get('link') or {}).get('url', '')
             if 'tiktok.com/@' in url and '/video/' in url:
@@ -1218,13 +1223,14 @@ def main():
         return
     if a.megasheet_check:
         own_accounts, own_videos = own.load()
-        if not own.sync_megasheet(own_accounts, own_videos, time.time(), full=True):
+        if not own.sync_megasheet(own_accounts, own_videos, time.time(), full=True,
+                                  markets=[m['key'] for m in M.load(load_config())]):
             raise SystemExit(1)
         return
     if a.own_sync:
         cfg, fmts = load_config(), load_formats()
         own_accounts, own_videos = own.load()
-        own.sync_megasheet(own_accounts, own_videos, time.time(), full=True)
+        own.sync_megasheet(own_accounts, own_videos, time.time(), full=True, markets=[m['key'] for m in M.load(cfg)])
         print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, time.time(), max_details=300))
         state.save('own.json', own_videos)
         state.save('own_accounts.json', own_accounts)

@@ -175,7 +175,7 @@
       "visual_hook_lab": "https://app.notion.com/p/3d4958b0fc148040a3f6e8dc64bb7a90",
       "discord_env": "DISCORD_WEBHOOK_URL",
       "discord_server": "1546450769291513886",
-      "enabled": true,
+      "enabled": false,
       "discord_announce": true,
       "creator_channels": false
     },

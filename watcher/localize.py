@@ -64,6 +64,13 @@ def _handle(url):
     return m.group(1).lower() if m else None
 
 
+def is_own_url(url):
+    """True when the example video is from one of OUR creators (it already shows Parakeet AI)."""
+    from . import own
+    m = re.search(r'tiktok\.com/@([^/?]+)', url or '')
+    return bool(m) and m.group(1).lower() in {h.lower() for h in own.load()[0]}
+
+
 def current_source(page_id):
     """The page's inspiration video block and the TikTok link right after it (or None if the page has no video)."""
     blocks = notion.children(page_id)
@@ -215,7 +222,9 @@ def note_text(page_id):
 
 
 def set_note(page_id, lang, same_lang, own=False):
-    """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model')."""
+    """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model'; our own
+    creator's video = the 'own' note)."""
+    own = own or is_own_url((current_source(page_id) or {}).get('url'))
     blocks = notion.children(page_id)
     i = next((k for k, x in enumerate(blocks) if x['type'] == 'video'), None)
     b = next((x for x in blocks[i + 1:i + 4] if x['type'] == 'callout'), None) if i is not None else None
@@ -248,10 +257,10 @@ def refresh_note(page_id, lang):
         return True
     note = ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', []))
     same = note_is_same(note, lang)
-    if note.replace('**', '').strip() in ['\n'.join(notion.inspo_note(lang, same, own)).replace('**', '').strip()
-                                          for own in (False, True)]:
+    own = is_own_url((current_source(page_id) or {}).get('url'))
+    if note.replace('**', '').strip() == '\n'.join(notion.inspo_note(lang, same or own, own)).replace('**', '').strip():
         return False
-    set_note(page_id, lang, same)
+    set_note(page_id, lang, same or own, own)
     return True
 
 

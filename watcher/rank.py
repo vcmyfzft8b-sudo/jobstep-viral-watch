@@ -6,6 +6,10 @@
    The older long-term score below is still computed for the weekly report: long-term score = smoothed share of videos with 100k+
    views + weight_20k * smoothed share with 20k+ views. Smoothing pulls small samples towards the network average,
    and new formats (< 5 videos) are capped below the three strongest proven formats.
+0. Before all of this (each market on its own, see order()): our own creators' results in THAT market put every
+   format in a tier (own.tiers): 1 proven for us -> top, 2 solid, 3 not tested enough (JobStep decides),
+   4 weak for us -> bottom, even when JobStep goes viral with it. The tiers come from a weekly snapshot
+   (main.own_tiers), so the list does not reshuffle every 6 hours.
 3. Our own creators (own.py): the JobStep score is multiplied by how the format does for OUR creators compared with
    their usual views: factor = 2 ** (sum of lifts / (our videos + own_prior_weight)), lift = log2(views / creator's
    median). A format that reliably gets our creators 2x their usual moves towards x2; with only a few videos of ours
@@ -91,20 +95,39 @@ def form(history, formats, cfg, own_stats=None, now=None):
     return out
 
 
-def own_stats(formats):
+def own_stats(formats, market=None):
     from . import own, state
-    return own.stats(state.load('own.json', {}), formats, time.time())
+    return own.stats(state.load('own.json', {}), formats, time.time(), market=market)
 
 
-def order(history, formats, cfg, m='de', local=()):
+def section(tier, hot_now):
+    """0 = top card (proven for us, or hot for JobStep and not weak for us), 1 = the rest of the list."""
+    return 0 if tier == 1 or (hot_now and tier != 4) else 1
+
+
+def order(history, formats, cfg, m='de', local=(), tiers=None, market=None):
+    """List order. Without tiers: the JobStep order (hot first, then what goes viral, then form). With tiers (one
+    market's own.tiers): top card = formats proven for us, then the JobStep-hot ones that are not weak for us; then
+    tier 2, 3, 4 - inside each part the JobStep order. market: only our creators of that market count."""
     from . import hot
-    o = own_stats(formats)
+    o = own_stats(formats, market)
     s = scores(history, formats, cfg, m, local, o)
     fo = form(history, formats, cfg, o)
     recent = recent_viral(history, formats, cfg, m)
+    tiers = tiers if tiers is not None else {}
+    use_tiers = bool(tiers)
     for fid in s:
         s[fid]['recent_viral'] = recent.get(fid, 0)
         s[fid]['recent_own'] = o.get(fid, {}).get('recent_viral', 0)
         s[fid]['form'] = fo[fid]['form']
-    return sorted(s, key=lambda fid: (-(s[fid]['recent_viral'] >= hot.MIN_VIRAL),
-                                      -(s[fid]['recent_viral'] + s[fid]['recent_own']), -s[fid]['form'])), s
+        s[fid]['tier'] = tiers.get(fid, {}).get('tier', 3)
+        s[fid]['hot'] = s[fid]['recent_viral'] >= hot.MIN_VIRAL
+        s[fid]['top'] = section(s[fid]['tier'], s[fid]['hot']) == 0 if use_tiers else s[fid]['hot']
+
+    def key(fid):
+        x = s[fid]
+        jobstep = (-x['hot'], -(x['recent_viral'] + x['recent_own']), -x['form'])
+        if not use_tiers:
+            return jobstep
+        return (section(x['tier'], x['hot']), x['tier'] if x['tier'] != 1 else 0, *jobstep)
+    return sorted(s, key=key), s

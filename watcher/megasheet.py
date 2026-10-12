@@ -1,6 +1,6 @@
 """Megasheet (megasheet.app): the source of truth for our own Parakeet AI creators.
 
-Every run reads the TikTok accounts and videos of the three Parakeet AI campaigns (DACH, France, Spain) through
+Every run reads the TikTok accounts and the TikTok + Instagram videos of the three Parakeet AI campaigns (DACH, France, Spain) through
 Megasheet's MCP server (read-only) and merges them into state/own_accounts.json + state/own.json (see own.py).
 
 Login: Megasheet has no API key, only "log in with your account" (OAuth). scripts/save_megasheet_login.sh logs in once
@@ -11,9 +11,11 @@ If Megasheet replaces the refresh token on use, the new one is kept encrypted in
 branch is public, so never in plain text). Without the secrets the sync is skipped and everything else runs as before.
 """
 import base64
+import calendar
 import hashlib
 import json
 import os
+import re
 import subprocess
 import time
 
@@ -204,6 +206,31 @@ def video_id(v):
     return vid if vid.isdigit() else None
 
 
+IG_LINK = re.compile(r'instagram\.com/(?:[^/?#]+/)?(?:reels?|p)/([A-Za-z0-9_-]+)')
+
+
+def video_key(v):
+    """(key, platform) of a Megasheet video row: TikTok -> its numeric id, Instagram -> 'ig_<shortcode>'."""
+    vid = video_id(v)
+    if vid:
+        return vid, 'tiktok'
+    m = IG_LINK.search(v.get('adLink') or '')
+    return ('ig_' + m.group(1), 'instagram') if m else (None, None)
+
+
+def _created(row, key):
+    """Upload time: TikTok ids carry it; Instagram rows use Megasheet's createdAt/uploadedAt."""
+    if key.isdigit():
+        return int(key) >> 32
+    for field, fmt in (('createdAt', '%Y-%m-%dT%H:%M:%S'), ('uploadedAt', '%Y-%m-%d')):
+        raw = (row.get(field) or '')[:19 if field == 'createdAt' else 10]
+        try:
+            return int(calendar.timegm(time.strptime(raw, fmt)))
+        except ValueError:
+            continue
+    return 0
+
+
 def merge_accounts(accounts, rows, now):
     """rows: [(market, account_row)] for every campaign. Megasheet decides for megasheet creators: new ones are added,
     gone ones paused, returning ones revived. Accounts found elsewhere (Lightreel) are upgraded to megasheet."""
@@ -234,18 +261,26 @@ def merge_accounts(accounts, rows, now):
 
 
 def merge_videos(videos, rows, now):
-    """rows: [(market, video_row)]. Megasheet only lists campaign videos, so they are ours; views only go up."""
+    """rows: [(market, video_row)]. Megasheet only lists campaign videos, so they are ours; views only go up.
+    Instagram videos are kept too (key 'ig_<shortcode>'): there is no TikTok page to read, so they are sorted into a
+    format from their caption or from the creator's TikTok post of the same video (own.update)."""
     new = 0
     for market, row in rows:
-        vid = video_id(row)
+        vid, platform = video_key(row)
         if not vid:
             continue
         handle = ((row.get('account') or {}).get('handle') or row.get('username') or '').lower()
         v = videos.get(vid)
         if v is None:
-            v = videos[vid] = {'handle': handle, 'market': market, 'created': int(vid) >> 32, 'views': 0,
+            v = videos[vid] = {'handle': handle, 'market': market, 'created': _created(row, vid), 'views': 0,
                                'desc': (row.get('title') or '')[:300]}
+            if platform == 'instagram':
+                v.update({'sticker': '', 'subtitles': ''})  # caption only - no TikTok details to wait for
             new += 1
+        v['platform'] = platform
+        creator = (row.get('creator') or {}).get('id')
+        if creator:
+            v['creator'] = creator
         if not v.get('ours'):
             v['ours'] = True
             v.pop('checked', None)  # was skipped as "not ours" - sort it into a format after all
@@ -272,7 +307,7 @@ def sync(accounts, videos, now, full=False):
         if name not in camps:
             raise RuntimeError(f'megasheet: campaign "{name}" not found')
         acc_rows += [(market, a) for a in c.pages('account_getMany', campaignId=camps[name], filters=TIKTOK)]
-        vf = TIKTOK + ([] if full else [{'field': 'uploadedAt', 'kind': 'date', 'op': 'gte', 'value': since}])
+        vf = [] if full else [{'field': 'uploadedAt', 'kind': 'date', 'op': 'gte', 'value': since}]  # TikTok + Instagram
         vid_rows += [(market, v) for v in c.pages('videos_getMany', campaignId=camps[name], filters=vf)]
     added, paused, revived = merge_accounts(accounts, acc_rows, now)
     new = merge_videos(videos, vid_rows, now)

@@ -1,7 +1,7 @@
 """Monday report in Slack (#jobstep-radar): how the formats did last week, for JobStep AND for our own creators."""
 import time
 
-from . import notify, rank, state
+from . import notify, own, rank, state
 
 WEEK = 7 * 86400
 
@@ -27,6 +27,8 @@ def report(history, own_videos, own_accounts, fmts, cfg, now):
                      + (f", best {_k(max(v['views'] for v in us))}" if us else '')
                      + (f" · for us so far: {2 ** s[fid]['own_lift']:.1f}x our creators' usual views"
                         f" ({s[fid]['own_videos']} videos)" if s[fid]['own_videos'] else ' · no videos of ours yet'))
+
+    lines += [''] + market_lines(history, own_videos, fmts, cfg, now, title)
 
     log = [e for e in state.load('log.json', []) if now - e['ts'] <= WEEK]
     built = [title(e['format']) for e in log if e['type'] == 'format_built']
@@ -58,6 +60,31 @@ def report(history, own_videos, own_accounts, fmts, cfg, now):
     if not best:
         lines.append('• none yet')
     return '\n'.join(lines)
+
+
+MARKETS = {'de': '🇩🇪 DACH', 'fr': '🇫🇷 France', 'es': '🇪🇸 Spain'}
+
+
+def market_lines(history, own_videos, fmts, cfg, now, title, show=5):
+    """Per market: the top of its list and the formats that sink because they are weak for our creators there.
+    Tier = how the format does for OUR creators in that market (own.tiers, last 28 days)."""
+    snap = state.load('own_tiers.json', {}).get('markets', {})
+    recent = rank.recent_viral(history, fmts, cfg)
+    lines = ['*Our creators per market (this week\'s list order)*']
+    for m, name in MARKETS.items():
+        t = snap.get(m) if m in snap else own.tiers(own_videos, fmts, now, m, cfg)
+        ids, s = rank.order(history, fmts, cfg, tiers=t, market=m)
+        row = lambda fid: (f"*{title(fid)}* – {own.TIER_NAMES[s[fid]['tier']]}"
+                           + (f" · ours: {t[fid]['n']} videos, avg {_k(t[fid]['avg'])}, best {_k(t[fid]['best'])}"
+                              if fid in t and t[fid]['n'] else ' · no videos of ours yet')
+                           + f" · JobStep: {recent.get(fid, 0)} viral in 7 days")
+        lines.append(f'{name}')
+        lines += [f'{n}. {row(fid)}' for n, fid in enumerate(ids[:show], 1)]
+        weak = [fid for fid in ids if s[fid]['tier'] == 4]
+        if weak:
+            lines.append('   ⬇️ weak for us here (bottom of the list): ' + ', '.join(
+                f"{title(fid)} ({t[fid]['n']} videos, avg {_k(t[fid]['avg'])})" for fid in weak))
+    return lines
 
 
 def maybe_send(meta, history, own_videos, own_accounts, fmts, cfg, now, force=False):

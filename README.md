@@ -6,8 +6,11 @@ Every 6 hours (GitHub Actions) this watcher:
    branch → `state/accounts.json`) and keeps each video on a 7-day watchlist.
 2. **Re-checks every watchlist video** (views, likes, shares, saves) and stores a snapshot, so growth over time is known.
 3. **Alerts** (Slack message via `SLACK_WEBHOOK_URL`, optional phone push via ntfy, + a log line on the private Notion page *JobStep Viral-Radar*):
-   - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views
+   - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views –
+     only a line on the Notion radar page, no Slack message
    - 🟢 **viral** – 100k+ views (counts the moment it gets there – after 1 day or 6 hours – as long as the video is from the last 7 days)
+   - **One Slack alert per video** (the viral one). If the Claude check fails, it is retried quietly; only after 3 failed
+     runs a short alert goes out, and the later full check is not sent again (it goes on the radar page).
    - "weak" is added when shares + saves are below 1.5 % of views
 4. **Builds a new format page** when a viral video (good engagement) uses a format that is not on the DACH
    instructions page yet:

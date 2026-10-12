@@ -117,5 +117,63 @@
    "7693731193187011872": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872"
   },
   "title_en": "Rejected for a simple job despite top grades: outrage story with a CV fix"
+ },
+ "X18": {
+  "accepted_sources": [
+   "7695190648357489921"
+  ],
+  "allowed_localisation": [
+   "Language of the hook, speech and on-screen text (DE/FR/ES), including the hook emoji variant (🤡 or 👀⁉️)",
+   "Word for HR (Personaler/HR/Recruiter; les RH/recruteurs; RRHH/reclutadores)",
+   "Local job portals named next to LinkedIn/Indeed (e.g. DE: StepStone, XING; FR: Welcome to the Jungle, France Travail, APEC; ES: InfoJobs, Computrabajo)",
+   "Casual sign-off phrase in the local idiom",
+   "Du/tu informal address in local slang, as long as the beat order and sentence count stay the same",
+   "Showing Parakeet AI's name/URL as on-screen text during the demo",
+   "Softening 'all companies' to 'most companies' / 'almost all companies'"
+  ],
+  "beats": [
+   "Hook (on-screen text + spoken): HR doesn't want you to know this, but I'll show you why, and it's simple.",
+   "The reveal: they use ATS. Companies today use it to filter all the CVs they get every day.",
+   "Step 1: go to the job ad you're interested in on a portal (Indeed, LinkedIn or a local portal) and copy the link of that job ad. [LinkedIn/job portal shown]",
+   "Step 2: go to this website (Parakeet AI). You obviously have to upload your CV and paste the link of the job ad. [Parakeet AI shown: CV upload + link field]",
+   "Result: it automatically generates a CV tailored to that position. [Parakeet AI shown: tailored CV]",
+   "Extra (replaces the original's cover-letter line, same sentence count): 'On top of that you can also pick a template and download it.' [Parakeet AI shown: template picker/download]",
+   "Sign-off: 'You're welcome, good luck!' (DE: 'Gern geschehen, viel Erfolg!' / FR: 'De rien, bonne chance !' / ES: 'De nada, ¡éxitos!')"
+  ],
+  "canonical_source": "7695190648357489921",
+  "filming": "Length about 25–35 s, fast and spoken without pauses, in one continuous voice-over/talking take, copied as closely as possible from the example video. Opening shot: creator selfie/talking head with the bold hook text overlay (emoji included) for the first 2–3 s. Then mostly screen recording with the creator's voice over it (a small face cam is optional, as in the example). Demo sequence in this order: (1) a job portal (LinkedIn/Indeed/local portal) with a job ad open, then copying the ad's link; (2) opening the Parakeet AI website; (3) uploading the CV; (4) pasting the job-ad link; (5) the AI-generated CV tailored to the job; (6) the template selection and/or download button. The script has only spoken words and link cues, with no stage directions.",
+  "generated": 1791785934,
+  "hook": "Spill-the-secret hook: on-screen text plus spoken line saying HR/recruiters don't want you to know this, followed straight away by the promise to show you. DE: 'Personaler wollen nicht, dass wir das wissen 🤡' / FR: 'Les RH ne veulent pas que tu saches ça 👀⁉️' / ES: 'Lo que RRHH no quieren que sepas esto 👀⁉️'. Spoken: '[HR] don't want you to know this, but I'm going to show you why. It's simple:'",
+  "not_allowed": [
+   "Mentioning or showing JobStep, Studyflash or any other competitor app; only Parakeet AI, at the same spot",
+   "Cover letters (the original's 'you can also create a cover letter' must be replaced with template/download)",
+   "Showing or mentioning an application overview/tracker or a 'New job' button",
+   "Features Parakeet AI doesn't have (auto-applying, job search inside the app, interview booking, etc.)",
+   "Guarantees: 'you will definitely get the job/interview', '100% passes every ATS', 'HR can never filter you out'",
+   "Claiming Parakeet AI hacks, tricks or cheats ATS, or adds hidden/invisible keywords",
+   "Inventing false details or facts about real companies or HR",
+   "Dropping the secret-reveal hook, the ATS explanation or the copy-link → paste-into-Parakeet AI demo (that would make it another format)",
+   "Turning it into a long tutorial, a listicle of several tips, or an ad-style hard sell with a discount/CTA",
+   "Adding stage directions or acting/filming tips in brackets to the script"
+  ],
+  "premise": "The creator tells viewers, as if spilling an insider secret, that companies use ATS software to filter CVs. They then show the simple workaround: copy the link of any job ad from a job portal, paste it into Parakeet AI together with your CV, and get a CV tailored to that exact job. It ends with a short, casual sign-off.",
+  "product": {
+   "cta": "none (implicit: do it yourself; ends with 'You're welcome, good luck')",
+   "features_used": [
+    "upload your CV",
+    "paste the link of a job ad",
+    "AI rewrites/tailors the CV to the job",
+    "pick a template",
+    "download the CV"
+   ],
+   "introduced_at_beat": 4,
+   "spoken_brand": "not spoken: the original only says 'this website' while Parakeet AI is visible on screen; the name/URL may appear as on-screen text in beat 4"
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7695190648357489921": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921"
+  },
+  "title_en": "HR Doesn't Want You to Know This (ATS Secret)"
  }
 }

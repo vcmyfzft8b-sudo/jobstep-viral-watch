@@ -1016,8 +1016,8 @@
   "A202610061331:es": "ok",
   "A202610061331:fr": "ok",
   "A202610061334:de": "ok",
-  "A202610061334:es": "ok",
-  "A202610061334:fr": "ok",
+  "A202610061334:es": "fixed",
+  "A202610061334:fr": "fixed",
   "A20261006183623:de": "ok",
   "A20261006183623:es": "ok",
   "A20261006183623:fr": "ok",
@@ -1025,12 +1025,12 @@
   "A20261009204851:es": "ok",
   "A20261009204851:fr": "ok",
   "ESX11:de": "ok",
-  "ESX11:es": "fixed",
+  "ESX11:es": "ok",
   "ESX11:fr": "ok",
   "N01:de": "ok",
   "N01:es": "ok",
   "N01:fr": "ok",
-  "N02:de": "fixed",
+  "N02:de": "ok",
   "N02:es": "ok",
   "N02:fr": "fixed",
   "N03:de": "ok",
@@ -1042,87 +1042,93 @@
   "N07:de": "ok",
   "N07:es": "ok",
   "N07:fr": "ok",
-  "N10:de": "fixed",
+  "N10:de": "ok",
   "N10:es": "ok",
-  "N10:fr": "fixed",
+  "N10:fr": "ok",
   "X03:de": "ok",
   "X03:es": "ok",
-  "X03:fr": "fixed",
+  "X03:fr": "ok",
   "X08:de": "ok",
   "X08:es": "ok",
   "X08:fr": "ok",
   "X13:de": "ok",
   "X13:es": "ok",
   "X13:fr": "ok",
-  "X15:de": "fixed",
-  "X15:es": "fixed",
+  "X15:de": "ok",
+  "X15:es": "ok",
   "X15:fr": "ok",
   "X16:de": "ok",
   "X16:es": "ok",
-  "X16:fr": "ok"
+  "X16:fr": "ok",
+  "X18:de": "ok",
+  "X18:es": "ok",
+  "X18:fr": "ok"
  },
  "audit_fingerprints": {
-  "A202610061328:de": "7076c027bf379981e851039698d80b6e6bc41963c55742a1ed6fe58724e65d42",
-  "A202610061328:es": "210effc0dd08dfc8f60807c5d5dc5443b588755472a9773c452fd59908add1fe",
-  "A202610061328:fr": "461f13b9378e2dbafb05b40d8dd37a8eb79fc6531647ee9881db03a329558af0",
-  "A202610061331:de": "5f06f44bd57efd5a1b40296081c0347a3678c1a74f56ab35e02ede5c54d0296b",
-  "A202610061331:es": "4011e5a9e490f536249b2260171bade373270c3e51230a1ada0bfd02fd3ecda8",
-  "A202610061331:fr": "d7e6311de8be0eea1ab86b406b3c450ca08e6b2cb0af5fe6007b989567b133de",
-  "A202610061334:de": "e87ffeacb72b107a55311f8525054c1d28ce8487d47134500d49d1fd6a35c733",
-  "A202610061334:es": "f01eee9abdc08d3b027fdb1eaa1ce7a5c0e3f856525b323194c928dce9b6eef2",
-  "A202610061334:fr": "1da0951bf00e170e0654fbf08e2bbe7044d75810b45598069f8c07cdd6335f33",
-  "A20261006183623:de": "bf85f26bb79c0b8cf3d4463b7a7e525e0c3f78d38fbe586d9bfab35f7fee57fb",
-  "A20261006183623:es": "977cab5e928160c3de462f3073f9123352a8a868eb8c3b6cc088c73446b7908f",
-  "A20261006183623:fr": "a56d73ac05032cc5c1cd04c4a7b1b0a304933528dc5e73603d68ffd29177f86e",
-  "A20261009204851:de": "0e8ae9621917f579b4c85e30f91fd0c0387cab6033845cc24541bfa694eb0243",
-  "A20261009204851:es": "ad4c18652d7ac47673115f71f1c04cc8e85d204a975ad2347e3f4caf9c5dea92",
-  "A20261009204851:fr": "5830687548ab2086c3820b1759afdb35a7139e1da48762b22289d69faa47cd9c",
-  "ESX11:de": "e1f4609eba48701d2f1db377b604ea805e36a2df017378842cc2ea9160e16a47",
-  "ESX11:es": "69c28d9240e7b8d66ffcac6909138083e9afb7d7ae2726983180d5f9e5a8e7cb",
-  "ESX11:fr": "4cab86d6e00543049df05e8b644db490a01ea1214c68b209c0fa7a1ea10009d2",
-  "N01:de": "782efa47bb8258022c1ac6d23b75c0da950308b62a8fc7b51559f2a60f332541",
-  "N01:es": "2aec103c1225241e8db279495df438a9dd410feb5acd7343feb5d0703800d307",
-  "N01:fr": "3b9785aa979859ee2fad2af18a3c461519528e70a1f959bb67f0d18cb3beac42",
-  "N02:de": "db118b3ddbce7c855e2c51934633a6df1808c08bf6260d793cc36faae7066ace",
-  "N02:es": "988ae5c151fcf539c1fbb931a247f8c2c68ed4061ec0bbb314729fff30d484f4",
-  "N02:fr": "64a04ff2021f85228e8f50d200c716f9d0bdeacc4f4ddb00c1472ca06a1516ad",
-  "N03:de": "c3ededabe5af640bc83565612881f1a5474be86fba317a2f3491857a1221a040",
-  "N03:es": "d6f7096f7b7f2bfb7583226e115edd83ac66376a41693e4f8e66a6f8648b9891",
-  "N03:fr": "0a0a5d5dbe213530c2d8608bd93bea81040aeb9e0c9bff657fddd057aa003a2a",
-  "N04:de": "a5874b477d005765ba0fe25e17e7cd36b79a25349ca8dcf5f1bc67c82226ba52",
-  "N04:es": "f861a14638d9d837f136073b2f53821d60906001d1ca20d48771817d2d44c555",
-  "N04:fr": "54175d98f752de094fa51c84480977da80d9ecdfe2a0577dd0e57235b045a61d",
-  "N07:de": "03f7207094b02b5840d0f9c7546bb13ccababd72fe9e36c69daff1c2a62e8ba5",
-  "N07:es": "37bea646b76be782092d495ad74de8cfa9a9a324b02004cd0926d16d45d81b36",
-  "N07:fr": "c3deec27dc12599ecb5e520fb3dc437de9a17f4f2543a34350822c376fa68382",
-  "N10:de": "086bda02f6e0a5dcde5a639477d383491946aa26af300e37e3351ced040fed07",
-  "N10:es": "57a7b3bfb5a6a1d48bfa4a1909563b8ec215d9c8a35ae7123af62e54349b3c7a",
-  "N10:fr": "51b2a356708102178aa3d22bc8e9208cde0f742cb50616121ac09cbcde473ed8",
-  "X03:de": "764c634494c8a97c90aea498ae278abbf0c17df51e0104efad054eab194288d9",
-  "X03:es": "ea9fc331615859887d586cdd6016175faac21934dc0777f9b76df5f757fc8f6b",
-  "X03:fr": "60d6734cddc6a00c784dd101aa903fc16ed27ad1fe58c62df9b5c452173295dd",
-  "X08:de": "b14d6ab220d69f6a81daabcddcc07c4678e966eb2656e1c4fdea393bf75f0a6b",
-  "X08:es": "3ad1182624723bc6fc4301ed5fb0d1971d035f7de52e298f33e2b24eedd41ac7",
-  "X08:fr": "7b272943af2fbb2c8022f88235a8ff148b6d496744ea7d49e29f602a1870a9cd",
-  "X13:de": "288353024a48a4271642ac432bd9f355ffcd30ffce5361a2e25820965239ee00",
-  "X13:es": "a466973e780a24c6ad0c34f37f4f4b50ab4f58aa7790ed9ec2cf459ae5ff6641",
-  "X13:fr": "f774d90b8065d8a46541e5a653ec11fb9258021e6d453535d670ee4c21a1d833",
-  "X15:de": "6c65518741ed2f543fddada1a1c33428634828dcfd3ce442a5618fa4c222a38a",
-  "X15:es": "9ab57587a163a9be189a7c93c63d0289bc9348c863d988ce8983b92c2970b6a5",
-  "X15:fr": "5563e87235b00472eb1ad3dbdc513e8c18e02ad593f0e81bf7bd5a2105d922f3",
-  "X16:de": "bcfe3264251c7700bd47226e305537878ce19a43b1266daa00eece24e07ac732",
-  "X16:es": "d20a57f217fd5d88c162cad484fca35125fed7b7f7823207baf62e463b4bcccf",
-  "X16:fr": "ac0fdb039683e16d29da409b5ca88d687dbc8668551dd7f46a315a059dd7cbd8"
+  "A202610061328:de": "d0c10c2cc1ce25cdd6e27de74cfcd3530424742a5021fdfc1454e7083bd1f610",
+  "A202610061328:es": "3269125154cb892d1d44283bcc3f2ded8be5c2081701a6618a4b430566ef00ad",
+  "A202610061328:fr": "13bbbd9754de57e6c7cdd29db4af7009a37d269ad24263afa0ebb14d8c07f32b",
+  "A202610061331:de": "33cf53624a4bd527331464175f3d977f31bcfa502fb9c49555fee482469ffeb0",
+  "A202610061331:es": "a749558e5b019eae46dfd032609ea560939524cc999b5c99d11339c5ac45ecfe",
+  "A202610061331:fr": "cdd41e8621f4cd3c5ed20dcb2b1262ca942ea44d0170e1a05c05d50ed298b3bb",
+  "A202610061334:de": "d0e0ea6b2d5117b2142720324f91b1df9d1aa6f22accf778df7deeb55ce7d8a0",
+  "A202610061334:es": "f545320c8fdff0569a58ae71b7f5d2a145f5bd2bcd26f85cf1d484a8a2e958ff",
+  "A202610061334:fr": "dfe6f926bea45129056c346cbd9fdfb9c414a5ac2ff32120a07aa31427ad832d",
+  "A20261006183623:de": "0d149e700269f82c0093745ed340517135f7ce9d15b72dade2172db18b9101b0",
+  "A20261006183623:es": "87824342091e14886afe6b6dae2bc4ea310227d9426b0fbfd1acc4f54df8d720",
+  "A20261006183623:fr": "485659c28ea3d204227f2385f9342f3d6529318cdf3f438fe5778dcb2014e8e4",
+  "A20261009204851:de": "b9ac49890d2e0eeebb01a9535de4aa9f36bd10e1e164cd87d838522ac4b8eb55",
+  "A20261009204851:es": "739b2c887959f58ebddcb5263224402f2f99cae5e9481ae38867f3c84be9cf62",
+  "A20261009204851:fr": "cfe9363bde7cc7aff38cc955b1977d3957e6252c035e786f018637e9e1f69d20",
+  "ESX11:de": "7b89a55878a03b6f906103467f2621d3cf2541e38ac784a0d88eef3ffe7a9a38",
+  "ESX11:es": "acfa600de6c86cafd498a4b0c76c7e984c82eeb4a855878a0f1951e7cff910ea",
+  "ESX11:fr": "9afe6f8baf520fa7e68e141e6f7f1d43440176b4db1f98c07f3643f7e6a33edc",
+  "N01:de": "24681ec773498ff4406aa09ca156f2943178784980f3fc3b9de43954c673b208",
+  "N01:es": "4c12a678cebba933950d7b5f3514d36afb028d4bdd020f340a80bfa170de484a",
+  "N01:fr": "e697bf7fb3da514f5c86aef5718f872165c53649edd81e70bc7109440f9fe8e2",
+  "N02:de": "610c0326c7f7e774fc0b0530c85faf5f3bfef30271a2e706da2f098d2fcdc2ce",
+  "N02:es": "8a3f93fcb580c4fe72696d92524a4d9d31e62f410b9cc8b85aa34f9750d6c0b0",
+  "N02:fr": "5a50aed39a15d34989eeb568e1b746d66fec807daeb5cf1ad9f342d5be964c74",
+  "N03:de": "b6700947251e275706d448788026ae37b0340b9f043854bdc45364d87271f882",
+  "N03:es": "cb82fa86f7fb2975406cc5e7699faadec91594d52bae0ead8258b41c3b094112",
+  "N03:fr": "8eba5e75741f2834eee9fa95e4e7ae1a1c6f1a5be75dd87ec4120ee857273a19",
+  "N04:de": "0961424aac770cac6d9c2e71c1d500a6218352b5a3b372ebff85e551bda52239",
+  "N04:es": "9a6a056e2c1218e8a3bdcdd41925542382e005f488055b26d39e15c922ca3b19",
+  "N04:fr": "f4fce367d5d232b05c7a2cbd077600f59be2b6265f21491996c6f95cb34a9ba6",
+  "N07:de": "d7c7945832cb6a00106f87efdb31d6bc60015cea2dbf64c5b1670849d544413a",
+  "N07:es": "df311be3706833d3038daf9e725c1598ec4d4bb4084671ce492c3407814a954f",
+  "N07:fr": "c7224dd6db93676833de51d7aeea0c6ee48bac33c9fa0fa95efcafe6c7959376",
+  "N10:de": "5faf2a4c7ac5a75bc5d05fb69c4ba09f1b653cd80cfc4aef1bff313e78fc3b64",
+  "N10:es": "d2406093ea9a7f3d85130379ae7285f3eb80e3f4fa528610a43817f6d1dd43b7",
+  "N10:fr": "5693bb4481aa1fac70936cf3c5161e6f0c3499e6a81f17063fbc2c8a6f3996fa",
+  "X03:de": "0e00fb7a397ca47438ead472832298b2ffee935c129e3e2e4f1c76e570177289",
+  "X03:es": "fb30dca404e35a2127b8b6954e86c3994b54aafa547dbe5bbb94456f920045c6",
+  "X03:fr": "defd6af4058a296074750d70e834a5b7c30e419411da4352187175b8aac00d2d",
+  "X08:de": "9382840ce7bd8ec308b4d0b81f208f4a49f833042c062a30b0998b9f49e760bb",
+  "X08:es": "a3fe7f66881c2316885d9341d03439be45d9440db34cbba0e84327e9228da70f",
+  "X08:fr": "a2df991562534c2ace7585510b1e4ee3427b8151ed753e7cb0d9e22b23f8519b",
+  "X13:de": "a994c1f22b5ebcdea04d3e8a97ee9264a96555b189fd96264ae4d4d0fa5f95b7",
+  "X13:es": "2b2da3e5c5d7cdd904ee07b922dbf5ca170400de34b4b2a1a27bba3675470cd7",
+  "X13:fr": "e46ca1bd2ea7cdc7da8d05e2005461d0a4e3dc8d2a2172ef42c9125270848a65",
+  "X15:de": "49c2abe8f73de800fc89142d7c68ad50f57eec46341b7501d2707126d3bd82a3",
+  "X15:es": "a8dcb7132d5969511b263c054ed81d8b33e4b810ae0f22cdda5e73bcdf29ef34",
+  "X15:fr": "d608d9277893934890b5524cfc3219eb260db98a73ecdb04a90c665676449dbf",
+  "X16:de": "d2321cf9085004453656fc1abfb1a27cb3a363117a4b37ab3aebbb84a5d79273",
+  "X16:es": "a27685e500c47ce6938a929b1fd527463756f4b86e9200614d2ab4dd45a0bbe6",
+  "X16:fr": "43747fb7fbae7b3a94f1cb833ef000efb15a4adae4f5f64179d2655433c2b47b",
+  "X18:de": "d632d9071bbfb6e81de71c270a9184815f6bad96a8a00a4853d83271f277efa1",
+  "X18:es": "63b62160a81a4b99abb7f55a8f555b5c7f78105889017eaa22443c2f2896136b",
+  "X18:fr": "c3a36169796cb9df9b387e1491d3953429391414ad27af01632b359c716707a1"
  },
  "discovered_at": 1791552236,
  "group_audit": {
   "A202610061328": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419644,
+   "checked_at": 1791787080,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1139,11 +1145,25 @@
      "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
     }
    },
-   "key": "474b4b074f7016da08bbddbbc24ac162cbaaf10659aed6cfc80794b67ad863b5",
+   "key": "36b1137ee704dc8aad63e0b606f15c30bc7915225e00308535a6dc7d71ba83d1",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -1185,20 +1205,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -1215,17 +1221,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow the reference beats in order (local sourced ranking, boss-vs-team debate, viewer question, 'wait' pivot, then link-to-tailored-CV and upload-for-score, then a good-luck sign-off), use their own wording, make only hedged ATS claims, and have directions that match the scripts.",
+   "summary": "All three countries pass every check: each script closely translates the Greek source, keeps the boss-vs-team debate, the question to the viewer and the 'wait' pivot before Parakeet AI, softens the ATS promise and uses only real features; the employer list shown on screen must still be a real, sourced ranking for each country.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "A202610061331": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418831,
+   "checked_at": 1791787596,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1242,11 +1248,25 @@
      "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
     }
    },
-   "key": "295102d0d1fbdc6dc9ca5cdeece50b042552c1588e766bf7aab2b2ee93966cc7",
+   "key": "0152fb1b045d06ba5f5db77a2c03214edfecf4e2a8266d1cead13fb5a7feaf0b",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -1288,20 +1308,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -1318,17 +1324,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass every check: each keeps the faceless two-CV guessing hook, the same six beats in order, says the brand only once at the chat beat, ends on the experience close-up, is written independently, makes no invented claims, and has filming directions that match the script.",
+   "summary": "Alle drei Länder (DE, FR, ES) geben das Beispielvideo als enge Übersetzung in derselben Reihenfolge wieder: Ratefrage, Auflösung, ATS-Begründung mit abgeschwächter Lesbarkeitsaussage, URL einmal in Beat 5 gesprochen, Chat-Funktion und Nahaufnahme der Ergebnisse in der Berufserfahrung, ohne erfundene Funktionen oder Garantien, mit passenden Titeln und kurzen Hook-Anweisungen.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "A202610061334": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419700,
+   "checked_at": 1791787142,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1345,7 +1351,7 @@
      "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
     }
    },
-   "key": "9164430bcf6efba5373668896468441769bdfdfd56d007ecf9c38a41d6b0afec",
+   "key": "d3f22552889966b711a28a7145c34532f1dd7330c321e430dba81a07bc4e6071",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1355,7 +1361,21 @@
       "pass": true
      },
      "es": {
-      "issue": "Minor: closing a notebook at «olvídate del currículum de Canva» does not clearly show a Canva CV, and «como en el ejemplo» is not confirmed by the example. Holding an object is still covered.",
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
       "pass": true
      },
      "fr": {
@@ -1391,20 +1411,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -1421,17 +1427,17 @@
     }
    },
    "status": "pass",
-   "summary": "DE, FR and ES all follow the October hiring-season format: October/December hook, Canva to Harvard-style advice, brand spoken first at the analysis step, X and Y score placeholders, AI chat rewrite and a close with no hiring-probability claim. Each script is independently worded, and the only note is a minor one about the ES notebook prop.",
+   "summary": "All three pages pass: each script is a faithful transcript or close translation that keeps the October/December hook, the Canva-to-Harvard tip, the brand spoken once at the analysis step and the Y score without a numerical hiring probability. Minor notes: DE and ES say AI chat where the example says AI editor (an acceptable mapping), and the ES title uses Spain slang ('cambiar de curro') while the script is Latin American Spanish.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "A20261006183623": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419011,
+   "checked_at": 1791787335,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1448,11 +1454,25 @@
      "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
     }
    },
-   "key": "0171eaf95d93408c59021a17d34aabad47efd102dfb23a6d2e8aa36f77c9e9b8",
+   "key": "47223f0a510ef7d361b3dbdc6a4a134ffb8f575ab17673e575646a97325d3e0a",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -1494,20 +1514,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -1524,9 +1530,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow the reference: each repeats the 'lie on your CV' hook, then gives the no-invented-jobs qualification, the friend recommendation, the upload-and-paste-link demo, the tailored-CV result and a surprised close, in the original order. The scripts are written independently, use only real Parakeet AI features, and have no title fixes needed. Minor notes that did not fail any check: the DE directions add a close-up selfie shot the reference doesn't have, the FR directions leave the kitchen-prop setup to the stage directions, and the FR script promises a result in 'a few seconds'.",
+   "summary": "All three countries keep the reference format: the repeated 'lie on your CV' hook, the no-invented-jobs qualification, the friend recommendation, upload CV and paste the job-ad link, the tailored CV and the rhetorical close, with only real Parakeet AI features. The scripts are faithful transcripts or translations (DE fixes the mis-transcribed 'erfüllen' to 'erfinden'), and the short kitchen and pizza-cutter hook directions match the example.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "A20261009204851": {
    "approval": {
@@ -1534,7 +1540,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791588663,
+   "checked_at": 1791787959,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1551,220 +1557,28 @@
      "video_identity": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f"
     }
    },
-   "key": "d2ee94c23c2d0f3442c5f5acbb69c74a3907631cdcff6346cc1c4c6c0d78cfb0",
-   "passed": true,
-   "reasons": [],
-   "results": {
-    "directions_match": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "features_claims": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "script_matches_example": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    }
-   },
-   "status": "pass",
-   "summary": "All three countries pass every check: each keeps the 7 beats in order, the sentence counts, the two spoken Parakeet AI mentions in beats 3 and 4, real Resume Maker features only, and the 'who buys the next spot' CTA, with independently written scripts and directions that match them; DE's only small quirks are that it says 'vermiete/Mieter' (rent) where the reference says 'selling' and its directions leave the demo order to the script cues.",
-   "title_fixes": {},
-   "version": "group-2026-10-08.2"
-  },
-  "ESX11": {
-   "approval": {
-    "de": "not_locked",
-    "es": "not_locked",
-    "fr": "not_locked"
-   },
-   "checked_at": 1791419040,
-   "deterministic": {},
-   "duplicates": [],
-   "inputs": {
-    "de": {
-     "source_id": "7692988880336735509",
-     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
-    },
-    "es": {
-     "source_id": "7692988880336735509",
-     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
-    },
-    "fr": {
-     "source_id": "7692988880336735509",
-     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
-    }
-   },
-   "key": "1adde51624b5b5088127eeb5860fb969651bbcae2640d7ae3e9ffd60d09c0fa0",
-   "passed": true,
-   "reasons": [],
-   "results": {
-    "directions_match": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "features_claims": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "script_matches_example": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    }
-   },
-   "status": "pass",
-   "summary": "All three countries pass. Each keeps the reference order: the toxic-tip hook and save-this-video line, copying the job-ad link through the share button on a local job board (LinkedIn for DE, Indeed for FR, InfoJobs for ES), the URL spoken once at the start of the demo, then upload CV, paste link, AI tailoring, review and edit, download, and a good-luck sign-off. All three correctly drop the cover-letter and New-job features. Minor note: in the FR and ES filming directions the save-this-video line is listed last, but it is explicitly placed right after the hook.",
-   "title_fixes": {},
-   "version": "group-2026-10-08.2"
-  },
-  "N01": {
-   "approval": {
-    "de": "locked_preserved",
-    "es": "not_locked",
-    "fr": "not_locked"
-   },
-   "checked_at": 1791419346,
-   "deterministic": {},
-   "duplicates": [],
-   "inputs": {
-    "de": {
-     "source_id": "7692550993833151762",
-     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
-    },
-    "es": {
-     "source_id": "7692550993833151762",
-     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
-    },
-    "fr": {
-     "source_id": "7692550993833151762",
-     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
-    }
-   },
-   "key": "80359f042971d1601e7a182c4f0a7bc37b961e0a25b2f7abc0812def578d94f3",
+   "key": "c7fa026b1f6300f5cbe568bdda37c164018e2fd5615409f55331c9b790d80a91",
    "passed": false,
    "reasons": [
-    "independent_wording es: Most sentences are close translations of the example with the brand swapped: 'una web que te revisa el CV y te dice cómo mejorarlo' (= 'koja treba da ti oceni tvoj CV i da ga unapredi'), 'no sabía que fuera tan malo' (= 'nisam imala pojma da je ovo ovoliko loše'), 'hay un formato concreto para los CV, y al no seguirlo me rechazaban en todos lados', 'me limité a contestar las preguntas que me iba soltando', 'te los deja montados, aunque tú puedes cambiar cualquier cosa', 'se ve muchísimo más serio y profesional', 'igual el fallo está en el CV. Prueba esta web'. Rewrite these in your own words."
+    "directions_match de: The directions say the 'verkauft' field is already cut out at the start. That contradicts the script and the example, where the field is cut out on camera in beat 3 ('Ich probier das jetzt mal wegzumachen'). Fix: the field is only marked as 'verkauft' and still intact at the start."
    ],
    "results": {
     "directions_match": {
      "de": {
+      "issue": "The directions say the 'verkauft' field is already cut out at the start. That contradicts the script and the example, where the field is cut out on camera in beat 3 ('Ich probier das jetzt mal wegzumachen'). Fix: the field is only marked as 'verkauft' and still intact at the start.",
+      "pass": false
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
       "issue": "",
       "pass": true
      },
@@ -1799,20 +1613,6 @@
      "es": {
       "issue": "",
       "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "Most sentences are close translations of the example with the brand swapped: 'una web que te revisa el CV y te dice cómo mejorarlo' (= 'koja treba da ti oceni tvoj CV i da ga unapredi'), 'no sabía que fuera tan malo' (= 'nisam imala pojma da je ovo ovoliko loše'), 'hay un formato concreto para los CV, y al no seguirlo me rechazaban en todos lados', 'me limité a contestar las preguntas que me iba soltando', 'te los deja montados, aunque tú puedes cambiar cualquier cosa', 'se ve muchísimo más serio y profesional', 'igual el fallo está en el CV. Prueba esta web'. Rewrite these in your own words.",
-      "pass": false
      },
      "fr": {
       "issue": "",
@@ -1835,17 +1635,223 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries follow the N01 beats, product timing, brand placement and CTA with valid features, softened claims and an X placeholder; the only failure is ES, where most script sentences are near-translations of the example and need independent rewording.",
+   "summary": "All three scripts follow the reference closely: the laptop billboard hook, the cut-out reveal, Parakeet AI named only at the reveal and in the intro (beats 4 and 5), only real features and the 'who buys next' CTA. The one failure is the DE filming directions, which show the bought field already cut out at the start instead of cutting it out on camera.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
-  "N02": {
+  "ESX11": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418598,
+   "checked_at": 1791787354,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    },
+    "es": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    },
+    "fr": {
+     "source_id": "7692988880336735509",
+     "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
+    }
+   },
+   "key": "d962b25b3b9e07dba1cfe90ddecdbfc2d27288ea76a0a7a9e5e4e1041ba8f8cc",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three pages pass: each follows the ESX11 beats in order, keeps the toxic-tip and save-this-video hook, says the URL only once at the start of the tool demo, swaps 'añadir un nuevo empleo' for uploading the CV, drops the cover-letter promise, and ends with the same good-luck sign-off. The titles make no claims we can't make, and the visual-hook directions are 2 sentences or fewer.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
+  },
+  "N01": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791786888,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    },
+    "es": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    },
+    "fr": {
+     "source_id": "7692550993833151762",
+     "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
+    }
+   },
+   "key": "7c6bf004f14b56f228d5054f1e8f28e20c55413f726f25dbe888c276d213e330",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three scripts are close translations of the Serbian example. Each keeps the graduation/parents hook, the X/100 score reveal, the question flow, the first-interview payoff and the CTA in the original order. JobStep is replaced by Parakeet AI at the same spots, the screening claim is softened, and the short snack-and-title hook directions fit the example.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
+  },
+  "N02": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791786931,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1862,11 +1868,25 @@
      "video_identity": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12"
     }
    },
-   "key": "dec9b3b432d4ac0f12af5ec26a8d7b935619936a2c1fc66205538bfdf83727e7",
+   "key": "c0968a905d613fc7102a7e4ac3b317647a6b2cdca69e5606fbf9c0e553da073b",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -1908,20 +1928,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -1938,17 +1944,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow N02 in the same order: hook, 24-hour filter, 86400 changed to 3600, link pasted into Parakeet AI with the brand spoken twice, tailored CV, apply-first payoff; the original's guaranteed-job claim is softened, the wording is independent, the titles are acceptable, and the directions match the scripts.",
+   "summary": "All three pages use the canonical voiceover source and follow the same beats in the same order. Each script is a faithful close translation, with JobStep replaced by Parakeet AI at the same two spots and the guaranteed-job line toned down to a better chance. The directions are short visual hooks, and no title needs fixing.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "N03": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418643,
+   "checked_at": 1791787404,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1965,11 +1971,25 @@
      "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
     }
    },
-   "key": "6870e48a06736196fab3526d24e164dd67a44c59da0d553b5621796f5e30327c",
+   "key": "346d8af01c89941d6ae05babd566948ecc5aa6ff232f247a097dacf8fc3802e1",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -2011,20 +2031,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -2041,17 +2047,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries follow the silent format: a ChatGPT hook over a reaction, three numbered steps from job link to tailored CV in Parakeet AI, the result reveal and a URL end card. The wording is localised rather than copied, the claims stay within real features, and the directions match the scripts. Minor note: the DE and ES directions don't explicitly tell the creator to film pasting the link in step 3.",
+   "summary": "All three pages are close translations of the same silent Serbian source, line for line, with only Jobstep and jobstep.io swapped for Parakeet AI and its URL, and every dimension passes. One thing to check: the DE directions describe a wide-eyed look from behind the laptop, while FR and ES describe a hand on the forehead and then a hand over the mouth, so confirm which one matches the example video's first seconds.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "N04": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419473,
+   "checked_at": 1791787467,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2068,11 +2074,10 @@
      "video_identity": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb"
     }
    },
-   "key": "f37d9ee43aad83111d8364a7187385f78d2d41d34704a4733470421c516619db",
+   "key": "df432c084bc842b97451eafd0bd1dac07173b8a16323a1a7d7d354cb049bb483",
    "passed": false,
    "reasons": [
-    "format_consistency es: The spoken script follows the reference beats, but the on-screen title 'Mi bandeja de entrada ahora mismo 😳📩 ¡AYUDAAA!' opens on the inbox result. A result-first opening is not allowed, and the title drops the 'months without replies' hook.",
-    "directions_match es: The directions ask for an opening title like «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» and say not to open with the result. The actual on-screen title does open with the inbox result, so it contradicts the directions."
+    "directions_match es: The directions tell the creator to copy the on-screen text «¿Conseguí 20 ENTREVISTAS? 🤯». That is an invented number of interviews we can't claim, and it doesn't match the ES on-screen title «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯». Use: 'Empieza igual que el vídeo de ejemplo: un selfie a cámara con el título en pantalla.' Or pick a hook from the Visual Hook Lab."
    ],
    "results": {
     "directions_match": {
@@ -2081,8 +2086,22 @@
       "pass": true
      },
      "es": {
-      "issue": "The directions ask for an opening title like «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯» and say not to open with the result. The actual on-screen title does open with the inbox result, so it contradicts the directions.",
+      "issue": "The directions tell the creator to copy the on-screen text «¿Conseguí 20 ENTREVISTAS? 🤯». That is an invented number of interviews we can't claim, and it doesn't match the ES on-screen title «Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯». Use: 'Empieza igual que el vídeo de ejemplo: un selfie a cámara con el título en pantalla.' Or pick a hook from the Visual Hook Lab.",
       "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
      },
      "fr": {
       "issue": "",
@@ -2104,20 +2123,6 @@
      }
     },
     "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "The spoken script follows the reference beats, but the on-screen title 'Mi bandeja de entrada ahora mismo 😳📩 ¡AYUDAAA!' opens on the inbox result. A result-first opening is not allowed, and the title drops the 'months without replies' hook.",
-      "pass": false
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
      "de": {
       "issue": "",
       "pass": true
@@ -2147,19 +2152,17 @@
     }
    },
    "status": "fail",
-   "summary": "DE and FR pass every check, while ES has a compliant script but fails format consistency and directions match because its on-screen title opens result-first, so it gets a replacement title.",
-   "title_fixes": {
-    "es": "Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯"
-   },
-   "version": "group-2026-10-08.2"
+   "summary": "All three scripts are faithful translations of the canonical example with Parakeet AI swapped in and the ATS and job claims softened, but the ES filming directions copy an invented '20 interviews' on-screen claim and must be fixed.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
   },
   "N07": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419589,
+   "checked_at": 1791787532,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2176,11 +2179,9 @@
      "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
     }
    },
-   "key": "31241dae8ee5cfc9623ec3f99278fb80e74ab48d1c1237ac23ba8b224827f67a",
-   "passed": false,
-   "reasons": [
-    "directions_match fr: For the reverse reveal, the directions move back to the selfie camera with the old CV and its score X as a small inset for about 2 seconds, instead of showing the old CV and its score on the laptop like the reference's before/after sequence. Show the old CV with X on the laptop screen right after the final CV with Y."
-   ],
+   "key": "bae9e9465ec513e53cc4d84dda1d5cdf0b0743a67a100f4e1d56d2680df1203b",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "de": {
@@ -2192,8 +2193,22 @@
       "pass": true
      },
      "fr": {
-      "issue": "For the reverse reveal, the directions move back to the selfie camera with the old CV and its score X as a small inset for about 2 seconds, instead of showing the old CV and its score on the laptop like the reference's before/after sequence. Show the old CV with X on the laptop screen right after the final CV with Y.",
-      "pass": false
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2224,20 +2239,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -2253,18 +2254,18 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "All three countries follow N07's recruiter-relative hook, beats, product timing at beat 3, missing CTA and Y-then-X reverse reveal, with independent wording and valid claims. The only problem is FR's directions, which shrink the old-CV reveal to a short inset over the selfie shot instead of showing it on the laptop.",
+   "status": "pass",
+   "summary": "All three countries use the canonical recruiter-brother video and closely translate it with the same beats, product timing and final-score-then-before-score reveal. The '24h job' promise is softened to better chances, the X/Y placeholders are kept and the titles and one-sentence visual hooks make no claims we cannot make.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "N10": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419163,
+   "checked_at": 1791786842,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2281,26 +2282,36 @@
      "video_identity": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b"
     }
    },
-   "key": "30f775341193f281601e623eb13871d7044b9c2bb975e033e2c036218632ff42",
-   "passed": false,
-   "reasons": [
-    "independent_wording fr: Most sentences are close translations of the example in the same order. 'Désolée d'être aussi directe' = 'Izvini što moram ovako da ti kažem'. 'Moi, je le trouvais parfait, ce CV' = 'Ja sam mislila da je ovaj CV top'. 'Dis-moi franchement ce qui manque' = 'Evo vi meni kažete šta ovde fali'. 'je lance l'amélioration' = 'kliknete na Improve'. 'Je retouche mes infos, je choisis le modèle que je préfère' = 'editujete svoje podatke, birate template'. 'Je vais encore ajuster quelques phrases pour que ce soit vraiment ma voix, mais la mise en forme est top' = 'editujem da zvuči kao da sam ga ja napisala, ali format je predobar'. The HR-friend lines are also near-literal. Rewrite them in your own words.",
-    "directions_match de: The directions put the new CV with score Y right after the template step, before the HR-friend selfie. In the script, Y comes only after the HR-friend explanation. Show the comparison at 'Und jetzt vergleich mal' and the Y score after the selfie part.",
-    "directions_match fr: The script puts Parakeet AI cue markers on « Moi, je le trouvais parfait, ce CV, regarde. » and « Dis-moi franchement ce qui manque. ». The directions say to show the old CV on the computer there, before going to the site. Remove those two cues or align them with the directions."
-   ],
+   "key": "4a6b389d90635996f669b681c7e401d3aff369393e09ecdcb89b5302c26432af",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "de": {
-      "issue": "The directions put the new CV with score Y right after the template step, before the HR-friend selfie. In the script, Y comes only after the HR-friend explanation. Show the comparison at 'Und jetzt vergleich mal' and the Y score after the selfie part.",
-      "pass": false
+      "issue": "",
+      "pass": true
      },
      "es": {
       "issue": "",
       "pass": true
      },
      "fr": {
-      "issue": "The script puts Parakeet AI cue markers on « Moi, je le trouvais parfait, ce CV, regarde. » and « Dis-moi franchement ce qui manque. ». The directions say to show the old CV on the computer there, before going to the site. Remove those two cues or align them with the directions.",
-      "pass": false
+      "issue": "The lean-in, low-angle detail can't be checked against the transcript, and the DE and ES pages describe the same opening as a plain selfie. It doesn't contradict the script, so this passes.",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "Small, allowed changes: 'kliknete na Improve' became 'weitermacht', and the HR-friend line was softened ('oft', 'vielleicht nie').",
+      "pass": true
+     },
+     "es": {
+      "issue": "Small change: 'muchísimo más profesional' is a bit stronger than the original 'profesionalnije'. Otherwise a close translation.",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2331,20 +2342,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "Most sentences are close translations of the example in the same order. 'Désolée d'être aussi directe' = 'Izvini što moram ovako da ti kažem'. 'Moi, je le trouvais parfait, ce CV' = 'Ja sam mislila da je ovaj CV top'. 'Dis-moi franchement ce qui manque' = 'Evo vi meni kažete šta ovde fali'. 'je lance l'amélioration' = 'kliknete na Improve'. 'Je retouche mes infos, je choisis le modèle que je préfère' = 'editujete svoje podatke, birate template'. 'Je vais encore ajuster quelques phrases pour que ce soit vraiment ma voix, mais la mise en forme est top' = 'editujem da zvuči kao da sam ga ja napisala, ali format je predobar'. The HR-friend lines are also near-literal. Rewrite them in your own words.",
-      "pass": false
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -2360,10 +2357,10 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "All three countries follow the N10 beats and brand timing with real features and X/Y placeholders, but FR's script is mostly a translation of the example, and the DE and FR directions don't match the script's order and cue markers in one place each.",
+   "status": "pass",
+   "summary": "All three pages use the canonical N10 video, keep the hook, the beats, the three spoken Parakeet AI mentions, the X/Y scores and the HR-friend beat, and translate it closely with only allowed changes; they make no invalid claims and need no title fixes.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "X03": {
    "approval": {
@@ -2371,13 +2368,13 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418880,
+   "checked_at": 1791787636,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
     "de": {
      "source_id": "7685281585674849569",
-     "video_identity": "sha256:0d9864c4693d9f8b450659fe7a82a8450c61d6c96c85e30ac4be3dec1179dc74"
+     "video_identity": "sha256:583bbfa72f7fa239fabae8ea79f46cd4feac66416049325128f5a9e7ebd3dc83"
     },
     "es": {
      "source_id": "7692059934875340064",
@@ -2388,218 +2385,10 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "af8eaadd65cf206a750ad5845b06aa37b5825ab4670af599282960299d216fd0",
-   "passed": true,
-   "reasons": [],
-   "results": {
-    "directions_match": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "features_claims": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "script_matches_example": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    }
-   },
-   "status": "pass",
-   "summary": "All three countries pass every check: each keeps the ex-employee HR secret hook, the 'works for any job' premise, the copy link -> Parakeet AI upload and paste -> low score X -> AI rewrite plus small own edits -> higher score Y order, says the brand only at the demo start and ends with the 'repeat for every job' close; scripts are independently worded, use only real Parakeet AI features with X/Y placeholders and no guarantees (DE's line about low scores leading to quick rejections is a general claim, not a promise), and the filming directions match the scripts.",
-   "title_fixes": {},
-   "version": "group-2026-10-08.2"
-  },
-  "X08": {
-   "approval": {
-    "de": "not_locked",
-    "es": "not_locked",
-    "fr": "not_locked"
-   },
-   "checked_at": 1791468841,
-   "deterministic": {},
-   "duplicates": [],
-   "inputs": {
-    "de": {
-     "source_id": "7693731193187011872",
-     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
-    },
-    "es": {
-     "source_id": "7693731193187011872",
-     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
-    },
-    "fr": {
-     "source_id": "7693731193187011872",
-     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
-    }
-   },
-   "key": "a5ff9efa3a11e76cf9662b61ff8067313806758866a20dce646db4e433eac8e8",
-   "passed": true,
-   "reasons": [],
-   "results": {
-    "directions_match": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "features_claims": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "format_consistency": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "script_matches_example": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    }
-   },
-   "status": "pass",
-   "summary": "DE, FR and ES all follow the reference format. They keep the beat order, mention the brand only at beat 4 and use only real Parakeet AI features. The only fix is the ES title: 'dos carreras' does not match the script's 'un grado y un máster', so it now says 'grado y máster'.",
-   "title_fixes": {
-    "es": "POV: con grado y máster y ni para cajera me han cogido 🤡"
-   },
-   "version": "group-2026-10-08.2"
-  },
-  "X13": {
-   "approval": {
-    "de": "not_locked",
-    "es": "not_locked",
-    "fr": "not_locked"
-   },
-   "checked_at": 1791419776,
-   "deterministic": {},
-   "duplicates": [],
-   "inputs": {
-    "de": {
-     "source_id": "7693414335552425234",
-     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
-    },
-    "es": {
-     "source_id": "7693414335552425234",
-     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
-    },
-    "fr": {
-     "source_id": "7693414335552425234",
-     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
-    }
-   },
-   "key": "1923d6d3d0f3b73619d9741ec12ce19ff67525b38d6b31b61b01810ddbbf5858",
+   "key": "f15b9f6967dd02f37c380e1b352112ae4131c1ddc0150601d9699e9a6c0bcf1c",
    "passed": false,
    "reasons": [
-    "independent_wording es: Tips 1 and 3 closely follow the example's sentences. Tip 1 uses 'deja de... LinkedIn o Indeed', then 'portales más pequeños' with the exact same InfoJobs/DomestikaJobs/Job Today/StudentJob list, then 'menos competencia'. Tip 3 tracks 'valórate', 'no te conformes con el sueldo mínimo', 'aunque estés empezando, apunta siempre un poco más alto, ¿vale?' line by line against 'valórate... lo mínimo... aunque no los tengas, aspirar a más, ¿okay?'. The ATS sentence is also a light rewrite. Rewrite these in the creator's own phrasing and use a different selection of smaller job boards."
+    "faithful_transcript es: The original says 'będę sygnalistką' (I'll be the whistleblower/snitch), but the script turns it into 'voy a ser sincera' (I'll be honest), which changes the meaning and weakens the insider-secret hook. Use 'voy a ser la chivata' or 'voy a chivarme', as DE does with 'Petze' and FR with 'lanceuses d'alerte'."
    ],
    "results": {
     "directions_match": {
@@ -2616,6 +2405,20 @@
       "pass": true
      }
     },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "The original says 'będę sygnalistką' (I'll be the whistleblower/snitch), but the script turns it into 'voy a ser sincera' (I'll be honest), which changes the meaning and weakens the insider-secret hook. Use 'voy a ser la chivata' or 'voy a chivarme', as DE does with 'Petze' and FR with 'lanceuses d'alerte'.",
+      "pass": false
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
     "features_claims": {
      "de": {
       "issue": "",
@@ -2638,20 +2441,6 @@
      "es": {
       "issue": "",
       "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "Tips 1 and 3 closely follow the example's sentences. Tip 1 uses 'deja de... LinkedIn o Indeed', then 'portales más pequeños' with the exact same InfoJobs/DomestikaJobs/Job Today/StudentJob list, then 'menos competencia'. Tip 3 tracks 'valórate', 'no te conformes con el sueldo mínimo', 'aunque estés empezando, apunta siempre un poco más alto, ¿vale?' line by line against 'valórate... lo mínimo... aunque no los tengas, aspirar a más, ¿okay?'. The ATS sentence is also a light rewrite. Rewrite these in the creator's own phrasing and use a different selection of smaller job boards.",
-      "pass": false
      },
      "fr": {
       "issue": "",
@@ -2674,9 +2463,215 @@
     }
    },
    "status": "fail",
-   "summary": "All three countries keep the three-tip structure, put the product inside tip 2 without speaking the brand, end on tip 3 and make only real Parakeet AI claims; the one failure is ES's independent wording, where tips 1 and 3 are light rewrites of the example and reuse its exact job-board list.",
+   "summary": "All three pages follow X03 correctly: the hook, the 'any position' premise, the copy link -> Parakeet AI -> paste -> score -> rework -> Y demo, the brand named once and the right ending, with the missing JobStep features replaced. The only problem is in ES, where 'voy a ser sincera' softens the original's 'I'll be the whistleblower' line.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
+  },
+  "X08": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791787694,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    },
+    "es": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    },
+    "fr": {
+     "source_id": "7693731193187011872",
+     "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
+    }
+   },
+   "key": "659a334e459a8549b732d803d9d0dc35d623911bbbfda5c9804fd41e4e01a41c",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three countries pass: each script closely translates or transcribes the French source in the same order, with JobStep/Lia replaced by Parakeet AI or 'the AI' and 96% replaced by Y, only allowed localisations such as Master or grado y máster, real features only and short matching visual hooks; minor nit: the DE direction overlay 'POV: als Kassiererin abgelehnt' leaves out the Master that the DE title uses.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
+  },
+  "X13": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791787230,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    },
+    "es": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    },
+    "fr": {
+     "source_id": "7693414335552425234",
+     "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
+    }
+   },
+   "key": "50e4be7e5d8cf2774c4a67c4b38af8220bdcd91195cc08dab880d181c9f88906",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "DE, FR and ES all keep the three tips in their original order with the product only inside tip 2, translate the example closely, soften the '20 minutos' time promise, map the skills step to real Parakeet AI features and use short visual hooks that fit the example, so every check passes and no title needs fixing.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
   },
   "X15": {
    "approval": {
@@ -2684,7 +2679,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791419928,
+   "checked_at": 1791787734,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2701,11 +2696,25 @@
      "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     }
    },
-   "key": "fd04f5d41d197da7a6e8330d2d1fe9750d22c43a0ff6871766698cd5ba2ac354",
+   "key": "a9d438db4c548124eeadb5af0790df2bcfdd23aee247dc64ffff016f3bde6bcd",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -2747,20 +2756,6 @@
       "pass": true
      }
     },
-    "independent_wording": {
-     "de": {
-      "issue": "",
-      "pass": true
-     },
-     "es": {
-      "issue": "",
-      "pass": true
-     },
-     "fr": {
-      "issue": "",
-      "pass": true
-     }
-    },
     "script_matches_example": {
      "de": {
       "issue": "",
@@ -2777,17 +2772,17 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass on every dimension. Each follows X15 in order: the rejection hook, the printed new-vs-old CV comparison, a softened ATS line, the 'not gatekeeping' turn, then the upload, chat questions, new CV and score demo. The brand is only shown, never spoken, and there is no CTA. Scripts are written independently and claim no features Parakeet AI lacks. DE's hook leans on 'nothing back' more than 'the CVs are rubbish', but this stays within the hook idea.",
+   "summary": "All three pages now use the canonical video 7682028282191105312 (the ES page no longer uses rejected 7667662711190195489) and are close transcripts or translations of it, with no brand spoken, the details form replaced by a CV upload and the ATS claim softened; no fixes needed, though the ES directions mention «rechazado» stamps that the reference does not describe.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   },
   "X16": {
    "approval": {
-    "de": "locked_preserved",
+    "de": "not_locked",
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791418966,
+   "checked_at": 1791787848,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2804,11 +2799,25 @@
      "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
     }
    },
-   "key": "11f8199becacd8be8e157d73de870d0518d561b722dca13e95f0e7c1ce0ffcb0",
+   "key": "99f778cceef905d984e5168283b42f4fca14564cc899e9bfa90fbbf2f9f3dacb",
    "passed": true,
    "reasons": [],
    "results": {
     "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
      "de": {
       "issue": "",
       "pass": true
@@ -2850,7 +2859,96 @@
       "pass": true
      }
     },
-    "independent_wording": {
+    "script_matches_example": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three pages pass: each script translates the Bulgarian example sentence by sentence and in order, with Jobstep changed to Parakeet AI. The unsupported steps (applications overview, 'New job' button, cover letter) are each replaced by one existing step: upload, job-ad field, template choice or edit-yourself. FR and ES change 'Continue' to the AI-improve step, which is a small allowed change. Scores use X/Y, nothing guarantees a result, and the titles and visual hooks match the example.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
+  },
+  "X18": {
+   "approval": {
+    "de": "not_locked",
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791786015,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "de": {
+     "source_id": "7695190648357489921",
+     "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
+    },
+    "es": {
+     "source_id": "7695190648357489921",
+     "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
+    },
+    "fr": {
+     "source_id": "7695190648357489921",
+     "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
+    }
+   },
+   "key": "3859f31cf572d5c322f32f9ff7b5c904a3055c84cf1081fbf43e0ec8be292606",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "de": {
+      "issue": "",
+      "pass": true
+     },
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
      "de": {
       "issue": "",
       "pass": true
@@ -2880,9 +2978,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three countries pass every check. Each keeps the ex-HR hook, the plain-CV and ATS secrets, and the brand spoken at the demo start. Each also keeps the sequence of upload, local job-ad link, X score, AI tailoring, Y score and download. The Jobstep dashboard, 'New job' button and cover letter are replaced with real Parakeet AI features. The scripts are worded independently, and the titles need no fix. The DE script never names Canva but describes colourful designs instead, which still keeps the secret.",
+   "summary": "All three pages pass: each closely follows the Spanish example in the same order, swaps the cover-letter line for template selection (ES also adds download, while DE and FR mention only the template, which the filming sequence allows), uses local job portals, never says the brand aloud, and gives a short slime hook as the filming direction; the German on-screen title is awkward but makes no false claim, so it is not replaced.",
    "title_fixes": {},
-   "version": "group-2026-10-08.2"
+   "version": "group-2026-10-11.no-directions"
   }
  },
  "group_duplicates": [],
@@ -2901,21 +2999,30 @@
   ]
  },
  "handle_lang": {
+  "_klaudii30": "",
+  "abis.luv6": "es",
   "aime_aqui": "es",
   "ale.jobtips": "",
   "alex.jobtipps": "de",
   "alexkoleva13": "",
+  "alinaibarra13": "es",
   "anniaelina": "",
+  "annikajobtips": "",
   "avazdagbok": "",
   "benkorebeka5": "",
   "career.tea.with.d": "",
   "catita.tipss": "es",
   "charline.jobstep.io": "fr",
   "chloe.jobtipps": "fr",
+  "chloejobtips": "fr",
+  "claucreate": "es",
+  "cvwithines_": "es",
   "danielaavega___": "es",
   "diana_osm": "es",
   "dianapracuje": "",
+  "diann1770": "es",
   "dorcsyy_jobstep": "",
+  "dymphy.tiktok": "",
   "elisa.jobtipps": "de",
   "ella.jobtips": "",
   "emasavetuje": "",
@@ -2925,24 +3032,37 @@
   "emy.jobstep.io": "de",
   "emy.jobtipps": "de",
   "ferni.tips": "es",
+  "filippajobbtips": "",
   "franzi.jobtipps": "de",
+  "fridaempleotips": "",
   "gabbolab": "es",
   "iloveklodzko": "",
   "isaconsejoscv": "es",
   "issa.jobtips": "",
+  "itshelin03": "de",
   "itssophiatalea": "de",
+  "itswithluna": "",
+  "jenny_jennyv": "",
   "jimena.ruizf": "es",
+  "joaocareer": "",
   "job.by.niki": "",
   "job.reality.mit.tatyana": "de",
   "jobfluesterin": "de",
   "jobstep.io": "de",
+  "jobtipsmetmarie": "",
   "jobtipy": "",
   "joelle.jobstep.io": "",
   "juliantyonhaku": "",
   "julie.jobtips": "fr",
+  "juliejobtips": "fr",
   "junew0rk": "de",
+  "justsara676": "es",
   "karmencvtips": "",
+  "laraworking": "es",
   "lau.urarm": "es",
+  "laviniateol1": "es",
+  "leonorjobstepp": "es",
+  "lern.mit.domi": "",
   "leyla.jobstep": "de",
   "lil.janeiro0": "es",
   "lilly.jobtipps": "de",
@@ -2952,19 +3072,24 @@
   "ma.life.de.chomeu": "fr",
   "madebyanna92": "de",
   "majo67568": "es",
+  "manal.jobstep.io": "fr",
   "manon.job3": "fr",
   "manujobtips": "",
   "maria25alm": "es",
   "mariee.jobtipps": "de",
+  "marietipsapply": "es",
   "marine.realfakephotos": "fr",
   "martets": "",
   "mary.jobtipps": "de",
+  "matildedicas": "es",
   "misialurisia": "",
+  "olatinasaid": "",
   "origomez953": "es",
   "revekaonline": "",
   "roxanaempleos": "es",
   "rubi.te.guia": "es",
   "salii.jobtipps": "de",
+  "samjobtips": "fr",
   "sara.jobstep.io": "",
   "sarinajobstep": "de",
   "sevvalcareer": "",
@@ -2972,13 +3097,17 @@
   "srokolajobtips": "",
   "stay.with.giulia": "",
   "swaaag_06": "",
+  "thelma.gtz": "es",
   "this.is.creed": "de",
   "tips.from.ale": "",
   "tsvetelina.tips": "",
+  "viktorietyna": "",
+  "work.with.ell": "",
   "zorica.djurdjevic21": ""
  },
  "hot": {},
- "last_run": 1791756187,
+ "last_run": 1791785150,
+ "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
   "checked_at": "2026-10-07T15:58:35.104117+00:00",
@@ -2995,16 +3124,18 @@
   ]
  },
  "top3": [
-  "X16",
   "A202610061334",
-  "N10"
+  "N10",
+  "X08"
  ],
  "video_hashes": {
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/000ece9a-4c09-4032-8ce9-a20be54ff78f/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/0388d236-0302-4c20-adb6-354124854b86/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/05141a93-5ace-4ab2-8b23-cea31deaddff/7685281585674849569.mp4": "sha256:0d9864c4693d9f8b450659fe7a82a8450c61d6c96c85e30ac4be3dec1179dc74",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0699bac6-f46a-4ffa-beb6-db71cb973cbf/04-Balkan-Beispiel.mp4": "sha256:be143d2219312814ce14c5a33fecaefaccecaadcd9c44820cbc674d50ec53ff6",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0f88fc16-8fe2-4f86-9c4e-f5d1873e3b63/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/132c8e2f-abae-4fa2-a50f-f3f9dacab7da/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/184165fc-d896-4ddb-9a8f-e962593d496c/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1944cb5e-cec4-4eb0-8f8a-3cc3a7513b2d/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1ad5f220-eaad-48e2-863c-67cd67e7ec28/video.mp4": "sha256:7f98eb7e3368480c7608165083ca7d949ba30ebbf093062aab8c19405cbfb50b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1dbaacce-b4b3-4cb8-91b0-475fcc402b11/video.mp4": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
@@ -3029,6 +3160,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6482cb32-bfdd-4b94-97e7-be63a7d58d02/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6498f88d-fc10-4402-b3fe-3e6ea9f70e23/v2_Beispielvideo.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/67e04d74-7a91-439c-a987-3199ac07054f/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6939e5d4-5e44-4d54-b50c-9655a66e3025/video.mp4": "sha256:583bbfa72f7fa239fabae8ea79f46cd4feac66416049325128f5a9e7ebd3dc83",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a4b7c94-b438-4965-afdc-a77a04450d14/video.mp4": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be66b80-20ba-4b54-8f7b-7cb560c76f7b/video.mp4": "sha256:1da00dc8b56532454c65efbad543bb139eadd84a9b72d1066d8432cc0f3a7e51",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be81953-145e-4ffc-b6ba-9d75e93aac0d/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
@@ -3043,10 +3175,13 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/8ed79840-0650-49ad-8967-0b278e9e5a38/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/95941ff9-d15b-4894-8d00-172063f6b0dd/example.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/968ed789-142a-46f4-96bc-6352c4138c91/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/97d1d904-f65a-4a7a-9ae2-d538933e021c/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/9853b267-ed5a-4990-b036-1c5a87962d04/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/9e18475c-fa25-4b74-9c10-d49dcac0bb82/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a89f8e80-7b02-40a5-bb3f-30e19d46a224/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/a8c71ac2-6917-4bab-abe4-f1c1aed4d3b2/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a9017d88-998d-4459-bc5f-ffd4d0aad30b/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/aabe7fe6-3f99-4970-a152-7a6fc9ec2800/video.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/b1cf54ef-2b2b-4d3d-9f00-0821a3973834/07-Balkan-Beispiel.mp4": "sha256:a63cf9bd9dc13c02a700703291a9f1f7cf9651f71a44d6ff23bc7a6443f03508",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba404da2-5ed9-409c-bc5c-c4dc41281093/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba720d8d-c80d-4678-832f-a11e792a9adf/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
@@ -3059,6 +3194,8 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e2f56fbc-d684-4a3a-88e1-fda644e249f4/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e539427b-cec1-454e-bf53-f27892c83f19/video.mp4": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e67b57d0-f37e-4307-89b5-d00c184fa7eb/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e721b8d7-ae08-4999-96cf-a07eafe9abcb/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e78796fa-bf56-4a51-8158-d04ea9b34ee4/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f"
- }
+ },
+ "weekly": "2026-W42"
 }

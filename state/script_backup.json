@@ -20226,6 +20226,82 @@
    "type": "text"
   }
  ],
+ "3f5958b0-fc14-8133-a281-fa427a980148": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Blätter wie im Inspirationsvideo einen Stapel deiner alten, ausgedruckten Lebensläufe vor der Kamera durch, während „Mach das nicht!!“ eingeblendet ist und du „Abgelehnt, abgelehnt, abgelehnt“ sagst.",
+   "text": {
+    "content": "Blätter wie im Inspirationsvideo einen Stapel deiner alten, ausgedruckten Lebensläufe vor der Kamera durch, während „Mach das nicht!!“ eingeblendet ist und du „Abgelehnt, abgelehnt, abgelehnt“ sagst.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-8169-abaa-c95624986b8d": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Parle très près de la caméra, le titre affiché, en malaxant et en étirant un slime orange dans tes mains pendant tout le début, comme dans la vidéo d'exemple.",
+   "text": {
+    "content": "Parle très près de la caméra, le titre affiché, en malaxant et en étirant un slime orange dans tes mains pendant tout le début, comme dans la vidéo d'exemple.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-81b7-965a-e33f016b0670": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Knete und zieh die ganze Zeit, während du in die Kamera sprichst, einen orangen Slime vor dir – genau wie im Inspirationsvideo. Zum Schluss winkst du lächelnd in die Kamera.",
+   "text": {
+    "content": "Knete und zieh die ganze Zeit, während du in die Kamera sprichst, einen orangen Slime vor dir – genau wie im Inspirationsvideo. Zum Schluss winkst du lächelnd in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-81fa-8566-c3be345d4121": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Igual que en el vídeo de ejemplo: habla muy cerca de la cámara mientras estiras y aprietas un slime naranja con las dos manos, con el título en pantalla.",
+   "text": {
+    "content": "Igual que en el vídeo de ejemplo: habla muy cerca de la cámara mientras estiras y aprietas un slime naranja con las dos manos, con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "4347a0c2-a5a7-4b12-ae33-7538f6f23682": [
   {
    "annotations": {
@@ -29007,6 +29083,228 @@
     "plain_text": ") Und falls du noch ein Anschreiben brauchst: Das baut dir das Tool auf Wunsch gleich mit.",
     "text": {
      "content": ") Und falls du noch ein Anschreiben brauchst: Das baut dir das Tool auf Wunsch gleich mit.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3d5958b0-fc14-8179-b216-cd6c20cb48e1": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Die Leute aus dem HR wollen nicht, dass du das weißt, aber ich zeig dir, warum. Ganz einfach: Die nutzen ATS. ",
+    "text": {
+     "content": "Die Leute aus dem HR wollen nicht, dass du das weißt, aber ich zeig dir, warum. Ganz einfach: Die nutzen ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Mittlerweile nutzen alle Unternehmen ATS, um jeden Tag sämtliche Lebensläufe zu filtern. Als Nächstes gehst du also auf die Jobseite deiner Wahl, egal ob Indeed, StepStone, XING oder LinkedIn. Du kopierst dir den Link von der Stellenanzeige. ",
+    "text": {
+     "content": "Mittlerweile nutzen alle Unternehmen ATS, um jeden Tag sämtliche Lebensläufe zu filtern. Als Nächstes gehst du also auf die Jobseite deiner Wahl, egal ob Indeed, StepStone, XING oder LinkedIn. Du kopierst dir den Link von der Stellenanzeige. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Als Nächstes gehst du auf diese Seite. (",
+    "text": {
+     "content": "Als Nächstes gehst du auf diese Seite. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Als Erstes musst du deinen Lebenslauf hochladen. (",
+    "text": {
+     "content": ") Als Erstes musst du deinen Lebenslauf hochladen. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Du fügst den Link von der Stellenanzeige ein. (",
+    "text": {
+     "content": ") Du fügst den Link von der Stellenanzeige ein. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Automatisch erstellt es dir einen Lebenslauf, der genau auf diese Stelle angepasst ist. (",
+    "text": {
+     "content": ") Automatisch erstellt es dir einen Lebenslauf, der genau auf diese Stelle angepasst ist. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Außerdem kannst du dir auch noch eine Vorlage aussuchen. ",
+    "text": {
+     "content": ") Außerdem kannst du dir auch noch eine Vorlage aussuchen. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Gern geschehen. ",
+    "text": {
+     "content": "Gern geschehen. ",
      "link": null
     },
     "type": "text"
@@ -40767,6 +41065,450 @@
     "plain_text": "(Colle le logo Parakeet AI sur la case vendue) Va jeter un œil, et dis-moi en commentaire qui va acheter la prochaine case d'après toi. ",
     "text": {
      "content": "(Colle le logo Parakeet AI sur la case vendue) Va jeter un œil, et dis-moi en commentaire qui va acheter la prochaine case d'après toi. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f7958b0-fc14-81dd-8414-dad4639b75bf": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Los de Recursos Humanos no quieren que sepas esto, pero yo te voy a enseñar por qué. Es sencillo: usan ATS. ",
+    "text": {
+     "content": "Los de Recursos Humanos no quieren que sepas esto, pero yo te voy a enseñar por qué. Es sencillo: usan ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Actualmente todas las empresas utilizan ATS para filtrar todos los currículums día a día, así que lo siguiente que vas a hacer es ir al empleo de tu interés, ya sea Indeed, Bumeran, Computrabajo o LinkedIn. Vas a copiar el link de esa oferta laboral. ",
+    "text": {
+     "content": "Actualmente todas las empresas utilizan ATS para filtrar todos los currículums día a día, así que lo siguiente que vas a hacer es ir al empleo de tu interés, ya sea Indeed, Bumeran, Computrabajo o LinkedIn. Vas a copiar el link de esa oferta laboral. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo siguiente es ir a esta página web. (",
+    "text": {
+     "content": "Lo siguiente es ir a esta página web. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Primeramente tienes que subir tu currículum. (",
+    "text": {
+     "content": ") Primeramente tienes que subir tu currículum. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Pegas el link de la oferta laboral. (",
+    "text": {
+     "content": ") Pegas el link de la oferta laboral. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Automáticamente te va a generar un CV personalizado para ese puesto laboral. (",
+    "text": {
+     "content": ") Automáticamente te va a generar un CV personalizado para ese puesto laboral. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Además, también puedes elegir tu plantilla y descargarlo. ",
+    "text": {
+     "content": ") Además, también puedes elegir tu plantilla y descargarlo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "De nada. ",
+    "text": {
+     "content": "De nada. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f7958b0-fc14-81e4-8f06-d6e5b6859a96": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Les RH ne veulent pas que tu saches ça, mais moi, je vais t'expliquer pourquoi. C'est simple : ils utilisent des ATS. ",
+    "text": {
+     "content": "Les RH ne veulent pas que tu saches ça, mais moi, je vais t'expliquer pourquoi. C'est simple : ils utilisent des ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Aujourd'hui, toutes les entreprises utilisent des ATS pour filtrer tous les CV, tous les jours. Alors, la prochaine chose que tu vas faire, c'est aller sur le site d'emploi qui t'intéresse, que ce soit Indeed, Welcome to the Jungle, France Travail ou LinkedIn. Tu vas copier le lien de cette offre d'emploi. ",
+    "text": {
+     "content": "Aujourd'hui, toutes les entreprises utilisent des ATS pour filtrer tous les CV, tous les jours. Alors, la prochaine chose que tu vas faire, c'est aller sur le site d'emploi qui t'intéresse, que ce soit Indeed, Welcome to the Jungle, France Travail ou LinkedIn. Tu vas copier le lien de cette offre d'emploi. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ensuite, tu vas sur ce site. (",
+    "text": {
+     "content": "Ensuite, tu vas sur ce site. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") D'abord, tu dois importer ton CV. (",
+    "text": {
+     "content": ") D'abord, tu dois importer ton CV. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu colles le lien de l'offre d'emploi. (",
+    "text": {
+     "content": ") Tu colles le lien de l'offre d'emploi. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Automatiquement, ça va te générer un CV personnalisé pour ce poste. (",
+    "text": {
+     "content": ") Automatiquement, ça va te générer un CV personnalisé pour ce poste. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") En plus, tu peux aussi choisir ton modèle. ",
+    "text": {
+     "content": ") En plus, tu peux aussi choisir ton modèle. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "De rien. ",
+    "text": {
+     "content": "De rien. ",
      "link": null
     },
     "type": "text"

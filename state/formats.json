@@ -657,10 +657,26 @@
  {
   "description": "Spill-the-secret hook: the creator bluntly reveals that employers use ATS, then walks through copying any job-ad link (Indeed, LinkedIn, etc.) and pasting it into Parakeet AI to beat the system. Examples: 'Personaler wollen nicht dass wir das wissen 🤡'",
   "id": "X18",
+  "listed_at": 1791786098,
   "page_id": "3d5958b0-fc14-8179-b216-cd6c20cb48e1",
+  "pages": {
+   "es": "3f7958b0-fc14-81dd-8414-dad4639b75bf",
+   "fr": "3f7958b0-fc14-81e4-8f06-d6e5b6859a96"
+  },
+  "revived": {
+   "at": 1791785781,
+   "because": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
+   "views": 130500
+  },
+  "reworded": {
+   "de": true,
+   "es": true,
+   "fr": true
+  },
   "script": "(DEUTSCH) Arbeitgeber möchten nicht, dass ihr das wisst, schon gar nicht die Personalabteilung. Ich verrat’s euch. So, ich hau’s jetzt einfach mal raus: Und zwar verwenden sie ATS. Jetzt wisst ihr’s. Und ab jetzt könnt ihr sie hops nehmen. So, und wie machen wir das jetzt? Ganz einfach: Du gehst auf deine Stellenanzeige, auf der du gerade bist, egal ob bei Indeed, Job, LinkedIn, egal wo.  Du kopierst dir den Link und du fügst ihn da ein, wo ich dir jetzt gleich zeige, wo du ihn einfügen wirst. Und zwar gehst du auf Parakeet AI und fügst dort den Link ein von deiner Stellenanzeige. Die Jobanzeige wird dann für dich analysiert. Let’s go. Und dann, ja, sehen wir schon mal: solide, ist einiges drin. Und darauf basierend gehen wir jetzt zum Lebenslauf erstellen. Tada.  Und da haben wir ihn auch schon. Fertiger Lebenslauf, wenig Aufwand, basierend auf der Stellenanzeige, die ich hier eingefüg",
   "source": "DACH archive (old formats)",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
+  "status": "active",
   "title": "Personaler wollen nicht dass wir das wissen 🤡"
  },
  {

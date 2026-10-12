@@ -41924,5 +41924,297 @@
     "type": "text"
    }
   ]
- ]
+ ],
+ "rebuild:ESX28:es:1791822581": {
+  "blocks": [
+   [
+    "video",
+    ""
+   ],
+   [
+    "callout",
+    "Importante: Graba tu vídeo con el guion de abajo. El vídeo de inspiración es de otra marca y NO es el vídeo que tienes que hacer. Cópiale LO MÁS FIELMENTE POSIBLE el ambiente (vibe), los ángulos de cámara, cómo está grabado, el montaje y los momentos en que se enseña la app (demo) – para eso sirven los vídeos de inspiración.\nEn el vídeo se usa otra app. Hazlo todo igual, pero con Parakeet AI: abre Parakeet AI en los momentos en que se abre esa app en el vídeo y enséñalo de la misma forma. Esa app no puede verse ni oírse en ningún momento de tu vídeo."
+   ],
+   [
+    "heading_3",
+    "📲 TEXTO ESCRITO"
+   ],
+   [
+    "paragraph",
+    ""
+   ],
+   [
+    "paragraph",
+    "Conseguir empleo en 2026 😳:"
+   ],
+   [
+    "paragraph",
+    "Usa subtítulos automáticos durante todo el vídeo."
+   ],
+   [
+    "heading_3",
+    "💬 GUION"
+   ],
+   [
+    "paragraph",
+    "Estás cortando una fruta, por ejemplo un mango o algo similar, mirando fijamente a la cámara con confianza).\n-Cuál era tu nota media en la universidad? ¿Cuál era tu nota?\nUn 5.5? Pero conseguí un trabajo de seis cifras recién graduada.\nCómo?\n-Porque apliqué a 100 ofertas de trabajo todos los malditos días durante los últimos dos meses..\nPero esto fue gracias a una amiga que ahora trabaja en Meta, quien me mostró este truco que nos cambió las reglas del juego a ambas.\n-No me voy a quedar esto para mí, así que déjame mostrarte.\n*Muestras la pantalla del teléfono o tablet abriendo la aplicación ParakeetAI).\n-Entro a esta aplicación llamada parakeet AI y lo primero es pegar el enlace de la oferta de trabajo a la que quieras postularte.\n*Haces zoom en los ajustes de IA).\n-Esto es súper importante: la IA optimizara tu CV para que pase los filtros ATS, utilizando palabraa clave y optimizandolo para esa oferta de trabajo en particular."
+   ],
+   [
+    "paragraph",
+    "Deslizas la pantalla mostrando las ofertas de empleo).\nY listo, ahora puedes postularte con confianza. ¡Es magia pura! Si tambien quieres optimizar tu cv puedes encontrar en enlace en mi Bio"
+   ],
+   [
+    "heading_3",
+    "🎬 GANCHO VISUAL"
+   ],
+   [
+    "paragraph",
+    "Empezar el video cortando o pelando una fruta. Si es una fruta tropical que llame la atención y la cortas de manera extraña funcionará mejor."
+   ]
+  ],
+  "page": "3ee958b0-fc14-8015-ae8b-efbb383ec8da",
+  "title": "NOTA UNIVERSIDAD"
+ },
+ "rebuild:FRX22:fr:1791822539": {
+  "blocks": [
+   [
+    "video",
+    ""
+   ],
+   [
+    "callout",
+    "Important : Tourne ta vidéo d’après le script ci-dessous. La vidéo d’inspiration vient d’une autre marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments où l’app est montrée (démo) – c’est à ça que servent les vidéos d’inspiration.\nDans la vidéo, c’est une autre app qui est utilisée. Fais tout pareil, mais avec Parakeet AI : ouvre Parakeet AI aux moments où cette app est ouverte dans la vidéo et montre-le de la même façon. Cette app ne doit apparaître ni être entendue nulle part dans ta vidéo."
+   ],
+   [
+    "heading_3",
+    "📲 TEXTE ÉCRIT"
+   ],
+   [
+    "paragraph",
+    "Choisis une de ces phrases."
+   ],
+   [
+    "bulleted_list_item",
+    "Après six mois de chômage, j’ai enfin trouvé un emploi"
+   ],
+   [
+    "bulleted_list_item",
+    "Un seul changement a tout changé"
+   ],
+   [
+    "bulleted_list_item",
+    "Mon ancien CV était joli, mais il n’était pas compatible avec les ATS"
+   ],
+   [
+    "bulleted_list_item",
+    "La première entreprise à laquelle j’ai postulé m’a embauchée"
+   ],
+   [
+    "paragraph",
+    "Utilise les sous-titres automatiques pendant toute la vidéo."
+   ],
+   [
+    "heading_2",
+    "💬 SCRIPT"
+   ],
+   [
+    "paragraph",
+    "Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué."
+   ],
+   [
+    "paragraph",
+    "On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes."
+   ],
+   [
+    "paragraph",
+    "Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV."
+   ],
+   [
+    "paragraph",
+    "Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même."
+   ],
+   [
+    "paragraph",
+    "Le nouveau, lui, c'est tout l'inverse. Ultra simple. Épuré. Zéro design, zéro fioriture."
+   ],
+   [
+    "paragraph",
+    "Et le plus dingue dans l'histoire : la toute première boîte à qui je l'ai envoyé m'a prise."
+   ],
+   [
+    "paragraph",
+    "La première."
+   ],
+   [
+    "paragraph",
+    "Là je me suis dit que j'aurais peut-être dû écouter plus tôt. Parce que même les petites entreprises font tourner de l'IA sur leurs candidatures maintenant. Ton CV doit être lisible par la machine avant d'être lisible par un humain."
+   ],
+   [
+    "paragraph",
+    "Tu peux le refaire à la main, ou passer par un outil comme Parakeet AI, qui reprend tes infos et te sort une version compatible en quelques minutes."
+   ],
+   [
+    "paragraph",
+    "Donc si tu cherches depuis des mois et que rien ne bouge, commence par là. Change ton CV."
+   ],
+   [
+    "paragraph",
+    "T'es peut-être beaucoup plus près du but que ce que tu crois."
+   ],
+   [
+    "heading_2",
+    "🎬 ACCROCHE VISUELLE"
+   ],
+   [
+    "paragraph",
+    "Commence face caméra en montrant plusieurs refus sur ton téléphone, puis place l’ancien CV et la nouvelle version compatible ATS côte à côte près de la caméra. Montre ensuite ParakeetAI qui transforme les informations en CV épuré, et termine avec un écran ou une carte « Embauchée »."
+   ]
+  ],
+  "page": "3d8958b0-fc14-8024-bea3-d5fcb04410d4",
+  "title": "Après six mois de chômage, j’ai enfin trouvé un travail"
+ },
+ "rebuild:X06:es:1791822470": {
+  "blocks": [
+   [
+    "video",
+    ""
+   ],
+   [
+    "callout",
+    "Importante: Graba tu vídeo con el guion de abajo. El vídeo de inspiración es de otra marca y NO es el vídeo que tienes que hacer. Cópiale LO MÁS FIELMENTE POSIBLE el ambiente (vibe), los ángulos de cámara, cómo está grabado, el montaje y los momentos en que se enseña la app (demo) – para eso sirven los vídeos de inspiración.\nEn el vídeo se usa otra app. Hazlo todo igual, pero con Parakeet AI: abre Parakeet AI en los momentos en que se abre esa app en el vídeo y enséñalo de la misma forma. Esa app no puede verse ni oírse en ningún momento de tu vídeo."
+   ],
+   [
+    "heading_3",
+    "📲 TEXTO ESCRITO"
+   ],
+   [
+    "bulleted_list_item",
+    "No te van a contratar por este error ❌"
+   ],
+   [
+    "paragraph",
+    "Usa subtítulos automáticos durante todo el vídeo."
+   ],
+   [
+    "heading_3",
+    "💬 GUION"
+   ],
+   [
+    "paragraph",
+    "Ninguna empresa te va a contratar por este error. Y lo peor es que ni siquiera te vas a enterar de que lo estás cometiendo."
+   ],
+   [
+    "paragraph",
+    "La mayoría de empresas, sobre todo las grandes y medianas, usan un sistema llamado ATS que filtra los currículums antes de que un humano los vea siquiera. Si tu CV no pasa ese filtro, va directo a la basura. ¿Y cuál es el error? Que pecamos de hacer currículums súper bonitos en Canva, con columnas e iconos… pero cuando pasan por un ATS, el sistema no entiende nada. Y como no entiende nada, te descarta automáticamente."
+   ],
+   [
+    "paragraph",
+    "La solución es un CV ATS-friendly: texto plano, una sola columna, sin iconos raros, fuentes normales… y lo más importante, con las palabras clave exactas de la oferta, porque el sistema busca coincidencias literales."
+   ],
+   [
+    "paragraph",
+    "Y para no montar todo esto a mano, yo uso Parakeet AI. Le dices el puesto al que quieres optar  y su creador de currículums te genera un CV ya adaptado a esa oferta: en una columna, limpio y con las palabras clave que ese ATS quiere ver . En vez de mandar el mismo a todos, tienes uno a medida para cada solicitud en segundos."
+   ],
+   [
+    "paragraph",
+    "Así que si echas currículums y no te llaman, esto es para ti. Comenta “CV” y te paso el enlace. 👀"
+   ],
+   [
+    "heading_3",
+    "🎬 GANCHO VISUAL"
+   ],
+   [
+    "paragraph",
+    "Coger un CV y romperlo o hacer algo con las manos para entretener en los 3 primeros segundos."
+   ]
+  ],
+  "page": "3e6958b0-fc14-80b2-9be1-e5711abc8dcb",
+  "title": "Vermeidet diesen Fehler!!"
+ },
+ "rebuild:X06:fr:1791822419": {
+  "blocks": [
+   [
+    "video",
+    ""
+   ],
+   [
+    "callout",
+    "Important : Tourne ta vidéo d’après le script ci-dessous. La vidéo d’inspiration vient d’une autre marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments où l’app est montrée (démo) – c’est à ça que servent les vidéos d’inspiration.\nDans la vidéo, c’est une autre app qui est utilisée. Fais tout pareil, mais avec Parakeet AI : ouvre Parakeet AI aux moments où cette app est ouverte dans la vidéo et montre-le de la même façon. Cette app ne doit apparaître ni être entendue nulle part dans ta vidéo."
+   ],
+   [
+    "heading_3",
+    "📲 TEXTE ÉCRIT"
+   ],
+   [
+    "paragraph",
+    "Choisis une de ces phrases."
+   ],
+   [
+    "bulleted_list_item",
+    "Ton CV ne passe pas les filtres ATS"
+   ],
+   [
+    "bulleted_list_item",
+    "Cette IA aide à rédiger un CV conforme"
+   ],
+   [
+    "bulleted_list_item",
+    "Personne ne parle des filtres ATS"
+   ],
+   [
+    "bulleted_list_item",
+    "Ne postule pas avec un CV sans vérifier les filtres ATS"
+   ],
+   [
+    "paragraph",
+    "Utilise les sous-titres automatiques pendant toute la vidéo."
+   ],
+   [
+    "heading_4",
+    "💬 SCRIPT"
+   ],
+   [
+    "paragraph",
+    "Dis-moi que je suis pas la seule à pas savoir ça. Franchement, personne en parle."
+   ],
+   [
+    "paragraph",
+    "Les CV comme ça, faut plus les envoyer. Du tout. Parce qu'ils passent pas les filtres ATS."
+   ],
+   [
+    "paragraph",
+    "Et si tu vois pas ce que c'est : c'est un logiciel qui trie tous les CV en amont. Le recruteur, il voit que ce qui a survécu au tri. Le reste, il sait même pas que ça existe."
+   ],
+   [
+    "paragraph",
+    "Du coup tu te demandes comment on écrit un CV qui passe ce truc. Attends, j'ai trouvé un site, faut que je te montre."
+   ],
+   [
+    "paragraph",
+    "Voilà à quoi ressemble le mien maintenant. Tu rentres tes infos, l'IA te pose des questions pour creuser et mieux formuler ce que t'as fait, et ensuite elle se charge de tout le reste."
+   ],
+   [
+    "paragraph",
+    "Et là, j'affiche 96 % de chances de passer les filtres."
+   ],
+   [
+    "heading_4",
+    "🎬 ACCROCHE VISUELLE"
+   ],
+   [
+    "paragraph",
+    "Commence face caméra en montrant l’ancien CV très près de l’objectif pendant la phrase « il ne faut plus postuler avec des CV comme ça ». Passe ensuite à l’écran de Parakeet AI, montre les questions de l’IA, puis termine sur le nouveau CV et le score ATS de 96 %."
+   ],
+   [
+    "child_page",
+    ""
+   ],
+   [
+    "callout",
+    "Un visual hook est obligatoire sur chaque vidéo !"
+   ]
+  ],
+  "page": "3d6958b0-fc14-80c2-8349-ed1807a6a77a",
+  "title": "Vermeidet diesen Fehler!!"
+ }
 }

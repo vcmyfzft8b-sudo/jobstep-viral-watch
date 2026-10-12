@@ -497,14 +497,25 @@
  {
   "description": "Deleting-soon recruiter-secrets hook: the creator claims they'll delete the video in 2 hours, reveals that companies use software to scan CVs for structure and keywords, then shows using Parakeet AI to optimize their CV. Examples: 'Dinge die Personaler euch verheimlichen 😳❌'",
   "id": "X09",
+  "listed_at": 1791820961,
   "page_id": "3e2958b0-fc14-8079-954e-f1a0fed8673f",
   "pages": {
    "es": "3e2958b0-fc14-808f-831d-dbeba428c7bc",
    "fr": "3e2958b0-fc14-805b-809f-d34a4e59f5e4"
   },
+  "revived": {
+   "at": 1791820239,
+   "because": "https://www.tiktok.com/@jenny_jennyv/video/7694696093623389462",
+   "views": 100500
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
+  },
   "script": "(DEUTSCH) Das hier sind Dinge, die Personaler nicht wollen, dass ihr sie wisst, und ich lösche dieses Video in 2 Stunden. Wenn ihr das gerade seht, habt ihr wirklich Glück. Viele Unternehmen nutzen Software, um Lebensläufe zu scannen, bevor überhaupt ein Recruiter sie sieht. Das heißt: Die Struktur eures Lebenslaufs und die richtigen Keywords können einen großen Unterschied machen. Ich habe letztens mit meiner Cousine gesprochen. Sie arbeitet seit 10 Jahren im Personalbereich und hat mir erzählt, dass inzwischen sehr viele Bewerbungen fast gleich aussehen. Dann hat sie mir das hier gezeigt. Ihr geht einfach zu der Stelle, auf die ihr euch bewerben wollt, und kopiert den Link zur Stellenanzeige. Dann öffnet ihr Parakeet AI, geht zu Target job, fügt den Link unter Job post link ein und klickt auf Set target job. Parakeet AI analysiert die Stellenanzeige und zeigt euch, welche Keywords eue",
   "source": "DACH archive (old formats)",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@jenny_jennyv/video/7694696093623389462",
+  "status": "active",
   "title": "Dinge die Personaler euch verheimlichen 😳❌"
  },
  {

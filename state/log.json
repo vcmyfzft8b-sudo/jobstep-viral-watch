@@ -2606,5 +2606,231 @@
   },
   "ts": 1791814864,
   "type": "rerank"
+ },
+ {
+  "format": "X09",
+  "reasons": [
+   "cross-country check fail: format_consistency fr: The on-screen title 'Comment j'ai refait mon CV en seulement 15 minutes !' replaces the required hook overlay 'Ce que les recruteurs te cachent 😳❌'. It also conflicts with the filming directions, which name that overlay, and with the spoken hook, which is about finding a job, "
+  ],
+  "tries": 1,
+  "ts": 1791820605,
+  "type": "format_held"
+ },
+ {
+  "format": "X09",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: format_consistency fr: The on-screen title 'Comment j'ai refait mon CV en seulement 15 minutes !' replaces the required hook overlay 'Ce que les recruteurs te cachent 😳❌'. It also conflicts with the filming directions, which name that overlay, and with the spoken hook, which is about finding a job, "
+  ],
+  "ts": 1791820605,
+  "type": "format_held",
+  "video": "7694696093623389462"
+ },
+ {
+  "format": "X09",
+  "level": "viral",
+  "ts": 1791820605,
+  "type": "alert",
+  "video": "7694696093623389462",
+  "views": 100500
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791820608,
+  "type": "alert",
+  "video": "7695504229313645846",
+  "views": 34800
+ },
+ {
+  "level": "taking_off",
+  "ts": 1791820611,
+  "type": "alert",
+  "video": "7695793899058613526",
+  "views": 5358
+ },
+ {
+  "order": [
+   "FRX22",
+   "X06",
+   "X08",
+   "X16",
+   "X13",
+   "ESX11",
+   "A202610061334",
+   "N10",
+   "A20261006183623",
+   "X18",
+   "X09",
+   "N04",
+   "A20261009204851",
+   "A202610061328",
+   "X03",
+   "ESX28",
+   "N02",
+   "N03",
+   "N07",
+   "A202610061331",
+   "X15",
+   "N01"
+  ],
+  "orders": {
+   "es": [
+    "A202610061334",
+    "X16",
+    "N02",
+    "N04",
+    "ESX28",
+    "X13",
+    "A20261006183623",
+    "ESX11",
+    "X06",
+    "N07",
+    "X15",
+    "X08",
+    "X09",
+    "X18",
+    "A20261009204851",
+    "A202610061328",
+    "N01",
+    "X03",
+    "FRX22",
+    "N03",
+    "A202610061331",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "X06",
+    "X08",
+    "X16",
+    "X13",
+    "ESX11",
+    "A202610061334",
+    "N10",
+    "A20261006183623",
+    "X18",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "A202610061328",
+    "X03",
+    "ESX28",
+    "N02",
+    "N03",
+    "N07",
+    "A202610061331",
+    "X15",
+    "N01"
+   ]
+  },
+  "ts": 1791820961,
+  "type": "rerank"
+ },
+ {
+  "format": "X09",
+  "position": 11,
+  "ts": 1791820961,
+  "type": "format_published"
+ },
+ {
+  "order": [
+   "FRX22",
+   "X06",
+   "X08",
+   "X16",
+   "X13",
+   "ESX11",
+   "A202610061334",
+   "N10",
+   "A20261006183623",
+   "X18",
+   "X09",
+   "N04",
+   "A20261009204851",
+   "A202610061328",
+   "X03",
+   "ESX28",
+   "N02",
+   "N03",
+   "A202610061331",
+   "N07",
+   "X15",
+   "N01"
+  ],
+  "orders": {
+   "es": [
+    "A202610061334",
+    "X16",
+    "N02",
+    "N04",
+    "ESX28",
+    "X13",
+    "A20261006183623",
+    "ESX11",
+    "X06",
+    "N07",
+    "X15",
+    "X08",
+    "X09",
+    "X18",
+    "A20261009204851",
+    "A202610061328",
+    "N01",
+    "X03",
+    "FRX22",
+    "N03",
+    "A202610061331",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "X06",
+    "X08",
+    "X16",
+    "X13",
+    "ESX11",
+    "A202610061334",
+    "N10",
+    "A20261006183623",
+    "X18",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "A202610061328",
+    "X03",
+    "ESX28",
+    "N02",
+    "N03",
+    "A202610061331",
+    "N07",
+    "X15",
+    "N01"
+   ]
+  },
+  "ts": 1791821500,
+  "type": "rerank"
+ },
+ {
+  "added": [
+   "giadaslifestyle",
+   "lavoraconjulia",
+   "majat05"
+  ],
+  "paused": [
+   "isaconsejoscv",
+   "joaocareer"
+  ],
+  "revived": [],
+  "ts": 1791822082,
+  "type": "discovery"
+ },
+ {
+  "added": [
+   "javiprk_26"
+  ],
+  "paused": [],
+  "revived": [],
+  "ts": 1791822338,
+  "type": "own_discovery"
  }
 ]

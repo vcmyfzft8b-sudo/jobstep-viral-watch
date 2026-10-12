@@ -1051,6 +1051,8 @@
   "X08:de": "ok",
   "X08:es": "ok",
   "X08:fr": "ok",
+  "X09:es": "fixed",
+  "X09:fr": "fixed",
   "X13:de": "ok",
   "X13:es": "ok",
   "X13:fr": "ok",
@@ -1107,6 +1109,8 @@
   "X08:de": "9382840ce7bd8ec308b4d0b81f208f4a49f833042c062a30b0998b9f49e760bb",
   "X08:es": "a3fe7f66881c2316885d9341d03439be45d9440db34cbba0e84327e9228da70f",
   "X08:fr": "a2df991562534c2ace7585510b1e4ee3427b8151ed753e7cb0d9e22b23f8519b",
+  "X09:es": "d0e1b080aadb0c48ebe61f128ecc3720f35237ad08b8cc05eb0bae94ee9cc97d",
+  "X09:fr": "37a5d5e68db376b05417a3b59b330c159ccd758d3b876b55689cb92084886275",
   "X13:de": "a994c1f22b5ebcdea04d3e8a97ee9264a96555b189fd96264ae4d4d0fa5f95b7",
   "X13:es": "2b2da3e5c5d7cdd904ee07b922dbf5ca170400de34b4b2a1a27bba3675470cd7",
   "X13:fr": "e46ca1bd2ea7cdc7da8d05e2005461d0a4e3dc8d2a2172ef42c9125270848a65",
@@ -1120,7 +1124,7 @@
   "X18:es": "63b62160a81a4b99abb7f55a8f555b5c7f78105889017eaa22443c2f2896136b",
   "X18:fr": "c3a36169796cb9df9b387e1491d3953429391414ad27af01632b359c716707a1"
  },
- "discovered_at": 1791552236,
+ "discovered_at": 1791819344,
  "group_audit": {
   "A202610061328": {
    "approval": {
@@ -2570,6 +2574,84 @@
    "title_fixes": {},
    "version": "group-2026-10-11.no-directions"
   },
+  "X09": {
+   "approval": {
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1791820895,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "es": {
+     "source_id": "7694696093623389462",
+     "video_identity": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af"
+    },
+    "fr": {
+     "source_id": "7694696093623389462",
+     "video_identity": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af"
+    }
+   },
+   "key": "389718aaf09597dd2f39f4fe5ae6dfa2c518b1ebfa1c5a8ada5f6d410d6dff2f",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "FR and ES both follow the X09 reference beat by beat. Each script closely translates the Greek example and replaces jobstep.io with the Parakeet AI URL once, at beat 5. Neither makes an unsupported claim, and both visual hooks match the example's opening with the crumpled note being straightened.",
+   "title_fixes": {},
+   "version": "group-2026-10-11.no-directions"
+  },
   "X13": {
    "approval": {
     "de": "not_locked",
@@ -3106,7 +3188,7 @@
   "zorica.djurdjevic21": ""
  },
  "hot": {},
- "last_run": 1791785150,
+ "last_run": 1791819344,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3124,10 +3206,11 @@
   ]
  },
  "top3": [
-  "A202610061334",
-  "N10",
+  "FRX22",
+  "X06",
   "X08"
  ],
+ "top3_market": "fr",
  "video_hashes": {
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/000ece9a-4c09-4032-8ce9-a20be54ff78f/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0388d236-0302-4c20-adb6-354124854b86/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
@@ -3191,11 +3274,13 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d1524a5a-30a8-44ef-ac32-fc16c5d40f06/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d69a580d-53b8-4621-8549-17ff4e8cbe8c/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d84f0240-0182-4981-86c2-fcd8651d7518/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/ddef24a7-ecd0-4292-84f8-eaf5a911f64a/video.mp4": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e2f56fbc-d684-4a3a-88e1-fda644e249f4/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e539427b-cec1-454e-bf53-f27892c83f19/video.mp4": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e67b57d0-f37e-4307-89b5-d00c184fa7eb/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e721b8d7-ae08-4999-96cf-a07eafe9abcb/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
-  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e78796fa-bf56-4a51-8158-d04ea9b34ee4/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f"
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/e78796fa-bf56-4a51-8158-d04ea9b34ee4/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/eeb7398c-5a8a-491c-970f-6d9f1c422d17/video.mp4": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af"
  },
  "weekly": "2026-W42"
 }

@@ -20245,6 +20245,25 @@
    "type": "text"
   }
  ],
+ "3f7958b0-fc14-814b-bc4e-c59d4de875a1": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copie exactement le début de la vidéo d'inspiration : face caméra, tu défroisses un billet de 20 € froissé avec un lisseur pendant que tu parles, puis tu montres le billet tout lisse sur « Oh, il est tout lisse. Parfait. »",
+   "text": {
+    "content": "Copie exactement le début de la vidéo d'inspiration : face caméra, tu défroisses un billet de 20 € froissé avec un lisseur pendant que tu parles, puis tu montres le billet tout lisse sur « Oh, il est tout lisse. Parfait. »",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3f7958b0-fc14-8169-abaa-c95624986b8d": [
   {
    "annotations": {
@@ -20259,6 +20278,25 @@
    "plain_text": "Parle très près de la caméra, le titre affiché, en malaxant et en étirant un slime orange dans tes mains pendant tout le début, comme dans la vidéo d'exemple.",
    "text": {
     "content": "Parle très près de la caméra, le titre affiché, en malaxant et en étirant un slime orange dans tes mains pendant tout le début, comme dans la vidéo d'exemple.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f7958b0-fc14-816b-9c40-e0dc13dcf1a0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Igual que en el vídeo de ejemplo: al empezar, alisa con una plancha de pelo un billete arrugado de 20 € mientras hablas a la cámara, y luego enséñalo ya liso («Oh, se ha alisado. Perfecto»).",
+   "text": {
+    "content": "Igual que en el vídeo de ejemplo: al empezar, alisa con una plancha de pelo un billete arrugado de 20 € mientras hablas a la cámara, y luego enséñalo ya liso («Oh, se ha alisado. Perfecto»).",
     "link": null
    },
    "type": "text"
@@ -29753,6 +29791,192 @@
    }
   ]
  ],
+ "page:3e2958b0-fc14-805b-809f-d34a4e59f5e4": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Comment j'ai trouvé un job en seulement 15 minutes ? Et comme c'est un secret et que je vais le supprimer dans 2 heures, t'as à peine le temps d'enregistrer ce TikTok. ",
+    "text": {
+     "content": "Comment j'ai trouvé un job en seulement 15 minutes ? Et comme c'est un secret et que je vais le supprimer dans 2 heures, t'as à peine le temps d'enregistrer ce TikTok. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Oh, il est tout lisse. Parfait. Allez, je te montre. ",
+    "text": {
+     "content": "Oh, il est tout lisse. Parfait. Allez, je te montre. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu vas aller sur ce site-là qui s'appelle parakeet-ai.com/resume-maker, tu uploades ici ton ancien CV. (",
+    "text": {
+     "content": ") Tu vas aller sur ce site-là qui s'appelle parakeet-ai.com/resume-maker, tu uploades ici ton ancien CV. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Il te donne ici ton score de compatibilité ATS, et regarde comme il est bas, (",
+    "text": {
+     "content": ") Il te donne ici ton score de compatibilité ATS, et regarde comme il est bas, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") et ensuite il te propose de choisir quel modèle de CV tu veux, et voilà, ton CV est prêt. ",
+    "text": {
+     "content": ") et ensuite il te propose de choisir quel modèle de CV tu veux, et voilà, ton CV est prêt. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "On vient de m'appeler pour aller en entretien grâce à ce CV. ",
+    "text": {
+     "content": "On vient de m'appeler pour aller en entretien grâce à ce CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:3e2958b0-fc14-806d-924b-ceb6e51656f2": [
   [
    {
@@ -29933,6 +30157,192 @@
     "plain_text": "Y ya está, así de fácil. Mucha suerte, ¡chao! ",
     "text": {
      "content": "Y ya está, así de fácil. Mucha suerte, ¡chao! ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3e2958b0-fc14-808f-831d-dbeba428c7bc": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Cómo conseguí una entrevista en solo 15 minutos? Y como es un secreto y lo voy a borrar en cuanto pasen 2 horas, apenas te da tiempo a guardar este TikTok. ",
+    "text": {
+     "content": "¿Cómo conseguí una entrevista en solo 15 minutos? Y como es un secreto y lo voy a borrar en cuanto pasen 2 horas, apenas te da tiempo a guardar este TikTok. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Oh, se ha alisado. Perfecto. Vamos, que te lo enseño. ",
+    "text": {
+     "content": "Oh, se ha alisado. Perfecto. Vamos, que te lo enseño. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Entras en esta página de aquí que se llama parakeet-ai.com/resume-maker, subes aquí tu CV antiguo. (",
+    "text": {
+     "content": ") Entras en esta página de aquí que se llama parakeet-ai.com/resume-maker, subes aquí tu CV antiguo. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Aquí te saca la puntuación de reconocimiento del ATS, y mira qué baja es, (",
+    "text": {
+     "content": ") Aquí te saca la puntuación de reconocimiento del ATS, y mira qué baja es, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") y después te deja elegir qué formato de CV quieres, y voilà, el CV listo. ",
+    "text": {
+     "content": ") y después te deja elegir qué formato de CV quieres, y voilà, el CV listo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hace un rato me han llamado para ir a una entrevista gracias a este CV. ",
+    "text": {
+     "content": "Hace un rato me han llamado para ir a una entrevista gracias a este CV. ",
      "link": null
     },
     "type": "text"

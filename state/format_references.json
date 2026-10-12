@@ -118,6 +118,63 @@
   },
   "title_en": "Rejected for a simple job despite top grades: outrage story with a CV fix"
  },
+ "X09": {
+  "accepted_sources": [
+   "7694696093623389462"
+  ],
+  "allowed_localisation": [
+   "Language of speech, captions and title overlay (DE/FR/ES), with natural colloquial phrasing and Du/Tu/Tú address",
+   "Local term for recruiters/HR (Personaler / recruteurs / reclutadores) and for CV (Lebenslauf / CV / currículum)",
+   "Wording of the candid aside in beat 3, matched to whatever the creator is physically doing, as long as it stays a 1–2 short-sentence off-script moment",
+   "Emoji choice in the overlay, as long as the shocked/forbidden tone stays (e.g. 😳❌)",
+   "The CV content, template look and job field shown in the demo",
+   "Minor word-order changes needed for grammar, keeping the same sentence count and meaning"
+  ],
+  "beats": [
+   "1. Hook question/claim: 'How I found a job in just 15 minutes.' The local title overlay 'Things recruiters hide from you 😳❌' is on screen.",
+   "2. Secret + countdown + save prompt: 'And because it's a secret, I'll delete it in 2 hours, so you barely have time to save this TikTok.'",
+   "3. Candid aside: a short, natural off-script reaction to what the creator is physically doing in the example video (original: 'Oh, it got straight. Perfect.'). It's one or two very short sentences that keep the casual, unpolished feel.",
+   "4. Transition: 'Come on, let me show you.'",
+   "5. Product intro + upload: 'Go to this website called Parakeet AI and upload your old CV here.' [link cue: app shown]",
+   "6. Recruiter secret + score: 'Companies scan your CV with software for structure and keywords. Here it shows you your score, and look how low it is.' The score/analysis screen is shown.",
+   "7. Template + done: 'Then you just pick the CV template you want, and voilà, the CV is ready.' Show template selection, then the finished CV.",
+   "8. Payoff: 'A little while ago they called me in for an interview, thanks to this CV.'"
+  ],
+  "canonical_source": "7694696093623389462",
+  "filming": "Length 20–30 s, vertical 9:16, one creator, selfie-style and casual, copying the example video's setting, gestures and pacing as closely as possible. Beats 1–4 are talking to camera with the hook overlay and burned-in captions. Each spoken phrase also appears as a short on-screen text block, as in the original. Beats 5–7 are a fast screen recording or over-the-shoulder phone/laptop capture of Parakeet AI's Resume Maker, in this order: (a) open Parakeet AI, (b) upload the old CV, (c) score/analysis screen held about 1–2 s so 'how low it is' lands, (d) template picker, one template tapped, (e) finished CV shown ('voilà'). Optionally a brief scroll through the result or the download. Beat 8 cuts back to the creator for the interview payoff. No long explanations, no tutorial voice; it should feel like a hurried, secret tip.",
+  "generated": 1791820459,
+  "hook": "A title overlay in the local language (DE: 'Dinge die Personaler euch verheimlichen 😳❌', with FR/ES equivalents) sits on top of the spoken opener: 'How I found a job in just 15 minutes. And because it's a secret, I'll delete this video in 2 hours, so you barely have time to save this TikTok.' The secret framing and the 2-hour deletion countdown together are the hook. Both must appear in the first 3 seconds, before any product is shown.",
+  "not_allowed": [
+   "Dropping the 'secret' framing, the '2 hours' deletion countdown or the 'save this TikTok' prompt; without them it's another format",
+   "Moving the product before beat 5 or opening with the app instead of the hook",
+   "Adding or reordering beats, adding extra sentences, or turning it into a calm step-by-step tutorial",
+   "Mentioning or showing JobStep, Studyflash or any other app; Parakeet AI replaces it at the same spot, and only once",
+   "Showing or claiming features Parakeet AI doesn't have: an overview of applications, a 'New job' button, cover letters",
+   "Claiming or implying that Parakeet AI guarantees a job, an interview or a pass through every ATS",
+   "Inventing statistics (e.g. '75% of CVs are rejected by software'), naming specific companies' screening tools, or claiming Parakeet AI is used or endorsed by recruiters",
+   "Claiming the tool is actually secret, illegal, a hack or a way to trick recruiters; the 'secret' is only the hook framing",
+   "Promising a specific timeframe for getting hired beyond the hook line 'found a job in just 15 minutes'. The payoff must stay a personal experience ('they invited me to an interview'), not a promise to viewers",
+   "Stage directions or acting/filming notes in brackets in the script; only the spoken words plus link cues"
+  ],
+  "premise": "The creator says they're sharing an insider trick that recruiters don't want you to know. Companies scan CVs with software (ATS) for structure and keywords, so a weak CV gets filtered out. The creator then shows, in a quick hands-on demo, how they ran their old CV through Parakeet AI, saw its low score, picked a new template and got a finished CV. The video ends with the payoff: they were just invited to an interview thanks to that CV.",
+  "product": {
+   "cta": "The engagement CTA is built into the hook: 'save this TikTok before I delete it in 2 hours.' There is no explicit sign-up/download CTA beyond showing and naming the website.",
+   "features_used": [
+    "Upload your existing CV",
+    "Get a CV score/analysis (shown as low before optimizing)",
+    "Pick a CV template",
+    "Finished, AI-optimized CV ready (optionally download it)"
+   ],
+   "introduced_at_beat": 5,
+   "spoken_brand": "Beat 5 only: 'this website called Parakeet AI', said once, where the original said 'jobstep.io', with a link cue while the app is on screen. No other app name is ever spoken or shown."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7694696093623389462": "https://www.tiktok.com/@jenny_jennyv/video/7694696093623389462"
+  },
+  "title_en": "Things recruiters hide from you 😳❌ – the 'I'm deleting this in 2 hours' CV secret"
+ },
  "X18": {
   "accepted_sources": [
    "7695190648357489921"

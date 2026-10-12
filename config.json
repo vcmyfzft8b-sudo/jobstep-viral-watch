@@ -139,7 +139,20 @@
     "weight_20k": 0.25,
     "german_weight": 2,
     "rerank_weekday": 0,
-    "own_prior_weight": 8
+    "own_prior_weight": 8,
+    "own_tiers": {
+      "window_days": 28,
+      "min_age_days": 2,
+      "proven_avg": 10000,
+      "proven_min_videos": 2,
+      "proven_hit": 100000,
+      "proven_hit_days": 14,
+      "solid_avg": 2000,
+      "solid_min_videos": 3,
+      "weak_avg": 1500,
+      "weak_min_videos": 6,
+      "weak_vs_median": 1.2
+    }
   },
   "models": {
     "classify": "sonnet",

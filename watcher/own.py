@@ -11,8 +11,10 @@ The list ranking uses this to see how a format does for US, not only for JobStep
   Videos without Parakeet AI in caption, on-screen text or speech are ignored (not a campaign video).
 
 state/own_accounts.json  {handle: {status, market, since, source}}
-state/own.json           {video_id: {handle, market, created, views, desc, format, checked, ours}}
+state/own.json           {video_id: {handle, market, created, views, desc, format, checked, ours, platform, creator}}
+                         Instagram videos (from Megasheet only) use the key 'ig_<shortcode>'.
 """
+import difflib
 import json
 import os
 import re
@@ -80,6 +82,8 @@ def update(accounts, videos, fmts, cfg, now, max_details=MAX_DETAILS):
     for vid, v in sorted(videos.items(), key=lambda x: -x[1]['created']):
         if details >= max_details:
             break
+        if v.get('platform') == 'instagram':
+            continue  # no TikTok page: views come from Megasheet
         age = now - v['created']
         needs_text = not v.get('checked') and age >= 48 * 3600 and 'sticker' not in v and v.get('tries', 0) < 2
         needs_views = vid not in seen and age <= TRACK_DAYS * 86400 and now - v.get('updated', 0) >= 20 * 3600
@@ -100,6 +104,14 @@ def update(accounts, videos, fmts, cfg, now, max_details=MAX_DETAILS):
             v.update({'checked': True, 'ours': False})  # not a Parakeet AI campaign video
             continue
         v['ours'] = True
+        if v.get('platform') == 'instagram':
+            twin = tiktok_twin(videos, v)
+            if twin == WAIT and now - v['created'] < IG_WAIT_DAYS * 86400:
+                continue  # the creator's TikTok post of it is not sorted yet - take its format then
+            if twin and twin != WAIT:
+                tid, t = twin
+                v.update({'format': t.get('format'), 'checked': True, 'twin': tid, 'hook_en': t.get('hook_en', '')})
+                continue
         todo.append({'id': vid, **v})
     if todo:
         results = classify.classify_many(todo, fmts, cfg['models']['classify'])
@@ -111,7 +123,33 @@ def update(accounts, videos, fmts, cfg, now, max_details=MAX_DETAILS):
             'details': details, 'sorted': len(todo)}
 
 
-def stats(videos, fmts, now, min_age_days=3):
+WAIT = 'wait'
+IG_WAIT_DAYS = 5  # an Instagram video waits this long for its TikTok twin to be sorted, then is sorted on its own
+
+
+def _norm(text):
+    return re.sub(r'#\S+|@\S+|https?://\S+|[^\w ]+', ' ', (text or '').lower()).split()
+
+
+def tiktok_twin(videos, v, max_days=2):
+    """The same video posted on TikTok by the same creator (Megasheet creator id, else handle) within 2 days:
+    (id, video), WAIT when that TikTok post is not sorted yet, None when there is none. Several candidates ->
+    the one whose caption matches best, then the closest in time."""
+    def same_creator(t):
+        return t.get('creator') == v['creator'] if v.get('creator') else t.get('handle') == v.get('handle')
+    cands = [(tid, t) for tid, t in videos.items() if t.get('platform', 'tiktok') == 'tiktok' and t.get('ours')
+             and same_creator(t) and abs(t['created'] - v['created']) <= max_days * 86400]
+    if not cands:
+        return None
+    words = ' '.join(_norm(v.get('desc')))
+    ratio = lambda c: difflib.SequenceMatcher(None, words, ' '.join(_norm(c[1].get('desc')))).ratio()
+    best = max(cands, key=lambda c: (ratio(c), -abs(c[1]['created'] - v['created'])))
+    if ratio(best) < 0.5 and not (len(cands) == 1 and abs(best[1]['created'] - v['created']) <= 86400):
+        return None  # captions too different: probably another video - sorted on its own
+    return best if best[1].get('checked') else WAIT
+
+
+def stats(videos, fmts, now, min_age_days=3, market=None):
     """How each format does for OUR creators: {format_id: {'n', 'lift', 'hits_100k', 'views', 'recent_viral',
     'week_videos', 'week_views'}}.
 
@@ -120,6 +158,7 @@ def stats(videos, fmts, now, min_age_days=3):
     clipped to -2..+2 (a quarter to 4x the usual). Only videos at least 3 days old count (young ones are not flops)."""
     import math
     import statistics
+    videos = {k: v for k, v in videos.items() if not market or v.get('market') == market}
     mature = [v for v in videos.values() if v.get('ours') and now - v['created'] >= min_age_days * 86400]
     by_creator = {}
     for v in mature:
@@ -145,6 +184,58 @@ def stats(videos, fmts, now, min_age_days=3):
             s['recent_viral'] += v['views'] >= 100_000
     for s in out.values():
         s['lift'] = s['lift_sum'] / s['n'] if s['n'] else 0.0
+    return out
+
+
+TIER_DEFAULTS = {'window_days': 28, 'min_age_days': 2, 'proven_avg': 10000, 'proven_min_videos': 2,
+                 'proven_hit': 100000, 'proven_hit_days': 14, 'solid_avg': 2000, 'solid_min_videos': 3,
+                 'weak_avg': 1500, 'weak_min_videos': 6, 'weak_vs_median': 1.2}
+TIER_NAMES = {1: 'proven for us', 2: 'solid for us', 3: 'not tested enough by us', 4: 'weak for us'}
+
+
+def tiers(videos, fmts, now, market, cfg):
+    """How each format does for OUR creators in ONE market, as a tier (the list order starts with it, see rank.order):
+    1 proven  - our videos of it average 10k+ (at least 2 videos), or one of them passed 100k in the last 14 days
+    2 solid   - at least 3 of our videos, average 2k+
+    4 weak    - at least 6 of our videos, average under 1.5k AND under 1.2x a typical video of ours in this market
+                (its median) - sinks to the bottom, even when it is viral for JobStep. The median part keeps a market
+                where all our creators get few views (DACH) from burying half its list.
+    3 the rest (not tested enough by us) - JobStep decides there.
+    Averages use our videos of the last 28 days that are at least 2 days old (TikTok and Instagram).
+    Thresholds: config ranking.own_tiers. Returns {format_id: {'tier', 'n', 'avg', 'best', 'hit'}} (formats with
+    none of our videos are left out = tier 3)."""
+    c = {**TIER_DEFAULTS, **(cfg.get('ranking', {}).get('own_tiers') or {})}
+    known = {f['id'] for f in fmts}
+    import statistics
+    typical = [v['views'] for v in videos.values() if v.get('ours') and v.get('market') == market
+               and c['min_age_days'] * 86400 <= now - v['created'] <= c['window_days'] * 86400]
+    median = statistics.median(typical) if typical else 0
+    per = {}
+    for v in videos.values():
+        fid = v.get('format')
+        if not v.get('ours') or v.get('market') != market or fid not in known:
+            continue
+        age = now - v['created']
+        x = per.setdefault(fid, {'n': 0, 'views': 0, 'best': 0, 'hit': 0})
+        if age <= c['proven_hit_days'] * 86400 and v['views'] >= c['proven_hit']:
+            x['hit'] += 1
+        if c['min_age_days'] * 86400 <= age <= c['window_days'] * 86400:
+            x['n'] += 1
+            x['views'] += v['views']
+            x['best'] = max(x['best'], v['views'])
+    out = {}
+    for fid, x in per.items():
+        avg = x['views'] / x['n'] if x['n'] else 0
+        if x['hit'] or (x['n'] >= c['proven_min_videos'] and avg >= c['proven_avg']):
+            tier = 1
+        elif x['n'] >= c['weak_min_videos'] and avg < c['weak_avg'] and avg < c['weak_vs_median'] * median:
+            tier = 4
+        elif x['n'] >= c['solid_min_videos'] and avg >= c['solid_avg']:
+            tier = 2
+        else:
+            tier = 3
+        out[fid] = {'tier': tier, 'n': x['n'], 'avg': round(avg), 'best': x['best'], 'hit': x['hit'],
+                    'market_median': round(median)}
     return out
 
 

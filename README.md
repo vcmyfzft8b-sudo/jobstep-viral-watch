@@ -24,8 +24,12 @@ Every 6 hours (GitHub Actions) this watcher:
    is verified on TikTok (posted in the last 30 days + JobStep in captions or videos) and added. Accounts without
    JobStep posts for 30 days are paused and re-checked every 3 days, so they come back automatically. You get a push
    when new accounts are added.
-7. **Weekly (Monday)**: re-ranks the DACH list from the data (share of videos with 100k+ and 20k+ views per format,
-   smoothed for small samples, German creators count double).
+7. **List order – each market on its own** (DE, FR, ES): first how a format does for OUR creators in that market
+   (`own.tiers`: 1 proven – our videos average 10k+ or one passed 100k in 14 days → top card; 2 solid – 3+ videos,
+   avg 2k+; 3 not tested enough – JobStep decides; 4 weak – 6+ videos, avg under 1.5k and under 1.2x our usual
+   in that market → bottom, even when JobStep goes viral with it). Inside each tier the JobStep order (hot, what goes
+   viral, form). Formats move up right away, down only on Monday (`state/own_tiers.json`). Thresholds:
+   `config.json → ranking.own_tiers`. The Monday Slack report shows each market's top and its weak formats.
 
 ## Setup
 
@@ -46,10 +50,12 @@ Every 6 hours (GitHub Actions) this watcher:
 
 ## Our own creators (Megasheet)
 
-Every run reads the TikTok accounts and videos of the Megasheet campaigns *ParakeetAI - DACH / France / Spain*
+Every run reads the TikTok accounts and the TikTok + Instagram videos of the Megasheet campaigns *ParakeetAI - DACH / France / Spain*
 (`watcher/megasheet.py`, read-only MCP) and merges them into `state/own_accounts.json` and `state/own.json`: new
 creators are added, creators Megasheet marks as removed (or who left without ever posting) are paused, views only go
-up. Normal runs re-read the last 14 days of videos, `own-sync` reads everything. Without a saved login the sync is
+up. Normal runs re-read the last 14 days of videos, `own-sync` reads everything. Instagram videos (key `ig_<code>`) take
+the format of the same creator's TikTok post of that video (within 2 days, matching caption); without one they are
+sorted from their caption. Without a saved login the sync is
 skipped and `registry/own_seed.json` (Megasheet export, 8 Oct 2026) is merged in instead. If Megasheet replaces the
 login on use, the new one is kept encrypted with `MEGASHEET_KEY` in `state/megasheet_login.enc`. When the login stops
 working you get one push a day: run `./scripts/save_megasheet_login.sh` again.

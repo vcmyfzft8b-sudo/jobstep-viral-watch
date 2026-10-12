@@ -313,7 +313,7 @@ def run(dry_run=False, only_detect=False):
                 if before_top and ids[:3] != before_top:
                     by = {f['id']: f for f in fmts}
                     recent = rank.recent_viral(history, fmts, cfg)
-                    notify.push('🔁 New top of the format lists (DE/FR/ES)', '\n'.join(
+                    notify.push('🔁 New top of the DACH format list', '\n'.join(
                         f"{n}. {by[i]['title']} – {recent.get(i, 0)} viral in 7 days" for n, i in enumerate(ids[:5], 1)))
             except Exception as e:
                 print('re-sort failed:', str(e)[:200])
@@ -616,21 +616,69 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
     return published, position, reasons
 
 
-def rerank(mkts, fmts, history, cfg, force=False):
-    """One order for all markets (creators of all markets count the same); applied to every market's list.
-    Hot formats (5+ confirmed viral videos in 7 days) come first, inside the "going viral" section."""
-    ids, scores = rank.order(history, fmts, cfg)
-    by_id = {f['id']: f for f in fmts}
-    hot_ids = [i for i in ids if scores[i].get('recent_viral', 0) >= hot.MIN_VIRAL]
+def own_tiers(mkts, fmts, cfg, force=False, now=None):
+    """How each format does for OUR creators, per market (own.tiers). Formats move UP right away (a new hit of ours
+    goes to the top on the next run), but only move DOWN on the first re-sort of the week (Monday) or when forced
+    (mode relist) - so the lists do not reshuffle every 6 hours and a format is not buried mid-week because its
+    newest videos are not sorted yet. Kept in state/own_tiers.json {week, at, markets: {m: {format: {...}}}}."""
+    now = now or time.time()
+    week = time.strftime('%G-W%V', time.gmtime(now))
+    snap = state.load('own_tiers.json', {})
+    new_week = force or snap.get('week') != week
+    if new_week:
+        snap = {'week': week, 'at': int(now), 'markets': {}}
+    own_videos = state.load('own.json', {})
+    moved = []
     for mk in mkts:
-        page_ids = [page_of(by_id[i], mk['key']) for i in ids if page_of(by_id[i], mk['key'])]
-        hot_count = sum(1 for i in hot_ids if page_of(by_id[i], mk['key']))
+        m = mk['key']
+        fresh = own.tiers(own_videos, fmts, now, m, cfg)
+        if m not in snap['markets']:
+            snap['markets'][m] = fresh
+            moved.append(m)
+            continue
+        kept = snap['markets'][m]
+        for fid in set(fresh) | set(kept):
+            f_tier, k_tier = fresh.get(fid, {}).get('tier', 3), kept.get(fid, {}).get('tier', 3)
+            if f_tier < k_tier:  # up: right away (no videos of ours any more = back to neutral tier 3)
+                if fid in fresh:
+                    kept[fid] = fresh[fid]
+                else:
+                    kept.pop(fid)
+                moved.append(f'{m}:{fid}^{f_tier}')
+            elif fid in fresh and f_tier == k_tier:
+                kept[fid] = fresh[fid]  # same tier: newer numbers for the report
+    state.save('own_tiers.json', snap)
+    if moved:
+        state.log({'type': 'own_tiers', 'week': week, 'changes': moved})
+    return snap['markets']
+
+
+def rerank(mkts, fmts, history, cfg, force=False):
+    """Every market gets its own order: our creators' results IN THAT MARKET first (own_tiers - proven formats on
+    top, weak ones at the bottom), inside that the JobStep order (what goes viral right now). The red "going viral"
+    card at the top holds our proven formats + the JobStep-hot ones that are not weak for us.
+    Returns the DACH order (the first market's when DACH is not in mkts)."""
+    tiers = own_tiers(mkts, fmts, cfg, force=force)
+    by_id = {f['id']: f for f in fmts}
+    first = None
+    orders = {}
+    for mk in mkts:
+        ids, scores = rank.order(history, fmts, cfg, tiers=tiers.get(mk['key'], {}), market=mk['key'])
+        if first is None or mk['key'] == 'de':
+            first = ids
+        page_ids, hot_count = [], 0
+        for i in ids:
+            pid = page_of(by_id[i], mk['key'])
+            if pid:
+                page_ids.append(pid)
+                hot_count += bool(scores[i]['top'])
+        orders[mk['key']] = ids
         entries, _ = notion.list_entries(mk['list_page'])
         current = [pid.replace('-', '') for _, pid in entries]
         if force or [p.replace('-', '') for p in page_ids] != current or notion.hot_entry_count(mk['list_page']) != hot_count:
             notion.set_order(mk['list_page'], page_ids, hot_count=hot_count, lang=mk['lang'])
-    state.log({'type': 'rerank', 'order': ids})
-    return ids
+    state.log({'type': 'rerank', 'order': first, 'orders': orders})
+    return first or []
 
 
 def check_hot():

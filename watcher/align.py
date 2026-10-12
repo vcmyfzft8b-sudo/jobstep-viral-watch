@@ -186,7 +186,8 @@ def _validate(spec, n_orig, source=None, translated=False):
         return f'the script has {n} words, it must have {int(n_orig * 0.8)}-{max_words(n_orig, translated)}'
     if JOBSTEP.search(text):
         return 'JobStep is mentioned'
-    want = len(JOBSTEP.findall(source)) if source is not None else int(spec.get('jobstep_mentions_in_original') or 0)
+    want = (len(JOBSTEP.findall(source)) + len(re.findall(r'parakeet', source, re.I)) if source is not None  # our videos name Parakeet AI
+            else int(spec.get('jobstep_mentions_in_original') or 0))
     have = len(re.findall(r'parakeet', text, re.I))
     if have != want:
         return f'"Parakeet AI"/the website appears {have} times, but the original names JobStep {want} times'

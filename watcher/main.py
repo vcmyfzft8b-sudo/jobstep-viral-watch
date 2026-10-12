@@ -1011,10 +1011,12 @@ OLD_LAYOUT = ('no example video', 'no link to the original TikTok', 'no script s
 
 
 def own_example(fid, m):
-    """Our creators' best TikTok video of this format (hand-checked tags): this market's if there is one, else any
-    market's. For formats that came from our creators (no JobStep original). -> {'url', 'views', 'market'} or None"""
+    """Our creators' best TikTok video of this format (hand-checked tags): this market's if it is proven
+    (localize.MIN_VIEWS), else the best of any market. For formats that came from our creators (no JobStep original).
+    -> {'url', 'views', 'market'} or None"""
     tags, (_, vids) = own.hand_tags(), own.load()
-    rows = [(t.get('market') == m, vids.get(vid, {}).get('views', 0), vid, t.get('market')) for vid, t in tags.items()
+    rows = [(t.get('market') == m and vids.get(vid, {}).get('views', 0) >= localize.MIN_VIEWS,
+             vids.get(vid, {}).get('views', 0), vid, t.get('market')) for vid, t in tags.items()
             if t.get('format') == fid and not vid.startswith('ig_') and vids.get(vid, {}).get('handle')]
     if not rows:
         return None
@@ -1031,12 +1033,34 @@ def backup_page(f, m, pid, blocks):
         state.save('script_backup.json', backup)
 
 
+def missing_page(f, mk, fmts, origs, cfg):
+    """Build a live format's missing page for one market from its example (strict example of another market, the
+    JobStep original, or our creators' best video of it). -> (status, detail)"""
+    ex = next((x for x in (f.get('inspo') or {}).values() if x.get('strict') and x.get('url')), {})
+    url = origs.get(f['id']) or f.get('source_video') or (None if ex.get('own') else ex.get('url'))
+    own_v = None if url else own_example(f['id'], mk['key'])
+    url = url or (own_v or {}).get('url')
+    m = re.search(r'@([^/]+)/video/(\d+)', url or '')
+    v = tiktok.video_detail(*m.groups()) if m else None
+    if not v:
+        return 'error', f'no example video to build from ({url})'
+    v['own'] = bool(own_v)
+    added = ensure_market_pages(f, v, [mk], fmts, state.load('history.json', {}), cfg, None)
+    if not added:
+        return 'not built', f"page waits in the radar page until it passes the check ({url})"
+    f.setdefault('inspo', {})[mk['key']] = {'url': url, 'views': v['views'], 'strict': True, 'built': True,
+                                            **({'own': True} if own_v else {})}
+    state.save('formats.json', fmts)
+    return 'built', url
+
+
 def standardize(only=None):
     """Every active format page in every market in the current layout, without leftovers:
     - pages in the old layout (no example video, no resources section, no TikTok link or no Parakeet AI link in the
       script) are rebuilt from their example video (same-language strict example
       if there is one, else the format's original JobStep video, else our creators' best video of it) - transcribed
       script; the old text is kept in state/script_backup.json;
+    - a live format without a page in a market gets one (missing_page) - checked, then added to the list;
     - duplicates are removed: a 2nd example video, repeated links/lines outside the script."""
     from . import audit as _audit, reword as _reword
     cfg, fmts = load_config(), load_formats()
@@ -1046,7 +1070,13 @@ def standardize(only=None):
         for mk in M.load(cfg):
             m = mk['key']
             pid = page_of(f, m)
-            if not pid or (only and f['id'] not in only):
+            if only and f['id'] not in only:
+                continue
+            if not pid:  # a live format without this market's page: built, checked, then added to the list
+                try:
+                    report.append((f['title'], m, *missing_page(f, mk, fmts, origs, cfg)))
+                except Exception as e:
+                    report.append((f['title'], m, 'error', str(e)[:150]))
                 continue
             try:
                 blocks = notion.children(pid)

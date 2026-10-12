@@ -64,3 +64,7 @@ here (repo, Notion, Discord, secrets, state are all separate).
   Formats from our creators (no JobStep original) are rebuilt from our creators' best TikTok video of the format
   (`main.own_example`: that market's first) with the own note (`inspo_note_own`). Old text -> state/script_backup.json
   (`rebuild:<format>:<market>:<ts>`).
+- Our creators' videos as examples: `localize.is_own_url` (handle in our own accounts) -> the own note everywhere
+  (set_note, renote, audit); the brand count accepts "Parakeet AI" in our own source videos. `own_example` takes this
+  market's video only if proven (>= localize.MIN_VIEWS), else the best of any market. `standardize` also builds a
+  live format's missing market page (`missing_page`, checked before it is listed).

@@ -163,7 +163,10 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     if embedded:
         v['example_language'] = embedded['source_language']
     same = localize.LANG_NAME[lang].lower() in str(v.get('example_language', '')).lower()
-    v['note_ok'] = bool(note) and ((same and _note_is_same(note, lang)) or (not same and not _note_is_same(note, lang)))
+    own_ex = localize.is_own_url(url)  # our creator's video: the 'own' note, whatever the language
+    want_note = '\n'.join(notion.inspo_note(lang, same, own_ex)).replace('**', '').strip()
+    v['note_ok'] = bool(note) and (note.replace('**', '').strip() == want_note if own_ex else
+                                   (same and _note_is_same(note, lang)) or (not same and not _note_is_same(note, lang)))
     v['same_lang'] = same
     v['views_ok'] = legacy_exemption or v['views'] >= localize.MIN_VIEWS or url == originals().get(fmt['id'])
     v['title_block'] = title_block
@@ -180,7 +183,8 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
     base = align.source_script(example)
     spoken = reword.spoken_text(reword.script_blocks(page_id))
     v['length_ok'] = v['approved_matches'] or align._words(spoken) <= (1.10 if same else 1.35) * max(align._words(base), 1)
-    want, have = len(align.JOBSTEP.findall(base)), len(re.findall(r'parakeet', spoken, re.I))
+    want = len(align.JOBSTEP.findall(base)) + len(re.findall(r'parakeet', base, re.I))  # our own videos name Parakeet AI
+    have = len(re.findall(r'parakeet', spoken, re.I))
     v['brand_count_ok'] = v['approved_matches'] or have == want
     if not v['brand_count_ok']:
         v['script_issues'].append(f'spoken brand count is {have}; source requires {want}; linked filming cues do not count')

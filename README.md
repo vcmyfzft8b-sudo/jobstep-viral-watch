@@ -45,12 +45,12 @@ Every 6 hours (GitHub Actions) this watcher:
    | `SLACK_WEBHOOK_URL` | Slack messages (Incoming Webhook of a Slack app, one channel) |
 | `NTFY_TOPIC` | optional phone push via the ntfy app |
    | `LIGHTREEL_API_KEY` | finding new JobStep accounts every 3 days |
-   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | our own Parakeet AI creators + videos (DACH, France, Spain) read live from Megasheet every run – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
+   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | our own Parakeet AI creators + videos (the enabled markets: France, Spain) read live from Megasheet every run – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
 2. The `state` branch holds the watchlist, history and format registry; the workflow commits to it after every run.
 
 ## Our own creators (Megasheet)
 
-Every run reads the TikTok accounts and the TikTok + Instagram videos of the Megasheet campaigns *ParakeetAI - DACH / France / Spain*
+Every run reads the TikTok accounts and the TikTok + Instagram videos of the Megasheet campaigns of the enabled markets (*ParakeetAI - France / Spain*; *DACH* is stopped)
 (`watcher/megasheet.py`, read-only MCP) and merges them into `state/own_accounts.json` and `state/own.json`: new
 creators are added, creators Megasheet marks as removed (or who left without ever posting) are paused, views only go
 up. Normal runs re-read the last 14 days of videos, `own-sync` reads everything. Instagram videos (key `ig_<code>`) take
@@ -58,7 +58,13 @@ the format of the same creator's TikTok post of that video (within 2 days, match
 sorted from their caption. Without a saved login the sync is
 skipped and `registry/own_seed.json` (Megasheet export, 8 Oct 2026) is merged in instead. If Megasheet replaces the
 login on use, the new one is kept encrypted with `MEGASHEET_KEY` in `state/megasheet_login.enc`. When the login stops
-working you get one push a day: run `./scripts/save_megasheet_login.sh` again.
+working you get one push a day: run `./scripts/save_megasheet_login.sh` again. Any other sync failure (e.g. a campaign
+renamed in Megasheet) also sends one push a day, so the list order never quietly runs on old numbers.
+
+**Stopped campaigns**: a market with `"enabled": false` in `config.json` (DACH since 12 Oct 2026) is skipped
+everywhere – its Megasheet campaign is not read (its creators are paused, their old videos stay), its Notion list is no
+longer re-sorted or announced on Discord (nothing is deleted), and the weekly report and clean-up leave it out. Set it
+back to `true` to restart the market.
 
 ## Run manually
 

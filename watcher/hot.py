@@ -130,7 +130,7 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
                     f"*{f['title']}* – {n} viral videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
                     f"Moved into the going-viral section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}"
                     f" · creator channels: {sum(len(v) for v in meta_hot[fid]['creators'].values())}",
-                    click=f"https://app.notion.com/p/{f['page_id'].replace('-', '')}")
+                    click=f"https://app.notion.com/p/{next((page(f, mk['key']) for mk in mkts if page(f, mk['key'])), f.get('page_id') or '').replace('-', '')}")
         state.log({'type': 'hot', 'format': fid, 'count': n})
     for fid in cooled:
         notify.push('Hot format cooled down', f"*{by_id[fid]['title'] if fid in by_id else fid}* – fewer than {MIN_VIRAL} "

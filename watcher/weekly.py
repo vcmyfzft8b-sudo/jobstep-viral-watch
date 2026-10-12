@@ -72,6 +72,8 @@ def market_lines(history, own_videos, fmts, cfg, now, title, show=5):
     recent = rank.recent_viral(history, fmts, cfg)
     lines = ['*Our creators per market (this week\'s list order)*']
     for m, name in MARKETS.items():
+        if not cfg['markets'].get(m, {}).get('enabled', True):
+            continue  # stopped campaign (e.g. DACH)
         t = snap.get(m) if m in snap else own.tiers(own_videos, fmts, now, m, cfg)
         ids, s = rank.order(history, fmts, cfg, tiers=t, market=m)
         row = lambda fid: (f"*{title(fid)}* – {own.TIER_NAMES[s[fid]['tier']]}"

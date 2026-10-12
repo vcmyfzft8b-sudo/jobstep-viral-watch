@@ -37,6 +37,8 @@ def plan(history, formats, cfg, own_videos, now=None):
     """Which formats would leave: {'out': [(format, form, reason)], 'board': {...}, 'protected': {...}}."""
     lc = cfg['lineup']
     now = now or time.time()
+    stopped = {k for k, m in cfg['markets'].items() if not m.get('enabled', True)}
+    own_videos = {k: v for k, v in own_videos.items() if v.get('market') not in stopped}  # only running campaigns count
     board = rank.form(history, formats, cfg, own.stats(own_videos, formats, now), now)
     recent = rank.recent_viral(history, formats, cfg)
     viral21 = {}

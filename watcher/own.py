@@ -42,11 +42,12 @@ def load():
     return accounts, videos
 
 
-def sync_megasheet(accounts, videos, now, full=False):
-    """Live creator + video list from Megasheet (see megasheet.py). Never raises: the rest of the run goes on."""
+def sync_megasheet(accounts, videos, now, full=False, markets=None):
+    """Live creator + video list from Megasheet (see megasheet.py) for the given markets (the enabled ones).
+    Never raises: the rest of the run goes on, but every failure is pushed to Slack (at most once a day)."""
     from . import megasheet, notify
     try:
-        s = megasheet.sync(accounts, videos, now, full=full)
+        s = megasheet.sync(accounts, videos, now, full=full, markets=markets)
     except megasheet.LoginError as e:
         print('megasheet:', e)
         if megasheet.should_warn(now):
@@ -54,6 +55,9 @@ def sync_megasheet(accounts, videos, now, full=False):
         return None
     except Exception as e:
         print('megasheet sync failed:', str(e)[:200])
+        if megasheet.should_warn(now):
+            notify.push('⚠️ Megasheet sync failed', f'{str(e)[:300]}\nOur creators\' videos and views are not refreshed '
+                        'until this works again, so the list order is based on old numbers.')
         return None
     print('megasheet:', 'no login saved - skipped' if s is None else s)
     if s:

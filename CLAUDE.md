@@ -1,7 +1,7 @@
 # JobStep viral watch – notes for Claude
 
 Watches JobStep creators (TikTok) and turns their viral formats into Parakeet AI creator pages in three markets:
-🇩🇪 DACH (`de`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`). Runs every 6 hours on GitHub Actions; state on the `state`
+🇩🇪 DACH (`de`, campaign stopped 12 Oct 2026 – `enabled: false`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`). Runs every 6 hours on GitHub Actions; state on the `state`
 branch. Read README.md first. The Memo AI watcher (~/dev/memo-viral-watch) is a separate copy – never touch it from
 here (repo, Notion, Discord, secrets, state are all separate).
 

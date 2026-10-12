@@ -18,7 +18,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, weekly
+from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -699,7 +699,7 @@ def own_comebacks(mkts, fmts, cfg, tiers=None, now=None):
 def rerank(mkts, fmts, history, cfg, force=False):
     """Every market gets its own order: our creators' results IN THAT MARKET first (own_tiers - proven formats on
     top, weak ones at the bottom), inside that the JobStep order (what goes viral right now). The red "going viral"
-    card at the top holds our proven formats + the JobStep-hot ones that are not weak for us.
+    card at the top holds only what goes viral now (rank.going_viral); proven formats follow right under it.
     Returns the DACH order (the first market's when DACH is not in mkts)."""
     tiers = own_tiers(mkts, fmts, cfg, force=force)
     by_id = {f['id']: f for f in fmts}
@@ -1006,10 +1006,37 @@ def rebuild_page(fmt, mk, url):
     return True, ''
 
 
+OLD_LAYOUT = ('no example video', 'no link to the original TikTok', 'no script section',
+              'no Parakeet AI link')  # verify problems that mean "old hand-written layout"
+
+
+def own_example(fid, m):
+    """Our creators' best TikTok video of this format (hand-checked tags): this market's if there is one, else any
+    market's. For formats that came from our creators (no JobStep original). -> {'url', 'views', 'market'} or None"""
+    tags, (_, vids) = own.hand_tags(), own.load()
+    rows = [(t.get('market') == m, vids.get(vid, {}).get('views', 0), vid, t.get('market')) for vid, t in tags.items()
+            if t.get('format') == fid and not vid.startswith('ig_') and vids.get(vid, {}).get('handle')]
+    if not rows:
+        return None
+    _, views, vid, mk = max(rows)
+    return {'url': f"https://www.tiktok.com/@{vids[vid]['handle']}/video/{vid}", 'views': views, 'market': mk}
+
+
+def backup_page(f, m, pid, blocks):
+    """Old page text into state/script_backup.json before a full rebuild (nothing is lost)."""
+    with state.LOCK:
+        backup = state.load('script_backup.json', {})
+        backup[f'rebuild:{f["id"]}:{m}:{int(time.time())}'] = {
+            'page': pid, 'title': f.get('title'), 'blocks': [(b['type'], _plain_text(b)) for b in blocks]}
+        state.save('script_backup.json', backup)
+
+
 def standardize(only=None):
     """Every active format page in every market in the current layout, without leftovers:
-    - pages in the old layout (no example video or no resources section) are rebuilt from their example video
-      (same-language strict example if there is one, else the format's original JobStep video) - transcribed script;
+    - pages in the old layout (no example video, no resources section, no TikTok link or no Parakeet AI link in the
+      script) are rebuilt from their example video (same-language strict example
+      if there is one, else the format's original JobStep video, else our creators' best video of it) - transcribed
+      script; the old text is kept in state/script_backup.json;
     - duplicates are removed: a 2nd example video, repeated links/lines outside the script."""
     from . import audit as _audit, reword as _reword
     cfg, fmts = load_config(), load_formats()
@@ -1025,10 +1052,12 @@ def standardize(only=None):
                 blocks = notion.children(pid)
                 has_video = any(b['type'] == 'video' for b in blocks)
                 has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
-                if not (has_video and has_res):
+                old_layout = [x for x in verify.check_page(pid, mk['lang'], cfg['links']) if x.startswith(OLD_LAYOUT)]
+                if not (has_video and has_res) or old_layout:
                     ex = (f.get('inspo') or {}).get(m, {})
                     url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
-                    url = url or (localize.current_source(pid) or {}).get('url')  # old pages: the video on the page
+                    own_v = None if url else own_example(f['id'], m)  # formats that came from our creators
+                    url = url or (own_v or {}).get('url') or (localize.current_source(pid) or {}).get('url')
                     if not url or not re.search(r'@([^/]+)/video/(\d+)', url):
                         report.append((f['title'], m, 'error', 'no example video link to rebuild from'))
                         continue
@@ -1037,12 +1066,15 @@ def standardize(only=None):
                     if not v:
                         report.append((f['title'], m, 'error', f'example video unavailable: {url}'))
                         continue
+                    v['own'] = bool(own_v)  # our creator's video -> the "our own creator" note under it
+                    backup_page(f, m, pid, blocks)
                     page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid, attempts=3)
                     if problems:
                         report.append((f['title'], m, 'not rebuilt', '; '.join(problems)[:150]))
                         continue
                     f.setdefault('reworded', {})[m] = True
-                    f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict')), 'rebuilt': True}
+                    f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict') or own_v),
+                                                    'rebuilt': True, **({'own': True} if own_v else {})}
                     report.append((f['title'], m, 'rebuilt', url))
                     state.save('formats.json', fmts)
                     continue

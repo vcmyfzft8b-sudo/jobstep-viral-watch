@@ -55,3 +55,12 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - One Slack alert per video: only 🟢 VIRAL pings. 🟡 taking off goes on the Notion radar page only (user's request:
   no "taking off" today and "viral" tomorrow for the same video). A failed Claude check is retried quietly; after
   `main.JUDGE_TRIES` runs one basic alert, then no second one. add_format marks a watchlist video as alerted.
+
+## Red card + old pages (12 Oct 2026)
+- The red "going viral" card on each list holds only what goes viral NOW (`rank.going_viral`): JobStep-hot (5+ viral
+  in 7 days) and not weak for us, or one of OUR videos in that market passed 100k in the last 7 days. Formats proven
+  for us earlier come right under the card (user: only formats that really should be there).
+- `mode=standardize` also rebuilds old hand-written pages (verify: no TikTok link / no Parakeet AI link / no script).
+  Formats from our creators (no JobStep original) are rebuilt from our creators' best TikTok video of the format
+  (`main.own_example`: that market's first) with the own note (`inspo_note_own`). Old text -> state/script_backup.json
+  (`rebuild:<format>:<market>:<ts>`).

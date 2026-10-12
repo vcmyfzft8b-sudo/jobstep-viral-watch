@@ -101,14 +101,21 @@ def own_stats(formats, market=None):
 
 
 def section(tier, hot_now):
-    """0 = top card (proven for us, or hot for JobStep and not weak for us), 1 = the rest of the list."""
+    """0 = top of the list (proven for us, or hot for JobStep and not weak for us), 1 = the rest of the list."""
     return 0 if tier == 1 or (hot_now and tier != 4) else 1
+
+
+def going_viral(tier, hot_now, own_viral_week):
+    """The red "going viral" card holds only what goes viral NOW: hot for JobStep (5+ viral videos in 7 days) and not
+    weak for us, or one of our videos in this market passed 100k in the last 7 days. Formats that only did well for
+    us earlier stay at the top of the list, under the card."""
+    return (hot_now or own_viral_week > 0) and tier != 4
 
 
 def order(history, formats, cfg, m='de', local=(), tiers=None, market=None):
     """List order. Without tiers: the JobStep order (hot first, then what goes viral, then form). With tiers (one
-    market's own.tiers): top card = formats proven for us, then the JobStep-hot ones that are not weak for us; then
-    tier 2, 3, 4 - inside each part the JobStep order. market: only our creators of that market count."""
+    market's own.tiers): the red card = what goes viral now (going_viral), then the other formats proven for us,
+    then tier 2, 3, 4 - inside each part the JobStep order. market: only our creators of that market count."""
     from . import hot
     o = own_stats(formats, market)
     s = scores(history, formats, cfg, m, local, o)
@@ -122,12 +129,12 @@ def order(history, formats, cfg, m='de', local=(), tiers=None, market=None):
         s[fid]['form'] = fo[fid]['form']
         s[fid]['tier'] = tiers.get(fid, {}).get('tier', 3)
         s[fid]['hot'] = s[fid]['recent_viral'] >= hot.MIN_VIRAL
-        s[fid]['top'] = section(s[fid]['tier'], s[fid]['hot']) == 0 if use_tiers else s[fid]['hot']
+        s[fid]['top'] = going_viral(s[fid]['tier'], s[fid]['hot'], s[fid]['recent_own']) if use_tiers else s[fid]['hot']
 
     def key(fid):
         x = s[fid]
         jobstep = (-x['hot'], -(x['recent_viral'] + x['recent_own']), -x['form'])
         if not use_tiers:
             return jobstep
-        return (section(x['tier'], x['hot']), x['tier'] if x['tier'] != 1 else 0, *jobstep)
+        return (not x['top'], section(x['tier'], x['hot']), x['tier'] if x['tier'] != 1 else 0, *jobstep)
     return sorted(s, key=key), s

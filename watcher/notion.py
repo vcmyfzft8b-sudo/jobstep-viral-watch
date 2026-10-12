@@ -100,8 +100,10 @@ def inspo_note(lang, same_lang=False, own=False):
     otherwise 'film from our script'. Both say: another brand's video - copy vibe, angles, filming, editing and the demo
     moments as closely as possible. The second line ('another app is used - do the same with Parakeet AI') names no app."""
     T = TEXT[lang]
+    if own:  # our own creator's video: it already shows Parakeet AI
+        return [T['inspo_note_own']]
     first = T['inspo_note_same'] if same_lang else T['inspo_note'][0]
-    return [first] if own else [first, T['inspo_note'][1]]
+    return [first, T['inspo_note'][1]]
 
 
 def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, same_lang=False):

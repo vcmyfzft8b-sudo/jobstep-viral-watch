@@ -86,18 +86,26 @@ class OrderTests(unittest.TestCase):
 
     def test_spain(self):
         ids, s = self.order('es')
-        self.assertEqual(ids[:2], ['EXHR', 'HOT'])  # proven for us beats JobStep-hot; both in the top card
-        self.assertTrue(s['EXHR']['top'] and s['HOT']['top'])
+        self.assertEqual(ids[:2], ['HOT', 'EXHR'])  # the red card = going viral now; proven for us right under it
+        self.assertTrue(s['HOT']['top'])
+        self.assertFalse(s['EXHR']['top'])  # proven earlier, nothing of ours viral this week -> not in the card
         self.assertEqual(ids[2], 'OCT')  # solid for us
         self.assertEqual(ids[-1], 'WEAK')  # weak for us sinks below everything, even though it is hot for JobStep
         self.assertFalse(s['WEAK']['top'])
 
     def test_france(self):
         ids, s = self.order('fr')
-        self.assertEqual(ids[0], 'LINKEDIN')
-        self.assertEqual(set(ids[1:3]), {'HOT', 'WEAK'})  # no videos of ours in France: JobStep-hot stays on top
+        self.assertEqual(set(ids[:2]), {'HOT', 'WEAK'})  # no videos of ours in France: JobStep-hot = the red card
+        self.assertEqual(ids[2], 'LINKEDIN')  # proven for us, under the card
         self.assertEqual(ids[-1], 'EXHR')  # Ex-HR is weak in France only
-        self.assertEqual(sum(s[i]['top'] for i in ids), 3)
+        self.assertEqual([i for i in ids if s[i]['top']], ids[:2])
+
+    def test_our_viral_video_this_week_puts_a_format_in_the_red_card(self):
+        with mock.patch.object(rank, 'own_stats', return_value={'EXHR': {'recent_viral': 1}}):
+            t = own.tiers(own_videos(), FMTS, NOW, 'es', CFG)
+            ids, s = rank.order(jobstep_history(), FMTS, CFG, tiers=t, market='es')
+        self.assertTrue(s['EXHR']['top'] and s['HOT']['top'])
+        self.assertEqual(set(ids[:2]), {'EXHR', 'HOT'})
 
     def test_without_tiers_the_jobstep_order_is_unchanged(self):
         with mock.patch.object(rank, 'own_stats', return_value={}):

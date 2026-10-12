@@ -4,6 +4,7 @@ There is no fixed number of spots. Every format in the list has a current-form s
 video of it does well right now, JobStep + our own creators; 1.0 = an average format at the moment).
 
 A format leaves the list when ALL of this is true:
+- it is not proven for OUR creators in any running market (own.tiers tier 1),
 - its current form is below lineup.remove_below (1.0 = below an average format right now),
 - it had no viral video (100k+) in the last 21 days and is not hot,
 - it came into the list more than lineup.protect_days ago (new formats get time).
@@ -46,7 +47,12 @@ def plan(history, formats, cfg, own_videos, now=None):
         if v.get('format') and v['views'] >= cfg['thresholds']['viral_views'] and now - v['created'] <= 21 * DAY:
             viral21[v['format']] = viral21.get(v['format'], 0) + 1
 
+    running = [k for k, m in cfg['markets'].items() if m.get('enabled', True)]
+    proven = {fid for m in running for fid, x in own.tiers(own_videos, formats, now, m, cfg).items() if x['tier'] == 1}
+
     def protected(f):
+        if f['id'] in proven:
+            return 'proven for our creators'
         if recent.get(f['id'], 0) >= hot.MIN_VIRAL:
             return 'hot'
         if viral21.get(f['id']):

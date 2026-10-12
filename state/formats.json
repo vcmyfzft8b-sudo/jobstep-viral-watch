@@ -445,14 +445,19 @@
  {
   "description": "Am-I-the-only-one mistake warning: the creator asks whether they're the only one who didn't know old-style CVs no longer work, explains ATS filters, then shows how to make an ATS-friendly CV with Parakeet AI. Examples: 'Vermeidet diesen Fehler!!'",
   "id": "X06",
+  "listed_at": 1791814818,
   "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
   "pages": {
    "es": "3e6958b0-fc14-80b2-9be1-e5711abc8dcb",
    "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a"
   },
+  "revived": {
+   "at": 1791814818,
+   "because": "proven for our creators (fr: our 39 videos average 12k, best 171k)"
+  },
   "script": "(DEUTSCH) Bin ich die Einzige, die nicht wusste, dass man sich nicht mehr mit solchen Lebensläufen bewirbt? Keiner redet mittlerweile darüber, denn es ist so wichtig. Mit solchen Lebensläufen kommt man heutzutage nicht mehr durch die ATS-Scanner. Wenn ihr nicht wisst, was das ist: Das sind solche Filter, die eben Unternehmen benutzen, damit die erst mal ausfiltern können, bis es dann zum Recruiter kommt. Du fragst dich vielleicht: Wie erstelle ich einen übersichtlichen Lebenslauf für meine Bewerbung? Dafür nutze ich Parakeet AI. Ich lade meinen bisherigen Lebenslauf hoch, füge den Link zur Stellenanzeige ein und passe den Lebenslauf an die Stelle an. Wenn ich noch keinen Lebenslauf habe, starte ich mit meinen eigenen Angaben im Lebenslauf-Builder. Dann schaue ich mir den Score an und verbessere mit der KI die Formulierungen. Schaut mal – das ist die fertige Version. Also mega.\n\nKommenti",
   "source": "DACH archive (old formats)",
-  "status": "archived",
+  "status": "active",
   "title": "Vermeidet diesen Fehler!!"
  },
  {
@@ -777,12 +782,17 @@
  {
   "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
   "id": "FRX22",
+  "listed_at": 1791814818,
   "market_only": "fr",
   "pages": {
    "fr": "3d8958b0-fc14-8024-bea3-d5fcb04410d4"
   },
+  "revived": {
+   "at": 1791814818,
+   "because": "proven for our creators (fr: our 14 videos average 15k, best 157k)"
+  },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Après six mois de chômage, j’ai enfin trouvé un emploi Un seul changement a tout changé Mon ancien CV était joli, mais il n’était pas compatible avec les ATS La première entreprise à laquelle j’ai postulé m’a embauchée Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué. On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes. Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV. Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même. Le nouveau, lui, c'est tout l'i",
-  "status": "archived",
+  "status": "active",
   "title": "Après six mois de chômage, j’ai enfin trouvé un travail"
  },
  {
@@ -1001,12 +1011,17 @@
  {
   "description": "A Q&A skit while cutting fruit: asked about their low university grade, the creator explains landing a six-figure job thanks to a friend at Meta's trick, then shows the app.",
   "id": "ESX28",
+  "listed_at": 1791814818,
   "market_only": "es",
   "pages": {
    "es": "3ee958b0-fc14-8015-ae8b-efbb383ec8da"
   },
+  "revived": {
+   "at": 1791814818,
+   "because": "proven for our creators (es: our 2 videos average 33k, best 44k)"
+  },
   "script": "📲 TEXTO ESCRITO Conseguir empleo en 2026 😳: Usa subtítulos automáticos durante todo el vídeo.  💬 GUION Estás cortando una fruta, por ejemplo un mango o algo similar, mirando fijamente a la cámara con confianza).\n-Cuál era tu nota media en la universidad? ¿Cuál era tu nota?\nUn 5.5? Pero conseguí un trabajo de seis cifras recién graduada.\nCómo?\n-Porque apliqué a 100 ofertas de trabajo todos los malditos días durante los últimos dos meses..\nPero esto fue gracias a una amiga que ahora trabaja en Meta, quien me mostró este truco que nos cambió las reglas del juego a ambas.\n-No me voy a quedar esto para mí, así que déjame mostrarte.\n*Muestras la pantalla del teléfono o tablet abriendo la aplicación ParakeetAI).\n-Entro a esta aplicación llamada parakeet AI y lo primero es pegar el enlace de la oferta de trabajo a la que quieras postularte.\n*Haces zoom en los ajustes de IA).\n-Esto es súper impor",
-  "status": "archived",
+  "status": "active",
   "title": "NOTA UNIVERSIDAD"
  },
  {

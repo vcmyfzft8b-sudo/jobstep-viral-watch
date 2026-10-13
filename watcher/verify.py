@@ -6,7 +6,8 @@ Per market:
   link cues and 📎 material cues - brands.NO_DIRECTIONS), and the ⚠️ note under the inspiration video has the current
   text;
 - every live page also: example video, original TikTok link, script section with the Parakeet AI link, no JobStep in
-  the script, visual hook section = one hook line (+ the 🚨 line and the Visual Hook Lab link).
+  the script, visual hook section = one hook line (+ the 🚨 line and the Visual Hook Lab link), and the tidy rules
+  (watcher/tidy.py: few link cues, hook names the title, bold title, page name = title).
 """
 import re
 
@@ -67,6 +68,8 @@ def check_page(pid, lang, links, live=True):
         out.append('no Parakeet AI link in the script')
     if SOURCE_RE.search(reword.spoken_text(script)):
         out.append('JobStep (or the other app) named in the script')
+    from . import tidy
+    out += tidy.problems(pid, links)
     hook = reword.direction_blocks(pid)
     lab = ' '.join(_plain(b) + (b.get('child_page') or {}).get('title', '') for b in blocks)  # link or sub-page
     if len(hook) != 1 or 'Visual Hook Lab' not in lab:

@@ -19,7 +19,7 @@ import re
 from urllib.parse import urlsplit
 
 from . import align, llm, localize, notion, reword, state, tiktok
-from .brands import NO_DIRECTIONS
+from .brands import LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 
 ORIGINALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'originals.json')
@@ -126,7 +126,8 @@ Check strictly:
 3. script_faithful: is the script the example's OWN WORDS - its transcript if the example is in {lang_name}, else a
    faithful close translation - same sentences in the same order, nothing added or dropped? Allowed (and required)
    changes only: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores -> X/Y,
-   an impossible promise softened. false if the script is reworded or retold in other words.
+   an impossible promise softened, and this localisation: {LOCALISE} false if the script is reworded or retold in
+   other words.
 5. directions_ok: the filming directions are just a short visual hook (1-2 sentences: copy what the example does in
    its first seconds, or pick a hook from the Visual Hook Lab) that fits the example and the script. false only if
    it contradicts the example/script or is longer than 2 sentences - never ask for more lines.

@@ -68,3 +68,11 @@ here (repo, Notion, Discord, secrets, state are all separate).
   (set_note, renote, audit); the brand count accepts "Parakeet AI" in our own source videos. `own_example` takes this
   market's video only if proven (>= localize.MIN_VIEWS), else the best of any market. `standardize` also builds a
   live format's missing market page (`missing_page`, checked before it is listed).
+
+## Tidy rules + localisation (13 Oct 2026, user: "fix all problems and make sure they don't happen again")
+- `watcher/tidy.py`, run on every normal run and as `mode=tidy`, checked by `verify`: one link cue of a kind per
+  paragraph and at most 3 Parakeet AI cues per script (the renderer uses the same rule); a quoted on-screen text in the
+  visual hook must be the 📲 title or a script line (else replaced by the title); title bold; page name = "<n>. <title>".
+- `brands.LOCALISE` (in every writer and judge prompt): Spain pages in Spain Spanish (no LatAm words), market job
+  sites (Spain InfoJobs; France France Travail / Welcome to the Jungle), and details only the original creator can say
+  (their industry, a salary) become neutral. Allowed by the judges, so it is never "reworded" back.

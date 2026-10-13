@@ -28,11 +28,11 @@ import time
 from urllib.parse import urlsplit
 
 from . import align, audit, llm, localize, notion, reword
-from .brands import NO_DIRECTIONS
+from .brands import LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-11.no-directions'
+AUDIT_VERSION = 'group-2026-10-13.localise'
 REF_RULES = 'no-directions-2026-10-11'  # scripts without stage directions (brands.NO_DIRECTIONS)
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims',
@@ -272,7 +272,8 @@ other. Be strict:
 - faithful_transcript: is the script this country's example in its OWN WORDS - its transcript when the example is in
   the country's language, else a faithful close translation - same sentences, same order, nothing added or dropped?
   The only allowed changes: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores
-  -> X/Y, an impossible promise softened. FAIL if the script is reworded or retold in other words.
+  -> X/Y, an impossible promise softened, and this localisation: {LOCALISE} FAIL if the script is reworded or retold in
+  other words.
 - features_claims (script AND on-screen title): only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
   guaranteed ATS passage, no guaranteed interviews/jobs.
 - directions_match: the filming directions are only a short visual hook (1-2 sentences: copy what the example does

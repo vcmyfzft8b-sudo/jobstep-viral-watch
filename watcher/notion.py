@@ -193,6 +193,8 @@ def script_paragraphs(spec, links, lang='de'):
         current += parts
     if current:
         paragraphs.append(current)
+    from .tidy import trim_cues  # one cue of a kind per paragraph, at most tidy.MAX_CUES Parakeet AI cues
+    paragraphs, _ = trim_cues(paragraphs, links)
     return [para(p) for p in paragraphs]
 
 

@@ -7,7 +7,7 @@ from . import llm
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXAMPLES = os.path.join(HERE, '..', 'registry', 'examples')
 
-from .brands import NO_DIRECTIONS, OTHER_NOTE, SOURCE_RE
+from .brands import LOCALISE, NO_DIRECTIONS, OTHER_NOTE, SOURCE_RE
 from .markets import TEXT
 
 # Kept for older callers (DACH texts); the per-language texts live in markets.TEXT.
@@ -27,7 +27,8 @@ TRANSCRIBE = """- The SCRIPT IS THE ORIGINAL'S OWN WORDS - never reword it:
   * a JobStep feature Parakeet AI does not have -> the closest Parakeet AI feature (change as few words as possible);
   * concrete scores/percentages the app shows -> X (before) and Y (after) - creators read their own numbers;
   * a promise nobody can guarantee (e.g. "guaranteed job in 24h") -> the smallest change that makes it honest
-    ("better chances")."""
+    ("better chances").
+  * """ + LOCALISE
 
 VISUAL_HOOK = """1-2 short sentences (no more) on the visual hook: if the original does something specific in
   its first seconds (an action, a prop, a place, a text on screen), tell the creator to copy exactly that, like in the

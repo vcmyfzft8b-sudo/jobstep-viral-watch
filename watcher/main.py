@@ -1274,6 +1274,7 @@ def main():
     ap.add_argument('--strip-directions', action='store_true', help='every page (live, waiting, archived): bracketed stage directions / acting tips leave the scripts (approved scripts: via the registry + apply-approved)')
     ap.add_argument('--renote', action='store_true', help='every page (live, waiting, archived): the note under the inspiration video gets the current text')
     ap.add_argument('--refs', action='store_true', help='now: generated format references of live/waiting formats are rebuilt where the script rules changed (reviewed ones never)')
+    ap.add_argument('--timing', action='store_true', help='read-only: second Parakeet AI is first shown/said on every live page')
     ap.add_argument('--tidy', action='store_true', help='every live page: few link cues, hook names the title, bold title, page name = title')
     ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
@@ -1523,6 +1524,11 @@ def main():
             ref = crosscheck.ensure_reference(f, page_of, cfg)
             print(f"{f['id']} {f['title'][:45]}: {'reference rebuilt' if ref else 'reference NOT rebuilt (retried on its next check)'}",
                   flush=True)
+        return
+    if a.timing:
+        from . import timing
+        cfg = load_config()
+        timing.run(cfg, M.load(cfg), load_formats(), page_of)
         return
     if a.tidy:
         cfg = load_config()

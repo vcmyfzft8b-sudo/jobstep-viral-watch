@@ -60,3 +60,8 @@ def test_judges_know_cues_are_sparse_and_localisation_is_allowed():
     from watcher import audit, crosscheck
     for src in (inspect.getsource(audit.check), inspect.getsource(crosscheck)):
         assert '{FEW_CUES}' in src and '{LOCALISE}' in src
+
+
+def test_dates_are_part_of_the_localisation_rule():
+    from watcher.brands import LOCALISE
+    assert '12 October' in LOCALISE and 'timeless' in LOCALISE

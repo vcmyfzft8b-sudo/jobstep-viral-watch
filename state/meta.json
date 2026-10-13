@@ -1131,7 +1131,7 @@
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880285,
+   "checked_at": 1791884269,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1144,7 +1144,7 @@
      "video_identity": "sha256:d89382303b2454a89b88c4912d91f5313a25ee3a502b8e64a9499d44ef1d0109"
     }
    },
-   "key": "999cd11d76a424ceaf0d58f5076f0f1461dd49edda723e139b57d2fa3f118818",
+   "key": "37ef5d96bf56bf40f06611cec2f535fae56f586676e502b1a78ed241cb4c0190",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1200,16 +1200,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both pass: they follow the reference beats in order with their own sourced LinkedIn top-10 lists, keep the boss-vs-team debate and the viewer question, bring in Parakeet AI only after the 'wait' pivot, translate the Greek original closely in France French and Spain Spanish, and soften the ATS promise to 'better chances'.",
+   "summary": "FR and ES pass on every dimension: both are close translations of the Greek example, with every beat in the original order (including the boss-vs-team debate and the viewer question), Parakeet AI named only once after the 'wait' pivot, the ATS promise softened to 'better chances', and a sourced LinkedIn ranking for each market in place of the Greek list.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "A202610061331": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880315,
+   "checked_at": 1791884299,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1222,7 +1222,7 @@
      "video_identity": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46"
     }
    },
-   "key": "361a8a1ea99b0ffc56f2135301af28a64bb2eb4d16a9c005fc2f0a339a7f0db1",
+   "key": "38cc6e138b054cfeaec62613d77c1cef7829445b4ee8409295dbe1b133955d1d",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1278,16 +1278,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both pages pass every check: each script is a close translation of the Dutch example in the same order, swaps JobStep for Parakeet AI only at beat 5, softens the claim that ATS can't read the graphic CV, keeps the viewer guess question and the results close-up, and pairs a short faceless overhead hook with a safe title.",
+   "summary": "FR and ES both follow the reference: same guess question, why one CV loses, winner, the chat that builds the CV at beat 5 with the brand spoken once, and the results close-up; the translations are faithful with an allowed softened readability claim, and the titles and visual hooks fit.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "A202610061334": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880329,
+   "checked_at": 1791884313,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1300,7 +1300,7 @@
      "video_identity": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75"
     }
    },
-   "key": "a94fcbf5a74bc871eebfabc789c6d36a1565893bfc6fdff2dea171ad30eafe9d",
+   "key": "ba7f4d3a0c3ca2dcd7b0302f069e852d7652d416334be8dd8176107345119661",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1356,16 +1356,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both pass every check. They keep the October/December hook, the advice to drop the Canva CV for a Harvard-style one, Parakeet AI at the analysis step with the brand spoken once, and the original's sentence order. Both replace the 96% hiring probability with a Y score and no number. ES uses Spain Spanish ('ahora', 'nada más subir', 'espabilar') and its title 'curro' is allowed slang.",
+   "summary": "Both pages pass. The FR and ES scripts follow the reference beats in the same order, with the product at beat 4 and the brand spoken once. Each is a close translation of the example. The '12 de octubre' date was correctly made timeless while the December urgency was kept. The 96% hiring probability became a Y score with a softened, non-numerical 'more chances' line, and the ES script correctly uses Spain Spanish ('recién' became 'nada más', 'avivarnos' became 'espabilar').",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "A20261006183623": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880504,
+   "checked_at": 1791884501,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1378,7 +1378,7 @@
      "video_identity": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180"
     }
    },
-   "key": "bafa9ad2cca4abd1e757f6ddbccf6784e64adb1ebd2162163cc2a0ff60019bf4",
+   "key": "078dff5d341cd08cf0c32c127c7bb3f0c36a748c21db8c5b5c3e05c9a6e5abf3",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1434,16 +1434,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both the FR and ES pages pass every check: each script closely translates the German example in the same order, keeps the hook, the no-invented-jobs qualification, the friend recommendation and the CV upload plus job-ad link step, never speaks the brand, ends on the rhetorical close with no CTA, and uses short filming directions that fit the example.",
+   "summary": "Both pages pass every check: the FR and ES scripts are close translations of the German example, and the ES script uses Spain Spanish. Each keeps the 'Lie on your CV' hook said twice, the no-invented-jobs qualification, the friend recommendation, the upload-CV plus job-ad-link demo and the surprised close. Neither speaks the brand name or invents a feature, and both directions are a short copy of the kitchen pizza-cutter hook.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "A20261009204851": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880566,
+   "checked_at": 1791884557,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1456,7 +1456,7 @@
      "video_identity": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f"
     }
    },
-   "key": "a51017c59681d4f5b6dcf838a671b4744c4eeb3a72df7e547f2a926daf5efe8c",
+   "key": "8ba8c1bd039464275b5774f2d92f1d1aa6ff73641340cfee06215888b1fa2407",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1512,16 +1512,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both ES and FR follow the reference: they keep the ad-space-on-the-laptop hook, the cut-out reveal, Parakeet AI named at beats 4 and 5 without the founding year or 'known for', only real Resume Maker features, and the 'who buys the next spot' CTA; ES stays closer to the original sentence structure and FR follows the demo order from the filming notes.",
+   "summary": "Both ES and FR pass every check. They keep the laptop ad-space premise, the cut-out reveal, Parakeet AI at the same spots as Studyflash and the 'who buys next' CTA. Studyflash's founding year and 'known for' claim and its study features are replaced only with real Resume Maker steps. FR follows the reference demo order (upload, score, paste link, chat, tailor), while ES keeps the original sentence structure. Neither title makes a claim that needs fixing.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "ESX11": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880530,
+   "checked_at": 1791884523,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1534,7 +1534,7 @@
      "video_identity": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7"
     }
    },
-   "key": "926346051387850a622a4ee6c983fa3eb4f40f50f7858ac6aceb826663ee9f14",
+   "key": "7c814824c41f3480812bc52e4bb1c48c9b67f211faa3843b1d642fbf97080c0c",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1590,16 +1590,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both scripts closely follow the example and the reference: same toxic-tip hook, save-this-video CTA, Indeed link copy, URL spoken once at the tool demo and good-luck sign-off; the 'New job' button became the real 'upload CV' step and the cover-letter mention was dropped; ES uses Spain Spanish ('presentarte', '¡suerte!'), FR is a close translation, and the 2-sentence visual-hook directions and on-screen titles make no claims Parakeet AI can't back.",
+   "summary": "Both ES and FR pass every check: they keep the 'toxic tip' and save-this-video hook, the beat order, the Indeed step and the URL spoken once at the tool demo. They replace 'añadir un nuevo empleo' with uploading the CV and drop the cover letter, as required. ES is correctly in Spain Spanish ('presentarte', '¡suerte!', no filler 'laboral'), and both titles and directions are compliant.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "ESX28": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880547,
+   "checked_at": 1791884541,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1612,7 +1612,7 @@
      "video_identity": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636"
     }
    },
-   "key": "69c4b06e0f7af168a9554384ddf610f040995ba936e59d6b2faacf27d8894cc1",
+   "key": "693aa94c90b805a0b5af39871ed056ea8035fe8ad9ebb93bb77c50e536c3017a",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1668,16 +1668,16 @@
     }
    },
    "status": "pass",
-   "summary": "ES and FR both pass on every dimension: they keep the beats, order, product timing and CTA of the reference, with only allowed changes (Spain-Spanish wording, a neutral 'very well paid' job instead of six figures, a local grade of 5,5 or 11/20, and the local CV keyword).",
+   "summary": "ES and FR pass every check. Both follow the example sentence by sentence. The changes are the required ones: Spain Spanish wording ('me presenté', 'nada más graduarme', 'enseñe'), a French grade of 11/20, the six-figure job made neutral, the brand said once at beat 7, a localised CV keyword in the CTA, and only real Parakeet AI features shown.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "FRX22": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880518,
+   "checked_at": 1791884512,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1690,7 +1690,7 @@
      "video_identity": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad"
     }
    },
-   "key": "5a5b4300155b85884badcd2e5223a96d59747c2d8bf952381484b6a156a066e8",
+   "key": "3ccfa7f467d6adf01cbf17bb4d5c3fa04a147f095ee797baea31be52b4745529",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1746,16 +1746,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES pass every check. FR is the cleaned-up original transcript. ES is a close translation in Spain Spanish ('en paro', 'me he presentado'). Both keep the 5 beats, credit Parakeet AI once in beat 3 with a single cue, and use the soft CTA. Their titles make no claims and their directions are 2 sentences that copy the example's opening.",
+   "summary": "Both scripts pass every dimension: FR is the example's transcript and ES is a close Spain-Spanish translation, both keep the 5 beats in order, credit only Parakeet AI once in beat 3, keep the soft CTA, and their titles and short visual-hook directions match the example.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N01": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880155,
+   "checked_at": 1791884147,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1768,7 +1768,7 @@
      "video_identity": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928"
     }
    },
-   "key": "4794450d3ffffec1f49fac109c0655de31f038663d00e2974a5a2030de68867b",
+   "key": "92d03200da0ab715abd8966ea0831a6bebd5133813d71293792eb6e7e4694613",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1824,16 +1824,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both pages pass. The FR and ES scripts are close translations of the Serbian example, with the beats in the same order. Parakeet AI is spoken where JobStep was (the score reveal and the question flow), the score stays as X/100, the screening claim is softened and the first-interview payoff is kept. The titles and short visual-hook directions fit the example.",
+   "summary": "FR and ES both follow the reference and the example video in the same order. They are close translations that use Spain Spanish and France French. JobStep is replaced by Parakeet AI at the same two spots, the score is shown as X/100 and the screening claim is softened. The titles and the short visual-hook directions fit the example, so both pages pass every check.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N02": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880186,
+   "checked_at": 1791884175,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1846,7 +1846,7 @@
      "video_identity": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12"
     }
    },
-   "key": "665948f6151e98f6dc6c0614348060c1652fff5b5dbeb50e6a5d76b62b6dbefd",
+   "key": "9e9908bb40eec3583ab41a832bf2a3a83063471d414b534e6841d32ae7d34f84",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1902,16 +1902,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both pass every check: each closely translates the canonical video 7689223891197136148, keeps the 86400 -> 3600 URL edit, names Parakeet AI twice in place of Jobstep, turns the guaranteed-job claim into 'much better chances', and has a short hook direction that fits the example.",
+   "summary": "Both FR and ES use the canonical voiceover example and follow the reference: same hook, the 86400 -> 3600 URL edit, Parakeet AI named twice at the same beats, and the apply-first payoff, with the guaranteed-job line softened to 'better chances'.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N03": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880212,
+   "checked_at": 1791884196,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -1924,7 +1924,7 @@
      "video_identity": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f"
     }
    },
-   "key": "cb5572b2e055870d15a4aa85dfb1df88ddbd9a522234465dba3421b43f7d84c5",
+   "key": "d3b99055b3def68ba62fe1a5429c89fac8737a81b2f784514a57059c4bc5a644",
    "passed": true,
    "reasons": [],
    "results": {
@@ -1980,16 +1980,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both pass every check: each is a close line-by-line translation of the silent Serbian original, with the same ChatGPT hook, three numbered steps, CV reveal and on-screen URL, only JobStep changed to Parakeet AI, real features only, titles matching the first on-screen line, and short visual-hook directions that fit.",
+   "summary": "Both FR and ES closely translate the silent Serbian example line by line, with the same order and emojis. They keep the ChatGPT hook, the three numbered steps, the CV reveal and the URL end card. JobStep is replaced by Parakeet AI at the same spots, only real features are claimed, and the titles match the first on-screen line, so both countries pass every check.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N04": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880233,
+   "checked_at": 1791884216,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2002,7 +2002,7 @@
      "video_identity": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb"
     }
    },
-   "key": "401115557da4a5e627a728c182fe9dc7931cb3b660b9b20e1fbfd91dd58cc3b1",
+   "key": "84d26480a85db906e48b7f08f38e01aad9c809330c9b546da91b75709585878e",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2058,16 +2058,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both FR and ES pages use the canonical source video. Their scripts are faithful close translations with all 7 beats in the right order. The product comes in at the upload/score step. The brand and URL are spoken only at the reference spots. The ATS and job claims are properly softened, the titles make no unsupported claims and the directions are short visual hooks, so no changes are needed.",
+   "summary": "Both ES and FR now use the canonical example 7692125028871146760 and follow its beats in the same order: the old-CV upload, the bad-score reveal, the rebuilt CV and a spoken URL at the end. Both scripts are faithful Spain-Spanish and France-French translations, with JobStep replaced by Parakeet AI and the ATS and job promises softened. The titles and filming directions are fine, so nothing needs fixing.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N07": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880262,
+   "checked_at": 1791884247,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2080,7 +2080,7 @@
      "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
     }
    },
-   "key": "d185c9ee33c12434786f68113e43c4a8e1fed17d3ad337a6087fbbbba504e1e8",
+   "key": "358a4e0ac6186256a0ebca8cfcbb2b3fb5430c32d5b95cbddd79686ce387f80e",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2136,16 +2136,16 @@
     }
    },
    "status": "pass",
-   "summary": "Les pages FR et ES suivent toutes deux la vidéo de référence 7689479710677470471 : mêmes étapes dans le même ordre, révélation finale de la note Y puis de la note X d'avant, Parakeet AI affiché sans être prononcé et sans CTA, traductions fidèles où seule la promesse des 24 h est adoucie, et aucun titre ne demande de correction.",
+   "summary": "FR and ES both use the canonical brother-recruiter video and pass every check: each script is a faithful translation in the same order, the 24-hour promise is softened to better chances, the brand is shown but never spoken, there is no CTA, the X/Y before/after reveal is kept, and the titles and short selfie-with-jewellery hooks fit the example.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "N10": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880125,
+   "checked_at": 1791884112,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2158,7 +2158,7 @@
      "video_identity": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b"
     }
    },
-   "key": "23729b9d992a0bf9b5dfadf8c2b53521fe2d8662bff4a579a7d1f789d05ba4d5",
+   "key": "20966bbcfe910a357281837e1cc6fad057e5ea177693485e05d91b25b2bb32e0",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2214,16 +2214,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both FR and ES use the canonical N10 example and follow every reference beat in order. They name parakeet-ai.com/resume-maker exactly three times at the right moments, keep the X/Y scores and the softened screening claim, and translate the example faithfully; only allowed localisation changes were made.",
+   "summary": "Both FR and ES follow the canonical N10 video in its own beat order: the blunt hook, upload and low X score, question-driven rebuild with template, the HR-friend explanation, then the higher Y score. Both scripts are close translations: Parakeet AI replaces JobStep at all three spots and the screening claim is correctly softened. Titles and visual hooks fit, so no fixes are needed.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X03": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880348,
+   "checked_at": 1791884334,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2236,7 +2236,7 @@
      "video_identity": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
     }
    },
-   "key": "6ab262091f0a5e3a757b4a6933bbf26e8fef808836e54f5e1c0e97857c639903",
+   "key": "7178b29607c07c43ff716d596ccbd20396cd68f83baec2e20993acc507b4af78",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2292,16 +2292,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both pages pass. FR and ES are faithful translations of the canonical Polish video. Each keeps the hook, the beats in order, the brand spoken once at beat 4, the score as Y and the closing line. Each also correctly replaces the original's 'Nowa oferta' (New job) step and applications dashboard with 'upload CV + job-ad field'.",
+   "summary": "Both the FR and ES pages pass every check: each is a close translation of the Polish example with the same hook, beats and order. JobStep is replaced by Parakeet AI, the score is set to Y, and the applications list and 'New job' step are replaced by uploading the CV and clicking the job-ad field. The titles make no claims we cannot make, and both visual hooks match the glasses opening.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X06": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880361,
+   "checked_at": 1791884349,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2314,7 +2314,7 @@
      "video_identity": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97"
     }
    },
-   "key": "c52d2183138b5c9e1a117a9a98cd761465d43f51e5f66692bdf5120781f02b73",
+   "key": "32ce0ce7e26db11f43fc7d8652434f78513688d8e3a7df92aada61eed102a060",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2370,16 +2370,16 @@
     }
    },
    "status": "pass",
-   "summary": "Both pages pass. FR is a faithful cleaned transcript and ES a close Spain-Spanish translation of the same example. Each has all 7 beats in order, softens the ATS claim to 'optimise', keeps X/Y scores, has a matching title and gives short hook directions.",
+   "summary": "Both scripts pass. FR is a clean transcript and ES is a close Spain-Spanish translation. Both keep all 7 beats in order, use the X/Y score placeholders, soften the ATS claim to «optimise» and name only Parakeet AI. Their titles and short hook directions match the reference.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X08": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880374,
+   "checked_at": 1791884362,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2392,7 +2392,7 @@
      "video_identity": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7"
     }
    },
-   "key": "4bb170e093b46c40d22ae89a4851d80a14a45295f6cf38333b9ee6d1b00e6859",
+   "key": "1ce00cea838153c3069f438e4bc38deab7972ba2df20d195dc34d3266c284238",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2412,7 +2412,7 @@
       "pass": true
      },
      "fr": {
-      "issue": "Minor: 'un score ATS' became 'un score'. 'ATS' could be put back, but the sentences still follow the transcript. Transcription errors were corrected (applaudir → uploader, Lia → l'IA, finance → mon domaine, 96% → Y).",
+      "issue": "Minor: 'un score à TS' became 'un score' (ATS dropped), and the self-correction 'le filtre ATS, pardon' is left out of the final score line. It is still close enough to the original to pass.",
       "pass": true
      }
     },
@@ -2448,16 +2448,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both follow the X08 reference closely: same outrage hook, HR friend ATS reveal, Parakeet AI named only in beat 3, real features only and the score kept as Y. The only small note is that the FR script dropped 'ATS' from 'score ATS'.",
+   "summary": "FR and ES both follow X08 beat for beat with the hook, the HR friend's ATS reveal, Parakeet AI at beat 3, the score fixed to Y and no CTA. Each is a faithful localisation (finance becomes a neutral field, bac+5 becomes grado y máster, Lia becomes the AI), with only a minor dropped 'ATS' in FR.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X09": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880393,
+   "checked_at": 1791884382,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2470,7 +2470,7 @@
      "video_identity": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af"
     }
    },
-   "key": "15f9d9c94cdd8590c574e58734a20011c12a7bd9ce767222bcf86d1d5e9d2614",
+   "key": "3f0a02d7593c660b94b0a00cc22cd20d93bc1c16abaa5347ca1737b04fe9afb7",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2526,16 +2526,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR und ES passen in allen fünf Dimensionen: Beide Skripte übersetzen das griechische Beispiel Satz für Satz, behalten Hook, Geheimnis, 2-Stunden-Countdown und Speicher-Aufforderung, nennen Parakeet AI nur einmal in Beat 5 an der Stelle von jobstep.io, behaupten keine fremden Funktionen, und die Titel sowie die kurzen Filmhinweise passen zum Beispielvideo.",
+   "summary": "FR and ES both follow the reference and translate the Greek example closely: hook, secret framing, 2-hour countdown and save prompt, aside, transition, Parakeet AI said once at beat 5, upload → score → template → voilà, then the interview payoff. Neither makes unsupported claims, and the titles and short visual-hook directions fit.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X13": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880420,
+   "checked_at": 1791884410,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2548,7 +2548,7 @@
      "video_identity": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46"
     }
    },
-   "key": "c28fab5c12f4454177f85e7c07f303a6ba26514c303370e438e8df51af752b05",
+   "key": "82a7af84e94f7024675460fd3adab3feeafb37afaae1e0d955eacf1873bd66b4",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2604,16 +2604,16 @@
     }
    },
    "status": "pass",
-   "summary": "ES and FR both follow X13 in full: three tips in the original order, Parakeet AI shown but not named inside tip 2, and no CTA. Each script is a close transcript or translation using only the allowed changes: Spain Spanish or France French wording, the SMIC for minimum pay, 'required skills' swapped for a CV analysis, and the 20-minute promise softened in ES and dropped in FR.",
+   "summary": "Both pages pass. ES and FR are close translations of the Latin-American Spanish original. They keep the three tips in the same order, with Parakeet AI shown only inside tip 2 and no CTA. The allowed changes are: Spain Spanish wording ('curro', '¿vale?') and 'SMIC' in FR, 'tells you the required skills' replaced by the real CV analysis feature, and the 20-minute promise softened in ES ('en pocos minutos') and dropped in FR.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X15": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880435,
+   "checked_at": 1791884429,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2626,7 +2626,7 @@
      "video_identity": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2"
     }
    },
-   "key": "c9292ac685be5e6e6baaa17e50a3754fbce0cd9f5638dd00d8dbd98a91cff3a1",
+   "key": "cf3fb785ad1796bed8bfe295feac1d82f0d2572d23b392a5593c913b9c4d6d5b",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2682,16 +2682,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES now both use the canonical German video 7682028282191105312 and faithfully translate it beat for beat: the 'rejected' hook, the printed old-vs-new CV comparison, the softened ATS claim, 'not gatekeeping', then the unnamed site demo (upload CV, AI questions, score) with no spoken brand or CTA and only allowed changes (details form changed to CV upload, Spain-Spanish slang, softened ATS claim).",
+   "summary": "FR and ES both use the canonical source 7682028282191105312 and follow its beats in the same order, with the product shown unnamed at beat 5, a softened ATS claim, 'enter your details' replaced by CV upload, no CTA, fitting titles and short visual-hook directions, so they pass every dimension.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X16": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880453,
+   "checked_at": 1791884615,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2704,7 +2704,7 @@
      "video_identity": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3"
     }
    },
-   "key": "3d741a327dccd78612b1b8bde2893b6f4af3337dbada0d58db7a177ed02efbf2",
+   "key": "0b5062372c0f5dbc87921280fe233b52c58ef81a6f9af9137453e3b6844ac90e",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2760,16 +2760,16 @@
     }
    },
    "status": "pass",
-   "summary": "FR and ES both follow the reference's ex-HR hook, the Canva and ATS secrets and the X→Y score demo. Each one closely translates the Bulgarian original sentence by sentence. Applications list, 'New job' and cover letter are replaced with real Parakeet AI steps (upload CV, pick template, edit yourself, change template). Titles and directions pass, so no changes are needed.",
+   "summary": "Both pages pass every check: they follow the ex-HR hook, the Canva and ATS secrets, and the upload, job link, score X, improve, score Y, download sequence in the source's order; the missing features (applications dashboard, 'New job' button, cover letter) are replaced with real ones while keeping the sentence count; ES uses Spain Spanish; neither title makes a claim we can't make.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   },
   "X18": {
    "approval": {
     "es": "not_locked",
     "fr": "not_locked"
    },
-   "checked_at": 1791880489,
+   "checked_at": 1791884676,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2782,7 +2782,7 @@
      "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
     }
    },
-   "key": "72192c54d484d8fa638d4cf4877e39e479233dce97f4b8843de408b0581b1cc0",
+   "key": "bd47ce698afc80e3337c02ee5306d8b6cf42f375500fb1dadbb38dd8f4462f61",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2838,9 +2838,9 @@
     }
    },
    "status": "pass",
-   "summary": "Both pages pass. The FR and ES scripts follow the original sentence by sentence. They keep the hook, the ATS explanation and the copy-link to Parakeet AI demo in the original order. Their only changes are the allowed ones: local job portals instead of Bumeran/Computrabajo, Spain-Spanish wording ('¡Suerte!'), and the cover-letter line replaced with template/download. Parakeet AI is never named in the speech and appears only through the cues, the titles make no unsupported claims, and the short slime-hook directions don't contradict the example or the script.",
+   "summary": "FR and ES both pass every check: each follows X18 beat for beat, stays close to the Spanish original, and makes only the allowed changes (Spain Spanish wording, local job sites, template/download instead of the cover letter, Parakeet AI only on screen), with no invented features or guarantees.",
    "title_fixes": {},
-   "version": "group-2026-10-13.few-cues"
+   "version": "group-2026-10-13.timeless"
   }
  },
  "group_duplicates": [],

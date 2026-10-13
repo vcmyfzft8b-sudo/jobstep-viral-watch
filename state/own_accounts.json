@@ -417,7 +417,7 @@
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "rafaela.1270": {
   "market": "es",
@@ -454,6 +454,12 @@
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "sofiiia.ugc": {
+  "market": "es",
+  "since": 1791901140,
+  "source": "megasheet",
+  "status": "active"
  },
  "study.with.heidi": {
   "market": "de",

@@ -53,3 +53,10 @@ def test_renderer_uses_the_same_cue_rule():
     paras = notion.script_paragraphs(spec, LINKS, 'fr')
     links = [x for p in paras for x in p['paragraph']['rich_text'] if tidy._url(x)]
     assert len(links) == 1  # one paragraph -> one cue
+
+
+def test_judges_know_cues_are_sparse_and_localisation_is_allowed():
+    import inspect
+    from watcher import audit, crosscheck
+    for src in (inspect.getsource(audit.check), inspect.getsource(crosscheck)):
+        assert '{FEW_CUES}' in src and '{LOCALISE}' in src

@@ -25,6 +25,11 @@ LOCALISE = ("Localisation that is required, not rewording: (1) the market's own 
             "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
             "any creator can say. Change only those words.")
 
+# User's decision (13 Oct 2026, tidy.MAX_CUES): few link cues, so scripts stay readable while filming.
+FEW_CUES = ("Link cues are sparse by design: a cue marks where the app (or LinkedIn) first comes on screen in a paragraph "
+            "and it stays on screen for the rest of that paragraph; a script has at most 3 Parakeet AI cues. Never fail "
+            "or change a page because a later app moment in the same paragraph has no cue of its own.")
+
 # User's decision (11 Oct 2026): a script has NO stage directions / acting tips in brackets.
 NO_DIRECTIONS = ("Scripts have NO stage directions or acting/filming tips in brackets (by design): only the spoken words "
                  "(or the on-screen texts of a silent video) plus the link cues where the app, LinkedIn or a material is "

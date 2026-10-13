@@ -19,7 +19,7 @@ import re
 from urllib.parse import urlsplit
 
 from . import align, llm, localize, notion, reword, state, tiktok
-from .brands import LOCALISE, NO_DIRECTIONS
+from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 
 ORIGINALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'originals.json')
@@ -147,6 +147,7 @@ Check strictly:
 {PARAKEET_FACTS}
 script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
 {NO_DIRECTIONS}
+{FEW_CUES}
 Note: X and Y in the script are intentional placeholders - the creator says the score the app shows them. They are
 correct; never ask to replace them with numbers.
 Return JSON {{"example_same_format": true, "script_follows_example": true, "script_faithful": true, "script_ok": true,

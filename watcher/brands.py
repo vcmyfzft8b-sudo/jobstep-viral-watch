@@ -23,7 +23,9 @@ LOCALISE = ("Localisation that is required, not rewording: (1) the market's own 
             "the market (Spain: InfoJobs, LinkedIn, Indeed; France: France Travail, Welcome to the Jungle, Indeed, "
             "LinkedIn - never Bumeran, Computrabajo, OCC); (3) a detail only the original creator can say about "
             "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
-            "any creator can say. Change only those words.")
+            "any creator can say; (4) a calendar date or month of the original ('12 October', 'October is the best "
+            "month') is left out or made timeless ('now'), so the script never gets out of date. Change only those "
+            "words.")
 
 # User's decision (13 Oct 2026, tidy.MAX_CUES): few link cues, so scripts stay readable while filming.
 FEW_CUES = ("Link cues are sparse by design: a cue marks where the app (or LinkedIn) first comes on screen in a paragraph "

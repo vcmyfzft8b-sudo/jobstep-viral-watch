@@ -32,7 +32,7 @@ from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 from .markets import TEXT
 
-AUDIT_VERSION = 'group-2026-10-13.few-cues'
+AUDIT_VERSION = 'group-2026-10-13.timeless'
 REF_RULES = 'no-directions-2026-10-11'  # scripts without stage directions (brands.NO_DIRECTIONS)
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims',

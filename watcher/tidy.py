@@ -8,6 +8,7 @@ fixed on every normal run (mode tidy does it at once). Nothing is reworded - onl
    nor a line of the script is replaced by the title (creators saw two different texts).
 3. The 📲 title is bold.
 4. The page name is "<n>. <title>" (names drifted from the content, e.g. "Carrefour…" when the script never says it).
+5. Reported only: a sub-page above the page content (e.g. a stray copy of the Visual Hook Lab).
 """
 import re
 
@@ -127,6 +128,11 @@ def tidy_page(page_id, links, write=True):
                     x.setdefault('text', {'content': x.get('plain_text', '')})
                     x['text']['content'] = _content(x).replace(q, new)
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
+    blocks = notion.children(page_id)
+    first_heading = next((k for k, b in enumerate(blocks) if b['type'].startswith('heading')), len(blocks))
+    if any(b['type'] == 'child_page' for b in blocks[:first_heading]):
+        changes.append('a sub-page sits at the top of the page (move it away by hand - sub-pages are never moved '
+                       'automatically)')
     name = page_name(page_id)
     want = wanted_name(name, title)
     if name.strip() != want.strip():

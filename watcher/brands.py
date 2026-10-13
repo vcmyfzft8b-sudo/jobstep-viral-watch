@@ -14,6 +14,17 @@ OTHER_NOTE = (f" Some originals promote another app instead of JobStep ({', '.jo
               "like JobStep - Parakeet AI replaces it at the same spots and as often, and it must never appear."
               if OTHER_APPS else '')
 
+# User's decision (13 Oct 2026): word for word, but in the MARKET's language variant, with its job sites, and nothing
+# only the original creator could say about themself.
+LOCALISE = ("Localisation that is required, not rewording: (1) the market's own variant of the language - an original "
+            "in Latin-American Spanish becomes Spain Spanish (no 'ahorita', 'chamba', 'la neta', 'recién', '¡éxitos!', "
+            "'okay', 'laboral' as filler; Spain says 'curro/trabajo', 'vale', 'ahora mismo', 'presentarse a una oferta', "
+            "'¡suerte!'), Canadian/Belgian/Swiss French becomes France French; (2) job sites, companies and places of "
+            "the market (Spain: InfoJobs, LinkedIn, Indeed; France: France Travail, Welcome to the Jungle, Indeed, "
+            "LinkedIn - never Bumeran, Computrabajo, OCC); (3) a detail only the original creator can say about "
+            "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
+            "any creator can say. Change only those words.")
+
 # User's decision (11 Oct 2026): a script has NO stage directions / acting tips in brackets.
 NO_DIRECTIONS = ("Scripts have NO stage directions or acting/filming tips in brackets (by design): only the spoken words "
                  "(or the on-screen texts of a silent video) plus the link cues where the app, LinkedIn or a material is "

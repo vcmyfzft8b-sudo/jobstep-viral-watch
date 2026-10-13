@@ -18,7 +18,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tiktok, verify, weekly
+from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es')
@@ -350,6 +350,13 @@ def run(dry_run=False, only_detect=False):
             state.log({'type': 'own_discovery', 'added': o_added, 'paused': o_paused, 'revived': o_revived})
         except Exception as e:
             print('own discovery failed:', str(e)[:200])
+
+    if not dry_run and not only_detect:  # every live page follows the tidy rules (cues, hook text, title, page name)
+        try:
+            for t, m, ch in tidy.run(fmts, mkts, cfg, page_of):
+                print('tidy:', m, t[:40], '-', '; '.join(ch))
+        except Exception as e:
+            print('tidy failed:', str(e)[:200])
 
     if not dry_run:
         state.save('videos.json', videos)
@@ -1267,6 +1274,7 @@ def main():
     ap.add_argument('--strip-directions', action='store_true', help='every page (live, waiting, archived): bracketed stage directions / acting tips leave the scripts (approved scripts: via the registry + apply-approved)')
     ap.add_argument('--renote', action='store_true', help='every page (live, waiting, archived): the note under the inspiration video gets the current text')
     ap.add_argument('--refs', action='store_true', help='now: generated format references of live/waiting formats are rebuilt where the script rules changed (reviewed ones never)')
+    ap.add_argument('--tidy', action='store_true', help='every live page: few link cues, hook names the title, bold title, page name = title')
     ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
@@ -1515,6 +1523,13 @@ def main():
             ref = crosscheck.ensure_reference(f, page_of, cfg)
             print(f"{f['id']} {f['title'][:45]}: {'reference rebuilt' if ref else 'reference NOT rebuilt (retried on its next check)'}",
                   flush=True)
+        return
+    if a.tidy:
+        cfg = load_config()
+        rep = tidy.run(load_formats(), M.load(cfg), cfg, page_of)
+        for t, m, ch in rep:
+            print('tidy:', m, t[:40], '-', '; '.join(ch))
+        print(f'tidy: {len(rep)} pages changed')
         return
     if a.verify:
         from . import verify

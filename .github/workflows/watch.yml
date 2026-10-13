@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
+        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -139,6 +139,7 @@ jobs:
             strip-directions) python -m watcher.main --strip-directions ;;
             renote)      python -m watcher.main --renote ;;
             refs)        python -m watcher.main --refs ;;
+            tidy)        python -m watcher.main --tidy ;;
             verify)      python -m watcher.main --verify ;;
             export)      python -m watcher.main --export ;;
             short-hooks) python -m watcher.main --short-hooks ;;

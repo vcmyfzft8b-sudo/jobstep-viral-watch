@@ -1030,12 +1030,23 @@
  {
   "description": "The creator shows several designed CVs and says the recruiter will never pick them because ATS software rejects them before anyone sees them, then shows the fix with Parakeet AI.",
   "id": "ESX21",
-  "market_only": "es",
+  "listed_at": 1791999258,
   "pages": {
-   "es": "3e2958b0-fc14-8038-bef4-f98e074f4189"
+   "es": "3e2958b0-fc14-8038-bef4-f98e074f4189",
+   "fr": "3f9958b0-fc14-8135-b066-da62d500ddc0"
+  },
+  "revived": {
+   "at": 1791998844,
+   "because": "https://www.tiktok.com/@emasavetuje/video/7696270580932398354",
+   "views": 128100
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
   },
   "script": "En cada video, siempre debes mostrar una demostración de Parakeet AI en la parte del guion donde explicas cómo funciona, para que se vea claramente cómo funciona la herramienta. 📲 TEXTO ESCRITO Usa subtítulos automáticos durante todo el vídeo. 💬 GUION Si tu currículum se ve así, así o así, ¿por qué te postulas? El reclutador nunca te seleccionará, simplemente porque ni siquiera tendrá la oportunidad de verlo. ¿Y sabes por qué? Por la sencilla razón de que este currículum no es compatible con los filtros de los sistemas de seguimiento de candidatos, ATS. Por lo tanto, el sistema rechazará automáticamente tu currículum. El problema es que si utilizas diseños, colores o formatos demasiado elaborados, dificultas que el sistema lea correctamente la información de tu CV. Este sí que es un currículum compatible con los filtros ATS. Y a mí me ha ayudado a conseguir varias entrevistas. Lo he hech",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@emasavetuje/video/7696270580932398354",
+  "status": "active",
   "title": "El reclutador nunca te seleccionará"
  },
  {
@@ -1132,5 +1143,19 @@
   "source_video": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686",
   "status": "active",
   "title": "Werbeplatz auf meinem Laptop verkauft 🤑"
+ },
+ {
+  "created": 1791999299,
+  "description": "Satirical talking-head 'top 3 hardest schools' ranking while absurdly cutting a banana with scissors, with a mid-video ad break that shows the app on a laptop before revealing number 1.",
+  "id": "A20261014173459",
+  "listed_at": 1791999648,
+  "pages": {
+   "es": "3f9958b0-fc14-8170-adfc-df9a26bda219",
+   "fr": "3f9958b0-fc14-816e-bc76-ff03187a6047"
+  },
+  "script": "Je classe le top 3 des écoles les plus dures de France. À la 3e place : le bac STMG. Comptabilité, gestion et économie. Tout ça avant même que tu saches remplir une déclaration d'impôts. En plus, deux langues étrangères, du droit et ta propre mini-entreprise d'entraînement. À la 2e place : le bac S2TMD. Ils doivent jouer d'un instrument, chanter et bricoler. En plus, de la pédagogie et de la psycho, et à côté, passer le bac tout à fait normalement. Et ça pendant 3 ans. Avant qu'on passe à la 1re place : si un jour tu sais pas par où commencer ton CV, tu vas juste sur ce site, tu uploades ton CV, tu colles l'offre que tu vises, évidemment celle de tes rêves, et tu laisses l'IA adapter ton CV à cette offre. Tu as un score, une analyse, des questions dans le chat et des modèles au choix. Si tu suis toutes les étapes, t'es plus que bien préparé. Et à la 1re place, sans hésiter : le lycée gén",
+  "source_video": "https://www.tiktok.com/@lern.mit.domi/video/7696127061395737879",
+  "status": "active",
+  "title": "Top 3 des écoles les plus dures en France 🍌"
  }
 ]

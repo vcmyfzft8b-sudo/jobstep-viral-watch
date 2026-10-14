@@ -60,6 +60,133 @@
   },
   "title_en": "I'm selling ad space on my laptop 🤑"
  },
+ "A20261014173459": {
+  "accepted_sources": [
+   "7696127061395737879"
+  ],
+  "allowed_localisation": [
+   "Language (German, French, Spanish) and natural, colloquial phrasing for the local creator",
+   "Which school types fill places 3, 2 and 1. Use recognisable local school types or tracks (e.g. DE: Wirtschaftsgymnasium, Fachschule für Sozialpädagogik, Gymnasium; FR: prépa, bac pro/BTS-type tracks, lycée général; ES: bachillerato tracks, FP, conservatorio), not specific named institutions",
+   "The subject lists and the satirical punchlines, adapted to the local system (Abitur / bac / selectividad-EBAU, years of study, languages)",
+   "The local school-leaving exam name and year counts",
+   "The adult task in the place-3 punchline (e.g. tax return / déclaration d'impôts / declaración de la renta)",
+   "The phrase for 'this website' and the 'dream job' wording",
+   "Country-specific job ad and CV shown in the demo, and the UI language of the app",
+   "Small wording changes to keep the speech natural, as long as the beat order, three places and three-sentence ad break stay the same"
+  ],
+  "beats": [
+   "1. Hook: 'I'm ranking the top 3 hardest schools in [country].' The banana-cutting with scissors is already happening.",
+   "2. Place 3: name a recognisable local school type, then rattle off its heavy subject list (e.g. accounting, business, two foreign languages, law, its own practice company). End with a satirical 'all that before you even know how to [adult task]'.",
+   "3. Place 2: a second school type with a surprising mix of demands (e.g. instruments, singing, crafts, pedagogy, psychology). End with 'and on the side, the normal [national school-leaving exam], for 5 years'.",
+   "4. Ad break, starting with 'Before we get to place 1': 'If you ever don't know where to start with your application, you just go to this website, upload your CV, paste the link to your dream job ad, and let it tailor your CV.' Second sentence: 'On top of that you get a score with analysis, questions in a chat and a template of your choice, and you can edit everything yourself.' Third sentence: 'Once you download it, you're more than well prepared.' Keep exactly 3 sentences with this structure. Change as few words as possible from the original, which went: notes uploaded, desired grade 'obviously a 1', study plan, flashcards/quizzes/mind maps/podcasts, 'if you go through the whole plan you're more than well prepared'. German reference: 'Bevor wir zu Platz 1 kommen: Wenn du mal nicht weißt, wo du bei deiner Bewerbung anfangen sollst, gehst du einfach auf diese Website, lädst deinen Lebenslauf hoch, fügst den Link deiner Wunschstelle ein, natürlich dein Traumjob, und lässt dir deinen Lebenslauf anpassen. Dazu bekommst du eine Bewertung mit Analyse, Fragen im Chat, eine Vorlage deiner Wahl und kannst alles selbst bearbeiten. Wenn du ihn dann runterlädst, bist du mehr als gut vorbereitet.' Link cue: [LINK: Parakeet AI Resume Maker on laptop].",
+   "5. Place 1: 'very clearly [most academic school type]'. List its demands (e.g. 4 years of Latin or French, plus maths and physics). End with the twist: at the end you have no profession and still have to go to university, '4 years of school for even more school'.",
+   "6. Outro: 'I hope I didn't forget anything important, write in the comments what you think of my list.'"
+  ],
+  "canonical_source": "7696127061395737879",
+  "filming": "About 45–60 seconds, around 150–170 spoken words, vertical 9:16, one take or quick jump cuts. Main shot: a medium close-up talking head at a desk or table, deadpan, fast-paced and slightly ironic. Throughout the ranking, the creator cuts a banana into slices with scissors in front of them. They never comment on it. Ad-break demo, in the same order as the spoken steps: (1) laptop on the desk, Parakeet AI Resume Maker open, (2) upload the CV, (3) paste the link to a job ad, (4) the score/analysis appears, (5) answer a question in the chat, (6) the AI tailors the CV, (7) pick a template, (8) a quick manual edit, (9) click download. The demo is screen footage or the camera over the laptop, with the voiceover continuing. Then cut back to the talking head and banana for place 1 and the outro. Creators copy the example video's framing, pace and banana action as closely as possible. The script contains only spoken words and the link cue, with no stage directions.",
+  "generated": 1791999478,
+  "hook": "Straight to camera, deadpan, with no intro: 'I'm ranking the top 3 hardest schools in [country].' From the first frame the creator is cutting a banana into slices with scissors, as if this were completely normal. The banana is never mentioned or explained.",
+  "not_allowed": [
+   "Mentioning or showing Studyflash, JobStep or any other app, or adding extra product mentions beyond the single ad break",
+   "Moving the ad break anywhere other than directly before place 1, or dropping the 'before we get to place 1' bridge",
+   "Ranking more or fewer than 3 places, ranking from 1 to 3, or ranking something other than school types (e.g. jobs, universities, apps)",
+   "Dropping the banana-and-scissors action, explaining it, or replacing it with a different prop gag",
+   "Turning it into a straight tutorial, sincere advice video or skit with several characters instead of a deadpan talking-head ranking",
+   "Mocking specific named real schools, teachers or students instead of school types",
+   "Showing or claiming features Parakeet AI does not have: an overview of your applications, a 'New job' button, cover letters, flashcards, quizzes, mind maps, podcasts, study plans, grade selection",
+   "Claims of guaranteed results: a guaranteed job, interview or offer, 'recruiters will definitely pick you', a guaranteed grade or pass",
+   "Saying the AI writes the whole application or sends it for you",
+   "Adding stage directions or acting/filming notes in brackets to the script (only spoken words plus the link cue are allowed)"
+  ],
+  "premise": "A student-style creator ranks three local school types by how hard they are, from 3 down to 1. Each place is a fast list of absurdly many subjects and duties, ending in a dry punchline. Just before number 1, the creator makes a casual 'before we get to number 1' detour. It shows Parakeet AI's Resume Maker on a laptop as the answer to 'you don't know where to start with your application'. Then number 1 is revealed with a twist punchline, and the video ends with a comment prompt. The humour comes from the deadpan delivery, the satirical subject lists and the pointless banana-and-scissors action that runs the whole time.",
+  "product": {
+   "cta": "implicit: 'you just go to this website' during the ad break, with no explicit app CTA. The closing engagement CTA is 'write in the comments what you think of my list'.",
+   "features_used": [
+    "upload your CV",
+    "score/analysis of the CV",
+    "paste the link (or text) of a job ad",
+    "answer questions in a chat",
+    "AI rewrites/tailors the CV to the job",
+    "pick a template",
+    "edit everything yourself",
+    "download the CV"
+   ],
+   "introduced_at_beat": 4,
+   "spoken_brand": "not spoken: it's referred to as 'this website' / 'diese Website' / 'ce site' / 'esta web', exactly where the original said 'diese Website'. The brand is only visible on the laptop screen. Studyflash/JobStep is never named, shown or replaced anywhere else."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7696127061395737879": "https://www.tiktok.com/@lern.mit.domi/video/7696127061395737879"
+  },
+  "title_en": "Top 3 hardest schools in [country] 🍌: satirical talking-head ranking while cutting a banana with scissors, with a mid-video ad break before number 1"
+ },
+ "ESX21": {
+  "accepted_sources": [
+   "7696270580932398354"
+  ],
+  "allowed_localisation": [
+   "Language and natural, colloquial phrasing in German, French and Spanish, including the on-screen hook text translated with the same meaning and the 😖 emoji",
+   "The example bad CVs and the good CV: local-looking names, jobs, and country-typical CV conventions (e.g., a photo is common in DE/FR/ES)",
+   "The job ad in the demo: a local job title, local job board link or local company",
+   "The 'many questions' hyperbole phrased idiomatically (e.g., 'tausend Fragen', 'un montón de preguntas', 'plein de questions') instead of the literal '300'",
+   "An explicit mention of ATS / applicant tracking software in beat 1, 2 or 11 to make clear why designed CVs fail, as long as no statistics are given",
+   "Dropping 'I got a job interview with it' if it isn't true for the creator, and dropping 'with a photo' if the template has none",
+   "Minor wording adjustments for natural speech, with the sentence count and beat order unchanged",
+   "Creator appearance, setting and voice, while the shot structure of the example video is kept"
+  ],
+  "beats": [
+   "1. Hook: on-screen 'Your CV must NOT look like this 😖'. Three bad, over-designed CVs are shown one by one with 'If your CV looks like this, like this or like this, you can forget about the job.'",
+   "2. Reassurance and reframe: 'Believe me, it's not that you're not good enough for the job you're applying to. You just don't have a good CV.'",
+   "3. Reveal: 'A good CV looks like this.' A clean, professional CV made with Parakeet AI is shown.",
+   "4. Relatable confession: 'Honestly, I'm not good at Word, and I don't make all of this myself.'",
+   "5. Search story: 'I searched the whole internet to find a place where you can make a great CV that looks like this.'",
+   "6. Transition: 'And look what I'm going to show you now.'",
+   "7. Comparison and personal result: 'I tried several sites, really, but this one was the fastest and most efficient, and I actually got a job interview with it.' The interview part may only be said if it is true for the creator; otherwise drop that clause and keep 'fastest, most efficient'.",
+   "8. Brand and first step: 'It's called Parakeet AI. You type that in and upload your old CV.' Link cue: app shown.",
+   "9. Analysis and tailoring: 'It sees what's not good and what needs to change. But the most important part is that you answer questions about yourself and the job you're applying for, and you paste the job ad, so it rewrites your CV for exactly the job you want.' Show the score/analysis, the job ad link or text being pasted, and the chat.",
+   "10. Surprise value: 'It asks you a ton of things you'd never have thought to put in your CV. It literally reminds you of things you don't even remember doing.' Show the chat questions.",
+   "11. Result: 'And it makes you a completely new layout where everything looks professional. Most importantly, it's in the format it should be in, so you don't embarrass yourself in front of companies.' Show the template choice, a quick edit and the finished CV. 'With a photo' may only be said if the chosen template visibly includes one.",
+   "12. CTA: 'It did the best job for me, so try it too and tell me how you like it.' Optionally show the download."
+  ],
+  "canonical_source": "7696270580932398354",
+  "filming": "Length about 60–75 s, roughly 12 spoken sentences at a fast, chatty, conversational pace. Vertical 9:16, creator talking to camera (selfie style), with CV images and screen recordings filling the frame or shown behind the creator, as in the example video. Shots: (a) talking head with the hook on-screen text, and the three bad CVs cut in on each 'like this'; (b) talking head for the reassurance and confession; (c) full-screen clean CV on 'A good CV looks like this'; (d) talking head for the search story and 'look what I'll show you'. Demo sequence (screen recording of Parakeet AI with link cues): open Parakeet AI, upload old CV → score/analysis → paste job ad link or text → chat questions being answered → AI rewrites/tailors the CV → pick template → quick manual edit → finished CV (→ download). Then a talking-head CTA. Creators copy the example video's framing, energy, cuts and on-screen text placement as closely as possible. The script contains only spoken words plus link cues, no stage directions.",
+  "generated": 1791999085,
+  "hook": "On-screen text (localised): \"Your CV must NOT look like this 😖\". Spoken first line, said while three different designed CVs (colourful, graphic, multi-column or 'creative' layouts) appear one after another, one per \"like this\": \"If your CV looks like this, like this or like this, you can forget about the job.\"",
+  "not_allowed": [
+   "Mentioning or showing JobStep (jobstep.io) or any other CV app (e.g., Studyflash). Parakeet AI replaces the brand at exactly the same spots and the same number of times.",
+   "Changing the format: no tutorial without the bad-CV hook, no reordering so the product comes first, no removing the 'it's your CV, not you' reframe, the confession/search story or the personal recommendation, no adding or removing beats",
+   "Showing or mentioning features Parakeet AI doesn't have: an overview/tracker of your applications, a 'New job' button, cover letters, or anything beyond the listed features",
+   "Guarantees or invented results: 'you will get the job/interview', 'guaranteed to pass ATS', '100% ATS-proof', or a promised number of interviews",
+   "Statistics or numbers about ATS or recruiters (e.g., '75% of CVs are rejected', 'recruiters look for 6 seconds') or about how many questions the app asks",
+   "Claiming the creator got an interview or job if they didn't, or presenting it as anything other than a personal experience",
+   "Claims that Parakeet AI is free, the cheapest, or 'the best on the market' as an objective fact (only the personal 'it did the best job for me' is allowed)",
+   "Naming or disparaging specific competitor sites in the 'I tried several sites' line",
+   "Stage directions, acting or filming tips in brackets inside the script (only spoken words and link cues)"
+  ],
+  "premise": "Blame the CV, not the person. You don't get the job because your CV has the wrong format, not because you aren't good enough. Over-designed CVs get filtered out (by ATS software) before a recruiter ever sees them. The creator admits they are bad at Word and couldn't build a proper CV alone. They searched the internet, tried several sites, and found the fastest one: Parakeet AI. They then show it step by step: upload the old CV, see what's wrong, answer questions about themselves and the target job, get a tailored CV in a clean, professional, correct format. They end with a personal recommendation.",
+  "product": {
+   "cta": "Try it yourself and tell me (in the comments) how you like it.",
+   "features_used": [
+    "Upload your existing CV",
+    "CV score/analysis (what's not good, what needs changing)",
+    "Paste the link or text of a job ad",
+    "Answer questions in a chat",
+    "AI rewrites/tailors the CV to the job",
+    "Pick a template",
+    "Edit everything yourself",
+    "Download the CV"
+   ],
+   "introduced_at_beat": 8,
+   "spoken_brand": "Beat 8 ('It's called Parakeet AI…'). Spoken once at the point where JobStep was named. The finished CV is shown in beat 3, but the brand is not spoken there."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7696270580932398354": "https://www.tiktok.com/@emasavetuje/video/7696270580932398354"
+  },
+  "title_en": "The recruiter will never pick you (Your CV must NOT look like this)"
+ },
  "ESX28": {
   "accepted_sources": [
    "7693228875035282720"

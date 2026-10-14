@@ -20454,6 +20454,82 @@
    "type": "text"
   }
  ],
+ "3f9958b0-fc14-810a-87f7-e15892c77337": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Siéntate a una mesa y corta un plátano con unas tijeras mientras hablas a cámara, con el título en pantalla – exactamente como en el vídeo de ejemplo, y sigue cortando durante todo el ranking.",
+   "text": {
+    "content": "Siéntate a una mesa y corta un plátano con unas tijeras mientras hablas a cámara, con el título en pantalla – exactamente como en el vídeo de ejemplo, y sigue cortando durante todo el ranking.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f9958b0-fc14-8135-90de-fa19cb004198": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'exemple, commence en fond vert devant des exemples de CV moches qui défilent, montre-les du doigt à chaque « à ça » et fais une grimace dégoûtée, avec le titre affiché à l'écran.",
+   "text": {
+    "content": "Comme dans la vidéo d'exemple, commence en fond vert devant des exemples de CV moches qui défilent, montre-les du doigt à chaque « à ça » et fais une grimace dégoûtée, avec le titre affiché à l'écran.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f9958b0-fc14-8188-b8ca-ccd021d66ad8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Assieds-toi à une table face à la caméra et coupe une banane en petits morceaux avec des ciseaux pendant tout le classement, avec le titre et la place actuelle (« 3e place : bac STMG 🥉 », etc.) en texte à l'écran, comme dans la vidéo d'exemple.",
+   "text": {
+    "content": "Assieds-toi à une table face à la caméra et coupe une banane en petits morceaux avec des ciseaux pendant tout le classement, avec le titre et la place actuelle (« 3e place : bac STMG 🥉 », etc.) en texte à l'écran, comme dans la vidéo d'exemple.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "3f9958b0-fc14-8192-9fea-f32bc1017b27": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copia el inicio del vídeo de ejemplo: ponte con green screen delante de tus CVs antiguos (feos), cambia de CV en cada «así» mientras señalas con la mano hacia atrás, con el título en pantalla. En «Un buen CV se ve así» cambia al CV que has hecho con Parakeet AI.",
+   "text": {
+    "content": "Copia el inicio del vídeo de ejemplo: ponte con green screen delante de tus CVs antiguos (feos), cambia de CV en cada «así» mientras señalas con la mano hacia atrás, con el título en pantalla. En «Un buen CV se ve así» cambia al CV que has hecho con Parakeet AI.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "4347a0c2-a5a7-4b12-ae33-7538f6f23682": [
   {
    "annotations": {
@@ -30381,6 +30457,249 @@
     "plain_text": "Ça fait longtemps que tu cherches, et qu'il n'y a rien qui fonctionne. Change ton CV, tu verras, la fin est peut-être beaucoup plus proche que tu ne le penses. ",
     "text": {
      "content": "Ça fait longtemps que tu cherches, et qu'il n'y a rien qui fonctionne. Change ton CV, tu verras, la fin est peut-être beaucoup plus proche que tu ne le penses. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3e2958b0-fc14-8038-bef4-f98e074f4189": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Si tu CV se ve así, así o así, olvídate del trabajo. Créeme que no es porque no valgas para el puesto al que te presentas, es que no tienes un buen CV. ",
+    "text": {
+     "content": "Si tu CV se ve así, así o así, olvídate del trabajo. Créeme que no es porque no valgas para el puesto al que te presentas, es que no tienes un buen CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Un buen CV se ve así. ",
+    "text": {
+     "content": ") Un buen CV se ve así. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Sinceramente, ni se me da bien el Word, ni sé hacer todo esto por mi cuenta. Gente, os lo digo en serio, he buscado por todo internet un sitio donde se pueda hacer un CV chulísimo que se vea así. Y mira lo que te voy a enseñar ahora. ",
+    "text": {
+     "content": "Sinceramente, ni se me da bien el Word, ni sé hacer todo esto por mi cuenta. Gente, os lo digo en serio, he buscado por todo internet un sitio donde se pueda hacer un CV chulísimo que se vea así. Y mira lo que te voy a enseñar ahora. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Vale, he probado varias webs, de verdad, pero esta ha sido la más rápida, la más eficaz, y de verdad que con ella conseguí una entrevista de trabajo. Pues se llama Parakeet AI. (",
+    "text": {
+     "content": "Vale, he probado varias webs, de verdad, pero esta ha sido la más rápida, la más eficaz, y de verdad que con ella conseguí una entrevista de trabajo. Pues se llama Parakeet AI. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") parakeet-ai.com/resume-maker, lo escribes, y ahí subes tu CV antiguo. ",
+    "text": {
+     "content": ") parakeet-ai.com/resume-maker, lo escribes, y ahí subes tu CV antiguo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Va a ver qué no está bien, qué hay que cambiar, pero lo más importante es que respondas a preguntas sobre ti y sobre el puesto al que te presentas, porque entonces te adapta el CV según el trabajo al que quieres ir. Te va a preguntar 300 cosas que ni se te habían ocurrido y que estaría bien poner en el CV. ",
+    "text": {
+     "content": ") Va a ver qué no está bien, qué hay que cambiar, pero lo más importante es que respondas a preguntas sobre ti y sobre el puesto al que te presentas, porque entonces te adapta el CV según el trabajo al que quieres ir. Te va a preguntar 300 cosas que ni se te habían ocurrido y que estaría bien poner en el CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Literalmente te va a recordar cosas que ni te acuerdas de haber hecho, y te va a hacer un formato totalmente nuevo, con foto, y que todo se vea profesional, pero lo más importante es que esté en el formato que tiene que estar, para no hacer literalmente el ridículo en las empresas. ",
+    "text": {
+     "content": "Literalmente te va a recordar cosas que ni te acuerdas de haber hecho, y te va a hacer un formato totalmente nuevo, con foto, y que todo se vea profesional, pero lo más importante es que esté en el formato que tiene que estar, para no hacer literalmente el ridículo en las empresas. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "A mí es la que mejor me ha funcionado, así que nada, pruébala tú también y dime qué te parece. ",
+    "text": {
+     "content": "A mí es la que mejor me ha funcionado, así que nada, pruébala tú también y dime qué te parece. ",
      "link": null
     },
     "type": "text"
@@ -42872,6 +43191,553 @@
     "plain_text": "De rien. ",
     "text": {
      "content": "De rien. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f9958b0-fc14-8135-b066-da62d500ddc0": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Si ton CV ressemble à ça, à ça ou à ça, tu peux oublier ce job. Crois-moi, c'est pas que t'es pas à la hauteur pour le poste auquel tu postules, c'est juste que t'as pas un bon CV. ",
+    "text": {
+     "content": "Si ton CV ressemble à ça, à ça ou à ça, tu peux oublier ce job. Crois-moi, c'est pas que t'es pas à la hauteur pour le poste auquel tu postules, c'est juste que t'as pas un bon CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Un bon CV, ça ressemble à ça. ",
+    "text": {
+     "content": ") Un bon CV, ça ressemble à ça. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Honnêtement, je suis pas à l'aise avec Word, et je saurais pas faire tout ça moi-même. Franchement, je te jure, j'ai fouillé tout internet pour trouver un endroit où on peut faire un CV canon qui ressemble à ça. Et regarde ce que je vais te montrer. ",
+    "text": {
+     "content": "Honnêtement, je suis pas à l'aise avec Word, et je saurais pas faire tout ça moi-même. Franchement, je te jure, j'ai fouillé tout internet pour trouver un endroit où on peut faire un CV canon qui ressemble à ça. Et regarde ce que je vais te montrer. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Alors, j'ai testé plusieurs sites, vraiment, mais c'est celui-là qui s'est révélé le plus rapide, le plus efficace, et c'est vraiment avec lui que j'ai décroché un entretien. Donc, ça s'appelle Parakeet AI. (",
+    "text": {
+     "content": "Alors, j'ai testé plusieurs sites, vraiment, mais c'est celui-là qui s'est révélé le plus rapide, le plus efficace, et c'est vraiment avec lui que j'ai décroché un entretien. Donc, ça s'appelle Parakeet AI. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu tapes parakeet-ai.com/resume-maker, et tu y envoies ton ancien CV. ",
+    "text": {
+     "content": ") Tu tapes parakeet-ai.com/resume-maker, et tu y envoies ton ancien CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Il va voir ce qui va pas, ce qu'il faut changer, mais le plus important, c'est que tu réponds à des questions sur toi et sur le poste auquel tu postules, parce que là, il adapte ton CV en fonction du poste que tu vises. Il va te demander 300 trucs auxquels t'aurais même pas pensé à mettre dans ton CV. ",
+    "text": {
+     "content": ") Il va voir ce qui va pas, ce qu'il faut changer, mais le plus important, c'est que tu réponds à des questions sur toi et sur le poste auquel tu postules, parce que là, il adapte ton CV en fonction du poste que tu vises. Il va te demander 300 trucs auxquels t'aurais même pas pensé à mettre dans ton CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Il va littéralement te rappeler des trucs que t'as faits et dont tu te souviens même plus, et il va te faire un format complètement nouveau, avec photo, pour que tout ait l'air pro, mais le plus important, c'est que ce soit dans le bon format, pour pas te taper carrément la honte devant les entreprises. ",
+    "text": {
+     "content": "Il va littéralement te rappeler des trucs que t'as faits et dont tu te souviens même plus, et il va te faire un format complètement nouveau, avec photo, pour que tout ait l'air pro, mais le plus important, c'est que ce soit dans le bon format, pour pas te taper carrément la honte devant les entreprises. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "C'est lui qui a fait le meilleur boulot pour moi, alors voilà, teste toi aussi et dis-moi ce que t'en penses. ",
+    "text": {
+     "content": "C'est lui qui a fait le meilleur boulot pour moi, alors voilà, teste toi aussi et dis-moi ce que t'en penses. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f9958b0-fc14-816e-bc76-ff03187a6047": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Je classe le top 3 des écoles les plus dures de France. ",
+    "text": {
+     "content": "Je classe le top 3 des écoles les plus dures de France. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "À la 3e place : le bac STMG. Comptabilité, gestion et économie. Tout ça avant même que tu saches remplir une déclaration d'impôts. En plus, deux langues étrangères, du droit et ta propre mini-entreprise d'entraînement. ",
+    "text": {
+     "content": "À la 3e place : le bac STMG. Comptabilité, gestion et économie. Tout ça avant même que tu saches remplir une déclaration d'impôts. En plus, deux langues étrangères, du droit et ta propre mini-entreprise d'entraînement. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "À la 2e place : le bac S2TMD. Ils doivent jouer d'un instrument, chanter et bricoler. En plus, de la pédagogie et de la psycho, et à côté, passer le bac tout à fait normalement. Et ça pendant 3 ans. ",
+    "text": {
+     "content": "À la 2e place : le bac S2TMD. Ils doivent jouer d'un instrument, chanter et bricoler. En plus, de la pédagogie et de la psycho, et à côté, passer le bac tout à fait normalement. Et ça pendant 3 ans. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Avant qu'on passe à la 1re place : si un jour tu sais pas par où commencer ton CV, (",
+    "text": {
+     "content": "Avant qu'on passe à la 1re place : si un jour tu sais pas par où commencer ton CV, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") tu vas juste sur ce site, tu uploades ton CV, tu colles l'offre que tu vises, évidemment celle de tes rêves, et tu laisses l'IA adapter ton CV à cette offre. Tu as un score, une analyse, des questions dans le chat et des modèles au choix. Si tu suis toutes les étapes, t'es plus que bien préparé. ",
+    "text": {
+     "content": ") tu vas juste sur ce site, tu uploades ton CV, tu colles l'offre que tu vises, évidemment celle de tes rêves, et tu laisses l'IA adapter ton CV à cette offre. Tu as un score, une analyse, des questions dans le chat et des modèles au choix. Si tu suis toutes les étapes, t'es plus que bien préparé. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et à la 1re place, sans hésiter : le lycée général. 3 ans de latin ou de grec. En plus, des maths et de la physique, et à la fin t'as pas de métier, tu dois encore faire des études. 3 ans d'école pour encore plus d'école. ",
+    "text": {
+     "content": "Et à la 1re place, sans hésiter : le lycée général. 3 ans de latin ou de grec. En plus, des maths et de la physique, et à la fin t'as pas de métier, tu dois encore faire des études. 3 ans d'école pour encore plus d'école. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "J'espère que j'ai rien oublié d'important. Dites-moi en commentaire ce que vous pensez de ma liste. ",
+    "text": {
+     "content": "J'espère que j'ai rien oublié d'important. Dites-moi en commentaire ce que vous pensez de ma liste. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3f9958b0-fc14-8170-adfc-df9a26bda219": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hago un ranking del top 3 de estudios más difíciles de España. ",
+    "text": {
+     "content": "Hago un ranking del top 3 de estudios más difíciles de España. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "En el puesto 3: FP de Administración y Finanzas. Contabilidad, gestión contable y economía. Todo eso antes de que sepas siquiera cómo se hace la declaración de la renta. Y encima, dos idiomas, derecho mercantil y tu propia empresa simulada. ",
+    "text": {
+     "content": "En el puesto 3: FP de Administración y Finanzas. Contabilidad, gestión contable y economía. Todo eso antes de que sepas siquiera cómo se hace la declaración de la renta. Y encima, dos idiomas, derecho mercantil y tu propia empresa simulada. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Puesto 2: el doble grado de Magisterio. Tienen que tocar instrumentos, cantar y hacer manualidades. Y encima, pedagogía y psicología, y a la vez sacarse todas las asignaturas normales. Y eso durante 5 años. ",
+    "text": {
+     "content": "Puesto 2: el doble grado de Magisterio. Tienen que tocar instrumentos, cantar y hacer manualidades. Y encima, pedagogía y psicología, y a la vez sacarse todas las asignaturas normales. Y eso durante 5 años. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Antes de pasar al puesto 1: si alguna vez no sabes por dónde empezar con tu currículum, (",
+    "text": {
+     "content": "Antes de pasar al puesto 1: si alguna vez no sabes por dónde empezar con tu currículum, (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") simplemente entras en esta web, subes tu currículum, pegas la oferta que quieres, obviamente la de tus sueños, y dejas que te adapte el currículum a esa oferta. Te da una puntuación, te hace preguntas en un chat, eliges plantilla e incluso lo puedes descargar al momento. Si haces todo el proceso, tu currículum queda más que preparado. ",
+    "text": {
+     "content": ") simplemente entras en esta web, subes tu currículum, pegas la oferta que quieres, obviamente la de tus sueños, y dejas que te adapte el currículum a esa oferta. Te da una puntuación, te hace preguntas en un chat, eliges plantilla e incluso lo puedes descargar al momento. Si haces todo el proceso, tu currículum queda más que preparado. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y el puesto 1, sin ninguna duda: el Bachillerato. 4 años de latín o francés. Y encima, mates y física, y al final no tienes una profesión, sino que todavía tienes que ir a la universidad. 4 años de cole para aún más cole. ",
+    "text": {
+     "content": "Y el puesto 1, sin ninguna duda: el Bachillerato. 4 años de latín o francés. Y encima, mates y física, y al final no tienes una profesión, sino que todavía tienes que ir a la universidad. 4 años de cole para aún más cole. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Espero no haberme olvidado de nada importante. Escribidme en los comentarios qué os parece mi lista. ",
+    "text": {
+     "content": "Espero no haberme olvidado de nada importante. Escribidme en los comentarios qué os parece mi lista. ",
      "link": null
     },
     "type": "text"

@@ -65,3 +65,17 @@ def test_judges_know_cues_are_sparse_and_localisation_is_allowed():
 def test_dates_are_part_of_the_localisation_rule():
     from watcher.brands import LOCALISE
     assert '12 October' in LOCALISE and 'timeless' in LOCALISE
+
+
+def test_old_hand_written_page_is_left_alone():
+    # 15 Oct 2026: an old page's first bold line ("Choisis une de ces phrases.") was taken as its title and the page renamed
+    from unittest import mock
+    blocks = [{'type': 'heading_3', 'heading_3': {'rich_text': [{'plain_text': '📲 TEXTE ÉCRIT'}]}},
+              {'type': 'paragraph', 'paragraph': {'rich_text': [{'plain_text': 'Choisis une de ces phrases.'}]}}]
+    script = [{'type': 'paragraph', 'paragraph': {'rich_text': [{'plain_text': 'Je viens de quitter mon poste en RH.'}]}}]
+    with mock.patch.object(tidy.reword, 'script_blocks', return_value=script), \
+            mock.patch.object(tidy.notion, 'children', return_value=blocks), \
+            mock.patch.object(tidy.notion, 'api') as api:
+        ch = tidy.tidy_page('pid', LINKS)
+    assert ch and ch[0].startswith('old layout')
+    api.assert_not_called()  # no rename, no edits

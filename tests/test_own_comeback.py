@@ -46,11 +46,14 @@ class HandTagTests(unittest.TestCase):
 
 
 class ComebackTests(unittest.TestCase):
-    def run_comebacks(self, tiers, cfg=CFG):
-        f = fmts()
+    def run_comebacks(self, tiers, cfg=CFG, ready=None, f=None, force=False):
+        f = f or fmts()
+        ready = ready or (lambda fmt, mk, *_: ('ok', ''))
         with mock.patch.object(W.notion, 'move_page') as mv, mock.patch.object(W.notify, 'push') as push, \
-                mock.patch.object(W.state, 'log'):
-            back = W.own_comebacks(MKTS, f, cfg, tiers=tiers, now=NOW)
+                mock.patch.object(W.state, 'log'), mock.patch.object(W, 'ready_page', side_effect=ready) as rp, \
+                mock.patch.object(W.audit, 'originals', return_value={}):
+            back = W.own_comebacks(MKTS, f, cfg, tiers=tiers, now=NOW, force=force)
+        self.ready_calls = rp.call_count
         return {x['id']: x for x in f}, back, mv, push
 
     def test_proven_archived_format_comes_back_in_every_market_it_has_a_page(self):
@@ -63,7 +66,8 @@ class ComebackTests(unittest.TestCase):
         self.assertEqual(f['SIXMONTHS']['listed_at'], int(NOW))  # 14 days of protection like any newly listed format
         self.assertNotIn('archived_reason', f['SIXMONTHS'])
         self.assertIn('proven for our creators', f['SIXMONTHS']['revived']['because'])
-        mv.assert_called_once_with('fr-six', 'FR_FOLDER')  # no Spanish page: nothing moved there
+        mv.assert_called_once_with('fr-six', 'FR_FOLDER')  # no Spanish page before: ready_page builds it (in the folder)
+        self.assertEqual(self.ready_calls, 2)  # every running market's page is made ready first
         self.assertEqual(f['OLD']['status'], 'archived')  # only solid, not proven
         push.assert_called_once()
 
@@ -81,10 +85,54 @@ class ComebackTests(unittest.TestCase):
         tiers = {'es': {'RDV': {'tier': 1, 'n': 2, 'avg': 33000, 'best': 44000}}}
         f = fmts()
         with mock.patch.object(W.notion, 'move_page', side_effect=[RuntimeError('boom'), None]) as mv, \
-                mock.patch.object(W.notify, 'push'), mock.patch.object(W.state, 'log'):
+                mock.patch.object(W.notify, 'push'), mock.patch.object(W.state, 'log'), \
+                mock.patch.object(W, 'ready_page', return_value=('ok', '')), \
+                mock.patch.object(W.audit, 'originals', return_value={}):
             back = W.own_comebacks(MKTS, f, CFG, tiers=tiers, now=NOW)
         self.assertEqual([x['id'] for x in back], ['RDV'])
         self.assertEqual(mv.call_count, 2)
+
+    def test_a_comeback_waits_until_every_page_is_in_the_current_layout(self):
+        # the case of 15 Oct 2026: proven in Spain, no Spanish page, old hand-written French page
+        tiers = {'es': {'SIXMONTHS': {'tier': 1, 'n': 2, 'avg': 12000, 'best': 23000}}}
+        built = {}
+
+        def ready(fmt, mk, *_):
+            if mk['key'] == 'es':
+                fmt['pages']['es'] = built['es'] = 'es-new'  # built, checked, moved into the Spanish folder
+                return 'built', 'url'
+            return 'not rebuilt', 'check failed'
+        f, back, mv, push = self.run_comebacks(tiers, ready=ready)
+        self.assertEqual(back, [])
+        self.assertEqual(f['SIXMONTHS']['status'], 'archived')
+        self.assertEqual(f['SIXMONTHS']['comeback_tries'], 1)
+        mv.assert_called_once_with('es-new', 'ES_ARCHIVE')  # the new page waits in the archive too
+        push.assert_not_called()
+
+    def test_ready_pages_come_back_together(self):
+        tiers = {'es': {'SIXMONTHS': {'tier': 1, 'n': 2, 'avg': 12000, 'best': 23000}}}
+
+        def ready(fmt, mk, *_):
+            if mk['key'] == 'es':
+                fmt['pages']['es'] = 'es-new'
+                return 'built', 'url'
+            return 'rebuilt', 'url'
+        f, back, mv, push = self.run_comebacks(tiers, ready=ready)
+        self.assertEqual([x['id'] for x in back], ['SIXMONTHS'])
+        mv.assert_called_once_with('fr-six', 'FR_FOLDER')  # the built Spanish page is already in its folder
+        self.assertNotIn('comeback_tries', f['SIXMONTHS'])
+
+    def test_after_three_failed_runs_one_note_then_only_relist_tries(self):
+        tiers = {'fr': {'SIXMONTHS': {'tier': 1, 'n': 14, 'avg': 15146, 'best': 156955}}}
+        f = fmts()
+        f[1]['comeback_tries'] = 2
+        _, back, _, push = self.run_comebacks(tiers, ready=lambda *a: ('error', 'x'), f=f)
+        push.assert_called_once()
+        self.assertEqual(f[1]['comeback_tries'], 3)
+        self.run_comebacks(tiers, ready=lambda *a: ('error', 'x'), f=f)
+        self.assertEqual(self.ready_calls, 0)  # not tried again on its own
+        _, back, _, _ = self.run_comebacks(tiers, f=f, force=True)  # mode relist
+        self.assertEqual([x['id'] for x in back], ['SIXMONTHS'])
 
 
 class LineupTests(unittest.TestCase):

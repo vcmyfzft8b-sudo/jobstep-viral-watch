@@ -97,8 +97,12 @@ def problems(page_id, links):
 def tidy_page(page_id, links, write=True):
     """Applies the rules above to one page. Returns the list of changes (or, with write=False, of problems)."""
     from .crosscheck import _title_block
+    from .verify import layout_problems
     changes = []
     script = reword.script_blocks(page_id)
+    blocks = notion.children(page_id)
+    if layout_problems(blocks, script, links):  # old hand-written page: its "title" may be any bold line - rebuilt, not tidied
+        return ['old layout - not tidied (rebuilt from its example video: mode standardize)']
     paras = [b[b['type']].get('rich_text', []) for b in script]
     trimmed, removed = trim_cues(paras, links)
     if removed:
@@ -128,7 +132,6 @@ def tidy_page(page_id, links, write=True):
                     x.setdefault('text', {'content': x.get('plain_text', '')})
                     x['text']['content'] = _content(x).replace(q, new)
             notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
-    blocks = notion.children(page_id)
     first_heading = next((k for k, b in enumerate(blocks) if b['type'].startswith('heading')), len(blocks))
     if any(b['type'] == 'child_page' for b in blocks[:first_heading]):
         changes.append('a sub-page sits at the top of the page (move it away by hand - sub-pages are never moved '

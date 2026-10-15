@@ -665,26 +665,56 @@ def own_tiers(mkts, fmts, cfg, force=False, now=None):
     return snap['markets']
 
 
-def own_comebacks(mkts, fmts, cfg, tiers=None, now=None):
+COMEBACK_TRIES = 3  # runs a comeback may fail to get its pages ready before it waits for mode relist
+
+
+def own_comebacks(mkts, fmts, cfg, tiers=None, now=None, force=False):
     """An archived format that is PROVEN for our creators in a running market (own.tiers tier 1: our videos of it
     average 10k+, or one passed 100k in 14 days) comes back into the lists right away - JobStep does not have to go
-    viral with it again. Its pages move from each market's archive back to that market's format folder (nothing is
-    rebuilt; a market without a page gets one on Monday like any listed format). lineup.never_revive keeps a format
-    out on purpose. Returns the formats that came back."""
+    viral with it again. First every running market gets a page in the current layout (ready_page: a missing page is
+    built and checked, an old hand-written page is rebuilt from its example video). Only when all are ready do the
+    pages move from each market's archive back to that market's format folder and the format is listed; else it stays
+    archived (a page just built goes back to the archive) and is tried again next run - after COMEBACK_TRIES failed
+    runs one Slack note, then only mode relist (force) tries again. lineup.never_revive keeps a format out on purpose.
+    Returns the formats that came back."""
     now = now or time.time()
     tiers = tiers if tiers is not None else own_tiers(mkts, fmts, cfg)
     never = set(cfg.get('lineup', {}).get('never_revive', []))
-    back = []
+    back, origs = [], None
     for f in fmts:
         if f.get('status') != 'archived' or f['id'] in never:
             continue
         proven = [(mk, tiers.get(mk['key'], {}).get(f['id'])) for mk in mkts
                   if tiers.get(mk['key'], {}).get(f['id'], {}).get('tier') == 1]
-        if not proven:
+        if not proven or (f.get('comeback_tries', 0) >= COMEBACK_TRIES and not force):
             continue
+        origs = audit.originals() if origs is None else origs
+        ready = {}
+        for mk in mkts:
+            try:
+                ready[mk['key']] = ready_page(f, mk, fmts, origs, cfg)
+            except Exception as e:
+                ready[mk['key']] = ('error', str(e)[:150])
+        not_ready = {m: r for m, r in ready.items() if r[0] not in READY}
+        if not_ready:
+            for mk in mkts:  # a page built for it now (moved into the folder) waits in the archive with the others
+                if ready[mk['key']][0] == 'built' and page_of(f, mk['key']):
+                    try:
+                        notion.move_page(page_of(f, mk['key']), mk['archive_page'])
+                    except Exception as e:
+                        print('comeback: move back failed', mk['key'], f['title'], str(e)[:150])
+            f['comeback_tries'] = f.get('comeback_tries', 0) + 1
+            state.log({'type': 'format_comeback_held', 'format': f['id'], 'tries': f['comeback_tries'],
+                       'not_ready': {m: f'{st}: {d}' for m, (st, d) in not_ready.items()}})
+            print('comeback held:', f['title'], not_ready)
+            if f['comeback_tries'] == COMEBACK_TRIES:
+                notify.push('⏸️ Format NOT back in the lists – its pages are not ready', f"*{f['title']}*: " + '; '.join(
+                    f'{m}: {st} ({d[:80]})' for m, (st, d) in not_ready.items()) + ' – fix the page, then run mode relist')
+            continue
+        f.pop('comeback_tries', None)
         for mk in mkts:
             pid = page_of(f, mk['key'])
-            if pid:
+            if pid and ready[mk['key']][0] != 'built':  # a built page is already in the folder
                 try:
                     notion.move_page(pid, mk['holder_page'])
                 except Exception as e:
@@ -695,7 +725,8 @@ def own_comebacks(mkts, fmts, cfg, tiers=None, now=None):
         f['listed_at'] = int(now)
         f['revived'] = {'at': int(now), 'because': f'proven for our creators ({why})'}
         f.pop('archived_reason', None)
-        state.log({'type': 'format_revived_own', 'format': f['id'], 'because': why})
+        state.log({'type': 'format_revived_own', 'format': f['id'], 'because': why,
+                   'pages': {m: st for m, (st, _) in ready.items()}})
         back.append((f, why))
     if back:
         notify.push('♻️ Formats back in the lists – proven for our creators', '\n'.join(
@@ -1013,8 +1044,7 @@ def rebuild_page(fmt, mk, url):
     return True, ''
 
 
-OLD_LAYOUT = ('no example video', 'no link to the original TikTok', 'no script section',
-              'no Parakeet AI link')  # verify problems that mean "old hand-written layout"
+READY = ('ok', 'built', 'rebuilt')  # ready_page results that leave a page in the current layout
 
 
 def own_example(fid, m):
@@ -1061,13 +1091,48 @@ def missing_page(f, mk, fmts, origs, cfg):
     return 'built', url
 
 
+def ready_page(f, mk, fmts, origs, cfg):
+    """One market's page of a format in the current layout. A missing page is built (missing_page: checked, then moved
+    into the format folder); a page in the old hand-written layout (no example video, no resources section, no TikTok
+    link, no script or no Parakeet AI link - verify.layout_problems) is rebuilt in place from its example video
+    (same-language strict example if there is one, else the format's original JobStep video, else our creators' best
+    video of it) - transcribed script, the old text kept in state/script_backup.json. -> (status, detail), status in
+    READY ('ok', 'built', 'rebuilt') or 'not built' / 'not rebuilt' / 'error'."""
+    from . import reword as _reword
+    m = mk['key']
+    pid = page_of(f, m)
+    if not pid:
+        return missing_page(f, mk, fmts, origs, cfg)
+    blocks = notion.children(pid)
+    has_video = any(b['type'] == 'video' for b in blocks)
+    has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
+    if has_video and has_res and not verify.layout_problems(blocks, _reword.script_blocks(pid), cfg['links']):
+        return 'ok', ''
+    ex = (f.get('inspo') or {}).get(m, {})
+    url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
+    own_v = None if url else own_example(f['id'], m)  # formats that came from our creators
+    url = url or (own_v or {}).get('url') or (localize.current_source(pid) or {}).get('url')
+    if not url or not re.search(r'@([^/]+)/video/(\d+)', url):
+        return 'error', 'no example video link to rebuild from'
+    h, vid = re.search(r'@([^/]+)/video/(\d+)', url).groups()
+    v = tiktok.video_detail(h, vid)
+    if not v:
+        return 'error', f'example video unavailable: {url}'
+    v['own'] = bool(own_v)  # our creator's video -> the "our own creator" note under it
+    backup_page(f, m, pid, blocks)
+    page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid, attempts=3)
+    if problems:
+        return 'not rebuilt', '; '.join(problems)[:150]
+    f.setdefault('reworded', {})[m] = True
+    f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict') or own_v),
+                                    'rebuilt': True, **({'own': True} if own_v else {})}
+    state.save('formats.json', fmts)
+    return 'rebuilt', url
+
+
 def standardize(only=None):
     """Every active format page in every market in the current layout, without leftovers:
-    - pages in the old layout (no example video, no resources section, no TikTok link or no Parakeet AI link in the
-      script) are rebuilt from their example video (same-language strict example
-      if there is one, else the format's original JobStep video, else our creators' best video of it) - transcribed
-      script; the old text is kept in state/script_backup.json;
-    - a live format without a page in a market gets one (missing_page) - checked, then added to the list;
+    - ready_page: a missing page is built, a page in the old layout is rebuilt from its example video;
     - duplicates are removed: a 2nd example video, repeated links/lines outside the script."""
     from . import audit as _audit, reword as _reword
     cfg, fmts = load_config(), load_formats()
@@ -1076,45 +1141,15 @@ def standardize(only=None):
     for f in [f for f in fmts if f.get('status') == 'active']:
         for mk in M.load(cfg):
             m = mk['key']
-            pid = page_of(f, m)
             if only and f['id'] not in only:
                 continue
-            if not pid:  # a live format without this market's page: built, checked, then added to the list
-                try:
-                    report.append((f['title'], m, *missing_page(f, mk, fmts, origs, cfg)))
-                except Exception as e:
-                    report.append((f['title'], m, 'error', str(e)[:150]))
-                continue
             try:
-                blocks = notion.children(pid)
-                has_video = any(b['type'] == 'video' for b in blocks)
-                has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
-                old_layout = [x for x in verify.check_page(pid, mk['lang'], cfg['links']) if x.startswith(OLD_LAYOUT)]
-                if not (has_video and has_res) or old_layout:
-                    ex = (f.get('inspo') or {}).get(m, {})
-                    url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
-                    own_v = None if url else own_example(f['id'], m)  # formats that came from our creators
-                    url = url or (own_v or {}).get('url') or (localize.current_source(pid) or {}).get('url')
-                    if not url or not re.search(r'@([^/]+)/video/(\d+)', url):
-                        report.append((f['title'], m, 'error', 'no example video link to rebuild from'))
-                        continue
-                    h, vid = re.search(r'@([^/]+)/video/(\d+)', url).groups()
-                    v = tiktok.video_detail(h, vid)
-                    if not v:
-                        report.append((f['title'], m, 'error', f'example video unavailable: {url}'))
-                        continue
-                    v['own'] = bool(own_v)  # our creator's video -> the "our own creator" note under it
-                    backup_page(f, m, pid, blocks)
-                    page, spec, problems = make_page(v, mk, cfg, None, replace_page=pid, attempts=3)
-                    if problems:
-                        report.append((f['title'], m, 'not rebuilt', '; '.join(problems)[:150]))
-                        continue
-                    f.setdefault('reworded', {})[m] = True
-                    f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict') or own_v),
-                                                    'rebuilt': True, **({'own': True} if own_v else {})}
-                    report.append((f['title'], m, 'rebuilt', url))
-                    state.save('formats.json', fmts)
+                status, detail = ready_page(f, mk, fmts, origs, cfg)
+                if status != 'ok':
+                    report.append((f['title'], m, status, detail))
                     continue
+                pid = page_of(f, m)
+                blocks = notion.children(pid)
                 # duplicates outside the script section
                 script_ids = {b['id'] for b in _reword.script_blocks(pid)}
                 seen, removed, videos = set(), 0, 0
@@ -1548,7 +1583,7 @@ def main():
     if a.relist:
         cfg, fmts = load_config(), load_formats()
         mkts = M.load(cfg)
-        if own_comebacks(mkts, fmts, cfg, tiers=own_tiers(mkts, fmts, cfg, force=True)):
+        if own_comebacks(mkts, fmts, cfg, tiers=own_tiers(mkts, fmts, cfg, force=True), force=True):
             state.save('formats.json', fmts)
         rerank(mkts, fmts, state.load('history.json', {}), cfg, force=True)
         return

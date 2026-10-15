@@ -42,6 +42,24 @@ def note_problem(blocks, lang):
     return None
 
 
+def layout_problems(blocks, script, links):
+    """Problems that mean "old hand-written layout": such a page is rebuilt from its example video (main.ready_page),
+    never patched (tidy leaves it alone)."""
+    urls = [((x.get('text') or {}).get('link') or {}).get('url', '') or '' for b in blocks
+            for x in (b.get(b['type']) or {}).get('rich_text', []) or []]
+    out = []
+    if not any(b['type'] == 'video' for b in blocks):
+        out.append('no example video')
+    if not any('tiktok.com/@' in u for u in urls):
+        out.append('no link to the original TikTok')
+    if not script:
+        out.append('no script section')
+    elif not any(((x.get('text') or {}).get('link') or {}).get('url') == links['parakeet']
+                 for b in script for x in b[b['type']].get('rich_text', [])):
+        out.append('no Parakeet AI link in the script')
+    return out
+
+
 def check_page(pid, lang, links, live=True):
     """Problems of one format page."""
     blocks = notion.children(pid)
@@ -54,18 +72,8 @@ def check_page(pid, lang, links, live=True):
         out.append(bad_note)
     if not live:
         return out
-    urls = [((x.get('text') or {}).get('link') or {}).get('url', '') or '' for b in blocks
-            for x in (b.get(b['type']) or {}).get('rich_text', []) or []]
-    if not any(b['type'] == 'video' for b in blocks):
-        out.append('no example video')
-    if not any('tiktok.com/@' in u for u in urls):
-        out.append('no link to the original TikTok')
     script = reword.script_blocks(pid)
-    if not script:
-        out.append('no script section')
-    elif not any(((x.get('text') or {}).get('link') or {}).get('url') == links['parakeet']
-                 for b in script for x in b[b['type']].get('rich_text', [])):
-        out.append('no Parakeet AI link in the script')
+    out += layout_problems(blocks, script, links)
     if SOURCE_RE.search(reword.spoken_text(script)):
         out.append('JobStep (or the other app) named in the script')
     from . import tidy

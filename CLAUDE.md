@@ -76,3 +76,11 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - `brands.LOCALISE` (in every writer and judge prompt): Spain pages in Spain Spanish (no LatAm words), market job
   sites (Spain InfoJobs; France France Travail / Welcome to the Jungle), and details only the original creator can say
   (their industry, a salary) become neutral. Allowed by the judges, so it is never "reworded" back.
+
+## Comebacks only with ready pages (15 Oct 2026)
+- A format proven for our creators came back with no Spanish page and an old hand-written French page, and tidy
+  renamed that page after a random bold line. Now `main.own_comebacks` first calls `main.ready_page` for every running
+  market (missing page -> built + checked; old layout = `verify.layout_problems` -> rebuilt from its example video,
+  old text in state/script_backup.json). Only when all pages are ready is the format listed; else it stays archived
+  and is retried next run (`comeback_tries`; after `COMEBACK_TRIES` one Slack note, then only `mode=relist` retries).
+- `tidy` never touches a page in the old layout (reports "old layout - not tidied"); `standardize` uses `ready_page`.

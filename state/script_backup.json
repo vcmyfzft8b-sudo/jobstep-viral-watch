@@ -20530,6 +20530,25 @@
    "type": "text"
   }
  ],
+ "3fa958b0-fc14-8184-881e-d0822e17e613": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copia el arranque del vídeo de ejemplo: el filtro de TikTok que deforma la cara (nariz y labios gigantes), la cabeza apoyada en la mano y el título en pantalla.",
+   "text": {
+    "content": "Copia el arranque del vídeo de ejemplo: el filtro de TikTok que deforma la cara (nariz y labios gigantes), la cabeza apoyada en la mano y el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "4347a0c2-a5a7-4b12-ae33-7538f6f23682": [
   {
    "annotations": {
@@ -43744,6 +43763,383 @@
    }
   ]
  ],
+ "page:3fa958b0-fc14-8163-aa51-fec304edfa50": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Acabo de dejar mi trabajo en Recursos Humanos, así que te voy a contar todos sus secretos. ",
+    "text": {
+     "content": "Acabo de dejar mi trabajo en Recursos Humanos, así que te voy a contar todos sus secretos. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "La razón por la que tanta gente no consigue encontrar trabajo ahora mismo es muy sencilla. La culpa es de tu CV, gente. (",
+    "text": {
+     "content": "La razón por la que tanta gente no consigue encontrar trabajo ahora mismo es muy sencilla. La culpa es de tu CV, gente. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Tu CV es una plantilla de Canva. Nadie te lo dice, pero tu CV tiene que ser superfeo. ",
+    "text": {
+     "content": ") Tu CV es una plantilla de Canva. Nadie te lo dice, pero tu CV tiene que ser superfeo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y otro secreto: ni una sola persona de Recursos Humanos revisa tu CV. Todo lo hacen los filtros ATS. Algo así como inteligencia artificial. Para ayudarte al máximo, te voy a enseñar la web con la que pasas esos filtros. ",
+    "text": {
+     "content": "Y otro secreto: ni una sola persona de Recursos Humanos revisa tu CV. Todo lo hacen los filtros ATS. Algo así como inteligencia artificial. Para ayudarte al máximo, te voy a enseñar la web con la que pasas esos filtros. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Entras en Parakeet AI. Subes tu CV. Le das a añadir una oferta. Añades el enlace de la oferta. (",
+    "text": {
+     "content": ") Entras en Parakeet AI. Subes tu CV. Le das a añadir una oferta. Añades el enlace de la oferta. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Búsqueda de empleo en LinkedIn",
+    "text": {
+     "content": "Búsqueda de empleo en LinkedIn",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") A mí me gustó esta oferta. Dejo su enlace aquí. ",
+    "text": {
+     "content": ") A mí me gustó esta oferta. Dejo su enlace aquí. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") La IA analiza tu CV y te da una puntuación orientativa. Mira, yo cumplo el X % de los filtros ATS. Por eso le doy a «Continuar». ",
+    "text": {
+     "content": ") La IA analiza tu CV y te da una puntuación orientativa. Mira, yo cumplo el X % de los filtros ATS. Por eso le doy a «Continuar». ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Arreglo algunos detalles más que le hacían falta. Y ya lo tengo. Tengo un CV que cumple, fíjate, el Y % de los filtros ATS. ",
+    "text": {
+     "content": "Arreglo algunos detalles más que le hacían falta. Y ya lo tengo. Tengo un CV que cumple, fíjate, el Y % de los filtros ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Solo me queda descargarlo y ya está. Y si quiero, hasta puedo elegir otra plantilla. ",
+    "text": {
+     "content": "Solo me queda descargarlo y ya está. Y si quiero, hasta puedo elegir otra plantilla. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "rebuild:A202610061332:fr:1792053392": {
+  "blocks": [
+   [
+    "video",
+    ""
+   ],
+   [
+    "callout",
+    "Important : Tourne ta vidéo d’après le script ci-dessous. La vidéo d’inspiration vient d’une autre marque et ce n’est PAS la vidéo à faire. Reprends-en LE PLUS FIDÈLEMENT POSSIBLE l’ambiance (vibe), les angles de caméra, la façon de filmer, le montage et les moments où l’app est montrée (démo) – c’est à ça que servent les vidéos d’inspiration.\nDans la vidéo, c’est une autre app qui est utilisée. Fais tout pareil, mais avec Parakeet AI : ouvre Parakeet AI aux moments où cette app est ouverte dans la vidéo et montre-le de la même façon. Cette app ne doit apparaître ni être entendue nulle part dans ta vidéo."
+   ],
+   [
+    "heading_3",
+    "📲 TEXTE ÉCRIT"
+   ],
+   [
+    "paragraph",
+    "Choisis une de ces phrases."
+   ],
+   [
+    "bulleted_list_item",
+    "Ex-RH : je vous dis ce que personne ne vous dit"
+   ],
+   [
+    "bulleted_list_item",
+    "La vraie raison pour laquelle vous ne trouvez pas de job"
+   ],
+   [
+    "bulleted_list_item",
+    "Votre CV doit être moche, je vous explique pourquoi"
+   ],
+   [
+    "bulleted_list_item",
+    "En RH, on ne regarde pas les CV. Jamais"
+   ],
+   [
+    "bulleted_list_item",
+    "Le tri est fait par un logiciel, pas par un humain"
+   ],
+   [
+    "bulleted_list_item",
+    "Arrêtez les CV Canva, ça vous élimine"
+   ],
+   [
+    "paragraph",
+    "Utilise les sous-titres automatiques pendant toute la vidéo."
+   ],
+   [
+    "heading_3",
+    "💬 SCRIPT"
+   ],
+   [
+    "paragraph",
+    "Je viens de quitter mon poste en RH, donc je peux vous dire ce que personne ne vous dit."
+   ],
+   [
+    "paragraph",
+    "Si vous ne trouvez pas de job en ce moment, c'est vos CV. Vos CV Canva, avec les colonnes, les couleurs, les petites icônes."
+   ],
+   [
+    "paragraph",
+    "Personne vous le dit, mais un CV doit être moche. Vraiment moche. Parce qu'en RH, on ne regarde pas les CV. Le tri est fait avant, par des logiciels ATS, une sorte d'IA. Si ton CV ne passe pas, on ne le voit jamais."
+   ],
+   [
+    "paragraph",
+    "Et l'astuce, je vous la donne direct : un outil comme Parakeet AI."
+   ],
+   [
+    "paragraph",
+    "Tu pars de ce que tu as, ton LinkedIn, ton CV Canva, ton PDF, ou tu le crées de zéro. Tu colles l'annonce du poste. Et il te refait ton CV en mettant en avant les infos clés pour ce poste précis, et surtout dans un format qui passe les filtres."
+   ],
+   [
+    "heading_3",
+    "🎬 ACCROCHE VISUELLE"
+   ],
+   [
+    "paragraph",
+    "Accroche — face cam, tu fais quelque chose en même temps (reprends les idées d’accroches visuelles ou utilise un filtre)"
+   ],
+   [
+    "paragraph",
+    "La partie CV Canva — insert plein écran d'un CV très graphique que tu recrées toi-même. Tu entoures ou tu barres les éléments problématiques : colonnes, icônes, photo, police fantaisie."
+   ],
+   [
+    "paragraph",
+    "La partie ATS — visualisation simple du CV qui part, du logiciel qui le rejette, et du recruteur qui ne le voit jamais. Du texte à l'écran suffit."
+   ],
+   [
+    "paragraph",
+    "Démo — obligatoire — Parakeet AI : tu montres les différents points de départ (LinkedIn, CV Canva, PDF, création de zéro), tu colles le lien de l'annonce, et on voit le nouveau CV se générer jusqu'au résultat final."
+   ],
+   [
+    "paragraph",
+    "Fin — retour face cam, tu pointes vers le lien ou le code promo."
+   ]
+  ],
+  "page": "3e9958b0-fc14-8052-aec2-e7bda47e7d5e",
+  "title": "Ex-HR verrät: So kommt dein Lebenslauf durch die Filter 🤫"
+ },
  "rebuild:ESX28:es:1791822581": {
   "blocks": [
    [

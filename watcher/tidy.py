@@ -15,7 +15,7 @@ import re
 from . import notion, reword
 
 MAX_CUES = 3
-QUOTE_RE = re.compile(r'«\s*([^»]+?)\s*»|“([^”]+)”|„([^“”]+)[“”]|"([^"]+)"')
+QUOTE_RE = re.compile(r'«\s*([^»]+?)\s*»|»\s*([^«]+?)\s*«|“([^”]+)”|„([^“”]+)[“”]|"([^"]+)"')  # »…« = Slovenian
 
 
 def _url(x):

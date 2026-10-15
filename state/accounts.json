@@ -1,6 +1,13 @@
 {
+ "30ansetauchomage": {
+  "checked_ugc": true,
+  "lang": "fr",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "_klaudii30": {
-  "checked": 1791821800,
+  "checked": 1792095987,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -8,7 +15,7 @@
   "status": "active"
  },
  "abis.luv6": {
-  "checked": 1791821803,
+  "checked": 1792095990,
   "checked_ugc": true,
   "evidence": "publi; speech 'esta web que se llama jobstep punto i o' (1d, 2d); screen 'Se llama jobstep.io' (6d)",
   "lang": "es",
@@ -17,7 +24,7 @@
   "status": "active"
  },
  "adriana_jobs": {
-  "checked": 1791821808,
+  "checked": 1792095995,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
@@ -25,7 +32,7 @@
   "status": "active"
  },
  "aime_aqui": {
-  "checked": 1791821808,
+  "checked": 1792095995,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -33,7 +40,7 @@
   "status": "active"
  },
  "ale.jobtips": {
-  "checked": 1791821809,
+  "checked": 1792095996,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -41,7 +48,7 @@
   "status": "active"
  },
  "alex.jobtipps": {
-  "checked": 1791821809,
+  "checked": 1792095996,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -49,7 +56,7 @@
   "status": "active"
  },
  "alexkoleva13": {
-  "checked": 1791821816,
+  "checked": 1792096008,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -57,7 +64,7 @@
   "status": "active"
  },
  "alinaibarra13": {
-  "checked": 1791821819,
+  "checked": 1792096010,
   "checked_ugc": true,
   "evidence": "speech 'después jobstep te va a dar tu CV totalmente perfecto' (2d, 260k views)",
   "lang": "es",
@@ -65,8 +72,15 @@
   "source": "checked-2026-10-07",
   "status": "active"
  },
+ "angetipsw": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "anniaelina": {
-  "checked": 1791821819,
+  "checked": 1792096011,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -74,7 +88,7 @@
   "status": "active"
  },
  "annikajobtips": {
-  "checked": 1791821820,
+  "checked": 1792096012,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -82,13 +96,13 @@
   "status": "active"
  },
  "apply.with.a": {
-  "checked": 1791821820,
+  "checked": 1792096012,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "avazdagbok": {
-  "checked": 1791821830,
+  "checked": 1792096024,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -96,7 +110,7 @@
   "status": "inactive"
  },
  "benkorebeka5": {
-  "checked": 1791821830,
+  "checked": 1792096025,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -104,7 +118,7 @@
   "status": "active"
  },
  "career.tea.with.d": {
-  "checked": 1791821831,
+  "checked": 1792096025,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -112,7 +126,7 @@
   "status": "active"
  },
  "careerbydilara": {
-  "checked": 1791821833,
+  "checked": 1792096027,
   "checked_ugc": true,
   "evidence": "Turkish; speech 'jobstep'e giriyoruz' (5d); 'jobStep'e giriyosun' (10d); only 2 videos",
   "lang": "",
@@ -120,57 +134,64 @@
   "source": "checked-2026-10-07",
   "status": "active"
  },
+ "carolinaworktips": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "catita.tipss": {
-  "checked": 1791821843,
+  "checked": 1792096038,
   "checked_ugc": true,
   "evidence": "speech 'yo por ejemplo uso jobstep... la pego acá en jobstep' (1d); 'se llama jobstep punto i o' (6d)",
   "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
-  "status": "active"
+  "status": "inactive"
  },
  "caty.realfakephoto": {
-  "checked": 1791821844,
+  "checked": 1792096038,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "chajobtips": {
-  "checked": 1791821844,
+  "checked": 1792096039,
   "since": 1791371133,
   "source": "lightreel",
   "status": "inactive"
  },
  "charline.job": {
-  "checked": 1791821845,
+  "checked": 1792096039,
   "since": 1791371133,
   "source": "lightreel",
   "status": "inactive"
  },
  "charline.jobstep.io": {
-  "checked": 1791821845,
+  "checked": 1792096040,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "chey.jobstep.io": {
-  "checked": 1791821846,
+  "checked": 1792096041,
   "since": 1791288684,
   "source": "lightreel",
   "status": "inactive"
  },
  "chloe.jobtipps": {
-  "checked": 1791821848,
+  "checked": 1792096045,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "chloejobtips": {
-  "checked": 1791821850,
+  "checked": 1792096050,
   "checked_ugc": true,
   "evidence": "Publicité; speech 'vous allez dans jobstep point you' (1d, 41.8k views); 'l'appli job step' (14d)",
   "lang": "fr",
@@ -179,7 +200,7 @@
   "status": "active"
  },
  "claucreate": {
-  "checked": 1791821852,
+  "checked": 1792096053,
   "checked_ugc": true,
   "evidence": "publi; speech 'esta web que se llama jobstep te vienes a nueva oferta' (12d), 'Jobstep la conocí' (11d), 'se llama jobstep' (14d)",
   "lang": "es",
@@ -188,21 +209,21 @@
   "status": "active"
  },
  "cv.tipps": {
-  "checked": 1791821852,
+  "checked": 1792096053,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "cvwithines_": {
-  "checked": 1791821853,
+  "checked": 1792096054,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "danielaavega___": {
-  "checked": 1791821854,
+  "checked": 1792096056,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -210,7 +231,7 @@
   "status": "active"
  },
  "diana_osm": {
-  "checked": 1791821855,
+  "checked": 1792096056,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -218,7 +239,7 @@
   "status": "active"
  },
  "dianapracuje": {
-  "checked": 1791821856,
+  "checked": 1792096063,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
@@ -226,7 +247,7 @@
   "status": "active"
  },
  "diann1770": {
-  "checked": 1791821865,
+  "checked": 1792096065,
   "checked_ugc": true,
   "evidence": "speech 'uno que se llamaba jobstep' (0d); 'un sitio que se llama jobstep' (3d); 'se fuera a jobstep' (8d)",
   "lang": "es",
@@ -235,7 +256,7 @@
   "status": "active"
  },
  "dorcsyy_jobstep": {
-  "checked": 1791821866,
+  "checked": 1792096066,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -243,16 +264,16 @@
   "status": "active"
  },
  "dymphy.tiktok": {
-  "checked": 1791821866,
+  "checked": 1792096066,
   "checked_ugc": true,
   "evidence": "#partnerschap; speech 'deze website van jobstep punt e o' (11d); paste-link workflow 1-9d",
-  "lang": "",
+  "lang": "fr",
   "since": 1791373926,
   "source": "checked-2026-10-07",
   "status": "active"
  },
  "edda.anneli": {
-  "checked": 1791821867,
+  "checked": 1792096067,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -260,7 +281,7 @@
   "status": "active"
  },
  "elisa.jobtipps": {
-  "checked": 1791821867,
+  "checked": 1792096067,
   "checked_ugc": true,
   "evidence": "speech 'ich soll jobstep ... ausprobieren' (19d); screen 'optimiere ich jede Bewerbung vorher mit Jobstep.io' (46d); low posting frequency",
   "lang": "de",
@@ -269,15 +290,15 @@
   "status": "active"
  },
  "elizacv25": {
-  "checked": 1791821868,
+  "checked": 1792096068,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "ella.jobtips": {
-  "checked": 1791821868,
+  "checked": 1792096069,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -291,7 +312,7 @@
   "status": "manual"
  },
  "emily_190730": {
-  "checked": 1791821876,
+  "checked": 1792096077,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -299,7 +320,7 @@
   "status": "active"
  },
  "emma.jobtips": {
-  "checked": 1791821880,
+  "checked": 1792096081,
   "checked_ugc": true,
   "evidence": "publicité; speech 'on va sur le site jobstep point you' (5d, 58.8k); 'ça s'appelle jobstep point yo' (7d)",
   "lang": "fr",
@@ -308,7 +329,7 @@
   "status": "active"
  },
  "emma_jobtips": {
-  "checked": 1791821882,
+  "checked": 1792096086,
   "checked_ugc": true,
   "evidence": "advertentie; speech 'met zo'n tool jobstep punt o' (10d, 523k views); paste-link workflow 1-9d",
   "lang": "",
@@ -317,7 +338,7 @@
   "status": "active"
  },
  "emy.jobstep.io": {
-  "checked": 1791821883,
+  "checked": 1792096087,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -325,7 +346,7 @@
   "status": "active"
  },
  "emy.jobtipps": {
-  "checked": 1791821883,
+  "checked": 1792096087,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -333,7 +354,7 @@
   "status": "active"
  },
  "esracareers": {
-  "checked": 1791821884,
+  "checked": 1792096088,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
@@ -341,7 +362,7 @@
   "status": "active"
  },
  "ferni.tips": {
-  "checked": 1791821888,
+  "checked": 1792096090,
   "checked_ugc": true,
   "evidence": "screen 'Rehice mi CV con Jobstep.io' (7d, 83.8k); paste-link workflow 1-5d",
   "lang": "es",
@@ -350,7 +371,7 @@
   "status": "active"
  },
  "filippajobbtips": {
-  "checked": 1791821888,
+  "checked": 1792096090,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -358,7 +379,7 @@
   "status": "active"
  },
  "franzi.jobtipps": {
-  "checked": 1791821890,
+  "checked": 1792096092,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -373,7 +394,7 @@
   "status": "inactive"
  },
  "gabbolab": {
-  "checked": 1791821908,
+  "checked": 1792096111,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -381,6 +402,7 @@
   "status": "active"
  },
  "giadaslifestyle": {
+  "checked": 1792096116,
   "checked_ugc": true,
   "lang": "",
   "since": 1791821800,
@@ -388,27 +410,34 @@
   "status": "active"
  },
  "gina.fekete7": {
-  "checked": 1791821909,
+  "checked": 1792096117,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "growwithandj": {
+  "checked_ugc": true,
+  "lang": "",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "ibtiseme.jobtips": {
-  "checked": 1791821910,
+  "checked": 1792096117,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "ibtiseme.realfake": {
-  "checked": 1791821911,
+  "checked": 1792096118,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "iloveklodzko": {
-  "checked": 1791821911,
+  "checked": 1792096118,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -416,7 +445,7 @@
   "status": "active"
  },
  "isaconsejoscv": {
-  "checked": 1791821923,
+  "checked": 1792096132,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -432,7 +461,7 @@
   "status": "active"
  },
  "issa.jobtips": {
-  "checked": 1791821929,
+  "checked": 1792096153,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -440,7 +469,7 @@
   "status": "active"
  },
  "itshelin03": {
-  "checked": 1791821931,
+  "checked": 1792096155,
   "checked_ugc": true,
   "evidence": "Anzeige; speech 'dein Lebenslauf mit jobstep überprüfen lassen' (1d); 'mit jobstep zu arbeiten' (3d)",
   "lang": "de",
@@ -449,7 +478,7 @@
   "status": "active"
  },
  "itssophiatalea": {
-  "checked": 1791821931,
+  "checked": 1792096155,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -457,7 +486,7 @@
   "status": "active"
  },
  "itswithluna": {
-  "checked": 1791821932,
+  "checked": 1792096156,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -481,7 +510,7 @@
   "status": "active"
  },
  "jenny_jennyv": {
-  "checked": 1791821951,
+  "checked": 1792096176,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
@@ -489,7 +518,7 @@
   "status": "active"
  },
  "jimena.ruizf": {
-  "checked": 1791821954,
+  "checked": 1792096179,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -497,16 +526,16 @@
   "status": "active"
  },
  "joaocareer": {
-  "checked": 1791821964,
+  "checked": 1792096184,
   "checked_ugc": true,
   "evidence": "speech 'vais aqui à job step adicionas o trabalho' (10d, 72k); same workflow 1-9d",
   "lang": "",
   "since": 1791373926,
   "source": "checked-2026-10-07",
-  "status": "inactive"
+  "status": "active"
  },
  "job.by.niki": {
-  "checked": 1791821964,
+  "checked": 1792096184,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -514,7 +543,7 @@
   "status": "active"
  },
  "job.reality.mit.tatyana": {
-  "checked": 1791821965,
+  "checked": 1792096185,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -522,13 +551,13 @@
   "status": "active"
  },
  "jobbtipsfilippa": {
-  "checked": 1791821965,
+  "checked": 1792096185,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "jobfluesterin": {
-  "checked": 1791821967,
+  "checked": 1792096187,
   "checked_ugc": true,
   "evidence": "Anzeige; speech 'hab ihn bei jobstep hochgeladen' (21d); 'dieses Tool ... jobstep I O' (26d); last post 21d",
   "lang": "de",
@@ -538,13 +567,13 @@
  },
  "jobstep.io": {
   "checked_ugc": true,
-  "lang": "",
+  "lang": "de",
   "since": 1791288684,
   "source": "known",
   "status": "manual"
  },
  "jobtipsmetmarie": {
-  "checked": 1791821971,
+  "checked": 1792096196,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -552,7 +581,7 @@
   "status": "active"
  },
  "jobtipy": {
-  "checked": 1791821973,
+  "checked": 1792096198,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -560,7 +589,7 @@
   "status": "active"
  },
  "joelle.jobstep.io": {
-  "checked": 1791821974,
+  "checked": 1792096198,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -568,21 +597,21 @@
   "status": "active"
  },
  "julia.jobstep": {
-  "checked": 1791821974,
+  "checked": 1792096199,
   "since": 1791371133,
   "source": "lightreel",
   "status": "inactive"
  },
  "juliajobtips": {
-  "checked": 1791821975,
+  "checked": 1792096199,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "juliantyonhaku": {
-  "checked": 1791821975,
+  "checked": 1792096200,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -590,13 +619,13 @@
   "status": "active"
  },
  "julie.jobstep.io": {
-  "checked": 1791821975,
+  "checked": 1792096201,
   "since": 1791371133,
   "source": "lightreel",
   "status": "inactive"
  },
  "julie.jobtips": {
-  "checked": 1791821976,
+  "checked": 1792096201,
   "checked_ugc": true,
   "lang": "fr",
   "since": 1791371133,
@@ -604,15 +633,15 @@
   "status": "active"
  },
  "juliejobtips": {
-  "checked": 1791821976,
+  "checked": 1792096202,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "junew0rk": {
-  "checked": 1791821978,
+  "checked": 1792096204,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -620,15 +649,15 @@
   "status": "active"
  },
  "justsara676": {
-  "checked": 1791821978,
+  "checked": 1792096205,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "karmencvtips": {
-  "checked": 1791821979,
+  "checked": 1792096205,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -636,19 +665,19 @@
   "status": "active"
  },
  "katisdiaryy": {
-  "checked": 1791821979,
+  "checked": 1792096206,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "lara.jobstep": {
-  "checked": 1791821980,
+  "checked": 1792096206,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "laraworking": {
-  "checked": 1791821984,
+  "checked": 1792096212,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791556650,
@@ -656,23 +685,30 @@
   "status": "active"
  },
  "lau.urarm": {
-  "checked": 1791821984,
+  "checked": 1792096213,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
- "lavalaletze": {
-  "checked": 1791821986,
+ "laurapopia4": {
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "lavalaletze": {
+  "checked": 1792096213,
+  "checked_ugc": true,
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "laviniateol1": {
-  "checked": 1791821990,
+  "checked": 1792096215,
   "checked_ugc": true,
   "evidence": "speech 'questo sito che si chiama jobstep' (4d); 'la copio qui su jobstep.io' (8d)",
   "lang": "",
@@ -681,6 +717,7 @@
   "status": "active"
  },
  "lavoraconjulia": {
+  "checked": 1792096220,
   "checked_ugc": true,
   "lang": "",
   "since": 1791821800,
@@ -688,13 +725,13 @@
   "status": "active"
  },
  "lea.jobtips": {
-  "checked": 1791822001,
+  "checked": 1792096233,
   "since": 1791288684,
   "source": "lightreel",
   "status": "inactive"
  },
  "leonorjobstepp": {
-  "checked": 1791822001,
+  "checked": 1792096234,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -709,7 +746,7 @@
   "status": "manual"
  },
  "leyla.jobstep": {
-  "checked": 1791822002,
+  "checked": 1792096234,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -717,7 +754,7 @@
   "status": "active"
  },
  "lil.janeiro0": {
-  "checked": 1791822002,
+  "checked": 1792096236,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -725,7 +762,7 @@
   "status": "active"
  },
  "lilly.jobtipps": {
-  "checked": 1791822003,
+  "checked": 1792096237,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -733,15 +770,15 @@
   "status": "active"
  },
  "linnegzmstf": {
-  "checked": 1791822003,
+  "checked": 1792096249,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
-  "status": "active"
+  "status": "inactive"
  },
  "lissa.jobtipps": {
-  "checked": 1791822004,
+  "checked": 1792096249,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -749,13 +786,13 @@
   "status": "active"
  },
  "litebattrevarjedag": {
-  "checked": 1791822004,
+  "checked": 1792096250,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "lockinwitheva": {
-  "checked": 1791822005,
+  "checked": 1792096250,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -763,15 +800,15 @@
   "status": "active"
  },
  "luworks": {
-  "checked": 1791822005,
+  "checked": 1792096251,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "ma.life.de.chomeu": {
-  "checked": 1791822008,
+  "checked": 1792096254,
   "checked_ugc": true,
   "lang": "fr",
   "since": 1791371133,
@@ -779,14 +816,22 @@
   "status": "active"
  },
  "madebyanna92": {
-  "checked": 1791822009,
+  "checked": 1792096255,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
   "source": "tiktok-search",
+  "status": "inactive"
+ },
+ "maguiteexplica": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
   "status": "active"
  },
  "majat05": {
+  "checked": 1792096255,
   "checked_ugc": true,
   "lang": "",
   "since": 1791821800,
@@ -794,7 +839,7 @@
   "status": "active"
  },
  "majo67568": {
-  "checked": 1791822013,
+  "checked": 1792096264,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -802,15 +847,15 @@
   "status": "active"
  },
  "manal.jobstep.io": {
-  "checked": 1791822013,
+  "checked": 1792096265,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "manon.job3": {
-  "checked": 1791822017,
+  "checked": 1792096269,
   "checked_ugc": true,
   "lang": "fr",
   "since": 1791371133,
@@ -818,13 +863,13 @@
   "status": "active"
  },
  "manon.jobstep": {
-  "checked": 1791822021,
+  "checked": 1792096272,
   "since": 1791371133,
   "source": "lightreel",
   "status": "inactive"
  },
  "manujobtips": {
-  "checked": 1791822023,
+  "checked": 1792096277,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -832,21 +877,28 @@
   "status": "active"
  },
  "maria25alm": {
-  "checked": 1791822032,
+  "checked": 1792096291,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
   "source": "search-2026-10-07",
+  "status": "inactive"
+ },
+ "marianaloprueba": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
   "status": "active"
  },
  "marie.jobtipps": {
-  "checked": 1791822032,
+  "checked": 1792096292,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "mariee.jobtipps": {
-  "checked": 1791822033,
+  "checked": 1792096292,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -854,7 +906,7 @@
   "status": "active"
  },
  "marietipsapply": {
-  "checked": 1791822036,
+  "checked": 1792096295,
   "checked_ugc": true,
   "evidence": "speech 'esta página web jobstep punto i...' (2d, 291k views); 'este sitio web JobStep' (5d)",
   "lang": "es",
@@ -863,15 +915,15 @@
   "status": "active"
  },
  "marine.realfakephotos": {
-  "checked": 1791822037,
+  "checked": 1792096295,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "martets": {
-  "checked": 1791822038,
+  "checked": 1792096299,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -879,7 +931,7 @@
   "status": "active"
  },
  "mary.jobtipps": {
-  "checked": 1791822039,
+  "checked": 1792096299,
   "checked_ugc": true,
   "evidence": "#jobstep on all videos 18-31d; speech 'gehst du auf jobster Punkt Io' (27d); last post 18d",
   "lang": "de",
@@ -888,21 +940,28 @@
   "status": "active"
  },
  "matildedicas": {
-  "checked": 1791822039,
+  "checked": 1792096300,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
+ "mikiii4670": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "millie.jobtips": {
-  "checked": 1791822040,
+  "checked": 1792096301,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "misialurisia": {
-  "checked": 1791822041,
+  "checked": 1792096302,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -910,23 +969,23 @@
   "status": "active"
  },
  "mona.jobtips": {
-  "checked": 1791822047,
+  "checked": 1792096309,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "nass.job.tips": {
-  "checked": 1791822048,
+  "checked": 1792096310,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "neli.gomolj": {
-  "checked": 1791822048,
+  "checked": 1792096310,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -934,13 +993,13 @@
   "status": "active"
  },
  "noahdiesdas": {
-  "checked": 1791822049,
+  "checked": 1792096311,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "olatinasaid": {
-  "checked": 1791822049,
+  "checked": 1792096311,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -948,7 +1007,7 @@
   "status": "active"
  },
  "origomez953": {
-  "checked": 1791822050,
+  "checked": 1792096312,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -956,13 +1015,13 @@
   "status": "active"
  },
  "realfakephoto": {
-  "checked": 1791822051,
+  "checked": 1792096314,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "revekaonline": {
-  "checked": 1791822052,
+  "checked": 1792096314,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -970,7 +1029,7 @@
   "status": "active"
  },
  "roxanaempleos": {
-  "checked": 1791822052,
+  "checked": 1792096315,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -978,7 +1037,7 @@
   "status": "active"
  },
  "rubi.te.guia": {
-  "checked": 1791822052,
+  "checked": 1792096315,
   "checked_ugc": true,
   "lang": "es",
   "since": 1791371133,
@@ -993,23 +1052,23 @@
   "status": "manual"
  },
  "samantha_jobstep": {
-  "checked": 1791822053,
+  "checked": 1792096316,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "samjobtips": {
-  "checked": 1791822059,
+  "checked": 1792096327,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "fr",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "sara.jobstep.io": {
-  "checked": 1791822059,
+  "checked": 1792096328,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1017,13 +1076,13 @@
   "status": "active"
  },
  "sarinaajobstep": {
-  "checked": 1791822060,
+  "checked": 1792096328,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "sarinajobstep": {
-  "checked": 1791822060,
+  "checked": 1792096329,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -1031,7 +1090,7 @@
   "status": "active"
  },
  "sevvalcareer": {
-  "checked": 1791822060,
+  "checked": 1792096329,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1039,13 +1098,13 @@
   "status": "active"
  },
  "sina.realfakephotos": {
-  "checked": 1791822061,
+  "checked": 1792096330,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "sophia_einszwei": {
-  "checked": 1791822061,
+  "checked": 1792096331,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791371133,
@@ -1053,7 +1112,7 @@
   "status": "active"
  },
  "srokolajobtips": {
-  "checked": 1791822064,
+  "checked": 1792096333,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
@@ -1061,7 +1120,7 @@
   "status": "active"
  },
  "stay.with.giulia": {
-  "checked": 1791822065,
+  "checked": 1792096335,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1069,7 +1128,7 @@
   "status": "active"
  },
  "swaaag_06": {
-  "checked": 1791822066,
+  "checked": 1792096335,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1077,15 +1136,15 @@
   "status": "active"
  },
  "thelma.gtz": {
-  "checked": 1791822066,
+  "checked": 1792096336,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "lightreel",
   "status": "active"
  },
  "thilde9154": {
-  "checked": 1791822067,
+  "checked": 1792096336,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1093,7 +1152,7 @@
   "status": "active"
  },
  "this.is.creed": {
-  "checked": 1791822067,
+  "checked": 1792096337,
   "checked_ugc": true,
   "lang": "de",
   "since": 1791288684,
@@ -1101,7 +1160,7 @@
   "status": "active"
  },
  "tips.from.ale": {
-  "checked": 1791822069,
+  "checked": 1792096340,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1109,21 +1168,21 @@
   "status": "active"
  },
  "tipsbylarissa": {
-  "checked": 1791822069,
+  "checked": 1792096341,
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "inactive"
  },
  "trabajandoconker": {
-  "checked": 1791822070,
+  "checked": 1792096341,
   "checked_ugc": true,
-  "lang": "",
+  "lang": "es",
   "since": 1791288684,
   "source": "tiktok-search",
   "status": "active"
  },
  "tsvetelina.tips": {
-  "checked": 1791822075,
+  "checked": 1792096349,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1131,7 +1190,7 @@
   "status": "active"
  },
  "viktorietyna": {
-  "checked": 1791822076,
+  "checked": 1792096350,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,
@@ -1139,15 +1198,22 @@
   "status": "active"
  },
  "work.with.ell": {
-  "checked": 1791822076,
+  "checked": 1792096350,
   "checked_ugc": true,
   "lang": "",
   "since": 1791371133,
   "source": "search-2026-10-07",
   "status": "active"
  },
+ "yamiworks22": {
+  "checked_ugc": true,
+  "lang": "es",
+  "since": 1792095986,
+  "source": "lightreel",
+  "status": "active"
+ },
  "zorica.djurdjevic21": {
-  "checked": 1791822080,
+  "checked": 1792096352,
   "checked_ugc": true,
   "lang": "",
   "since": 1791288684,

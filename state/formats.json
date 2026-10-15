@@ -1,5 +1,8 @@
 [
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Nobody reads your CV / your CV never reaches a recruiter: ATS software filters or rejects CVs before a human sees them; pretty/creative CVs fail the ATS. Examples: 'NIKO ne cita tvoj CV', 'pov: alles Lügen', 'POV: cały czas dostajesz odmowy', 'Mach das nicht!! abgelehnt'.",
   "id": "N10",
   "inspo": {
@@ -25,7 +28,8 @@
   "page_id": "3f0958b0fc14819ca5d5e0ad0f22e6c5",
   "pages": {
    "es": "3f0958b0-fc14-8066-bf07-fe40cc899cb7",
-   "fr": "3d6958b0-fc14-8081-9ed6-cef70d0e34df"
+   "fr": "3d6958b0-fc14-8081-9ed6-cef70d0e34df",
+   "sl": "1fa958b0fc14822b9c368120457c63ee"
   },
   "reworded": {
    "de": true,
@@ -37,6 +41,9 @@
   "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "How am I supposed to explain this to my parents? Graduated (2026) and can't find a job; parents/family don't understand how job hunting works today. Examples: 'kako OVO da objasnim roditeljima', 'Jak mam wyjaśnić rodzicom', 'Wie soll ich das meinen Eltern erklären'.",
   "id": "N01",
   "inspo": {
@@ -62,7 +69,8 @@
   "page_id": "3f0958b0fc14816aadb3f7c783ee29c9",
   "pages": {
    "es": "3f0958b0-fc14-8066-9ac1-da9ddefec788",
-   "fr": "3f0958b0-fc14-80a7-b99b-d1bdcb5e0628"
+   "fr": "3f0958b0-fc14-80a7-b99b-d1bdcb5e0628",
+   "sl": "4ca958b0fc148348ac3d019c27afbc2a"
   },
   "reworded": {
    "de": true,
@@ -87,6 +95,9 @@
   "title": "Jobsuche: Ja, nein oder vielleicht?"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "LinkedIn job-search hack: change the time filter in the URL (86400 -> 3600, r3600) to see jobs posted in the last hour, then tailor the CV. Example: 'OD KAD LINKEDIN MOŽE OVO???'.",
   "id": "N02",
   "inspo": {
@@ -106,7 +117,8 @@
   "page_id": "3f0958b0fc148181bcdde9677a8e051e",
   "pages": {
    "es": "3f0958b0-fc14-8055-a0a0-f2a0abb631b0",
-   "fr": "3f0958b0-fc14-8062-b0d7-f22c1ceec5b2"
+   "fr": "3f0958b0-fc14-8062-b0d7-f22c1ceec5b2",
+   "sl": "fd8958b0fc148203a625813d638f9af5"
   },
   "reworded": {
    "de": true,
@@ -118,6 +130,9 @@
   "title": "Seit wann kann LinkedIn das? 🤯"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "POV: I finally understand why everyone is deleting ChatGPT - usually no voiceover, on-screen numbered steps (copy job ad, paste into the tool, CV gets tailored) with music.",
   "id": "N03",
   "inspo": {
@@ -143,7 +158,8 @@
   "page_id": "3f0958b0fc14819f99f8f24903aeaeb3",
   "pages": {
    "es": "3f0958b0-fc14-8011-99fa-cae338d3228d",
-   "fr": "3f0958b0-fc14-80fb-956e-c9a57d8d6d55"
+   "fr": "3f0958b0-fc14-80fb-956e-c9a57d8d6d55",
+   "sl": "e8b958b0fc148321b9620161db602924"
   },
   "reworded": {
    "de": true,
@@ -155,6 +171,9 @@
   "title": "POV: Dein Lebenslauf bekommt endlich ein Upgrade 🤯"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "I got 20 interviews? / my inbox is full of interview invitations: shows an email inbox full of interview invites as proof, then explains the CV change. Examples: 'dobila sam 20 INTERVJUA', 'WAR IS OVER (tak wygląda moja poczta)'.",
   "id": "N04",
   "inspo": {
@@ -174,7 +193,8 @@
   "page_id": "3f0958b0fc14812ea4b2caf5a6bd19ef",
   "pages": {
    "es": "3f0958b0-fc14-8009-9338-d666a6b9fb0a",
-   "fr": "3f0958b0-fc14-808d-b0f2-cfff9682c186"
+   "fr": "3f0958b0-fc14-808d-b0f2-cfff9682c186",
+   "sl": "351958b0fc14827e82b78134491d1ac7"
   },
   "reworded": {
    "de": true,
@@ -186,6 +206,9 @@
   "title": "Monatelang Bewerbungen – und kaum Antworten? 😭"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
   "id": "N07",
   "inspo": {
@@ -205,7 +228,8 @@
   "page_id": "3f0958b0fc1481babee1d2e56b4e56af",
   "pages": {
    "es": "3f0958b0-fc14-800e-a255-eb7b885dad4d",
-   "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472"
+   "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472",
+   "sl": "3f8958b0fc14829283a9010ceefbdeef"
   },
   "reworded": {
    "de": true,
@@ -256,13 +280,17 @@
   "title": "Den HR-Typen könnte ich heiraten 😳"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1791293339,
   "description": "Creator casually eats a snack on the sofa while talking to camera over an on-screen 'top 10 employers' list, muses about what makes an employer good, then pivots to the CV app (paste job link, tailored CV, upload and score) with screen-recording inserts.",
   "id": "A202610061328",
   "page_id": "3f1958b0-fc14-8180-bc9f-d5f809e56081",
   "pages": {
    "es": "3f1958b0-fc14-814b-8241-db3dd746d6f0",
-   "fr": "3f1958b0-fc14-81a6-8fbf-f9b2a4cedbc8"
+   "fr": "3f1958b0-fc14-81a6-8fbf-f9b2a4cedbc8",
+   "sl": "f7d958b0fc14826e82948138f2f4fc4d"
   },
   "reworded": {
    "de": true,
@@ -286,6 +314,9 @@
   "title": "Den ganzen Sommer nur Absagen? Bis ich DAS geändert hab 😱"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1791293480,
   "description": "Faceless voiceover comparing two printed CVs side by side ('two candidates, same job – who gets invited?'), pointing out the ATS-unfriendly icons and charts on one, then showing the app on a laptop building the ATS-friendly CV.",
   "id": "A202610061331",
@@ -304,7 +335,8 @@
   "page_id": "3f1958b0-fc14-8109-965a-ddda9e24cd16",
   "pages": {
    "es": "3f1958b0-fc14-8141-8dac-f54a97131d3f",
-   "fr": "3e2958b0-fc14-80e7-b625-c1d444186ff5"
+   "fr": "3e2958b0-fc14-80e7-b625-c1d444186ff5",
+   "sl": "62c958b0fc1482fd96ca8114630ed2dc"
   },
   "reworded": {
    "de": true,
@@ -317,6 +349,9 @@
   "title": "Zwei Lebensläufe, wer wird eingeladen? 👀"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1791293560,
   "description": "Ex-HR 'insider secrets' talking-head hook (CVs are Canva templates, ATS filters read them), then a laptop screen recording: add a job link, get a before score, fix the CV, get an after score, download.",
   "id": "A202610061332",
@@ -338,7 +373,8 @@
   "page_id": "3f1958b0-fc14-8107-9431-f2f20737aa98",
   "pages": {
    "es": "3fa958b0-fc14-8163-aa51-fec304edfa50",
-   "fr": "3e9958b0-fc14-8052-aec2-e7bda47e7d5e"
+   "fr": "3e9958b0-fc14-8052-aec2-e7bda47e7d5e",
+   "sl": "1ee958b0fc148321be0b81ba0f576970"
   },
   "pending_pages": {},
   "revived": {
@@ -355,6 +391,9 @@
   "title": "Ex-HR verrät: So kommt dein Lebenslauf durch die Filter 🤫"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1791293645,
   "description": "Talking-head 'best season to job hunt' tip video that tells viewers to ditch their Canva CV for a Harvard-style one, then films the laptop screen with a phone while uploading the CV, showing a low score, using the AI editor and revealing the high new score.",
   "id": "A202610061334",
@@ -369,7 +408,8 @@
   "page_id": "3f1958b0-fc14-81de-8b2c-f04f93c7caee",
   "pages": {
    "es": "3f1958b0-fc14-81dc-b082-ef034500b188",
-   "fr": "3f1958b0-fc14-81de-9596-f60bb33c85fa"
+   "fr": "3f1958b0-fc14-81de-9596-f60bb33c85fa",
+   "sl": "fbe958b0fc1483a691a301b37499dbae"
   },
   "reworded": {
    "de": true,
@@ -418,6 +458,9 @@
   "title": "Ich könnte den Typen aus dem HR wirklich heiraten 😳"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "HR insider-secret hook: a self-described ex-big-company 'snitch' reveals what HR hides, demoing how to copy an Indeed job link, paste it into Parakeet AI and get an analyzed, tailored CV. Follow the actual example ending; do not add a comment CTA. Examples: 'Was HR nicht will, dass du weißt 🤫'",
   "id": "X03",
   "inspo": {
@@ -431,7 +474,8 @@
   "page_id": "3eb958b0-fc14-8060-8097-fe191b2eca39",
   "pages": {
    "es": "3f2958b0-fc14-8128-b155-d5d455c6627f",
-   "fr": "3d5958b0-fc14-8066-a3e0-eece4e907476"
+   "fr": "3d5958b0-fc14-8066-a3e0-eece4e907476",
+   "sl": "c96958b0fc1482dba9dc01ed9852e036"
   },
   "revived": {
    "at": 1791381815,
@@ -467,6 +511,9 @@
   "title": "Unpopuläre Meinung: Derselbe Lebenslauf für jede Stelle spart dir keine Zeit"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Am-I-the-only-one mistake warning: the creator asks whether they're the only one who didn't know old-style CVs no longer work, explains ATS filters, then shows how to make an ATS-friendly CV with Parakeet AI. Examples: 'Vermeidet diesen Fehler!!'",
   "id": "X06",
   "inspo": {
@@ -488,7 +535,8 @@
   "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
   "pages": {
    "es": "3e6958b0-fc14-80b2-9be1-e5711abc8dcb",
-   "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a"
+   "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a",
+   "sl": "645958b0fc1482bb96168197b5025047"
   },
   "revived": {
    "at": 1791814818,
@@ -513,13 +561,17 @@
   "title": "Wie hättet ihr reagiert??"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Outrage rejection story: the creator vents that even with a 1.3 Abitur they got rejected for a summer job at EDEKA, learns their application was never received (filtered out), then shows fixing their CV with Parakeet AI. Examples: 'Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡'",
   "id": "X08",
   "listed_at": 1791468949,
   "page_id": "3d5958b0-fc14-8142-ba86-d4195599a81a",
   "pages": {
    "es": "3f3958b0-fc14-8140-8f92-fcec88617e86",
-   "fr": "3d5958b0-fc14-80de-b575-c1f0d84f692e"
+   "fr": "3d5958b0-fc14-80de-b575-c1f0d84f692e",
+   "sl": "9fe958b0fc1483709bb00121abb9520a"
   },
   "revived": {
    "at": 1791468183,
@@ -538,13 +590,17 @@
   "title": "Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Deleting-soon recruiter-secrets hook: the creator claims they'll delete the video in 2 hours, reveals that companies use software to scan CVs for structure and keywords, then shows using Parakeet AI to optimize their CV. Examples: 'Dinge die Personaler euch verheimlichen 😳❌'",
   "id": "X09",
   "listed_at": 1791820961,
   "page_id": "3e2958b0-fc14-8079-954e-f1a0fed8673f",
   "pages": {
    "es": "3e2958b0-fc14-808f-831d-dbeba428c7bc",
-   "fr": "3e2958b0-fc14-805b-809f-d34a4e59f5e4"
+   "fr": "3e2958b0-fc14-805b-809f-d34a4e59f5e4",
+   "sl": "2da958b0fc1482b4a6290181831bd49e"
   },
   "revived": {
    "at": 1791820239,
@@ -593,12 +649,16 @@
   "title": "POV: du bewirbst dich bei deinem Ex 🤡💀"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Psychological job-hunt tips: using one of several provocative on-screen lines, the creator delivers three quick contrarian tips for improving a job search, such as never sending the same CV twice and passing ATS filters, while showing the Parakeet AI resume builder. Examples: 'LinkedIn wird dir keinen Job finden', 'Dein Lebenslauf ist wahrscheinlich zu schön'",
   "id": "X13",
   "page_id": "3e6958b0-fc14-80c5-bcda-fe62db114cc4",
   "pages": {
    "es": "3d5958b0-fc14-80d3-9cd5-e3fdd2c01b37",
-   "fr": "3d5958b0-fc14-80b2-99c5-d0d9e039ea1a"
+   "fr": "3d5958b0-fc14-80b2-99c5-d0d9e039ea1a",
+   "sl": "dc3958b0fc14824384a481cd1210be02"
   },
   "revived": {
    "at": 1791381624,
@@ -628,6 +688,9 @@
   "title": "Wie soll ich meinen Eltern erklären, dass..."
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Rejected-rejected-rejected warning: the creator flips through their pretty but empty old CVs, contrasts them with a plain but content-rich new CV that passes ATS filters, and refuses to gatekeep by showing Parakeet AI. Examples: 'Mach das nicht!!'",
   "id": "X15",
   "inspo": {
@@ -647,7 +710,8 @@
   "page_id": "3d5958b0-fc14-8135-81f0-c063de327abd",
   "pages": {
    "es": "3d5958b0-fc14-807a-be33-dd2f1280d81f",
-   "fr": "3f2958b0-fc14-8161-b380-c1afa04b1d6c"
+   "fr": "3f2958b0-fc14-8161-b380-c1afa04b1d6c",
+   "sl": "c30958b0fc14828d9b7e017c5ef69ad0"
   },
   "revived": {
    "at": 1791381397,
@@ -665,6 +729,9 @@
   "title": "Mach das nicht!!"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Ex-HR-insider secret: a creator who claims to have worked in corporate HR reveals the hidden trick of sharing and copying a job link, pasting it into Parakeet AI via 'Job hinzufügen' and getting an auto-tailored CV. Examples: 'Personaler wollen nicht, dass du das weißt 😳😳'",
   "id": "X16",
   "inspo": {
@@ -684,7 +751,8 @@
   "page_id": "3d5958b0-fc14-815d-bf46-d3b4d1ac8008",
   "pages": {
    "es": "3d5958b0-fc14-805a-84b2-fccfd057012c",
-   "fr": "3f1958b0-fc14-81a2-ba66-cc883deaa52d"
+   "fr": "3f1958b0-fc14-81a2-ba66-cc883deaa52d",
+   "sl": "668958b0fc14827ca51201c60419af14"
   },
   "revived": {
    "at": 1791296449,
@@ -714,13 +782,17 @@
   "title": "Hässliche Lebensläufe sind fr besser"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "Spill-the-secret hook: the creator bluntly reveals that employers use ATS, then walks through copying any job-ad link (Indeed, LinkedIn, etc.) and pasting it into Parakeet AI to beat the system. Examples: 'Personaler wollen nicht dass wir das wissen 🤡'",
   "id": "X18",
   "listed_at": 1791786098,
   "page_id": "3d5958b0-fc14-8179-b216-cd6c20cb48e1",
   "pages": {
    "es": "3f7958b0-fc14-81dd-8414-dad4639b75bf",
-   "fr": "3f7958b0-fc14-81e4-8f06-d6e5b6859a96"
+   "fr": "3f7958b0-fc14-81e4-8f06-d6e5b6859a96",
+   "sl": "a37958b0fc1482f5b8bc019ebaba8239"
   },
   "revived": {
    "at": 1791785781,
@@ -766,6 +838,9 @@
   "title": "POV deine Chefin zwingt dich deine kamera anzumachen 🤡"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1791311783,
   "description": "German talking-head video with a provocative 'lie on your CV' hook while doing a satisfying prop action (cutting an apple with a pizza cutter), then filming the laptop screen uploading an old CV and pasting a job ad link so the CV gets tailored, ending with a shocked reaction to camera.",
   "id": "A20261006183623",
@@ -786,7 +861,8 @@
   "page_id": "3f1958b0-fc14-81ef-aa77-e32183b89f91",
   "pages": {
    "es": "3f1958b0-fc14-81dc-b34d-c0a486a8c4d3",
-   "fr": "3d5958b0-fc14-80e1-8ab6-d13fc35db8c1"
+   "fr": "3d5958b0-fc14-80e1-8ab6-d13fc35db8c1",
+   "sl": "4e6958b0fc148380a0bb81e6e1fbdd94"
   },
   "reworded": {
    "de": true,
@@ -834,6 +910,9 @@
   "title": "Vidéo sans dialogue — texte à l’écran"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
   "id": "FRX22",
   "inspo": {
@@ -856,7 +935,8 @@
   "market_only": "fr",
   "pages": {
    "es": "3f7958b0-fc14-81b5-9685-c2a589d96510",
-   "fr": "3d8958b0-fc14-8024-bea3-d5fcb04410d4"
+   "fr": "3d8958b0-fc14-8024-bea3-d5fcb04410d4",
+   "sl": "281958b0fc148339a63081dfa6e326b0"
   },
   "pending_pages": {},
   "revived": {
@@ -1018,13 +1098,17 @@
   "title": "Ca c’est un modèle de CV qui passe les filtres ATS"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "An 'urgent job tip that feels illegal to know', learned while looking for an internship, showing how to paste a job vacancy into Parakeet AI to get a tailored CV.",
   "id": "ESX11",
   "market_only": "es",
   "page_id": "3f2958b0-fc14-81e4-b852-cac2e7fa113b",
   "pages": {
    "es": "3e2958b0-fc14-806d-924b-ceb6e51656f2",
-   "fr": "3f2958b0-fc14-81d6-8bb4-ef18ace94294"
+   "fr": "3f2958b0-fc14-81d6-8bb4-ef18ace94294",
+   "sl": "65a958b0fc148206877981f76d6811ce"
   },
   "revived": {
    "at": 1791381093,
@@ -1052,12 +1136,16 @@
   "title": "¿Cómo se supone que voy a independizarme?"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "The creator shows several designed CVs and says the recruiter will never pick them because ATS software rejects them before anyone sees them, then shows the fix with Parakeet AI.",
   "id": "ESX21",
   "listed_at": 1791999258,
   "pages": {
    "es": "3e2958b0-fc14-8038-bef4-f98e074f4189",
-   "fr": "3f9958b0-fc14-8135-b066-da62d500ddc0"
+   "fr": "3f9958b0-fc14-8135-b066-da62d500ddc0",
+   "sl": "103958b0fc14826bb1d6010d13dfc0e6"
   },
   "revived": {
    "at": 1791998844,
@@ -1096,6 +1184,9 @@
   "title": "Estamos en 2026 y tu CV todavía se ve así"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "description": "A Q&A skit while cutting fruit: asked about their low university grade, the creator explains landing a six-figure job thanks to a friend at Meta's trick, then shows the app.",
   "id": "ESX28",
   "inspo": {
@@ -1118,7 +1209,8 @@
   "market_only": "es",
   "pages": {
    "es": "3ee958b0-fc14-8015-ae8b-efbb383ec8da",
-   "fr": "3f7958b0-fc14-819d-a5a1-f0824cbbb05e"
+   "fr": "3f7958b0-fc14-819d-a5a1-f0824cbbb05e",
+   "sl": "c30958b0fc1483eaaf5c81725f4fc286"
   },
   "pending_pages": {},
   "revived": {
@@ -1183,13 +1275,17 @@
   "title": "Top 3 des écoles les plus dures en France 🍌"
  },
  {
+  "adopted": {
+   "sl": true
+  },
   "created": 1792058962,
   "description": "Walking selfie storytime about overhearing an HR worker on the train reveal the ATS filter secret, followed by a phone-filmed laptop demo of uploading the CV, getting a low score, answering chat questions and reaching an excellent score.",
   "id": "A20261015100922",
   "listed_at": 1792059209,
   "pages": {
    "es": "3fa958b0-fc14-8161-a9f3-ff89ff863153",
-   "fr": "3fa958b0-fc14-813d-8982-fea71e92ad3b"
+   "fr": "3fa958b0-fc14-813d-8982-fea71e92ad3b",
+   "sl": "bf1958b0fc1483f587e901b1ea5b8a1d"
   },
   "reworded": {
    "fr": true

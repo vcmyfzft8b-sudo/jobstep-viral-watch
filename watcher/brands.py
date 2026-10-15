@@ -23,7 +23,9 @@ LOCALISE = ("Localisation that is required, not rewording: (1) the market's own 
             "the market (Spain: InfoJobs, LinkedIn, Indeed; France: France Travail, Welcome to the Jungle, Indeed, "
             "LinkedIn - never Bumeran, Computrabajo, OCC); (3) a detail only the original creator can say about "
             "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
-            "any creator can say; (4) a calendar date or month of the original ('12 October', 'October is the best "
+            "any creator can say - but WHO speaks never changes: the role or story the video is built on ('I just "
+            "quit my job in HR', 'I'm a recruiter', 'I sent 300 applications') stays in the first person exactly as "
+            "said (creators play it), never 'someone', 'a friend' or 'people' - in the script AND the title; (4) a calendar date or month of the original ('12 October', 'October is the best "
             "month') is left out or made timeless ('now'), so the script never gets out of date. Change only those "
             "words.")
 
@@ -38,3 +40,25 @@ NO_DIRECTIONS = ("Scripts have NO stage directions or acting/filming tips in bra
                  "shown. How to film, act and edit comes from the example video, which creators copy as closely as "
                  "possible, and from the visual hook section. Never ask for stage directions and never fail a page because "
                  "it has none.")
+
+# 15 Oct 2026: "Ich hab grad meinen Job im HR gekündigt" became "Quelqu'un vient de quitter son job aux RH" on the French
+# page. The speaker of the original stays the speaker (LOCALISE) - checked without Claude, too.
+OTHER_SPEAKER = re.compile(r"^\W*(quelqu['’]\s?un|une? (?:ami|amie|pote|copine?)|mon (?:ami|amie|pote)|ma (?:pote|copine)|"
+                           r"alguien|un[ao]? (?:amig[ao]|colega)|mi (?:amig[ao]|colega)|jemand|eine? (?:freund|freundin|kumpel)|"
+                           r"meine? (?:freund|freundin|kumpel)|someone|somebody|a friend|my friend)\b", re.I)
+
+
+def _first_sentence(text):
+    return re.split(r'(?<=[.!?…])\s+', (text or '').strip(), maxsplit=1)[0]
+
+
+def speaker_changed(original, ours):
+    """True when OUR text opens with somebody else ('someone', 'a friend', 'quelqu'un', 'alguien'...) as the speaker's
+    story while the original does not - i.e. the original's "I" was turned into another person."""
+    if not OTHER_SPEAKER.search(_first_sentence(ours)):
+        return False
+    return not any(OTHER_SPEAKER.search(x) for x in re.split(r'(?<=[.!?…])\s+', (original or '')[:400]) if x.strip())
+
+
+SPEAKER_PROBLEM = ('the speaker changed: the original tells this as its own story ("I ...") - keep the same speaker in '
+                   'the first person, never "someone" / "a friend"')

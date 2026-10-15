@@ -7,7 +7,7 @@ from . import llm
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXAMPLES = os.path.join(HERE, '..', 'registry', 'examples')
 
-from .brands import LOCALISE, NO_DIRECTIONS, OTHER_NOTE, SOURCE_RE
+from .brands import LOCALISE, NO_DIRECTIONS, OTHER_NOTE, SOURCE_RE, SPEAKER_PROBLEM, speaker_changed
 from .markets import TEXT
 
 # Kept for older callers (DACH texts); the per-language texts live in markets.TEXT.
@@ -141,8 +141,8 @@ def sentences(text):
 FOREIGN = 'čćđšłąęńśźżř'
 
 
-def validate(spec, transcript, lang='de'):
-    """Problems that block publishing (page goes to drafts instead)."""
+def validate(spec, transcript, lang='de', on_screen=''):
+    """Problems that block publishing (page goes to drafts instead). on_screen: the original's text stickers."""
     T = TEXT[lang]
     problems = []
     for key in ('page_title', 'title_hook', 'visual_hook_first', 'script'):
@@ -171,4 +171,8 @@ def validate(spec, transcript, lang='de'):
         problems.append('visual hook is longer than 2 sentences')
     if not any(s.get('cue') == 'parakeet' for s in spec.get('script', [])):
         problems.append('no Parakeet AI moment in the script')
+    original = (transcript.get('text') or '') + '\n' + (on_screen or '')
+    script = ' '.join(s.get('text', '') for s in spec.get('script', []))
+    if speaker_changed(original, script) or speaker_changed(original, spec.get('title_hook', '')):
+        problems.append(SPEAKER_PROBLEM)
     return problems

@@ -15,7 +15,7 @@ on:
         required: false
         default: ''
       example:
-        description: 'Optional: FORMAT_ID:market:tiktok_url -> put this example video on that page (script follows it)'
+        description: 'Optional: FORMAT_ID:market:tiktok_url -> put this example video on that page (script follows it) · FORMAT_ID:market:rebuild -> rebuild that page from its example'
         required: false
         default: ''
       discord_message_id:

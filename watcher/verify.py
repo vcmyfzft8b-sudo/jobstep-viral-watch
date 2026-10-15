@@ -12,7 +12,7 @@ Per market:
 import re
 
 from . import notion, reword
-from .brands import SOURCE_RE
+from .brands import SOURCE_RE, speaker_changed
 from .markets import TEXT
 
 
@@ -60,8 +60,9 @@ def layout_problems(blocks, script, links):
     return out
 
 
-def check_page(pid, lang, links, live=True):
-    """Problems of one format page."""
+def check_page(pid, lang, links, live=True, ref_text=''):
+    """Problems of one format page. ref_text: the format's original words (formats.json 'script') - the speaker
+    must stay the same (brands.speaker_changed)."""
     blocks = notion.children(pid)
     out = []
     left = reword.directions_left(pid)
@@ -74,6 +75,11 @@ def check_page(pid, lang, links, live=True):
         return out
     script = reword.script_blocks(pid)
     out += layout_problems(blocks, script, links)
+    if ref_text:
+        from .crosscheck import page_title
+        if speaker_changed(ref_text, page_title(pid)) or speaker_changed(ref_text, ' '.join(_plain(b) for b in script)):
+            out.append('the speaker changed (the original\'s "I" became "someone" / "a friend") - mode example '
+                       'FORMAT:market:rebuild')
     if SOURCE_RE.search(reword.spoken_text(script)):
         out.append('JobStep (or the other app) named in the script')
     from . import tidy
@@ -110,7 +116,7 @@ def run(cfg, fmts, page_of):
                     problems.append(f"{flag} {f['title']}: no page")
                 continue
             try:
-                bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active')
+                bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active', ref_text=f.get('script', ''))
             except Exception as e:  # e.g. a page moved to the trash
                 bad = [f'page unreadable: {str(e)[:100]}']
             problems += [f"{flag} {f['title']} ({f.get('status')}): {x}" for x in bad]

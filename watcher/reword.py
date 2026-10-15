@@ -120,10 +120,11 @@ def direction_blocks(page_id):
             inside = False
             continue
         t = _plain(b)
-        has_link = any(((x.get('text') or {}).get('link') or {}).get('url', '').startswith('http') and
+        has_link = any(((x.get('text') or {}).get('link') or {}).get('url', '').startswith(('http', '/')) and
                        'parakeet-ai.com' not in ((x.get('text') or {}).get('link') or {}).get('url', '')
                        for x in b.get(b['type'], {}).get('rich_text', []))
         # the Visual Hook Lab / example TikTok links are never directions; a plain line that only MENTIONS the lab is one
+        # ('/<page id>' = a Notion link inside the workspace, e.g. the Visual Hook Lab on the copied Slovenian pages)
         if inside and b['type'] in ('paragraph', 'bulleted_list_item') and t.strip() and '🚨' not in t and not has_link:
             out.append(b)
     return out

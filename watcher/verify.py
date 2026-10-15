@@ -100,7 +100,8 @@ def run(cfg, fmts, page_of):
         flag = T['flag']
         entries, _ = notion.list_entries(m['list_page'])
         listed = [p.replace('-', '') for _, p in entries]
-        live = {(page_of(f, key) or '').replace('-', '') for f in fmts if f.get('status') == 'active' and page_of(f, key)}
+        live = {(page_of(f, key) or '').replace('-', '') for f in fmts if f.get('status') == 'active' and page_of(f, key)
+                and f['id'] not in (m.get('skip_formats') or ())}
         if set(listed) != live or len(listed) != len(set(listed)):
             problems.append(f'{flag} list differs from the live formats: listed {len(listed)}, live {len(live)}')
         else:
@@ -110,6 +111,8 @@ def run(cfg, fmts, page_of):
             if not t.startswith(f'{n}. '):
                 problems.append(f'{flag} list entry {n} not numbered: {t[:50]}')
         for f in fmts:
+            if f['id'] in (m.get('skip_formats') or ()):
+                continue  # not a format of this market (Slovenia: the two study-app formats)
             pid = page_of(f, key)
             if not pid:
                 if f.get('status') == 'active':

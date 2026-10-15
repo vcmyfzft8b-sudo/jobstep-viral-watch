@@ -125,3 +125,34 @@ class SkipTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SloveniaPageChecksTests(unittest.TestCase):
+    """verify on 15 Oct 2026: the copied Slovenian pages link the Visual Hook Lab inside Notion ('/<id>'), and
+    Slovenian quotes are »…« - neither may count as an extra hook line / a wrong on-screen text."""
+
+    def test_slovenian_quotes_are_read(self):
+        from watcher import tidy
+        self.assertEqual(tidy.hook_fixes('Na zaslonu naj bo »Ne delaj tega!!«, začni pa z »Drugo«.', 'Ne delaj tega!!', ''),
+                         [('Drugo', 'Ne delaj tega!!')])
+        self.assertEqual(tidy.hook_fixes('Affiche « Évitez cette erreur !! » 3 s', 'Évitez cette erreur !!', ''), [])
+
+    def test_notion_link_to_the_lab_is_not_a_hook_line(self):
+        from watcher import reword
+
+        def para(text, url=None):
+            return {'type': 'paragraph', 'paragraph': {'rich_text': [
+                {'type': 'text', 'plain_text': text, 'text': {'content': text, 'link': {'url': url} if url else None}}]}}
+        blocks = [{'type': 'heading_2', 'heading_2': {'rich_text': [{'type': 'text', 'plain_text': '🎬 VIZUALNI HOOK',
+                                                                     'text': {'content': '🎬 VIZUALNI HOOK'}}]}},
+                  para('Skopiraj začetek videa.'), para('🚨👇 Visual hook je obvezen v vsakem videu!'),
+                  para('Visual Hook Lab', '/74d958b0fc148297b4a1819f32230950'), {'type': 'divider', 'divider': {}}]
+        with mock.patch.object(reword.notion, 'children', return_value=blocks):
+            self.assertEqual(len(reword.direction_blocks('p')), 1)
+
+    def test_verify_skips_formats_that_are_not_in_the_market(self):
+        from watcher import verify
+        cfg = {'markets': {'sl': {**CFG['markets']['sl']}}, 'links': CFG['links']}
+        fmts = [{'id': 'A20261009204851', 'status': 'active', 'title': 'laptop', 'pages': {'fr': 'x'}}]
+        with mock.patch.object(verify.notion, 'list_entries', return_value=([], None)):
+            self.assertEqual(verify.run(cfg, fmts, main.page_of), [])

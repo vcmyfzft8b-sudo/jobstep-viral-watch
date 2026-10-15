@@ -84,7 +84,7 @@ class MainTests(StateDirTest):
     def test_rerank_without_dach_orders_france_and_spain(self):
         from watcher import main, markets as M
         mkts = M.load(CFG)
-        self.assertEqual([m['key'] for m in mkts], ['fr', 'es'])
+        self.assertEqual([m['key'] for m in mkts], ['fr', 'es', 'sl'])  # Slovenia added 15 Oct 2026, DACH still off
         fmts = [{'id': 'A', 'status': 'active', 'title': 'A', 'description': 'A', 'pages': {'fr': 'pfa', 'es': 'pea'}},
                 {'id': 'B', 'status': 'active', 'title': 'B', 'description': 'B', 'pages': {'fr': 'pfb', 'es': 'peb'}}]
         state.save('own.json', {})

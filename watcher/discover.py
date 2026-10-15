@@ -150,13 +150,14 @@ def refresh(accounts):
 
 
 def language(handle):
-    """'de', 'fr' or 'es' if the account's captions are mostly in that language, else ''."""
+    """'de', 'fr', 'es' or 'sl' if the account's captions are mostly in that language, else ''."""
     from .markets import TEXT
-    words = re.findall(r"[a-zäöüßàâçéèêëîïôûùÿœñáíóú’']+", ' '.join(v['desc'] for v in tiktok.latest_videos(handle)).lower())
+    words = re.findall(r"[a-zäöüßàâçéèêëîïôûùÿœñáíóúčšžćđ’']+",
+                       ' '.join(v['desc'] for v in tiktok.latest_videos(handle)).lower())
     if not words:
         return ''
     best, score = '', 0.0
-    for lang in ('de', 'fr', 'es'):
+    for lang in ('de', 'fr', 'es', 'sl'):
         stop = set(TEXT[lang]['stopwords'].split()) - {'job', 'cv'}
         r = sum(w in stop for w in words) / len(words)
         if r > score:

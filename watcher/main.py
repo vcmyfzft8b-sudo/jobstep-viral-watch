@@ -22,7 +22,7 @@ import traceback
 from . import align, audit, builder, classify, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-ALL_MARKETS = ('de', 'fr', 'es')
+ALL_MARKETS = ('de', 'fr', 'es', 'sl')
 
 
 CTX = {}  # meta + accounts of the current run (the quality gate needs them)
@@ -53,12 +53,40 @@ def load_config():
 
 
 def load_formats():
-    """One shared format list for all markets. Each format has a page per market: page_id (DACH) + pages{fr, es}."""
+    """One shared format list for all markets. Each format has a page per market: page_id (DACH) + pages{fr, es, sl}."""
     formats = state.load('formats.json', None)
     if formats is None:
         with open(os.path.join(ROOT, 'registry', 'formats.json')) as f:
             formats = json.load(f)
+    adopt_market_pages(formats)
     return formats
+
+
+def adopt_market_pages(formats, adopt=None):
+    """A new market whose pages were made by copying another market's pages (registry/market_adopt.json, e.g.
+    Slovenia = translated copies of the France pages) gets each copy linked to its format once: pages[market] = copy.
+    The example video is not copied over - localize looks for one in the new market's language like for every
+    market. 'adopted' remembers it, so a page removed later is never linked again. Returns how many were linked."""
+    if adopt is None:
+        try:
+            with open(os.path.join(ROOT, 'registry', 'market_adopt.json')) as f:
+                adopt = json.load(f)
+        except FileNotFoundError:
+            return 0
+    n = 0
+    for m, spec in adopt.items():
+        if m.startswith('_'):
+            continue
+        copies = {k.replace('-', ''): v for k, v in spec['pages'].items()}
+        for fmt in formats:
+            if (fmt.get('adopted') or {}).get(m) or page_of(fmt, m):
+                continue
+            src = (page_of(fmt, spec['from']) or '').replace('-', '')
+            if src in copies:
+                fmt.setdefault('pages', {})[m] = copies[src]
+                fmt.setdefault('adopted', {})[m] = True
+                n += 1
+    return n
 
 
 def page_of(fmt, m):
@@ -371,6 +399,15 @@ def run(dry_run=False, only_detect=False, auto=False):
 
     # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
     today = datetime.datetime.now(datetime.timezone.utc)
+    if not dry_run and not light and meta.get('account_langs') != sorted(M.TEXT):
+        try:  # a market language was added (Slovenian, 15 Oct 2026): sort the accounts without a language again
+            for h, a in account_info.items():
+                if not a.get('lang') and a.get('status') in ('active', 'manual'):
+                    a['lang'] = discover.language(h)
+            meta['handle_lang'] = {h: l for h, l in meta.get('handle_lang', {}).items() if l}  # localize asks again
+            meta['account_langs'] = sorted(M.TEXT)
+        except Exception as e:
+            step_failed('account languages', e)
     if not dry_run and not light and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:
         account_info, added, paused, revived = discover.refresh(account_info)
         for h in added:
@@ -985,7 +1022,7 @@ def fill_market(m):
 def localize_report(rep, only_changes=False):
     for r in rep:
         print(' | '.join(str(x) for x in r))
-    flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}
+    flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸', 'sl': '🇸🇮'}
     done = [r for r in rep if r[2] in ('replaced', 'restored')]
     miss = [r for r in rep if r[2] in ('missing', 'error')]
     if done or (miss and not only_changes):
@@ -1186,7 +1223,7 @@ def ready_page(f, mk, fmts, origs, cfg, force=False):
         return status, detail
     blocks = notion.children(pid)
     has_video = any(b['type'] == 'video' for b in blocks)
-    has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
+    has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS|VIRI', _plain_text(b), re.I) for b in blocks)
     if not force and has_video and has_res and not verify.layout_problems(blocks, _reword.script_blocks(pid), cfg['links']):
         return 'ok', ''
     ex = (f.get('inspo') or {}).get(m, {})
@@ -1526,7 +1563,7 @@ def main():
                         rebuild=rebuild_page, only_failed=a.audit_failed)
         state.save('formats.json', fmts)
         state.save('meta.json', meta)
-        flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸'}
+        flags = {'de': '🇩🇪', 'fr': '🇫🇷', 'es': '🇪🇸', 'sl': '🇸🇮'}
         bad = [r for r in rep if r[2] not in ('ok', 'fixed')]
         notify.push('✅ Page audit (example video + script)', f"{len(rep) - len(bad)}/{len(rep)} pages check out "
                     f"({sum(1 for r in rep if r[2] == 'fixed')} fixed now)."

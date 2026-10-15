@@ -56,12 +56,12 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    | `SLACK_WEBHOOK_URL` | Slack messages (Incoming Webhook of a Slack app, one channel) |
 | `NTFY_TOPIC` | optional phone push via the ntfy app |
    | `LIGHTREEL_API_KEY` | finding new JobStep accounts every 3 days |
-   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | our own Parakeet AI creators + videos (the enabled markets: France, Spain) read live from Megasheet every run – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
+   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | our own Parakeet AI creators + videos (the enabled markets: France, Spain, Slovenia) read live from Megasheet every run – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
 2. The `state` branch holds the watchlist, history and format registry; the workflow commits to it after every run.
 
 ## Our own creators (Megasheet)
 
-Every run reads the TikTok accounts and the TikTok + Instagram videos of the Megasheet campaigns of the enabled markets (*ParakeetAI - France / Spain*; *DACH* is stopped)
+Every run reads the TikTok accounts and the TikTok + Instagram videos of the Megasheet campaigns of the enabled markets (*ParakeetAI - France / Spain / Slovenia*; *DACH* is stopped)
 (`watcher/megasheet.py`, read-only MCP) and merges them into `state/own_accounts.json` and `state/own.json`: new
 creators are added, creators Megasheet marks as removed (or who left without ever posting) are paused, views only go
 up. Normal runs re-read the last 14 days of videos, `own-sync` reads everything. Instagram videos (key `ig_<code>`) take

@@ -62,7 +62,7 @@ def report(history, own_videos, own_accounts, fmts, cfg, now):
     return '\n'.join(lines)
 
 
-MARKETS = {'de': '🇩🇪 DACH', 'fr': '🇫🇷 France', 'es': '🇪🇸 Spain'}
+MARKETS = {'de': '🇩🇪 DACH', 'fr': '🇫🇷 France', 'es': '🇪🇸 Spain', 'sl': '🇸🇮 Slovenia'}
 
 
 def market_lines(history, own_videos, fmts, cfg, now, title, show=5):

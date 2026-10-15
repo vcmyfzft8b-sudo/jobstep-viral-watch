@@ -1,7 +1,8 @@
 # JobStep viral watch – notes for Claude
 
-Watches JobStep creators (TikTok) and turns their viral formats into Parakeet AI creator pages in three markets:
-🇩🇪 DACH (`de`, campaign stopped 12 Oct 2026 – `enabled: false`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`). Runs every 2 hours on GitHub Actions (full every 6 h, light in between); state on the `state`
+Watches JobStep creators (TikTok) and turns their viral formats into Parakeet AI creator pages in four markets:
+🇩🇪 DACH (`de`, campaign stopped 12 Oct 2026 – `enabled: false`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`), 🇸🇮 Slovenia (`sl`,
+since 15 Oct 2026). Runs every 2 hours on GitHub Actions (full every 6 h, light in between); state on the `state`
 branch. Read README.md first. The Memo AI watcher (~/dev/memo-viral-watch) is a separate copy – never touch it from
 here (repo, Notion, Discord, secrets, state are all separate).
 
@@ -105,3 +106,17 @@ here (repo, Notion, Discord, secrets, state are all separate).
   sorting, re-judge, gate retry, own creators, Monday work, hot/re-sort, weekly report, discovery, tidy.
 - Failures: steps that fail inside a run (`step_failed`) -> one Slack note (again only for other steps or after a
   day); no run for 12 h -> Slack note; a crashed/cancelled run -> Slack note from the workflow's last step.
+
+## Slovenia (15 Oct 2026)
+- Fourth market `sl` (Megasheet campaign *ParakeetAI - Slovenia*, Discord server 1560294285444780052). Its Notion tree
+  ("Navodila za ustvarjalce ParakeetAI SI" under ParakeetAI - EU) is a Notion copy of the France tree, translated into
+  Slovenian; list/holder/Visual Hook Lab in `config.json → markets.sl`, archive = "Slovenia formats archive".
+- `registry/market_adopt.json` maps each copied France format page to its Slovenian copy; `main.adopt_market_pages`
+  (in `load_formats`) links them once (`pages.sl`, `adopted.sl`). The French example video is NOT copied into
+  `inspo.sl`, so localize looks for a Slovenian JobStep video like for every market.
+- `markets.TEXT['sl']`: page headings NASLOV / 💬SCENARIJ / 🎬 VIZUALNI HOOK / 🔧 VIRI, notes, list texts.
+  `discover.language` knows Slovenian (stopwords chosen so Croatian/Serbian accounts are not taken); when a market
+  language is added, the next full run sorts the accounts without a language again (`meta.account_langs`).
+- Slovenian job sites in `brands.LOCALISE`: MojeDelo, Zaposlitev.net, Zavod za zaposlovanje, LinkedIn.
+- Discord announcements are off for Slovenia like France/Spain; a webhook can be saved with
+  `scripts/save_discord_webhook.sh sl` (secret `DISCORD_WEBHOOK_URL_SI`).

@@ -21,7 +21,8 @@ LOCALISE = ("Localisation that is required, not rewording: (1) the market's own 
             "'okay', 'laboral' as filler; Spain says 'curro/trabajo', 'vale', 'ahora mismo', 'presentarse a una oferta', "
             "'¡suerte!'), Canadian/Belgian/Swiss French becomes France French; (2) job sites, companies and places of "
             "the market (Spain: InfoJobs, LinkedIn, Indeed; France: France Travail, Welcome to the Jungle, Indeed, "
-            "LinkedIn - never Bumeran, Computrabajo, OCC); (3) a detail only the original creator can say about "
+            "LinkedIn; Slovenia: MojeDelo, Zaposlitev.net, Zavod za zaposlovanje, LinkedIn - never Bumeran, Computrabajo, "
+            "OCC); (3) a detail only the original creator can say about "
             "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
             "any creator can say - but WHO speaks never changes: the role or story the video is built on ('I just "
             "quit my job in HR', 'I'm a recruiter', 'I sent 300 applications') stays in the first person exactly as "
@@ -45,7 +46,8 @@ NO_DIRECTIONS = ("Scripts have NO stage directions or acting/filming tips in bra
 # page. The speaker of the original stays the speaker (LOCALISE) - checked without Claude, too.
 OTHER_SPEAKER = re.compile(r"^\W*(quelqu['’]\s?un|une? (?:ami|amie|pote|copine?)|mon (?:ami|amie|pote)|ma (?:pote|copine)|"
                            r"alguien|un[ao]? (?:amig[ao]|colega)|mi (?:amig[ao]|colega)|jemand|eine? (?:freund|freundin|kumpel)|"
-                           r"meine? (?:freund|freundin|kumpel)|someone|somebody|a friend|my friend)\b", re.I)
+                           r"meine? (?:freund|freundin|kumpel)|nekdo|(?:moj |moja )?(?:prijatelj|prijateljica|frend|frendica)|"
+                           r"someone|somebody|a friend|my friend)\b", re.I)
 
 
 def _first_sentence(text):

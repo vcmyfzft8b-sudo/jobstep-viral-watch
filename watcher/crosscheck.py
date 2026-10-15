@@ -263,7 +263,7 @@ def judge(fmt, ref, evidence, model):
 {NO_DIRECTIONS}
 {FEW_CUES}
 
-Below are the three countries' pages of this format. Compare them TOGETHER against the reference and against each
+Below are the countries' pages of this format. Compare them TOGETHER against the reference and against each
 other. Be strict:
 - format_consistency: does this country's example video AND script follow the reference - same hook idea and premise,
   the same beats in the same order, the same filming/demonstration sequence, the product introduced at the same beat,

@@ -121,6 +121,61 @@
   },
   "title_en": "Top 3 hardest schools in [country] 🍌: satirical talking-head ranking while cutting a banana with scissors, with a mid-video ad break before number 1"
  },
+ "A20261015100922": {
+  "accepted_sources": [
+   "7696706553432345874"
+  ],
+  "allowed_localisation": [
+   "Language of speech and on-screen hook text (DE/FR/ES), translated naturally and idiomatically",
+   "The colloquial self-deprecating phrases ('vieja pocha' / 'caradura'), replaced with local equivalents (e.g. FR 'curieuse comme je suis' / 'culottée'; DE 'neugierig wie ich bin' / 'dreist'; ES 'cotilla como soy' / 'caradura')",
+   "Type of train (e.g. S-Bahn/ICE, RER/TGV/métro, Cercanías/AVE), the station or street setting and the creator's appearance",
+   "Small wording changes to explain the ATS filter in local terms (the meaning stays: CVs are screened by software against criteria before a human sees them)",
+   "Gender/age description of the HR person ('a lady', 'a woman', 'a guy'), as long as they work in HR",
+   "CV content, name and job field shown in the demo, and the exact score numbers (low first, then clearly high)",
+   "Emoji and exact styling of the on-screen hook"
+  ],
+  "beats": [
+   "1. Walking selfie: 'I just got off the train. Next to me was a woman who works in HR, and nosy as I am, I listened to her conversation.' This uses a self-deprecating admission of being nosy.",
+   "2. The secret: she said CVs no longer land in recruiters' hands directly. First they have to pass a filter called an ATS filter, which checks them against set criteria, and only then do they reach HR. The creator reacts: 'Terrible.'",
+   "3. The cheeky question: 'And because I'm shameless, I asked her how to get past that filter, and she recommended a website called Parakeet AI. So as soon as I get home I'll show you how to use it, because she explained everything step by step.'",
+   "4. Cut to a phone-filmed laptop screen with voiceover: 'She told me to go to this website called Parakeet AI, upload my CV, and it would analyse it automatically.' The demo shows the upload and the automatic analysis, ending on a low score.",
+   "5. Improve: 'and depending on the score it gave me, I should click to improve it. She told me to answer a few little questions.' The demo shows the user clicking improve and answering questions in the chat.",
+   "6. Payoff: 'and that's it, the website would give me an excellent score so I can pass the ATS filters.' The demo shows the improved, high score. The video ends there with no extra outro."
+  ],
+  "canonical_source": "7696706553432345874",
+  "filming": "Total length about 45–60 s, vertical 9:16, one creator, natural sound, no music needed. Part 1 (about 20–25 s, beats 1–3): handheld front-camera walking selfie outdoors right after leaving a train/station, in one continuous take or a few jump cuts. The delivery is fast, casual and gossipy, with the hook text on screen from frame 1. Part 2 (about 25–30 s, beats 4–6): hard cut to the creator's phone filming a laptop screen at home (not a screen recording). The beat 3–6 speech continues as voiceover. The demo order is fixed and matches the words: open the Parakeet AI website → upload CV → automatic analysis with a LOW score visible → click improve → answer a few questions in the chat → the AI rewrites the CV → EXCELLENT/high score visible. The script carries link cues wherever the app is shown (beats 3–6). Copy framing, pacing and cuts from the example video as closely as possible.",
+  "generated": 1792059114,
+  "hook": "On-screen title over the opening walking-selfie shot, translated per country (FR: 'Les RH ne veulent PAS que tu saches ça 🤫'; DE: 'HR will NICHT, dass du das weißt 🤫'; ES: 'Recursos Humanos NO quiere que sepas esto 🤫'). The first spoken line is 'I just got off the train, and next to me was a woman who works in HR'. Together they make an insider-secret, gossip-style opener.",
+  "not_allowed": [
+   "Changing the format: no talking-head-at-desk opener instead of the walking selfie after the train, no screen recording instead of a phone-filmed laptop, no removing the overheard-HR-insider storyline, no reordering of beats, no adding or removing sentences",
+   "Mentioning or showing JobStep, Studyflash or any other competitor app; Parakeet AI must replace it at the same two spots only",
+   "Showing or mentioning features Parakeet AI does not have: an applications overview/tracker, a 'New job' button, cover letters",
+   "Adding features to the script that the original doesn't mention (e.g. a job-ad link step, templates or download) in a way that adds sentences or changes the beat structure",
+   "Stage directions or acting/filming notes in brackets inside the script (only spoken words plus link cues)",
+   "Claims that Parakeet AI guarantees passing every ATS, guarantees interviews or a job, or is endorsed/used by HR departments or employers",
+   "Invented statistics about ATS (e.g. '75% of CVs are rejected by robots') or naming real companies, recruiters or ATS vendors",
+   "Saying the HR worker is a Parakeet AI employee or presenting the story as sponsored by HR; a paid-partnership/ad label must still follow local platform and advertising rules",
+   "Adding a hard-sell CTA, discount code or link-in-bio pitch that is not in the original (CTA stays 'none')"
+  ],
+  "premise": "The creator plays a nosy, slightly cheeky ordinary person. Walking home from the station, they tell viewers about an HR worker they overheard on the train. She said CVs no longer reach recruiters directly: first they pass an ATS filter that screens them against criteria. The creator boldly asked her how to get past it, and she recommended Parakeet AI. At home, the creator shows, step by step and exactly as she explained, how they uploaded the CV, got an automatic score, answered a few questions and ended up with an excellent score.",
+  "product": {
+   "cta": "none",
+   "features_used": [
+    "Upload your CV",
+    "Automatic CV score/analysis (low score first)",
+    "Answer questions in a chat",
+    "AI rewrites/improves the CV, resulting in a high/excellent score"
+   ],
+   "introduced_at_beat": 3,
+   "spoken_brand": "Spoken twice: in beat 3 ('she recommended a website called Parakeet AI') and in beat 4 ('go to this website called Parakeet AI'). Exactly the same two spots as JobStep in the original, never more, never fewer."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7696706553432345874": "https://www.tiktok.com/@origomez953/video/7696706553432345874"
+  },
+  "title_en": "HR doesn't want you to know this 🤫: overheard-on-the-train ATS secret + laptop demo"
+ },
  "ESX21": {
   "accepted_sources": [
    "7696270580932398354"

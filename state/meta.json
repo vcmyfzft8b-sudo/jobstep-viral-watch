@@ -1086,6 +1086,8 @@
   "A20261009204851:fr": "cfe9363bde7cc7aff38cc955b1977d3957e6252c035e786f018637e9e1f69d20",
   "A20261014173459:es": "b94b9a3a289fede68af472560abdf2e71981dea5b4151b925333c26fd9d706f3",
   "A20261014173459:fr": "6a77d84dd150b118e84e9c06aa19a521797e9cb4498e0174cbc3b53772bf2813",
+  "A20261015100922:es": "5837934c8843f06d9605267de99f4d9d9ac3432bfb4f92d456c27d30d5fe1b1b",
+  "A20261015100922:fr": "31dd7192d99bb4141c56a9fe9ca1c1348620120cc65bf51c4f5925b1589bed53",
   "ESX11:de": "7b89a55878a03b6f906103467f2621d3cf2541e38ac784a0d88eef3ffe7a9a38",
   "ESX11:es": "acfa600de6c86cafd498a4b0c76c7e984c82eeb4a855878a0f1951e7cff910ea",
   "ESX11:fr": "9afe6f8baf520fa7e68e141e6f7f1d43440176b4db1f98c07f3643f7e6a33edc",
@@ -1597,6 +1599,84 @@
    },
    "status": "pass",
    "summary": "Both pages pass every check: each keeps the deadpan banana ranking from place 3 to 1, puts the three-sentence ad break directly before place 1 with only real Parakeet AI features, translates the Austrian original closely with allowed local changes (STMG, S2TMD and lycée général for FR; FP, conservatorio and Bachillerato for ES; tax return, school-leaving exam and year counts), has a 2-sentence hook direction and a safe title.",
+   "title_fixes": {},
+   "version": "group-2026-10-13.timeless"
+  },
+  "A20261015100922": {
+   "approval": {
+    "es": "not_locked",
+    "fr": "not_locked"
+   },
+   "checked_at": 1792059157,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "es": {
+     "source_id": "7696706553432345874",
+     "video_identity": "sha256:0634896e423481c32a4dd0472ccd640dca3ce309ee637b0b6ff75c5fd6704971"
+    },
+    "fr": {
+     "source_id": "7696706553432345874",
+     "video_identity": "sha256:0634896e423481c32a4dd0472ccd640dca3ce309ee637b0b6ff75c5fd6704971"
+    }
+   },
+   "key": "a72dac2de549fe63ce19a310b91aaf8e1badb23f8a9eac8b4a42b68838852d6b",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "FR and ES pass every check: both scripts follow the example sentence by sentence in Spain Spanish and France French, say Parakeet AI only at the two original spots, soften 'pasar todos los filtros' to 'more chances', keep the walking-selfie and phone-filmed laptop sequence, and use titles with no claims we can't make (the original's unclear 'tiene las guías' is rendered as 'les entreprises' / 'las empresas' in both).",
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   },
@@ -3128,7 +3208,8 @@
   "zorica.djurdjevic21": ""
  },
  "hot": {},
- "last_run": 1792039700,
+ "last_full_run": 1792058173,
+ "last_run": 1792058173,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3167,6 +3248,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/212cb99f-3b75-4060-abdd-df1c2c511f80/video.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/24384fe8-a5c3-476b-8d99-ff4c1383acf2/video.mp4": "sha256:af77ef0136ec1c5b1a91362855db8b7c42046797efe976e8d0f1b5c89c04ad9f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/25786b4a-4c12-4747-bc34-98936d20c3b5/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/29069d7c-b73b-46c1-98fc-e36f9ad204de/video.mp4": "sha256:0634896e423481c32a4dd0472ccd640dca3ce309ee637b0b6ff75c5fd6704971",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/2cfa3313-a7e3-42e0-ba65-74586d3d56b6/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/30aef2ee-6702-4b9d-8583-46865063728a/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/31e47fb1-fc85-425e-805d-3028909f5156/video.mp4": "sha256:ed2984b0007c6f81be6bb78123dbf579b4828ae7edf9c026f7ca1e1918d3e15b",
@@ -3185,6 +3267,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6482cb32-bfdd-4b94-97e7-be63a7d58d02/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6498f88d-fc10-4402-b3fe-3e6ea9f70e23/v2_Beispielvideo.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/64f2bb1b-60b5-406c-bef1-3ee45c81dd97/video.mp4": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/653f1ccd-cb06-4859-ba4c-93a5b410bfcc/video.mp4": "sha256:0634896e423481c32a4dd0472ccd640dca3ce309ee637b0b6ff75c5fd6704971",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/67e04d74-7a91-439c-a987-3199ac07054f/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6939e5d4-5e44-4d54-b50c-9655a66e3025/video.mp4": "sha256:583bbfa72f7fa239fabae8ea79f46cd4feac66416049325128f5a9e7ebd3dc83",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a4b7c94-b438-4965-afdc-a77a04450d14/video.mp4": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0",

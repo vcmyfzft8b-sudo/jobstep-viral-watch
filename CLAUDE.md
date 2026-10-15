@@ -91,5 +91,6 @@ here (repo, Notion, Discord, secrets, state are all separate).
   WHO speaks never changes (script and title, writers and judges). `brands.speaker_changed` checks it without Claude
   in `builder.validate` (script + title_hook), `align._validate` and `verify` (against formats.json `script`); the
   page judge's title_ok checks it too.
-- `ready_page` rebuilds now go through `audit.fix_page` like new pages. One page can be rebuilt with the workflow
+- `ready_page` rebuilds now go through `audit.fix_page` like new pages, and built/rebuilt pages are tidied at once
+  (page name = new title). One page can be rebuilt with the workflow
   input `example=FORMAT_ID:market:rebuild`.

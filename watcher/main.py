@@ -1103,7 +1103,10 @@ def ready_page(f, mk, fmts, origs, cfg, force=False):
     m = mk['key']
     pid = page_of(f, m)
     if not pid:
-        return missing_page(f, mk, fmts, origs, cfg)
+        status, detail = missing_page(f, mk, fmts, origs, cfg)
+        if status == 'built':  # page name = its title etc. right away (not on the next run)
+            tidy.tidy_page(page_of(f, m), cfg['links'])
+        return status, detail
     blocks = notion.children(pid)
     has_video = any(b['type'] == 'video' for b in blocks)
     has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
@@ -1136,6 +1139,7 @@ def ready_page(f, mk, fmts, origs, cfg, force=False):
         state.save('meta.json', meta)
     if status not in ('ok', 'fixed'):
         return 'not rebuilt', f"rebuilt but the page check says {status}: {'; '.join(notes)[:150]}"
+    tidy.tidy_page(pid, cfg['links'])  # page name = the new title etc. right away (not on the next run)
     return 'rebuilt', url
 
 

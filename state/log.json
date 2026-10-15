@@ -4825,5 +4825,44 @@
   "revived": [],
   "ts": 1792096619,
   "type": "own_discovery"
+ },
+ {
+  "format": "A202610061332",
+  "level": "viral",
+  "ts": 1792106052,
+  "type": "alert",
+  "video": "7695456797578071304",
+  "views": 1200000
+ },
+ {
+  "format": "N10",
+  "level": "viral",
+  "ts": 1792106069,
+  "type": "alert",
+  "video": "7696479518743219478",
+  "views": 155900
+ },
+ {
+  "format": "ESX11",
+  "level": "viral",
+  "ts": 1792106087,
+  "type": "alert",
+  "video": "7696199675623361800",
+  "views": 102100
+ },
+ {
+  "format": "N10",
+  "level": "viral",
+  "ts": 1792106108,
+  "type": "alert",
+  "video": "7696183722453863702",
+  "views": 100100
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792106111,
+  "type": "alert",
+  "video": "7696982422843444513",
+  "views": 19000
  }
 ]

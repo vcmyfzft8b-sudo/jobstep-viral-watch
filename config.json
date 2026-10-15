@@ -129,6 +129,12 @@
     "creator_multiple": 10,
     "creator_multiple_min_views": 5000,
     "creator_multiple_max_age_hours": 72,
+    "rising": [
+      [
+        24,
+        30000
+      ]
+    ],
     "viral_views": 100000,
     "min_engagement": 0.015
   },

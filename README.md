@@ -1,6 +1,7 @@
 # JobStep viral watch
 
-Every 6 hours (GitHub Actions) this watcher:
+Every 2 hours (GitHub Actions) this watcher runs: a **full run** every 6 hours (everything below), **light runs** in
+between (new videos, views of young or nearly viral videos, alerts incl. building a new format). It:
 
 1. **Pulls every new video** posted by all active JobStep creator accounts (89 on 6 Oct 2026, list in the `state`
    branch → `state/accounts.json`) and keeps each video on a 7-day watchlist.
@@ -8,6 +9,9 @@ Every 6 hours (GitHub Actions) this watcher:
 3. **Alerts** (Slack message via `SLACK_WEBHOOK_URL`, optional phone push via ntfy, + a log line on the private Notion page *JobStep Viral-Radar*):
    - 🟡 **taking off** – 5k views within 6 h, 20k within 24 h, 50k within 48 h, or 10× the creator's usual views –
      only a line on the Notion radar page, no Slack message
+   - 🚀 **rising fast** – 30k+ views within its first 24 h (4 of 5 reached 100k in our data): a NEW format (or an
+     archived one) is built, checked and listed right away – that is the video's one Slack alert; a video of a live
+     format only gets a radar line and its Slack alert at 100k
    - 🟢 **viral** – 100k+ views (counts the moment it gets there – after 1 day or 6 hours – as long as the video is from the last 7 days)
    - **One Slack alert per video** (the viral one). If the Claude check fails, it is retried quietly; only after 3 failed
      runs a short alert goes out, and the later full check is not sent again (it goes on the radar page).

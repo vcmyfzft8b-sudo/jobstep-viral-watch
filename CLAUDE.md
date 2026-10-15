@@ -1,7 +1,7 @@
 # JobStep viral watch – notes for Claude
 
 Watches JobStep creators (TikTok) and turns their viral formats into Parakeet AI creator pages in three markets:
-🇩🇪 DACH (`de`, campaign stopped 12 Oct 2026 – `enabled: false`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`). Runs every 6 hours on GitHub Actions; state on the `state`
+🇩🇪 DACH (`de`, campaign stopped 12 Oct 2026 – `enabled: false`), 🇫🇷 France (`fr`), 🇪🇸 Spain (`es`). Runs every 2 hours on GitHub Actions (full every 6 h, light in between); state on the `state`
 branch. Read README.md first. The Memo AI watcher (~/dev/memo-viral-watch) is a separate copy – never touch it from
 here (repo, Notion, Discord, secrets, state are all separate).
 
@@ -94,3 +94,14 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - `ready_page` rebuilds now go through `audit.fix_page` like new pages, and built/rebuilt pages are tidied at once
   (page name = new title). One page can be rebuilt with the workflow
   input `example=FORMAT_ID:market:rebuild`.
+
+## Earlier formats, 2-hourly runs, failure notes (15 Oct 2026, user's choice)
+- `detect` level `rising` (config thresholds.rising = 30k in 24 h; 4 of 5 reached 100k in our data, all 100k videos
+  passed it): `handle_viral(rising=True)` builds a NEW format / brings back an archived one at once - the video's one
+  Slack ping (notified rising + viral). A live format's video (or weak engagement / no video): only a 🚀 radar line;
+  its Slack ping at 100k reuses the stored check (`v['verdict']`).
+- Schedule every 2 h, MODE `auto` (`--auto`): full run when `meta.last_full_run` is ~6 h old (`is_light`), else light:
+  new videos, full stats only for videos < 30 h or >= 50k (`LIGHT_DETAIL_VIEWS`), alerts. Skipped in light runs:
+  sorting, re-judge, gate retry, own creators, Monday work, hot/re-sort, weekly report, discovery, tidy.
+- Failures: steps that fail inside a run (`step_failed`) -> one Slack note (again only for other steps or after a
+  day); no run for 12 h -> Slack note; a crashed/cancelled run -> Slack note from the workflow's last step.

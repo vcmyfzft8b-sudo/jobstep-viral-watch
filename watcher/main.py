@@ -1,4 +1,5 @@
-"""One watcher run (every 6 hours on GitHub Actions), for all markets (DACH / France / Spain).
+"""One watcher run (GitHub Actions every 2 hours: a full run every 6 hours, light runs - new videos, views, alerts - in
+between), for all markets (DACH / France / Spain).
 
 1. Pull the latest videos of every JobStep account; new ones go on the watchlist (7 days).
 2. Re-check every watchlist video (views, likes, shares, saves).
@@ -111,7 +112,37 @@ def resolve(formats, fid):
     return f
 
 
-def run(dry_run=False, only_detect=False):
+FULL_EVERY_HOURS = 6  # the 2-hourly schedule makes a full run every 6 hours, light runs in between
+LIGHT_DETAIL_VIEWS = 50_000  # light runs: full stats only for videos under 30 h or with this many views
+NO_RUN_ALERT_HOURS = 12  # Slack note when GitHub left this long a gap between two runs
+FAILED = []  # steps of this run that failed (they do not stop the run) -> one Slack note
+
+
+def is_light(meta, now, auto):
+    """A scheduled (auto) run is light unless the last full run is about FULL_EVERY_HOURS old."""
+    return auto and now - meta.get('last_full_run', 0) < (FULL_EVERY_HOURS - 0.5) * 3600
+
+
+def step_failed(step, e):
+    print(f'{step} failed:', str(e)[:200], flush=True)
+    FAILED.append(f'{step}: {str(e)[:150]}')
+
+
+def report_failures(meta, now):
+    """One Slack note when steps failed - again only when other steps fail or a day has passed (no ping every 2 h)."""
+    if not FAILED:
+        meta.pop('failed_steps', None)
+        return
+    sig = sorted(x.split(':')[0] for x in FAILED)
+    last = meta.get('failed_steps') or {}
+    if last.get('sig') == sig and now - last.get('at', 0) < 86400:
+        return
+    notify.push(f'⚠️ JobStep watcher: {len(FAILED)} step(s) failed this run', '\n'.join(FAILED)[:1500] +
+                '\nThe rest of the run went on. <https://github.com/vcmyfzft8b-sudo/jobstep-viral-watch/actions|GitHub runs>')
+    meta['failed_steps'] = {'sig': sig, 'at': int(now)}
+
+
+def run(dry_run=False, only_detect=False, auto=False):
     cfg = load_config()
     mkts = M.load(cfg)
     fmts = load_formats()
@@ -126,6 +157,16 @@ def run(dry_run=False, only_detect=False):
     radar_page = cfg['notion']['radar_page']
 
     CTX.update({'meta': meta, 'accounts': account_info})
+    FAILED.clear()
+    # auto (the 2-hourly schedule): a full run when the last one is FULL_EVERY_HOURS old, else a light one - new
+    # videos, views of the young / nearly viral ones and the alerts (incl. building a new format), nothing else.
+    light = is_light(meta, now, auto)
+    print(f"{'light' if light else 'full'} run (last full run {(now - meta.get('last_full_run', 0)) / 3600:.1f} h ago)",
+          flush=True)
+    gap = now - meta.get('last_run', now)
+    if not dry_run and gap > NO_RUN_ALERT_HOURS * 3600:
+        notify.push(f'⚠️ JobStep watcher: no run for {gap / 3600:.0f} hours',
+                    'GitHub skipped or delayed the scheduled runs. It is running again now – nothing else to do.')
 
     # 1. new videos
     fresh, embed_views = 0, {}
@@ -146,8 +187,11 @@ def run(dry_run=False, only_detect=False):
     for vid, v in list(videos.items()):
         age_h = (now - v.get('created', now)) / 3600
         last = v['snapshots'][-1][0] if v['snapshots'] else 0
-        if age_h > 72 and now - last < 20 * 3600 and v.get('views', 0) < th['viral_views']:
-            # 3-7 day old videos: full check once a day; in between only the free embed view count
+        once_a_day = age_h > 72 and now - last < 20 * 3600 and v.get('views', 0) < th['viral_views']
+        light_skip = light and age_h > 30 and v.get('views', 0) < LIGHT_DETAIL_VIEWS
+        if once_a_day or light_skip:
+            # 3-7 day old videos: full check once a day (light runs: only young or nearly viral videos);
+            # in between only the free embed view count
             if vid in embed_views and embed_views[vid]['views'] > v.get('views', 0):
                 v['views'] = embed_views[vid]['views']
                 to_history(history, v, german, now)
@@ -179,7 +223,7 @@ def run(dry_run=False, only_detect=False):
         if 'created' not in v:
             continue
         lvl = detect.level(v, now, detect.creator_baseline(history, v['handle']), th)
-        if not lvl or 'viral' in v['notified'] or (lvl == 'taking_off' and 'taking_off' in v['notified']):
+        if not lvl or 'viral' in v['notified'] or (lvl in ('taking_off', 'rising') and lvl in v['notified']):
             continue
         try:
             result = handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect)
@@ -200,7 +244,7 @@ def run(dry_run=False, only_detect=False):
         for key in [k for k in meta.get('audit', {}) if k.split(':')[0] in changed]:
             meta['audit'].pop(key, None)
 
-    if not dry_run:
+    if not dry_run and not light:
         # Sort every video into our formats once it is 48h old (not only the viral ones), so the ranking sees hits AND flops.
         todo = [v for v in videos.values() if 'created' in v and not v.get('format_checked') and now - v['created'] >= 48 * 3600]
         if todo:
@@ -232,26 +276,26 @@ def run(dry_run=False, only_detect=False):
                 shutil.rmtree(work, ignore_errors=True)
 
     # 4a. formats waiting at the quality gate: checked again, published once every language page passes
-    if not dry_run and not only_detect:
+    if not dry_run and not only_detect and not light:
         try:
             gate.retry_pending(fmts, mkts, cfg, history, account_info, meta, page_of, set_page, make_page, rebuild_page, rerank)
             state.save('formats.json', fmts)
         except Exception as e:
-            print('gate retry failed:', str(e)[:200])
+            step_failed('gate retry', e)
 
     # 4b. our own creators: new videos, views, formats (feeds the ranking: how each format does for US)
     own_accounts, own_videos = own.load()
-    if not dry_run:
+    if not dry_run and not light:
         own.sync_megasheet(own_accounts, own_videos, now, markets=[m['key'] for m in mkts])
         try:
             print('own creators:', own.update(own_accounts, own_videos, fmts, cfg, now))
             state.save('own.json', own_videos)
             state.save('own_accounts.json', own_accounts)
         except Exception as e:
-            print('own creators failed:', str(e)[:200])
+            step_failed('own creators', e)
 
     # 4c. Monday: weekly clean-up - formats that perform badly leave the list
-    if not dry_run and not only_detect:
+    if not dry_run and not only_detect and not light:
         is_due, week_id = lineup.due(meta, now)
         if is_due:  # mark the Monday work as done first, so it never repeats (even if a step fails or times out)
             meta['lineup'] = week_id
@@ -273,32 +317,32 @@ def run(dry_run=False, only_detect=False):
                         fill_market(mk['key'])
                         fmts[:] = load_formats()
             except Exception as e:
-                print('fill pages failed:', str(e)[:200])
+                step_failed('fill pages', e)
         if is_due:
             try:  # Monday: inspiration videos in each market's language for formats that still miss one
                 localize_report(localize.run(fmts, mkts, history, account_info, meta, cfg, page_of, now), only_changes=True)
                 state.save('formats.json', fmts)
             except Exception as e:
-                print('localize failed:', str(e)[:200])
+                step_failed('localize', e)
             try:  # Monday: every page must check out (example video = format, script = its transcript)
                 bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page, only_failed=True) if r[2] not in ('ok', 'fixed')]
                 state.save('formats.json', fmts)
                 if bad:
                     notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
             except Exception as e:
-                print('audit failed:', str(e)[:200])
+                step_failed('audit', e)
             try:  # Monday: every format's three countries TOGETHER against its reference (cached unless anything changed)
                 group_report(fmts, mkts, cfg, meta, fix=True)
                 state.save('formats.json', fmts)
             except Exception as e:
-                print('cross-country check failed:', str(e)[:200])
+                step_failed('cross-country check', e)
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
-    if not only_detect:
+    if not only_detect and not light:
         try:
             hot.update(history, videos, fmts, cfg, meta, mkts, dry_run=dry_run)
         except Exception as e:
-            print('hot update failed:', str(e)[:200])
+            step_failed('hot update', e)
         if not dry_run:
             try:
                 lead = next((m for m in mkts if m['key'] == 'de'), mkts[0])  # the market whose top is reported
@@ -307,7 +351,7 @@ def run(dry_run=False, only_detect=False):
                     if own_comebacks(mkts, fmts, cfg):
                         state.save('formats.json', fmts)
                 except Exception as e:
-                    print('own comebacks failed:', str(e)[:200])
+                    step_failed('own comebacks', e)
                 ids = rerank(mkts, fmts, history, cfg)
                 meta['top3'], meta['top3_market'] = ids[:3], lead['key']
                 if before_top and ids[:3] != before_top:
@@ -316,18 +360,18 @@ def run(dry_run=False, only_detect=False):
                     notify.push(f"🔁 New top of the {lead['T']['flag']} format list", '\n'.join(
                         f"{n}. {by[i]['title']} – {recent.get(i, 0)} viral in 7 days" for n, i in enumerate(ids[:5], 1)))
             except Exception as e:
-                print('re-sort failed:', str(e)[:200])
+                step_failed('re-sort', e)
 
     # 5b. Monday: weekly report in Slack
-    if not dry_run:
+    if not dry_run and not light:
         try:
             weekly.maybe_send(meta, history, own_videos, own_accounts, fmts, cfg, now)
         except Exception as e:
-            print('weekly report failed:', str(e)[:200])
+            step_failed('weekly report', e)
 
     # 6. every few days: complete the JobStep account list (Lightreel) and pause/revive accounts
     today = datetime.datetime.now(datetime.timezone.utc)
-    if not dry_run and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:
+    if not dry_run and not light and now - meta.get('discovered_at', 0) >= cfg['discovery_every_days'] * 86400:
         account_info, added, paused, revived = discover.refresh(account_info)
         for h in added:
             account_info[h]['lang'] = discover.language(h)
@@ -349,14 +393,14 @@ def run(dry_run=False, only_detect=False):
                             ', '.join(f"@{h} ({own_accounts[h].get('market') or '?'})" for h in o_added))
             state.log({'type': 'own_discovery', 'added': o_added, 'paused': o_paused, 'revived': o_revived})
         except Exception as e:
-            print('own discovery failed:', str(e)[:200])
+            step_failed('own discovery', e)
 
-    if not dry_run and not only_detect:  # every live page follows the tidy rules (cues, hook text, title, page name)
+    if not dry_run and not only_detect and not light:  # every live page follows the tidy rules (cues, hook text, title, page name)
         try:
             for t, m, ch in tidy.run(fmts, mkts, cfg, page_of):
                 print('tidy:', m, t[:40], '-', '; '.join(ch))
         except Exception as e:
-            print('tidy failed:', str(e)[:200])
+            step_failed('tidy', e)
 
     if not dry_run:
         state.save('videos.json', videos)
@@ -364,6 +408,9 @@ def run(dry_run=False, only_detect=False):
         state.save('formats.json', fmts)
         state.save('accounts.json', account_info)
         meta['last_run'] = int(now)
+        if not light and not only_detect:
+            meta['last_full_run'] = int(now)
+        report_failures(meta, now)
         state.save('meta.json', meta)
     print('actions:', json.dumps(actions, ensure_ascii=False))
 
@@ -381,6 +428,8 @@ def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect):
         return {'video': v['id'], 'level': lvl, 'views': v['views']}
     if lvl == 'viral':
         return handle_viral(v, mkts, fmts, history, cfg, now, only_detect)
+    if lvl == 'rising':
+        return handle_viral(v, mkts, fmts, history, cfg, now, only_detect, rising=True)
     if not v.get('format_checked'):
         c = classify.classify(v, fmts, cfg['models']['classify'])
         set_format(v, history, c.get('match'))
@@ -408,20 +457,27 @@ def market_links(fmt, mkts):
     return ' · '.join(f"<{page_url(page_of(fmt, mk['key']))}|{mk['T']['flag']}>" for mk in mkts if page_of(fmt, mk['key']))
 
 
-def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, force=False, label=None):
+RISING_NOTE = '🚀 *Rising fast:* 30k+ views in its first 24 h – in our data 4 of 5 such videos reached 100k.'
+
+
+def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, force=False, label=None, rising=False):
     """Every viral video (creators from ALL markets): download + Soniox transcript, Claude (Opus) judges it against
     ALL our formats (list + archive) and translates the script to English. Then for every market (DE/FR/ES):
     in the list -> nothing to build (missing language pages are added); in the archive -> brought back everywhere;
     new -> built in every market's language and added to every list. One Slack message with link, verdict, English
-    script. If Claude fails, a basic message still goes out and the full check is retried next run."""
+    script. If Claude fails, a basic message still goes out and the full check is retried next run.
+    rising (detect 'rising', 30k+ in 24 h): a NEW or archived format is built/brought back now - that is the video's
+    one Slack ping (none again at 100k). A video of a live format, or one that cannot be built, only gets a radar line
+    now; its Slack ping comes at 100k, with the format check reused (v['verdict'])."""
     age_h = (now - v['created']) / 3600
     eng = detect.engagement(v)
     eng_unknown = v.get('detail_missing') and not v.get('shares') and not v.get('saves')
     weak = (not eng_unknown) and eng < cfg['thresholds']['min_engagement'] and not force  # force: added by hand
     stats = (f"@{v['handle']} – *{fmt_views(v['views'])} views* after {age_h:.0f} h · shares+saves {eng:.1%}"
              f"{' (weak)' if weak else ''}{' (unknown)' if eng_unknown else ''}")
-    title = ('🧪 TEST – ' if test else '') + (label or '🟢 VIRAL: JobStep video')
-    result = {'video': v['id'], 'level': 'viral', 'views': v['views']}
+    title = ('🧪 TEST – ' if test else '') + (label or ('🚀 RISING FAST: JobStep video – new format early' if rising
+                                                         else '🟢 VIRAL: JobStep video'))
+    result = {'video': v['id'], 'level': 'rising' if rising else 'viral', 'views': v['views']}
     work = tempfile.mkdtemp(prefix='viral-')
     try:
         video_file, note = None, ''
@@ -431,9 +487,14 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         except Exception as e:
             note = f'\n_(video download/transcription failed: {str(e)[:80]} – judged from TikTok text)_'
             transcript = {'text': v.get('subtitles', ''), 'segments': [], 'language': ''}
+        cached = v.get('verdict') if not (test or force) else None  # the check made when it was rising (a live format)
         try:
-            verdict = classify.judge(v, fmts, cfg['models']['build'], transcript.get('text', ''))
+            verdict = cached or classify.judge(v, fmts, cfg['models']['build'], transcript.get('text', ''))
         except Exception as e:
+            if rising:  # tried again next run while it is still rising, else at 100k
+                state.log({'type': 'judge_failed', 'video': v['id'], 'error': str(e)[:300], 'rising': True})
+                result['error'] = str(e)[:200]
+                return result
             v['judge_fails'] = v.get('judge_fails', 0) + 1
             if v['judge_fails'] >= JUDGE_TRIES and 'viral_basic' not in v['notified'] and not force:
                 # added by hand (force): add_format sends its own alert
@@ -447,6 +508,20 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         prepared = {'work': work, 'video_file': video_file, 'transcript': transcript} if video_file else None
         blocked = 'weak engagement' if weak else 'only-detect mode' if only_detect else None if prepared else 'video unavailable'
         known = resolve(fmts, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
+        if rising and (blocked or (known and known.get('status') == 'active')):
+            # nothing to build now: a radar line; the Slack ping comes at 100k (with this check reused)
+            if known:
+                set_format(v, history, known['id'], judged=True)
+                v['verdict'] = {k: verdict.get(k) for k in ('duplicate_of', 'reason', 'english_script', 'hook_en')}
+            what = (f"live format: {known['title']}" if known and known.get('status') == 'active' else
+                    f"not built now ({blocked}) – checked again at 100k")
+            notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🚀 "
+                         f"rising – @{v['handle']} {fmt_views(v['views'])} after {age_h:.0f} h – {what}",
+                         link=v['url'], link_label='Video')
+            v['notified'] += ['rising', 'taking_off']  # no 🟡 line on top of this one
+            result['format'] = v.get('format')
+            state.log({'type': 'alert', **result})
+            return result
         if known:
             set_format(v, history, known['id'], judged=True)
             if known.get('status') == 'active':
@@ -477,13 +552,15 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         result['format'] = v.get('format')
         script = (verdict.get('english_script') or '').strip() or '(no speech / text found)'
         quoted = '\n'.join('> ' + line for line in script.splitlines() if line.strip())
-        msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>{note}\n\n*Format check (Claude):* {outcome}\n"
+        msg = (f"{stats}\n▶ <{v['url']}|Open video on TikTok>{note}\n" + (RISING_NOTE + '\n' if rising else '') +
+               f"\n*Format check (Claude):* {outcome}\n"
                f"_{verdict.get('reason', '')}_\n\n*Script (English):*\n{quoted[:3500]}")
         if 'viral_basic' not in v['notified']:  # one Slack alert per video: none if the basic one already went out
             notify.push(title, msg)
-        notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – 🟢 VIRAL – "
-                     f"@{v['handle']} {fmt_views(v['views'])} – {outcome.split(chr(10))[0]}", link=v['url'], link_label='Video')
-        v['notified'].append('viral')
+        notify.radar(cfg['notion']['radar_page'], f"{datetime.datetime.now(datetime.timezone.utc):%d.%m.%Y %H:%M} – "
+                     f"{'🚀 RISING' if rising else '🟢 VIRAL'} – @{v['handle']} {fmt_views(v['views'])} – "
+                     f"{outcome.split(chr(10))[0]}", link=v['url'], link_label='Video')
+        v['notified'] += ['rising', 'viral'] if rising else ['viral']  # one Slack ping per video: none again at 100k
         state.log({'type': 'alert', **result})
         return result
     finally:
@@ -1324,6 +1401,7 @@ def main():
     ap.add_argument('--refs', action='store_true', help='now: generated format references of live/waiting formats are rebuilt where the script rules changed (reviewed ones never)')
     ap.add_argument('--timing', action='store_true', help='read-only: second Parakeet AI is first shown/said on every live page')
     ap.add_argument('--tidy', action='store_true', help='every live page: few link cues, hook names the title, bold title, page name = title')
+    ap.add_argument('--auto', action='store_true', help='scheduled run: full every 6 hours, light in between')
     ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
@@ -1650,7 +1728,7 @@ def main():
     if missing and not a.dry_run:
         print('Missing secrets', missing, '-> running as dry run')
         a.dry_run = True
-    run(dry_run=a.dry_run, only_detect=a.only_detect)
+    run(dry_run=a.dry_run, only_detect=a.only_detect, auto=a.auto)
 
 
 if __name__ == '__main__':

@@ -2,13 +2,13 @@ name: JobStep viral watch
 
 on:
   schedule:
-    - cron: '23 */6 * * *'   # every 6 hours
+    - cron: '23 */2 * * *'   # every 2 hours: a full run every 6 hours, light runs (views + alerts) in between
   workflow_dispatch:
     inputs:
       mode:
-        description: 'normal = alerts + build pages · only-detect = alerts only · dry-run = no alerts, no writes'
+        description: 'normal = full run · auto = like the schedule (full every 6 h, else light) · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
+        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -93,7 +93,8 @@ jobs:
           MEGASHEET_LOGIN: ${{ secrets.MEGASHEET_LOGIN }}
           MEGASHEET_KEY: ${{ secrets.MEGASHEET_KEY }}
           TIKTOK_PROXY: socks5h://127.0.0.1:9150
-          MODE: ${{ github.event.inputs.mode || 'normal' }}
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
+          PYTHONUNBUFFERED: '1'
           TEST_VIDEO: ${{ github.event.inputs.test_video }}
           TEST_VIRAL: ${{ github.event.inputs.test_viral }}
           DISCORD_MESSAGE_ID: ${{ github.event.inputs.discord_message_id }}
@@ -150,6 +151,7 @@ jobs:
             init-fr)     python -m watcher.main --init-market fr ;;
             init-es)     python -m watcher.main --init-market es ;;
             only-detect) python -m watcher.main --only-detect ;;
+            auto)        python -m watcher.main --auto ;;
             *)           python -m watcher.main ;;
           esac
 
@@ -167,3 +169,15 @@ jobs:
           path: state-branch/state/
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Tell Slack when the run failed
+        if: failure() || cancelled()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          [ -n "$SLACK_WEBHOOK_URL" ] || exit 0
+          python3 -c 'import json, os; print(json.dumps({"unfurl_links": False, "text": "*⚠️ JobStep watcher run " + os.environ["JOB_STATUS"] + "* (mode " + os.environ["MODE"] + ")\n<" + os.environ["RUN_URL"] + "|Open the run on GitHub>"}))' \
+            | curl -s -X POST -H 'Content-Type: application/json' --data @- "$SLACK_WEBHOOK_URL" > /dev/null

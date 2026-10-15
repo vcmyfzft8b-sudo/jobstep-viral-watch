@@ -20,7 +20,7 @@ import time
 from . import discover, llm, media, notion, soniox, tiktok
 from .markets import TEXT
 
-LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish'}
+LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish', 'sl': 'Slovenian'}
 MIN_VIEWS = 10_000  # an inspiration video must be proven, not just in the right language
 EMBEDDED_EVIDENCE = os.path.join(os.path.dirname(__file__), '..', 'registry', 'verified_embedded_examples.json')
 

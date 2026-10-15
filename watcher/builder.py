@@ -66,7 +66,7 @@ button, cover letters. If the original shows a JobStep feature Parakeet AI doesn
 equivalent step that exists (keep the sentence count, change as few words as possible).""" + OTHER_NOTE
 
 
-COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain'}
+COUNTRY = {'de': 'Germany/Austria/Switzerland', 'fr': 'France', 'es': 'Spain', 'sl': 'Slovenia'}
 
 SCHEMA = """Return JSON:
 {"page_title": "...", "icon": "<one emoji>", "title_hook": "...", "voiceover": true,

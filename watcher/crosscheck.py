@@ -30,7 +30,7 @@ from urllib.parse import urlsplit
 from . import align, audit, llm, localize, notion, reword
 from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
-from .markets import TEXT
+from .markets import TEXT, for_format
 
 AUDIT_VERSION = 'group-2026-10-13.timeless'
 REF_RULES = 'no-directions-2026-10-11'  # scripts without stage directions (brands.NO_DIRECTIONS)
@@ -263,7 +263,7 @@ def judge(fmt, ref, evidence, model):
 {NO_DIRECTIONS}
 {FEW_CUES}
 
-Below are the three countries' pages of this format. Compare them TOGETHER against the reference and against each
+Below are the countries' pages of this format. Compare them TOGETHER against the reference and against each
 other. Be strict:
 - format_consistency: does this country's example video AND script follow the reference - same hook idea and premise,
   the same beats in the same order, the same filming/demonstration sequence, the product introduced at the same beat,
@@ -309,6 +309,7 @@ Return JSON {{"titles": {{"<country>": "<fixed title>"}}, "results": {{"<dimensi
 def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
     """Returns the group result (also cached in meta['group_audit'][format_id])."""
     store = meta.setdefault('group_audit', {})
+    mkts = for_format(mkts, fmt)
     ref = ensure_reference(fmt, page_of, cfg)  # existing (a generated one is rebuilt when the script rules changed)
     inputs = page_inputs(fmt, mkts, page_of, meta)
     approval = approval_status(fmt, mkts, page_of, cfg['links'])
@@ -374,7 +375,8 @@ def check_group(fmt, mkts, cfg, page_of, meta, dup_list=None, force=False):
 
 def run(fmts, mkts, cfg, page_of, meta, force=False):
     """All active (and pending) formats; returns {format_id: result} plus the duplicate list."""
-    groups = {f['id']: page_inputs(f, mkts, page_of, meta) for f in fmts if f.get('status') in ('active', 'pending')}
+    groups = {f['id']: page_inputs(f, for_format(mkts, f), page_of, meta) for f in fmts
+              if f.get('status') in ('active', 'pending')}
     dups = duplicates(groups)
     meta['group_duplicates'] = dups
     out = {}
@@ -435,6 +437,7 @@ def default_put_example(fmt, m, pid, lang, url):
 def group_cycle(fmt, mkts, cfg, page_of, meta, put_example=None):
     """Check the group; if it fails, repair what may be repaired automatically and check again (once).
     Returns (result, changed, awaiting_approval)."""
+    mkts = for_format(mkts, fmt)
     res = check_group(fmt, mkts, cfg, page_of, meta)
     if res['status'] != 'fail' and not res.get('title_fixes'):
         return res, [], []

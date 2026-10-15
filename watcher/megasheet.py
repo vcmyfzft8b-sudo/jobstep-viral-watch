@@ -26,7 +26,8 @@ from . import state
 BASE = 'https://megasheet.app'
 MCP_URL = BASE + '/api/mcp'
 TOKEN_URL = BASE + '/api/oauth/token'
-CAMPAIGNS = {'ParakeetAI - DACH': 'de', 'ParakeetAI - France': 'fr', 'ParakeetAI - Spain': 'es'}
+CAMPAIGNS = {'ParakeetAI - DACH': 'de', 'ParakeetAI - France': 'fr', 'ParakeetAI - Spain': 'es',
+             'ParakeetAI - Slovenia': 'sl'}
 RECENT_DAYS = 14  # normal runs re-read videos uploaded in the last 14 days; own-sync reads everything
 LOGIN_FILE = 'megasheet_login.enc'
 INFO_FILE = 'megasheet.json'  # {used_secret: sha256 of a consumed secret login, warned: ts, full_sync: ts}

@@ -88,6 +88,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_WEBHOOK_URL_FR: ${{ secrets.DISCORD_WEBHOOK_URL_FR }}
           DISCORD_WEBHOOK_URL_ES: ${{ secrets.DISCORD_WEBHOOK_URL_ES }}
+          DISCORD_WEBHOOK_URL_SI: ${{ secrets.DISCORD_WEBHOOK_URL_SI }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           LIGHTREEL_API_KEY: ${{ secrets.LIGHTREEL_API_KEY }}
           MEGASHEET_LOGIN: ${{ secrets.MEGASHEET_LOGIN }}

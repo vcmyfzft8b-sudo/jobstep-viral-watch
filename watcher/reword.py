@@ -24,7 +24,7 @@ def script_blocks(page_id):
     """The blocks of the page's script section (between the 💬 heading and the next divider/heading)."""
     blocks = notion.children(page_id)
     start = next((i for i, b in enumerate(blocks) if b['type'].startswith('heading') and
-                  re.search(r'💬|SKRIPT|SCRIPT|GUION', _plain(b), re.I)), None)
+                  re.search(r'💬|SKRIPT|SCRIPT|GUION|SCENARIJ', _plain(b), re.I)), None)
     if start is None:
         return []
     out = []
@@ -148,7 +148,7 @@ CURRENT DIRECTIONS:
 {lines[:3000]}
 {('How the example video is filmed: ' + filming) if filming else ''}
 {('A reviewer found: ' + issues) if issues else ''}
-Write it in {T['lang_name']}, address the creator informally ({ {'de': 'du', 'fr': 'tu', 'es': 'tú'}[lang] }), no links,
+Write it in {T['lang_name']}, address the creator informally ({ {'de': 'du', 'fr': 'tu', 'es': 'tú', 'sl': 'ti'}[lang] }), no links,
 no X/Y scores, nothing about filming the app (the script's links already say that).
 Return JSON {{"hook": "<1-2 short sentences>"}}"""
     from .builder import sentences

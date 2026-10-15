@@ -1,7 +1,7 @@
-"""Markets (DACH / France / Spain): Notion pages, language texts and per-market data keys.
+"""Markets (DACH / France / Spain / Slovenia): Notion pages, language texts and per-market data keys.
 
 There is ONE shared format list (formats.json), fed by the creators of all markets. Every format has a page in
-each market's language (DE/FR/ES); all lists get the same order and the same "going viral" section, and each market gets
+each market's language (DE/FR/ES/SL); all lists get the same order and the same "going viral" section, and each market gets
 its own Discord announcement in its language.
 """
 import json
@@ -159,6 +159,52 @@ TEXT = {
         'stopwords': 'el la los las y es yo tu tú no un una de del para con en que mi este esta pero si se lo al por me te '
                      'muy ya',
     },
+    'sl': {
+        'flag': '🇸🇮', 'name': 'Slovenija', 'lang_name': 'Slovenian',
+        'style': 'natural spoken Slovenian as a TikTok creator would say it (tikanje)',
+        'video_heading': 'Video za navdih', 'source': 'Original na TikToku',
+        'inspo_note': [
+            '**Pomembno:** Svoj video posnemi po spodnjem scenariju. Video za navdih je od druge znamke in NI video, ki ga '
+            'moraš posneti. Od njega čim BOLJ NATANČNO prevzemi vzdušje (vibe), kote kamere, način snemanja, montažo in '
+            'trenutke, ko je prikazana aplikacija (demo) – prav za to so videi za navdih.',
+            'V videu je uporabljena druga aplikacija. Naredi vse enako, samo s Parakeet AI: odpri Parakeet AI v trenutkih, '
+            'ko se v videu odpre ta aplikacija, in ga pokaži na enak način. Te aplikacije v tvojem videu ne sme biti nikjer '
+            'videti ali slišati.'],
+        'inspo_note_own': '**Pomembno:** Video za navdih zgoraj je od enega od naših ustvarjalcev (s Parakeet AI) in je '
+                          'bil zelo uspešen – a vseeno NI video, ki ga kopiraš 1:1. Od njega čim BOLJ NATANČNO prevzemi vzdušje '
+                          '(vibe), kote kamere, način snemanja, montažo in trenutke, ko je prikazan Parakeet AI (demo). Svoj '
+                          'video posnemi po spodnjem scenariju.',
+        'inspo_note_same': '**Pomembno:** Video za navdih zgoraj je v slovenščini in prikazuje točno ta format, vendar je od druge '
+                           'znamke in NI video, ki ga moraš posneti. Od njega čim BOLJ NATANČNO prevzemi vzdušje (vibe), kote '
+                           'kamere, način snemanja, montažo in trenutke, ko je prikazana aplikacija (demo) – prav za to so '
+                           'videi za navdih. Svoj video posnemi po spodnjem scenariju.',
+        'title_h': 'NASLOV', 'script_h': '💬SCENARIJ', 'hook_h': '🎬 VIZUALNI HOOK', 'res_h': 'VIRI',
+        'sub_voice': 'Samodejni podnapisi', 'sub_silent': 'Glasba iz knjižnice platforme, brez glasu',
+        'silent_label': 'Besedilo na zaslonu – ne govori:',
+        'cue_linkedin': 'Iskanje zaposlitve na LinkedInu', 'asset_cue': '(📎 {name} – glej Viri) ', 'asset_todo': 'še v pripravi',
+        'app_line': 'Ko pride na vrsto Parakeet AI, posnemi, kako uporabljaš aplikacijo na prenosniku – pri vsaki povezavi '
+                    'v scenariju. Nalaganje izreži.',
+        'linkedin_line': 'Pri povezavi do LinkedIna posnemi, kako kopiraš oglas za delo. ',
+        'return_line': 'Za zadnji stavek se spet obrni v kamero.',
+        'scores_line': 'X in Y v scenariju: preberi oceno, ki ti jo pokaže aplikacija.',
+        'required_line': '🚨👇 Visual hook je obvezen v vsakem videu!',
+        'draft_prefix': 'OSNUTEK – ',
+        'list_heading': 'POSNEMI ZDAJ: te formate',
+        'list_fire': ['Snemaj formate po vrsti, od zgoraj navzdol, in naredi celoten seznam. Drži se scenarija, vizualnega '
+                      'hooka in virov na vsaki strani.',
+                      '**Samo če video preseže 100.000 ogledov**, ta format posnameš znova in znova – dokler je še viralen. '
+                      'Nato nadaljuješ s seznamom.'],
+        'visual_rule': '**Visual hook je obvezen v vsakem videu!** Ideje najdeš v ',
+        'hot_prefix': 'POSTAJA VIRALNO – POSNEMI NAJPREJ TO: ',
+        'hot_suffix': '  ({n} videov z več kot 100.000 ogledi v zadnjih 7 dneh)',
+        'holder': 'Vsi formati',
+        'discord': '@everyone 🔥 **Ta format postaja viralen!**\n\n**{title}**\n\n{n} videov z več kot 100.000 ogledi v '
+                   'zadnjih 7 dneh. 👉 Posnemi ga **zdaj, kot naslednjega**.\n\nNajdeš ga v portalu za ustvarjalce, čisto na '
+                   'vrhu seznama formatov – pod točno tem naslovom: <https://megasheet.app/portal/login>',
+        'hot_header': 'Postaja viralno – posnemi najprej',
+        # Words Slovenian uses and Croatian/Serbian/Bosnian do not (discover.language must not take Balkan accounts).
+        'stopwords': 'in ki sem tudi že zelo tega lahko kot zdaj če več službo zaposlitev delo iščeš dobiš',
+    },
 }
 
 
@@ -187,3 +233,10 @@ def load(cfg):
             continue
         out.append({'key': key, **m, 'T': TEXT[m['lang']]})
     return out
+
+
+def for_format(mkts, fmt):
+    """The markets a format belongs in: a market's `skip_formats` (config.json) keeps formats out of it for good - no
+    page is built, listed or checked there (Slovenia: the two study-app formats that are not JobStep formats)."""
+    fid = (fmt or {}).get('id')
+    return [mk for mk in mkts if fid not in (mk.get('skip_formats') or ())]

@@ -208,6 +208,19 @@
       "enabled": true,
       "discord_announce": false,
       "creator_channels": false
+    },
+    "sl": {
+      "lang": "sl",
+      "list_page": "8ee958b0fc14820f9d2f01720a1e6046",
+      "holder_page": "f15958b0fc148380818a81e9a1206613",
+      "archive_page": "3fa958b0fc1481f1b061e3388786f83d",
+      "visual_hook_lab": "https://app.notion.com/p/74d958b0fc148297b4a1819f32230950",
+      "discord_env": "DISCORD_WEBHOOK_URL_SI",
+      "discord_server": "1560294285444780052",
+      "skip_formats": ["A20261009204851", "A20261014173459"],
+      "enabled": true,
+      "discord_announce": false,
+      "creator_channels": false
     }
   },
   "discord": {

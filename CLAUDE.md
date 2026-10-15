@@ -84,3 +84,12 @@ here (repo, Notion, Discord, secrets, state are all separate).
   old text in state/script_backup.json). Only when all pages are ready is the format listed; else it stays archived
   and is retried next run (`comeback_tries`; after `COMEBACK_TRIES` one Slack note, then only `mode=relist` retries).
 - `tidy` never touches a page in the old layout (reports "old layout - not tidied"); `standardize` uses `ready_page`.
+
+## The speaker stays (15 Oct 2026)
+- The French page of the "Ex-HR" format said "Quelqu'un vient de quitter son job aux RH" for the original's "Ich hab
+  grad meinen Job im HR gekündigt": LOCALISE (3) "neutral details" had been applied to the speaker. LOCALISE now says
+  WHO speaks never changes (script and title, writers and judges). `brands.speaker_changed` checks it without Claude
+  in `builder.validate` (script + title_hook), `align._validate` and `verify` (against formats.json `script`); the
+  page judge's title_ok checks it too.
+- `ready_page` rebuilds now go through `audit.fix_page` like new pages. One page can be rebuilt with the workflow
+  input `example=FORMAT_ID:market:rebuild`.

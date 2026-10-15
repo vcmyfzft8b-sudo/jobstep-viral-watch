@@ -17,7 +17,7 @@ from . import llm, localize, notion, reword, state
 from .builder import COUNTRY, PARAKEET_FACTS, TRANSCRIBE
 from .markets import TEXT
 
-from .brands import NO_DIRECTIONS, SOURCE_RE as JOBSTEP  # JobStep and the apps of hand-added formats
+from .brands import NO_DIRECTIONS, SPEAKER_PROBLEM, SOURCE_RE as JOBSTEP, speaker_changed  # JobStep + hand-added apps
 
 
 def _words(t):
@@ -193,6 +193,8 @@ def _validate(spec, n_orig, source=None, translated=False):
         return f'"Parakeet AI"/the website appears {have} times, but the original names JobStep {want} times'
     if not any(s.get('cue') == 'parakeet' for s in script):
         return 'no sentence shows the app (cue "parakeet")'
+    if source is not None and speaker_changed(source, text):
+        return SPEAKER_PROBLEM
     return ''
 
 

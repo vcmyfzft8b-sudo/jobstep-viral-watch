@@ -514,7 +514,7 @@ def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None, 
         feedback = ''
         for _ in range(attempts):  # rebuilds may retry with the reason the last attempt was rejected
             spec = builder.build_spec(v, transcript, frames, cfg['models']['build'], lang=mk['lang'], feedback=feedback)
-            problems = builder.validate(spec, transcript, lang=mk['lang'])
+            problems = builder.validate(spec, transcript, lang=mk['lang'], on_screen=v.get('sticker') or '')
             if not problems:
                 break
             feedback = '; '.join(problems)
@@ -1091,13 +1091,14 @@ def missing_page(f, mk, fmts, origs, cfg):
     return 'built', url
 
 
-def ready_page(f, mk, fmts, origs, cfg):
+def ready_page(f, mk, fmts, origs, cfg, force=False):
     """One market's page of a format in the current layout. A missing page is built (missing_page: checked, then moved
     into the format folder); a page in the old hand-written layout (no example video, no resources section, no TikTok
     link, no script or no Parakeet AI link - verify.layout_problems) is rebuilt in place from its example video
     (same-language strict example if there is one, else the format's original JobStep video, else our creators' best
-    video of it) - transcribed script, the old text kept in state/script_backup.json. -> (status, detail), status in
-    READY ('ok', 'built', 'rebuilt') or 'not built' / 'not rebuilt' / 'error'."""
+    video of it) - transcribed script, the old text kept in state/script_backup.json - and then goes through the same
+    page check (audit.fix_page) as a new page. force: rebuild even a current page (mode example FORMAT:market:rebuild).
+    -> (status, detail), status in READY ('ok', 'built', 'rebuilt') or 'not built' / 'not rebuilt' / 'error'."""
     from . import reword as _reword
     m = mk['key']
     pid = page_of(f, m)
@@ -1106,7 +1107,7 @@ def ready_page(f, mk, fmts, origs, cfg):
     blocks = notion.children(pid)
     has_video = any(b['type'] == 'video' for b in blocks)
     has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS', _plain_text(b), re.I) for b in blocks)
-    if has_video and has_res and not verify.layout_problems(blocks, _reword.script_blocks(pid), cfg['links']):
+    if not force and has_video and has_res and not verify.layout_problems(blocks, _reword.script_blocks(pid), cfg['links']):
         return 'ok', ''
     ex = (f.get('inspo') or {}).get(m, {})
     url = ex.get('url') if ex.get('strict') else origs.get(f['id']) or f.get('source_video')
@@ -1127,6 +1128,14 @@ def ready_page(f, mk, fmts, origs, cfg):
     f.setdefault('inspo', {})[m] = {'url': url, 'views': v['views'], 'strict': bool(ex.get('strict') or own_v),
                                     'rebuilt': True, **({'own': True} if own_v else {})}
     state.save('formats.json', fmts)
+    meta = CTX.get('meta') if CTX.get('meta') is not None else state.load('meta.json', {})
+    accounts = CTX.get('accounts') or state.load('accounts.json', {})
+    status, notes = audit.fix_page(f, mk, cfg, state.load('history.json', {}), accounts, meta, page_of)
+    meta.setdefault('audit', {})[f"{f['id']}:{m}"] = status
+    if 'meta' not in CTX:
+        state.save('meta.json', meta)
+    if status not in ('ok', 'fixed'):
+        return 'not rebuilt', f"rebuilt but the page check says {status}: {'; '.join(notes)[:150]}"
     return 'rebuilt', url
 
 
@@ -1452,6 +1461,10 @@ def main():
         fid, m, url = a.set_example.split(':', 2)
         f = next(x for x in fmts if x['id'] == fid)
         mk = next(x for x in M.load(cfg) if x['key'] == m)
+        if url.strip() == 'rebuild':  # the whole page again from its example video (title, script, hook), then checked
+            print('rebuild:', ready_page(f, mk, fmts, audit.originals(), cfg, force=True))
+            state.save('formats.json', fmts)
+            return
         same = discover.language(re.search(r'@([^/]+)/', url).group(1)) == mk['lang']
         print('example set:', audit._put_example(f, m, page_of(f, m), mk['lang'], url, same_lang=same))
         st = align.align_page(f, page_of(f, m), mk['lang'], cfg, cfg['links'])

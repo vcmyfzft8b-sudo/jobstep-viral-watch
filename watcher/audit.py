@@ -143,7 +143,8 @@ Check strictly:
    brand, our spoken script must not name it either. Parenthesized linked cue labels are filming instructions,
    not spoken words. For silent videos compare on-screen text instead. Never add a CTA or website if the original
    has none; preserve its placement when one exists.
-7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h').
+7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h') and keeps
+   the example's speaker (its "I" story stays "I" - never "someone" / "a friend").
 {PARAKEET_FACTS}
 script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
 {NO_DIRECTIONS}

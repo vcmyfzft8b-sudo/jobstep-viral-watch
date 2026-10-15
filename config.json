@@ -217,6 +217,7 @@
       "visual_hook_lab": "https://app.notion.com/p/74d958b0fc148297b4a1819f32230950",
       "discord_env": "DISCORD_WEBHOOK_URL_SI",
       "discord_server": "1560294285444780052",
+      "skip_formats": ["A20261009204851", "A20261014173459"],
       "enabled": true,
       "discord_announce": false,
       "creator_channels": false

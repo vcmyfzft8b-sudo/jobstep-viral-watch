@@ -69,11 +69,11 @@ class LanguageTests(unittest.TestCase):
 
 
 class AdoptTests(unittest.TestCase):
-    def test_registry_maps_26_france_pages_to_distinct_copies(self):
+    def test_registry_maps_24_france_pages_to_distinct_copies(self):
         pages = ADOPT['sl']['pages']
         self.assertEqual(ADOPT['sl']['from'], 'fr')
-        self.assertEqual(len(pages), 26)
-        self.assertEqual(len(set(pages.values())), 26)
+        self.assertEqual(len(pages), 24)
+        self.assertEqual(len(set(pages.values())), 24)
 
     def test_copies_are_linked_once(self):
         adopt = {'sl': {'from': 'fr', 'pages': {'aaa111': 'sl111', 'bbb222': 'sl222'}}}
@@ -89,6 +89,38 @@ class AdoptTests(unittest.TestCase):
         del fmts[0]['pages']['sl']  # a page taken away later is not linked again
         self.assertEqual(main.adopt_market_pages(fmts, adopt), 0)
         self.assertIsNone(main.page_of(fmts[0], 'sl'))
+
+
+class SkipTests(unittest.TestCase):
+    """Only JobStep formats in Slovenia: the two study-app formats (from @lern.mit.domi, also a Memo AI source) never
+    get a Slovenian page, list entry or check."""
+    SKIP = ('A20261009204851', 'A20261014173459')
+
+    def test_config_skips_the_study_app_formats(self):
+        self.assertEqual(set(CFG['markets']['sl']['skip_formats']), set(self.SKIP))
+        mkts = markets.load(CFG)
+        self.assertNotIn('sl', [mk['key'] for mk in markets.for_format(mkts, {'id': self.SKIP[0]})])
+        self.assertIn('sl', [mk['key'] for mk in markets.for_format(mkts, {'id': 'N10'})])
+        self.assertIn('fr', [mk['key'] for mk in markets.for_format(mkts, {'id': self.SKIP[0]})])  # France keeps them
+
+    def test_skipped_format_is_never_built_or_listed(self):
+        mkts = [mk for mk in markets.load(CFG) if mk['key'] == 'sl']
+        f = {'id': self.SKIP[1], 'status': 'active', 'title': 't', 'pages': {'fr': 'x'}}
+        with mock.patch.object(main, 'missing_page') as mp:
+            self.assertEqual(main.ready_page(f, mkts[0], [f], {}, CFG)[0], 'ok')
+        mp.assert_not_called()
+        with mock.patch.object(main, 'make_page') as mkp:
+            self.assertEqual(main.ensure_market_pages(f, {}, mkts, [f], {}, CFG, None), [])
+        mkp.assert_not_called()
+        fmts = [f, {'id': 'N10', 'status': 'active', 'title': 'n', 'description': 'n', 'pages': {'sl': 'psl'}},
+                {**f, 'pages': {'sl': 'should-not-show'}, 'id': self.SKIP[0]}]
+        with mock.patch.object(main.notion, 'list_entries', return_value=([], None)), \
+                mock.patch.object(main.notion, 'hot_entry_count', return_value=0), \
+                mock.patch.object(main, 'own_tiers', return_value={}), \
+                mock.patch.object(main.state, 'log'), \
+                mock.patch.object(main.notion, 'set_order') as so:
+            main.rerank(mkts, fmts, {}, CFG)
+        self.assertEqual(so.call_args.args[1], ['psl'])
 
 
 if __name__ == '__main__':

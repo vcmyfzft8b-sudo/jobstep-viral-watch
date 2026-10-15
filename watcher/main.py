@@ -30,6 +30,7 @@ CTX = {}  # meta + accounts of the current run (the quality gate needs them)
 
 def _gate(fmt, mkts, fmts, history, cfg, kind):
     """Quality gate for a built/revived format: (published, position, reasons)."""
+    mkts = M.for_format(mkts, fmt)
     meta, accounts = CTX.get('meta', {}), CTX.get('accounts') or state.load('accounts.json', {})
     ok, reasons = gate.check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild_page)
     if ok:
@@ -662,7 +663,7 @@ def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
     into that market's format folder (and list)."""
     added = []
     meta, accounts = CTX.get('meta', {}), CTX.get('accounts') or state.load('accounts.json', {})
-    for mk in mkts:
+    for mk in M.for_format(mkts, fmt):
         if page_of(fmt, mk['key']):
             continue
         pending_pages = fmt.setdefault('pending_pages', {})
@@ -720,7 +721,7 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
     the lists), missing markets are built in the staging page, then the quality gate checks every page. Only if all
     pass do they move into the format folders and the format is listed again. Returns (published, position, reasons)."""
     fmt.pop('pending', None)  # a comeback starts with fresh quality-check attempts (old ones led to the archive)
-    for mk in mkts:
+    for mk in M.for_format(mkts, fmt):
         m = mk['key']
         pid = page_of(fmt, m)
         try:
@@ -804,7 +805,7 @@ def own_comebacks(mkts, fmts, cfg, tiers=None, now=None, force=False):
             continue
         origs = audit.originals() if origs is None else origs
         ready = {}
-        for mk in mkts:
+        for mk in M.for_format(mkts, f):
             try:
                 ready[mk['key']] = ready_page(f, mk, fmts, origs, cfg)
             except Exception as e:
@@ -863,7 +864,7 @@ def rerank(mkts, fmts, history, cfg, force=False):
             first = ids
         page_ids, hot_count = [], 0
         for i in ids:
-            pid = page_of(by_id[i], mk['key'])
+            pid = page_of(by_id[i], mk['key']) if M.for_format([mk], by_id[i]) else None
             if pid:
                 page_ids.append(pid)
                 hot_count += bool(scores[i]['top'])
@@ -996,7 +997,7 @@ def fill_market(m):
     mk = next(x for x in M.load({**cfg, 'markets': {k: {**v, 'enabled': True} for k, v in cfg['markets'].items()}}) if x['key'] == m)
     fmts, history = load_formats(), state.load('history.json', {})
     built = 0
-    for f in [f for f in fmts if f.get('status') == 'active' and not page_of(f, m)]:
+    for f in [f for f in fmts if f.get('status') == 'active' and not page_of(f, m) and M.for_format([mk], f)]:
         url = source_video(f)
         if not url:
             print('no inspiration video for', f['title'])
@@ -1215,6 +1216,8 @@ def ready_page(f, mk, fmts, origs, cfg, force=False):
     -> (status, detail), status in READY ('ok', 'built', 'rebuilt') or 'not built' / 'not rebuilt' / 'error'."""
     from . import reword as _reword
     m = mk['key']
+    if not M.for_format([mk], f):
+        return 'ok', 'not a format of this market (skip_formats)'
     pid = page_of(f, m)
     if not pid:
         status, detail = missing_page(f, mk, fmts, origs, cfg)
@@ -1266,7 +1269,7 @@ def standardize(only=None):
     origs = _audit.originals()
     report = []
     for f in [f for f in fmts if f.get('status') == 'active']:
-        for mk in M.load(cfg):
+        for mk in M.for_format(M.load(cfg), f):
             m = mk['key']
             if only and f['id'] not in only:
                 continue

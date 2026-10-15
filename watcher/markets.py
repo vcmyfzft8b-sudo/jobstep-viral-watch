@@ -233,3 +233,10 @@ def load(cfg):
             continue
         out.append({'key': key, **m, 'T': TEXT[m['lang']]})
     return out
+
+
+def for_format(mkts, fmt):
+    """The markets a format belongs in: a market's `skip_formats` (config.json) keeps formats out of it for good - no
+    page is built, listed or checked there (Slovenia: the two study-app formats that are not JobStep formats)."""
+    fid = (fmt or {}).get('id')
+    return [mk for mk in mkts if fid not in (mk.get('skip_formats') or ())]

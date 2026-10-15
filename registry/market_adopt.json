@@ -1,5 +1,5 @@
 {
-  "_note": "Pages of a new market that were made by copying another market's pages (Notion duplicate + translation). main.adopt_market_pages links each copy to its format once: pages[market] = copy, inspo/reworded copied from the source market. 15 Oct 2026: Slovenia = copy of the 26 live France pages.",
+  "_note": "Pages of a new market that were made by copying another market's pages (Notion duplicate + translation). main.adopt_market_pages links each copy to its format once: pages[market] = copy. 15 Oct 2026: Slovenia = copy of the live France pages - 24 of 26; the two study-app formats (A20261009204851 laptop ad spot, A20261014173459 hardest schools, both from @lern.mit.domi, not JobStep) are in markets.sl.skip_formats and their copies sit in the Slovenia archive.",
   "sl": {
     "from": "fr",
     "pages": {
@@ -13,14 +13,12 @@
       "3d5958b0fc1480b299c5d0d9e039ea1a": "dc3958b0fc14824384a481cd1210be02",
       "3e2958b0fc14805b809fd34a4e59f5e4": "2da958b0fc1482b4a6290181831bd49e",
       "3f0958b0fc14808db0f2cfff9682c186": "351958b0fc14827e82b78134491d1ac7",
-      "3f9958b0fc14816ebc76ff03187a6047": "8fb958b0fc1482309cb0818ab451998d",
       "3d5958b0fc148066a3e0eece4e907476": "c96958b0fc1482dba9dc01ed9852e036",
       "3e9958b0fc148052aec2e7bda47e7d5e": "1ee958b0fc148321be0b81ba0f576970",
       "3f7958b0fc1481e48f06d6e5b6859a96": "a37958b0fc1482f5b8bc019ebaba8239",
       "3d5958b0fc1480e18ab6d13fc35db8c1": "4e6958b0fc148380a0bb81e6e1fbdd94",
       "3f9958b0fc148135b066da62d500ddc0": "103958b0fc14826bb1d6010d13dfc0e6",
       "3f2958b0fc148161b380c1afa04b1d6c": "c30958b0fc14828d9b7e017c5ef69ad0",
-      "3f4958b0fc1481c680c0cb26c557709d": "829958b0fc14831f94cd817952dca428",
       "3f1958b0fc1481a68fbff9b2a4cedbc8": "f7d958b0fc14826e82948138f2f4fc4d",
       "3f7958b0fc14819da5a1f0824cbbb05e": "c30958b0fc1483eaaf5c81725f4fc286",
       "3fa958b0fc14813d8982fea71e92ad3b": "bf1958b0fc1483f587e901b1ea5b8a1d",

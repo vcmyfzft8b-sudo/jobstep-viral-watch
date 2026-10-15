@@ -324,7 +324,8 @@ def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=8, rebuild=No
     import concurrent.futures as cf
     last = meta.setdefault('audit', {})
     fingerprints = meta.setdefault('audit_fingerprints', {})
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts]
+    from .markets import for_format
+    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f)]
 
     def one(job):
         f, mk = job

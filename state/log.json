@@ -4487,5 +4487,42 @@
   },
   "ts": 1792059795,
   "type": "rerank"
+ },
+ {
+  "format": "N03",
+  "level": "rising",
+  "ts": 1792077134,
+  "type": "alert",
+  "video": "7696729508551888148",
+  "views": 45200
+ },
+ {
+  "format": "A20261006183623",
+  "level": "rising",
+  "ts": 1792077148,
+  "type": "alert",
+  "video": "7696590666582740246",
+  "views": 39300
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792077151,
+  "type": "alert",
+  "video": "7696609383643401505",
+  "views": 28600
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792077158,
+  "type": "alert",
+  "video": "7696619902811032854",
+  "views": 20500
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792077161,
+  "type": "alert",
+  "video": "7696825921940049185",
+  "views": 5594
  }
 ]

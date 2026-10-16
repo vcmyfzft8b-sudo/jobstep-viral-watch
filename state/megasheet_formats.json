@@ -1,19 +1,352 @@
 {
- "_adopted": [],
+ "_adopted": [
+  "fr",
+  "es",
+  "sl"
+ ],
  "_warned": 1792178965,
  "es": {
   "3d5958b0fc14805a84b2fccfd057012c": {
-   "idea": "6764715d-96a2-468a-b7e5-79e1b42722a8"
+   "idea": "6764715d-96a2-468a-b7e5-79e1b42722a8",
+   "media_ids": [
+    "52cd2901-fe77-45d1-a8bc-14465bdc087c"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-81fe-ada6-e86ef1981d17"
+   ]
+  },
+  "3d5958b0fc1480d39cd5e3fdd2c01b37": {
+   "idea": "969d2e6f-94aa-44ba-8e61-32223abce210",
+   "media_ids": [
+    "e84fd66b-69e7-486f-b1b0-ba34b8ee9299"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-81e3-964e-e74b2370f9c8"
+   ]
+  },
+  "3e2958b0fc14806d924bceb6e51656f2": {
+   "idea": "0c749165-c74a-4a59-8a13-910b7b4fd91a",
+   "media_ids": [
+    "e72870ad-b292-48fc-9936-38ca639db07f"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-81da-9e65-df78706c55f8"
+   ]
+  },
+  "3e2958b0fc14808f831ddbeba428c7bc": {
+   "idea": "12b4510a-bb5a-47db-a99b-dc43673d49f7",
+   "media_ids": [
+    "2169f3a6-dc29-42ea-8c7a-9a394dbbb7e3"
+   ],
+   "media_key": [
+    "3f7958b0-fc14-819e-85db-ca73a521c441"
+   ]
+  },
+  "3ee958b0fc148015ae8befbb383ec8da": {
+   "idea": "d6e073f6-3d63-4e53-ac0c-3f940d676042",
+   "media_ids": [
+    "fa36b060-d11c-4458-88ad-853a113bfe14"
+   ],
+   "media_key": [
+    "3f7958b0-fc14-81c6-bb45-f13338d51a70"
+   ]
+  },
+  "3f0958b0fc1480099338d666a6b9fb0a": {
+   "idea": "016be7bf-4f8f-4d7d-96b0-05da250ab627",
+   "media_ids": [
+    "13e1139b-37c5-4fdf-8a76-2dc9acb157ce"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-8187-ae01-f48a8533893e"
+   ]
+  },
+  "3f0958b0fc148055a0a0f2a0abb631b0": {
+   "idea": "66acc8e7-0be8-4bda-9a39-989570e71ab5",
+   "media_ids": [
+    "12ef8bd5-4a2e-4033-9b54-9044492fad9f"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-8166-9379-ca51496eb471"
+   ]
+  },
+  "3f0958b0fc148066bf07fe40cc899cb7": {
+   "idea": "d2410723-5798-4363-8ed9-478c35dde191",
+   "media_ids": [
+    "bae55b69-5e4c-428b-9b06-d65c765496fb"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-819b-ab06-d0e194ef2aa1"
+   ]
+  },
+  "3f1958b0fc1481dcb082ef034500b188": {
+   "idea": "c9d12d71-9034-4eed-8b02-782d0527d997",
+   "media_ids": [
+    "8fcea377-a3d6-4649-97d2-72a8681d5c77"
+   ],
+   "media_key": [
+    "3f1958b0-fc14-817c-bbc3-f1f8a1869436"
+   ]
+  },
+  "3f1958b0fc1481dcb34dc0a486a8c4d3": {
+   "idea": "1755a3b3-15e3-45f5-ac6f-d4cf1615de8e",
+   "media_ids": [
+    "26e7cdce-9c6f-4d80-8f65-0c52e12e7a2f"
+   ],
+   "media_key": [
+    "3f1958b0-fc14-81a5-8a6a-ed8c5c5e3c91"
+   ]
+  },
+  "3f2958b0fc148128b155d5d455c6627f": {
+   "idea": "efacd1e0-0096-4461-b159-ffde5789e197",
+   "keep_titles": [
+    "Los reclutadores odian este truco",
+    "No vuelvas a enviar un CV genérico",
+    "Copia una oferta de trabajo y haz esto"
+   ],
+   "media_ids": [
+    "84f7a1b0-7a0c-47e3-9407-532971af9f9e"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-810b-a345-debd1756d2e7"
+   ]
+  },
+  "3f3958b0fc1481408f92fcec88617e86": {
+   "idea": "49d1d6b7-58ce-43cd-8acc-6f0ae6dd71a9",
+   "media_ids": [
+    "57b2125e-edde-4752-b423-1926bd6cf88d"
+   ],
+   "media_key": [
+    "3f3958b0-fc14-81aa-b413-fc2ce6155cfd"
+   ]
   }
  },
  "fr": {
+  "3d5958b0fc148066a3e0eece4e907476": {
+   "idea": "d37c1b10-ec3b-4e46-b76e-3d4f3ba673b1",
+   "media_ids": [
+    "fe8630a5-b325-46dd-87e9-4295f307a9f5"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-810a-b9df-c77186210bfb"
+   ]
+  },
+  "3d5958b0fc1480b299c5d0d9e039ea1a": {
+   "idea": "8954e4b1-4127-42f6-8989-a17745ac2cb8",
+   "media_ids": [
+    "4e96fb4a-c39b-44ec-840b-e2ca9ba06c00"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-8114-9eea-e82a43cd8b9b"
+   ]
+  },
+  "3d5958b0fc1480deb575c1f0d84f692e": {
+   "idea": "6d80798b-efbb-405a-bab1-51dff730f9cd",
+   "media_ids": [
+    "7c17e657-9cc9-4579-8304-0906e89f471b"
+   ],
+   "media_key": [
+    "3f3958b0-fc14-81e9-bf9c-dbf32efa34a9"
+   ]
+  },
+  "3d5958b0fc1480e18ab6d13fc35db8c1": {
+   "idea": "381802e6-b994-4d73-aab7-4b7626c57e69",
+   "media_ids": [
+    "fd7c6ed8-7559-41e9-9ff7-13cc6c8a52eb"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-8137-9d36-f0f05c1be52b"
+   ]
+  },
+  "3d6958b0fc1480819ed6cef70d0e34df": {
+   "idea": "ad829749-02db-4e92-a459-57095616d32c",
+   "media_ids": [
+    "c14fc4c6-2f76-4cd5-bb0e-509d3d30c9a2"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-81c0-9570-e90c9367b8ba"
+   ]
+  },
+  "3d6958b0fc1480c28349ed1807a6a77a": {
+   "idea": "e514bd66-cf35-45ad-ac8e-f1ae9fa5d4b5",
+   "media_ids": [
+    "07eacabc-aec2-4c0e-82c6-90c296d246c0"
+   ],
+   "media_key": [
+    "3fb958b0-fc14-816d-b6ea-c1b485178692"
+   ]
+  },
   "3d8958b0fc148024bea3d5fcb04410d4": {
-   "idea": "ddf59e94-a352-4124-9793-93b6f413f606"
+   "idea": "ddf59e94-a352-4124-9793-93b6f413f606",
+   "media_ids": [
+    "8c59ad23-d7f7-4baf-b09f-cdb44f57d5eb"
+   ],
+   "media_key": [
+    "3f7958b0-fc14-81e6-9d43-ddb10a6dc449"
+   ]
+  },
+  "3e2958b0fc14805b809fd34a4e59f5e4": {
+   "idea": "bd02a5d8-5393-4143-b928-ae9c41504a51",
+   "media_ids": [
+    "6a99f1c7-344b-415c-8920-930b356cd28d"
+   ],
+   "media_key": [
+    "3f7958b0-fc14-8198-a6c0-d5743c651b08"
+   ]
+  },
+  "3f0958b0fc148062b0d7f22c1ceec5b2": {
+   "idea": "822a11e6-2a1b-45de-ac1b-e17769e6b706",
+   "media_ids": [
+    "9d2bd08b-c489-48ee-8a0e-82db0d2c80e9"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-81cb-85e6-c7721929f182"
+   ]
+  },
+  "3f0958b0fc14808db0f2cfff9682c186": {
+   "idea": "8134702e-c690-41f3-bf92-18dcbcf9d43b",
+   "media_ids": [
+    "89468e35-d17e-4208-81d6-6e2648c079fc"
+   ],
+   "media_key": [
+    "3f5958b0-fc14-814f-9f81-fdd209d15b20"
+   ]
+  },
+  "3f1958b0fc1481a2ba66cc883deaa52d": {
+   "idea": "cd202182-c4f7-4b7c-bb25-8964e334315c",
+   "media_ids": [
+    "dca445da-0e75-4086-a505-c8e8b3e5b16f"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-815b-ae4d-ea3b14c15255"
+   ]
+  },
+  "3f1958b0fc1481de9596f60bb33c85fa": {
+   "idea": "76100946-4c0f-4ef8-ab4e-2f2eba1d4471",
+   "media_ids": [
+    "d4eefedb-1d0d-4e0a-ad39-6f63c0da2db6"
+   ],
+   "media_key": [
+    "3f1958b0-fc14-8176-b54e-e3b5db650869"
+   ]
+  },
+  "3f2958b0fc1481d68bb4ef18ace94294": {
+   "idea": "297c72a4-1e8a-4160-87ff-fbd4da5df211",
+   "media_ids": [
+    "10c82c5e-2afe-4f4b-bd67-28fbbc0e6c55"
+   ],
+   "media_key": [
+    "3f2958b0-fc14-8169-b8f9-c4b7239e7643"
+   ]
   }
  },
  "sl": {
+  "1fa958b0fc14822b9c368120457c63ee": {
+   "idea": "0512a0a3-15b2-4a9d-8075-9740ff32a777",
+   "media_ids": [
+    "08ecabee-aec9-430f-bd25-0805345ad2bc"
+   ],
+   "media_key": [
+    "0d3958b0-fc14-8354-8fc5-818aa48b33ec"
+   ]
+  },
+  "2da958b0fc1482b4a6290181831bd49e": {
+   "idea": "6bcfe1a0-cbc7-4446-a859-0b54fbbc9c4b",
+   "media_ids": [
+    "3bbe3a39-010a-441e-85d2-e495a612745f"
+   ],
+   "media_key": [
+    "7cc958b0-fc14-83a6-a591-0176ac5a784b"
+   ]
+  },
+  "351958b0fc14827e82b78134491d1ac7": {
+   "idea": "9a47a3bc-ceb1-47fd-b110-773ece5fe499",
+   "media_ids": [
+    "ad221d8b-ac43-4218-9ce0-3231689babb9"
+   ],
+   "media_key": [
+    "629958b0-fc14-82bd-a6c8-8137512adf18"
+   ]
+  },
+  "3fb958b0fc148160b3cbc07aa195a088": {
+   "idea": "e7f2050f-69dc-45dc-a07d-610110dcda1c",
+   "media_ids": [
+    "0a66ca5a-c7af-4f84-b398-402561b87ab7"
+   ],
+   "media_key": [
+    "3fb958b0-fc14-81a6-85f0-fdf703fa2c1c"
+   ]
+  },
+  "4e6958b0fc148380a0bb81e6e1fbdd94": {
+   "idea": "3590017c-af69-4691-88f0-09baeba11ae8",
+   "media_ids": [
+    "106e02d5-9241-498d-97e4-b033a34dd3ad"
+   ],
+   "media_key": [
+    "691958b0-fc14-829c-8e80-8134ba1733e1"
+   ]
+  },
+  "65a958b0fc148206877981f76d6811ce": {
+   "idea": "5881f705-d377-4bbc-a0e4-e07cb54feb7f",
+   "media_ids": [
+    "0bc14efe-e17f-4b01-b4dd-77d7ba3f1b59"
+   ],
+   "media_key": [
+    "962958b0-fc14-82cb-b51a-81c457ccc70a"
+   ]
+  },
+  "668958b0fc14827ca51201c60419af14": {
+   "idea": "38433e0e-8dbf-4d60-a0d4-ccdf0044e1b0",
+   "media_ids": [
+    "ecf472ed-ce89-49fe-b844-6f77926352b0"
+   ],
+   "media_key": [
+    "6de958b0-fc14-830c-9d47-81bf4dc78789"
+   ]
+  },
+  "9fe958b0fc1483709bb00121abb9520a": {
+   "idea": "77623af6-ab46-4980-bc94-7d3b7a69f323",
+   "media_ids": [
+    "8e8cccdf-3873-43bc-b685-bdbc1b8c681f"
+   ],
+   "media_key": [
+    "cb3958b0-fc14-83ef-bd50-81333e712d5d"
+   ]
+  },
   "c96958b0fc1482dba9dc01ed9852e036": {
-   "idea": "56449049-105f-4e9d-92e4-a87c8cfe353f"
+   "idea": "56449049-105f-4e9d-92e4-a87c8cfe353f",
+   "media_ids": [
+    "874ffa07-de11-40db-bc9e-7198bcd60fe9"
+   ],
+   "media_key": [
+    "39d958b0-fc14-8375-891f-81b74cb6527c"
+   ]
+  },
+  "dc3958b0fc14824384a481cd1210be02": {
+   "idea": "16b08a17-cbd9-4c9d-ab0a-8d7032a4c28b",
+   "media_ids": [
+    "b6a269ee-178b-408d-a6c9-ff02ce72e61b"
+   ],
+   "media_key": [
+    "7db958b0-fc14-834c-9833-81485612e115"
+   ]
+  },
+  "fbe958b0fc1483a691a301b37499dbae": {
+   "idea": "71941cdd-64f5-4fac-868e-c88579fa0d98",
+   "media_ids": [
+    "a20c7607-a176-438a-9c54-c1cad7cbec5b"
+   ],
+   "media_key": [
+    "493958b0-fc14-8229-9c4d-015464a8df25"
+   ]
+  },
+  "fd8958b0fc148203a625813d638f9af5": {
+   "idea": "d4c2e39f-6bd2-4017-939e-a85787f4fb62",
+   "media_ids": [
+    "4f4e2050-dab4-4404-9acd-66bc0e4ed7eb"
+   ],
+   "media_key": [
+    "9e2958b0-fc14-82d5-9e71-01f87d214c75"
+   ]
   }
  }
 }

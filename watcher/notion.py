@@ -142,13 +142,17 @@ def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, sam
     return blocks
 
 
+# '– siehe Ressourcen' / '– voir Ressources' / '– ver Recursos' / '– glej Viri': every market's asset cue ending
+ASSET_SEE = '|'.join(re.escape(T['asset_cue'].split('{name}')[1].strip(' )').lstrip('–- ').strip()) for T in TEXT.values())
+
+
 def asset_label(name):
     """Bare asset name: a rewrite copies the rendered cue ('📎 Gmail – siehe Ressourcen'), which must not be decorated
     again (it piled up as '📎 📎 📎 … – ver Recursos – ver Recursos')."""
     t = (name or '').strip()
     while True:
         new = re.sub(r'^[(\s]*📎\s*', '', t)
-        new = re.sub(r'\s*[–-]\s*(siehe Ressourcen|voir Ressources|ver Recursos)\s*\)?\s*$', '', new).strip()
+        new = re.sub(r'\s*[–-]\s*(' + ASSET_SEE + r')\s*\)?\s*$', '', new).strip()
         if new == t:
             return t
         t = new

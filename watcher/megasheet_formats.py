@@ -137,10 +137,11 @@ def read_page(page_id, T, blocks=None):
             if text.strip():
                 p['hook'].append(text.strip().replace('🚨👇', '🚨'))
         elif sec == 'res':
-            links = _links(rich)
-            p['links'] += links
-            rest = _plain([x for x in rich or [] if not (x.get('href') or ((x.get('text') or {}).get('link')))])
-            p['res_text'] += [line.strip() for line in rest.split('\n') if line.strip() and line.strip() not in '()·-–']
+            p['links'] += _links(rich)
+            for line in text.split('\n'):  # a line keeps its link ('[Gmail](…) — film it full screen')
+                t = line.strip()
+                if t and not re.fullmatch(r'\[[^\]]+\]\([^)]+\)', t):  # a bare link is in the resources list
+                    p['res_text'].append(t)
     return p
 
 

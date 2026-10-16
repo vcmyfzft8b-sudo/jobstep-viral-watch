@@ -217,3 +217,9 @@ here (repo, Notion, Discord, secrets, state are all separate).
   `verify` (reads Megasheet), every run prints "megasheet format writes: N". `test_video` builds an ARCHIVED
   "🧪 TEST –" idea (input "URL [market]", default fr) - delete it in Megasheet afterwards.
 - One access token per process (`megasheet.access_token`, renewed once when refused).
+- One update per fix (`pages.one_save` / `pages.batch`): align, directions, tidy, new example + note, asset cues and
+  strip-directions send their changes to a page as ONE Megasheet update (creators never see a half-changed script).
+- `monday-dry`: the whole Monday work (`main.monday_work`: clean-up, missing pages, examples, audit, 1:1 check,
+  cross-country check) + re-sort with Claude, on a throw-away state copy, every Megasheet write / Slack message only
+  printed. Rehearsed 16 Oct 2026: no step failed; it would make ~30 updates (real audit fixes: re-transcribed scripts,
+  titles, hooks) and build NOTA UNIVERSIDAD's French + Slovenian pages (back among the best there).

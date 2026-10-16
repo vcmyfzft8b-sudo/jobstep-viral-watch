@@ -1034,6 +1034,9 @@
   "ESX11:de": "ok",
   "ESX11:es": "ok",
   "ESX11:fr": "ok",
+  "FRX34:es": "ok",
+  "FRX34:fr": "ok",
+  "FRX34:sl": "fixed",
   "FRX39:es": "failed",
   "FRX39:fr": "failed",
   "N01:de": "ok",
@@ -1049,14 +1052,18 @@
   "N04:es": "ok",
   "N04:fr": "ok",
   "N07:de": "ok",
-  "N07:es": "ok",
+  "N07:es": "fixed",
   "N07:fr": "ok",
+  "N07:sl": "ok",
   "N10:de": "ok",
   "N10:es": "ok",
   "N10:fr": "ok",
   "X03:de": "ok",
   "X03:es": "ok",
   "X03:fr": "ok",
+  "X06:es": "ok",
+  "X06:fr": "ok",
+  "X06:sl": "ok",
   "X08:de": "ok",
   "X08:es": "ok",
   "X08:fr": "ok",
@@ -1072,8 +1079,9 @@
   "X16:es": "ok",
   "X16:fr": "ok",
   "X18:de": "ok",
-  "X18:es": "ok",
-  "X18:fr": "ok"
+  "X18:es": "fixed",
+  "X18:fr": "fixed",
+  "X18:sl": "fixed"
  },
  "audit_fingerprints": {
   "A202610061328:de": "d0c10c2cc1ce25cdd6e27de74cfcd3530424742a5021fdfc1454e7083bd1f610",
@@ -1101,6 +1109,9 @@
   "ESX11:fr": "9afe6f8baf520fa7e68e141e6f7f1d43440176b4db1f98c07f3643f7e6a33edc",
   "ESX21:es": "31601968343e70544be3c1ac6ff385f1e9bdd7808273b35627768f33043ccd30",
   "ESX21:fr": "7c7a9cc48d822933f3d3c4664cb65cb2f3896c702961a944974e62a08ca4a32d",
+  "FRX34:es": "609dd8eac954c16d0130283d91caf3e7e8b79a1b20408984e4b66dca24f38725",
+  "FRX34:fr": "cecfa5fa84b9567bbb888e0926020fd77062b3e27c8f2f66ced584299c8ea5cd",
+  "FRX34:sl": "a937570b1c0de20c99c608a777028d80dc3c30813cfc04a78facd8940b48b873",
   "N01:de": "24681ec773498ff4406aa09ca156f2943178784980f3fc3b9de43954c673b208",
   "N01:es": "4c12a678cebba933950d7b5f3514d36afb028d4bdd020f340a80bfa170de484a",
   "N01:fr": "e697bf7fb3da514f5c86aef5718f872165c53649edd81e70bc7109440f9fe8e2",
@@ -1114,14 +1125,18 @@
   "N04:es": "9a6a056e2c1218e8a3bdcdd41925542382e005f488055b26d39e15c922ca3b19",
   "N04:fr": "f4fce367d5d232b05c7a2cbd077600f59be2b6265f21491996c6f95cb34a9ba6",
   "N07:de": "d7c7945832cb6a00106f87efdb31d6bc60015cea2dbf64c5b1670849d544413a",
-  "N07:es": "df311be3706833d3038daf9e725c1598ec4d4bb4084671ce492c3407814a954f",
-  "N07:fr": "c7224dd6db93676833de51d7aeea0c6ee48bac33c9fa0fa95efcafe6c7959376",
+  "N07:es": "81941bd7dc86884667d89de726d371be970ca59d02771427f5b349404b854d99",
+  "N07:fr": "1b0b24eb80316ef75d770822afbe3776b3bb4b4a08d689c6203cb35968a15753",
+  "N07:sl": "a90c693e09ff9d16757868d5c2c9f13a8f66648b0a8b4e66b5e2900f44582678",
   "N10:de": "5faf2a4c7ac5a75bc5d05fb69c4ba09f1b653cd80cfc4aef1bff313e78fc3b64",
   "N10:es": "d2406093ea9a7f3d85130379ae7285f3eb80e3f4fa528610a43817f6d1dd43b7",
   "N10:fr": "5693bb4481aa1fac70936cf3c5161e6f0c3499e6a81f17063fbc2c8a6f3996fa",
   "X03:de": "0e00fb7a397ca47438ead472832298b2ffee935c129e3e2e4f1c76e570177289",
   "X03:es": "fb30dca404e35a2127b8b6954e86c3994b54aafa547dbe5bbb94456f920045c6",
   "X03:fr": "defd6af4058a296074750d70e834a5b7c30e419411da4352187175b8aac00d2d",
+  "X06:es": "296e37f200a020def2f95a43ce29febd668e69b89872d1ed394af79a3906a1c1",
+  "X06:fr": "a56c7c1141cba86ea124e651f205a0627fdb90499c159ab8ccc39032ecfc9471",
+  "X06:sl": "81a8983c336fb2bd29803db1233e389f22fdb2505b48cf9b71a9755cfce6268f",
   "X08:de": "9382840ce7bd8ec308b4d0b81f208f4a49f833042c062a30b0998b9f49e760bb",
   "X08:es": "a3fe7f66881c2316885d9341d03439be45d9440db34cbba0e84327e9228da70f",
   "X08:fr": "a2df991562534c2ace7585510b1e4ee3427b8151ed753e7cb0d9e22b23f8519b",
@@ -1137,8 +1152,9 @@
   "X16:es": "a27685e500c47ce6938a929b1fd527463756f4b86e9200614d2ab4dd45a0bbe6",
   "X16:fr": "43747fb7fbae7b3a94f1cb833ef000efb15a4adae4f5f64179d2655433c2b47b",
   "X18:de": "d632d9071bbfb6e81de71c270a9184815f6bad96a8a00a4853d83271f277efa1",
-  "X18:es": "63b62160a81a4b99abb7f55a8f555b5c7f78105889017eaa22443c2f2896136b",
-  "X18:fr": "c3a36169796cb9df9b387e1491d3953429391414ad27af01632b359c716707a1"
+  "X18:es": "d9e6e780dcbff8ddeb4da44a663042cdda576d5feb1fbfac869ebd2ee972ecd7",
+  "X18:fr": "948e499a20fbbc9c482aef2bc4c385727ef2ecd590db3bdbcecc2b5329db00ab",
+  "X18:sl": "86c940f660a42bff4655771fa6353b56705f59f145c8034d41f208c6245e8ffd"
  },
  "discovered_at": 1792094181,
  "group_audit": {
@@ -2000,6 +2016,109 @@
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   },
+  "FRX34": {
+   "approval": {
+    "es": "not_locked",
+    "fr": "not_locked",
+    "sl": "not_locked"
+   },
+   "checked_at": 1792154410,
+   "deterministic": {},
+   "duplicates": [],
+   "inputs": {
+    "es": {
+     "source_id": "7695162997395737857",
+     "video_identity": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455"
+    },
+    "fr": {
+     "source_id": "7695162997395737857",
+     "video_identity": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455"
+    },
+    "sl": {
+     "source_id": "7695162997395737857",
+     "video_identity": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455"
+    }
+   },
+   "key": "3821ca6f99a54179162a48b1d244c07511353a31c0220ee3a8744ddefb12c682",
+   "passed": true,
+   "reasons": [],
+   "results": {
+    "directions_match": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "faithful_transcript": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "features_claims": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "format_consistency": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
+     }
+    },
+    "script_matches_example": {
+     "es": {
+      "issue": "",
+      "pass": true
+     },
+     "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
+     }
+    }
+   },
+   "status": "pass",
+   "summary": "All three scripts (ES, FR, SL) follow the original video sentence by sentence. Each one swaps JobStep for Parakeet AI once and in the same place, replaces cover letters and 'add job' with real steps (pick a template, confirm, chat), uses X/Y score placeholders, keeps the claims realistic and uses short visual-hook directions that fit, so nothing needed fixing.",
+   "title_fixes": {},
+   "version": "group-2026-10-13.timeless"
+  },
   "N01": {
    "approval": {
     "es": "not_locked",
@@ -2315,9 +2434,10 @@
   "N07": {
    "approval": {
     "es": "not_locked",
-    "fr": "not_locked"
+    "fr": "not_locked",
+    "sl": "not_locked"
    },
-   "checked_at": 1791884247,
+   "checked_at": 1792153916,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2328,9 +2448,13 @@
     "fr": {
      "source_id": "7689479710677470471",
      "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
+    },
+    "sl": {
+     "source_id": "7689479710677470471",
+     "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
     }
    },
-   "key": "358a4e0ac6186256a0ebca8cfcbb2b3fb5430c32d5b95cbddd79686ce387f80e",
+   "key": "50a2999a097385a27f7c2ff4960fa95eed2d45e43cb1d0ef6f7244a030a95bfa",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2340,6 +2464,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2352,6 +2480,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2360,6 +2492,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2372,6 +2508,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -2382,11 +2522,15 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     }
    },
    "status": "pass",
-   "summary": "FR and ES both use the canonical brother-recruiter video and pass every check: each script is a faithful translation in the same order, the 24-hour promise is softened to better chances, the brand is shown but never spoken, there is no CTA, the X/Y before/after reveal is kept, and the titles and short selfie-with-jewellery hooks fit the example.",
+   "summary": "All three pages follow N07 closely: the recruiter-brother hook, the score check on the site, the question-by-question build and the final-score then before-score reveal are all kept, the 24h promise is softened, the scores use X/Y, the brand is never spoken and there is no CTA, so every dimension passes.",
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   },
@@ -2549,9 +2693,10 @@
   "X06": {
    "approval": {
     "es": "not_locked",
-    "fr": "not_locked"
+    "fr": "not_locked",
+    "sl": "not_locked"
    },
-   "checked_at": 1791884349,
+   "checked_at": 1792154112,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2562,11 +2707,17 @@
     "fr": {
      "source_id": "7688707702813429024",
      "video_identity": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97"
+    },
+    "sl": {
+     "source_id": "7688707702813429024",
+     "video_identity": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97"
     }
    },
-   "key": "32ce0ce7e26db11f43fc7d8652434f78513688d8e3a7df92aada61eed102a060",
-   "passed": true,
-   "reasons": [],
+   "key": "73b6358fa0729a12010f1f0b014c35a8043839e1b4d856ab787bfbb12ab57e31",
+   "passed": false,
+   "reasons": [
+    "directions_match sl: The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title."
+   ],
    "results": {
     "directions_match": {
      "es": {
@@ -2576,6 +2727,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title.",
+      "pass": false
      }
     },
     "faithful_transcript": {
@@ -2584,6 +2739,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2596,6 +2755,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "format_consistency": {
@@ -2604,6 +2767,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2616,11 +2783,15 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     }
    },
-   "status": "pass",
-   "summary": "Both scripts pass. FR is a clean transcript and ES is a close Spain-Spanish translation. Both keep all 7 beats in order, use the X/Y score placeholders, soften the ATS claim to «optimise» and name only Parakeet AI. Their titles and short hook directions match the reference.",
+   "status": "fail",
+   "summary": "FR, ES and SL all follow X06 closely: same beats and order, Parakeet AI named only in beat 5, the guarantee softened to 'optimises for ATS' and X/Y scores, but the SL filming directions use a different on-screen title from the page's actual title.",
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   },
@@ -3017,9 +3188,10 @@
   "X18": {
    "approval": {
     "es": "not_locked",
-    "fr": "not_locked"
+    "fr": "not_locked",
+    "sl": "not_locked"
    },
-   "checked_at": 1791884676,
+   "checked_at": 1792154271,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -3030,9 +3202,13 @@
     "fr": {
      "source_id": "7695190648357489921",
      "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
+    },
+    "sl": {
+     "source_id": "7695190648357489921",
+     "video_identity": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0"
     }
    },
-   "key": "bd47ce698afc80e3337c02ee5306d8b6cf42f375500fb1dadbb38dd8f4462f61",
+   "key": "fc91c445efa4b6c97cdf492c4ba3c6264a5ca581bd7d40fcae2253302a53389a",
    "passed": true,
    "reasons": [],
    "results": {
@@ -3042,6 +3218,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -3054,6 +3234,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -3062,6 +3246,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -3074,6 +3262,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -3084,11 +3276,15 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     }
    },
    "status": "pass",
-   "summary": "FR and ES both pass every check: each follows X18 beat for beat, stays close to the Spanish original, and makes only the allowed changes (Spain Spanish wording, local job sites, template/download instead of the cover letter, Parakeet AI only on screen), with no invented features or guarantees.",
+   "summary": "All three pages pass: each follows the beats in order (hook, ATS reveal, copy the job link, paste it into Parakeet AI with the CV, tailored CV, template and download, sign-off), and each is a close translation of the example with only allowed changes (cover letter replaced by template/download, 'all' softened to 'almost all', local job portals, Spain-Spanish sign-off). Minor note: the SL directions say the example's opening does nothing special, while the FR directions describe a secret gesture in it.",
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   }
@@ -3099,13 +3295,20 @@
    "7690964265083079942"
   ],
   "N07": [
-   "7691252438875098400"
+   "7691252438875098400",
+   "7696228517259824406"
   ],
   "N10": [
    "7693601460084362516"
   ],
+  "X06": [
+   "7697128733752167682"
+  ],
   "X15": [
    "7667662711190195489"
+  ],
+  "X18": [
+   "7695689084508949782"
   ]
  },
  "handle_lang": {
@@ -3170,17 +3373,9 @@
   "thelma.gtz": "es",
   "this.is.creed": "de"
  },
- "hot": {
-  "N10": {
-   "announced": {},
-   "count": 5,
-   "creators": {},
-   "messages": {},
-   "since": 1792127044
-  }
- },
- "last_full_run": 1792125605,
- "last_run": 1792125605,
+ "hot": {},
+ "last_full_run": 1792150437,
+ "last_run": 1792150437,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3198,9 +3393,9 @@
   ]
  },
  "top3": [
-  "X08",
-  "N10",
-  "FRX22"
+  "FRX22",
+  "ESX11",
+  "X16"
  ],
  "top3_market": "fr",
  "video_hashes": {
@@ -3208,19 +3403,24 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0388d236-0302-4c20-adb6-354124854b86/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/05141a93-5ace-4ab2-8b23-cea31deaddff/7685281585674849569.mp4": "sha256:0d9864c4693d9f8b450659fe7a82a8450c61d6c96c85e30ac4be3dec1179dc74",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0699bac6-f46a-4ffa-beb6-db71cb973cbf/04-Balkan-Beispiel.mp4": "sha256:be143d2219312814ce14c5a33fecaefaccecaadcd9c44820cbc674d50ec53ff6",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/0ccb941b-a5b7-4a7a-9aa1-49278e03e303/video.mp4": "sha256:25a51bc626f59b0bae780ae051f7386f1ee0ae4b18eb44d1641442a401194337",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/0dd95399-7fdd-4cb0-a980-24fcd61f6338/video.mp4": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/0f88fc16-8fe2-4f86-9c4e-f5d1873e3b63/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/132c8e2f-abae-4fa2-a50f-f3f9dacab7da/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/148f22f8-5cf4-4859-a017-275d56b389c3/video.mp4": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/184165fc-d896-4ddb-9a8f-e962593d496c/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1944cb5e-cec4-4eb0-8f8a-3cc3a7513b2d/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1ad5f220-eaad-48e2-863c-67cd67e7ec28/video.mp4": "sha256:7f98eb7e3368480c7608165083ca7d949ba30ebbf093062aab8c19405cbfb50b",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/1ca4f764-65fb-463a-bcb2-0a28e7544296/video.mp4": "sha256:25a51bc626f59b0bae780ae051f7386f1ee0ae4b18eb44d1641442a401194337",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/1dbaacce-b4b3-4cb8-91b0-475fcc402b11/video.mp4": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/20d05163-4caf-4faa-9851-e6dde02cbb2f/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/20f9368a-5b1f-47c4-b5ce-069721a66f54/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/212cb99f-3b75-4060-abdd-df1c2c511f80/video.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/24384fe8-a5c3-476b-8d99-ff4c1383acf2/video.mp4": "sha256:af77ef0136ec1c5b1a91362855db8b7c42046797efe976e8d0f1b5c89c04ad9f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/25786b4a-4c12-4747-bc34-98936d20c3b5/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/29069d7c-b73b-46c1-98fc-e36f9ad204de/video.mp4": "sha256:0634896e423481c32a4dd0472ccd640dca3ce309ee637b0b6ff75c5fd6704971",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/2cfa3313-a7e3-42e0-ba65-74586d3d56b6/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/2f8019f5-802e-4812-a791-a0c94ccfd32b/video.mp4": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/30aef2ee-6702-4b9d-8583-46865063728a/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/31e47fb1-fc85-425e-805d-3028909f5156/video.mp4": "sha256:ed2984b0007c6f81be6bb78123dbf579b4828ae7edf9c026f7ca1e1918d3e15b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/320c34de-a144-404e-9d14-bbdeb4a06020/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
@@ -3230,6 +3430,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/37fe0930-375e-4141-91f5-8b25a039724f/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/38b2afe0-949a-41c9-88d2-a2be68047191/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/3d046988-8c4d-4c7a-811a-80211c83d7b0/02-Balkan-Beispiel.mp4": "sha256:3a4e358e86756ec4b1703a7a648ebc180afa04b3ef025a155952d2fb8e56086a",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/468aae88-35c8-4eff-a911-4f09a122e714/video.mp4": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/54e2aae2-e1a4-4872-8b8c-f7b9cbf29093/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/56ce8796-f8ca-4f04-b9d7-380cde672326/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/5b5a225a-4275-42d0-8972-519c64cb8051/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
@@ -3242,6 +3443,8 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/67e04d74-7a91-439c-a987-3199ac07054f/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6939e5d4-5e44-4d54-b50c-9655a66e3025/video.mp4": "sha256:583bbfa72f7fa239fabae8ea79f46cd4feac66416049325128f5a9e7ebd3dc83",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a4b7c94-b438-4965-afdc-a77a04450d14/video.mp4": "sha256:933a8532fe580a1ba3b52d59f3441257e2e5701107a90c4e3368dae8e43e6db0",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6a66d2fa-e041-46b2-a757-2fde1e596ea8/video.mp4": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/6aa09728-5096-402c-be52-aa89f52cc8ce/video.mp4": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be66b80-20ba-4b54-8f7b-7cb560c76f7b/video.mp4": "sha256:1da00dc8b56532454c65efbad543bb139eadd84a9b72d1066d8432cc0f3a7e51",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6be81953-145e-4ffc-b6ba-9d75e93aac0d/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/6d17b4f5-1823-4e4c-affe-8c0382335d4e/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
@@ -3256,27 +3459,38 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/7f82ea32-2855-499b-916f-0e275de77664/video.mp4": "sha256:9f6b460f98f5b47d285c18cb6dac808a6ce5d579b77697ff71654177f5d796ea",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/8460923d-df08-4bab-8127-eabf156feae4/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/85f62b5e-571f-41ba-9535-94ceb52ecbc7/video.mp4": "sha256:0cb2012b8a73fb592a4c551b8652e8b2130bd7cfc9b6402e58ad2dcb73798597",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/8a44b743-cfd8-474f-8ac9-2dffc462e9fa/video.mp4": "sha256:83caf92777bbd334431f4749c847907194ca46eafdf733060a651aa3eaa7af2d",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/8ed79840-0650-49ad-8967-0b278e9e5a38/video.mp4": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/95941ff9-d15b-4894-8d00-172063f6b0dd/example.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/968ed789-142a-46f4-96bc-6352c4138c91/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/97d1d904-f65a-4a7a-9ae2-d538933e021c/video.mp4": "sha256:4100db03cbe655ab6164fd37e7da388200e487f52196ac0e51e71160e0b5c43f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/9853b267-ed5a-4990-b036-1c5a87962d04/video.mp4": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/9cdc62e2-5038-43a8-ac62-f2d31112ba32/video.mp4": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/9d2d85be-db10-4cf2-bd40-3f031f8bf19f/video.mp4": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/9e18475c-fa25-4b74-9c10-d49dcac0bb82/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/9e1f69b6-fe9b-4a50-8b0b-2c2c627170a6/video.mp4": "sha256:b92e0dbd75994d46d3f62c5a9c2047683e226d9d748e0f164e8f812e3bdb13e1",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/a09ca1b3-7ba2-44ab-91e0-586a80530490/video.mp4": "sha256:83caf92777bbd334431f4749c847907194ca46eafdf733060a651aa3eaa7af2d",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/a2c0087a-0cbc-43b2-ac80-d0912b4ee736/video.mp4": "sha256:25a51bc626f59b0bae780ae051f7386f1ee0ae4b18eb44d1641442a401194337",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a39802c2-26a9-417a-ab3f-21a80a850a38/video.mp4": "sha256:0cb2012b8a73fb592a4c551b8652e8b2130bd7cfc9b6402e58ad2dcb73798597",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a89f8e80-7b02-40a5-bb3f-30e19d46a224/video.mp4": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a8c71ac2-6917-4bab-abe4-f1c1aed4d3b2/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/a9017d88-998d-4459-bc5f-ffd4d0aad30b/video.mp4": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/a90a740e-fc81-4559-aebc-2bf616c5b1a7/video.mp4": "sha256:b92e0dbd75994d46d3f62c5a9c2047683e226d9d748e0f164e8f812e3bdb13e1",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/aabe7fe6-3f99-4970-a152-7a6fc9ec2800/video.mp4": "sha256:a25922f1dd2ec08c4afa27f2f71c6f2cda41904df1bc3fd1826d47c2f85bc5d2",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/afbc8b8e-0741-44a2-b2e3-c915b07b50ae/video.mp4": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/b0e5cdac-3423-4799-8fe8-c7aa6da9e37b/video.mp4": "sha256:c6411c7baa0e7b61eeb33ca21dfeddc01856aef88e2225bab4f168396b1d1455",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/b1cf54ef-2b2b-4d3d-9f00-0821a3973834/07-Balkan-Beispiel.mp4": "sha256:a63cf9bd9dc13c02a700703291a9f1f7cf9651f71a44d6ff23bc7a6443f03508",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba404da2-5ed9-409c-bc5c-c4dc41281093/video.mp4": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ba720d8d-c80d-4678-832f-a11e792a9adf/video.mp4": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/be616bb4-e334-41f5-8b64-c7cb71e3e596/video.mp4": "sha256:b92e0dbd75994d46d3f62c5a9c2047683e226d9d748e0f164e8f812e3bdb13e1",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/be668ecb-966c-43aa-8c12-be1291732461/video.mp4": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/c2561d26-9706-431c-8767-3f419a0a578d/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/cb2acc1e-571c-4da9-9d73-ab82498c1962/video.mp4": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/cf28a0fd-a304-4189-93bc-d88042602dba/video.mp4": "sha256:4a9214282958b31fdaec8b8729f32dcd30f4531db3ffa0df5f49c625fe82f928",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d1524a5a-30a8-44ef-ac32-fc16c5d40f06/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d69a580d-53b8-4621-8549-17ff4e8cbe8c/video.mp4": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/d84f0240-0182-4981-86c2-fcd8651d7518/video.mp4": "sha256:63d4808ff9201d1d0a1eb9bfc159d4b5bc65dc89cad306c0b97b1ddbeca67a46",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/d98e081b-4461-4ec9-9288-9fd16ff6d97a/video.mp4": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/ddef24a7-ecd0-4292-84f8-eaf5a911f64a/video.mp4": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e1733904-9475-45f2-9ebc-dedbbb7984a9/video.mp4": "sha256:af77ef0136ec1c5b1a91362855db8b7c42046797efe976e8d0f1b5c89c04ad9f",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e2f56fbc-d684-4a3a-88e1-fda644e249f4/video.mp4": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
@@ -3284,7 +3498,9 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e67b57d0-f37e-4307-89b5-d00c184fa7eb/video.mp4": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e721b8d7-ae08-4999-96cf-a07eafe9abcb/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/e78796fa-bf56-4a51-8158-d04ea9b34ee4/video.mp4": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
-  "/6ece7afa-09a1-4d59-9768-bec309aa780e/eeb7398c-5a8a-491c-970f-6d9f1c422d17/video.mp4": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af"
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/eeb7398c-5a8a-491c-970f-6d9f1c422d17/video.mp4": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/fb839eb4-c4cb-40fd-b2bb-240c53fb5079/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
+  "/6ece7afa-09a1-4d59-9768-bec309aa780e/fc2bb7e4-4498-45e8-bb23-f7c2736521ca/video.mp4": "sha256:83caf92777bbd334431f4749c847907194ca46eafdf733060a651aa3eaa7af2d"
  },
  "weekly": "2026-W42"
 }

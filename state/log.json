@@ -5602,5 +5602,555 @@
   },
   "ts": 1792149043,
   "type": "rerank"
+ },
+ {
+  "format": "A202610061332",
+  "level": "converting",
+  "ts": 1792151277,
+  "type": "alert",
+  "video": "7695504229313645846",
+  "views": 82300
+ },
+ {
+  "format": "A202610061334",
+  "level": "converting",
+  "ts": 1792151299,
+  "type": "alert",
+  "video": "7694662703347977494",
+  "views": 72700
+ },
+ {
+  "format": "X18",
+  "reasons": [
+   "cross-country check fail: format_consistency fr: The on-screen title 'J'ai des infos de l'intérieur des RH' replaces the reference hook text ('Les RH ne veulent pas que tu saches ça 👀⁉️') and invents an HR-insider claim the example never makes.; format_consistency es: The on-screen title 'Tengo información de dentro de RR. H"
+  ],
+  "tries": 1,
+  "ts": 1792151734,
+  "type": "format_held"
+ },
+ {
+  "format": "X18",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: format_consistency fr: The on-screen title 'J'ai des infos de l'intérieur des RH' replaces the reference hook text ('Les RH ne veulent pas que tu saches ça 👀⁉️') and invents an HR-insider claim the example never makes.; format_consistency es: The on-screen title 'Tengo información de dentro de RR. H"
+  ],
+  "ts": 1792151734,
+  "type": "format_held",
+  "video": "7695689084508949782"
+ },
+ {
+  "format": "X18",
+  "level": "converting",
+  "ts": 1792151734,
+  "type": "alert",
+  "video": "7695689084508949782",
+  "views": 63500
+ },
+ {
+  "format": "FRX34",
+  "reasons": [
+   "cross-country check fail: directions_match sl: The directions ask for the English on-screen text 'The job market in 2026💀‼️', but the Slovenian title is 'Svet dela leta 2026💀‼️'. Use the Slovenian title in the directions."
+  ],
+  "tries": 1,
+  "ts": 1792152380,
+  "type": "format_held"
+ },
+ {
+  "format": "FRX34",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: directions_match sl: The directions ask for the English on-screen text 'The job market in 2026💀‼️', but the Slovenian title is 'Svet dela leta 2026💀‼️'. Use the Slovenian title in the directions."
+  ],
+  "ts": 1792152380,
+  "type": "format_held",
+  "video": "7695162997395737857"
+ },
+ {
+  "format": "FRX34",
+  "level": "converting",
+  "ts": 1792152381,
+  "type": "alert",
+  "video": "7695162997395737857",
+  "views": 59100
+ },
+ {
+  "format": "A20261006183623",
+  "level": "rising",
+  "ts": 1792152392,
+  "type": "alert",
+  "video": "7696982422843444513",
+  "views": 58700
+ },
+ {
+  "format": "N04",
+  "level": "converting",
+  "ts": 1792152409,
+  "type": "alert",
+  "video": "7695155820698422536",
+  "views": 55100
+ },
+ {
+  "format": "N07",
+  "reasons": [
+   "cross-country check fail: format_consistency fr: Script follows all reference beats in order with the product at beat 3 and no CTA, but the title 'Les RH m'ont révélé le secret' changes who gives the tip from 'mon frère est recruteur' to a generic HR source, close to the rejected HR-friend story. Title fixed.; format_consist"
+  ],
+  "tries": 1,
+  "ts": 1792152847,
+  "type": "format_held"
+ },
+ {
+  "format": "N07",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: format_consistency fr: Script follows all reference beats in order with the product at beat 3 and no CTA, but the title 'Les RH m'ont révélé le secret' changes who gives the tip from 'mon frère est recruteur' to a generic HR source, close to the rejected HR-friend story. Title fixed.; format_consist"
+  ],
+  "ts": 1792152847,
+  "type": "format_held",
+  "video": "7696228517259824406"
+ },
+ {
+  "format": "N07",
+  "level": "converting",
+  "ts": 1792152848,
+  "type": "alert",
+  "video": "7696228517259824406",
+  "views": 51000
+ },
+ {
+  "format": "N10",
+  "level": "converting",
+  "ts": 1792152863,
+  "type": "alert",
+  "video": "7696947131348684054",
+  "views": 45500
+ },
+ {
+  "format": "ESX21",
+  "level": "rising",
+  "ts": 1792152880,
+  "type": "alert",
+  "video": "7696988310777924886",
+  "views": 39800
+ },
+ {
+  "format": "X06",
+  "reasons": [
+   "cross-country check fail: format_consistency fr: Script, beats, demo order and product timing match the reference. The on-screen title is a new question ('Pourquoi les CV n'ont plus le droit de ressembler à ça ?') instead of the format name 'Évitez cette erreur !!' that the reference requires.; format_consistency es: Script,"
+  ],
+  "tries": 1,
+  "ts": 1792153401,
+  "type": "format_held"
+ },
+ {
+  "format": "X06",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: format_consistency fr: Script, beats, demo order and product timing match the reference. The on-screen title is a new question ('Pourquoi les CV n'ont plus le droit de ressembler à ça ?') instead of the format name 'Évitez cette erreur !!' that the reference requires.; format_consistency es: Script,"
+  ],
+  "ts": 1792153401,
+  "type": "format_held",
+  "video": "7697128733752167682"
+ },
+ {
+  "format": "X06",
+  "level": "converting",
+  "ts": 1792153401,
+  "type": "alert",
+  "video": "7697128733752167682",
+  "views": 31700
+ },
+ {
+  "format": "FRX22",
+  "level": "converting",
+  "ts": 1792153419,
+  "type": "alert",
+  "video": "7696432582501633312",
+  "views": 31000
+ },
+ {
+  "error": "Extra data: line 3 column 1 (char 190)",
+  "ts": 1792153648,
+  "type": "error",
+  "video": "7696478285982846211"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792153651,
+  "type": "alert",
+  "video": "7696940478901652769",
+  "views": 12000
+ },
+ {
+  "order": [
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "N07",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "N07",
+    "X03",
+    "X09",
+    "A20261009204851",
+    "FRX22",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "N07",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "N10",
+    "N07",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ]
+  },
+  "ts": 1792154000,
+  "type": "rerank"
+ },
+ {
+  "format": "N07",
+  "position": 14,
+  "ts": 1792154000,
+  "type": "format_published"
+ },
+ {
+  "format": "X06",
+  "reasons": [
+   "cross-country check fail: directions_match sl: The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title."
+  ],
+  "tries": 2,
+  "ts": 1792154131,
+  "type": "format_held"
+ },
+ {
+  "order": [
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "N07",
+   "X18",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "N07",
+    "X03",
+    "X09",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "N07",
+    "X18",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "N10",
+    "N07",
+    "A20261006183623",
+    "N04",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ]
+  },
+  "ts": 1792154329,
+  "type": "rerank"
+ },
+ {
+  "format": "X18",
+  "position": 15,
+  "ts": 1792154329,
+  "type": "format_published"
+ },
+ {
+  "order": [
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "N07",
+   "X18",
+   "A20261009204851",
+   "ESX28",
+   "FRX34"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "N07",
+    "X03",
+    "X09",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "FRX34",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "N07",
+    "X18",
+    "A20261009204851",
+    "ESX28",
+    "FRX34"
+   ],
+   "sl": [
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "N10",
+    "N07",
+    "A20261006183623",
+    "N04",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "ESX28",
+    "FRX34"
+   ]
+  },
+  "ts": 1792154471,
+  "type": "rerank"
+ },
+ {
+  "format": "FRX34",
+  "position": 18,
+  "ts": 1792154471,
+  "type": "format_published"
+ },
+ {
+  "format": "N10",
+  "ts": 1792155037,
+  "type": "hot_cooled"
+ },
+ {
+  "format": "FRX39",
+  "not_ready": {
+   "sl": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@mery.jobs23/video/7691809642518777110)"
+  },
+  "tries": 2,
+  "ts": 1792155174,
+  "type": "format_comeback_held"
+ },
+ {
+  "order": [
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "N07",
+   "X18",
+   "A20261009204851",
+   "ESX28",
+   "FRX34"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "N07",
+    "X03",
+    "X09",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "FRX34",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "N07",
+    "X18",
+    "A20261009204851",
+    "ESX28",
+    "FRX34"
+   ],
+   "sl": [
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "N10",
+    "N07",
+    "A20261006183623",
+    "N04",
+    "X18",
+    "A20261009204851",
+    "FRX22",
+    "ESX28",
+    "FRX34"
+   ]
+  },
+  "ts": 1792155176,
+  "type": "rerank"
  }
 ]

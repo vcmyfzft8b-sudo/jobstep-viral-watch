@@ -211,28 +211,39 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 16.10.2026: not among the best 12 of any list: score 0.98 (saved by 2.7% of viewers, 12 videos; typical video 1.7%), not proven for our creators, not hot",
   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
   "id": "N07",
   "inspo": {
    "es": {
-    "rebuilt": true,
-    "strict": false,
+    "audit": true,
+    "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
-    "views": 39300
+    "views": 41100
    },
    "fr": {
     "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
-    "views": 39400
+    "views": 41100
+   },
+   "sl": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
+    "views": 41100
    }
   },
+  "listed_at": 1792154000,
   "page_id": "3f0958b0fc1481babee1d2e56b4e56af",
   "pages": {
    "es": "3f0958b0-fc14-800e-a255-eb7b885dad4d",
    "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472",
    "sl": "3f8958b0fc14829283a9010ceefbdeef"
+  },
+  "revived": {
+   "at": 1792152552,
+   "because": "https://www.tiktok.com/@lavoraconjulia/video/7696228517259824406",
+   "views": 51000
   },
   "reworded": {
    "de": true,
@@ -240,7 +251,8 @@
    "fr": true
   },
   "script": "Mein Bruder ist Recruiter, und ich zeig dir, wie du deine Jobchancen in 24 Stunden pushst. Erstens: Dein Lebenslauf muss gut sein und eine gute Punktzahl haben. Am schnellsten checkst du das auf dieser Seite hier – einfach deine Daten eingeben. \nSo sieht mein Lebenslauf gerade aus. Mit jeder Frage kommt ein neuer, wichtiger Teil dazu. \nUnd da ist er: Endpunktzahl Y – und so sieht er jetzt aus. Vorher sah er so aus, mit dieser Punktzahl: X. ",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@lavoraconjulia/video/7696228517259824406",
+  "status": "active",
   "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫"
  },
  {
@@ -527,14 +539,19 @@
     "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7688707702813429024",
-    "views": 171400
+    "views": 171900
    },
    "fr": {
-    "own": true,
-    "rebuilt": true,
+    "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7688707702813429024",
-    "views": 171300
+    "views": 171900
+   },
+   "sl": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7688707702813429024",
+    "views": 171900
    }
   },
   "listed_at": 1791814818,
@@ -544,17 +561,28 @@
    "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a",
    "sl": "645958b0fc1482bb96168197b5025047"
   },
+  "pending": {
+   "kind": "revive",
+   "reasons": [
+    "cross-country check fail: directions_match sl: The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title."
+   ],
+   "since": 1792153401,
+   "tries": 2
+  },
   "revived": {
-   "at": 1791814818,
-   "because": "proven for our creators (fr: our 39 videos average 12k, best 171k)"
+   "at": 1792153046,
+   "because": "https://www.tiktok.com/@filippajobbtips/video/7697128733752167682",
+   "views": 31700
   },
   "reworded": {
    "es": true,
-   "fr": true
+   "fr": true,
+   "sl": true
   },
   "script": "(DEUTSCH) Bin ich die Einzige, die nicht wusste, dass man sich nicht mehr mit solchen Lebensläufen bewirbt? Keiner redet mittlerweile darüber, denn es ist so wichtig. Mit solchen Lebensläufen kommt man heutzutage nicht mehr durch die ATS-Scanner. Wenn ihr nicht wisst, was das ist: Das sind solche Filter, die eben Unternehmen benutzen, damit die erst mal ausfiltern können, bis es dann zum Recruiter kommt. Du fragst dich vielleicht: Wie erstelle ich einen übersichtlichen Lebenslauf für meine Bewerbung? Dafür nutze ich Parakeet AI. Ich lade meinen bisherigen Lebenslauf hoch, füge den Link zur Stellenanzeige ein und passe den Lebenslauf an die Stelle an. Wenn ich noch keinen Lebenslauf habe, starte ich mit meinen eigenen Angaben im Lebenslauf-Builder. Dann schaue ich mir den Score an und verbessere mit der KI die Formulierungen. Schaut mal – das ist die fertige Version. Also mega.\n\nKommenti",
   "source": "DACH archive (old formats)",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@filippajobbtips/video/7697128733752167682",
+  "status": "pending",
   "title": "Vermeidet diesen Fehler!!"
  },
  {
@@ -792,10 +820,29 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 16.10.2026: not among the best 12 of any list: score 1.05 (saved by 2.1% of viewers, 7 videos; typical video 1.7%), not proven for our creators, not hot",
   "description": "Spill-the-secret hook: the creator bluntly reveals that employers use ATS, then walks through copying any job-ad link (Indeed, LinkedIn, etc.) and pasting it into Parakeet AI to beat the system. Examples: 'Personaler wollen nicht dass wir das wissen 🤡'",
   "id": "X18",
-  "listed_at": 1791786098,
+  "inspo": {
+   "es": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
+    "views": 200400
+   },
+   "fr": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
+    "views": 200400
+   },
+   "sl": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
+    "views": 200400
+   }
+  },
+  "listed_at": 1792154329,
   "page_id": "3d5958b0-fc14-8179-b216-cd6c20cb48e1",
   "pages": {
    "es": "3f7958b0-fc14-81dd-8414-dad4639b75bf",
@@ -803,9 +850,9 @@
    "sl": "a37958b0fc1482f5b8bc019ebaba8239"
   },
   "revived": {
-   "at": 1791785781,
-   "because": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
-   "views": 130500
+   "at": 1792151482,
+   "because": "https://www.tiktok.com/@filippajobbtips/video/7695689084508949782",
+   "views": 63500
   },
   "reworded": {
    "de": true,
@@ -815,7 +862,7 @@
   "script": "(DEUTSCH) Arbeitgeber möchten nicht, dass ihr das wisst, schon gar nicht die Personalabteilung. Ich verrat’s euch. So, ich hau’s jetzt einfach mal raus: Und zwar verwenden sie ATS. Jetzt wisst ihr’s. Und ab jetzt könnt ihr sie hops nehmen. So, und wie machen wir das jetzt? Ganz einfach: Du gehst auf deine Stellenanzeige, auf der du gerade bist, egal ob bei Indeed, Job, LinkedIn, egal wo.  Du kopierst dir den Link und du fügst ihn da ein, wo ich dir jetzt gleich zeige, wo du ihn einfügen wirst. Und zwar gehst du auf Parakeet AI und fügst dort den Link ein von deiner Stellenanzeige. Die Jobanzeige wird dann für dich analysiert. Let’s go. Und dann, ja, sehen wir schon mal: solide, ist einiges drin. Und darauf basierend gehen wir jetzt zum Lebenslauf erstellen. Tada.  Und da haben wir ihn auch schon. Fertiger Lebenslauf, wenig Aufwand, basierend auf der Stellenanzeige, die ich hier eingefüg",
   "source": "DACH archive (old formats)",
   "source_video": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
-  "status": "archived",
+  "status": "active",
   "title": "Personaler wollen nicht dass wir das wissen 🤡"
  },
  {
@@ -1056,12 +1103,25 @@
  {
   "description": "Frustrated at getting no replies even for warehouse order-picker jobs, the creator asks whether you have to sell your soul to get a job, then raises their CV match score from 70% to 100%.",
   "id": "FRX34",
-  "market_only": "fr",
+  "listed_at": 1792154471,
   "pages": {
-   "fr": "3e5958b0-fc14-8039-bae2-e1b29e3b6893"
+   "es": "3fb958b0-fc14-81fa-9b75-e10f1d7b496e",
+   "fr": "3e5958b0-fc14-8039-bae2-e1b29e3b6893",
+   "sl": "3fb958b0-fc14-8180-be05-e637bf39317f"
+  },
+  "revived": {
+   "at": 1792151913,
+   "because": "https://www.tiktok.com/@alinaibarra13/video/7695162997395737857",
+   "views": 59100
+  },
+  "reworded": {
+   "es": true,
+   "fr": true,
+   "sl": true
   },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Il faut vendre son âme pour avoir un job en France en 2026 ? Je postule pour préparatrice de commandes et j'ai zéro réponse J'étais à deux doigts de mentir sur mon CV Même CV, même annonce, deux résultats différents Mon CV était à 70 %. Maintenant il est à 100 % Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT C'est la 60e fois que je pose la question, mais s'il vous plaît : il faut vendre son âme ou pas pour avoir un job en France en 2026 ? Je postule sur les annonces en ligne, jamais de réponse. Jamais. Et attention, on parle pas d'un poste de direction. Préparatrice de commandes chez Lidl.  Donc je comprends pas. Je vous jure que je suis compétente. J'en étais à deux doigts de commencer à mentir sur mon CV. Et là, une copine qui galérait pareil me parle de Parakeet AI. Je refais mon CV dessus, je repostule à la même annonc",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@alinaibarra13/video/7695162997395737857",
+  "status": "active",
   "title": "Il faut vendre son âme pour avoir un job en 2026 ?"
  },
  {
@@ -1098,7 +1158,7 @@
   "title": "J’ai envoyer mon CV, j'ai eu un entretien, je commence"
  },
  {
-  "comeback_tries": 1,
+  "comeback_tries": 2,
   "description": "The creator walks through an ATS-passing CV template section by section: job title under the name, short summary with keywords, contact details and so on.",
   "id": "FRX39",
   "inspo": {
@@ -1183,9 +1243,9 @@
    "sl": "103958b0fc14826bb1d6010d13dfc0e6"
   },
   "revived": {
-   "at": 1791998844,
-   "because": "https://www.tiktok.com/@emasavetuje/video/7696270580932398354",
-   "views": 128100
+   "at": 1792153587,
+   "because": "https://www.tiktok.com/@itswithluna/video/7696478285982846211",
+   "views": 30000
   },
   "reworded": {
    "es": true,

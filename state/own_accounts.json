@@ -155,6 +155,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "elenaverse30": {
+  "market": "es",
+  "since": 1792150437,
+  "source": "megasheet",
+  "status": "active"
+ },
  "elinotas1": {
   "market": "es",
   "since": 1791465487,
@@ -543,6 +549,6 @@
   "market": "es",
   "since": 1792125605,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  }
 }

@@ -358,6 +358,66 @@
   },
   "title_en": "After six months unemployed, I finally found a job – and I only changed one thing (my CV)"
  },
+ "FRX34": {
+  "accepted_sources": [
+   "7695162997395737857"
+  ],
+  "allowed_localisation": [
+   "Spoken language and on-screen texts in German, French or Spanish, same meaning and same emojis (e.g. FR: 'Le monde du travail en 2026💀‼️' / 'CV qui passe le filtre ATS').",
+   "The kind of simple entry-level job that rejected them: supermarket cashier, warehouse order picker, retail worker, waiter. It must stay something low-skilled, so the joke 'do you need to study for this?' still works.",
+   "School-leaving reference to match the country (Abitur/Ausbildung, bac, bachillerato/ESO).",
+   "Job board in the demo: LinkedIn or a common local one (StepStone, Indeed, France Travail, Welcome to the Jungle, InfoJobs).",
+   "The exact before and after scores, but only the numbers the app actually shows in the recording (the original shows 36% → 96%; the format brief says 70% → 100%). The pattern 'low, doesn't pass → high, passes' must stay.",
+   "Natural slang and filler words, plus small changes in wording that keep the sentence count and meaning."
+  ],
+  "beats": [
+   "Hook (on screen: 'The job market in 2026💀‼️'): 'Honestly, I don't get why you have to sell your soul just to get a job in 2026.'",
+   "Backstory: 'When I finished school I never imagined it would be this bad.'",
+   "Low point: 'Now I'm applying to be a cashier at every supermarket, that's how desperate I was, and even for those jobs I got rejected so many times.' Then the joke: 'At first I didn't get it, do you need to study to be a cashier?'",
+   "Turn: 'What I've been doing the last few weeks is putting my CV in ATS format, and yes, I've been getting job offers. Apparently that's how you reach recruiters.'",
+   "Discovery (on screen: 'CV that passes the ATS filter'): 'On top of that, this site I found tailors my CV to every job ad, and it also lets you pick a template and download it. I'll show you.' (This replaces JobStep's cover-letter claim: same sentence count, as few words changed as possible.)",
+   "Demo step 1: 'Go to this site called Parakeet AI and paste the link of a job ad, in my case one from LinkedIn.' (Replaces 'add job': there's no New-job button, the link is pasted straight in.) 'Here it analyses the job ad.'",
+   "Demo step 2: 'It asks you to upload your CV, you hit tailor CV, pick your CV and hit continue.'",
+   "Demo step 3, low score: 'Here it analyses my CV: it has a score of [low %], so it doesn't pass the ATS filter. This guide helps me change it and adapts it to the job ad you pasted.'",
+   "Result + CTA: 'Once it's done I get a CV with [high %], which means it does pass, and obviously they'll keep calling me, even though I already got a job. So you should try it.'"
+  ],
+  "canonical_source": "7695162997395737857",
+  "filming": "Vertical 9:16, about 50–65 s, one continuous fast monologue with no music break. Part 1 (beats 1–5, about 25–30 s): selfie-camera talking head with a frustrated, sarcastic and slightly self-mocking tone. The bold text 'The job market in 2026💀‼️' stays on screen from the first frame, and the second overlay, 'CV that passes the ATS filter', comes in at the discovery. Part 2 (beats 6–9, about 25–35 s): screen recording of the real Parakeet AI Resume Maker with voiceover, in this exact order: 1) open Parakeet AI, 2) open a real job ad on LinkedIn (or a local job board) and copy the link, 3) paste the link into Parakeet AI and let it analyse the ad, 4) upload the CV, 5) show the low score and analysis, 6) the AI tailors the CV, answering chat questions if prompted, 7) show the new high score, then optionally pick a template and download. Link cues in the script mark where the app and LinkedIn are shown. Filming and acting otherwise copy the example video as closely as possible.",
+  "generated": 1792152310,
+  "hook": "Frustrated rant to camera with the on-screen text 'The job market in 2026💀‼️': 'Honestly, I don't get why you have to sell your soul just to get a job in 2026.'",
+  "not_allowed": [
+   "Ever mentioning or showing JobStep or Studyflash. Parakeet AI replaces it at the same spot and the same number of times.",
+   "Saying or showing cover letters / motivation letters, an applications overview, or an 'add job'/'New job' button. These are replaced by real steps: paste the link, template/download, chat.",
+   "Dropping the rant hook or the 'sell your soul… in 2026' line, or opening with the product. That would make it a straight tutorial, a different format.",
+   "Dropping the low-skilled-job rejection beat or the 'do you need to study for this?' joke.",
+   "Leaving out the screen-recorded demo, changing its order (job ad → CV upload → low score → tailoring → high score), or showing only the end result.",
+   "Faked or edited scores, or a mock-up instead of the real app.",
+   "Promising guaranteed jobs, interviews or callbacks, or saying Parakeet AI guarantees you'll get past every ATS. 'I got offers' and 'I already got a job' are allowed only as the creator's own experience.",
+   "Claiming Parakeet AI applies for jobs, contacts recruiters or sends CVs for you.",
+   "Adding stage directions or filming notes to the script. The script is spoken words, on-screen texts and link cues only."
+  ],
+  "premise": "A young job seeker says that after school they never imagined job hunting would be this bad. Out of desperation they applied for the simplest entry-level jobs (supermarket cashier in the original), got rejected over and over, and wondered whether you need a degree for that. In the last few weeks they made their CV ATS-friendly and started getting offers. They then show the site that does it for them, Parakeet AI: they paste a job ad, upload their CV, see a low score, let the AI tailor the CV to the ad and end up with a high score. They close with 'I already got a job anyway, so you should try it.'",
+  "product": {
+   "cta": "'So you should try it' (in the original, 'así que debes probarla'), right after 'even though I already got a job'.",
+   "features_used": [
+    "upload your CV",
+    "CV score/analysis (low score before, high score after)",
+    "paste the link of a job ad (LinkedIn or a local job board)",
+    "AI rewrites/tailors the CV to the job ad",
+    "answer questions in a chat (optional, if it comes up in the demo)",
+    "pick a template",
+    "download the CV"
+   ],
+   "introduced_at_beat": 5,
+   "spoken_brand": "Beat 6: 'this site called Parakeet AI' (said once, at the same spot where the original says 'jobstep'). In beat 5 it's only 'this site I found'."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7695162997395737857": "https://www.tiktok.com/@alinaibarra13/video/7695162997395737857"
+  },
+  "title_en": "Do you have to sell your soul to get a job in 2026?"
+ },
  "X06": {
   "accepted_sources": [
    "7688707702813429024"

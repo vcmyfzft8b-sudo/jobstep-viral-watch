@@ -6,85 +6,85 @@
     "avg": 852,
     "best": 1470,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 4,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "A202610061332": {
-    "avg": 3604,
-    "best": 24569,
+    "avg": 3670,
+    "best": 24904,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 8,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "A202610061334": {
-    "avg": 12795,
+    "avg": 12828,
     "best": 89110,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 27,
-    "save_rate": 0.03213335023450374,
+    "save_rate": 0.03211690925304187,
     "saved_videos": 5,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "A202610061335": {
-    "avg": 2341,
+    "avg": 2342,
     "best": 16491,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 24,
     "save_rate": 0.023209618400418193,
     "saved_videos": 2,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "A20261006183623": {
-    "avg": 23177,
-    "best": 155999,
+    "avg": 21289,
+    "best": 156126,
     "hit": 1,
-    "market_median": 726,
-    "n": 9,
-    "save_rate": 0.03014966233792473,
+    "market_median": 753,
+    "n": 10,
+    "save_rate": 0.03013370886900165,
     "saved_videos": 3,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "A20261009204851": {
-    "avg": 1984,
-    "best": 3435,
+    "avg": 2098,
+    "best": 3664,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 2,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "ESX11": {
-    "avg": 7515,
-    "best": 87699,
+    "avg": 7557,
+    "best": 88921,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 30,
     "save_rate": 0.08531614200800905,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "ESX15": {
     "avg": 890,
@@ -102,310 +102,310 @@
     "avg": 821,
     "best": 3331,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 20,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 4,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "ESX24": {
     "avg": 717,
     "best": 1811,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 8,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 4,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "ESX25": {
     "avg": 2232,
     "best": 15536,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 14,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "ESX28": {
-    "avg": 34268,
-    "best": 45482,
+    "avg": 34274,
+    "best": 45486,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 2,
-    "save_rate": 0.04401741348225672,
+    "save_rate": 0.04401354262850108,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX14": {
-    "avg": 3425,
+    "avg": 3442,
     "best": 29646,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 14,
     "save_rate": 0.0475612224246104,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX19": {
-    "avg": 787,
+    "avg": 801,
     "best": 10472,
     "hit": 0,
-    "market_median": 726,
-    "n": 35,
+    "market_median": 753,
+    "n": 34,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 4,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX24": {
-    "avg": 787,
+    "avg": 816,
     "best": 4531,
     "hit": 0,
-    "market_median": 726,
-    "n": 32,
+    "market_median": 753,
+    "n": 30,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 4,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX26": {
-    "avg": 8814,
-    "best": 17284,
+    "avg": 8918,
+    "best": 17490,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 2,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX30": {
-    "avg": 939,
+    "avg": 943,
     "best": 5966,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 46,
     "save_rate": 0.0017491691446562883,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "FRX39": {
-    "avg": 10003,
+    "avg": 10006,
     "best": 40851,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 6,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "N01": {
     "avg": 208,
     "best": 269,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 2,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "N02": {
-    "avg": 17470,
-    "best": 161597,
+    "avg": 20234,
+    "best": 161871,
     "hit": 1,
-    "market_median": 726,
-    "n": 16,
-    "save_rate": null,
-    "saved_videos": 0,
+    "market_median": 753,
+    "n": 17,
+    "save_rate": 0.0524375,
+    "saved_videos": 1,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "N04": {
-    "avg": 15023,
-    "best": 31437,
+    "avg": 15028,
+    "best": 31441,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 3,
-    "save_rate": 0.017463498425422275,
+    "save_rate": 0.01746127667695048,
     "saved_videos": 1,
     "saves_low": true,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "N07": {
-    "avg": 2611,
-    "best": 8951,
+    "avg": 2288,
+    "best": 8953,
     "hit": 0,
-    "market_median": 726,
-    "n": 5,
-    "save_rate": 0.02703608535359178,
+    "market_median": 753,
+    "n": 6,
+    "save_rate": 0.027030045794705686,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "N10": {
     "avg": 649,
-    "best": 3126,
+    "best": 3128,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 19,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 4,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X03": {
-    "avg": 1955,
-    "best": 32623,
+    "avg": 1961,
+    "best": 32829,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 42,
-    "save_rate": 0.010993004451712547,
+    "save_rate": 0.010992005813953489,
     "saved_videos": 2,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X06": {
     "avg": 3850,
     "best": 40943,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 14,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X08": {
     "avg": 7488,
     "best": 18100,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 3,
     "save_rate": 0.010276243093922652,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X09": {
-    "avg": 1115,
+    "avg": 1118,
     "best": 4307,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 19,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X11": {
     "avg": 1320,
     "best": 5713,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 26,
     "save_rate": 0.0014003150708909505,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X13": {
-    "avg": 3324,
+    "avg": 3336,
     "best": 38167,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 39,
     "save_rate": 0.022731804586241276,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X15": {
-    "avg": 1200,
+    "avg": 1201,
     "best": 5756,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 39,
     "save_rate": 0.005766458433445459,
     "saved_videos": 2,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X16": {
-    "avg": 49747,
-    "best": 536100,
+    "avg": 49887,
+    "best": 537900,
     "hit": 2,
-    "market_median": 726,
+    "market_median": 753,
     "n": 17,
-    "save_rate": 0.037937785910338515,
+    "save_rate": 0.03785154112712019,
     "saved_videos": 2,
     "saves_low": false,
     "tier": 1,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X17": {
     "avg": 3701,
     "best": 64463,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 26,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 2,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    },
    "X18": {
     "avg": 924,
     "best": 1538,
     "hit": 0,
-    "market_median": 726,
+    "market_median": 753,
     "n": 2,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
     "tier": 3,
-    "typical_rate": 0.02891156462585034
+    "typical_rate": 0.028664115646258502
    }
   },
   "fr": {
    "A202610061331": {
-    "avg": 1185,
+    "avg": 1170,
     "best": 5062,
     "hit": 0,
     "market_median": 788,
-    "n": 18,
+    "n": 19,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
@@ -413,7 +413,7 @@
     "typical_rate": 0.022540882529104737
    },
    "A202610061334": {
-    "avg": 6059,
+    "avg": 6060,
     "best": 56681,
     "hit": 0,
     "market_median": 788,
@@ -425,7 +425,7 @@
     "typical_rate": 0.022540882529104737
    },
    "A202610061335": {
-    "avg": 3453,
+    "avg": 3454,
     "best": 65323,
     "hit": 0,
     "market_median": 788,
@@ -449,7 +449,7 @@
     "typical_rate": 0.022540882529104737
    },
    "ESX11": {
-    "avg": 5599,
+    "avg": 5600,
     "best": 58600,
     "hit": 0,
     "market_median": 788,
@@ -569,7 +569,7 @@
     "typical_rate": 0.022540882529104737
    },
    "FRX32": {
-    "avg": 1423,
+    "avg": 1424,
     "best": 3738,
     "hit": 0,
     "market_median": 788,
@@ -581,8 +581,8 @@
     "typical_rate": 0.022540882529104737
    },
    "FRX33": {
-    "avg": 8258,
-    "best": 43645,
+    "avg": 8276,
+    "best": 43748,
     "hit": 0,
     "market_median": 788,
     "n": 6,
@@ -606,7 +606,7 @@
    },
    "FRX35": {
     "avg": 1104,
-    "best": 2324,
+    "best": 2325,
     "hit": 0,
     "market_median": 788,
     "n": 4,
@@ -630,7 +630,7 @@
    },
    "FRX38": {
     "avg": 731,
-    "best": 1496,
+    "best": 1497,
     "hit": 0,
     "market_median": 788,
     "n": 12,
@@ -641,11 +641,11 @@
     "typical_rate": 0.022540882529104737
    },
    "FRX39": {
-    "avg": 166,
-    "best": 166,
+    "avg": 260,
+    "best": 354,
     "hit": 0,
     "market_median": 788,
-    "n": 1,
+    "n": 2,
     "save_rate": null,
     "saved_videos": 0,
     "saves_low": false,
@@ -665,8 +665,8 @@
     "typical_rate": 0.022540882529104737
    },
    "N02": {
-    "avg": 197,
-    "best": 270,
+    "avg": 198,
+    "best": 272,
     "hit": 0,
     "market_median": 788,
     "n": 2,
@@ -677,7 +677,7 @@
     "typical_rate": 0.022540882529104737
    },
    "N03": {
-    "avg": 514,
+    "avg": 516,
     "best": 973,
     "hit": 0,
     "market_median": 788,
@@ -689,8 +689,8 @@
     "typical_rate": 0.022540882529104737
    },
    "N05": {
-    "avg": 1155,
-    "best": 1459,
+    "avg": 1156,
+    "best": 1464,
     "hit": 0,
     "market_median": 788,
     "n": 5,
@@ -713,8 +713,8 @@
     "typical_rate": 0.022540882529104737
    },
    "N08": {
-    "avg": 778,
-    "best": 778,
+    "avg": 780,
+    "best": 780,
     "hit": 0,
     "market_median": 788,
     "n": 1,
@@ -737,7 +737,7 @@
     "typical_rate": 0.022540882529104737
    },
    "N10": {
-    "avg": 2449,
+    "avg": 2450,
     "best": 31300,
     "hit": 0,
     "market_median": 788,
@@ -761,8 +761,8 @@
     "typical_rate": 0.022540882529104737
    },
    "X03": {
-    "avg": 1227,
-    "best": 4149,
+    "avg": 1228,
+    "best": 4151,
     "hit": 0,
     "market_median": 788,
     "n": 28,
@@ -785,12 +785,12 @@
     "typical_rate": 0.022540882529104737
    },
    "X08": {
-    "avg": 13296,
-    "best": 164800,
+    "avg": 13315,
+    "best": 165100,
     "hit": 1,
     "market_median": 788,
     "n": 16,
-    "save_rate": 0.009748922664051815,
+    "save_rate": 0.009733852059876846,
     "saved_videos": 2,
     "saves_low": true,
     "tier": 2,
@@ -809,7 +809,7 @@
     "typical_rate": 0.022540882529104737
    },
    "X11": {
-    "avg": 1218,
+    "avg": 1219,
     "best": 3935,
     "hit": 0,
     "market_median": 788,
@@ -845,20 +845,20 @@
     "typical_rate": 0.022540882529104737
    },
    "X16": {
-    "avg": 6400,
-    "best": 17230,
+    "avg": 6411,
+    "best": 17250,
     "hit": 0,
     "market_median": 788,
     "n": 4,
-    "save_rate": 0.027271177773990116,
+    "save_rate": 0.02734375,
     "saved_videos": 1,
     "saves_low": false,
     "tier": 2,
     "typical_rate": 0.022540882529104737
    },
    "X20": {
-    "avg": 448,
-    "best": 1337,
+    "avg": 449,
+    "best": 1339,
     "hit": 0,
     "market_median": 788,
     "n": 4,

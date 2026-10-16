@@ -40,6 +40,12 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
                 meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = 'unverified'
                 reasons.append(why)
                 continue
+        try:  # the tidy rules first (16 Oct 2026: a held page's hook quoted the title in other words - tidy fixes
+            # exactly that, but it only ran on live pages, so the format stayed held)
+            from . import tidy
+            tidy.tidy_page(page_of(fmt, mk['key']), cfg['links'])
+        except Exception as e:
+            print('gate: tidy failed', mk['key'], fmt.get('title', '')[:40], str(e)[:120])
         status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rebuild=rebuild)
         meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = status
         if status not in ('ok', 'fixed'):

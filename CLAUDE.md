@@ -162,3 +162,7 @@ here (repo, Notion, Discord, secrets, state are all separate).
   its archive and the market goes into the format's `off_markets`; `markets.for_format` then leaves it out there
   (list, pages, audit, crosscheck, tidy, localize, verify). Back among a market's best on a later Monday → page moves
   back, market removed from `off_markets`. New formats join right away (a list may exceed 12 until Monday).
+- No ping-pong (16 Oct 2026, user: "bullet proof"): a viral / rising / converting video brings an archived format back
+  or builds a new one only if `lineup.would_keep` says the format would stay on a list on Monday (the Monday plan played
+  with it live and the video counted); else the alert says "would not stay on any list" (added by hand: always).
+  The gate tidies every page of a held format before checking it (a hook quoting the title in other words held X06).

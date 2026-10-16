@@ -330,6 +330,31 @@ class BuildGateTests(unittest.TestCase):
             main.handle_alert(v, 'viral', [], [old], h, self.cfg, NOW, False, False)
             revive.assert_called_once()
 
+    def test_no_ping_pong_a_comeback_must_stay_on_a_list(self):
+        """16 Oct 2026: 'converting' videos brought back formats the clean-up took out again the same day."""
+        h, add = history()
+        for k in range(12):  # a full list of strong formats
+            for _ in range(3):
+                add(handle='es_a', fmt=f'G{k}', views=150_000, saves=6_000, days_old=5, judged=True)
+        for _ in range(4):
+            add(handle='es_a', fmt='OLD', views=40_000, saves=900, days_old=40, judged=True)  # 2.25%: weak for Spain
+        fmts = [{'id': f'G{k}', 'status': 'active', 'title': f'G{k}', 'pages': {}} for k in range(12)] + \
+               [{'id': 'OLD', 'status': 'archived', 'title': 'Old one', 'pages': {}}]
+        cfg = {**self.cfg, 'markets': {'es': {'enabled': True}}}
+        weak = {**self.viral(saves=4_500), 'views': 100_000}  # 4.5%: above typical (4%), but the format stays weak
+        keep, why = lineup.would_keep(h, fmts, cfg, weak, 'OLD', own_videos={}, now=NOW)
+        self.assertFalse(keep)
+        self.assertIn('would not stay on any list', why)
+        verdict = {'duplicate_of': 'OLD', 'english_script': 'hi'}
+        with mock.patch.object(main.classify, 'judge', return_value=verdict), \
+                mock.patch.object(main.own, 'load', return_value=({}, {})), \
+                mock.patch.object(main, 'revive_format', return_value=(True, 2, [])) as revive:
+            main.handle_alert(weak, 'viral', [], fmts, h, cfg, NOW, False, False)
+        revive.assert_not_called()
+        self.assertIn('would not stay on any list', self.push.call_args[0][1])
+        strong = {**self.viral(saves=40_000), 'id': '9', 'views': 400_000}  # 10%: lifts the format into the best 12
+        self.assertTrue(lineup.would_keep(h, fmts, cfg, strong, 'OLD', own_videos={}, now=NOW)[0])
+
     def test_unknown_saves_wait_for_a_full_check(self):
         v = {**self.viral(saves=0), 'detail_missing': True}
         with mock.patch.object(main, 'handle_viral') as hv:
@@ -346,6 +371,20 @@ class BuildGateTests(unittest.TestCase):
         self.assertIn('CONVERTING', self.push.call_args[0][0])
         self.assertEqual(r['level'], 'converting')
         self.assertTrue({'converting', 'rising', 'viral'} <= set(v['notified']))  # one Slack ping per video
+
+
+class GateTidyTests(unittest.TestCase):
+    def test_held_pages_are_tidied_before_the_check(self):
+        """16 Oct 2026: X06 was held because its Slovenian hook quoted the title in other words - tidy fixes that."""
+        from watcher import gate, tidy
+        mk = {'key': 'sl', 'T': {'flag': 'SL'}}
+        with mock.patch.object(tidy, 'tidy_page') as td, \
+                mock.patch.object(gate.audit, 'fix_page', return_value=('ok', [])), \
+                mock.patch.object(gate.crosscheck, 'group_cycle', return_value=({'passed': True}, False, [])):
+            ok, _ = gate.check({'id': 'X06'}, [mk], {'notion': {'radar_page': 'r'}, 'links': {}}, {}, {}, {},
+                               lambda f, m: 'page-sl', None, None, None)
+        self.assertTrue(ok)
+        td.assert_called_once_with('page-sl', {})
 
 
 if __name__ == '__main__':

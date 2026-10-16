@@ -114,6 +114,33 @@ def plan(history, formats, cfg, own_videos, now=None):
             'protected': {f['id']: why(f) for f in active}, 'typical_rate': base['all'], 'typical': base}
 
 
+def would_keep(history, formats, cfg, v, fid=None, own_videos=None, now=None):
+    """Would a format brought back (fid, archived) or built new (fid None) from video v stay on a list on Monday?
+    (user, 16 Oct 2026: no ping-pong - formats came back from 'converting' videos in the afternoon and the clean-up
+    took them out again the same day). Returns (True, why kept) or (False, why not). Plays the Monday plan with the
+    format live and v counted for it."""
+    import copy
+    if own_videos is None:
+        own_videos = own.load()[1]
+    fid = fid or '__new__'
+    fmts = [dict(f, status='active') if f['id'] == fid else f for f in formats]
+    if fid == '__new__':
+        fmts = fmts + [{'id': fid, 'status': 'active', 'title': 'new'}]
+    hist = dict(history)
+    if v.get('id'):
+        hist[v['id']] = {**copy.deepcopy(history.get(v['id'], {})), 'handle': v['handle'], 'created': v['created'],
+                         'views': v['views'], 'likes': v.get('likes'), 'saves': v.get('saves'), 'shares': v.get('shares'),
+                         'format': fid, 'judged': True}
+    p = plan(hist, fmts, cfg, own_videos, now)
+    kept = {m: keep[fid] for m, keep in p['lists'].items() if fid in keep}
+    if kept:
+        return True, '; '.join(f'{m}: {r}' for m, r in kept.items())
+    b = p['board'][fid]
+    return False, (f"would not stay on any list (score {b['score']:.2f}: not among the best "
+                   f"{cfg['lineup'].get('list_size', 12)}, not proven for our creators, not hot, not among the most "
+                   f"viral or best converting)")
+
+
 def apply(history, formats, cfg, own_videos, mkts, now=None):
     """Cuts every market's list to its best formats (see plan). mkts: the running markets. Returns the plan."""
     from . import main as watcher  # page helpers live in main

@@ -626,6 +626,14 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         known = resolve(fmts, verdict.get('duplicate_of')) if verdict.get('duplicate_of') else None
         if not blocked and known and known.get('status') != 'active':  # an archived format needs typical saves
             blocked = below_typical(v, history, cfg, force) or None
+        if not blocked and not force and not (known and known.get('status') == 'active'):
+            # nothing comes in that the Monday clean-up would take out again (16 Oct 2026: no ping-pong)
+            try:
+                keep, why = lineup.would_keep(history, fmts, cfg, v, known['id'] if known else None, now=now)
+                if not keep:
+                    blocked = why
+            except Exception as e:
+                print('would_keep failed (format allowed in):', str(e)[:150])
         if rising and (blocked or (known and known.get('status') == 'active')):
             # nothing to build now: a radar line; the Slack ping comes at 100k (with this check reused)
             if known:

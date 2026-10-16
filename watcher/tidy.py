@@ -3,16 +3,16 @@ fixed on every normal run (mode tidy does it at once). Nothing is reworded - onl
 
 1. Link cues: at most ONE cue of a kind per paragraph (consecutive sentences of the same app moment share it) and at
    most MAX_CUES Parakeet AI cues per script. Scripts had up to 15 - unreadable while filming. The renderer
-   (notion.script_paragraphs) uses the same rule, so new scripts are born that way.
+   (pages.script_paragraphs) uses the same rule, so new scripts are born that way.
 2. The on-screen text named in the visual hook is the 📲 title. A quoted text in the hook that is neither the title
    nor a line of the script is replaced by the title (creators saw two different texts).
 3. The 📲 title is bold.
-4. The page name is "<n>. <title>" (names drifted from the content, e.g. "Carrefour…" when the script never says it).
+4. The idea name is the title (names drifted from the content, e.g. "Carrefour…" when the script never says it).
 5. Reported only: a sub-page above the page content (e.g. a stray copy of the Visual Hook Lab).
 """
 import re
 
-from . import notion, reword
+from . import pages, reword
 
 MAX_CUES = 3
 QUOTE_RE = re.compile(r'«\s*([^»]+?)\s*»|»\s*([^«]+?)\s*«|“([^”]+)”|„([^“”]+)[“”]|"([^"]+)"')  # »…« = Slovenian
@@ -80,7 +80,7 @@ def _rich_payload(items):
 
 
 def page_name(page_id):
-    p = notion.api('GET', f'/pages/{page_id}')
+    p = pages.api('GET', f'/pages/{page_id}')
     return ''.join(x['plain_text'] for x in next(v for v in p['properties'].values() if v['type'] == 'title')['title'])
 
 
@@ -99,8 +99,10 @@ def tidy_page(page_id, links, write=True):
     from .crosscheck import _title_block
     from .verify import layout_problems
     changes = []
+    if pages.is_hand(page_id):  # edited by hand in Megasheet: the user's version stays as it is
+        return changes
     script = reword.script_blocks(page_id)
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     if layout_problems(blocks, script, links):  # old hand-written page: its "title" may be any bold line - rebuilt, not tidied
         return ['old layout - not tidied (rebuilt from its example video: mode standardize)']
     paras = [b[b['type']].get('rich_text', []) for b in script]
@@ -110,7 +112,7 @@ def tidy_page(page_id, links, write=True):
         if write:
             for b, items in zip(script, trimmed):
                 if [_content(x) for x in items] != [x.get('plain_text', '') for x in b[b['type']].get('rich_text', [])]:
-                    notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
+                    pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
     tb = _title_block(page_id)
     title = reword._plain(tb).strip() if tb else ''
     if not title:
@@ -118,7 +120,7 @@ def tidy_page(page_id, links, write=True):
     if not all((x.get('annotations') or {}).get('bold') for x in tb['paragraph']['rich_text'] if _content(x).strip()):
         changes.append('title not bold')
         if write:
-            notion.api('PATCH', f"/blocks/{tb['id']}", {'paragraph': {'rich_text': [notion.rt(title, bold=True)]}})
+            pages.api('PATCH', f"/blocks/{tb['id']}", {'paragraph': {'rich_text': [pages.rt(title, bold=True)]}})
     script_text = ' '.join(reword._plain(b) for b in script)
     for b in reword.direction_blocks(page_id):
         fixes = hook_fixes(reword._plain(b), title, script_text)
@@ -131,7 +133,7 @@ def tidy_page(page_id, links, write=True):
                 for q, new in fixes:
                     x.setdefault('text', {'content': x.get('plain_text', '')})
                     x['text']['content'] = _content(x).replace(q, new)
-            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
+            pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
     first_heading = next((k for k, b in enumerate(blocks) if b['type'].startswith('heading')), len(blocks))
     if any(b['type'] == 'child_page' for b in blocks[:first_heading]):
         changes.append('a sub-page sits at the top of the page (move it away by hand - sub-pages are never moved '
@@ -141,7 +143,7 @@ def tidy_page(page_id, links, write=True):
     if name.strip() != want.strip():
         changes.append(f'page name "{name[:40]}" is not the title')
         if write:
-            notion.api('PATCH', f'/pages/{page_id}', {'properties': {'title': {'title': [notion.rt(want)]}}})
+            pages.api('PATCH', f'/pages/{page_id}', {'properties': {'title': {'title': [pages.rt(want)]}}})
     return changes
 
 

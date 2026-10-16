@@ -65,7 +65,9 @@ sentence>", "script": "<what the script says instead, empty if missing>"}}]}} - 
 
 def run(fmts, mkts, cfg, page_of, workers=6):
     """Every live page of every running market: [(format title, market, result)]."""
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f) if page_of(f, mk['key'])]
+    from . import pages
+    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f) if page_of(f, mk['key'])
+            and not pages.is_hand(page_of(f, mk['key']))]  # edited by hand in Megasheet: the user's text stays
 
     def one(job):
         f, mk = job

@@ -37,7 +37,7 @@ class MergeTests(unittest.TestCase):
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        for p in (mock.patch.object(state, 'DIR', tmp.name), mock.patch.object(lineup.notion, 'move_page'),
+        for p in (mock.patch.object(state, 'DIR', tmp.name), mock.patch.object(lineup.pages, 'move_page'),
                   mock.patch.object(lineup.notify, 'push')):
             p.start()
         self.addCleanup(mock.patch.stopall)
@@ -57,7 +57,7 @@ class MergeTests(unittest.TestCase):
         self.assertTrue(fmts[1]['archived_reason'].startswith('duplicate of STRONG'))
         self.assertEqual({v['format'] for v in h.values()}, {'STRONG'})
         self.assertEqual(ours['o1']['format'], 'STRONG')
-        lineup.notion.move_page.assert_called_once_with('pW', 'arch')
+        lineup.pages.move_page.assert_called_once_with('pW', 'arch')
         state.save('formats.json', fmts)
         self.assertEqual(own.aliases(), {'WEAK': 'STRONG'})
 

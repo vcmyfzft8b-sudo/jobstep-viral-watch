@@ -88,17 +88,16 @@ class MainTests(StateDirTest):
         fmts = [{'id': 'A', 'status': 'active', 'title': 'A', 'description': 'A', 'pages': {'fr': 'pfa', 'es': 'pea'}},
                 {'id': 'B', 'status': 'active', 'title': 'B', 'description': 'B', 'pages': {'fr': 'pfb', 'es': 'peb'}}]
         state.save('own.json', {})
-        with mock.patch.object(main.notion, 'list_entries', return_value=([], None)), \
-                mock.patch.object(main.notion, 'hot_entry_count', return_value=0), \
-                mock.patch.object(main.notion, 'set_order') as so:
+        with mock.patch.object(main.pages, 'list_entries', return_value=([], None)), \
+                mock.patch.object(main.pages, 'hot_entry_count', return_value=0), \
+                mock.patch.object(main.pages, 'set_order') as so:
             ids = main.rerank(mkts, fmts, {}, CFG)
         self.assertEqual(sorted(ids), ['A', 'B'])
-        self.assertEqual({c.args[0] for c in so.call_args_list}, {CFG['markets']['fr']['list_page'],
-                                                                 CFG['markets']['es']['list_page']})
+        self.assertEqual({c.args[0] for c in so.call_args_list}, {'list:fr', 'list:es'})
 
     def test_source_video_without_a_dach_page(self):
         from watcher import main
-        with mock.patch.object(main.notion, 'children', return_value=[]) as ch:
+        with mock.patch.object(main.pages, 'children', return_value=[]) as ch:
             self.assertIsNone(main.source_video({'id': 'N', 'pages': {'fr': 'pfr'}}))
         ch.assert_called_once_with('pfr')
 

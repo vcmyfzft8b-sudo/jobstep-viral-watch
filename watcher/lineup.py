@@ -23,7 +23,7 @@ import datetime
 import re
 import time
 
-from . import hot, notion, notify, own, rank, state
+from . import hot, pages, notify, own, rank, state
 
 DAY = 86400
 
@@ -164,7 +164,7 @@ def merge_duplicates(history, formats, cfg, own_videos, mkts, now=None, pairs=No
             pid = watcher.page_of(f, mk['key'])
             if pid:
                 try:
-                    notion.move_page(pid, mk['archive_page'])
+                    pages.move_page(pid, mk['archive_page'])
                 except Exception as e:
                     print('dupes: move to archive failed', mk['key'], f['title'], str(e)[:120])
         why = f"same title in {m}: \"{ta}\" / \"{tb}\""
@@ -205,7 +205,7 @@ def apply(history, formats, cfg, own_videos, mkts, now=None):
         if not pid:
             return
         try:
-            notion.move_page(pid, mk[target])
+            pages.move_page(pid, mk[target])
         except Exception as e:
             print(f'clean-up: {what} failed', mk['key'], f['title'], str(e)[:150])
 

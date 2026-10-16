@@ -3,7 +3,7 @@ texts of a silent video); the only brackets are the link cues (Parakeet AI, Link
 note under the inspiration video (copy the example as closely as possible) and the modes renote / verify."""
 import os
 
-from watcher import align, audit, builder, crosscheck, llm, localize, notion, reword, state, verify
+from watcher import align, audit, builder, crosscheck, llm, localize, pages, reword, state, verify
 from watcher.brands import NO_DIRECTIONS
 from watcher.markets import TEXT
 
@@ -37,7 +37,7 @@ def test_script_paragraphs_render_no_stage_directions():
         {'cue': 'direction', 'asset_name': 'Musik', 'text': '(Pause)', 'new_paragraph': False},
         {'cue': 'parakeet', 'asset_name': '', 'text': 'Das ist Parakeet AI.', 'new_paragraph': True},
         {'cue': 'asset', 'asset_name': 'Gmail-Postfach', 'text': 'Schau dir das an.', 'new_paragraph': False}]}
-    paras = [_text(b) for b in notion.script_paragraphs(spec, LINKS, 'de')]
+    paras = [_text(b) for b in pages.script_paragraphs(spec, LINKS, 'de')]
     assert paras == ['Erster Satz. ', '(Parakeet AI · Resume Maker) Das ist Parakeet AI. '
                      '(📎 Gmail-Postfach – siehe Ressourcen) Schau dir das an. ']
 
@@ -49,7 +49,7 @@ def test_strip_directions_keeps_link_and_material_cues_and_backs_up(monkeypatch)
             _blk(('Ganz normaler Satz.', None), bid='p3')]
     sent, saved = [], {}
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: page)
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append((method, path, body)))
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: sent.append((method, path, body)))
     monkeypatch.setattr(state, 'load', lambda name, default: dict(saved))
     monkeypatch.setattr(state, 'save', lambda name, data: saved.update(data))
     assert reword.directions_left('p') == ['(lächelt in die Kamera)', '(zeigt den CV)', '(Musik, Übergang)']
@@ -84,8 +84,8 @@ def test_align_prompt_and_write_have_no_directions(monkeypatch):
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: [_blk(('alt', None), bid='old')])
     monkeypatch.setattr(reword, 'resources_text', lambda pid: 'parakeet ai')
     monkeypatch.setattr(reword, 'fix_directions', lambda *a, **k: ('ok', ''))
-    monkeypatch.setattr(notion, 'children', lambda pid: [])
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: written.append(body))
+    monkeypatch.setattr(pages, 'children', lambda pid: [])
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: written.append(body))
     monkeypatch.setattr(state, 'load', lambda name, default: {})
     monkeypatch.setattr(state, 'save', lambda name, data: None)
     spec = {'original_language': 'German', 'script': [
@@ -145,30 +145,30 @@ def test_notes_keep_their_starts_and_name_no_app():
 
 
 def _page_with_note(note, extra=()):
-    return _live([notion.block('heading_1', [notion.rt('Inspirationsvideo')]),
-                  notion.block('video', type='file', file={'url': 'https://x'}),
-                  notion.para([notion.rt('Original auf TikTok', link='https://www.tiktok.com/@a/video/1')]),
-                  notion.block('callout', [notion.rt(note)], icon=WARN), *extra])
+    return _live([pages.block('heading_1', [pages.rt('Inspirationsvideo')]),
+                  pages.block('video', type='file', file={'url': 'https://x'}),
+                  pages.para([pages.rt('Original auf TikTok', link='https://www.tiktok.com/@a/video/1')]),
+                  pages.block('callout', [pages.rt(note)], icon=WARN), *extra])
 
 
 def test_renote_puts_the_current_text_and_keeps_the_kind(monkeypatch):
     old_same = 'Wichtig: Das Inspirationsvideo ist auf Deutsch – nimm es als Vorbild.\nIm Video wird JobStep genutzt.'
     blocks = _page_with_note(old_same)
     sent = []
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: sent.append(body))
     assert verify.note_problem(blocks, 'de') == 'note under the inspiration video is not the current text'
     assert localize.refresh_note('p', 'de') is True
     new = ''.join(x['text']['content'] for x in sent[0]['callout']['rich_text'])
-    assert new == '\n'.join(notion.inspo_note('de', True)).replace('**', '')
-    current = _page_with_note('\n'.join(notion.inspo_note('fr', False)).replace('**', ''))
-    monkeypatch.setattr(notion, 'children', lambda pid: current)
+    assert new == '\n'.join(pages.inspo_note('de', True)).replace('**', '')
+    current = _page_with_note('\n'.join(pages.inspo_note('fr', False)).replace('**', ''))
+    monkeypatch.setattr(pages, 'children', lambda pid: current)
     assert localize.refresh_note('p', 'fr') is False and verify.note_problem(current, 'fr') is None
 
 
 def test_verify_reports_stage_directions(monkeypatch):
-    blocks = _page_with_note('\n'.join(notion.inspo_note('de', False)).replace('**', ''))
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    blocks = _page_with_note('\n'.join(pages.inspo_note('de', False)).replace('**', ''))
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: [_blk(('(lacht) Hallo. ', None), ('Parakeet AI · Resume Maker', LINKS['parakeet']))])
     monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [_blk(('Halte deinen CV in die Kamera.', None))])
     out = verify.check_page('p', 'de', LINKS, live=False)
@@ -183,26 +183,26 @@ def test_new_modes_are_in_the_workflow():
 
 
 def test_renote_adds_a_missing_note_under_the_video_and_leaves_other_boxes_alone(monkeypatch):
-    user_box = notion.block('callout', [notion.rt('Für alle App-Demos nutz bitte diesen Link')], icon=WARN)
-    blocks = _live([user_box, notion.block('video', type='file', file={'url': 'https://x'}),
-                    notion.para([notion.rt('Original sur TikTok', link='https://www.tiktok.com/@a/video/1')]),
-                    notion.block('heading_2', [notion.rt('📲 TEXTE')])])
+    user_box = pages.block('callout', [pages.rt('Für alle App-Demos nutz bitte diesen Link')], icon=WARN)
+    blocks = _live([user_box, pages.block('video', type='file', file={'url': 'https://x'}),
+                    pages.para([pages.rt('Original sur TikTok', link='https://www.tiktok.com/@a/video/1')]),
+                    pages.block('heading_2', [pages.rt('📲 TEXTE')])])
     sent = []
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append((method, path, body)))
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: sent.append((method, path, body)))
     assert verify.note_problem(blocks, 'fr') == 'no note under the inspiration video'
     assert localize.refresh_note('p', 'fr') is True
     (method, path, body), = sent
     assert (method, path, body['after']) == ('PATCH', '/blocks/p/children', 'b2')  # right after the TikTok link
     added = ''.join(x['text']['content'] for x in body['children'][0]['callout']['rich_text'])
-    assert added == '\n'.join(notion.inspo_note('fr', False)).replace('**', '')
+    assert added == '\n'.join(pages.inspo_note('fr', False)).replace('**', '')
 
 
 def test_verify_accepts_the_visual_hook_lab_as_a_sub_page(monkeypatch):
-    blocks = _page_with_note('\n'.join(notion.inspo_note('es', False)).replace('**', '')) + [
+    blocks = _page_with_note('\n'.join(pages.inspo_note('es', False)).replace('**', '')) + [
         {'id': 'lab', 'type': 'child_page', 'child_page': {'title': 'Visual Hook Lab'}}]
     script = [_blk(('Hola. ', None), ('Parakeet AI · Resume Maker', LINKS['parakeet']))]
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: script)
     monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [_blk(('Empieza en plano selfie.', None))])
     assert verify.check_page('p', 'es', LINKS) == []

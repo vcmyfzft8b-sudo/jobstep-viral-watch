@@ -226,12 +226,15 @@ def formats_file(m):
 
 
 def load(cfg):
-    """[{key, lang, list_page, holder_page, archive_page, visual_hook_lab, discord_env, T}] for the enabled markets."""
+    """[{key, lang, list_page, holder_page, archive_page, staging_page, visual_hook_lab, discord_env, T}] for the
+    enabled markets. The pages live in Megasheet (watcher/pages.py, 16 Oct 2026): list/holder/archive/staging are the
+    market's list and the places of its ideas there (live = published, archive / staging = archived)."""
     out = []
     for key, m in cfg['markets'].items():
         if not m.get('enabled', True):
             continue
-        out.append({'key': key, **m, 'T': TEXT[m['lang']]})
+        out.append({'key': key, **m, 'T': TEXT[m['lang']], 'list_page': f'list:{key}', 'holder_page': f'live:{key}',
+                    'archive_page': f'archive:{key}', 'staging_page': f'staging:{key}'})
     return out
 
 

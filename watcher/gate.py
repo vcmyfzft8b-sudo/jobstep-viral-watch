@@ -1,7 +1,7 @@
 """Quality gate: nothing reaches the creator lists before every language page has passed the full check.
 
 A new format, a format coming back from the archive, or a missing language page is first built where creators
-can't see it (new pages in the private staging page, revived pages stay in the archive). Every page then goes
+can't see it (Megasheet ideas, archived: new pages in the market's staging place, revived pages stay in the archive). Every page then goes
 through the page audit (audit.fix_page: example = this format, script sentence by sentence and not too long,
 Parakeet AI where JobStep is named, only real Parakeet AI features, note, directions, title) - with automatic fixes.
 Only when ALL markets pass are the pages moved into the format folders and the format goes into the lists.
@@ -10,7 +10,7 @@ Otherwise the format waits (status 'pending') and every run tries again; after M
 import re
 import time
 
-from . import audit, crosscheck, notify, notion, state, tiktok
+from . import audit, crosscheck, notify, pages, state, tiktok
 
 MAX_TRIES = 4
 
@@ -31,11 +31,10 @@ def _build_missing(fmt, mk, cfg, make_page, set_page, staging):
 
 def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page, rebuild):
     """Builds missing pages and audits (and fixes) every market page. Returns (passed, reasons)."""
-    staging = cfg['notion']['radar_page']
     reasons = []
     for mk in mkts:
         if not page_of(fmt, mk['key']):
-            why = _build_missing(fmt, mk, cfg, make_page, set_page, staging)
+            why = _build_missing(fmt, mk, cfg, make_page, set_page, mk.get('staging_page') or pages.place('staging', mk['key']))
             if why:
                 meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = 'unverified'
                 reasons.append(why)
@@ -66,7 +65,7 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
 
 
 def _checkpoint(fmt, checkpoint=None):
-    """Keep a recovery journal even if execution stops between two Notion writes."""
+    """Keep a recovery journal even if execution stops between two Megasheet writes."""
     with state.LOCK:
         journal = state.load('publication_journal.json', {})
         if fmt.get('publication'):
@@ -86,7 +85,7 @@ def _rollback(fmt, checkpoint=None):
     errors = []
     for pid in list(reversed(publication['attempted'])):
         try:
-            notion.move_page(pid, publication['parents'][pid])
+            pages.move_page(pid, publication['parents'][pid])
             publication['attempted'].remove(pid)
             _checkpoint(fmt, checkpoint)
         except Exception as e:
@@ -111,7 +110,7 @@ def publish(fmt, mkts, page_of, checkpoint=None):
     parents = {}
     for mk in mkts:
         pid = page_of(fmt, mk['key'])
-        parent = notion.api('GET', f'/pages/{pid}').get('parent', {})
+        parent = pages.api('GET', f'/pages/{pid}').get('parent', {})
         if parent.get('type') != 'page_id' or not parent.get('page_id'):
             raise RuntimeError(f'publish: cannot safely restore parent for {pid}')
         parents[pid] = parent['page_id']
@@ -123,7 +122,7 @@ def publish(fmt, mkts, page_of, checkpoint=None):
         fmt['publication']['attempted'].append(pid)
         _checkpoint(fmt, checkpoint)
         try:
-            notion.move_page(pid, mk['holder_page'])
+            pages.move_page(pid, mk['holder_page'])
         except Exception as e:
             errors = _rollback(fmt, checkpoint)
             raise RuntimeError(f'publish: move failed: {e}; rollback ' +

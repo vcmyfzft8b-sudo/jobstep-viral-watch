@@ -33,9 +33,25 @@ class StateDirTest(unittest.TestCase):
         patcher = mock.patch.object(state, 'DIR', self.tmp.name)
         patcher.start()
         self.addCleanup(patcher.stop)
+        megasheet._TOKEN.clear()
+        self.addCleanup(megasheet._TOKEN.clear)
+        p = mock.patch.object(megasheet, 'TOKEN_MAX_AGE', 0)  # these tests are about the login refresh itself
+        p.start()
+        self.addCleanup(p.stop)
 
 
 class AccessTokenTests(StateDirTest):
+    def test_one_token_per_run_unless_refused(self):
+        self.env(MEGASHEET_LOGIN=login_secret('r1'), MEGASHEET_KEY='k' * 32)
+        with mock.patch.object(megasheet, 'TOKEN_MAX_AGE', 1800), \
+                mock.patch.object(megasheet.requests, 'post',
+                                  return_value=Resp(body={'access_token': 'a', 'refresh_token': 'r1'})) as post:
+            self.assertEqual(megasheet.access_token(), 'a')
+            self.assertEqual(megasheet.access_token(), 'a')  # format pages + own creators: one login refresh
+            self.assertEqual(post.call_count, 1)
+            megasheet.access_token(fresh=True)  # Megasheet refused the token: a new one
+            self.assertEqual(post.call_count, 2)
+
     def env(self, **kw):
         p = mock.patch.dict(os.environ, kw)
         p.start()

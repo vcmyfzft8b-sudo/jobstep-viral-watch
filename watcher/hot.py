@@ -12,7 +12,7 @@ import time
 
 import requests
 
-from . import discord_bot, notify, notion, state
+from . import discord_bot, notify, pages, state
 from .markets import fkey, jkey
 
 MIN_VIRAL = 5
@@ -38,10 +38,6 @@ def viral_videos(history, videos, formats, viral_views, m='de'):
 
 def counts(history, videos, formats, viral_views, m='de'):
     return {fid: len(vs) for fid, vs in viral_videos(history, videos, formats, viral_views, m).items()}
-
-
-def public_link(page_id):
-    return f"https://parakeetai.notion.site/{page_id.replace('-', '')}"
 
 
 def discord(url, text):
@@ -134,7 +130,7 @@ def update(history, videos, formats, cfg, meta, mkts, dry_run=False):
                     f"*{f['title']}* – {n} viral videos in 7 days (each confirmed by Claude as this format):\n{links}\n\n"
                     f"Moved into the going-viral section at the top of every list. Discord announcement: {' '.join(done) if done else 'none sent (no webhook)'}"
                     f" · creator channels: {sum(len(v) for v in meta_hot[fid]['creators'].values())}",
-                    click=f"https://app.notion.com/p/{next((page(f, mk['key']) for mk in mkts if page(f, mk['key'])), f.get('page_id') or '').replace('-', '')}")
+                    click=pages.PAGE_URL)
         state.log({'type': 'hot', 'format': fid, 'count': n})
     for fid in cooled:
         notify.push('Hot format cooled down', f"*{by_id[fid]['title'] if fid in by_id else fid}* – fewer than {MIN_VIRAL} "
@@ -147,7 +143,7 @@ def notion_title(page_id, keep_number=False):
     """The page's current title (e.g. the French title on the French page), by default without the list number."""
     import re
     try:
-        p = notion.api('GET', f'/pages/{page_id}')
+        p = pages.api('GET', f'/pages/{page_id}')
         t = ''.join(x['plain_text'] for x in next(v for v in p['properties'].values() if v['type'] == 'title')['title'])
         return t if keep_number else re.sub(r'^\d+\.\s*', '', t)
     except Exception:

@@ -21128,6 +21128,25 @@
    "type": "text"
   }
  ],
+ "5ae958b0-fc14-831d-9293-018c93e87397": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Začni v kamero, čisto od blizu, točno tako kot v vzorčnem videu. Ko rečeš »Najprej zapri svoj CV iz Canve«, ga na zaslonu res zapri.",
+   "text": {
+    "content": "Začni v kamero, čisto od blizu, točno tako kot v vzorčnem videu. Ko rečeš »Najprej zapri svoj CV iz Canve«, ga na zaslonu res zapri.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "64df0d77-b613-4f00-926f-f0bb2efcde33": [
   {
    "annotations": {
@@ -21324,6 +21343,25 @@
    "plain_text": "Für den letzten Satz wieder zurück in die Kamera.",
    "text": {
     "content": "Für den letzten Satz wieder zurück in die Kamera.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "74d958b0-fc14-83fa-8045-818da2f209f6": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Začni v kamero z naslovom na zaslonu, točno tako kot v vzorčnem videu. Če ti je ljubši bolj vizualen hook, si izberi idejo v Visual Hook Labu tik spodaj.",
+   "text": {
+    "content": "Začni v kamero z naslovom na zaslonu, točno tako kot v vzorčnem videu. Če ti je ljubši bolj vizualen hook, si izberi idejo v Visual Hook Labu tik spodaj.",
     "link": null
    },
    "type": "text"
@@ -21547,6 +21585,25 @@
    "type": "text"
   }
  ],
+ "855958b0-fc14-82fb-aa1c-01c4558397e0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Čisto na začetku naj bo na zaslonu napis »3 nasveti, da KONČNO najdeš službo 💼«, ti pa govori čisto blizu kamere in s prsti pokaži »tri«, z velikimi gestami. Točno to skopiraj, kot v vzorčnem videu.",
+   "text": {
+    "content": "Čisto na začetku naj bo na zaslonu napis »3 nasveti, da KONČNO najdeš službo 💼«, ti pa govori čisto blizu kamere in s prsti pokaži »tri«, z velikimi gestami. Točno to skopiraj, kot v vzorčnem videu.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "8b71f9a7-a017-4398-a43e-1b51d84a66d9": [
   {
    "annotations": {
@@ -21602,6 +21659,25 @@
    "type": "text"
   }
  ],
+ "924958b0-fc14-82ae-ae99-81500835cae8": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Točno skopiraj začetek vzorčnega videa: prilepi se h kameri, z očali na nosu, dvignjenim kazalcem in na široko odprtimi očmi. Takoj začni z »Imam ultra toksičen nasvet.«",
+   "text": {
+    "content": "Točno skopiraj začetek vzorčnega videa: prilepi se h kameri, z očali na nosu, dvignjenim kazalcem in na široko odprtimi očmi. Takoj začni z »Imam ultra toksičen nasvet.«",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "928d7cdf-48fb-4b3b-926f-df66d8530e63": [
   {
    "annotations": {
@@ -21616,6 +21692,25 @@
    "plain_text": "Niemand liest deinen Lebenslauf. Sorry, dass ich's so direkt sagen muss, aber niemand liest deinen Lebenslauf.",
    "text": {
     "content": "Niemand liest deinen Lebenslauf. Sorry, dass ich's so direkt sagen muss, aber niemand liest deinen Lebenslauf.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "9b5958b0-fc14-8372-94c0-01b300288f23": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Skopiraj hook iz videa za navdih 1 : 1: posnemi se v kuhinji s pogledom v kamero, medtem ko z rezalnikom za pico režeš hrano. Govori že od prve sekunde.",
+   "text": {
+    "content": "Skopiraj hook iz videa za navdih 1 : 1: posnemi se v kuhinji s pogledom v kamero, medtem ko z rezalnikom za pico režeš hrano. Govori že od prve sekunde.",
     "link": null
    },
    "type": "text"
@@ -21870,6 +21965,25 @@
    "plain_text": ") Und der kommt durch alle Systeme, sogar durch die KI-Systeme, die Lebensläufe bewerten – und dann landest du direkt bei HR.",
    "text": {
     "content": ") Und der kommt durch alle Systeme, sogar durch die KI-Systeme, die Lebensläufe bewerten – und dann landest du direkt bei HR.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "ac7958b0-fc14-8310-8c96-01fab30eb32b": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Začni točno tako kot v videu za navdih: selfie, čisto blizu kamere, z roko na sencu in dvignjenim prstom že v prvih sekundah. Ta gib in energijo skopiraj 1 : 1.",
+   "text": {
+    "content": "Začni točno tako kot v videu za navdih: selfie, čisto blizu kamere, z roko na sencu in dvignjenim prstom že v prvih sekundah. Ta gib in energijo skopiraj 1 : 1.",
     "link": null
    },
    "type": "text"
@@ -22262,6 +22376,25 @@
    "type": "text"
   }
  ],
+ "db3958b0-fc14-8262-ad00-01cbcfad98d0": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Posnemi se čisto blizu kamere, s presenečenim izrazom, in reci »Sorry, ampak od kdaj LinkedIn to zna?«, naslov pa naj bo na ekranu. Skopiraj točno to, kot v primeru videa.",
+   "text": {
+    "content": "Posnemi se čisto blizu kamere, s presenečenim izrazom, in reci »Sorry, ampak od kdaj LinkedIn to zna?«, naslov pa naj bo na ekranu. Skopiraj točno to, kot v primeru videa.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "dc7cd813-7630-4ce7-9a7d-79d71330efac": [
   {
    "annotations": {
@@ -22312,6 +22445,25 @@
    "plain_text": ") Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch.",
    "text": {
     "content": ") Bei Parakeet AI hab ich einfach die Fragen beantwortet und hatte plötzlich einen komplett neuen Lebenslauf. Und damit hatte ich zum ersten Mal ein Vorstellungsgespräch.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "dda958b0-fc14-823b-9923-8148295f067e": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Točno skopiraj začetek vzorčnega videa: začni čisto blizu kamere, ko si popravljaš trak za lase ali lase, z naveličanim izrazom, nato se odmakni in govori v kamero, medtem ko si nanašaš kremo. Prve 3 sekunde naj bo na zaslonu napis »POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡«.",
+   "text": {
+    "content": "Točno skopiraj začetek vzorčnega videa: začni čisto blizu kamere, ko si popravljaš trak za lase ali lase, z naveličanim izrazom, nato se odmakni in govori v kamero, medtem ko si nanašaš kremo. Prve 3 sekunde naj bo na zaslonu napis »POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡«.",
     "link": null
    },
    "type": "text"
@@ -26544,6 +26696,25 @@
    "type": "text"
   }
  ],
+ "e77958b0-fc14-83a4-82c1-014e1e55acc4": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Začni tako, da se v prvih sekundah igraš z očali v rokah, točno kot v videu za navdih. Lahko jih zamenjaš s kakšnim drugim majhnim predmetom, s katerim se čisto naravno igraš.",
+   "text": {
+    "content": "Začni tako, da se v prvih sekundah igraš z očali v rokah, točno kot v videu za navdih. Lahko jih zamenjaš s kakšnim drugim majhnim predmetom, s katerim se čisto naravno igraš.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "e9248bd8-f359-4982-8b73-89f206e2a7ed": [
   {
    "annotations": {
@@ -26581,6 +26752,490 @@
    },
    "type": "text"
   }
+ ],
+ "f77958b0-fc14-833b-bc4d-8145d3d8f008": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Točno skopiraj začetek vzorčnega videa: v kamero, medtem ko govoriš, z likalnikom za lase zravnaš zmečkan bankovec za 20 €. Na zaslonu naj piše »Stvari, ki ti jih kadroviki skrivajo 😳❌«, začni pa z »Kako sem dobila službo v 15 minutah?«.",
+   "text": {
+    "content": "Točno skopiraj začetek vzorčnega videa: v kamero, medtem ko govoriš, z likalnikom za lase zravnaš zmečkan bankovec za 20 €. Na zaslonu naj piše »Stvari, ki ti jih kadroviki skrivajo 😳❌«, začni pa z »Kako sem dobila službo v 15 minutah?«.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "page:1fa958b0fc14822b9c368120457c63ee": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Nihče ne bere tvojega CV-ja. Imela sem izkušnje, prakse, diplomo, pa niti enega razgovora. Potem sem izvedela, da CV-je zdaj bere AI, ne več ljudje.",
+    "text": {
+     "content": "Nihče ne bere tvojega CV-ja. Imela sem izkušnje, prakse, diplomo, pa niti enega razgovora. Potem sem izvedela, da CV-je zdaj bere AI, ne več ljudje.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Naložim svoj CV na ",
+    "text": {
+     "content": ") Naložim svoj CV na ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "http://parakeet-ai.com/resume-maker",
+    "plain_text": "parakeet-ai.com/resume-maker",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker",
+     "link": {
+      "url": "http://parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ": X od 100. Nič ne štima.",
+    "text": {
+     "content": ": X od 100. Nič ne štima.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Kliknem izboljšaj, odgovorim na vprašanja o sebi in o delovnem mestu, izberem predlogo in naredi mi čisto nov CV. Y od 100. Če hočeš službo v 2026, je to ta stran. ",
+    "text": {
+     "content": ") Kliknem izboljšaj, odgovorim na vprašanja o sebi in o delovnem mestu, izberem predlogo in naredi mi čisto nov CV. Y od 100. Če hočeš službo v 2026, je to ta stran. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:2da958b0fc1482b4a6290181831bd49e": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Kako sem dobila službo v 15 minutah? To je skrivnost, ta TikTok čez 2 uri zbrišem, zato si ga shrani. Oh, zravnal se je, popolno.",
+    "text": {
+     "content": "Kako sem dobila službo v 15 minutah? To je skrivnost, ta TikTok čez 2 uri zbrišem, zato si ga shrani. Oh, zravnal se je, popolno.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Pojdi na ",
+    "text": {
+     "content": ") Pojdi na ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "http://parakeet-ai.com/resume-maker",
+    "plain_text": "parakeet-ai.com/resume-maker",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker",
+     "link": {
+      "url": "http://parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": " in naloži svoj stari CV. Poglej svojo ATS oceno, čisto na dnu. Izberi predlogo in tvoj CV je pripravljen.",
+    "text": {
+     "content": " in naloži svoj stari CV. Poglej svojo ATS oceno, čisto na dnu. Izberi predlogo in tvoj CV je pripravljen.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Kmalu zatem so me že klicali na razgovor. ",
+    "text": {
+     "content": "Kmalu zatem so me že klicali na razgovor. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:351958b0fc14827e82b78134491d1ac7": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Že mesece pošiljam CV na čisto vsak oglas, pa niti enega odgovora. (📎 Posnetek Gmaila – glej Viri) Zdaj pa poglej moj mail danes: odgovori za vsako službo. Moja teorija je bila, da imajo pač vsi zveze. Resnica? Moj CV je bil grozen.",
+    "text": {
+     "content": "Že mesece pošiljam CV na čisto vsak oglas, pa niti enega odgovora. (📎 Posnetek Gmaila – glej Viri) Zdaj pa poglej moj mail danes: odgovori za vsako službo. Moja teorija je bila, da imajo pač vsi zveze. Resnica? Moj CV je bil grozen.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Vržem ga v Parakeet AI: najslabša ocena ever.",
+    "text": {
+     "content": ") Vržem ga v Parakeet AI: najslabša ocena ever.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Postavi mi par vprašanj o mojih izkušnjah in mi naredi čisto nov CV, narejen tako, da gre skozi ATS filtre. Probaj ",
+    "text": {
+     "content": ") Postavi mi par vprašanj o mojih izkušnjah in mi naredi čisto nov CV, narejen tako, da gre skozi ATS filtre. Probaj ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "http://parakeet-ai.com/resume-maker",
+    "plain_text": "parakeet-ai.com/resume-maker",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker",
+     "link": {
+      "url": "http://parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ". ",
+    "text": {
+     "content": ". ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
  ],
  "page:3d5958b0-fc14-805a-84b2-fccfd057012c": [
   [
@@ -45248,6 +45903,137 @@
    }
   ]
  ],
+ "page:4e6958b0fc148380a0bb81e6e1fbdd94": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lagaj v CV-ju! Še enkrat: lagaj v CV-ju! Ne tako, da si izmisliš službe, ampak z malimi detajli, ki naredijo vso razliko. Tudi meni ni bilo jasno, kaj naj napišem.",
+    "text": {
+     "content": "Lagaj v CV-ju! Še enkrat: lagaj v CV-ju! Ne tako, da si izmisliš službe, ampak z malimi detajli, ki naredijo vso razliko. Tudi meni ni bilo jasno, kaj naj napišem.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Dokler mi prijateljica ni povedala za to orodje. Naložiš svoj stari CV, prilepiš link do oglasa…",
+    "text": {
+     "content": ") Dokler mi prijateljica ni povedala za to orodje. Naložiš svoj stari CV, prilepiš link do oglasa…",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") in tvoj CV je takoj prilagojen oglasu. A ni noro? ",
+    "text": {
+     "content": ") in tvoj CV je takoj prilagojen oglasu. A ni noro? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:645958b0fc1482bb96168197b5025047": [
   [
    {
@@ -45436,6 +46222,399 @@
    }
   ]
  ],
+ "page:65a958b0fc148206877981f76d6811ce": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Imam ultra toksičen nasvet, kako najti službo brez treh ur brskanja po oglasih vsak dan. Shrani si ta video. Najprej kopiraj povezavo do oglasa, v možnostih za deljenje, jaz sem zdaj na MojeDelo.",
+    "text": {
+     "content": "Imam ultra toksičen nasvet, kako najti službo brez treh ur brskanja po oglasih vsak dan. Shrani si ta video. Najprej kopiraj povezavo do oglasa, v možnostih za deljenje, jaz sem zdaj na MojeDelo.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Potem pojdi na ",
+    "text": {
+     "content": ") Potem pojdi na ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "http://parakeet-ai.com/resume-maker",
+    "plain_text": "parakeet-ai.com/resume-maker",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker",
+     "link": {
+      "url": "http://parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ". Naloži svoj CV, prilepi povezavo in naredi ti CV, prilagojen točno temu delovnemu mestu.",
+    "text": {
+     "content": ". Naloži svoj CV, prilepi povezavo in naredi ti CV, prilagojen točno temu delovnemu mestu.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "To je to, srečno, adijo! ",
+    "text": {
+     "content": "To je to, srečno, adijo! ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:668958b0fc14827ca51201c60419af14": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pravkar sem nehala delati v kadrovski, zato ti izdam njihove skrivnosti. Če ne najdeš službe, je kriv tvoj CV iz Canve. In pogosto ga sploh ne prebere človek prvi: to je ATS filter, AI.",
+    "text": {
+     "content": "Pravkar sem nehala delati v kadrovski, zato ti izdam njihove skrivnosti. Če ne najdeš službe, je kriv tvoj CV iz Canve. In pogosto ga sploh ne prebere človek prvi: to je ATS filter, AI.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Pojdi na Parakeet AI, naloži svoj CV, prilepi povezavo do oglasa. Jaz imam X %.",
+    "text": {
+     "content": ") Pojdi na Parakeet AI, naloži svoj CV, prilepi povezavo do oglasa. Jaz imam X %.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") AI rečem, naj ga prilagodi oglasu, dva mala popravka in sem na Y %. Samo še prenesem. ",
+    "text": {
+     "content": ") AI rečem, naj ga prilagodi oglasu, dva mala popravka in sem na Y %. Samo še prenesem. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:9fe958b0fc1483709bb00121abb9520a": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Brezposelna sem in pravkar so me zavrnili za službo blagajničarke. Z magisterijem. Prijateljica, ki je delala v kadrovski, mi je rekla, da moj CV najbrž sploh ne pride skozi ATS filtre. To razloži, zakaj dobim zavrnitev pet minut po tem, ko se prijavim.",
+    "text": {
+     "content": "Brezposelna sem in pravkar so me zavrnili za službo blagajničarke. Z magisterijem. Prijateljica, ki je delala v kadrovski, mi je rekla, da moj CV najbrž sploh ne pride skozi ATS filtre. To razloži, zakaj dobim zavrnitev pet minut po tem, ko se prijavim.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Zato sem svoj CV naložila na Parakeet AI. Ocena nič posebnega, logično, CV iz Canve, poln ikonic. AI mi postavi par vprašanj, ga prilagodi oglasu …",
+    "text": {
+     "content": ") Zato sem svoj CV naložila na Parakeet AI. Ocena nič posebnega, logično, CV iz Canve, poln ikonic. AI mi postavi par vprašanj, ga prilagodi oglasu …",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") in ocena skoči na Y. ",
+    "text": {
+     "content": ") in ocena skoči na Y. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:a37958b0fc1482f5b8bc019ebaba8239": [
   [
    {
@@ -45544,6 +46723,623 @@
     "plain_text": "In to lahko narediš za vsako službo, na katero se prijaviš. Bog, res, to se mi zdi tako pametno. ",
     "text": {
      "content": "In to lahko narediš za vsako službo, na katero se prijaviš. Bog, res, to se mi zdi tako pametno. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:c96958b0fc1482dba9dc01ed9852e036": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Po letih v veliki firmi ti povem: HR res NOČE, da to veš. Deluje za čisto vsako službo. Skopiraj link do oglasa.",
+    "text": {
+     "content": "Po letih v veliki firmi ti povem: HR res NOČE, da to veš. Deluje za čisto vsako službo. Skopiraj link do oglasa.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") V Parakeet AI naloži svoj CV in prilepi link.",
+    "text": {
+     "content": ") V Parakeet AI naloži svoj CV in prilepi link.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Moj CV se z oglasom ujema bolj tako-tako, zato dodam ključne besede, ki mi jih predlaga AI, dva mini popravka, in ocena skoči na Y.",
+    "text": {
+     "content": ") Moj CV se z oglasom ujema bolj tako-tako, zato dodam ključne besede, ki mi jih predlaga AI, dva mini popravka, in ocena skoči na Y.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tako se prijaviš na čisto vsak oglas. ",
+    "text": {
+     "content": "Tako se prijaviš na čisto vsak oglas. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:dc3958b0fc14824384a481cd1210be02": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Trije nasveti, da končno najdeš službo.",
+    "text": {
+     "content": "Trije nasveti, da končno najdeš službo.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ena: (",
+    "text": {
+     "content": "Ena: (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Iskanje zaposlitve na LinkedInu",
+    "text": {
+     "content": "Iskanje zaposlitve na LinkedInu",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") pozabi LinkedIn in MojeDelo, na vsak oglas se prijavi kup ljudi. Pojdi na manjše platforme.",
+    "text": {
+     "content": ") pozabi LinkedIn in MojeDelo, na vsak oglas se prijavi kup ljudi. Pojdi na manjše platforme.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Dva: naredi grd CV. ATS filtri izločijo CV-je iz Canve, ki nimajo pravih ključnih besed. (",
+    "text": {
+     "content": "Dva: naredi grd CV. ATS filtri izločijo CV-je iz Canve, ki nimajo pravih ključnih besed. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Na Parakeet AI prilepiš povezavo do oglasa, odgovoriš na par vprašanj in ti predela CV za točno to delovno mesto.",
+    "text": {
+     "content": ") Na Parakeet AI prilepiš povezavo do oglasa, odgovoriš na par vprašanj in ti predela CV za točno to delovno mesto.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tri: ceni se in vedno ciljaj višje od minimalca. ",
+    "text": {
+     "content": "Tri: ceni se in vedno ciljaj višje od minimalca. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:fbe958b0fc1483a691a301b37499dbae": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Uradno je zdaj NAJBOLJŠI čas za iskanje službe: vsi zaposlujejo še pred decembrom. Zato ostani, imam trik. Najprej zapri svoj CV iz Canve. Rabiš CV v Harvard stilu, verjetno zato še nimaš službe.",
+    "text": {
+     "content": "Uradno je zdaj NAJBOLJŠI čas za iskanje službe: vsi zaposlujejo še pred decembrom. Zato ostani, imam trik. Najprej zapri svoj CV iz Canve. Rabiš CV v Harvard stilu, verjetno zato še nimaš službe.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Na ",
+    "text": {
+     "content": ") Na ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "http://parakeet-ai.com/resume-maker",
+    "plain_text": "parakeet-ai.com/resume-maker",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker",
+     "link": {
+      "url": "http://parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": " naložiš svoj CV in ti ga v celoti analizira. Kliknem izboljšaj, AI urejevalnik …",
+    "text": {
+     "content": " naložiš svoj CV in ti ga v celoti analizira. Kliknem izboljšaj, AI urejevalnik …",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") in to je to, optimiziran Harvard CV, Y od 100. ",
+    "text": {
+     "content": ") in to je to, optimiziran Harvard CV, Y od 100. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:fd8958b0fc148203a625813d638f9af5": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Sorry, ampak od kdaj LinkedIn to zna?",
+    "text": {
+     "content": "Sorry, ampak od kdaj LinkedIn to zna?",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Iskanje zaposlitve na LinkedInu",
+    "text": {
+     "content": "Iskanje zaposlitve na LinkedInu",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Pod »Jobs« nastavi filter »Past 24 hours«: v linku je številka 86400, to so sekunde v enem dnevu. Zamenjaj jo s 3600 in imaš oglase iz zadnje ure.",
+    "text": {
+     "content": ") Pod »Jobs« nastavi filter »Past 24 hours«: v linku je številka 86400, to so sekunde v enem dnevu. Zamenjaj jo s 3600 in imaš oglase iz zadnje ure.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Link do oglasa prilepi v Parakeet AI in naredi ti CV, prilagojen točno temu oglasu.",
+    "text": {
+     "content": ") Link do oglasa prilepi v Parakeet AI in naredi ti CV, prilagojen točno temu oglasu.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Prijaviš se med prvimi, s CV-jem, ki gre skozi filtre. ",
+    "text": {
+     "content": "Prijaviš se med prvimi, s CV-jem, ki gre skozi filtre. ",
      "link": null
     },
     "type": "text"

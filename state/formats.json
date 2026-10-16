@@ -532,7 +532,6 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 16.10.2026: not among the best 12 of any list: score 0.92 (saved by 4.1% of viewers, 1 videos; typical video 1.7%), not proven for our creators, not hot",
   "description": "Am-I-the-only-one mistake warning: the creator asks whether they're the only one who didn't know old-style CVs no longer work, explains ATS filters, then shows how to make an ATS-friendly CV with Parakeet AI. Examples: 'Vermeidet diesen Fehler!!'",
   "id": "X06",
   "inspo": {
@@ -555,20 +554,12 @@
     "views": 171900
    }
   },
-  "listed_at": 1791814818,
+  "listed_at": 1792156417,
   "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
   "pages": {
    "es": "3e6958b0-fc14-80b2-9be1-e5711abc8dcb",
    "fr": "3d6958b0-fc14-80c2-8349-ed1807a6a77a",
    "sl": "645958b0fc1482bb96168197b5025047"
-  },
-  "pending": {
-   "kind": "revive",
-   "reasons": [
-    "cross-country check fail: directions_match sl: The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title."
-   ],
-   "since": 1792153401,
-   "tries": 2
   },
   "revived": {
    "at": 1792153046,
@@ -583,7 +574,7 @@
   "script": "(DEUTSCH) Bin ich die Einzige, die nicht wusste, dass man sich nicht mehr mit solchen Lebensläufen bewirbt? Keiner redet mittlerweile darüber, denn es ist so wichtig. Mit solchen Lebensläufen kommt man heutzutage nicht mehr durch die ATS-Scanner. Wenn ihr nicht wisst, was das ist: Das sind solche Filter, die eben Unternehmen benutzen, damit die erst mal ausfiltern können, bis es dann zum Recruiter kommt. Du fragst dich vielleicht: Wie erstelle ich einen übersichtlichen Lebenslauf für meine Bewerbung? Dafür nutze ich Parakeet AI. Ich lade meinen bisherigen Lebenslauf hoch, füge den Link zur Stellenanzeige ein und passe den Lebenslauf an die Stelle an. Wenn ich noch keinen Lebenslauf habe, starte ich mit meinen eigenen Angaben im Lebenslauf-Builder. Dann schaue ich mir den Score an und verbessere mit der KI die Formulierungen. Schaut mal – das ist die fertige Version. Also mega.\n\nKommenti",
   "source": "DACH archive (old formats)",
   "source_video": "https://www.tiktok.com/@filippajobbtips/video/7697128733752167682",
-  "status": "pending",
+  "status": "active",
   "title": "Vermeidet diesen Fehler!!"
  },
  {

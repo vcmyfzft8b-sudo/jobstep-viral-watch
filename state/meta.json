@@ -1134,9 +1134,9 @@
   "X03:de": "0e00fb7a397ca47438ead472832298b2ffee935c129e3e2e4f1c76e570177289",
   "X03:es": "fb30dca404e35a2127b8b6954e86c3994b54aafa547dbe5bbb94456f920045c6",
   "X03:fr": "defd6af4058a296074750d70e834a5b7c30e419411da4352187175b8aac00d2d",
-  "X06:es": "296e37f200a020def2f95a43ce29febd668e69b89872d1ed394af79a3906a1c1",
-  "X06:fr": "a56c7c1141cba86ea124e651f205a0627fdb90499c159ab8ccc39032ecfc9471",
-  "X06:sl": "81a8983c336fb2bd29803db1233e389f22fdb2505b48cf9b71a9755cfce6268f",
+  "X06:es": "c2df4fd3588d97a6563a68317ec27f2c2b5b8263a74ee0fdab796b861a41612e",
+  "X06:fr": "e2530534aa4d9486beecb01be84031334c3de7d96b2cc2cb09346b416bde44d4",
+  "X06:sl": "3a541558d69a44de12d78530dba7958c9f2811b94b25d811cfee26758dbf0f39",
   "X08:de": "9382840ce7bd8ec308b4d0b81f208f4a49f833042c062a30b0998b9f49e760bb",
   "X08:es": "a3fe7f66881c2316885d9341d03439be45d9440db34cbba0e84327e9228da70f",
   "X08:fr": "a2df991562534c2ace7585510b1e4ee3427b8151ed753e7cb0d9e22b23f8519b",
@@ -2696,7 +2696,7 @@
     "fr": "not_locked",
     "sl": "not_locked"
    },
-   "checked_at": 1792154112,
+   "checked_at": 1792156363,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2713,11 +2713,9 @@
      "video_identity": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97"
     }
    },
-   "key": "73b6358fa0729a12010f1f0b014c35a8043839e1b4d856ab787bfbb12ab57e31",
-   "passed": false,
-   "reasons": [
-    "directions_match sl: The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title."
-   ],
+   "key": "ac63f2bb20c8f5eeeaa3754c7ba6634599d1f838defd0a0f8ecfefb3d7c50a96",
+   "passed": true,
+   "reasons": [],
    "results": {
     "directions_match": {
      "es": {
@@ -2729,8 +2727,8 @@
       "pass": true
      },
      "sl": {
-      "issue": "The directions tell the creator to show «Izogni se tej napaki!!» on screen, but the page's on-screen title is «Izogibajte se tej napaki!!». The directions should use the same wording as the title.",
-      "pass": false
+      "issue": "",
+      "pass": true
      }
     },
     "faithful_transcript": {
@@ -2790,8 +2788,8 @@
      }
     }
    },
-   "status": "fail",
-   "summary": "FR, ES and SL all follow X06 closely: same beats and order, Parakeet AI named only in beat 5, the guarantee softened to 'optimises for ATS' and X/Y scores, but the SL filming directions use a different on-screen title from the page's actual title.",
+   "status": "pass",
+   "summary": "All three pages pass every check: FR keeps the original's words (only filler sounds dropped), ES is a close Spain-Spanish translation and SL a close Slovenian one, all use the same 7 beats in the same order with Parakeet AI named only in beat 5, scores are kept as X/Y, the ATS claim is softened to 'optimise', and the titles and visual hooks match the example.",
    "title_fixes": {},
    "version": "group-2026-10-13.timeless"
   },

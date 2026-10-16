@@ -5409,5 +5409,198 @@
   },
   "ts": 1792148484,
   "type": "rerank"
+ },
+ {
+  "form": 0.62,
+  "format": "N03",
+  "reason": "not among the best 12 of any list: score 0.62 (saved by 1.0% of viewers, 7 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148933,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.85,
+  "format": "A202610061331",
+  "reason": "not among the best 12 of any list: score 0.85 (saved by 1.7% of viewers, 5 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148934,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.92,
+  "format": "N01",
+  "reason": "not among the best 12 of any list: score 0.92 (saved by 1.6% of viewers, 26 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148935,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.92,
+  "format": "X06",
+  "reason": "not among the best 12 of any list: score 0.92 (saved by 4.1% of viewers, 1 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148936,
+  "type": "lineup_out"
+ },
+ {
+  "form": 0.98,
+  "format": "N07",
+  "reason": "not among the best 12 of any list: score 0.98 (saved by 2.7% of viewers, 12 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148937,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.02,
+  "format": "X15",
+  "reason": "not among the best 12 of any list: score 1.02 (saved by 1.7% of viewers, 9 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148937,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.05,
+  "format": "X18",
+  "reason": "not among the best 12 of any list: score 1.05 (saved by 2.1% of viewers, 7 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148938,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.07,
+  "format": "A20261014173459",
+  "reason": "not among the best 12 of any list: score 1.07 (saved by 1.1% of viewers, 3 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148939,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.1,
+  "format": "A202610061328",
+  "reason": "not among the best 12 of any list: score 1.10 (saved by 0.8% of viewers, 2 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148940,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.16,
+  "format": "ESX21",
+  "reason": "not among the best 12 of any list: score 1.16 (saved by 2.5% of viewers, 3 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148940,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.19,
+  "format": "A20261015100922",
+  "reason": "not among the best 12 of any list: score 1.19 (saved by 3.3% of viewers, 1 videos; typical video 1.7%), not proven for our creators, not hot",
+  "ts": 1792148941,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.15,
+  "format": "ESX28",
+  "market": "fr",
+  "ts": 1792148942,
+  "type": "lineup_off"
+ },
+ {
+  "form": 1.06,
+  "format": "A20261009204851",
+  "market": "fr",
+  "ts": 1792148942,
+  "type": "lineup_off"
+ },
+ {
+  "form": 1.08,
+  "format": "FRX22",
+  "market": "es",
+  "ts": 1792148942,
+  "type": "lineup_off"
+ },
+ {
+  "form": 1.06,
+  "format": "A20261009204851",
+  "market": "es",
+  "ts": 1792148942,
+  "type": "lineup_off"
+ },
+ {
+  "form": 1.08,
+  "format": "FRX22",
+  "market": "sl",
+  "ts": 1792148943,
+  "type": "lineup_off"
+ },
+ {
+  "form": 1.15,
+  "format": "ESX28",
+  "market": "sl",
+  "ts": 1792148943,
+  "type": "lineup_off"
+ },
+ {
+  "order": [
+   "N10",
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "X03",
+    "X09",
+    "A20261009204851",
+    "FRX22",
+    "N10"
+   ],
+   "fr": [
+    "N10",
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "N10",
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ]
+  },
+  "ts": 1792149043,
+  "type": "rerank"
  }
 ]

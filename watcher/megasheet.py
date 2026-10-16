@@ -80,7 +80,10 @@ def access_token():
     except (FileNotFoundError, subprocess.CalledProcessError, ValueError):
         pass  # no newer login yet, or it was encrypted with an older key
     if info.get('used_secret') != fingerprint:
-        candidates.append(secret)
+        if info.get('login_from') != fingerprint:
+            candidates.insert(0, secret)  # a newly saved login (e.g. with write access) wins over the older chain
+        else:
+            candidates.append(secret)
     error = None
     for login in candidates:
         try:
@@ -92,6 +95,7 @@ def access_token():
         if newer and newer != login['refresh_token']:  # Megasheet replaced the login: keep the new one
             if login is secret:
                 info['used_secret'] = fingerprint
+                info['login_from'] = fingerprint  # the saved chain now comes from this secret
             os.makedirs(state.DIR, exist_ok=True)
             with open(os.path.join(state.DIR, LOGIN_FILE), 'w') as f:
                 f.write(_crypt(json.dumps({'refresh_token': newer, 'client_id': login['client_id']})))

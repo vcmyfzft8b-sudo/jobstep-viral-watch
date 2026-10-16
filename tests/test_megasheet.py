@@ -200,3 +200,21 @@ class SeedTests(StateDirTest):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class NewSecretTests(StateDirTest):
+    def test_a_newly_saved_login_is_used_before_the_old_saved_chain(self):
+        with mock.patch.dict(os.environ, {'MEGASHEET_LOGIN': login_secret('old'), 'MEGASHEET_KEY': 'k' * 32}):
+            with mock.patch.object(megasheet.requests, 'post',
+                                   return_value=Resp(body={'access_token': 'a-old', 'refresh_token': 'old2'})):
+                self.assertEqual(megasheet.access_token(), 'a-old')  # old chain saved in state
+        used = []
+
+        def post(url, data, timeout):
+            used.append(data['refresh_token'])
+            return Resp(body={'access_token': 'a-' + data['refresh_token'], 'refresh_token': data['refresh_token'] + 'x'})
+        with mock.patch.dict(os.environ, {'MEGASHEET_LOGIN': login_secret('new'), 'MEGASHEET_KEY': 'k' * 32}):
+            with mock.patch.object(megasheet.requests, 'post', side_effect=post):
+                self.assertEqual(megasheet.access_token(), 'a-new')  # the user's new login (write access) first
+                self.assertEqual(megasheet.access_token(), 'a-newx')  # then its own saved chain, not the old one
+        self.assertEqual(used, ['new', 'newx'])

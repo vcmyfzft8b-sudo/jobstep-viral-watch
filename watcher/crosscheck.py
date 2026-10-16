@@ -32,7 +32,7 @@ from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 from .markets import TEXT, for_format
 
-AUDIT_VERSION = 'group-2026-10-13.timeless'
+AUDIT_VERSION = 'group-2026-10-16.pure-transcription'
 REF_RULES = 'no-directions-2026-10-11'  # scripts without stage directions (brands.NO_DIRECTIONS)
 REFERENCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'format_references.json')
 DIMENSIONS = ('format_consistency', 'script_matches_example', 'faithful_transcript', 'features_claims',
@@ -273,10 +273,11 @@ other. Be strict:
 - faithful_transcript: is the script this country's example in its OWN WORDS - its transcript when the example is in
   the country's language, else a faithful close translation - same sentences, same order, nothing added or dropped?
   The only allowed changes: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores
-  -> X/Y, an impossible promise softened, and this localisation: {LOCALISE} FAIL if the script is reworded or retold in
-  other words.
-- features_claims (script AND on-screen title): only real Parakeet AI features; X/Y score placeholders kept; no invented testimonials, no
-  guaranteed ATS passage, no guaranteed interviews/jobs.
+  -> X/Y, and this localisation: {LOCALISE} FAIL if the script is reworded, shortened, softened or retold in other
+  words. The creator's own claims and promises ('how I got a job in 15 minutes') are part of the original and stay.
+- features_claims (script AND on-screen title): only real Parakeet AI features; X/Y score placeholders kept; nothing
+  is said about Parakeet AI that the original did not say about JobStep. The creator's own story, results and promises
+  ('I got a job in 15 minutes') stay exactly as in the original - never FAIL them.
 - directions_match: the filming directions are only a short visual hook (1-2 sentences: copy what the example does
   in its first seconds, or pick a hook from the Visual Hook Lab). PASS if it fits the example and the script and
   names no feature Parakeet AI lacks; FAIL only if it contradicts them or is longer than 2 sentences. Never ask for
@@ -286,9 +287,9 @@ other. Be strict:
 {chr(10).join(blocks)}
 
 Never put the character " inside an issue text (write ' or « » instead) - the answer must be valid JSON.
-If a country's on-screen title makes a claim we can't make (an invented number of interviews, a time promise, a
-guaranteed result) or, in a silent on-screen-text format, differs from the script's first on-screen line, put a fixed
-title for it in "titles" (same language and style, same hook idea), else leave it out.
+If a country's on-screen title claims something its own example video does not (an invented number of interviews,
+a time promise the original never makes) or, in a silent on-screen-text format, differs from the script's first
+on-screen line, put a fixed title for it in "titles" (same language and style, same hook idea), else leave it out.
 Return JSON {{"titles": {{"<country>": "<fixed title>"}}, "results": {{"<dimension>": {{"<country>": {{"pass": true, "issue": "<short, empty if pass>"}}}}}},
 "summary": "<one sentence>"}} with every dimension {list(DIMENSIONS)} for every country {sorted(evidence)}."""
     for attempt in range(3):  # an unreadable answer is asked again, never guessed

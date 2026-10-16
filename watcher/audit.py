@@ -5,7 +5,7 @@ shown in it) and the page's SCRIPT.
   1. Is the example video really this format?
   2. Does the script follow the example's beats (same story, same order)?
   3. Is the script the example's own words (transcript, or a close translation), in the market's language, with
-     Parakeet AI instead of JobStep and no guarantees?
+     Parakeet AI instead of JobStep (and the closest real feature for one it lacks) - nothing else changed?
 Fixes, then the page is checked again (max 3 rounds):
   - wrong example -> a strictly checked same-language JobStep video of the format, else the format's original
     JobStep video (registry/originals.json, the video the script was built from)
@@ -126,13 +126,14 @@ Check strictly:
 3. script_faithful: is the script the example's OWN WORDS - its transcript if the example is in {lang_name}, else a
    faithful close translation - same sentences in the same order, nothing added or dropped? Allowed (and required)
    changes only: JobStep -> Parakeet AI, a feature Parakeet AI lacks -> the closest one it has, app scores -> X/Y,
-   an impossible promise softened, and this localisation: {LOCALISE} false if the script is reworded or retold in
-   other words.
+   and this localisation: {LOCALISE} false if the script is reworded, shortened, softened or retold in other words.
+   The creator's own claims and promises ('how I got a job in 15 minutes') are part of the original and stay.
 5. directions_ok: the filming directions are just a short visual hook (1-2 sentences: copy what the example does in
    its first seconds, or pick a hook from the Visual Hook Lab) that fits the example and the script. false only if
    it contradicts the example/script or is longer than 2 sentences - never ask for more lines.
 6. example_language: the language of the example video (English name).
-4. script_ok: natural {lang_name}, never mentions JobStep, no promises nobody can guarantee; scores and
+4. script_ok: natural {lang_name}, never mentions JobStep (the creator's own claims and promises stay as said - never
+   flag them); scores and
    percentages the app shows are ALWAYS the placeholders X / Y, never concrete numbers (e.g. "64 %" or "40 sobre 100"
    is wrong; "X von 100" / "X sur 100" / "X de 100" is RIGHT - 100 is only the scale); the viewer is addressed the
    way the ORIGINAL addresses them (one person: du/tu/tú, a group: ihr/vous/vosotros, or switching where the
@@ -143,8 +144,8 @@ Check strictly:
    brand, our spoken script must not name it either. Parenthesized linked cue labels are filming instructions,
    not spoken words. For silent videos compare on-screen text instead. Never add a CTA or website if the original
    has none; preserve its placement when one exists.
-7. title_ok: the on-screen TITLE ({title!r}) makes no promise nobody can guarantee (e.g. 'a job in 24h') and keeps
-   the example's speaker (its "I" story stays "I" - never "someone" / "a friend").
+7. title_ok: the on-screen TITLE ({title!r}) claims nothing its example does not (a promise or number the example
+   itself makes is fine) and keeps the example's speaker (its "I" story stays "I" - never "someone" / "a friend").
 {PARAKEET_FACTS}
 script_ok is false if the script or directions show/mention a feature Parakeet AI does not have.
 {NO_DIRECTIONS}
@@ -329,7 +330,7 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
 
 # Bump when a page rule changes: the next run then checks EVERY page again, not only the failed ones (16 Oct 2026: the
 # 1:1 lower length limit came in, but the Monday run only re-checks failed pages, so old cut scripts stayed).
-RULES = '2026-10-16.one-to-one-length'
+RULES = '2026-10-16.pure-transcription'
 
 
 def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=8, rebuild=None, only_failed=False):

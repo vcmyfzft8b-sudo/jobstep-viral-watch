@@ -12,12 +12,18 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    - 🚀 **rising fast** – 30k+ views within its first 24 h (4 of 5 reached 100k in our data): a NEW format (or an
      archived one) is built, checked and listed right away – that is the video's one Slack alert; a video of a live
      format only gets a radar line and its Slack alert at 100k
+   - 💾 **converting** – below 100k, but saved a lot: 30k+ views, 300+ saves and saved by 2%+ of viewers AND 1.2x the
+     typical rate of its market (Spain ~3.3%) – handled like rising fast
    - 🟢 **viral** – 100k+ views (counts the moment it gets there – after 1 day or 6 hours – as long as the video is from the last 7 days)
    - **One Slack alert per video** (the viral one). If the Claude check fails, it is retried quietly; only after 3 failed
      runs a short alert goes out, and the later full check is not sent again (it goes on the radar page).
-   - "weak" is added when shares + saves are below 1.5 % of views
-4. **Builds a new format page** when a viral video (good engagement) uses a format that is not on the DACH
-   instructions page yet:
+   - **Saves decide** (user's rule, 16 Oct 2026, like the Memo AI watcher; replaces "shares + saves below 1.5 %"): a
+     viral / rising video saved by fewer than half the typical rate of its market, or a paid ad (likes under 0.7 % of
+     views – JobStep's own brand accounts), still alerts and counts for its format but never builds or brings back a
+     format. An archived format comes back only when the new video is saved at least like a typical video of its
+     market. While a video's saves are unknown (views-only check) the alert waits for a full check (max 6 days).
+4. **Builds a new format page** when a viral / rising video with enough saves, or a converting one, uses a format
+   that is not in the lists yet:
    video download → Soniox transcription → frames → Claude writes the German page: the script is the video's own
    words (German video: its transcript word for word; other languages: a close translation) with only JobStep →
    Parakeet AI and missing features swapped – no rewording; Parakeet links at every app moment, title, a 1–2 sentence
@@ -25,8 +31,8 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    same layout as the existing ones → added to the numbered list at its ranked position.
    If a check fails (e.g. "JobStep" left in the text, not German, script length off by more than 25 %), the page is
    created as a private draft on the radar page instead and you get a notification with the reason.
-5. **Hot formats**: every format with 5+ viral videos posted in the last 7 days gets a 🚀 box at the top of the DACH
-   list (several formats possible) and one German @everyone announcement in the DACH Discord #announcements.
+5. **Hot formats**: every format with 5+ viral videos posted in the last 7 days AND saved at least like an average
+   format gets a 🚀 box at the top of the lists (several formats possible) and the Discord announcement.
 6. **Every 3 days – complete account list**: Lightreel is asked for every account promoting JobStep; each new handle
    is verified on TikTok (posted in the last 30 days + JobStep in captions or videos) and added. Accounts without
    JobStep posts for 30 days are paused and re-checked every 3 days, so they come back automatically. You get a push
@@ -34,13 +40,24 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
 7. **List order – each market on its own** (DE, FR, ES): first how a format does for OUR creators in that market
    (`own.tiers`: 1 proven – our videos average 10k+ or one passed 100k in 14 days → top card; 2 solid – 3+ videos,
    avg 2k+; 3 not tested enough – JobStep decides; 4 weak – 6+ videos, avg under 1.5k and under 1.2x our usual
-   in that market → bottom, even when JobStep goes viral with it). Inside each tier the JobStep order (hot, what goes
-   viral, form). Formats move up right away, down only on Monday (`state/own_tiers.json`). Thresholds:
+   in that market → bottom, even when JobStep goes viral with it). Proven also needs our viewers to save it at least
+   like a typical video of that market (TikTok saves; Instagram hides saves, so Instagram-only formats are judged on
+   views) – saved less → tier 2. Our viral video puts a format on the red card only while it is saved.
+   Inside each tier the **saves order** (16 Oct 2026): hot first, then conversion score = how many viewers save the
+   format (each video vs the typical rate of its market: Spain ~2.8 %, France ~2 %, DACH ~0.6 %; Slovenia uses all
+   markets until it has its own data) × √(how well it goes viral right now); ties: viral in 7 / 30 days.
+   Formats move up right away, down only on Monday (`state/own_tiers.json`). Thresholds:
    `config.json → ranking.own_tiers`. The Monday Slack report shows each market's top and its weak formats.
    Our videos' formats: `registry/own_formats.json` (hand-checked 12 Oct 2026, Spain + France) always wins over the
    automatic sorting. An archived format that is proven for us (tier 1) in a running market comes back into the
    lists by itself (pages move back from the archive; `lineup.never_revive` keeps one out – X01 "rendez-vous": many
    views, almost no signups) and the Monday clean-up never takes a proven format out.
+8. **Monday clean-up**: a format with 2+ videos with known saves and a conversion score under 0.9 leaves the lists
+   (archive, nothing deleted) – also when it goes viral or is new; only proven for us, hot, or viral in 21 days while
+   saved like an average format protects it. Formats with fewer measured videos: current form as before.
+   History keeps likes/saves/shares; older videos get their saves read 60 per run, `mode=conversion` reads them at once
+   and prints every list with its save rates (`verify` and `lineup` print them too). Settings: `config.json →
+   conversion` (`watcher/conversion.py`).
 
 ## Setup
 

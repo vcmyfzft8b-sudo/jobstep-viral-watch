@@ -135,8 +135,7 @@
         30000
       ]
     ],
-    "viral_views": 100000,
-    "min_engagement": 0.015
+    "viral_views": 100000
   },
   "ranking": {
     "prior_hit_rate": 0.03,
@@ -232,6 +231,28 @@
     "protect_days": 14,
     "half_life_days": 21,
     "never_revive": ["X01"]
+  },
+  "conversion": {
+    "min_views": 10000,
+    "min_rel": 0.5,
+    "convert_views": 30000,
+    "convert_save_rate": 0.02,
+    "convert_rel": 1.2,
+    "convert_min_saves": 300,
+    "prior_rate": 0.016,
+    "min_market_videos": 10,
+    "prior_videos": 3,
+    "half_life_days": 30,
+    "window_days": 120,
+    "reach_weight": 0.5,
+    "hot_min_conv": 1.0,
+    "judge_min_videos": 2,
+    "remove_below": 0.9,
+    "rate_cap": 0.12,
+    "ad_like_rate": 0.007,
+    "own_min_views": 3000,
+    "backfill_per_run": 60,
+    "classify_per_run": 40
   },
   "other_apps": {
     "Studyflash": "stud(?:y|io|ie|i)\\s*-?\\s*fl[ae]sh"

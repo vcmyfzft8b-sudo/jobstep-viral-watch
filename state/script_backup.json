@@ -20701,6 +20701,25 @@
    "type": "text"
   }
  ],
+ "3fb958b0-fc14-8154-9ff2-f8e2bc50a0bb": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Kot v videu za navdih drži v kamero zaprt prenosnik, na katerega si s flomastrom narisal_a polja s cenami, in odlepi nalepko z enega polja. Potem iz papirja izreži logotip Parakeet AI in ga nalepi na to polje.",
+   "text": {
+    "content": "Kot v videu za navdih drži v kamero zaprt prenosnik, na katerega si s flomastrom narisal_a polja s cenami, in odlepi nalepko z enega polja. Potem iz papirja izreži logotip Parakeet AI in ga nalepi na to polje.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "3fb958b0-fc14-8173-a04a-dc6dbc02ad9f": [
   {
    "annotations": {
@@ -33296,6 +33315,194 @@
    }
   ]
  ],
+ "page:3ee958b0-fc14-8015-ae8b-efbb383ec8da": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Cuál era tu nota media en la uni? ¿Cuál era tu nota media en la uni? Un 5,5, pero conseguí un trabajo muy bien pagado nada más graduarme. ",
+    "text": {
+     "content": "¿Cuál era tu nota media en la uni? ¿Cuál era tu nota media en la uni? Un 5,5, pero conseguí un trabajo muy bien pagado nada más graduarme. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Cómo? Porque me presenté a 100 ofertas de trabajo todos los días, durante 2 puñeteros meses. ",
+    "text": {
+     "content": "¿Cómo? Porque me presenté a 100 ofertas de trabajo todos los días, durante 2 puñeteros meses. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Todo esto es gracias a una amiga que ahora mismo trabaja en Meta, que me compartió este truco que nos ha cambiado la vida a las 2. No me voy a quedar esto para mí, así que déjame que te lo enseñe. ",
+    "text": {
+     "content": "Todo esto es gracias a una amiga que ahora mismo trabaja en Meta, que me compartió este truco que nos ha cambiado la vida a las 2. No me voy a quedar esto para mí, así que déjame que te lo enseñe. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Primero entras a esta página de aquí, que se llama Parakeet AI, y pegas la oferta a la que te quieres presentar. ",
+    "text": {
+     "content": ") Primero entras a esta página de aquí, que se llama Parakeet AI, y pegas la oferta a la que te quieres presentar. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Esto es súper importante: (",
+    "text": {
+     "content": "Esto es súper importante: (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") la IA optimizará tu currículum para que pase los filtros ATS. Utilizando palabras clave, u optimizándolo para esa oferta de trabajo en concreto. ",
+    "text": {
+     "content": ") la IA optimizará tu currículum para que pase los filtros ATS. Utilizando palabras clave, u optimizándolo para esa oferta de trabajo en concreto. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ahora ya puedes enviar currículums con total confianza. Comenta \"currículum\" si quieres que te pase el enlace directo. ",
+    "text": {
+     "content": "Ahora ya puedes enviar currículums con total confianza. Comenta \"currículum\" si quieres que te pase el enlace directo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:3f0958b0-fc14-8009-9338-d666a6b9fb0a": [
   [
    {
@@ -45540,6 +45747,101 @@
     "plain_text": "Solo me queda descargarlo y ya está. Y si quiero, hasta puedo elegir otra plantilla. ",
     "text": {
      "content": "Solo me queda descargarlo y ya está. Y si quiero, hasta puedo elegir otra plantilla. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:3fb958b0-fc14-8160-b3cb-c07aa195a088": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Prostor na zadnji strani svojega MacBooka prodajam za oglase in že imam prvega kupca. Tukaj vidite veliko različnih cen in prav to polje tukaj je bilo kupljeno. Zdaj to poskušam odstraniti, upam, da bo res šlo dol. Torej, mislim, da je to dovolj dobro. In to polje je kupil Parakeet AI, več vam povem takoj. ",
+    "text": {
+     "content": "Prostor na zadnji strani svojega MacBooka prodajam za oglase in že imam prvega kupca. Tukaj vidite veliko različnih cen in prav to polje tukaj je bilo kupljeno. Zdaj to poskušam odstraniti, upam, da bo res šlo dol. Torej, mislim, da je to dovolj dobro. In to polje je kupil Parakeet AI, več vam povem takoj. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Parakeet AI je podjetje, ki je zaslovelo, ker študentom in dijakom pomaga pri iskanju službe. (",
+    "text": {
+     "content": "Parakeet AI je podjetje, ki je zaslovelo, ker študentom in dijakom pomaga pri iskanju službe. (",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") Preprosto naložiš svoj življenjepis, prilepiš oglas za službo svojih sanj, seveda tisto najboljšo, in pustiš, da ti ga AI prilagodi. Tam dobiš oceno in analizo življenjepisa, vprašanja v klepetu o tebi in službi, da je vse res natančno, in celo predloge, med katerimi lahko izbiraš kar med sprehodom ali na avtobusu. ",
+    "text": {
+     "content": ") Preprosto naložiš svoj življenjepis, prilepiš oglas za službo svojih sanj, seveda tisto najboljšo, in pustiš, da ti ga AI prilagodi. Tam dobiš oceno in analizo življenjepisa, vprašanja v klepetu o tebi in službi, da je vse res natančno, in celo predloge, med katerimi lahko izbiraš kar med sprehodom ali na avtobusu. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Zato kar poglejte tja in spodaj komentirajte, kdo po vašem bo kupil naslednji prostor. ",
+    "text": {
+     "content": "Zato kar poglejte tja in spodaj komentirajte, kdo po vašem bo kupil naslednji prostor. ",
      "link": null
     },
     "type": "text"

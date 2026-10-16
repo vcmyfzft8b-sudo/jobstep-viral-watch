@@ -1,13 +1,13 @@
 #!/bin/zsh
 # Logs in to Megasheet once (browser) and saves the long-lived login for the 6-hourly GitHub run:
 #   MEGASHEET_LOGIN  refresh token + client id (base64 JSON)   MEGASHEET_KEY  random key for newer logins
-# Nothing secret is printed. Run again whenever the run says "Megasheet login needed".
+# Write access (mcp:write) since 16 Oct 2026: the format lists are copied into Megasheet. Nothing secret is printed. Run again whenever the run says "Megasheet login needed".
 REPO="${1:-vcmyfzft8b-sudo/jobstep-viral-watch}"
 LOGIN="$(/usr/bin/python3 - <<'EOF'
 import base64, hashlib, http.server, json, os, secrets, sys, urllib.parse, urllib.request, webbrowser
 
 BASE, PORT = 'https://megasheet.app', 8765
-REDIRECT, RESOURCE, SCOPE = f'http://127.0.0.1:{PORT}/callback', BASE + '/api/mcp', 'mcp:read offline_access'
+REDIRECT, RESOURCE, SCOPE = f'http://127.0.0.1:{PORT}/callback', BASE + '/api/mcp', 'mcp:read mcp:write offline_access'
 
 
 def post(url, data, as_json=False):

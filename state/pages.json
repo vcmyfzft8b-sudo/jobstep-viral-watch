@@ -236,6 +236,15 @@
    ],
    "place": "live"
   },
+  "baf2f58b-96d1-4014-802a-68b1c6452af3": {
+   "created": 1792188752,
+   "fp": "7fb166c8cc098a36",
+   "market": "fr",
+   "media_ids": [
+    "965a584e-19eb-4842-9b82-7974ecb3e634"
+   ],
+   "place": "staging"
+  },
   "bd02a5d8-5393-4143-b928-ae9c41504a51": {
    "format": "X09",
    "fp": "fd0f1735ede45683",

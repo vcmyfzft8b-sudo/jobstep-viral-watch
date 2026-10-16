@@ -139,6 +139,11 @@ def sentences(text):
 
 # Letters that must not appear in the finished text (leftovers from Balkan/Polish/Czech originals).
 FOREIGN = 'čćđšłąęńśźżř'
+OWN_LETTERS = {'sl': 'čšž'}  # Slovenian writes these (16 Oct 2026: they blocked every Slovenian page) - ć/đ stay foreign
+
+
+def foreign_letters(lang):
+    return ''.join(ch for ch in FOREIGN if ch not in OWN_LETTERS.get(lang, ''))
 
 
 def validate(spec, transcript, lang='de', on_screen=''):
@@ -154,10 +159,10 @@ def validate(spec, transcript, lang='de', on_screen=''):
     if SOURCE_RE.search(blob):
         problems.append('"JobStep" appears in the page text')
     stop = set(T['stopwords'].split())
-    words = re.findall(r"[a-zäöüßàâçéèêëîïôûùüÿœñáíóú’']+", ' '.join(s.get('text', '') for s in spec.get('script', [])).lower())
+    words = re.findall(r"[a-zäöüßàâçéèêëîïôûùüÿœñáíóúčšž’']+", ' '.join(s.get('text', '') for s in spec.get('script', [])).lower())
     if words and sum(w in stop for w in words) / len(words) < 0.08:
         problems.append(f"script does not look {T['lang_name']}")
-    if re.search(f'[{FOREIGN}]', blob.lower()):
+    if re.search(f'[{foreign_letters(lang)}]', blob.lower()):
         problems.append(f"non-{T['lang_name']} characters left in the text")
     orig_words = len(transcript.get('text', '').split())
     new_words = sum(len(s.get('text', '').split()) for s in spec.get('script', []))

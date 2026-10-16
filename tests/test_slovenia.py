@@ -129,6 +129,29 @@ if __name__ == '__main__':
     unittest.main()
 
 
+class SlovenianLettersTests(unittest.TestCase):
+    """16 Oct 2026: the builder called č/š "non-Slovenian characters", so no Slovenian page could be built."""
+
+    def spec(self, text):
+        return {'page_title': 'Prodal sem oglasni prostor', 'title_hook': 'Prodal sem oglasni prostor 🤑',
+                'visual_hook_first': 'Pokaži prenosnik.', 'voiceover': False,
+                'script': [{'text': text, 'cue': 'parakeet'}]}
+
+    def test_slovenian_letters_are_allowed(self):
+        from watcher import builder
+        text = 'Že veš, da je to naš prenosnik in če ga pogledaš, vidiš ceno za vsak prostor. Tukaj je še Parakeet AI.'
+        problems = builder.validate(self.spec(text), {'text': ''}, lang='sl')
+        self.assertFalse([p for p in problems if 'characters' in p or 'does not look' in p], problems)
+
+    def test_croatian_and_polish_leftovers_are_still_caught(self):
+        from watcher import builder
+        for word in ('ćao', 'međutim', 'łatwo'):
+            problems = builder.validate(self.spec(f'To je naš prenosnik in {word} je tukaj Parakeet AI.'), {'text': ''}, lang='sl')
+            self.assertIn('non-Slovenian characters left in the text', problems)
+        problems = builder.validate(self.spec('Das ist unser Laptop, schau dir šta an.'), {'text': ''}, lang='de')
+        self.assertIn(f"non-{markets.TEXT['de']['lang_name']} characters left in the text", problems)
+
+
 class SloveniaPageChecksTests(unittest.TestCase):
     """verify on 15 Oct 2026: the copied Slovenian pages link the Visual Hook Lab inside Notion ('/<id>'), and
     Slovenian quotes are »…« - neither may count as an extra hook line / a wrong on-screen text."""

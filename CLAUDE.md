@@ -197,6 +197,10 @@ here (repo, Notion, Discord, secrets, state are all separate).
   = same file size -> not uploaded again), the other published ones archived. Titles used by creators' videos cannot
   be removed: they stay after ours (`keep_titles`). State: state/megasheet_formats.json (ids only).
 - Needs the Megasheet login with write access (`mcp:write`, since 16 Oct 2026): `scripts/save_megasheet_login.sh`.
+  Megasheet only has read / read+write-everything logins, so `megasheet.Client` limits it (user: "only write access
+  for the formats, nothing else"): READ_TOOLS, WRITE_TOOLS (format ideas + their media only) and WRITE_CAMPAIGNS
+  (France, Spain, Slovenia ids - never DACH); a write must name the campaign and may only touch ideas/media read from
+  or created in it. Anything else raises `NotAllowed` before it is sent. DACH is never copied (`COPY_MARKETS`).
 - Modes: `megasheet-formats` (only the copy), `megasheet-formats-dry` (prints what would change). DACH is not copied
   while the market is off. Page intro/rules/footer, the Visual Hook Lab guide and hook videos are campaign settings
   in Megasheet (set by hand, not by the watcher).

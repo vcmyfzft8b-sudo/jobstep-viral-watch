@@ -104,8 +104,28 @@ def access_token():
 
 # --- MCP client (streamable HTTP, read-only tools) ------------------------------------------------------------------
 
+# What the watcher may do in Megasheet. A Megasheet login is either read-only or read + write for everything (its only
+# scopes are mcp:read / mcp:write), so the limit is kept here, before anything is sent (user, 16 Oct 2026: "only write
+# access for writing the formats, nothing else; nothing about DACH"):
+# - reading: the campaign list, accounts, videos and the formats pages;
+# - writing: only the format ideas (+ their example media) of the France, Spain and Slovenia campaigns, and only ideas
+#   and media read from or created in that same campaign. Never DACH, never page settings, guides, creators, payouts.
+READ_TOOLS = {'list_campaigns', 'account_getMany', 'videos_getMany', 'formats_getIdeas', 'formats_getGroups',
+              'formats_getGuides', 'formats_getPageSettings'}
+WRITE_TOOLS = {'formats_createIdea', 'formats_updateIdea', 'formats_updateIdeaStatus', 'formats_reorderIdeas',
+               'formats_addMediaFromUrl', 'formats_removeMedia'}
+WRITE_CAMPAIGNS = {'5cf4df12-f6dd-467a-a1e8-dbe07f709425': 'ParakeetAI - France',
+                   'f70ac122-5e87-4780-9229-65b2740bfb3a': 'ParakeetAI - Spain',
+                   '28808b83-9313-4575-afc9-7b0805c497a5': 'ParakeetAI - Slovenia'}
+
+
+class NotAllowed(Exception):
+    pass
+
+
 class Client:
     def __init__(self, token):
+        self.known = {}  # campaign id -> ids of its ideas and media (the only ones a write may touch)
         self.s = requests.Session()
         self.s.headers.update({'Authorization': f'Bearer {token}', 'Content-Type': 'application/json',
                                'Accept': 'application/json, text/event-stream'})
@@ -132,7 +152,43 @@ class Client:
             raise RuntimeError(f"megasheet {method}: {msg['error'].get('message', msg['error'])}")
         return msg['result']
 
+    def _check(self, tool, args):
+        if tool in READ_TOOLS:
+            return
+        if tool not in WRITE_TOOLS:
+            raise NotAllowed(f'megasheet: {tool} is not allowed for the watcher')
+        camp = args.get('campaignId')
+        if camp not in WRITE_CAMPAIGNS:  # also: no campaign = Megasheet's "active campaign" - never written blindly
+            raise NotAllowed(f'megasheet: {tool} refused - campaign {camp} is not France, Spain or Slovenia')
+        known = self.known.get(camp)
+        if known is None:
+            raise NotAllowed(f'megasheet: {tool} refused - the formats of {WRITE_CAMPAIGNS[camp]} were not read first')
+        targets = [args[k] for k in ('id', 'ideaId') if args.get(k)] + list(args.get('ids') or [])
+        if tool == 'formats_updateIdea' and args.get('groupId'):
+            targets.append(args['groupId'])
+        unknown = [t for t in targets if t not in known]
+        if unknown:
+            raise NotAllowed(f'megasheet: {tool} refused - {len(unknown)} id(s) not in {WRITE_CAMPAIGNS[camp]}')
+
+    def _remember(self, tool, args, out):
+        camp = args.get('campaignId')
+        if tool == 'formats_getIdeas' and camp:
+            ids = self.known.setdefault(camp, set())
+            for i in out or []:
+                ids.add(i['id'])
+                ids.update(m['id'] for m in i.get('media', []))
+                if i.get('groupId'):
+                    ids.add(i['groupId'])
+        elif tool in ('formats_createIdea', 'formats_addMediaFromUrl') and isinstance(out, dict) and out.get('id'):
+            self.known[camp].add(out['id'])
+
     def call(self, tool, **args):
+        self._check(tool, args)
+        out = self._call(tool, **args)
+        self._remember(tool, args, out)
+        return out
+
+    def _call(self, tool, **args):
         res = self._rpc('tools/call', {'name': tool, 'arguments': args})
         text = ''.join(c.get('text', '') for c in res.get('content', []) if c.get('type') == 'text')
         if res.get('isError'):

@@ -1,13 +1,20 @@
 """Order of the formats on a market's list.
 
-1. What is going viral RIGHT NOW: most confirmed viral videos (100k+) posted in the last 7 days first.
-   (Hot formats - 5+ JobStep videos - always stay on top; our own creators' viral videos count here too.)
-2. Tie-breaker / formats without viral videos this week: current form (see form() - recent weeks count most).
+Saves decide (user's rule, 16 Oct 2026 - like the Memo AI watcher): the lists hold formats that CONVERT best and still
+go viral (conversion.py). Inside each part of the list (see 0. below):
+1. Hot formats first: 5+ confirmed viral videos in the last 7 days AND their viewers save them at least like an
+   average format (conversion.hot_min_conv). A format that only goes viral is not hot.
+2. Then by conversion score = conv x reach ** 0.5: conv = how many viewers save its videos compared with a typical
+   video of their market (recent weeks count most, few videos -> pulled towards average), reach = current form (form()
+   below: how likely one video of it goes viral right now, JobStep + our own creators).
+3. Ties: viral videos in the last 7 days (JobStep + ours), then in the last 30 days.
+Before the saves order this was: what goes viral right now first, then current form.
    The older long-term score below is still computed for the weekly report: long-term score = smoothed share of videos with 100k+
    views + weight_20k * smoothed share with 20k+ views. Smoothing pulls small samples towards the network average,
    and new formats (< 5 videos) are capped below the three strongest proven formats.
 0. Before all of this (each market on its own, see order()): our own creators' results in THAT market put every
-   format in a tier (own.tiers): 1 proven for us -> top, 2 solid, 3 not tested enough (JobStep decides),
+   format in a tier (own.tiers): 1 proven for us (views AND, when known, our viewers save it like a typical video of
+   the market) -> top, 2 solid, 3 not tested enough (JobStep decides),
    4 weak for us -> bottom, even when JobStep goes viral with it. The tiers come from a weekly snapshot
    (main.own_tiers), so the list does not reshuffle every 6 hours.
 3. Our own creators (own.py): the JobStep score is multiplied by how the format does for OUR creators compared with
@@ -95,6 +102,16 @@ def form(history, formats, cfg, own_stats=None, now=None):
     return out
 
 
+def viral_30d(history, formats, cfg, now=None):
+    """{format_id: confirmed viral videos (100k+) posted in the last 30 days} (tie-breaker after the last 7 days)."""
+    now = now or time.time()
+    out = {}
+    for v in history.values():
+        if v.get('format') and v['views'] >= cfg['thresholds']['viral_views'] and now - v['created'] <= 30 * 86400:
+            out[v['format']] = out.get(v['format'], 0) + 1
+    return out
+
+
 def own_stats(formats, market=None):
     from . import own, state
     return own.stats(own.videos_now(), formats, time.time(), market=market)
@@ -106,34 +123,45 @@ def section(tier, hot_now):
 
 
 def going_viral(tier, hot_now, own_viral_week):
-    """The red "going viral" card holds only what goes viral NOW: hot for JobStep (5+ viral videos in 7 days) and not
-    weak for us, or one of our videos in this market passed 100k in the last 7 days. Formats that only did well for
-    us earlier stay at the top of the list, under the card."""
+    """The red "going viral" card holds only what goes viral NOW: hot for JobStep (5+ viral videos in 7 days that
+    viewers also save) and not weak for us, or one of our videos in this market passed 100k in the last 7 days (counted
+    by order() only while viewers save the format - 16 Oct 2026). Formats that only did well for us earlier stay at
+    the top of the list, under the card."""
     return (hot_now or own_viral_week > 0) and tier != 4
 
 
 def order(history, formats, cfg, m='de', local=(), tiers=None, market=None):
     """List order. Without tiers: the JobStep order (hot first, then what goes viral, then form). With tiers (one
     market's own.tiers): the red card = what goes viral now (going_viral), then the other formats proven for us,
-    then tier 2, 3, 4 - inside each part the JobStep order. market: only our creators of that market count."""
-    from . import hot
+    then tier 2, 3, 4 - inside each part the saves order (hot, conversion score, viral 7 / 30 days). market: only our
+    creators of that market count. Each format's 'conv_score' / 'conv' / 'raw_rate' / 'saved_videos' are in the scores."""
+    from . import conversion, hot
     o = own_stats(formats, market)
     s = scores(history, formats, cfg, m, local, o)
     fo = form(history, formats, cfg, o)
+    conv, _ = conversion.board(history, formats, cfg, reach=fo)
     recent = recent_viral(history, formats, cfg, m)
+    month = viral_30d(history, formats, cfg)
+    hot_min = conversion.conf(cfg)['hot_min_conv']
     tiers = tiers if tiers is not None else {}
     use_tiers = bool(tiers)
     for fid in s:
         s[fid]['recent_viral'] = recent.get(fid, 0)
         s[fid]['recent_own'] = o.get(fid, {}).get('recent_viral', 0)
+        s[fid]['viral_30d'] = month.get(fid, 0)
         s[fid]['form'] = fo[fid]['form']
+        s[fid].update({'conv': conv[fid]['conv'], 'conv_score': conv[fid]['score'], 'raw_rate': conv[fid]['raw_rate'],
+                       'saved_videos': conv[fid]['videos']})
         s[fid]['tier'] = tiers.get(fid, {}).get('tier', 3)
-        s[fid]['hot'] = s[fid]['recent_viral'] >= hot.MIN_VIRAL
-        s[fid]['top'] = going_viral(s[fid]['tier'], s[fid]['hot'], s[fid]['recent_own']) if use_tiers else s[fid]['hot']
+        s[fid]['hot'] = s[fid]['recent_viral'] >= hot.MIN_VIRAL and conv[fid]['conv'] >= hot_min
+        # our viral video puts a format on the red card only while viewers save it (ours and JobStep's, 16 Oct 2026)
+        saved = not tiers.get(fid, {}).get('saves_low') and conv[fid]['conv'] >= hot_min
+        own_week = s[fid]['recent_own'] if saved else 0
+        s[fid]['top'] = going_viral(s[fid]['tier'], s[fid]['hot'], own_week) if use_tiers else s[fid]['hot']
 
     def key(fid):
         x = s[fid]
-        jobstep = (-x['hot'], -(x['recent_viral'] + x['recent_own']), -x['form'])
+        jobstep = (-x['hot'], -x['conv_score'], -(x['recent_viral'] + x['recent_own']), -x['viral_30d'])
         if not use_tiers:
             return jobstep
         return (not x['top'], section(x['tier'], x['hot']), x['tier'] if x['tier'] != 1 else 0, *jobstep)

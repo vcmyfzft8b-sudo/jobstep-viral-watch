@@ -124,3 +124,20 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - Slovenian job sites in `brands.LOCALISE`: MojeDelo, Zaposlitev.net, Zavod za zaposlovanje, LinkedIn.
 - Discord announcements are off for Slovenia like France/Spain; a webhook can be saved with
   `scripts/save_discord_webhook.sh sl` (secret `DISCORD_WEBHOOK_URL_SI`).
+
+## Saves decide (16 Oct 2026, user: "like Memo – conversion and virality both")
+- `watcher/conversion.py` + `config.json → conversion`: the lists hold formats that CONVERT best (viewers save them)
+  and still go viral. Score = conv × reach^0.5; conv = each video's save rate ÷ the typical rate of ITS market (creator
+  language: accounts.json lang / meta.handle_lang; Spain ~2.8 %, France ~2 %, DACH ~0.6 %; < 10 measured videos → all
+  markets), smoothed with 3 typical videos, recent weeks count most; reach = `rank.form`. Order inside each tier: hot
+  (5+ viral in 7 days AND conv ≥ 1) → score → viral 7 d → viral 30 d.
+- Paid ads (likes < 0.7 % of views, e.g. jobstep.io brand videos) are not measured and never build a format.
+- Build gate (replaces the shares+saves 1.5 % rule): viral / rising needs saves ≥ 0.5 × market typical; level
+  `converting` (30k+ views, 300+ saves, ≥ 2 % and ≥ 1.2 × market typical) builds like rising (its one Slack ping);
+  an archived format comes back only with a video saved ≥ market typical; unknown saves → the alert waits ≤ 6 days.
+- Proven for us (`own.tiers` tier 1) also needs our TikTok videos of it saved ≥ market typical (`own_rate`, 3k+ views;
+  Instagram = unknown → views decide); else tier 2 + `saves_low`. Our viral video counts for the red card only while
+  the format is saved (not `saves_low`, conv ≥ 1). Example: X08 in France (our videos 0.97 % vs typical 2.3 % on 16 Oct).
+- Monday clean-up: 2+ measured videos and score < 0.9 → archive, even when viral or new (protected: proven, hot,
+  viral in 21 days with conv ≥ 1). History keeps likes/saves/shares (`conversion.record`); older videos are read 60 per
+  full run (`read_saves`, then sorted into formats); `mode=conversion` reads up to 500 at once and prints every list.

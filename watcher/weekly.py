@@ -2,6 +2,7 @@
 import time
 
 from . import notify, own, rank, state
+from .conversion import pct
 
 WEEK = 7 * 86400
 
@@ -18,11 +19,12 @@ def report(history, own_videos, own_accounts, fmts, cfg, now):
     ours = {vid: v for vid, v in own_videos.items() if v.get('ours') and now - v['created'] <= WEEK}
 
     lines = [f"_{time.strftime('%d.%m.', time.gmtime(now - WEEK))}–{time.strftime('%d.%m.%Y', time.gmtime(now))}_", '',
-             '*Top 5 formats (current list order)*']
+             '*Top 5 formats (list order without our creators: saves first, views second)*']
     for n, fid in enumerate(ids[:5], 1):
         js = [v for v in week.values() if v.get('format') == fid]
         us = [v for v in ours.values() if v.get('format') == fid]
-        lines.append(f"{n}. *{title(fid)}*\n      JobStep: {len(js)} videos, {sum(v['views'] >= 100_000 for v in js)} viral"
+        lines.append(f"{n}. *{title(fid)}* – saved by {pct(s[fid]['raw_rate'])} of viewers ({s[fid]['saved_videos']} videos)"
+                     f"\n      JobStep: {len(js)} videos, {sum(v['views'] >= 100_000 for v in js)} viral"
                      f" · Ours: {len(us)} videos, {_k(sum(v['views'] for v in us))} views"
                      + (f", best {_k(max(v['views'] for v in us))}" if us else '')
                      + (f" · for us so far: {2 ** s[fid]['own_lift']:.1f}x our creators' usual views"
@@ -79,6 +81,9 @@ def market_lines(history, own_videos, fmts, cfg, now, title, show=5):
         row = lambda fid: (f"*{title(fid)}* – {own.TIER_NAMES[s[fid]['tier']]}"
                            + (f" · ours: {t[fid]['n']} videos, avg {_k(t[fid]['avg'])}, best {_k(t[fid]['best'])}"
                               if fid in t and t[fid]['n'] else ' · no videos of ours yet')
+                           + (f" · our viewers save it less than a typical video ({pct(t[fid].get('save_rate'))} vs "
+                              f"{pct(t[fid].get('typical_rate'))}) - not proven" if t.get(fid, {}).get('saves_low') else '')
+                           + f" · saved by {pct(s[fid]['raw_rate'])} ({s[fid]['saved_videos']} videos)"
                            + f" · JobStep: {recent.get(fid, 0)} viral in 7 days")
         lines.append(f'{name}')
         lines += [f'{n}. {row(fid)}' for n, fid in enumerate(ids[:show], 1)]

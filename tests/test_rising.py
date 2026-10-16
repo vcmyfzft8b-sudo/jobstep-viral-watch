@@ -17,7 +17,7 @@ LIVE = {'id': 'LIVE', 'status': 'active', 'title': 'Live format', 'pages': {}}
 
 def video(**kw):
     return {'id': '1', 'handle': 'someone', 'created': NOW - 20 * 3600, 'views': 35_000, 'shares': 700, 'saves': 700,
-            'likes': 0, 'url': 'https://www.tiktok.com/@someone/video/1', 'notified': [], **kw}
+            'likes': 2_000, 'url': 'https://www.tiktok.com/@someone/video/1', 'notified': [], **kw}
 
 
 class LevelTests(unittest.TestCase):

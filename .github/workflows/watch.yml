@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = full run · auto = like the schedule (full every 6 h, else light) · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, fill-sl, dedupe, faithful-check, faithful-fix, weekly, own-sync, megasheet-check, pages-dry, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync]
+        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, fill-sl, dedupe, faithful-check, faithful-fix, weekly, own-sync, megasheet-check, pages-dry, monday-dry, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Megasheet changes)'
@@ -158,6 +158,7 @@ jobs:
             only-detect) python -m watcher.main --only-detect ;;
             auto)        python -m watcher.main --auto ;;
             pages-dry)   python -m watcher.main --pages-dry ;;
+            monday-dry)  python -m watcher.main --monday-dry ;;
             *)           python -m watcher.main ;;
           esac
 

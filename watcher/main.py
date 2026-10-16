@@ -20,7 +20,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, conversion, crosscheck, detect, discover, faithful, gate, hot, lineup, llm, localize, markets as M, media, notify, pages, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
+from . import align, audit, builder, megasheet, classify, conversion, crosscheck, detect, discover, faithful, gate, hot, lineup, llm, localize, markets as M, media, notify, pages, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es', 'sl')
@@ -352,53 +352,7 @@ def run(dry_run=False, only_detect=False, auto=False):
         if is_due:  # mark the Monday work as done first, so it never repeats (even if a step fails or times out)
             meta['lineup'] = week_id
             state.save('meta.json', meta)
-            try:
-                p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
-                print('clean-up:', [f['title'] for f, _, _ in p['out']],
-                      {m: [f['title'][:30] for f in fs] for m, fs in p['off'].items() if fs})
-                meta['lineup'] = week_id
-                state.save('formats.json', fmts)
-            except Exception as e:
-                traceback.print_exc()
-                notify.push('⚠️ Weekly clean-up failed', str(e)[:300])
-
-        if is_due:
-            try:  # Monday: every active format gets its missing language pages
-                for mk in mkts:
-                    if any(f.get('status') == 'active' and not page_of(f, mk['key']) for f in fmts):
-                        state.save('formats.json', fmts)
-                        fill_market(mk['key'])
-                        fmts[:] = load_formats()
-            except Exception as e:
-                step_failed('fill pages', e)
-        if is_due:
-            try:  # Monday: inspiration videos in each market's language for formats that still miss one
-                localize_report(localize.run(fmts, mkts, history, account_info, meta, cfg, page_of, now), only_changes=True)
-                state.save('formats.json', fmts)
-            except Exception as e:
-                step_failed('localize', e)
-            try:  # Monday: every page must check out (example video = format, script = its transcript)
-                bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page, only_failed=True) if r[2] not in ('ok', 'fixed')]
-                state.save('formats.json', fmts)
-                if bad:
-                    notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
-            except Exception as e:
-                step_failed('audit', e)
-            try:  # Monday: independent 1:1 check of every live script; pages with changes are transcribed again
-                rep = faithful.run(fmts, mkts, cfg, page_of)
-                still = [x for x in faithful.fix(rep, fmts, mkts, cfg, page_of) if not x[2].get('ok')]
-                state.save('formats.json', fmts)
-                if still:
-                    notify.push('⚠️ Scripts that are still not 1:1 with their video', '\n'.join(
-                        f"{m} {t} – " + '; '.join(f"{p.get('kind')}: «{(p.get('original') or '')[:60]}»"
-                                                  for p in r.get('problems', [])[:3]) for t, m, r in still))
-            except Exception as e:
-                step_failed('1:1 script check', e)
-            try:  # Monday: every format's three countries TOGETHER against its reference (cached unless anything changed)
-                group_report(fmts, mkts, cfg, meta, fix=True)
-                state.save('formats.json', fmts)
-            except Exception as e:
-                step_failed('cross-country check', e)
+            monday_work(fmts, mkts, cfg, history, account_info, meta, own_videos, now)
 
     # 5. going-viral card + Discord (every market), then sort all lists in the same order (what goes viral right now first)
     if not only_detect and not light:
@@ -487,6 +441,55 @@ def run(dry_run=False, only_detect=False, auto=False):
         report_failures(meta, now)
         state.save('meta.json', meta)
     print('actions:', json.dumps(actions, ensure_ascii=False))
+
+
+def monday_work(fmts, mkts, cfg, history, account_info, meta, own_videos, now):
+    """The Monday work: clean-up (best 12 per list), missing pages, examples in each language, the page audit, the 1:1
+    script check and the cross-country check - every step on its own (a failing step never stops the others)."""
+    try:
+        p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
+        print('clean-up:', [f['title'] for f, _, _ in p['out']],
+              {m: [f['title'][:30] for f in fs] for m, fs in p['off'].items() if fs})
+        state.save('formats.json', fmts)
+    except Exception as e:
+        traceback.print_exc()
+        notify.push('⚠️ Weekly clean-up failed', str(e)[:300])
+
+    try:  # Monday: every active format gets its missing language pages
+        for mk in mkts:
+            if any(f.get('status') == 'active' and not page_of(f, mk['key']) for f in fmts):
+                state.save('formats.json', fmts)
+                fill_market(mk['key'])
+                fmts[:] = load_formats()
+    except Exception as e:
+        step_failed('fill pages', e)
+    try:  # Monday: inspiration videos in each market's language for formats that still miss one
+        localize_report(localize.run(fmts, mkts, history, account_info, meta, cfg, page_of, now), only_changes=True)
+        state.save('formats.json', fmts)
+    except Exception as e:
+        step_failed('localize', e)
+    try:  # Monday: every page must check out (example video = format, script = its transcript)
+        bad = [r for r in audit.run(fmts, mkts, cfg, history, account_info, meta, page_of, rebuild=rebuild_page, only_failed=True) if r[2] not in ('ok', 'fixed')]
+        state.save('formats.json', fmts)
+        if bad:
+            notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
+    except Exception as e:
+        step_failed('audit', e)
+    try:  # Monday: independent 1:1 check of every live script; pages with changes are transcribed again
+        rep = faithful.run(fmts, mkts, cfg, page_of)
+        still = [x for x in faithful.fix(rep, fmts, mkts, cfg, page_of) if not x[2].get('ok')]
+        state.save('formats.json', fmts)
+        if still:
+            notify.push('⚠️ Scripts that are still not 1:1 with their video', '\n'.join(
+                f"{m} {t} – " + '; '.join(f"{p.get('kind')}: «{(p.get('original') or '')[:60]}»"
+                                          for p in r.get('problems', [])[:3]) for t, m, r in still))
+    except Exception as e:
+        step_failed('1:1 script check', e)
+    try:  # Monday: every format's three countries TOGETHER against its reference (cached unless anything changed)
+        group_report(fmts, mkts, cfg, meta, fix=True)
+        state.save('formats.json', fmts)
+    except Exception as e:
+        step_failed('cross-country check', e)
 
 
 JUDGE_TRIES = 3  # runs (6 h apart) the Claude check may fail before the basic viral alert goes out
@@ -1472,6 +1475,46 @@ def pages_dry():
     print(pages.summary())
 
 
+def monday_dry():
+    """Rehearsal of the Monday work (mode monday-dry) on the real Megasheet formats: clean-up, missing pages, examples,
+    page audit, 1:1 check, cross-country check and the re-sort run exactly as on Monday (with Claude), but nothing is
+    kept: every Megasheet write and Slack message is only printed, the state is a throw-away copy (only a renewed
+    Megasheet login is kept - the old one may be used up)."""
+    real = state.DIR
+    tmp = tempfile.mkdtemp(prefix='monday-dry-')
+    shutil.copytree(real, os.path.join(tmp, 'state'))
+    state.DIR = os.path.join(tmp, 'state')
+    pages.DRY = True
+    sent = []
+    notify.push = lambda title, message, click=None, tags='': (sent.append(title), print(
+        f'[dry slack] {title} | ' + message.replace(chr(10), ' / ')[:600], flush=True))
+    notify.radar = lambda *a, **k: None
+    try:
+        cfg, fmts = load_config(), load_formats()
+        mkts = M.load(cfg)
+        history, meta = state.load('history.json', {}), state.load('meta.json', {})
+        account_info = state.load('accounts.json', {})
+        _, own_videos = own.load()
+        CTX.update({'meta': meta, 'accounts': account_info})
+        FAILED.clear()
+        monday_work(fmts, mkts, cfg, history, account_info, meta, own_videos, time.time())
+        try:
+            rerank(mkts, fmts, history, cfg)
+        except Exception as e:
+            step_failed('re-sort', e)
+    finally:
+        for name in (megasheet.LOGIN_FILE, megasheet.INFO_FILE):  # a renewed login must survive the rehearsal
+            if os.path.exists(os.path.join(state.DIR, name)):
+                shutil.copyfile(os.path.join(state.DIR, name), os.path.join(real, name))
+        state.DIR = real
+    print('MONDAY REHEARSAL - steps that failed:', FAILED or 'none')
+    print('MONDAY REHEARSAL - Slack messages it would send:', sent or 'none')
+    print('MONDAY REHEARSAL - Megasheet writes it would make:')
+    for w in pages.STORE.writes:
+        print('  ' + w)
+    print(pages.summary())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
@@ -1510,6 +1553,7 @@ def main():
     ap.add_argument('--timing', action='store_true', help='read-only: second Parakeet AI is first shown/said on every live page')
     ap.add_argument('--tidy', action='store_true', help='every live page: few link cues, hook names the title, bold title, page name = title')
     ap.add_argument('--auto', action='store_true', help='scheduled run: full every 6 hours, light in between')
+    ap.add_argument('--monday-dry', action='store_true', help='rehearsal of the Monday work: everything runs, nothing is written (Megasheet writes + Slack only printed)')
     ap.add_argument('--pages-dry', action='store_true', help='read-only: what comebacks, re-sort and tidy would change in Megasheet now (nothing is written)')
     ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
@@ -1789,6 +1833,9 @@ def main():
         return
     if a.pages_dry:
         pages_dry()
+        return
+    if a.monday_dry:
+        monday_dry()
         return
     if a.verify:
         from . import verify

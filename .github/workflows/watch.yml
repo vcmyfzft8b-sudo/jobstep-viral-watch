@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = full run · auto = like the schedule (full every 6 h, else light) · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, fill-sl, dedupe, faithful-check, faithful-fix, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
+        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, fill-sl, dedupe, faithful-check, faithful-fix, weekly, own-sync, megasheet-check, megasheet-formats, megasheet-formats-dry, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -158,8 +158,27 @@ jobs:
             init-es)     python -m watcher.main --init-market es ;;
             only-detect) python -m watcher.main --only-detect ;;
             auto)        python -m watcher.main --auto ;;
+            megasheet-formats|megasheet-formats-dry) echo "only the Megasheet format copy (next step)" ;;
             *)           python -m watcher.main ;;
           esac
+
+      # Creators read the formats in Megasheet: every run copies each market's Notion list there (same order, hot
+      # formats first, formats off the list archived). A failure here never fails the run (Slack note once a day).
+      - name: Copy the format lists to Megasheet
+        if: success() && github.event.inputs.mode != 'dry-run' && github.event.inputs.test_video == '' && github.event.inputs.test_viral == ''
+        continue-on-error: true
+        env:
+          STATE_DIR: state-branch/state
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          MEGASHEET_LOGIN: ${{ secrets.MEGASHEET_LOGIN }}
+          MEGASHEET_KEY: ${{ secrets.MEGASHEET_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
+          PYTHONUNBUFFERED: '1'
+        run: |
+          if [ "$MODE" = "megasheet-formats-dry" ]; then python -m watcher.megasheet_formats --dry-run
+          else python -m watcher.megasheet_formats; fi
 
       - name: Save state
         id: save_state

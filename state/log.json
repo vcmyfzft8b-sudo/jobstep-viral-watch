@@ -6267,5 +6267,100 @@
   },
   "ts": 1792155464,
   "type": "rerank"
+ },
+ {
+  "form": 0.88,
+  "format": "FRX34",
+  "reason": "not among the best 12 of any list: score 0.88 (saved by 2.4% of viewers, 2 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
+  "ts": 1792155546,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.08,
+  "format": "N07",
+  "reason": "not among the best 12 of any list: score 1.08 (saved by 2.9% of viewers, 13 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
+  "ts": 1792155547,
+  "type": "lineup_out"
+ },
+ {
+  "form": 1.12,
+  "format": "X18",
+  "reason": "not among the best 12 of any list: score 1.12 (saved by 2.2% of viewers, 8 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
+  "ts": 1792155548,
+  "type": "lineup_out"
+ },
+ {
+  "order": [
+   "FRX22",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X03",
+   "N02",
+   "A202610061332",
+   "X09",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "X16",
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX28",
+    "ESX11",
+    "X08",
+    "X13",
+    "A202610061332",
+    "N04",
+    "X03",
+    "X09",
+    "A20261009204851",
+    "FRX22",
+    "N10"
+   ],
+   "fr": [
+    "FRX22",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X03",
+    "N02",
+    "A202610061332",
+    "X09",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "X03",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061332",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "N10",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ]
+  },
+  "ts": 1792155584,
+  "type": "rerank"
  }
 ]

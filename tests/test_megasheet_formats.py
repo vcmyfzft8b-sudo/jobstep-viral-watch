@@ -386,10 +386,12 @@ class ResourceLineTests(unittest.TestCase):
         blocks = page()
         res = next(b for b in blocks if b['type'] == 'callout' and b['callout'].get('icon', {}).get('emoji') == '💡')
         res['callout']['rich_text'] += [
-            {'type': 'text', 'plain_text': '\n', 'text': {'content': '\n'}},
+            {'type': 'text', 'plain_text': '\n(', 'text': {'content': '\n('}},
             {'type': 'text', 'plain_text': 'Enregistrement Gmail', 'href': 'https://drive/x',
              'text': {'content': 'Enregistrement Gmail', 'link': {'url': 'https://drive/x'}}},
-            {'type': 'text', 'plain_text': ' — ouvre cette vidéo en plein écran', 'text': {'content': ' — ouvre cette vidéo en plein écran'}}]
+            {'type': 'text', 'plain_text': ') — ouvre cette vidéo en plein écran', 'text': {'content': ') — ouvre cette vidéo en plein écran'}}]
+        res['callout']['rich_text'][0:0] = [{'type': 'text', 'plain_text': '(', 'text': {'content': '('}}]
+        res['callout']['rich_text'].insert(2, {'type': 'text', 'plain_text': ')', 'text': {'content': ')'}})
         f = fr_fields(blocks)
         self.assertIn('- [Enregistrement Gmail](https://drive/x) — ouvre cette vidéo en plein écran', f['description'])
         self.assertNotIn('()', f['description'])

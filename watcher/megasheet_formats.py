@@ -139,7 +139,7 @@ def read_page(page_id, T, blocks=None):
         elif sec == 'res':
             p['links'] += _links(rich)
             for line in text.split('\n'):  # a line keeps its link ('[Gmail](…) — film it full screen')
-                t = line.strip()
+                t = re.sub(r'\((\[[^\]]+\]\([^)]+\))\)', r'\1', line).strip()  # '([Gmail](…))' -> '[Gmail](…)'
                 if t and not re.fullmatch(r'\[[^\]]+\]\([^)]+\)', t):  # a bare link is in the resources list
                     p['res_text'].append(t)
     return p

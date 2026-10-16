@@ -265,3 +265,65 @@ class SyncTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class WriteLimitTests(unittest.TestCase):
+    """The login can technically write everything in Megasheet; the client only lets format writes of France, Spain
+    and Slovenia through, on ideas of that same campaign (user, 16 Oct 2026). DACH is never written."""
+    FR, DACH = '5cf4df12-f6dd-467a-a1e8-dbe07f709425', '34028603-9b92-4e29-aac9-9e6633444464'
+
+    def client(self):
+        from watcher import megasheet
+        c = megasheet.Client.__new__(megasheet.Client)
+        c.known, c.sent = {}, []
+
+        def fake(tool, **a):
+            c.sent.append(tool)
+            if tool == 'formats_getIdeas':
+                return [{'id': 'idea-fr', 'media': [{'id': 'media-fr'}], 'groupId': None}]
+            return {'id': 'new-id'}
+        c._call = fake
+        return c
+
+    def test_only_format_writes_are_sent(self):
+        from watcher import megasheet
+        c = self.client()
+        for tool, args in (('creator_setStatus', {'id': 'x', 'status': 'stopped'}),
+                           ('payout_get', {'id': 'x'}), ('discord_sendMessage', {'content': 'hi'}),
+                           ('formats_updatePageSettings', {'campaignId': self.FR}),
+                           ('formats_updateGuide', {'campaignId': self.FR, 'id': 'g'}),
+                           ('formats_deleteIdea', {'campaignId': self.FR, 'id': 'idea-fr'}),
+                           ('tier_update', {'campaignId': self.FR})):
+            with self.assertRaises(megasheet.NotAllowed, msg=tool):
+                c.call(tool, **args)
+        self.assertEqual(c.sent, [])
+
+    def test_dach_and_unnamed_campaigns_are_never_written(self):
+        from watcher import megasheet
+        c = self.client()
+        c.call('formats_getIdeas', campaignId=self.DACH)  # reading is fine
+        for args in ({'campaignId': self.DACH, 'id': 'idea-fr', 'status': 'archived'}, {'id': 'idea-fr', 'status': 'archived'}):
+            with self.assertRaises(megasheet.NotAllowed):
+                c.call('formats_updateIdeaStatus', **args)
+        self.assertEqual(c.sent, ['formats_getIdeas'])
+
+    def test_writes_only_touch_ideas_of_that_campaign(self):
+        from watcher import megasheet
+        c = self.client()
+        with self.assertRaises(megasheet.NotAllowed):  # formats not read yet
+            c.call('formats_updateIdeaStatus', campaignId=self.FR, id='idea-fr', status='archived')
+        c.call('formats_getIdeas', campaignId=self.FR)
+        c.call('formats_updateIdeaStatus', campaignId=self.FR, id='idea-fr', status='archived')
+        c.call('formats_removeMedia', campaignId=self.FR, id='media-fr')
+        new = c.call('formats_createIdea', campaignId=self.FR, name='n')
+        c.call('formats_reorderIdeas', campaignId=self.FR, ids=['idea-fr', new['id']])
+        with self.assertRaises(megasheet.NotAllowed):  # an idea of another campaign
+            c.call('formats_updateIdeaStatus', campaignId=self.FR, id='idea-of-dach', status='archived')
+        with self.assertRaises(megasheet.NotAllowed):
+            c.call('formats_reorderIdeas', campaignId=self.FR, ids=['idea-fr', 'idea-of-dach'])
+
+    def test_dach_is_not_copied_even_if_switched_on(self):
+        self.assertNotIn('de', MF.COPY_MARKETS)
+        from watcher import megasheet
+        self.assertEqual(set(megasheet.WRITE_CAMPAIGNS.values()),
+                         {'ParakeetAI - France', 'ParakeetAI - Spain', 'ParakeetAI - Slovenia'})

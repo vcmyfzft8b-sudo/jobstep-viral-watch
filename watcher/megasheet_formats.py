@@ -30,6 +30,7 @@ from . import markets as M, megasheet, notion, notify, state
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 STATE_FILE = 'megasheet_formats.json'
 MARKET_CAMPAIGN = {m: name for name, m in megasheet.CAMPAIGNS.items()}
+COPY_MARKETS = ('fr', 'es', 'sl')  # the only campaigns the copy writes to (megasheet.WRITE_CAMPAIGNS checks it again)
 
 
 # --- Notion page -> idea fields -----------------------------------------------------------------------------------
@@ -376,8 +377,10 @@ def sync(dry=False, only=None):
     for mk in M.load(cfg):
         if only and mk['key'] not in only:
             continue
+        if mk['key'] not in COPY_MARKETS:  # DACH is never touched (user, 16 Oct 2026), even if switched on again
+            continue
         name = MARKET_CAMPAIGN.get(mk['key'])
-        if name not in camps:
+        if name not in camps or camps[name] not in megasheet.WRITE_CAMPAIGNS:
             print(f"megasheet formats: no campaign for {mk['key']}")
             continue
         print(f"megasheet formats {mk['key']} ({name}):", flush=True)

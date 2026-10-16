@@ -751,12 +751,15 @@ def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
         if not pid:
             pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
             if problems:
+                print('page not built:', mk['key'], fmt['title'][:40], '-', '; '.join(problems)[:300])
                 continue
             pending_pages[mk['key']] = pid
             state.save('formats.json', fmts)
         staged_page_of = lambda f, m: pid if f['id'] == fmt['id'] and m == mk['key'] else page_of(f, m)
         status, notes = audit.fix_page(fmt, mk, cfg, history, accounts, meta, staged_page_of)
         meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = status
+        if status not in ('ok', 'fixed'):
+            print('page held by the check:', mk['key'], fmt['title'][:40], status, '-', ' / '.join(notes or [])[:300])
         if status in ('ok', 'fixed'):
             notion.move_page(pid, mk['holder_page'])
             set_page(fmt, mk['key'], pid)

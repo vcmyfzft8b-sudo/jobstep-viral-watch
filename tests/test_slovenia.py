@@ -92,20 +92,22 @@ class AdoptTests(unittest.TestCase):
 
 
 class SkipTests(unittest.TestCase):
-    """Only JobStep formats in Slovenia: the two study-app formats (from @lern.mit.domi, also a Memo AI source) never
-    get a Slovenian page, list entry or check."""
-    SKIP = ('A20261009204851', 'A20261014173459')
+    """Only JobStep formats in Slovenia: the study-app format 'hardest schools' (from @lern.mit.domi, also a Memo AI
+    source) never gets a Slovenian page, list entry or check. The laptop ad spot is on the list (user, 16 Oct 2026)."""
+    SKIP = ('A20261014173459',)
+    LAPTOP = 'A20261009204851'
 
-    def test_config_skips_the_study_app_formats(self):
-        self.assertEqual(set(CFG['markets']['sl']['skip_formats']), set(self.SKIP))
+    def test_config_skips_the_study_app_format(self):
+        self.assertEqual(CFG['markets']['sl']['skip_formats'], [self.SKIP[0]])
         mkts = markets.load(CFG)
         self.assertNotIn('sl', [mk['key'] for mk in markets.for_format(mkts, {'id': self.SKIP[0]})])
         self.assertIn('sl', [mk['key'] for mk in markets.for_format(mkts, {'id': 'N10'})])
-        self.assertIn('fr', [mk['key'] for mk in markets.for_format(mkts, {'id': self.SKIP[0]})])  # France keeps them
+        self.assertIn('sl', [mk['key'] for mk in markets.for_format(mkts, {'id': self.LAPTOP})])  # user: add the laptop
+        self.assertIn('fr', [mk['key'] for mk in markets.for_format(mkts, {'id': self.SKIP[0]})])  # France keeps it
 
     def test_skipped_format_is_never_built_or_listed(self):
         mkts = [mk for mk in markets.load(CFG) if mk['key'] == 'sl']
-        f = {'id': self.SKIP[1], 'status': 'active', 'title': 't', 'pages': {'fr': 'x'}}
+        f = {'id': self.SKIP[0], 'status': 'active', 'title': 't', 'pages': {'fr': 'x'}}
         with mock.patch.object(main, 'missing_page') as mp:
             self.assertEqual(main.ready_page(f, mkts[0], [f], {}, CFG)[0], 'ok')
         mp.assert_not_called()
@@ -153,6 +155,9 @@ class SloveniaPageChecksTests(unittest.TestCase):
     def test_verify_skips_formats_that_are_not_in_the_market(self):
         from watcher import verify
         cfg = {'markets': {'sl': {**CFG['markets']['sl']}}, 'links': CFG['links']}
-        fmts = [{'id': 'A20261009204851', 'status': 'active', 'title': 'laptop', 'pages': {'fr': 'x'}}]
+        fmts = [{'id': 'A20261014173459', 'status': 'active', 'title': 'schools', 'pages': {'fr': 'x'}}]
         with mock.patch.object(verify.notion, 'list_entries', return_value=([], None)):
             self.assertEqual(verify.run(cfg, fmts, main.page_of), [])
+        laptop = [{'id': 'A20261009204851', 'status': 'active', 'title': 'laptop', 'pages': {'fr': 'x'}}]
+        with mock.patch.object(verify.notion, 'list_entries', return_value=([], None)):
+            self.assertEqual(verify.run(cfg, laptop, main.page_of), ['🇸🇮 laptop: no page'])  # on the list since 16 Oct

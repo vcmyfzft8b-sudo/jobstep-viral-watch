@@ -8,7 +8,7 @@ on:
       mode:
         description: 'normal = full run · auto = like the schedule (full every 6 h, else light) · only-detect = alerts only · dry-run = no alerts, no writes'
         type: choice
-        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
+        options: [normal, auto, only-detect, dry-run, test-notify, test-claude, check-hot, test-discord, relist, conversion, fill-sl, weekly, own-sync, megasheet-check, reset-pending, lineup, lineup-apply, localize, localize-recheck, reword, reword-dry, audit, audit-failed, group-audit, group-audit-force, group-fix, approval-drafts, apply-approved, gate-rehearsal, align, strip-directions, renote, refs, tidy, timing, verify, export, short-hooks, standardize, accounts-add, accounts-sync, init-fr, init-es]
         default: normal
       test_viral:
         description: 'Optional: TikTok video URL -> send the full VIRAL Slack message for it (no Notion changes)'
@@ -120,6 +120,7 @@ jobs:
             test-discord) python -m watcher.main --test-discord ;;
             relist)      python -m watcher.main --relist ;;
             conversion)  python -m watcher.main --conversion ;;
+            fill-sl)     python -m watcher.main --fill-market sl ;;
             weekly)      python -m watcher.main --weekly ;;
             own-sync)    python -m watcher.main --own-sync ;;
             reset-pending) python -m watcher.main --reset-pending ;;

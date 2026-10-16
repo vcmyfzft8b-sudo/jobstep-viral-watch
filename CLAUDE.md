@@ -121,6 +121,9 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - Exception (user, 16 Oct 2026: "add the laptop"): A20261009204851 (laptop ad spot, also from @lern.mit.domi) IS on
   the Slovenian list - its page is built from its example video (`mode=fill-sl` = `--fill-market sl`, else the Monday
   run). Checked the same day: no other Slovenian format comes from a Memo AI source account.
+- Slovenian letters (16 Oct 2026): `builder.validate` used to call č/š "non-Slovenian characters", so no Slovenian page
+  could be BUILT (all live ones were copies). `builder.OWN_LETTERS['sl'] = 'čšž'` are allowed; ć/đ (Croatian/Serbian)
+  and Polish/Czech letters still block. The language check's word pattern knows č/š/ž too.
 - `markets.TEXT['sl']`: page headings NASLOV / 💬SCENARIJ / 🎬 VIZUALNI HOOK / 🔧 VIRI, notes, list texts.
   `discover.language` knows Slovenian (stopwords chosen so Croatian/Serbian accounts are not taken); when a market
   language is added, the next full run sorts the accounts without a language again (`meta.account_langs`).

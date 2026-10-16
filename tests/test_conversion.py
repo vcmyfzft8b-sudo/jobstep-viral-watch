@@ -138,6 +138,24 @@ class ProvenTests(unittest.TestCase):
         self.assertEqual(t['IG']['tier'], 1)  # Instagram hides saves: views alone decide
         self.assertIsNone(t['IG']['save_rate'])
 
+    def test_proven_compares_with_our_own_typical_rate(self):
+        """16 Oct 2026: our French videos are saved by ~1% overall - a format saved by 2.2% is proven, even though
+        JobStep's typical French video is saved by 2.3%."""
+        v = {str(i): ours('fr', 'OTHER', 8_000, 80, days_old=5) for i in range(12)}  # our typical: 1.0%
+        v.update({'m1': ours('fr', 'MISTAKE', 171_000, 3_800), 'm2': ours('fr', 'MISTAKE', 40_000, 860)})  # 2.2%
+        v.update({'o1': ours('fr', 'OUTRAGE', 160_000, 1_100), 'o2': ours('fr', 'OUTRAGE', 35_000, 200)})  # 0.67%
+        fmts = [{'id': i} for i in ('OTHER', 'MISTAKE', 'OUTRAGE')]
+        self.assertAlmostEqual(conversion.own_typical(v, 'fr', CFG, NOW), 0.01)
+        t = own.tiers(v, fmts, NOW, 'fr', CFG)
+        self.assertEqual(t['MISTAKE']['tier'], 1)
+        self.assertEqual(t['OUTRAGE']['tier'], 2)
+        self.assertTrue(t['OUTRAGE']['saves_low'])
+
+    def test_too_few_measured_videos_of_ours_views_decide(self):
+        v = {'o1': ours('fr', 'OUTRAGE', 160_000, 100), 'o2': ours('fr', 'OUTRAGE', 35_000, 20)}
+        self.assertIsNone(conversion.own_typical(v, 'fr', CFG, NOW))
+        self.assertEqual(own.tiers(v, [{'id': 'OUTRAGE'}], NOW, 'fr', CFG)['OUTRAGE']['tier'], 1)
+
 
 class OrderTests(unittest.TestCase):
     def setUp(self):
@@ -210,6 +228,28 @@ class OrderTests(unittest.TestCase):
             p = lineup.apply(h, fmts, cfg, {}, mkts, now=NOW)  # proven in Spain too now: back on that list
         mv.assert_called_once_with('p-es', 'hold-es')
         self.assertNotIn('off_markets', fmts[-1])
+
+    def test_most_viral_and_best_converting_always_stay(self):
+        """Bullet proof (16 Oct 2026): even outside the best 12 by score, the most viral (saved like average) and the
+        best converting formats stay on every list."""
+        h, add = history()
+        for k in range(12):  # 12 formats with a high score (saved well + viral often)
+            for _ in range(3):
+                add(handle='es_a', fmt=f'G{k}', views=150_000, saves=5_400, days_old=10, judged=True)
+        for _ in range(8):  # the most viral of all, saved like average, but lower score
+            add(handle='es_a', fmt='VIRAL', views=400_000, saves=15_000, days_old=20, judged=True)
+        for _ in range(3):  # saved by 9% but small views
+            add(handle='es_a', fmt='SAVER', views=12_000, saves=1_080, days_old=10, judged=True)
+        add(handle='es_a', fmt='WEAK', views=20_000, saves=200, days_old=10, judged=True)
+        ids = [f'G{k}' for k in range(12)] + ['VIRAL', 'SAVER', 'WEAK']
+        fmts = [{'id': i, 'status': 'active', 'title': i} for i in ids]
+        cfg = {**CFG, 'markets': {'es': {'enabled': True}}}
+        with mock.patch.object(own, 'tiers', return_value={}), \
+                mock.patch.object(rank, 'form', return_value={i: {'form': 3.0 if i.startswith('G') else 1.0} for i in ids}):
+            p = lineup.plan(h, fmts, cfg, {}, now=NOW)
+        self.assertTrue(p['lists']['es']['VIRAL'].startswith('most viral now'))
+        self.assertTrue(p['lists']['es']['SAVER'].startswith('best converting'))
+        self.assertEqual([f['id'] for f, _, _ in p['out']], ['WEAK'])
 
     def test_pinned_format_stays(self):
         h, add = history()

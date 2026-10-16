@@ -229,6 +229,9 @@
   "lineup": {
     "remove_below": 1.0,
     "list_size": 12,
+    "keep_most_viral": 3,
+    "keep_best_converting": 3,
+    "converting_min_videos": 3,
     "min_formats": 8,
     "protect_days": 14,
     "half_life_days": 21,

@@ -22,7 +22,8 @@ viewers - Spain 2.7%, France 1.7%, DACH 0.6% - hacks / HR secrets with a real ap
 - weekly clean-up (lineup.py): a format with judge_min_videos+ measured videos whose score is below remove_below
   leaves the list, also when it still goes viral or is new.
 - our own creators (own.tiers): "proven for us" also needs our videos of it to be saved at least like a typical video
-  of that market (when their saves are known - Instagram hides saves, so those count as unknown).
+  OF OURS in that market (own_typical; when their saves are known - Instagram hides saves, so those count as unknown;
+  with fewer than own_min_videos measured videos of ours in the market, views alone decide).
 """
 import statistics
 import time
@@ -48,6 +49,8 @@ DEFAULTS = {
     'rate_cap': 0.12,             # one odd video cannot carry a format
     'ad_like_rate': 0.007,        # likes below this share of views = probably a paid ad
     'own_min_views': 3_000,       # our creators' videos: their save rate counts from this many views on
+    'own_window_days': 60,        # our creators' typical save rate per market: their measured videos of this window
+    'own_min_videos': 10,         # ... from this many on (fewer: our saves do not decide "proven", views do)
     'backfill_per_run': 60,
     'classify_per_run': 40,
 }
@@ -209,6 +212,20 @@ def own_rate(videos, fid, market, cfg, now=None, window_days=28, min_age_days=2)
         views += v['views']
         n += 1
     return (saves / views if views else None), n
+
+
+def own_typical(videos, market, cfg, now=None):
+    """OUR creators' typical save rate in one market (median of their measured TikTok videos, own_window_days), or
+    None with fewer than own_min_videos. "Proven for us" compares our videos of a format with THIS rate (user's rule,
+    16 Oct 2026): our creators' videos are saved less than JobStep's overall (France ~1% vs ~2.3%), so comparing them
+    with JobStep's rate took our best French format (X06) off the list."""
+    c = conf(cfg)
+    now = now or time.time()
+    rates = [v['bookmarks'] / v['views'] for v in videos.values()
+             if v.get('ours') and v.get('market') == market and v.get('platform') != 'instagram'
+             and v.get('bookmarks') is not None and v.get('views', 0) >= c['own_min_views']
+             and now - v.get('created', 0) <= c['own_window_days'] * DAY]
+    return statistics.median(rates) if len(rates) >= c['own_min_videos'] else None
 
 
 def pct(r):

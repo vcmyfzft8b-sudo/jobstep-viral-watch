@@ -53,8 +53,10 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    lists by itself (pages move back from the archive; `lineup.never_revive` keeps one out – X01 "rendez-vous": many
    views, almost no signups) and the Monday clean-up never takes a proven format out.
 8. **Monday clean-up – only the best stay** (user's rule, 16 Oct 2026): each market's list keeps the best 12 formats
-   by conversion score, plus the formats proven for our creators in that market, hot formats and formats you pinned
-   (`markets.<m>.pin_formats` – Slovenia: the laptop ad spot). Going viral or being new does not protect a format any
+   by conversion score, plus the formats proven for our creators in that market (views AND our viewers save them at
+   least like a typical video of ours there), hot formats, the 3 most viral formats right now (saved at least like an
+   average format), the 3 best converting formats and formats you pinned (`markets.<m>.pin_formats` – Slovenia: the
+   laptop ad spot). Going viral or being new does not protect a format any
    more. A format kept in no list moves to the archive (nothing deleted); one kept only in other markets leaves just
    that market's list (its page goes to that market's archive) and comes back there when it is among the best again.
    New formats join the lists right away; Monday cuts them back to 12 (+ proven/hot/pinned).

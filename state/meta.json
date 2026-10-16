@@ -1034,6 +1034,8 @@
   "ESX11:de": "ok",
   "ESX11:es": "ok",
   "ESX11:fr": "ok",
+  "FRX39:es": "failed",
+  "FRX39:fr": "failed",
   "N01:de": "ok",
   "N01:es": "ok",
   "N01:fr": "ok",
@@ -3168,9 +3170,17 @@
   "thelma.gtz": "es",
   "this.is.creed": "de"
  },
- "hot": {},
- "last_full_run": 1792094181,
- "last_run": 1792105611,
+ "hot": {
+  "N10": {
+   "announced": {},
+   "count": 5,
+   "creators": {},
+   "messages": {},
+   "since": 1792127044
+  }
+ },
+ "last_full_run": 1792125605,
+ "last_run": 1792125605,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3189,8 +3199,8 @@
  },
  "top3": [
   "X08",
-  "FRX22",
-  "X06"
+  "N10",
+  "FRX22"
  ],
  "top3_market": "fr",
  "video_hashes": {

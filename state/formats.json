@@ -1086,12 +1086,34 @@
   "title": "J’ai envoyer mon CV, j'ai eu un entretien, je commence"
  },
  {
+  "comeback_tries": 1,
   "description": "The creator walks through an ATS-passing CV template section by section: job title under the name, short summary with keywords, contact details and so on.",
   "id": "FRX39",
+  "inspo": {
+   "es": {
+    "own": true,
+    "rebuilt": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@mery.jobs23/video/7691809642518777110",
+    "views": 410
+   },
+   "fr": {
+    "own": true,
+    "rebuilt": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@mery.jobs23/video/7691809642518777110",
+    "views": 410
+   }
+  },
   "market_only": "fr",
   "pages": {
    "es": "3e6958b0-fc14-80e4-8e6e-c80af71244c4",
    "fr": "3ea958b0-fc14-80c7-8fe3-ea76eb6c7996"
+  },
+  "pending_pages": {},
+  "reworded": {
+   "es": true,
+   "fr": true
   },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Le modèle de CV qui passe les ATS en 2026 Voilà à quoi doit ressembler votre CV Les 5 choses à corriger sur votre CV aujourd'hui Pourquoi votre CV finit en bas de la pile L'erreur que tout le monde fait sur son CV Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Ça, c'est un modèle de CV qui passe les ATS et qui convainc les recruteurs. Première chose, l'intitulé du poste juste sous le nom. Vous postulez pour un poste précis, ça doit se voir en une seconde. Ensuite le résumé de profil. Trois ou quatre lignes grand max : pourquoi vous, pourquoi ce poste, pourquoi cette boîte. Et vous reprenez les mots-clés de l'annonce. Les contacts. Ça paraît bête, mais énormément de gens oublient leur adresse mail. Si elle n'y est pas, l'ATS ne remonte pas votre profil. Le recruteur peut toujours vous voir, sauf qu'avec 200 CV, il n'atteindr",
   "status": "archived",

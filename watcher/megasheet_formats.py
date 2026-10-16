@@ -6,17 +6,20 @@ Megasheet campaign (megasheet.CAMPAIGNS):
 - one Megasheet idea per format page on the list, in the list's order; the going-viral formats (red card) come first
   and start with the market's bold hot_header line;
 - title, script, visual hook, the ⚠️ note, the resources (TikTok original, Parakeet AI links) and the example video
-  come from the page. Every run compares the idea with the page and only sends what differs (also hand edits made in
-  Megasheet are put back to the page's text - Notion is the source);
+  come from the page. Every run compares the idea with the page and only sends what differs;
+- changes made by hand in Megasheet win (user, 16 Oct 2026: "from now on make changes directly in Megasheet"): an idea
+  whose content (or videos) differ from our last copy is never overwritten again - only its 🔥 line, its place in the
+  list and archived/published still follow the list;
 - a format that leaves the list is archived in Megasheet (never deleted) and published again when it comes back;
 - ideas made by hand in Megasheet are left alone (they stay after ours). On the first copy of a campaign, ideas with
   the same title are taken over (the one-time import of 15 Oct 2026) and the other published ones are archived.
 
 State (public state branch - ids only): state/megasheet_formats.json
-  {market: {page_id: {idea, media_key, media_ids, keep_titles}}, '_adopted': [markets], '_warned': ts}
+  {market: {page_id: {idea, fp, hand, media_key, media_ids, hand_media, keep_titles}}, '_adopted': [markets], '_warned': ts}
 Needs a Megasheet login with write access (scripts/save_megasheet_login.sh); without it the step only says so.
 """
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -221,6 +224,20 @@ def payload(fields, idea, keep_titles=()):
             'groupId': (idea or {}).get('groupId'), **({'tag': idea['tag']} if idea else {})}
 
 
+def set_hot(desc, T, hot):
+    """The description with (hot) or without the bold 🔥 going-viral first line."""
+    line = f"**🔥 {T['hot_header']}**"
+    body = desc[len(line):].lstrip('\n') if desc.startswith(line) else desc
+    return (line + ('\n\n' + body if body else '')) if hot else body
+
+
+def fingerprint(f, T):
+    """What we last wrote into an idea (content only - not the status, not the 🔥 line)."""
+    x = {k: v for k, v in f.items() if k != 'status'}
+    x['description'] = set_hot(x['description'], T, False)
+    return hashlib.sha256(json.dumps(x, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:16]
+
+
 def _size(url):
     try:
         with requests.get(url, timeout=30, stream=True) as r:  # signed links allow GET only: read the headers
@@ -251,6 +268,12 @@ def sync_media(w, idea, p, rec, adopted):
     """Example video (+ images of the page) as the idea's media. Only re-uploaded when the page's video changed."""
     key = _media_key(p)
     have = [m['id'] for m in idea.get('media', [])]
+    if rec.get('hand_media'):
+        return  # the media were changed by hand in Megasheet: they stay as they are
+    if rec.get('media_key') is not None and rec.get('media_ids') is not None and set(have) != set(rec['media_ids']):
+        rec['hand_media'] = True  # someone changed the videos in Megasheet since our last copy - Megasheet wins
+        print(f"  media changed in Megasheet - kept: {idea['name'][:50]}", flush=True)
+        return
     if rec.get('media_key') == key and set(rec.get('media_ids', [])) <= set(have):
         return
     if adopted and p['video'] and have and rec.get('media_key') is None:
@@ -317,8 +340,22 @@ def sync_market(c, mk, camp, S, dry=False, links=None):
         rec['idea'] = idea['id']
         claimed.add(idea['id'])
         ours.append(idea['id'])
-        if not created and current(idea) != wanted(fields, rec.get('keep_titles', [])):
-            _update(w, idea, fields, rec)
+        want = wanted(fields, rec.get('keep_titles', []))
+        if created:
+            rec['fp'] = fingerprint(want, T)
+        else:
+            cur = current(idea)
+            if not rec.get('hand') and rec.get('fp') and fingerprint(cur, T) != rec['fp']:
+                rec['hand'] = True  # edited by hand in Megasheet since our last copy (user, 16 Oct 2026: Megasheet wins)
+                print(f"  edited in Megasheet - kept: {idea['name'][:50]}", flush=True)
+            if rec.get('hand'):  # only the 🔥 line and the status still follow the list
+                own = dict(cur, description=set_hot(cur['description'], T, pid in hot), status='published')
+                if own != cur:
+                    _update(w, idea, dict(own, titles=[t for t in cur['titles'] if t not in rec.get('keep_titles', [])]), rec)
+            else:
+                if cur != want:
+                    _update(w, idea, fields, rec)
+                rec['fp'] = fingerprint(want, T)
         sync_media(w, idea, p, rec, adopted or first)
     # formats off the list -> archived (ours, and on the first copy every other published idea)
     for pid, rec in st.items():

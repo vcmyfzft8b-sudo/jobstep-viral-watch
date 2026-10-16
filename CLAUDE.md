@@ -75,8 +75,9 @@ here (repo, Notion, Discord, secrets, state are all separate).
   paragraph and at most 3 Parakeet AI cues per script (the renderer uses the same rule); a quoted on-screen text in the
   visual hook must be the 📲 title or a script line (else replaced by the title); title bold; page name = "<n>. <title>".
 - `brands.LOCALISE` (in every writer and judge prompt): Spain pages in Spain Spanish (no LatAm words), market job
-  sites (Spain InfoJobs; France France Travail / Welcome to the Jungle), and details only the original creator can say
-  (their industry, a salary) become neutral. Allowed by the judges, so it is never "reworded" back.
+  sites (Spain InfoJobs; France France Travail / Welcome to the Jungle), dates/months made timeless. Since 16 Oct 2026
+  (user: "a transcription, not shortened - change the app features and that is it") NOTHING else changes: the
+  creator's details, numbers, claims and promises stay as said (no neutralising, no softening - writers and judges).
 
 ## Comebacks only with ready pages (15 Oct 2026)
 - A format proven for our creators came back with no Spanish page and an old hand-written French page, and tidy
@@ -176,3 +177,9 @@ here (repo, Notion, Discord, secrets, state are all separate).
   market (difflib ≥ 0.75). `lineup.merge_duplicates` (Monday before the cut, `mode=dedupe`) keeps the better score,
   archives the other as "duplicate of X" and its videos (history, own.json, hand tags via `own.aliases`) count for X.
   `gate.check` holds a new / revived format whose title matches a live one; `verify` reports pairs.
+- Pure transcription (user, 16 Oct 2026: "transcribed and translated, not shortened - change the app features and that
+  is it"): the only changes are the market language, JobStep → Parakeet AI (+ closest real feature), app scores → X/Y,
+  market job sites and timeless dates (user kept those three). No softening of promises, no neutral details - writers
+  (builder.TRANSCRIBE, brands.LOCALISE) and judges (audit, crosscheck) say so. `watcher/faithful.py` checks every live
+  script against its video sentence by sentence (`mode=faithful-check` read-only, `mode=faithful-fix` transcribes the
+  ones with changes again with the exact problems); the Monday run does faithful-fix and sends what is still off to Slack.

@@ -26,9 +26,8 @@ TRANSCRIBE = """- The SCRIPT IS THE ORIGINAL'S OWN WORDS - never reword it:
     "JobStep" or "Job Step" must not appear anywhere in your output.
   * a JobStep feature Parakeet AI does not have -> the closest Parakeet AI feature (change as few words as possible);
   * concrete scores/percentages the app shows -> X (before) and Y (after) - creators read their own numbers;
-  * a promise nobody can guarantee (e.g. "guaranteed job in 24h") -> the smallest change that makes it honest
-    ("better chances").
-  * """ + LOCALISE
+  * """ + LOCALISE + """
+  Nothing else changes - no shortening, no summarising, no softening (user, 16 Oct 2026)."""
 
 VISUAL_HOOK = """1-2 short sentences (no more) on the visual hook: if the original does something specific in
   its first seconds (an action, a prop, a place, a text on screen), tell the creator to copy exactly that, like in the

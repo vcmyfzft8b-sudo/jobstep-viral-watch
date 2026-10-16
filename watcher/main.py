@@ -19,7 +19,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, conversion, crosscheck, detect, discover, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
+from . import align, audit, builder, classify, conversion, crosscheck, detect, discover, faithful, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es', 'sl')
@@ -408,6 +408,16 @@ def run(dry_run=False, only_detect=False, auto=False):
                     notify.push('⚠️ Page audit: pages that need a look', '\n'.join(f"{m} {t} – {' / '.join(n)[:150]}" for t, m, _, n in bad))
             except Exception as e:
                 step_failed('audit', e)
+            try:  # Monday: independent 1:1 check of every live script; pages with changes are transcribed again
+                rep = faithful.run(fmts, mkts, cfg, page_of)
+                still = [x for x in faithful.fix(rep, fmts, mkts, cfg, page_of) if not x[2].get('ok')]
+                state.save('formats.json', fmts)
+                if still:
+                    notify.push('⚠️ Scripts that are still not 1:1 with their video', '\n'.join(
+                        f"{m} {t} – " + '; '.join(f"{p.get('kind')}: «{(p.get('original') or '')[:60]}»"
+                                                  for p in r.get('problems', [])[:3]) for t, m, r in still))
+            except Exception as e:
+                step_failed('1:1 script check', e)
             try:  # Monday: every format's three countries TOGETHER against its reference (cached unless anything changed)
                 group_report(fmts, mkts, cfg, meta, fix=True)
                 state.save('formats.json', fmts)
@@ -1538,6 +1548,8 @@ def main():
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--conversion', type=int, nargs='?', const=500, default=0,
                     help='read saves of up to N older videos, sort them into formats, print every list by conversion')
+    ap.add_argument('--faithful-check', action='store_true', help='read-only: is every live script 1:1 with its example video?')
+    ap.add_argument('--faithful-fix', action='store_true', help='check every live script; transcribe the ones with changes again, then re-check')
     ap.add_argument('--dedupe', action='store_true', help='merge live formats that have the same title on a list (also every Monday)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
@@ -1825,6 +1837,15 @@ def main():
     if a.export:
         from . import export
         export.run(load_config(), load_formats(), page_of)
+        return
+    if a.faithful_check or a.faithful_fix:
+        cfg, fmts = load_config(), load_formats()
+        mkts = M.load(cfg)
+        rep = faithful.run(fmts, mkts, cfg, page_of)
+        if a.faithful_fix:
+            after = faithful.fix(rep, fmts, mkts, cfg, page_of)
+            state.save('formats.json', fmts)
+            print(f'FIXED: {sum(1 for x in after if x[2].get("ok"))}/{len(after)} pages now 1:1')
         return
     if a.dedupe:
         cfg, fmts, history = load_config(), load_formats(), state.load('history.json', {})

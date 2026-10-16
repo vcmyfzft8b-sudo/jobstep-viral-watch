@@ -6,7 +6,9 @@ Rules:
 - "Parakeet AI" is said/written exactly where the original says/writes JobStep (same number of times). If the original
   only SHOWS the app without naming it, we only show it too ("this tool here");
 - a website / call to action only where the original has one (jobstep.io -> parakeet-ai.com/resume-maker);
-- the app (link cue) appears at the same moments as in the original; scores are X/Y; no promises nobody can keep.
+- the app (link cue) appears at the same moments as in the original; scores the app shows are X/Y; everything else
+  (the creator's story, numbers, claims, promises) stays as said - only app, features, market language/job sites and
+  dates change (user, 16 Oct 2026).
 Only the script section is replaced (old text backed up in state/script_backup.json); the filming directions are
 then matched to the new script.
 """
@@ -200,7 +202,8 @@ def _validate(spec, n_orig, source=None, translated=False):
 
 def run(fmts, mkts, cfg, page_of, workers=8):
     import concurrent.futures as cf
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in mkts if page_of(f, mk['key'])]
+    from .markets import for_format
+    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f) if page_of(f, mk['key'])]
 
     def one(job):
         f, mk = job

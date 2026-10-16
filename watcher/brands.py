@@ -14,21 +14,21 @@ OTHER_NOTE = (f" Some originals promote another app instead of JobStep ({', '.jo
               "like JobStep - Parakeet AI replaces it at the same spots and as often, and it must never appear."
               if OTHER_APPS else '')
 
-# User's decision (13 Oct 2026): word for word, but in the MARKET's language variant, with its job sites, and nothing
-# only the original creator could say about themself.
+# User's decision (13 Oct 2026): word for word, but in the MARKET's language variant, with its job sites; no dates.
+# 16 Oct 2026 (user: "a transcription, not shortened - change the app features and that is it"): what the creator says
+# about themself (industry, salary, results, promises like "a job in 15 minutes") is NOT neutralised or softened any more.
 LOCALISE = ("Localisation that is required, not rewording: (1) the market's own variant of the language - an original "
             "in Latin-American Spanish becomes Spain Spanish (no 'ahorita', 'chamba', 'la neta', 'recién', '¡éxitos!', "
             "'okay', 'laboral' as filler; Spain says 'curro/trabajo', 'vale', 'ahora mismo', 'presentarse a una oferta', "
             "'¡suerte!'), Canadian/Belgian/Swiss French becomes France French; (2) job sites, companies and places of "
             "the market (Spain: InfoJobs, LinkedIn, Indeed; France: France Travail, Welcome to the Jungle, Indeed, "
             "LinkedIn; Slovenia: MojeDelo, Zaposlitev.net, Zavod za zaposlovanje, LinkedIn - never Bumeran, Computrabajo, "
-            "OCC); (3) a detail only the original creator can say about "
-            "themself (their industry such as 'finance', an exact salary, a 'six-figure' job) becomes neutral words "
-            "any creator can say - but WHO speaks never changes: the role or story the video is built on ('I just "
-            "quit my job in HR', 'I'm a recruiter', 'I sent 300 applications') stays in the first person exactly as "
-            "said (creators play it), never 'someone', 'a friend' or 'people' - in the script AND the title; (4) a calendar date or month of the original ('12 October', 'October is the best "
-            "month') is left out or made timeless ('now'), so the script never gets out of date. Change only those "
-            "words.")
+            "OCC); (3) a calendar date or month of the original ('12 October', 'October is the best month') is left "
+            "out or made timeless ('now'), so the script never gets out of date. Change only those words. Everything "
+            "else stays exactly as the original says it - WHO speaks never changes, nor their story ('I just quit my job in HR', 'I'm a "
+            "recruiter', 'I sent 300 applications', their industry, salary, results), every number and every claim or "
+            "promise the creator makes ('how I got a job in 15 minutes') - never neutralised, softened or made "
+            "'honest', never 'someone' / 'a friend' / 'people' - in the script AND the title.")
 
 # User's decision (13 Oct 2026, tidy.MAX_CUES): few link cues, so scripts stay readable while filming.
 FEW_CUES = ("Link cues are sparse by design: a cue marks where the app (or LinkedIn) first comes on screen in a paragraph "

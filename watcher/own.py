@@ -231,19 +231,13 @@ TIER_DEFAULTS = {'window_days': 28, 'min_age_days': 2, 'proven_avg': 10000, 'pro
 TIER_NAMES = {1: 'proven for us', 2: 'solid for us', 3: 'not tested enough by us', 4: 'weak for us'}
 
 
-def market_typical(market, cfg, now=None):
-    """The typical save rate of JobStep videos in this market (all markets when it has too few measured videos)."""
-    from . import conversion, state
-    base = conversion.baselines(state.load('history.json', {}), conversion.conf(cfg), now, conversion.market_map())
-    return conversion.typical(base, market)
-
-
 def tiers(videos, fmts, now, market, cfg, typical_rate=None):
     """How each format does for OUR creators in ONE market, as a tier (the list order starts with it, see rank.order):
     1 proven  - our videos of it average 10k+ (at least 2 videos), or one of them passed 100k in the last 14 days -
-                AND (user's rule, 16 Oct 2026) our videos of it are saved at least like a typical video of this market
-                (conversion.own_rate vs the market's typical rate). Saved less -> tier 2 ('saves_low'). Saves unknown
-                (only Instagram videos, which hide saves) -> views alone decide, like before.
+                AND (user's rule, 16 Oct 2026) our videos of it are saved at least like a typical video OF OURS in
+                this market (conversion.own_rate vs conversion.own_typical - not JobStep's rate, our creators' videos
+                are saved less overall). Saved less -> tier 2 ('saves_low'). Saves unknown (only Instagram videos,
+                which hide saves) or too few measured videos of ours in the market -> views alone decide.
     2 solid   - at least 3 of our videos, average 2k+
     4 weak    - at least 6 of our videos, average under 1.5k AND under 1.2x a typical video of ours in this market
                 (its median) - sinks to the bottom, even when it is viral for JobStep. The median part keeps a market
@@ -255,7 +249,7 @@ def tiers(videos, fmts, now, market, cfg, typical_rate=None):
     from . import conversion
     c = {**TIER_DEFAULTS, **(cfg.get('ranking', {}).get('own_tiers') or {})}
     known = {f['id'] for f in fmts}
-    typical_save = typical_rate if typical_rate is not None else market_typical(market, cfg, now)
+    typical_save = typical_rate if typical_rate is not None else conversion.own_typical(videos, market, cfg, now)
     import statistics
     typical = [v['views'] for v in videos.values() if v.get('ours') and v.get('market') == market
                and c['min_age_days'] * 86400 <= now - v['created'] <= c['window_days'] * 86400]
@@ -285,7 +279,7 @@ def tiers(videos, fmts, now, market, cfg, typical_rate=None):
         else:
             tier = 3
         rate, measured = conversion.own_rate(videos, fid, market, cfg, now, c['window_days'], c['min_age_days'])
-        saves_low = tier == 1 and rate is not None and rate < typical_save
+        saves_low = tier == 1 and rate is not None and typical_save is not None and rate < typical_save
         if saves_low:
             tier = 2  # many views for us, but our viewers do not save it: not "proven" (16 Oct 2026)
         out[fid] = {'tier': tier, 'n': x['n'], 'avg': round(avg), 'best': x['best'], 'hit': x['hit'],

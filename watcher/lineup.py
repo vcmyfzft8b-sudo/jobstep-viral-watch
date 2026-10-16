@@ -3,8 +3,12 @@
 User's rule (16 Oct 2026): "only the best converting and the most viral ones". Every market's list holds at most
 lineup.list_size (12) formats - the best by conversion score (conversion.py: how many viewers save a format's videos
 compared with a typical video of their market x sqrt(how well it goes viral right now); 1.0 = average) - PLUS in that
-market: formats proven for OUR creators there (own.tiers tier 1: views AND saves), hot formats (5+ viral in 7 days that
-viewers also save) and formats the user pinned (markets.<m>.pin_formats, e.g. the laptop ad spot in Slovenia).
+market: formats proven for OUR creators there (own.tiers tier 1: views AND saves like our typical video), hot formats
+(5+ viral in 7 days that viewers also save), the lineup.keep_most_viral (3) formats with the most JobStep viral videos in
+the last 30 days that viewers save at least like an average format, the lineup.keep_best_converting (3) formats viewers
+save the most (with at least lineup.converting_min_videos measured videos) and formats the user pinned
+(markets.<m>.pin_formats, e.g. the laptop ad spot in Slovenia). So the most viral AND the best converting formats are
+always on every list (user, 16 Oct 2026: "a really bullet proof system").
 Going viral in the last weeks or being new no longer protects a format.
 
 - A format kept in no running market leaves completely: every market's page moves to that market's archive, status
@@ -54,6 +58,12 @@ def plan(history, formats, cfg, own_videos, now=None):
     hot_now = {fid for fid, n in recent.items() if n >= hot.MIN_VIRAL and conv.get(fid, {}).get('conv', 0) >= cc['hot_min_conv']}
     active = [f for f in formats if f.get('status') == 'active']
     score = lambda f: board[f['id']]['score']
+    month = rank.viral_30d(history, formats, cfg, now)
+    saved = lambda f: board[f['id']]['conv'] >= cc['hot_min_conv']
+    most_viral = {f['id'] for f in sorted([f for f in active if month.get(f['id']) and saved(f)],
+                                          key=lambda f: (-month[f['id']], -score(f)))[:lc.get('keep_most_viral', 3)]}
+    best_conv = {f['id'] for f in sorted([f for f in active if board[f['id']]['videos'] >= lc.get('converting_min_videos', 3)
+                                          and saved(f)], key=lambda f: -board[f['id']]['conv'])[:lc.get('keep_best_converting', 3)]}
 
     lists = {}
     for m, mc in running.items():
@@ -69,21 +79,28 @@ def plan(history, formats, cfg, own_videos, now=None):
                 keep[fid] = 'proven for our creators'
             elif fid in hot_now:
                 keep[fid] = 'hot'
+            elif fid in most_viral:
+                keep[fid] = f'most viral now ({month[fid]} viral in 30 days)'
+            elif fid in best_conv:
+                keep[fid] = f"best converting (saved by {conversion.pct(board[fid]['raw_rate'])})"
             elif fid in best:
                 keep[fid] = f'best {size} by score'
         lists[m] = keep
 
-    order = ('pinned by you', 'proven for our creators', 'hot')
+    order = ('pinned by you', 'proven for our creators', 'hot', 'most viral now', 'best converting')
+
+    def rank_of(r):
+        return next((i for i, o in enumerate(order) if r.startswith(o)), len(order))
 
     def why(f):
         reasons = [lists[m][f['id']] for m in lists if f['id'] in lists[m]]
-        return min(reasons, key=lambda r: order.index(r) if r in order else len(order)) if reasons else None
+        return min(reasons, key=rank_of) if reasons else None
 
     def reason(f):
         c = board[f['id']]
         return (f"not among the best {size} of any list: score {c['score']:.2f} (saved by {conversion.pct(c['raw_rate'])} "
                 f"of viewers, {c['videos']} videos; typical video {conversion.pct(base['all'])}), not proven for our "
-                f"creators, not hot")
+                f"creators, not hot, not among the most viral or best converting")
 
     out = [(f, score(f), reason(f)) for f in sorted(active, key=score) if not why(f)]
     gone = {f['id'] for f, _, _ in out}

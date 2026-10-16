@@ -555,6 +555,10 @@
    }
   },
   "listed_at": 1792156417,
+  "off_markets": [
+   "es",
+   "sl"
+  ],
   "page_id": "3d5958b0-fc14-81a7-8ff5-c565bd4e6f58",
   "pages": {
    "es": "3e6958b0-fc14-80b2-9be1-e5711abc8dcb",

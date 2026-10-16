@@ -67,7 +67,7 @@ class QualityGateTests(unittest.TestCase):
 
     def readable_example(self, blocks=None, url=URL):
         self.patch(localize, 'current_source', return_value={'url': url})
-        self.patch(localize, 'example_text', return_value='ON-SCREEN: Tool\nSPEECH: ' + 'Original Satz. ' * 30)
+        self.patch(localize, 'example_text', return_value='ON-SCREEN: Tool\nSPEECH: ' + 'Original Satz. ' * 9)
         self.patch(audit.tiktok, 'video_detail', return_value={'views': 20000})
         self.patch(notion, 'children', return_value=blocks or page())
         verdict = {k: True for k in ('example_same_format', 'script_follows_example', 'script_faithful',
@@ -75,6 +75,15 @@ class QualityGateTests(unittest.TestCase):
         verdict.update(example_language='German', script_issues=[], direction_issues=[], example_issue='')
         self.llm.side_effect = None
         self.llm.return_value = verdict
+
+    def test_a_script_cut_short_fails(self):
+        """16 Oct 2026: a script must follow its example 1:1 - not too long and not cut short either."""
+        self.readable_example()
+        self.patch(localize, 'example_text', return_value='ON-SCREEN: Tool\nSPEECH: ' + 'Original Satz. ' * 30)
+        passed, verdict, _ = audit.check({**self.fmt, 'id': 'UNLOCKED'}, 'page', 'de', 'test', LINKS)
+        self.assertFalse(passed)
+        self.assertFalse(verdict['length_ok'])
+        self.assertTrue(any('1:1' in x for x in verdict['script_issues']))
 
     def test_unreadable_example_never_passes_or_writes(self):
         self.patch(localize, 'current_source', return_value={'url': URL})
@@ -329,7 +338,7 @@ class QualityGateTests(unittest.TestCase):
         blocks.insert(0, video)
         record = {'format_id': 'LEGACY', 'market': 'es', 'page_id': 'page', 'video_block_id': video['id'],
                   'video_last_edited_time': video['last_edited_time'], 'source_language': 'Spanish',
-                  'speech': 'Original frase. ' * 30, 'views_policy': 'legacy_original_unavailable'}
+                  'speech': 'Original frase. ' * 9, 'views_policy': 'legacy_original_unavailable'}
         path = Path(state.DIR) / 'embedded.json'
         path.write_text(json.dumps({'examples': [record]}))
         self.patch(localize, 'EMBEDDED_EVIDENCE', new=str(path))
@@ -375,7 +384,7 @@ class QualityGateTests(unittest.TestCase):
         rich['text']['content'] = rich['plain_text'] = 'Parakeet AI.'
         source = self.patch(localize, 'current_source', return_value={'video': 'verified-video', 'url': URL})
         detail = self.patch(audit.tiktok, 'video_detail', return_value={'views': 2600000,
-                           'subtitles': 'Original frase. ' * 30 + 'Jobs t punto i o'})
+                           'subtitles': 'Original frase. ' * 7 + 'Jobs t punto i o'})
         return blocks, record, source, detail
 
     def test_exact_public_source_uses_reviewed_transcript_and_live_views(self):

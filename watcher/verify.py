@@ -127,6 +127,13 @@ def run(cfg, fmts, page_of):
             problems += [f"{flag} {f['title']} ({f.get('status')}): {x}" for x in bad]
             if not bad:
                 ok.append(f"{flag} {f['title']} ({f.get('status')}): ok")
+    try:  # the same format twice on a list (16 Oct 2026): merged on Monday / mode dedupe
+        from . import dupes
+        mk_objs = [{'key': k, **m} for k, m in cfg['markets'].items() if m.get('enabled', True)]
+        for a, b, m, ta, tb in dupes.find(fmts, mk_objs, page_of):
+            problems.append(f'{TEXT[cfg["markets"][m]["lang"]]["flag"]} the same format twice: {a} "{ta}" and {b} "{tb}"')
+    except Exception as e:
+        problems.append(f'duplicate check failed: {str(e)[:100]}')
     print('\n'.join(['VERIFY OK:'] + ['  ' + x for x in ok] + ['VERIFY PROBLEMS:'] + ['  ' + x for x in problems or ['none']]),
           flush=True)
     return problems

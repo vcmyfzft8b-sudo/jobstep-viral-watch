@@ -50,6 +50,13 @@ def check(fmt, mkts, cfg, history, accounts, meta, page_of, set_page, make_page,
         meta.setdefault('audit', {})[f"{fmt['id']}:{mk['key']}"] = status
         if status not in ('ok', 'fixed'):
             reasons.append(f"{mk['T']['flag']} {' / '.join(notes)[:160]}")
+    if not reasons:  # the same title as a live format in a market = a duplicate (16 Oct 2026)
+        try:
+            from . import dupes, state as _st
+            live = [f for f in (_st.load('formats.json', None) or []) if f.get('status') == 'active']
+            reasons += dupes.clash(fmt, live, mkts, page_of)
+        except Exception as e:
+            print('gate: duplicate check failed', str(e)[:120])
     if not reasons:  # every page passed on its own - now all countries TOGETHER against the reference definition
         res, changed, awaiting = crosscheck.group_cycle(fmt, mkts, cfg, page_of, meta)
         if not res['passed']:

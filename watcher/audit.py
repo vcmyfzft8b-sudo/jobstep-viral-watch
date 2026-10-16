@@ -185,7 +185,14 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
         v['script_issues'] = []
     base = align.source_script(example)
     spoken = reword.spoken_text(reword.script_blocks(page_id))
-    v['length_ok'] = v['approved_matches'] or align._words(spoken) <= (1.10 if same else 1.35) * max(align._words(base), 1)
+    n_base, n_spoken = align._words(base), align._words(spoken)
+    # 1:1 means not shorter either (16 Oct 2026: French and Slovenian scripts were cut to 25-60% of their video and
+    # passed - only "too long" was checked). Very short originals (on-screen lines) have no lower limit.
+    v['length_ok'] = v['approved_matches'] or (n_spoken <= (1.10 if same else 1.35) * max(n_base, 1)
+                                               and (n_base < 20 or n_spoken >= 0.8 * n_base))
+    if not v['length_ok']:
+        v['script_issues'].append(f'the script has {n_spoken} spoken words, its example {n_base} - it must follow it 1:1 '
+                                  f'({int(0.8 * n_base)}-{int((1.10 if same else 1.35) * n_base)} words)')
     want = len(align.JOBSTEP.findall(base)) + len(re.findall(r'parakeet', base, re.I))  # our own videos name Parakeet AI
     have = len(re.findall(r'parakeet', spoken, re.I))
     v['brand_count_ok'] = v['approved_matches'] or have == want
@@ -320,8 +327,15 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
     return 'failed', notes + ['still failing: ' + '; '.join(v.get('script_issues', []) + v.get('direction_issues', []) + [v.get('example_issue', '')])[:200]]
 
 
+# Bump when a page rule changes: the next run then checks EVERY page again, not only the failed ones (16 Oct 2026: the
+# 1:1 lower length limit came in, but the Monday run only re-checks failed pages, so old cut scripts stayed).
+RULES = '2026-10-16.one-to-one-length'
+
+
 def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=8, rebuild=None, only_failed=False):
     import concurrent.futures as cf
+    if only_failed and meta.get('audit_rules') != RULES:
+        only_failed = False  # new rules: every page once
     last = meta.setdefault('audit', {})
     fingerprints = meta.setdefault('audit_fingerprints', {})
     from .markets import for_format
@@ -360,4 +374,6 @@ def run(fmts, mkts, cfg, history, accounts, meta, page_of, workers=8, rebuild=No
         print(f"{f['title'][:45]} | {mk['key']} | {status} | {' / '.join(notes)}", flush=True)
         return f['title'], mk['key'], status, notes
     with cf.ThreadPoolExecutor(workers) as ex:
-        return [r for r in ex.map(one, jobs) if r is not None]
+        out = [r for r in ex.map(one, jobs) if r is not None]
+    meta['audit_rules'] = RULES
+    return out

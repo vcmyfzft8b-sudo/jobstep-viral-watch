@@ -166,3 +166,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
   or builds a new one only if `lineup.would_keep` says the format would stay on a list on Monday (the Monday plan played
   with it live and the video counted); else the alert says "would not stay on any list" (added by hand: always).
   The gate tidies every page of a held format before checking it (a hook quoting the title in other words held X06).
+
+## 1:1 scripts and no duplicates (16 Oct 2026, user: "make sure it works in the future")
+- Scripts are 1:1 with their example: `audit` length_ok is now 80 %-110 % of the example's words (135 % for a
+  translation); before only "too long" failed, so French and Slovenian scripts cut to 25-60 % (Slovenia copied the
+  French tree) passed. A failing page is re-transcribed from its example (`align.align_page`). `audit.RULES` is the
+  rules version: when it changes, the next Monday audit checks EVERY page once (else only failed ones).
+- The same format twice on a list (X16 + A202610061332 "I quit HR..."): `watcher/dupes.py` compares page titles per
+  market (difflib ≥ 0.75). `lineup.merge_duplicates` (Monday before the cut, `mode=dedupe`) keeps the better score,
+  archives the other as "duplicate of X" and its videos (history, own.json, hand tags via `own.aliases`) count for X.
+  `gate.check` holds a new / revived format whose title matches a live one; `verify` reports pairs.

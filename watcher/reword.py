@@ -130,6 +130,7 @@ def direction_blocks(page_id):
     return out
 
 
+@pages.one_save(1)
 def fix_directions(fmt, page_id, lang, model, issues=''):
     """Shrink the 🎬 section to the short visual hook: ONE line of 1-2 sentences (copy what the example video does in
     its first seconds, or pick a hook from the Visual Hook Lab), followed by the 🚨 line and the Visual Hook Lab link.
@@ -200,6 +201,7 @@ def in_resources(name, resources):
     return any(w in resources for w in words)
 
 
+@pages.one_save(0)
 def fix_asset_cues(page_id):
     """Repairs script cues: decorated more than once ('📎 📎 📎 … – ver Recursos – ver Recursos'), or pointing to the
     resources section for something that is not there (then the cue is removed - scripts have no stage directions)."""
@@ -246,6 +248,7 @@ def directions_left(page_id):
     return found
 
 
+@pages.one_save(0)
 def strip_directions(page_id):
     """Removes bracketed stage directions / acting tips from the script (user's decision, 11 Oct 2026): only the link
     cues (Parakeet AI, LinkedIn) and 📎 material cues stay in brackets. The old text is backed up first; a paragraph

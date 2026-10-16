@@ -29,7 +29,9 @@ keep_titles}}}. The one-time migration from the Notion page ids (migrate) uses s
 record of the old Notion -> Megasheet copy.
 """
 import atexit
+import contextlib
 import copy
+import functools
 import hashlib
 import json
 import mimetypes
@@ -436,6 +438,7 @@ class Doc:
         self.blocks = [self.adopt(b) for b in render(idea, self.T)]
         self.base = fields_of(self.blocks, self.T, store.links())
         self.rename = None
+        self.hold, self.dirty = 0, False
 
     def adopt(self, b, stamp=None):
         """A block as the page holds it: id, plain text, children list."""
@@ -598,6 +601,13 @@ class Store:
         if DRY:
             return None
         return self.call(tool, campaignId=self.camp(market), **args)
+
+    def changed(self, d):
+        """A page was changed: sent now, or at the end of the one_save step it belongs to (one update per fix)."""
+        if d.hold:
+            d.dirty = True
+        else:
+            self.save(d)
 
     def save(self, d):
         """Send what changed on a page (content fields, then new / removed videos)."""
@@ -827,7 +837,7 @@ def api(method, path, body=None, version=None):
                 name = re.sub(r'^\d+\.\s*', '', title).strip()[:255]
                 if name != d.idea['name']:
                     d.rename = name
-                    STORE.save(d)
+                    STORE.changed(d)
             return _page(d)
         m = re.fullmatch(r'/blocks/([^/?]+)/children', path)
         if m and method == 'PATCH':
@@ -850,7 +860,7 @@ def api(method, path, body=None, version=None):
             else:
                 at = len(d.blocks)
             d.blocks[at:at] = new
-            STORE.save(d)
+            STORE.changed(d)
             return {'results': copy.deepcopy(new)}
         m = re.fullmatch(r'/blocks/([^/?]+)', path)
         if m:
@@ -865,16 +875,51 @@ def api(method, path, body=None, version=None):
                 return copy.deepcopy(d.blocks[k])
             if method == 'DELETE':
                 d.blocks.pop(k)
-                STORE.save(d)
+                STORE.changed(d)
                 return {}
             b = d.blocks[k]
             data = body.get(b['type']) or {}
             if 'rich_text' in data:
                 b[b['type']]['rich_text'] = _norm_rich(data['rich_text'])
                 b['last_edited_time'] = _now()
-            STORE.save(d)
+            STORE.changed(d)
             return copy.deepcopy(b)
     raise RuntimeError(f'pages: {method} {path} is not supported')
+
+
+@contextlib.contextmanager
+def batch(page_id):
+    """All changes to one page inside this block go to Megasheet as ONE update at its end (a rewritten script is
+    never visible half-done to creators)."""
+    try:
+        d = STORE.doc(page_id)
+    except (PageNotFound, RuntimeError):
+        yield
+        return
+    with LOCK:
+        d.hold += 1
+    try:
+        yield
+    finally:
+        with LOCK:
+            d.hold -= 1
+            if not d.hold and d.dirty:
+                d.dirty = False
+                STORE.save(d)
+
+
+def one_save(arg=0):
+    """Decorator: the page given as positional argument `arg` is saved once, when the function ends."""
+    def wrap(fn):
+        @functools.wraps(fn)
+        def run(*a, **k):
+            pid = a[arg] if len(a) > arg else k.get('page_id')
+            if not isinstance(pid, str):
+                return fn(*a, **k)
+            with batch(pid):
+                return fn(*a, **k)
+        return run
+    return wrap
 
 
 def _now():
@@ -915,6 +960,7 @@ def create_page(parent, title, icon, blocks):
         T = STORE.T(market)
         tmp = Doc.__new__(Doc)
         tmp.store, tmp.market, tmp.T, tmp.n, tmp.rename, tmp.stamp = STORE, market, T, 0, None, _now()
+        tmp.hold, tmp.dirty = 0, False
         tmp.idea = {'id': 'new', 'updatedAt': _now()}
         tmp.blocks = [tmp.adopt(b) for b in blocks]
         f = fields_of(tmp.blocks, T, STORE.links())
@@ -941,6 +987,7 @@ def create_page(parent, title, icon, blocks):
         STORE.touched.add((market, iid))
         d = STORE.docs[iid] = Doc.__new__(Doc)
         d.store, d.idea, d.market, d.T, d.n, d.rename, d.stamp = STORE, idea, market, T, 0, None, tmp.stamp
+        d.hold, d.dirty = 0, False
         for b in tmp.blocks:  # the same blocks, now with the idea's id
             b['id'] = b['id'].replace('new.', iid + '.', 1)
         d.blocks, d.n, d.base = tmp.blocks, tmp.n, fields_of(tmp.blocks, T, STORE.links())

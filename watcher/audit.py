@@ -221,6 +221,7 @@ def _note_is_same(note, lang):
     return localize.note_is_same(note, lang)
 
 
+@pages.one_save(2)
 def _put_example(fmt, m, page_id, lang, url, same_lang):
     locked = align.approved_script(fmt['id'], lang)
     if locked and locked.get('example', '').split('?')[0] != url.split('?')[0]:

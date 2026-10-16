@@ -141,6 +141,7 @@ Return JSON {{"original_language": "<English name>", "jobstep_mentions_in_origin
                   f"{sum(_words(s['text']) for s in spec['script'])} words (original {n_orig})")
 
 
+@pages.one_save(1)
 def _write(fmt, page_id, lang, cfg, links, spec, info):
     locked = approved_script(fmt['id'], lang)
     if locked and (spec.get('script') != locked['script'] or spec.get('voiceover', True) != locked['voiceover']):

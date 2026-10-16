@@ -94,6 +94,7 @@ def problems(page_id, links):
     return tidy_page(page_id, links, write=False)
 
 
+@pages.one_save(0)
 def tidy_page(page_id, links, write=True):
     """Applies the rules above to one page. Returns the list of changes (or, with write=False, of problems)."""
     from .crosscheck import _title_block

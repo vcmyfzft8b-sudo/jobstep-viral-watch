@@ -379,3 +379,23 @@ class HandEditTests(SyncTests):
         self.run_sync(ms, S)
         self.assertEqual(a['media'], [{'id': 'my-own-video', 'fileSizeBytes': 5}])
         self.assertNotIn('formats_addMediaFromUrl', [c[0] for c in ms.calls])
+
+
+class ResourceLineTests(unittest.TestCase):
+    def test_resource_line_keeps_its_link(self):
+        blocks = page()
+        res = next(b for b in blocks if b['type'] == 'callout' and b['callout'].get('icon', {}).get('emoji') == '💡')
+        res['callout']['rich_text'] += [
+            {'type': 'text', 'plain_text': '\n', 'text': {'content': '\n'}},
+            {'type': 'text', 'plain_text': 'Enregistrement Gmail', 'href': 'https://drive/x',
+             'text': {'content': 'Enregistrement Gmail', 'link': {'url': 'https://drive/x'}}},
+            {'type': 'text', 'plain_text': ' — ouvre cette vidéo en plein écran', 'text': {'content': ' — ouvre cette vidéo en plein écran'}}]
+        f = fr_fields(blocks)
+        self.assertIn('- [Enregistrement Gmail](https://drive/x) — ouvre cette vidéo en plein écran', f['description'])
+        self.assertNotIn('()', f['description'])
+        self.assertIn({'kind': 'link', 'label': 'Enregistrement Gmail', 'url': 'https://drive/x'}, f['resources'])
+        self.assertNotIn('- [Parakeet AI', f['description'])  # the bare Parakeet link is only in the resources
+
+    def test_slovenian_asset_cue_is_not_doubled(self):
+        self.assertEqual(notion.asset_label('📎 Posnetek Gmaila – glej Viri – glej Viri'), 'Posnetek Gmaila')
+        self.assertEqual(notion.asset_label('(📎 Gmail – siehe Ressourcen)'), 'Gmail')

@@ -217,6 +217,7 @@
       "discord_env": "DISCORD_WEBHOOK_URL_SI",
       "discord_server": "1560294285444780052",
       "skip_formats": ["A20261014173459"],
+      "pin_formats": ["A20261009204851"],
       "enabled": true,
       "discord_announce": false,
       "creator_channels": false
@@ -227,6 +228,7 @@
   },
   "lineup": {
     "remove_below": 1.0,
+    "list_size": 12,
     "min_formats": 8,
     "protect_days": 14,
     "half_life_days": 21,

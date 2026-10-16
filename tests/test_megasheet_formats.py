@@ -331,3 +331,51 @@ class WriteLimitTests(unittest.TestCase):
         from watcher import megasheet
         self.assertEqual(set(megasheet.WRITE_CAMPAIGNS.values()),
                          {'ParakeetAI - France', 'ParakeetAI - Spain', 'ParakeetAI - Slovenia'})
+
+
+class HandEditTests(SyncTests):
+    """Changes made by hand in Megasheet win (user, 16 Oct 2026)."""
+
+    def test_hand_edit_is_never_overwritten_but_still_follows_the_list(self):
+        ms, S = FakeMegasheet(), {}
+        self.run_sync(ms, S)
+        a = ms._find(S['fr']['a' * 32]['idea'])
+        a['scripts'] = [{'id': 's1', 'text': 'Mon script corrigé à la main.'}]  # edited in Megasheet
+        a['visualHook'] = 'Hook à la main.'
+        spec = dict(SPEC, title_hook='Format A', script=SPEC['script'] + [{'text': 'Nouvelle phrase.'}])
+        self.pages['a' * 32] = page(spec, video_block='va')  # Notion changes too
+        self.run_sync(ms, S)
+        self.assertEqual(a['scripts'][0]['text'], 'Mon script corrigé à la main.')
+        self.assertEqual(a['visualHook'], 'Hook à la main.')
+        self.assertTrue(a['description'].startswith('**🔥'))
+        self.list, self.hot = ['b' * 32, 'a' * 32], 0  # A is no longer hot, B goes on top
+        self.run_sync(ms, S)
+        self.assertFalse(a['description'].startswith('**🔥'))  # the 🔥 line still follows the list
+        self.assertEqual(a['scripts'][0]['text'], 'Mon script corrigé à la main.')
+        self.assertEqual([i['name'] for i in ms.ideas][:2], ['Format B', 'Format A'])
+        self.list = ['b' * 32]
+        self.run_sync(ms, S)
+        self.assertEqual(a['status'], 'archived')  # off the list -> archived as before
+        ms.calls.clear()
+        self.run_sync(ms, S)
+        self.assertEqual(ms.writes(), [])
+
+    def test_unedited_ideas_still_follow_notion(self):
+        ms, S = FakeMegasheet(), {}
+        self.run_sync(ms, S)
+        spec = dict(SPEC, title_hook='Format B', script=SPEC['script'] + [{'text': 'Nouvelle phrase.'}])
+        self.pages['b' * 32] = page(spec, video_block='vb')
+        self.run_sync(ms, S)
+        b = ms._find(S['fr']['b' * 32]['idea'])
+        self.assertTrue(b['scripts'][0]['text'].endswith('Nouvelle phrase.'))
+
+    def test_video_changed_by_hand_is_kept(self):
+        ms, S = FakeMegasheet(), {}
+        self.run_sync(ms, S)
+        a = ms._find(S['fr']['a' * 32]['idea'])
+        a['media'] = [{'id': 'my-own-video', 'fileSizeBytes': 5}]  # replaced in Megasheet
+        self.pages['a' * 32] = page(dict(SPEC, title_hook='Format A'), video_block='va-new')  # new example in Notion
+        ms.calls.clear()
+        self.run_sync(ms, S)
+        self.assertEqual(a['media'], [{'id': 'my-own-video', 'fileSizeBytes': 5}])
+        self.assertNotIn('formats_addMediaFromUrl', [c[0] for c in ms.calls])

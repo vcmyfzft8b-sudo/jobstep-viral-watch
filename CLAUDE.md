@@ -191,7 +191,10 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - One idea per page on the list, same order; hot formats (red card) first with a bold 🔥 hot_header line; title,
   script, visual hook (lab link dropped - the Visual Hook Lab is a guide on the same Megasheet page), ⚠️ note,
   resources and the example video come from the page. Ideas are compared with the page every run - only differences
-  are sent (hand edits in Megasheet are put back: Notion is the source). Off the list -> archived (never deleted),
+  are sent. Hand edits in Megasheet WIN (user, 16 Oct 2026: "from now on make changes directly in Megasheet"): an idea
+  whose content differs from our last copy (`fp`) gets `hand` and is never overwritten again; changed videos ->
+  `hand_media`. Only the 🔥 line, the order and archive/publish still follow the list. Edit formats in Megasheet, not
+  in Notion. Off the list -> archived (never deleted),
   back on the list -> the same idea published again. Hand-made Megasheet ideas are left alone, after ours.
 - First copy of a campaign: ideas with the same title (the 15 Oct one-time import) are taken over (same example video
   = same file size -> not uploaded again), the other published ones archived. Titles used by creators' videos cannot

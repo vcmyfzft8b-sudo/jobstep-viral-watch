@@ -98,10 +98,14 @@ class FakeMegasheet:
         self.calls.append((tool, a))
         if tool == 'formats_getIdeas':
             return copy.deepcopy(self.ideas)
+        if tool in ('formats_createIdea', 'formats_updateIdea'):  # Megasheet's required fields
+            missing = {'name', 'tag', 'groupId', 'status', 'captionsRequired', 'titles', 'description', 'visualHook',
+                       'mediaNotice', 'scripts', 'resources'} - set(a)
+            assert not missing, f'{tool}: {missing} Required'
         if tool == 'formats_createIdea':
             idea = self._idea(a)
             self.ideas.append(idea)
-            return copy.deepcopy(idea)
+            return {'id': idea['id']}  # the answer holds only a few fields
         if tool == 'formats_updateIdea':
             i = self._find(a['id'])
             i.update({k: v for k, v in self._idea(a).items() if k not in ('id', 'media', 'tag')})

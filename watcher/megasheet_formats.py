@@ -218,7 +218,7 @@ def payload(fields, idea, keep_titles=()):
     return {'name': fields['name'], 'titles': titles, 'description': fields['description'],
             'visualHook': fields['visualHook'], 'scripts': scripts, 'resources': res[:20],
             'captionsRequired': fields['captionsRequired'], 'status': fields['status'], 'mediaNotice': '',
-            'groupId': (idea or {}).get('groupId')}
+            'groupId': (idea or {}).get('groupId'), **({'tag': idea['tag']} if idea else {})}
 
 
 def _size(url):
@@ -308,10 +308,11 @@ def sync_market(c, mk, camp, S, dry=False, links=None):
         if created:
             args = payload(fields, None)
             args.pop('groupId')
-            out = w.call('formats_createIdea', f"new: {fields['name'][:60]}", tag=slug(fields['name'], taken),
-                         groupId=None, mediaIds=[], **args)
-            idea = out if out else {'id': f'dry-{pid}', 'name': fields['name'], 'media': [], 'titles': [],
-                                    'scripts': [], 'resources': []}
+            tag = slug(fields['name'], taken)
+            out = w.call('formats_createIdea', f"new: {fields['name'][:60]}", tag=tag, groupId=None, mediaIds=[], **args)
+            # the answer may hold only some fields: fill in what we sent
+            idea = {'id': f'dry-{pid}', 'name': fields['name'], 'tag': tag, 'groupId': None, 'media': [],
+                    'titles': [], 'scripts': [], 'resources': [], **(out or {})}
             by_id[idea['id']] = idea
         rec['idea'] = idea['id']
         claimed.add(idea['id'])

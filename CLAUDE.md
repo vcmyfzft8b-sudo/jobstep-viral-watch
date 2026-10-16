@@ -114,10 +114,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - `registry/market_adopt.json` maps each copied France format page to its Slovenian copy; `main.adopt_market_pages`
   (in `load_formats`) links them once (`pages.sl`, `adopted.sl`). The French example video is NOT copied into
   `inspo.sl`, so localize looks for a Slovenian JobStep video like for every market.
-- Only JobStep formats in Slovenia (user, 15 Oct 2026: "nothing from Memo"): `markets.sl.skip_formats` keeps the two
-  study-app formats (A20261009204851 laptop ad spot, A20261014173459 hardest schools - @lern.mit.domi, also a Memo AI
-  source) out for good; `markets.for_format` is used wherever pages are built, listed, audited or cross-checked. Their
-  copies sit in the Slovenia archive. A future non-JobStep format that should stay out goes into that list too.
+- Only JobStep formats in Slovenia (user, 15 Oct 2026: "nothing from Memo"): `markets.sl.skip_formats` keeps the
+  study-app format A20261014173459 (hardest schools - @lern.mit.domi, also a Memo AI source) out for good;
+  `markets.for_format` is used wherever pages are built, listed, audited or cross-checked. Its copy sits in the
+  Slovenia archive. A future non-JobStep format that should stay out goes into that list too.
+- Exception (user, 16 Oct 2026: "add the laptop"): A20261009204851 (laptop ad spot, also from @lern.mit.domi) IS on
+  the Slovenian list - its page is built from its example video (`mode=fill-sl` = `--fill-market sl`, else the Monday
+  run). Checked the same day: no other Slovenian format comes from a Memo AI source account.
 - `markets.TEXT['sl']`: page headings NASLOV / 💬SCENARIJ / 🎬 VIZUALNI HOOK / 🔧 VIRI, notes, list texts.
   `discover.language` knows Slovenian (stopwords chosen so Croatian/Serbian accounts are not taken); when a market
   language is added, the next full run sorts the accounts without a language again (`meta.account_langs`).

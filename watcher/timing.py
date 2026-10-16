@@ -10,7 +10,7 @@ import re
 import shutil
 import tempfile
 
-from . import media, notion, reword, soniox
+from . import media, pages, reword, soniox
 from .brands import SOURCE_RE
 from .localize import current_source
 
@@ -105,7 +105,7 @@ def run(cfg, mkts, fmts, page_of):
     by_page = {(page_of(f, mk['key']) or '').replace('-', ''): f for f in fmts for mk in mkts}
     cache, rows = {}, []
     for mk in mkts:
-        entries, _ = notion.list_entries(mk['list_page'])
+        entries, _ = pages.list_entries(mk['list_page'])
         for n, (_, pid) in enumerate(entries, 1):
             f = by_page.get(pid.replace('-', ''))
             try:

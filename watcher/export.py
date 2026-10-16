@@ -8,7 +8,7 @@ import os
 import subprocess
 import time
 
-from . import notion, rank, state
+from . import pages, rank, state
 from .markets import TEXT
 
 CERT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'registry', 'export_cert.pem')
@@ -27,7 +27,7 @@ def _rich(b):
 def page_text(pid):
     """Title, on-screen title, script and visual hook of one format page (sections by their emoji headings)."""
     sections, cur = {}, None
-    for b in notion.children(pid):
+    for b in pages.children(pid):
         if b['type'].startswith('heading'):
             h = _rich(b)
             cur = ('title' if '📲' in h else 'script' if '💬' in h else 'hook' if ('🎬' in h or '👀' in h)
@@ -64,7 +64,7 @@ def build(cfg, fmts, page_of):
             except Exception as e:  # e.g. a page moved to the trash
                 lines += [f"### {T['flag']} (page unreadable: {str(e)[:80]})", '']
                 continue
-            lines += [f"### {T['flag']} {T['name']} · https://app.notion.com/p/{pid.replace('-', '')}",
+            lines += [f"### {T['flag']} {T['name']} · idea {pid}",
                       '**Title:** ' + ' / '.join(s.get('title', [])[:1]), '', '**Script:**'] + s.get('script', []) + \
                      ['', '**Visual hook:** ' + ' '.join(s.get('hook', [])[:1]), '']
     return '\n'.join(lines)

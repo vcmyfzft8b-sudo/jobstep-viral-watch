@@ -238,26 +238,26 @@ def test_evidence_pin_of_a_rejected_source_is_inactive(monkeypatch, tmp_path):
 
 
 def test_asset_cue_is_not_decorated_twice():
-    from watcher import notion
-    assert notion.asset_label('📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos') == 'Bandeja de Gmail'
-    assert notion.asset_label('(📎 Gmail-Aufnahme – siehe Ressourcen)') == 'Gmail-Aufnahme'
-    assert notion.asset_label('Gmail inbox') == 'Gmail inbox'
+    from watcher import pages
+    assert pages.asset_label('📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos') == 'Bandeja de Gmail'
+    assert pages.asset_label('(📎 Gmail-Aufnahme – siehe Ressourcen)') == 'Gmail-Aufnahme'
+    assert pages.asset_label('Gmail inbox') == 'Gmail inbox'
 
 
 def test_fix_asset_cues_repairs_piled_up_decoration(monkeypatch):
-    from watcher import notion
+    from watcher import pages
     t = 'Y ahora (📎 📎 📎 Bandeja de Gmail – ver Recursos – ver Recursos – ver Recursos) Y ahora echa un ojo.'
     blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: [blk])
     monkeypatch.setattr(reword, 'resources_text', lambda pid: 'grabación de gmail en español')
     sent = []
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
     assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Y ahora (📎 Bandeja de Gmail – ver Recursos) Y ahora echa un ojo.'
 
 
 def test_direction_blocks_never_include_the_example_link(monkeypatch):
-    from watcher import notion
+    from watcher import pages
 
     def blk(t, typ='paragraph', link=None):
         x = {'type': 'text', 'plain_text': t, 'text': {'content': t, 'link': {'url': link} if link else None}}
@@ -266,7 +266,7 @@ def test_direction_blocks_never_include_the_example_link(monkeypatch):
             blk('Original auf TikTok', link='https://www.tiktok.com/@e/video/1'), blk('Ca. 32 Sekunden', 'bulleted_list_item'),
             blk('💬 SKRIPT', 'heading_2'), blk('Schon wieder eine Absage.'),
             blk('👀 VISUELLER EINSTIEG', 'heading_2'), blk('Halte die Lebensläufe in die Kamera.')]
-    monkeypatch.setattr(notion, 'children', lambda pid: page)
+    monkeypatch.setattr(pages, 'children', lambda pid: page)
     got = [reword._plain(b) for b in reword.direction_blocks('p')]
     assert got == ['Ca. 32 Sekunden', 'Halte die Lebensläufe in die Kamera.']
 
@@ -316,13 +316,13 @@ def test_title_with_invented_result_is_fixed_even_on_a_locked_page(monkeypatch):
 
 
 def test_cue_pointing_to_missing_resource_is_removed(monkeypatch):
-    from watcher import notion
+    from watcher import pages
     t = 'Copia (📎 InfoJobs – ver Recursos) el enlace.'
     blk = {'id': 'b1', 'type': 'paragraph', 'paragraph': {'rich_text': [{'type': 'text', 'plain_text': t, 'text': {'content': t}}]}}
     monkeypatch.setattr(reword, 'script_blocks', lambda pid: [blk])
     monkeypatch.setattr(reword, 'resources_text', lambda pid: 'parakeet ai · resume maker')
     sent = []
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: sent.append(body))
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: sent.append(body))
     assert reword.fix_asset_cues('p') == 1
     assert sent[0]['paragraph']['rich_text'][0]['text']['content'] == 'Copia el enlace.'
 
@@ -340,14 +340,3 @@ def test_locked_page_gets_directions_fixed_but_never_its_script(monkeypatch):
     monkeypatch.setattr(llm, 'chat_json', chat)
     res, changed, awaiting = crosscheck.group_cycle(fmt('L1'), MKTS, CFG, page_of, {})
     assert 'L1_de' in fixed and ('L1', 'de') not in w.rewrites and awaiting == []
-
-
-def test_page_rebuild_never_trashes_sub_pages(monkeypatch):
-    from watcher import notion
-    page = [{'id': 'p1', 'type': 'paragraph'}, {'id': 'lab', 'type': 'child_page'}, {'id': 'db', 'type': 'child_database'}]
-    monkeypatch.setattr(notion, 'children', lambda pid: page)
-    calls = []
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None, **k: calls.append((method, path)))
-    notion.replace_content('page', [{'type': 'paragraph'}])
-    deleted = [p for m, p in calls if m == 'DELETE']
-    assert deleted == ['/blocks/p1']   # the Visual Hook Lab sub-page and databases stay

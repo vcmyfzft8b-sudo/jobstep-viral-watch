@@ -1,7 +1,7 @@
-"""Read-only health check of the format pages in Notion (mode verify): prints one line per problem. Nothing is changed.
+"""Read-only health check of the format pages in Megasheet (mode verify): prints one line per problem. Nothing is changed.
 
 Per market:
-- the list: its ▶️ entries are exactly the live (active) formats' pages, numbered 1., 2., ...
+- the list: its published ideas are exactly the live (active) formats' pages (Megasheet shows them in list order);
 - every format page (live, waiting, archived): no bracketed stage directions / acting tips in the script (only the
   link cues and 📎 material cues - brands.NO_DIRECTIONS), and the ⚠️ note under the inspiration video has the current
   text;
@@ -11,7 +11,7 @@ Per market:
 """
 import re
 
-from . import notion, reword
+from . import pages, reword
 from .brands import SOURCE_RE, speaker_changed
 from .markets import TEXT
 
@@ -21,7 +21,7 @@ def _plain(b):
 
 
 def _title(page_id):
-    p = notion.api('GET', f'/pages/{page_id}')
+    p = pages.api('GET', f'/pages/{page_id}')
     return ''.join(x['plain_text'] for x in next(v for v in p['properties'].values() if v['type'] == 'title')['title'])
 
 
@@ -34,10 +34,10 @@ def note_problem(blocks, lang):
     if not b:
         return 'no note under the inspiration video'
     note = _plain(b).replace('**', '').strip()
-    want = ['\n'.join(notion.inspo_note(lang, same, own)).replace('**', '').strip()
+    want = ['\n'.join(pages.inspo_note(lang, same, own)).replace('**', '').strip()
             for same, own in ((False, False), (True, False), (True, True))]
     if note not in want or b.get('has_children') and any(
-            c['type'] == 'paragraph' and re.search(r'JobStep|Parakeet AI', _plain(c)) for c in notion.children(b['id'])):
+            c['type'] == 'paragraph' and re.search(r'JobStep|Parakeet AI', _plain(c)) for c in pages.children(b['id'])):
         return 'note under the inspiration video is not the current text'
     return None
 
@@ -63,7 +63,7 @@ def layout_problems(blocks, script, links):
 def check_page(pid, lang, links, live=True, ref_text=''):
     """Problems of one format page. ref_text: the format's original words (formats.json 'script') - the speaker
     must stay the same (brands.speaker_changed)."""
-    blocks = notion.children(pid)
+    blocks = pages.children(pid)
     out = []
     left = reword.directions_left(pid)
     if left:
@@ -92,13 +92,13 @@ def check_page(pid, lang, links, live=True, ref_text=''):
 
 
 def run(cfg, fmts, page_of):
+    from . import markets as M
     problems, ok = [], []
-    for key, m in cfg['markets'].items():
-        if not m.get('enabled', True):
-            continue
+    for m in M.load(cfg):
+        key = m['key']
         T = TEXT[m['lang']]
         flag = T['flag']
-        entries, _ = notion.list_entries(m['list_page'])
+        entries, _ = pages.list_entries(m['list_page'])
         listed = [p.replace('-', '') for _, p in entries]
         out_here = lambda f: f['id'] in (m.get('skip_formats') or ()) or key in (f.get('off_markets') or ())
         live = {(page_of(f, key) or '').replace('-', '') for f in fmts if f.get('status') == 'active' and page_of(f, key)
@@ -107,10 +107,10 @@ def run(cfg, fmts, page_of):
             problems.append(f'{flag} list differs from the live formats: listed {len(listed)}, live {len(live)}')
         else:
             ok.append(f'{flag} list: {len(listed)} live formats')
-        for n, pid in enumerate(listed, 1):
-            t = _title(pid)
-            if not t.startswith(f'{n}. '):
-                problems.append(f'{flag} list entry {n} not numbered: {t[:50]}')
+        hand = [pid for pid in listed if pages.is_hand(pid)]
+        if hand:
+            ok.append(f'{flag} edited by hand in Megasheet (kept, never changed by the watcher): ' +
+                      ', '.join(_title(p)[:40] for p in hand))
         for f in fmts:
             if f['id'] in (m.get('skip_formats') or ()):
                 continue  # not a format of this market (Slovenia: the study-app format 'hardest schools')
@@ -118,6 +118,9 @@ def run(cfg, fmts, page_of):
             if not pid:
                 if f.get('status') == 'active':
                     problems.append(f"{flag} {f['title']}: no page")
+                continue
+            if pages.is_hand(pid):
+                ok.append(f"{flag} {f['title']} ({f.get('status')}): edited by hand in Megasheet - not checked")
                 continue
             try:  # a format off this market's list (lineup off_markets) is checked like an archived page
                 bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active' and not out_here(f),
@@ -129,8 +132,7 @@ def run(cfg, fmts, page_of):
                 ok.append(f"{flag} {f['title']} ({f.get('status')}): ok")
     try:  # the same format twice on a list (16 Oct 2026): merged on Monday / mode dedupe
         from . import dupes
-        mk_objs = [{'key': k, **m} for k, m in cfg['markets'].items() if m.get('enabled', True)]
-        for a, b, m, ta, tb in dupes.find(fmts, mk_objs, page_of):
+        for a, b, m, ta, tb in dupes.find(fmts, M.load(cfg), page_of):
             problems.append(f'{TEXT[cfg["markets"][m]["lang"]]["flag"]} the same format twice: {a} "{ta}" and {b} "{tb}"')
     except Exception as e:
         problems.append(f'duplicate check failed: {str(e)[:100]}')

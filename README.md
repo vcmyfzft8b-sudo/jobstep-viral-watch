@@ -27,8 +27,10 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    video download → Soniox transcription → frames → Claude writes the German page: the script is the video's own
    words (German video: its transcript word for word; other languages: a close translation) with only JobStep →
    Parakeet AI and missing features swapped – no rewording; Parakeet links at every app moment, title, a 1–2 sentence
-   visual hook (copy the example's opening, or pick one from the Visual Hook Lab) + Visual Hook Lab link, resources) → automatic checks → Notion page in exactly the
-   same layout as the existing ones → added to the numbered list at its ranked position.
+   visual hook (copy the example's opening, or pick one from the Visual Hook Lab), resources) → automatic checks → a
+   Megasheet idea in the market's campaign (archived until it passes) → published and put into the list at its ranked
+   position. Since 16 Oct 2026 the format pages and lists live ONLY in Megasheet (`watcher/pages.py`); changes made by
+   hand in Megasheet are never overwritten.
    If a check fails (e.g. "JobStep" left in the text, not German, script length off by more than 25 %), the page is
    created as a private draft on the radar page instead and you get a notification with the reason.
 5. **Hot formats**: every format with 5+ viral videos posted in the last 7 days AND saved at least like an average
@@ -72,13 +74,13 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    ```
    | Secret | Used for |
    |---|---|
-   | `NOTION_TOKEN` | writing format pages, the list and the radar log |
+   | `NOTION_TOKEN` | only the private radar log page (the formats are in Megasheet) |
    | `CLAUDE_CODE_OAUTH_TOKEN` | Claude via Claude Code on your Claude subscription (create once with `claude setup-token`) – sorting: Sonnet, duplicate check + page writing: Opus |
    | `SONIOX_API_KEY` | speech-to-text |
    | `SLACK_WEBHOOK_URL` | Slack messages (Incoming Webhook of a Slack app, one channel) |
 | `NTFY_TOPIC` | optional phone push via the ntfy app |
    | `LIGHTREEL_API_KEY` | finding new JobStep accounts every 3 days |
-   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | our own Parakeet AI creators + videos (the enabled markets: France, Spain, Slovenia) read live from Megasheet every run – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
+   | `MEGASHEET_LOGIN`, `MEGASHEET_KEY` | the format pages and lists (France, Spain, Slovenia - write access for format ideas only) and our own Parakeet AI creators + videos – save with `./scripts/save_megasheet_login.sh` (browser login, no API key exists) |
 2. The `state` branch holds the watchlist, history and format registry; the workflow commits to it after every run.
 
 ## Our own creators (Megasheet)
@@ -95,7 +97,7 @@ working you get one push a day: run `./scripts/save_megasheet_login.sh` again. A
 renamed in Megasheet) also sends one push a day, so the list order never quietly runs on old numbers.
 
 **Stopped campaigns**: a market with `"enabled": false` in `config.json` (DACH since 12 Oct 2026) is skipped
-everywhere – its Megasheet campaign is not read (its creators are paused, their old videos stay), its Notion list is no
+everywhere – its Megasheet campaign is not read (its creators are paused, their old videos stay), its list is no
 longer re-sorted or announced on Discord (nothing is deleted), and the weekly report and clean-up leave it out. Set it
 back to `true` to restart the market.
 
@@ -131,7 +133,7 @@ Replacing the upload or changing its known source requires new evidence.
 State pushes retry the same non-force push four times. A failed push leaves a GitHub Actions recovery artifact
 containing only the state directory; restore it after reviewing concurrent state, without overwriting other work.
 
-Offline regression checks (no Notion, Claude or other live service calls):
+Offline regression checks (no Megasheet, Notion, Claude or other live service calls):
 
 ```sh
 python -m unittest discover -s tests -v
@@ -144,7 +146,8 @@ python -m unittest discover -s tests -v
 - `watcher/classify.py` – existing format or new one (Claude)
 - `watcher/soniox.py`, `watcher/media.py` – transcription, download, frames
 - `watcher/builder.py` – German page spec + checks
-- `watcher/notion.py` – page layout, video upload, numbered list
+- `watcher/pages.py` – format pages = Megasheet ideas: page layout, video upload, list order, hand edits
+- `watcher/notion.py` – only the private radar log
 - `watcher/rank.py` – list order
 - `registry/formats.json` – the formats on the DACH page (copied into the state branch on first run)
 
@@ -169,6 +172,6 @@ counts as a pass.
 - New or revived formats without a reviewed definition get one generated from their source video
   (`state/format_references.json`); reviewed definitions in the registry always win.
 - Modes: `group-audit` (report), `group-audit-force` (ignore cache), `group-fix` (repair + re-check),
-  `approval-drafts` (replacement drafts for approval-locked scripts that fail - nothing written to Notion),
+  `approval-drafts` (replacement drafts for approval-locked scripts that fail - nothing written to Megasheet),
   `apply-approved` (write approved scripts, and the example/title the approval names), `gate-rehearsal` (run the
   publication gate on passing live formats without publishing). The Monday run does the cached check with repairs.

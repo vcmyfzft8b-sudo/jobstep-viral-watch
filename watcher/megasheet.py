@@ -63,9 +63,24 @@ def _refresh(login):
     return r.json()
 
 
-def access_token():
-    """A fresh access token, or None when no login is saved. Tries the newest saved login first; the secret one is
-    only used while it has not been replaced yet (re-using a replaced login can make Megasheet revoke all of them)."""
+_TOKEN = {}  # this process's access token: {'token', 'at'} (one login refresh per run, not one per caller)
+TOKEN_MAX_AGE = 1800
+
+
+def access_token(fresh=False):
+    """A fresh access token, or None when no login is saved (kept for TOKEN_MAX_AGE seconds within one process;
+    fresh=True after Megasheet refused it)."""
+    if not fresh and _TOKEN and time.time() - _TOKEN['at'] < TOKEN_MAX_AGE:
+        return _TOKEN['token']
+    tok = _new_token()
+    if tok:
+        _TOKEN.update(token=tok, at=time.time())
+    return tok
+
+
+def _new_token():
+    """Tries the newest saved login first; the secret one is only used while it has not been replaced yet (re-using a
+    replaced login can make Megasheet revoke all of them)."""
     secret = _secret_login()
     if secret is None:
         return None
@@ -117,7 +132,7 @@ def access_token():
 READ_TOOLS = {'list_campaigns', 'account_getMany', 'videos_getMany', 'formats_getIdeas', 'formats_getGroups',
               'formats_getGuides', 'formats_getPageSettings'}
 WRITE_TOOLS = {'formats_createIdea', 'formats_updateIdea', 'formats_updateIdeaStatus', 'formats_reorderIdeas',
-               'formats_addMediaFromUrl', 'formats_removeMedia'}
+               'formats_createMediaUpload', 'formats_removeMedia'}  # media: example videos uploaded from a file
 WRITE_CAMPAIGNS = {'5cf4df12-f6dd-467a-a1e8-dbe07f709425': 'ParakeetAI - France',
                    'f70ac122-5e87-4780-9229-65b2740bfb3a': 'ParakeetAI - Spain',
                    '28808b83-9313-4575-afc9-7b0805c497a5': 'ParakeetAI - Slovenia'}

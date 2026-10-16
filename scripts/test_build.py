@@ -1,12 +1,15 @@
-"""Manual test: build a format page for one video into the PRIVATE radar page (never the public list).
-usage: python scripts/test_build.py <handle> <video_id> [de|fr|es]"""
+"""Manual test: build a format page for one video as an ARCHIVED Megasheet idea (creators never see it).
+usage: python scripts/test_build.py <handle> <video_id> [fr|es|sl]
+The idea is named '🧪 TEST – …' and sits in the market's staging place; delete it in Megasheet when done."""
 import json, os, shutil, sys, tempfile
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from watcher import builder, main, media, notion, soniox, tiktok
+from watcher import builder, main, markets, media, pages, soniox, tiktok
 
 handle, vid = sys.argv[1], sys.argv[2]
-lang = sys.argv[3] if len(sys.argv) > 3 else 'de'
+market = sys.argv[3] if len(sys.argv) > 3 else 'fr'
 cfg = main.load_config()
+mk = next(m for m in markets.load(cfg) if m['key'] == market)
+lang = mk['lang']
 v = tiktok.video_detail(handle, vid)
 work = tempfile.mkdtemp(prefix='fmt-test-')
 try:
@@ -20,9 +23,13 @@ try:
     problems = builder.validate(spec, tr, lang=lang)
     print(json.dumps(spec, ensure_ascii=False, indent=1)[:4000])
     print('PROBLEMS:', problems)
-    up = notion.upload_video(media.for_notion(f, work))
-    page = notion.create_page(cfg['notion']['radar_page'], 'TEST – ' + spec['page_title'], spec.get('icon') or '🧪',
-                              notion.page_blocks(spec, v, up, cfg['links'], lang=lang, lab_url=cfg['markets'][lang]['visual_hook_lab']))
-    print('PAGE', page['url'])
+    up = pages.upload_video(media.for_notion(f, work))
+    spec = dict(spec, title_hook='🧪 TEST – ' + spec['title_hook'])
+    page = pages.create_page(mk['staging_page'], spec['title_hook'], spec.get('icon') or '🧪',
+                             pages.page_blocks(spec, v, up, cfg['links'], lang=lang,
+                                               same_lang=(tr.get('language') or '')[:2] == lang))
+    pages.STORE.finish()
+    print('IDEA', market, page['id'], '(archived)')
+    print(pages.summary())
 finally:
     shutil.rmtree(work, ignore_errors=True)

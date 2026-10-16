@@ -1,5 +1,6 @@
 """One watcher run (GitHub Actions every 2 hours: a full run every 6 hours, light runs - new videos, views, alerts - in
-between), for all markets (DACH / France / Spain).
+between), for the running markets (France / Spain / Slovenia; DACH stopped). The format pages and lists are Megasheet
+ideas (watcher/pages.py, since 16 Oct 2026) - Notion only keeps the private radar log.
 
 1. Pull the latest videos of every JobStep account; new ones go on the watchlist (7 days).
 2. Re-check every watchlist video (views, likes, shares, saves).
@@ -19,7 +20,7 @@ import tempfile
 import time
 import traceback
 
-from . import align, audit, builder, classify, conversion, crosscheck, detect, discover, faithful, gate, hot, lineup, llm, localize, markets as M, media, notify, notion, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
+from . import align, audit, builder, classify, conversion, crosscheck, detect, discover, faithful, gate, hot, lineup, llm, localize, markets as M, media, notify, pages, own, rank, reword, soniox, state, tidy, tiktok, verify, weekly
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 ALL_MARKETS = ('de', 'fr', 'es', 'sl')
@@ -54,40 +55,15 @@ def load_config():
 
 
 def load_formats():
-    """One shared format list for all markets. Each format has a page per market: page_id (DACH) + pages{fr, es, sl}."""
+    """One shared format list for all markets. Each format has a page per market: page_id (DACH, Notion - the market
+    is stopped) + pages{fr, es, sl} = Megasheet idea ids. The first load after the switch to Megasheet links every
+    Notion page id to its idea once (pages.migrate)."""
     formats = state.load('formats.json', None)
     if formats is None:
         with open(os.path.join(ROOT, 'registry', 'formats.json')) as f:
             formats = json.load(f)
-    adopt_market_pages(formats)
+    pages.migrate(formats)
     return formats
-
-
-def adopt_market_pages(formats, adopt=None):
-    """A new market whose pages were made by copying another market's pages (registry/market_adopt.json, e.g.
-    Slovenia = translated copies of the France pages) gets each copy linked to its format once: pages[market] = copy.
-    The example video is not copied over - localize looks for one in the new market's language like for every
-    market. 'adopted' remembers it, so a page removed later is never linked again. Returns how many were linked."""
-    if adopt is None:
-        try:
-            with open(os.path.join(ROOT, 'registry', 'market_adopt.json')) as f:
-                adopt = json.load(f)
-        except FileNotFoundError:
-            return 0
-    n = 0
-    for m, spec in adopt.items():
-        if m.startswith('_'):
-            continue
-        copies = {k.replace('-', ''): v for k, v in spec['pages'].items()}
-        for fmt in formats:
-            if (fmt.get('adopted') or {}).get(m) or page_of(fmt, m):
-                continue
-            src = (page_of(fmt, spec['from']) or '').replace('-', '')
-            if src in copies:
-                fmt.setdefault('pages', {})[m] = copies[src]
-                fmt.setdefault('adopted', {})[m] = True
-                n += 1
-    return n
 
 
 def page_of(fmt, m):
@@ -104,7 +80,7 @@ def fmt_views(n):
 
 
 def page_url(page_id):
-    return f"https://app.notion.com/p/{(page_id or '').replace('-', '')}"
+    return pages.page_url(page_id)
 
 
 def to_history(history, v, german, now):
@@ -552,7 +528,7 @@ def handle_alert(v, lvl, mkts, fmts, history, cfg, now, dry_run, only_detect):
 
 
 def list_position(mk, page_id):
-    ids = [pid.replace('-', '') for _, pid in notion.list_entries(mk['list_page'])[0]]
+    ids = [pid.replace('-', '') for _, pid in pages.list_entries(mk['list_page'])[0]]
     pid = (page_id or '').replace('-', '')
     return ids.index(pid) + 1 if pid in ids else None
 
@@ -663,10 +639,10 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
             if known.get('status') == 'active':
                 added = [] if blocked else ensure_market_pages(known, v, mkts, fmts, history, cfg, prepared)
                 pos = list_position(mkts[0], page_of(known, mkts[0]['key']))
-                outcome = (f"✅ *Already in Notion* – in the lists{f' as #{pos}' if pos else ''}: *{known['title']}* "
+                outcome = (f"✅ *Already in Megasheet* – in the lists{f' as #{pos}' if pos else ''}: *{known['title']}* "
                            f"({market_links(known, mkts)})" + (f"\n➕ added missing pages: {' '.join(added)}" if added else ''))
             elif blocked:
-                outcome = f"📦 *Already in Notion* – in the archive: *{known['title']}* – not brought back ({blocked})"
+                outcome = f"📦 *Already in Megasheet* – in the archive: *{known['title']}* – not brought back ({blocked})"
             else:
                 ok, pos, reasons = revive_format(known, v, mkts, fmts, history, cfg, prepared=prepared)
                 outcome = (f"♻️ *Was in the archive → checked & brought back as #{pos}* in all lists: *{known['title']}* "
@@ -676,7 +652,7 @@ def handle_viral(v, mkts, fmts, history, cfg, now, only_detect, test=False, forc
         else:
             set_format(v, history, None, judged=True)
             if blocked:
-                outcome = f"🆕 *NEW format – not in Notion yet*, not added ({blocked})"
+                outcome = f"🆕 *NEW format – not in Megasheet yet*, not added ({blocked})"
             else:
                 fmt, problems, position = build_format(v, mkts, fmts, history, cfg, prepared=prepared,
                                                        description=verdict.get('new_format_description', ''))
@@ -717,12 +693,16 @@ def _prepare(v, prepared):
 
 
 def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None, attempts=1):
-    """Build one market's page (its language, current layout). Returns (page_id_or_url, spec, problems)."""
+    """Build one market's page (its language, current layout) as a Megasheet idea - new pages in the market's staging
+    place (archived, invisible to creators) unless `parent` says otherwise. A spec that fails its checks is not saved
+    anywhere (the reasons go to Slack). Returns (page_id, spec, problems)."""
     if replace_page:
         locked = next((f for f in load_formats() if page_of(f, mk['key']) == replace_page
                        and align.approved_script(f['id'], mk['lang'])), None)
         if locked:
             return None, {}, ['approved script/example locked; full-page rebuild refused']
+        if pages.is_hand(replace_page):
+            return None, {}, ['edited by hand in Megasheet - never rebuilt']
     work, video_file, transcript, frames, own = _prepare(v, prepared)
     try:
         feedback = ''
@@ -734,20 +714,26 @@ def make_page(v, mk, cfg, prepared, parent=None, title=None, replace_page=None, 
             feedback = '; '.join(problems)
         if replace_page and problems:
             return None, spec, problems
-        upload_id = notion.upload_video(media.for_notion(video_file, work))
-        blocks = notion.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'], lab_url=mk['visual_hook_lab'],
+        upload_id = pages.upload_video(media.for_notion(video_file, work))
+        blocks = pages.page_blocks(spec, v, upload_id, cfg['links'], lang=mk['lang'], lab_url=mk['visual_hook_lab'],
                                     same_lang=(transcript.get('language') or '')[:2] == mk['lang'])
     finally:
         if own:
             shutil.rmtree(work, ignore_errors=True)
     if replace_page:
-        notion.replace_content(replace_page, blocks)
+        if not pages.replace_content(replace_page, blocks):
+            return None, spec, ['edited by hand in Megasheet - never rebuilt']
         return replace_page, spec, []
     if problems:
-        page = notion.create_page(cfg['notion']['radar_page'], mk['T']['draft_prefix'] + spec['page_title'], spec.get('icon') or '📝', blocks)
-    else:
-        page = notion.create_page(parent or mk['holder_page'], title or spec['page_title'], spec.get('icon') or '🎬', blocks)
+        print('page not saved (checks failed):', mk['key'], spec.get('page_title', '')[:50], '-', '; '.join(problems)[:300])
+        return None, spec, problems
+    page = pages.create_page(parent or staging(mk), title or spec['page_title'], spec.get('icon') or '🎬', blocks)
     return page['id'], spec, problems
+
+
+def staging(mk):
+    """Where a new page of a market is built: an archived Megasheet idea in that market's staging place."""
+    return mk.get('staging_page') or pages.place('staging', mk['key'])
 
 
 def set_page(fmt, m, page_id):
@@ -768,7 +754,7 @@ def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
         pending_pages = fmt.setdefault('pending_pages', {})
         pid = pending_pages.get(mk['key'])
         if not pid:
-            pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
+            pid, spec, problems = make_page(v, mk, cfg, prepared, parent=staging(mk), attempts=3)
             if problems:
                 print('page not built:', mk['key'], fmt['title'][:40], '-', '; '.join(problems)[:300])
                 continue
@@ -780,7 +766,7 @@ def ensure_market_pages(fmt, v, mkts, fmts, history, cfg, prepared):
         if status not in ('ok', 'fixed'):
             print('page held by the check:', mk['key'], fmt['title'][:40], status, '-', ' / '.join(notes or [])[:300])
         if status in ('ok', 'fixed'):
-            notion.move_page(pid, mk['holder_page'])
+            pages.move_page(pid, mk['holder_page'])
             set_page(fmt, mk['key'], pid)
             pending_pages.pop(mk['key'], None)
             added.append(mk['T']['flag'])
@@ -797,7 +783,7 @@ def build_format(v, mkts, fmts, history, cfg, prepared=None, description=''):
     entry = {'id': fid, 'source_video': v['url'], 'created': int(time.time()), 'pages': {}, 'status': 'pending'}
     problems = []
     for mk in mkts:  # built where creators can't see it yet (private staging page) - the gate publishes it
-        pid, spec, probs = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
+        pid, spec, probs = make_page(v, mk, cfg, prepared, parent=staging(mk), attempts=3)
         if probs:
             problems.append(f"{mk['T']['flag']} {'; '.join(probs)}")
             continue
@@ -830,7 +816,7 @@ def revive_format(fmt, v, mkts, fmts, history, cfg, prepared=None):
             if pid:
                 make_page(v, mk, cfg, prepared, replace_page=pid, attempts=3)
             else:
-                new_pid, spec, problems = make_page(v, mk, cfg, prepared, parent=cfg['notion']['radar_page'], attempts=3)
+                new_pid, spec, problems = make_page(v, mk, cfg, prepared, parent=staging(mk), attempts=3)
                 if not problems:
                     set_page(fmt, m, new_pid)
         except Exception as e:
@@ -917,7 +903,7 @@ def own_comebacks(mkts, fmts, cfg, tiers=None, now=None, force=False):
             for mk in mkts:  # a page built for it now (moved into the folder) waits in the archive with the others
                 if ready[mk['key']][0] == 'built' and page_of(f, mk['key']):
                     try:
-                        notion.move_page(page_of(f, mk['key']), mk['archive_page'])
+                        pages.move_page(page_of(f, mk['key']), mk['archive_page'])
                     except Exception as e:
                         print('comeback: move back failed', mk['key'], f['title'], str(e)[:150])
             f['comeback_tries'] = f.get('comeback_tries', 0) + 1
@@ -933,7 +919,7 @@ def own_comebacks(mkts, fmts, cfg, tiers=None, now=None, force=False):
             pid = page_of(f, mk['key'])
             if pid and ready[mk['key']][0] != 'built':  # a built page is already in the folder
                 try:
-                    notion.move_page(pid, mk['holder_page'])
+                    pages.move_page(pid, mk['holder_page'])
                 except Exception as e:
                     print('comeback: move failed', mk['key'], f['title'], str(e)[:150])
         why = ', '.join(f"{mk['key']}: our {x['n']} videos average {fmt_views(x['avg'])}, best {fmt_views(x['best'])}"
@@ -971,10 +957,10 @@ def rerank(mkts, fmts, history, cfg, force=False):
                 page_ids.append(pid)
                 hot_count += bool(scores[i]['top'])
         orders[mk['key']] = ids
-        entries, _ = notion.list_entries(mk['list_page'])
+        entries, _ = pages.list_entries(mk['list_page'])
         current = [pid.replace('-', '') for _, pid in entries]
-        if force or [p.replace('-', '') for p in page_ids] != current or notion.hot_entry_count(mk['list_page']) != hot_count:
-            notion.set_order(mk['list_page'], page_ids, hot_count=hot_count, lang=mk['lang'])
+        if force or [p.replace('-', '') for p in page_ids] != current or pages.hot_entry_count(mk['list_page']) != hot_count:
+            pages.set_order(mk['list_page'], page_ids, hot_count=hot_count, lang=mk['lang'])
     state.log({'type': 'rerank', 'order': first, 'orders': orders})
     return first or []
 
@@ -1014,83 +1000,24 @@ def check_hot():
     print('\nCONFIRMED VIRAL VIDEOS PER FORMAT (last 7 days):')
     for fid, vs in sorted(groups.items(), key=lambda x: -len(x[1])):
         f = by.get(fid)
-        name = f['title'] + ('' if f.get('status') == 'active' else ' [archive]') if f else 'not in Notion'
+        name = f['title'] + ('' if f.get('status') == 'active' else ' [archive]') if f else 'not in the formats'
         print(f'{len(vs)} | {fid} | {name}')
         for v in sorted(vs, key=lambda x: -x['views']):
             print(f"    {v['views']:>7} @{v['handle']:22} {v['url']}  | {v.get('hook_en', '')[:70]}")
 
 
-def _page_text(page_id):
-    texts = []
-    for c in notion.children(page_id):
-        rt = c.get(c['type'], {}).get('rich_text')
-        if rt:
-            texts.append(''.join(x['plain_text'] for x in rt))
-    return ' '.join(texts)
-
-
 def source_video(fmt):
-    """The TikTok inspiration video of a format (stored, or the 'Original auf TikTok' link on its DACH page, or on
-    another market's page for formats built after DACH stopped)."""
+    """The TikTok inspiration video of a format (stored, or the 'Original on TikTok' link on one of its pages)."""
     if fmt.get('source_video'):
         return fmt['source_video']
-    pid = fmt.get('page_id') or next(iter((fmt.get('pages') or {}).values()), None)
-    if not pid:
-        return None
-    for b in notion.children(pid):
-        for x in (b.get(b['type'], {}) or {}).get('rich_text', []) or []:
-            url = ((x.get('text') or {}).get('link') or {}).get('url', '')
-            if 'tiktok.com/@' in url and '/video/' in url:
-                return url
+    for pid in (fmt.get('pages') or {}).values():
+        try:
+            src = localize.current_source(pid)
+        except pages.PageNotFound:
+            continue
+        if src and src.get('url'):
+            return src['url']
     return None
-
-
-def init_market(m):
-    """Connect a market to the shared format list.
-    1. Its existing format pages (format folder + archive) are matched by Claude to our formats -> become that
-       format's page for this market.
-    2. Pages of formats that are not in the active list are moved to the market's archive (nothing is deleted);
-       unmatched ones become archived formats (so they are known to the duplicate check).
-    3. Every active format still missing a page in this market gets one, built from its inspiration video."""
-    cfg = load_config()
-    mk = next(x for x in M.load({**cfg, 'markets': {k: {**v, 'enabled': True} for k, v in cfg['markets'].items()}}) if x['key'] == m)
-    fmts = load_formats()
-    pages = []
-    for where, parent in (('folder', mk['holder_page']), ('archive', mk['archive_page'])):
-        for b in notion.children(parent):
-            if b['type'] == 'child_page':
-                pages.append({'page_id': b['id'], 'title': b['child_page']['title'], 'where': where, 'text': _page_text(b['id'])[:1200]})
-    listing = '\n'.join(f"- {f['id']} ({f.get('status')}): {f.get('description', f['title'])}" for f in fmts)
-    items = '\n'.join(f"{i}: TITLE {p['title']} | TEXT {p['text'][:700]}" for i, p in enumerate(pages))
-    r = llm.chat_json(cfg['models']['build'], 'Reply JSON only.', f"""Our formats (one shared list for all markets):
-{listing}
-
-These are existing {mk['T']['lang_name']} format pages. For each page, which of our formats is it (same core premise/hook
-and structure, even if worded differently)? null if none. Also write one English sentence describing each page's format.
-{items}
-Return JSON {{"pages": [{{"index": 0, "format": "<format id or null>", "description": "<sentence>"}}]}}""", timeout=1800)
-    by = {f['id']: f for f in fmts}
-    moved, matched, extra = 0, 0, 0
-    for x in r.get('pages', []):
-        p = pages[int(x['index'])]
-        f = by.get(x.get('format'))
-        if f and not page_of(f, m):
-            set_page(f, m, p['page_id'])
-            matched += 1
-            target = mk['holder_page'] if f.get('status') == 'active' else mk['archive_page']
-        else:
-            fid = f"{m.upper()}X{int(x['index']) + 1:02d}"
-            fmts.append({'id': fid, 'title': p['title'], 'status': 'archived', 'description': x.get('description', p['title']),
-                         'script': p['text'][:900], 'pages': {m: p['page_id']}, 'market_only': m})
-            by[fid] = fmts[-1]
-            extra += 1
-            target = mk['archive_page']
-        if (p['where'] == 'folder') != (target == mk['holder_page']):
-            notion.move_page(p['page_id'], target)
-            moved += 1
-    state.save('formats.json', fmts)
-    print(f'{m}: matched {matched}, archived-only {extra}, moved {moved}')
-    fill_market(m)
 
 
 def fill_market(m):
@@ -1321,12 +1248,17 @@ def ready_page(f, mk, fmts, origs, cfg, force=False):
     if not M.for_format([mk], f):
         return 'ok', 'not a format of this market (skip_formats)'
     pid = page_of(f, m)
+    if pid and pages.is_hand(pid):
+        return 'ok', 'edited by hand in Megasheet - kept as it is'
     if not pid:
         status, detail = missing_page(f, mk, fmts, origs, cfg)
         if status == 'built':  # page name = its title etc. right away (not on the next run)
             tidy.tidy_page(page_of(f, m), cfg['links'])
         return status, detail
-    blocks = notion.children(pid)
+    try:
+        blocks = pages.children(pid)
+    except pages.PageNotFound:
+        return 'error', 'its Megasheet idea was deleted by hand - not rebuilt (link another page or remove it by hand)'
     has_video = any(b['type'] == 'video' for b in blocks)
     has_res = any(b['type'].startswith('heading') and re.search(r'🔧|RESSOURCE|RECURSOS|VIRI', _plain_text(b), re.I) for b in blocks)
     if not force and has_video and has_res and not verify.layout_problems(blocks, _reword.script_blocks(pid), cfg['links']):
@@ -1381,7 +1313,7 @@ def standardize(only=None):
                     report.append((f['title'], m, status, detail))
                     continue
                 pid = page_of(f, m)
-                blocks = notion.children(pid)
+                blocks = pages.children(pid)
                 # duplicates outside the script section
                 script_ids = {b['id'] for b in _reword.script_blocks(pid)}
                 seen, removed, videos = set(), 0, 0
@@ -1389,14 +1321,14 @@ def standardize(only=None):
                     if b['type'] == 'video':
                         videos += 1
                         if videos > 1:
-                            notion.api('DELETE', f"/blocks/{b['id']}")
+                            pages.api('DELETE', f"/blocks/{b['id']}")
                             removed += 1
                         continue
                     t = _plain_text(b)
                     if b['id'] in script_ids or len(t) < 15 or b['type'] not in ('paragraph', 'bulleted_list_item'):
                         continue
                     if (b['type'], t) in seen:
-                        notion.api('DELETE', f"/blocks/{b['id']}")
+                        pages.api('DELETE', f"/blocks/{b['id']}")
                         removed += 1
                     seen.add((b['type'], t))
                 report.append((f['title'], m, 'ok', f'{removed} duplicate blocks removed' if removed else 'clean'))
@@ -1506,6 +1438,40 @@ def group_report(fmts, mkts, cfg, meta, fix=False, force=False):
     return results, dups
 
 
+def pages_dry():
+    """Read-only rehearsal on the Megasheet format pages (mode pages-dry): the re-sort of every list and the tidy
+    rules run as in a full run, but every Megasheet write is only printed ('[dry]'); comebacks are only listed (no page
+    is built, no Claude call). Right after the switch from Notion this must print (almost) nothing."""
+    pages.DRY = True
+    cfg, fmts = load_config(), load_formats()
+    mkts = M.load(cfg)
+    history = state.load('history.json', {})
+    tiers = state.load('own_tiers.json', {}).get('markets', {})
+    never = set(cfg.get('lineup', {}).get('never_revive', []))
+    back = [f['title'] for f in fmts if f.get('status') == 'archived' and f['id'] not in never and any(
+        tiers.get(mk['key'], {}).get(f['id'], {}).get('tier') == 1 for mk in mkts)]
+    print('would come back (proven for our creators):', back or 'none')
+    for mk in mkts:  # the lists as the re-sort draws them (own_tiers not saved: the weekly snapshot stays as it is)
+        ids, scores = rank.order(history, fmts, cfg, tiers=tiers.get(mk['key'], {}), market=mk['key'])
+        by = {f['id']: f for f in fmts}
+        want, hot_n = [], 0
+        for i in ids:
+            pid = page_of(by[i], mk['key']) if M.for_format([mk], by[i]) else None
+            if pid:
+                want.append(pid)
+                hot_n += bool(scores[i]['top'])
+        now = [p for _, p in pages.list_entries(mk['list_page'])[0]]
+        print(f"{mk['T']['flag']} list: {len(now)} in Megasheet, {len(want)} wanted, {hot_n} hot "
+              f"({'same order' if [p.replace('-', '') for p in want] == [p.replace('-', '') for p in now] else 'ORDER DIFFERS'}, "
+              f"hot now {pages.hot_entry_count(mk['list_page'])})")
+        pages.set_order(mk['list_page'], want, hot_count=hot_n, lang=mk['lang'])
+    for t, m, ch in tidy.run(fmts, mkts, cfg, page_of):
+        print('tidy:', m, t[:40], '-', '; '.join(ch))
+    hand = [(r['market'], i) for i, r in pages.STORE.state()['ideas'].items() if r.get('hand') or r.get('hand_media')]
+    print('edited by hand in Megasheet (never changed by the watcher):', hand or 'none')
+    print(pages.summary())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true', help='fetch + detect only, no notifications, no writes')
@@ -1536,7 +1502,7 @@ def main():
     ap.add_argument('--gate-rehearsal', action='store_true', help='run the publication gate on passing live formats (no publish)')
     ap.add_argument('--apply-approved', action='store_true', help='write approved scripts (and their examples) to the pages')
     ap.add_argument('--approval-drafts', action='store_true', help='replacement drafts for approval-locked scripts that '
-                    'fail the cross-country check (nothing written to Notion)')
+                    'fail the cross-country check (nothing written to Megasheet)')
     ap.add_argument('--force', action='store_true', help='with --group-audit/--group-fix: ignore cached group results')
     ap.add_argument('--strip-directions', action='store_true', help='every page (live, waiting, archived): bracketed stage directions / acting tips leave the scripts (approved scripts: via the registry + apply-approved)')
     ap.add_argument('--renote', action='store_true', help='every page (live, waiting, archived): the note under the inspiration video gets the current text')
@@ -1544,6 +1510,7 @@ def main():
     ap.add_argument('--timing', action='store_true', help='read-only: second Parakeet AI is first shown/said on every live page')
     ap.add_argument('--tidy', action='store_true', help='every live page: few link cues, hook names the title, bold title, page name = title')
     ap.add_argument('--auto', action='store_true', help='scheduled run: full every 6 hours, light in between')
+    ap.add_argument('--pages-dry', action='store_true', help='read-only: what comebacks, re-sort and tidy would change in Megasheet now (nothing is written)')
     ap.add_argument('--verify', action='store_true', help='read-only check of the lists and every format page (prints the problems)')
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--conversion', type=int, nargs='?', const=500, default=0,
@@ -1553,11 +1520,10 @@ def main():
     ap.add_argument('--dedupe', action='store_true', help='merge live formats that have the same title on a list (also every Monday)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
-    ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
     ap.add_argument('--fill-market', default='', help='fr | es: build missing pages of active formats')
     ap.add_argument('--reset-pending', action='store_true', help='formats waiting at the gate get their 4 tries back (after a fix), then are checked again')
     ap.add_argument('--add-format', default='', help='TikTok link(s), comma-separated: add this format by hand (any app), first link = example')
-    ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Notion changes)')
+    ap.add_argument('--test-viral', default='', help='TikTok URL: send the full viral Slack message for it (no Megasheet changes)')
     a = ap.parse_args()
     if a.test_discord:
         import requests as _rq
@@ -1584,9 +1550,6 @@ def main():
                       [(c['name'], len(c['members'])) for c in chans])
             except Exception as e:
                 print(mk['key'], 'creator channels failed:', str(e)[:300])
-        return
-    if a.init_market:
-        init_market(a.init_market)
         return
     if a.fill_market:
         fill_market(a.fill_market)
@@ -1824,6 +1787,9 @@ def main():
             print('tidy:', m, t[:40], '-', '; '.join(ch))
         print(f'tidy: {len(rep)} pages changed')
         return
+    if a.pages_dry:
+        pages_dry()
+        return
     if a.verify:
         from . import verify
         cfg, fmts = load_config(), load_formats()
@@ -1906,11 +1872,13 @@ def main():
                     click='https://github.com/vcmyfzft8b-sudo/jobstep-viral-watch/actions')
         print('test notification sent' + ('' if os.environ.get('SLACK_WEBHOOK_URL') else ' (no SLACK_WEBHOOK_URL set!)'))
         return
-    missing = [k for k in ('NOTION_TOKEN', 'CLAUDE_CODE_OAUTH_TOKEN', 'SONIOX_API_KEY') if not os.environ.get(k)]
+    missing = [k for k in ('MEGASHEET_LOGIN', 'CLAUDE_CODE_OAUTH_TOKEN', 'SONIOX_API_KEY') if not os.environ.get(k)]
     if missing and not a.dry_run:
         print('Missing secrets', missing, '-> running as dry run')
         a.dry_run = True
     run(dry_run=a.dry_run, only_detect=a.only_detect, auto=a.auto)
+    pages.STORE.finish()
+    print(pages.summary())
 
 
 if __name__ == '__main__':

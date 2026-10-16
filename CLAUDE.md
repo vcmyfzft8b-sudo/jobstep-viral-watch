@@ -22,7 +22,7 @@ here (repo, Notion, Discord, secrets, state are all separate).
   silent video). The only brackets are the link cues "(Parakeet AI · Resume Maker)" / LinkedIn and the 📎 material
   cues "(📎 … – siehe Ressourcen)". How to film, act and edit comes from the example video and the visual hook
   section. `brands.NO_DIRECTIONS` is in every writer/checker prompt (builder, align, audit, crosscheck judge +
-  reference); there is no "direction" cue any more; `notion.script_paragraphs` strips bracketed tips; a 📎 cue that
+  reference); there is no "direction" cue any more; `pages.script_paragraphs` strips bracketed tips; a 📎 cue that
   points to nothing in the resources is removed. Generated format references carry `rules` = `crosscheck.REF_RULES`
   and are rebuilt when it changes (reviewed ones never). `mode=strip-directions` cleans every page (old text in
   state/script_backup.json; approval-locked scripts only via the registry + `apply-approved`); `verify` flags leftovers.
@@ -109,7 +109,7 @@ here (repo, Notion, Discord, secrets, state are all separate).
   day); no run for 12 h -> Slack note; a crashed/cancelled run -> Slack note from the workflow's last step.
 
 ## Slovenia (15 Oct 2026)
-- Fourth market `sl` (Megasheet campaign *ParakeetAI - Slovenia*, Discord server 1560294285444780052). Its Notion tree
+- Fourth market `sl` (Megasheet campaign *ParakeetAI - Slovenia*, Discord server 1560294285444780052). Its (old) Notion tree
   ("Navodila za ustvarjalce ParakeetAI SI" under ParakeetAI - EU) is a Notion copy of the France tree, translated into
   Slovenian; list/holder/Visual Hook Lab in `config.json → markets.sl`, archive = "Slovenia formats archive".
 - `registry/market_adopt.json` maps each copied France format page to its Slovenian copy; `main.adopt_market_pages`
@@ -184,26 +184,36 @@ here (repo, Notion, Discord, secrets, state are all separate).
   script against its video sentence by sentence (`mode=faithful-check` read-only, `mode=faithful-fix` transcribes the
   ones with changes again with the exact problems); the Monday run does faithful-fix and sends what is still off to Slack.
 
-## Formats in Megasheet (16 Oct 2026, user: "the list changes up on what to make" in Megasheet)
-- Creators read the formats in the Megasheet portal. Notion stays where the watcher builds, checks, tidies and orders
-  pages; `watcher/megasheet_formats.py` copies each running market's Notion list into its campaign
-  (`megasheet.CAMPAIGNS`) as its own workflow step after every run (never fails the run; Slack note at most once a day).
-- One idea per page on the list, same order; hot formats (red card) first with a bold 🔥 hot_header line; title,
-  script, visual hook (lab link dropped - the Visual Hook Lab is a guide on the same Megasheet page), ⚠️ note,
-  resources and the example video come from the page. Ideas are compared with the page every run - only differences
-  are sent. Hand edits in Megasheet WIN (user, 16 Oct 2026: "from now on make changes directly in Megasheet"): an idea
-  whose content differs from our last copy (`fp`) gets `hand` and is never overwritten again; changed videos ->
-  `hand_media`. Only the 🔥 line, the order and archive/publish still follow the list. Edit formats in Megasheet, not
-  in Notion. Off the list -> archived (never deleted),
-  back on the list -> the same idea published again. Hand-made Megasheet ideas are left alone, after ours.
-- First copy of a campaign: ideas with the same title (the 15 Oct one-time import) are taken over (same example video
-  = same file size -> not uploaded again), the other published ones archived. Titles used by creators' videos cannot
-  be removed: they stay after ours (`keep_titles`). State: state/megasheet_formats.json (ids only).
-- Needs the Megasheet login with write access (`mcp:write`, since 16 Oct 2026): `scripts/save_megasheet_login.sh`.
-  Megasheet only has read / read+write-everything logins, so `megasheet.Client` limits it (user: "only write access
-  for the formats, nothing else"): READ_TOOLS, WRITE_TOOLS (format ideas + their media only) and WRITE_CAMPAIGNS
-  (France, Spain, Slovenia ids - never DACH); a write must name the campaign and may only touch ideas/media read from
-  or created in it. Anything else raises `NotAllowed` before it is sent. DACH is never copied (`COPY_MARKETS`).
-- Modes: `megasheet-formats` (only the copy), `megasheet-formats-dry` (prints what would change). DACH is not copied
-  while the market is off. Page intro/rules/footer, the Visual Hook Lab guide and hook videos are campaign settings
-  in Megasheet (set by hand, not by the watcher).
+## Formats only in Megasheet (16 Oct 2026, user: "stop using Notion entirely" for the formats)
+- The format pages and lists ARE Megasheet ideas now (`watcher/pages.py`); Notion is not read or written for formats
+  any more (only the private radar log, `notify.radar` -> `watcher/notion.py`, needs NOTION_TOKEN). The old Notion
+  pages stay in Notion (nothing deleted). The old copy step (`megasheet_formats.py`, modes megasheet-formats/-dry,
+  the workflow step) and init-fr/init-es are gone.
+- `pages.py` keeps the block interface every check uses (`children`, `api` PATCH/DELETE/insert, `create_page`,
+  `replace_content`, `move_page`, `list_entries`, `set_order`): an idea is drawn as a page (video + TikTok link + ⚠️
+  note, 📲 title + subtitle line, 💬 script paragraphs, 🎬 hook lines, 🔧 resources); every change is turned back into
+  the idea's fields and sent at once - only fields that really changed (unchanged fields keep Megasheet's exact text).
+  Nothing changed = nothing sent.
+- `formats.json pages.<market>` = idea ids. Places in `state/pages.json` (`ideas.<id>`: market, place, fp, hand,
+  media_ids, hand_media, keep_titles): `live` = published (on the list), `archive` / `staging` = archived (invisible).
+  `markets.load` gives every market `list:<m>`, `live:<m>`, `archive:<m>`, `staging:<m>` (config has no Notion page
+  ids any more). New pages are built as archived ideas in staging, the gate publishes them; a spec that fails its
+  checks is not saved anywhere (no drafts).
+- The list = our published ideas in Megasheet's order; `set_order` re-orders, puts the bold 🔥 hot_header line on
+  the hot ones, publishes the listed ones and archives our others. Ideas made by hand in Megasheet stay after ours.
+- Hand edits WIN (user, 16 Oct 2026): an idea whose content (or videos) differ from what the watcher last wrote
+  (`fp`, read back from Megasheet at the end of each run) gets `hand` / `hand_media` and its content and videos are
+  never written again (`pages.locked`; tidy, audit, align, faithful, localize, rebuilds skip it). Only its place in
+  the list, the 🔥 line and published/archived follow the ranking. `verify` lists them.
+- New example videos (local files) go up with `formats_createMediaUpload` (UploadThing grant -> POST + PUT).
+  `megasheet.Client` allow-list: format ideas + their media of France/Spain/Slovenia only, ideas read/created in that
+  campaign; never DACH, page settings, guides. DACH (stopped) keeps its Notion `page_id`s - restarting DACH needs work.
+- One-time migration (`pages.migrate`, first load): every Notion page id with an idea in the old copy record
+  (state/megasheet_formats.json) -> that idea id (16 Oct: fr 13, es 12, sl 12); others (archived formats, off-list
+  pages without an idea) -> `notion_pages` (kept for reference). Such a format that comes back gets its page built
+  from its example video (missing page). Old audit/crosscheck caches see new fingerprints -> everything is checked
+  once more on the next Monday.
+- Modes: `pages-dry` (read-only: re-sort + tidy with every write only printed, comebacks listed; must print ~0 writes),
+  `verify` (reads Megasheet), every run prints "megasheet format writes: N". `test_video` builds an ARCHIVED
+  "🧪 TEST –" idea (input "URL [market]", default fr) - delete it in Megasheet afterwards.
+- One access token per process (`megasheet.access_token`, renewed once when refused).

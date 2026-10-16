@@ -213,7 +213,7 @@ class OrderTests(unittest.TestCase):
         cfg = {**CFG, 'markets': {'es': {'enabled': True}, 'fr': {'enabled': True}}}
         tiers = lambda videos, formats, now, m, c: {'LOCAL': {'tier': 1}} if m == 'fr' else {}
         mkts = [{'key': m, 'T': {'flag': m}, 'archive_page': f'arch-{m}', 'holder_page': f'hold-{m}'} for m in ('es', 'fr')]
-        with mock.patch.object(own, 'tiers', side_effect=tiers), mock.patch.object(lineup.notion, 'move_page') as mv, \
+        with mock.patch.object(own, 'tiers', side_effect=tiers), mock.patch.object(lineup.pages, 'move_page') as mv, \
                 mock.patch.object(lineup.notify, 'push'), mock.patch.object(lineup.state, 'log'):
             p = lineup.apply(h, fmts, cfg, {}, mkts, now=NOW)
         self.assertEqual(p['out'], [])
@@ -223,7 +223,7 @@ class OrderTests(unittest.TestCase):
         from watcher import markets
         self.assertEqual([mk['key'] for mk in markets.for_format(mkts, fmts[-1])], ['fr'])
         with mock.patch.object(own, 'tiers', return_value={'LOCAL': {'tier': 1}}), \
-                mock.patch.object(lineup.notion, 'move_page') as mv, mock.patch.object(lineup.notify, 'push'), \
+                mock.patch.object(lineup.pages, 'move_page') as mv, mock.patch.object(lineup.notify, 'push'), \
                 mock.patch.object(lineup.state, 'log'):
             p = lineup.apply(h, fmts, cfg, {}, mkts, now=NOW)  # proven in Spain too now: back on that list
         mv.assert_called_once_with('p-es', 'hold-es')

@@ -1,10 +1,10 @@
-from watcher import notion, tidy
+from watcher import pages, tidy
 
 LINKS = {'parakeet': 'https://p', 'linkedin': 'https://l'}
 
 
 def cue(url, label='Parakeet AI · Resume Maker'):
-    return [notion.rt('('), notion.rt(label, link=url), notion.rt(') ')]
+    return [pages.rt('('), pages.rt(label, link=url), pages.rt(') ')]
 
 
 def text(items):
@@ -12,9 +12,9 @@ def text(items):
 
 
 def test_one_cue_per_paragraph_and_at_most_three():
-    paras = [cue('https://p') + [notion.rt('Upload. ')] + cue('https://p') + [notion.rt('Score. ')],
-             cue('https://p') + [notion.rt('A. ')], cue('https://p') + [notion.rt('B. ')],
-             cue('https://p') + [notion.rt('C. ')]]
+    paras = [cue('https://p') + [pages.rt('Upload. ')] + cue('https://p') + [pages.rt('Score. ')],
+             cue('https://p') + [pages.rt('A. ')], cue('https://p') + [pages.rt('B. ')],
+             cue('https://p') + [pages.rt('C. ')]]
     out, removed = tidy.trim_cues(paras, LINKS)
     assert removed == 2  # the 2nd cue of paragraph 1 and the 4th Parakeet AI cue
     assert text(out[0]) == '(Parakeet AI · Resume Maker) Upload. Score. '
@@ -23,14 +23,14 @@ def test_one_cue_per_paragraph_and_at_most_three():
 
 
 def test_linkedin_and_parakeet_cues_both_stay_in_one_paragraph():
-    out, removed = tidy.trim_cues([cue('https://l', 'LinkedIn') + [notion.rt('Copy. ')] + cue('https://p') +
-                                   [notion.rt('Paste. ')]], LINKS)
+    out, removed = tidy.trim_cues([cue('https://l', 'LinkedIn') + [pages.rt('Copy. ')] + cue('https://p') +
+                                   [pages.rt('Paste. ')]], LINKS)
     assert removed == 0
 
 
 def test_merged_brackets_are_removed_too():
-    paras = [[notion.rt('('), notion.rt('P', link='https://p'), notion.rt(') One. ('), notion.rt('P', link='https://p'),
-              notion.rt(') Two.')]]
+    paras = [[pages.rt('('), pages.rt('P', link='https://p'), pages.rt(') One. ('), pages.rt('P', link='https://p'),
+              pages.rt(') Two.')]]
     out, _ = tidy.trim_cues(paras, LINKS)
     assert text(out[0]) == '(P) One. Two.'
 
@@ -50,7 +50,7 @@ def test_page_name_keeps_its_number():
 
 def test_renderer_uses_the_same_cue_rule():
     spec = {'script': [{'cue': 'parakeet', 'text': f'S{i}.'} for i in range(6)]}
-    paras = notion.script_paragraphs(spec, LINKS, 'fr')
+    paras = pages.script_paragraphs(spec, LINKS, 'fr')
     links = [x for p in paras for x in p['paragraph']['rich_text'] if tidy._url(x)]
     assert len(links) == 1  # one paragraph -> one cue
 
@@ -74,8 +74,8 @@ def test_old_hand_written_page_is_left_alone():
               {'type': 'paragraph', 'paragraph': {'rich_text': [{'plain_text': 'Choisis une de ces phrases.'}]}}]
     script = [{'type': 'paragraph', 'paragraph': {'rich_text': [{'plain_text': 'Je viens de quitter mon poste en RH.'}]}}]
     with mock.patch.object(tidy.reword, 'script_blocks', return_value=script), \
-            mock.patch.object(tidy.notion, 'children', return_value=blocks), \
-            mock.patch.object(tidy.notion, 'api') as api:
+            mock.patch.object(tidy.pages, 'children', return_value=blocks), \
+            mock.patch.object(tidy.pages, 'api') as api:
         ch = tidy.tidy_page('pid', LINKS)
     assert ch and ch[0].startswith('old layout')
     api.assert_not_called()  # no rename, no edits

@@ -15,7 +15,7 @@ then matched to the new script.
 import json
 import re
 
-from . import llm, localize, notion, reword, state
+from . import llm, localize, pages, reword, state
 from .builder import COUNTRY, PARAKEET_FACTS, TRANSCRIBE
 from .markets import TEXT
 
@@ -68,13 +68,15 @@ def matches_approved(page_id, lang, links, spec):
                 chars.pop()
             out.append((b['type'], chars))
         return out
-    return signature(reword.script_blocks(page_id)) == signature(notion.script_paragraphs(spec, links, lang))
+    return signature(reword.script_blocks(page_id)) == signature(pages.script_paragraphs(spec, links, lang))
 
 
 def align_page(fmt, page_id, lang, cfg, links, feedback='', draft_url=None):
     """Returns (status, why). With draft_url: writes NOTHING - returns ('draft', spec) for a replacement script that
     follows that example (used to prepare replacements of approval-locked scripts for the user's approval)."""
     T = TEXT[lang]
+    if not draft_url and pages.is_hand(page_id):
+        return 'skipped', 'edited by hand in Megasheet - kept as it is'
     src = localize.current_source(page_id)
     url = draft_url or (src['url'] if src else None)
     ok = None if draft_url else approved(fmt['id'], lang, url)
@@ -148,25 +150,25 @@ def _write(fmt, page_id, lang, cfg, links, spec, info):
         return 'skipped', 'no script section'
     T = TEXT[lang]
     sub = T['sub_voice'] if spec.get('voiceover', True) else T['sub_silent']
-    for b in notion.children(page_id):  # the subtitle line under the title must match (voiceover or not)
+    for b in pages.children(page_id):  # the subtitle line under the title must match (voiceover or not)
         if b['type'] == 'bulleted_list_item' and reword._plain(b).strip() in (T['sub_voice'], T['sub_silent']):
             if reword._plain(b).strip() != sub:
-                notion.api('PATCH', f"/blocks/{b['id']}", {'bulleted_list_item': {'rich_text': [notion.rt(sub)]}})
+                pages.api('PATCH', f"/blocks/{b['id']}", {'bulleted_list_item': {'rich_text': [pages.rt(sub)]}})
             break
     resources = None if locked else reword.resources_text(page_id)  # approved scripts are rendered exactly as approved
     for seg in spec['script']:
         if seg.get('cue') in ('null', 'None', '', 'direction'):  # no stage directions (brands.NO_DIRECTIONS)
             seg['cue'] = None
-        if resources is not None and seg.get('cue') == 'asset' and not reword.in_resources(notion.asset_label(seg.get('asset_name')), resources):
+        if resources is not None and seg.get('cue') == 'asset' and not reword.in_resources(pages.asset_label(seg.get('asset_name')), resources):
             seg['cue'], seg['asset_name'] = None, ''  # nothing in the resources to point to -> no cue
-    new_blocks = notion.script_paragraphs(spec, links, lang)
+    new_blocks = pages.script_paragraphs(spec, links, lang)
     with state.LOCK:
         backup = state.load('script_backup.json', {})
         backup.setdefault('page:' + page_id, [b[b['type']]['rich_text'] for b in blocks])
         state.save('script_backup.json', backup)
-    notion.api('PATCH', f'/blocks/{page_id}/children', {'children': new_blocks, 'after': blocks[-1]['id']})
+    pages.api('PATCH', f'/blocks/{page_id}/children', {'children': new_blocks, 'after': blocks[-1]['id']})
     for b in blocks:
-        notion.api('DELETE', f"/blocks/{b['id']}")
+        pages.api('DELETE', f"/blocks/{b['id']}")
     reword.fix_directions(fmt, page_id, lang, cfg['models']['classify'])
     return 'ok', info
 
@@ -203,7 +205,8 @@ def _validate(spec, n_orig, source=None, translated=False):
 def run(fmts, mkts, cfg, page_of, workers=8):
     import concurrent.futures as cf
     from .markets import for_format
-    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f) if page_of(f, mk['key'])]
+    jobs = [(f, mk) for f in fmts if f.get('status') == 'active' for mk in for_format(mkts, f) if page_of(f, mk['key'])
+            and not pages.is_hand(page_of(f, mk['key']))]  # edited by hand in Megasheet: never re-transcribed
 
     def one(job):
         f, mk = job

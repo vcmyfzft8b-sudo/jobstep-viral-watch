@@ -1,5 +1,5 @@
 """Notifications: Slack (SLACK_WEBHOOK_URL), optional phone push via ntfy (NTFY_TOPIC),
-plus a log line on the private Notion radar page."""
+plus a log line on the private Notion radar page (the only thing still in Notion - formats are in Megasheet)."""
 import os
 
 import requests
@@ -33,7 +33,7 @@ def push(title, message, click=None, tags=''):
 
 
 def radar(radar_page, text, link=None, link_label=None):
-    if not radar_page:
+    if not radar_page or not os.environ.get('NOTION_TOKEN'):
         return
     rich = [notion.rt(text)]
     if link:

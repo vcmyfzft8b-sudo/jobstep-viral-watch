@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from watcher import localize, main, notion, verify
+from watcher import localize, main, pages, verify
 from watcher.markets import TEXT
 
 TAGS = {'1': {'format': 'FRX22', 'market': 'fr'}, '2': {'format': 'FRX22', 'market': 'fr'},
@@ -47,7 +47,7 @@ class OwnNoteTests(unittest.TestCase):
     def test_own_note_is_accepted_and_kept(self):
         for lang in ('de', 'fr', 'es'):
             own = TEXT[lang]['inspo_note_own']
-            self.assertEqual(notion.inspo_note(lang, True, own=True), [own])
+            self.assertEqual(pages.inspo_note(lang, True, own=True), [own])
             self.assertTrue(localize.note_is_same(own, lang))
             blocks = [{'type': 'video', 'video': {}},
                       {'type': 'callout', 'callout': {'rich_text': [{'plain_text': own.replace('**', '')}]}}]

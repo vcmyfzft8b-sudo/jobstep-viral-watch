@@ -8,7 +8,7 @@ Reply with JSON only."""
 
 
 def _listing(formats, with_script=False):
-    """Every format we have in Notion: the active list AND the archive (optionally with its script text)."""
+    """Every format we have: the active list AND the archive (optionally with its script text)."""
     lines = []
     for f in formats:
         if not f.get('description'):
@@ -22,7 +22,7 @@ def _listing(formats, with_script=False):
 
 def classify(video, formats, model, transcript=''):
     listing = _listing(formats)
-    prompt = f"""All formats we already have in Notion (active list + archive):
+    prompt = f"""All formats we already have (active list + archive):
 {listing}
 
 Video (@{video['handle']}, {video['views']} views):
@@ -47,7 +47,7 @@ Return JSON:
 def confirm_new(video, formats, model, transcript=''):
     """Second, stricter check with the strong model right before a page is built: is this format really not in
     Notion yet (neither in the list nor in the archive)? Returns the id of the existing format, or None."""
-    prompt = f"""All formats we already have in Notion (active list + archive), with the script from each page:
+    prompt = f"""All formats we already have (active list + archive), with the script from each page:
 {_listing(formats, with_script=True)}
 
 Viral video (@{video['handle']}):
@@ -74,7 +74,7 @@ def classify_many(videos, formats, model, batch=25):
         items = '\n\n'.join(f"VIDEO {v['id']} (@{v['handle']}):\nON-SCREEN TEXT: {v.get('sticker') or '-'}\n"
                               f"CAPTION: {(v.get('desc') or '-')[:300]}\nSPEECH: {(v.get('subtitles') or '-')[:900]}"
                               for v in chunk)
-        prompt = f"""All formats we already have in Notion (active list + archive):
+        prompt = f"""All formats we already have (active list + archive):
 {_listing(formats)}
 
 Sort each of these videos. Match a format when the CORE premise is the same (even if worded differently);
@@ -95,13 +95,13 @@ Return JSON {{"results": [{{"id": "<video id>", "match": "<format id or null>", 
 
 
 def judge(video, formats, model, transcript='', translate=True):
-    """The definitive check for a viral video (strong model): is its format already in Notion (list or archive)?
+    """The definitive check for a viral video (strong model): is its format already ours (list or archive)?
     Also translates the script to English for the Slack message.
     Returns {'duplicate_of', 'reason', 'english_script', 'hook_en', 'new_format_description'}."""
     translate_task = ('2) Translate the full script into natural English (spoken lines; if there is no speech, the on-screen '
                       'texts), keeping the line order. Replace nothing - translate what is said.') if translate else ''
     translate_field = ',\n"english_script": "<the translated script, line breaks between sentences>"' if translate else ''
-    prompt = f"""All formats we already have in Notion (active list + archive), with the script from each page:
+    prompt = f"""All formats we already have (active list + archive), with the script from each page:
 {_listing(formats, with_script=True)}
 
 Viral TikTok video (@{video['handle']}):

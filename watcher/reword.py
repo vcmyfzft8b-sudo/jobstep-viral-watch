@@ -9,7 +9,7 @@ state/script_backup.json, so a page can be restored.
 import json
 import re
 
-from . import llm, notion, state
+from . import llm, pages, state
 from .brands import SOURCE_RE
 from .markets import TEXT
 
@@ -22,7 +22,7 @@ def _plain(b):
 
 def script_blocks(page_id):
     """The blocks of the page's script section (between the 💬 heading and the next divider/heading)."""
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     start = next((i for i, b in enumerate(blocks) if b['type'].startswith('heading') and
                   re.search(r'💬|SKRIPT|SCRIPT|GUION|SCENARIJ', _plain(b), re.I)), None)
     if start is None:
@@ -99,18 +99,18 @@ def _validate(enc, new, original=''):
 
 
 def apply(changes):
-    with state.LOCK:  # backup first (so the original text is never lost), then write to Notion
+    with state.LOCK:  # backup first (so the original text is never lost), then write to Megasheet
         backup = state.load('script_backup.json', {})
         for b, old, text, links in changes:
             backup.setdefault(b['id'], b[b['type']]['rich_text'])
         state.save('script_backup.json', backup)
     for b, old, text, links in changes:
-        notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(text, links)}})
+        pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': decode(text, links)}})
 
 
 def direction_blocks(page_id):
     """Blocks of the 🎬 filming-directions section (without the mandatory 🚨 line and the Visual Hook Lab link)."""
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     out, inside = [], False
     for b in blocks:  # 🎬 = directions; older German pages also keep them under 👀 VISUELLER EINSTIEG
         if b['type'].startswith('heading'):
@@ -174,23 +174,23 @@ Return JSON {{"hook": "<1-2 short sentences>"}}"""
             backup.setdefault(b['id'], b[b['type']]['rich_text'])
         state.save('script_backup.json', backup)
     first = enc[0][0]
-    notion.api('PATCH', f"/blocks/{first['id']}", {first['type']: {'rich_text': [notion.rt(hook)]}})
+    pages.api('PATCH', f"/blocks/{first['id']}", {first['type']: {'rich_text': [pages.rt(hook)]}})
     for b, _, _ in enc[1:]:
-        notion.api('DELETE', f"/blocks/{b['id']}")
+        pages.api('DELETE', f"/blocks/{b['id']}")
     return 'ok', ''
 
 
 def resources_text(page_id):
     """Plain text of the page's 🔧 resources section (what a '📎 … – see resources' cue may point to)."""
     out, inside = [], False
-    for b in notion.children(page_id):
+    for b in pages.children(page_id):
         if b['type'].startswith('heading'):
             inside = '🔧' in _plain(b)
             continue
         if inside and b['type'] != 'divider':
             out.append(_plain(b))
             if b.get('has_children'):  # e.g. the Gmail link sits inside the resources callout
-                out += [_plain(c) for c in notion.children(b['id']) if c.get(c['type'], {}).get('rich_text') is not None]
+                out += [_plain(c) for c in pages.children(b['id']) if c.get(c['type'], {}).get('rich_text') is not None]
     return ' '.join(out).lower()
 
 
@@ -217,7 +217,7 @@ def fix_asset_cues(page_id):
                 lang = next((l for l, suf in suffixes.items() if suf in m.group(1)), None)
                 if not lang:
                     continue
-                name = notion.asset_label(m.group(1))
+                name = pages.asset_label(m.group(1))
                 if resources is None:
                     resources = resources_text(page_id)
                 if not in_resources(name, resources):
@@ -230,7 +230,7 @@ def fix_asset_cues(page_id):
                 changed = True
             x['text']['content'] = t
         if changed:
-            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [
+            pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [
                 {'type': 'text', 'text': x['text'], 'annotations': x.get('annotations', {})} for x in rich if x.get('text')]}})
             fixed += 1
     return fixed
@@ -242,7 +242,7 @@ def directions_left(page_id):
     for b in script_blocks(page_id):
         for x in b[b['type']].get('rich_text', []):
             if x.get('type') == 'text' and not ((x.get('text') or {}).get('link') or {}).get('url'):
-                found += [m.group(0).strip() for m in notion.DIRECTION_RE.finditer(x.get('plain_text', ''))]
+                found += [m.group(0).strip() for m in pages.DIRECTION_RE.finditer(x.get('plain_text', ''))]
     return found
 
 
@@ -256,7 +256,7 @@ def strip_directions(page_id):
         for x in rich:
             if x.get('type') == 'text' and not ((x.get('text') or {}).get('link') or {}).get('url'):
                 t = x.get('plain_text', '')
-                new = re.sub(r' {2,}', ' ', notion.DIRECTION_RE.sub('', t))
+                new = re.sub(r' {2,}', ' ', pages.DIRECTION_RE.sub('', t))
                 if new != t:
                     touched = True
                 if new:
@@ -275,9 +275,9 @@ def strip_directions(page_id):
         if out and out[0]['type'] == 'text':
             out[0]['text']['content'] = out[0]['text']['content'].lstrip()
         if not ''.join(o.get('text', {}).get('content', '') for o in out).strip():
-            notion.api('DELETE', f"/blocks/{b['id']}")  # the paragraph was only a direction
+            pages.api('DELETE', f"/blocks/{b['id']}")  # the paragraph was only a direction
         else:
-            notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': out}})
+            pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': out}})
         changed += 1
     return changed
 

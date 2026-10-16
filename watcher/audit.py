@@ -18,7 +18,7 @@ import os
 import re
 from urllib.parse import urlsplit
 
-from . import align, llm, localize, notion, reword, state, tiktok
+from . import align, llm, localize, pages, reword, state, tiktok
 from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 
@@ -51,10 +51,10 @@ def fingerprint(page_id):
                 data['file'] = media_file
             item['content'] = data
             if b.get('has_children') and b['type'] not in ('child_page', 'child_database'):
-                item['children'] = content_of(notion.children(b['id']))
+                item['children'] = content_of(pages.children(b['id']))
             out.append(item)
         return out
-    content = content_of(notion.children(page_id))
+    content = content_of(pages.children(page_id))
     with open(align.APPROVED) as fh:
         approvals = json.load(fh)
     return hashlib.sha256(json.dumps({'policy': 2, 'blocks': content, 'approvals': approvals,
@@ -73,7 +73,7 @@ def nested_instructions(blocks):
                        for x in rich)
     for b in blocks:
         if b.get('has_children') and b['type'] not in ('child_page', 'child_database'):
-            children = notion.children(b['id'])
+            children = pages.children(b['id'])
             out.append(describe(b) + ':\n' + '\n'.join(describe(c) for c in children))
             out.extend(nested_instructions(children))
     return out
@@ -96,7 +96,7 @@ def check(fmt, page_id, lang, model, links=None):
                                          else 'example transcript or view count unavailable; retry required')}, url
     script = '\n'.join(reword._plain(b) for b in reword.script_blocks(page_id))
     directions = '\n'.join(reword._plain(b) for b in reword.direction_blocks(page_id))
-    blocks_all = notion.children(page_id)
+    blocks_all = pages.children(page_id)
     ti = next((k for k, b in enumerate(blocks_all) if b['type'].startswith('heading') and '📲' in reword._plain(b)), None)
     title_block = next((b for b in blocks_all[ti + 1:ti + 3] if b['type'] == 'paragraph' and reword._plain(b).strip()), None) if ti is not None else None
     title = reword._plain(title_block) if title_block else ''
@@ -168,7 +168,7 @@ Return JSON {{"example_same_format": true, "script_follows_example": true, "scri
         v['example_language'] = embedded['source_language']
     same = localize.LANG_NAME[lang].lower() in str(v.get('example_language', '')).lower()
     own_ex = localize.is_own_url(url)  # our creator's video: the 'own' note, whatever the language
-    want_note = '\n'.join(notion.inspo_note(lang, same, own_ex)).replace('**', '').strip()
+    want_note = '\n'.join(pages.inspo_note(lang, same, own_ex)).replace('**', '').strip()
     v['note_ok'] = bool(note) and (note.replace('**', '').strip() == want_note if own_ex else
                                    (same and _note_is_same(note, lang)) or (not same and not _note_is_same(note, lang)))
     v['same_lang'] = same
@@ -243,6 +243,8 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
     """Checks one page and fixes it until it passes. Returns (status, notes)."""
     m, lang, model = mk['key'], mk['lang'], cfg['models']['build']
     pid = page_of(fmt, m)
+    if pid and pages.is_hand(pid):  # Megasheet wins (user, 16 Oct 2026): a page edited by hand is never "fixed"
+        return 'ok', ['edited by hand in Megasheet - not checked']
     notes, rejected, rebuilt = [], set(), False
     for r in range(rounds + 1):
         passed, v, url = check(fmt, pid, lang, model, cfg['links'])
@@ -289,7 +291,7 @@ def fix_page(fmt, mk, cfg, history, accounts, meta, page_of, rounds=5, rebuild=N
             continue
         if not v.get('title_ok') and v.get('title_suggestion') and v.get('title_block'):
             tb = v['title_block']
-            notion.api('PATCH', f"/blocks/{tb['id']}", {tb['type']: {'rich_text': [notion.rt(v['title_suggestion'], bold=True)]}})
+            pages.api('PATCH', f"/blocks/{tb['id']}", {tb['type']: {'rich_text': [pages.rt(v['title_suggestion'], bold=True)]}})
             notes.append(f"title fixed: {v['title_suggestion'][:60]}")
             continue
         if not v.get('directions_ok') and v.get('example_same_format') and v.get('script_faithful') and v.get('script_follows_example'):

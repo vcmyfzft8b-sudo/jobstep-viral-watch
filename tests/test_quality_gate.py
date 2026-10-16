@@ -6,7 +6,7 @@ from contextlib import ExitStack
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from watcher import align, audit, gate, localize, main, notion, reword, state
+from watcher import align, audit, gate, localize, main, pages, reword, state
 from watcher.markets import TEXT
 
 
@@ -31,12 +31,12 @@ def live(blocks):
 
 def page():
     return live([
-        notion.block('heading_2', [notion.rt('💬 SKRIPT')]),
-        *notion.script_paragraphs(SPEC, LINKS, 'de'),
-        notion.block('divider'),
-        notion.block('heading_2', [notion.rt('🎬 Directions')]),
-        notion.para([notion.rt('Zeige die App.')]),
-        notion.block('callout', [notion.rt(TEXT['de']['inspo_note_same'])], icon={'type': 'emoji', 'emoji': '⚠️'}),
+        pages.block('heading_2', [pages.rt('💬 SKRIPT')]),
+        *pages.script_paragraphs(SPEC, LINKS, 'de'),
+        pages.block('divider'),
+        pages.block('heading_2', [pages.rt('🎬 Directions')]),
+        pages.para([pages.rt('Zeige die App.')]),
+        pages.block('callout', [pages.rt(TEXT['de']['inspo_note_same'])], icon={'type': 'emoji', 'emoji': '⚠️'}),
     ])
 
 
@@ -55,8 +55,8 @@ class QualityGateTests(unittest.TestCase):
             if method == 'GET' and path.startswith('/pages/'):
                 return {'parent': {'type': 'page_id', 'page_id': 'staging'}}
             raise AssertionError('Unexpected Notion write')
-        self.api = self.stack.enter_context(patch.object(notion, 'api', side_effect=read_parent))
-        self.stack.enter_context(patch.object(notion, 'children', return_value=page()))
+        self.api = self.stack.enter_context(patch.object(pages, 'api', side_effect=read_parent))
+        self.stack.enter_context(patch.object(pages, 'children', return_value=page()))
         self.llm = self.stack.enter_context(patch.object(audit.llm, 'chat_json', side_effect=AssertionError('Unexpected LLM call')))
         self.push = self.stack.enter_context(patch.object(gate.notify, 'push'))
         self.fmt = {'id': 'LOCKED', 'title': 'Example', 'status': 'active', 'page_id': 'page'}
@@ -69,7 +69,7 @@ class QualityGateTests(unittest.TestCase):
         self.patch(localize, 'current_source', return_value={'url': url})
         self.patch(localize, 'example_text', return_value='ON-SCREEN: Tool\nSPEECH: ' + 'Original Satz. ' * 9)
         self.patch(audit.tiktok, 'video_detail', return_value={'views': 20000})
-        self.patch(notion, 'children', return_value=blocks or page())
+        self.patch(pages, 'children', return_value=blocks or page())
         verdict = {k: True for k in ('example_same_format', 'script_follows_example', 'script_faithful',
                                     'script_ok', 'directions_ok', 'title_ok')}
         verdict.update(example_language='German', script_issues=[], direction_issues=[], example_issue='')
@@ -118,7 +118,7 @@ class QualityGateTests(unittest.TestCase):
                     rich[-1]['text']['content'] = rich[-1]['plain_text'] = 'Changed text.'
                 else:
                     rich[1]['text']['link']['url'] = 'https://wrong.example'
-                with patch.object(notion, 'children', return_value=blocks):
+                with patch.object(pages, 'children', return_value=blocks):
                     self.assertFalse(align.matches_approved('page', 'de', LINKS, SPEC))
         self.readable_example(blocks)
         passed, verdict, _ = audit.check(self.fmt, 'page', 'de', 'test', LINKS)
@@ -154,7 +154,7 @@ class QualityGateTests(unittest.TestCase):
         self.patch(main, 'load_formats', return_value=[self.fmt])
         self.patch(main, 'load_config', return_value=CFG)
         self.patch(main.M, 'load', return_value=[MK])
-        self.patch(notion, 'children', return_value=page())  # missing resources -> rebuild path
+        self.patch(pages, 'children', return_value=page())  # missing resources -> rebuild path
         self.patch(audit, 'originals', return_value={'LOCKED': URL})
         self.patch(main.tiktok, 'video_detail', return_value={'url': URL})
         prepare = self.patch(main, '_prepare')
@@ -207,8 +207,8 @@ class QualityGateTests(unittest.TestCase):
         self.assertEqual(meta['audit'], {'LOCKED:de': 'ok', 'SECOND:de': 'failed'})
 
     def test_fingerprint_changes_for_text_but_not_expiring_video_url(self):
-        blocks = page() + live([notion.block('video', type='file', file={'url': 'https://signed.example/asset?token=1'})])
-        self.patch(notion, 'children', side_effect=lambda _: blocks)
+        blocks = page() + live([pages.block('video', type='file', file={'url': 'https://signed.example/asset?token=1'})])
+        self.patch(pages, 'children', side_effect=lambda _: blocks)
         initial = audit.fingerprint('page')
         blocks[-1]['video']['file']['url'] = 'https://signed.example/asset?token=2'
         self.assertEqual(initial, audit.fingerprint('page'))
@@ -218,9 +218,9 @@ class QualityGateTests(unittest.TestCase):
     def test_image_and_file_expiry_do_not_invalidate_cache_but_identity_changes_do(self):
         for kind in ('image', 'file', 'audio', 'pdf'):
             with self.subTest(kind=kind):
-                blocks = live([notion.block(kind, type='file', file={'url': 'https://signed.example/asset?token=1',
+                blocks = live([pages.block(kind, type='file', file={'url': 'https://signed.example/asset?token=1',
                                                                     'expiry_time': 'today'})])
-                with patch.object(notion, 'children', return_value=blocks):
+                with patch.object(pages, 'children', return_value=blocks):
                     before = audit.fingerprint('page')
                     blocks[0][kind]['file'].update(url='https://another-signer.example/asset?token=2', expiry_time='tomorrow')
                     self.assertEqual(before, audit.fingerprint('page'))
@@ -231,12 +231,12 @@ class QualityGateTests(unittest.TestCase):
         fmt = {'id': 'NEW', 'title': 'New', 'status': 'active'}
         build = self.patch(main, 'make_page', return_value=('staged-page', {}, []))
         fix = self.patch(audit, 'fix_page', return_value=('unverified', []))
-        move = self.patch(notion, 'move_page')
+        move = self.patch(pages, 'move_page')
         rerank = self.patch(main, 'rerank')
         self.assertEqual(main.ensure_market_pages(fmt, {}, [MK], [fmt], {}, CFG, None), [])
         self.assertIsNone(main.page_of(fmt, 'de'))
         self.assertEqual(fmt['pending_pages']['de'], 'staged-page')
-        self.assertEqual(build.call_args.kwargs['parent'], 'staging')
+        self.assertEqual(build.call_args.kwargs['parent'], 'staging:de')
         move.assert_not_called()
         rerank.assert_not_called()
         fix.return_value = ('ok', [])
@@ -258,7 +258,7 @@ class QualityGateTests(unittest.TestCase):
         fmt = {'id': 'NEW', 'title': 'New', 'status': 'active'}
         self.patch(main, 'make_page', return_value=('staged-page', {}, []))
         self.patch(audit, 'fix_page', return_value=('ok', []))
-        self.patch(notion, 'move_page', side_effect=RuntimeError('move unavailable'))
+        self.patch(pages, 'move_page', side_effect=RuntimeError('move unavailable'))
         with self.assertRaises(RuntimeError):
             main.ensure_market_pages(fmt, {}, [MK], [fmt], {}, CFG, None)
         self.assertIsNone(main.page_of(fmt, 'de'))
@@ -285,7 +285,7 @@ class QualityGateTests(unittest.TestCase):
             if pid == 'page-fr' and parent == 'fr-holder':
                 raise RuntimeError('Notion unavailable')
             parents[pid] = parent
-        self.patch(notion, 'move_page', side_effect=move)
+        self.patch(pages, 'move_page', side_effect=move)
         with self.assertRaises(RuntimeError):
             gate.publish(fmt, mkts, main.page_of)
         self.assertEqual(fmt['status'], 'pending')
@@ -294,7 +294,7 @@ class QualityGateTests(unittest.TestCase):
         self.assertEqual(state.load('publication_journal.json', {}), {})
 
     def test_publish_rejects_missing_language_before_moving(self):
-        move = self.patch(notion, 'move_page')
+        move = self.patch(pages, 'move_page')
         with self.assertRaises(RuntimeError):
             gate.publish(self.fmt, [MK, {**MK, 'key': 'fr'}], main.page_of)
         move.assert_not_called()
@@ -311,7 +311,7 @@ class QualityGateTests(unittest.TestCase):
         first = {**self.fmt, 'status': 'pending'}
         second = {**self.fmt, 'id': 'SECOND', 'status': 'pending', 'page_id': 'second-page'}
         self.patch(gate, 'check', side_effect=[RuntimeError('quota exhausted'), (True, [])])
-        self.patch(notion, 'move_page')
+        self.patch(pages, 'move_page')
         rerank = Mock(return_value=['SECOND'])
         gate.retry_pending([first, second], [MK], CFG, {}, {}, {}, main.page_of, main.set_page, Mock(), Mock(), rerank)
         self.assertEqual(first['status'], 'pending')
@@ -333,7 +333,7 @@ class QualityGateTests(unittest.TestCase):
         blocks = page()
         blocks[-1]['callout']['rich_text'] = [{'type': 'text', 'text': {'content': TEXT['es']['inspo_note_same']},
                                               'plain_text': TEXT['es']['inspo_note_same']}]
-        video = live([notion.block('video', type='file', file={'url': 'https://signed.example/upload'})])[0]
+        video = live([pages.block('video', type='file', file={'url': 'https://signed.example/upload'})])[0]
         video['id'] = 'verified-video'
         blocks.insert(0, video)
         record = {'format_id': 'LEGACY', 'market': 'es', 'page_id': 'page', 'video_block_id': video['id'],
@@ -342,7 +342,7 @@ class QualityGateTests(unittest.TestCase):
         path = Path(state.DIR) / 'embedded.json'
         path.write_text(json.dumps({'examples': [record]}))
         self.patch(localize, 'EMBEDDED_EVIDENCE', new=str(path))
-        self.patch(notion, 'children', return_value=blocks)
+        self.patch(pages, 'children', return_value=blocks)
         self.patch(localize, 'current_source', return_value={'video': video['id'], 'url': None})
         self.llm.side_effect = None
         self.llm.return_value = {k: True for k in ('example_same_format', 'script_follows_example', 'script_faithful',
@@ -367,7 +367,7 @@ class QualityGateTests(unittest.TestCase):
             with self.subTest(key=key):
                 changed = copy.deepcopy(blocks)
                 changed[0][key] = value
-                with patch.object(notion, 'children', return_value=changed):
+                with patch.object(pages, 'children', return_value=changed):
                     passed, verdict, _ = audit.check({**self.fmt, 'id': 'LEGACY'}, 'page', 'es', 'test', LINKS)
                     self.assertFalse(passed)
                     self.assertTrue(verdict['unverified'])
@@ -469,7 +469,7 @@ class QualityGateTests(unittest.TestCase):
         self.assertFalse(verdict['brand_count_ok'])
 
     def test_reword_validation_counts_spoken_text_separately_from_cues(self):
-        blocks = live(notion.script_paragraphs(SPEC, LINKS, 'de'))
+        blocks = live(pages.script_paragraphs(SPEC, LINKS, 'de'))
         enc = [(b, *reword.encode(b)) for b in blocks]
         original = 'ON-SCREEN:\nSPEECH: ' + 'Wort ' * 30
         why, _ = reword._validate(enc, [enc[0][1]], original)
@@ -490,7 +490,7 @@ class QualityGateTests(unittest.TestCase):
             if failing and ((pid == 'page-fr' and parent == 'fr-holder') or (pid == 'page' and parent == 'staging')):
                 raise RuntimeError('temporary move failure')
             parents[pid] = parent
-        self.patch(notion, 'move_page', side_effect=move)
+        self.patch(pages, 'move_page', side_effect=move)
         with self.assertRaises(RuntimeError):
             gate.publish(fmt, mkts, main.page_of)
         self.assertEqual(parents['page'], 'holder')
@@ -511,7 +511,7 @@ class QualityGateTests(unittest.TestCase):
         mkts = [MK, {**MK, 'key': 'fr', 'holder_page': 'fr-holder'}]
         parents, lists = {'page': 'staging', 'page-fr': 'archive'}, {'de': [], 'fr': []}
         self.api.side_effect = lambda method, path: {'parent': {'type': 'page_id', 'page_id': parents[path.split('/')[-1]]}}
-        move = self.patch(notion, 'move_page', side_effect=lambda pid, parent: parents.update({pid: parent}))
+        move = self.patch(pages, 'move_page', side_effect=lambda pid, parent: parents.update({pid: parent}))
         check = self.patch(gate, 'check', return_value=(True, []))
         attempts = 0
         def rerank(*args):
@@ -538,7 +538,7 @@ class QualityGateTests(unittest.TestCase):
     def test_immediate_gate_keeps_durable_list_repair_after_rank_failure(self):
         fmt = {**self.fmt, 'status': 'pending'}
         self.patch(gate, 'check', return_value=(True, []))
-        self.patch(notion, 'move_page')
+        self.patch(pages, 'move_page')
         self.patch(main, 'rerank', side_effect=RuntimeError('list unavailable'))
         result = main._gate(fmt, [MK], [fmt], {}, CFG, 'new')
         self.assertFalse(result[0])
@@ -553,14 +553,14 @@ class QualityGateTests(unittest.TestCase):
         root_id = blocks[-1]['id']
         blocks.append({'id': 'unrelated-page', 'type': 'child_page', 'has_children': True,
                        'child_page': {'title': 'Separate page'}})
-        children = live([notion.para([notion.rt('Gmail recording', link='https://example.invalid/gmail')])])
+        children = live([pages.para([pages.rt('Gmail recording', link='https://example.invalid/gmail')])])
         def read(pid):
             if pid == 'page':
                 return blocks
             if pid == root_id:
                 return children
             raise AssertionError('Must not traverse unrelated child pages')
-        self.patch(notion, 'children', side_effect=read)
+        self.patch(pages, 'children', side_effect=read)
         before = audit.fingerprint('page')
         children[0]['paragraph']['rich_text'][0]['text']['link']['url'] = 'https://example.invalid/updated'
         self.assertNotEqual(before, audit.fingerprint('page'))

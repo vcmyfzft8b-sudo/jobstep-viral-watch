@@ -1,5 +1,5 @@
 """Scripts are transcribed (no rewording) and the visual hook section is short (1-2 sentences + Visual Hook Lab)."""
-from watcher import align, builder, crosscheck, llm, notion, reword, state
+from watcher import align, builder, crosscheck, llm, pages, reword, state
 from watcher.markets import TEXT
 
 LINKS = {'parakeet': 'https://www.parakeet-ai.com/resume-maker', 'linkedin': 'https://linkedin.com/jobs',
@@ -19,7 +19,7 @@ def test_rewording_is_off():
 
 
 def test_hook_section_is_one_line_plus_lab():
-    blocks = notion.page_blocks(SPEC, {'url': 'https://www.tiktok.com/@a/video/1'}, None, LINKS, lang='de')
+    blocks = pages.page_blocks(SPEC, {'url': 'https://www.tiktok.com/@a/video/1'}, None, LINKS, lang='de')
     texts = [_plain(b) for b in blocks]
     i = texts.index(TEXT['de']['hook_h'])
     section = texts[i + 1:texts.index('', i + 1)]  # until the divider
@@ -50,7 +50,7 @@ def test_crosscheck_checks_transcript_not_rewording():
 
 
 def test_fix_directions_keeps_one_short_line(monkeypatch):
-    lines = [notion.para([notion.rt(t)]) for t in ('Halte den CV hoch.', 'Film den Laptop.', 'X und Y vorlesen.')]
+    lines = [pages.para([pages.rt(t)]) for t in ('Halte den CV hoch.', 'Film den Laptop.', 'X und Y vorlesen.')]
     for k, b in enumerate(lines):
         b['id'] = f'b{k}'
         b[b['type']]['rich_text'][0]['plain_text'] = _plain(b)
@@ -58,7 +58,7 @@ def test_fix_directions_keeps_one_short_line(monkeypatch):
     monkeypatch.setattr(reword, 'direction_blocks', lambda pid: lines)
     monkeypatch.setattr(crosscheck, 'reference', lambda fid: {})
     monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: {'hook': 'Halte deinen alten CV in die Kamera.'})
-    monkeypatch.setattr(notion, 'api', lambda method, path, body=None: calls.append((method, path, body)))
+    monkeypatch.setattr(pages, 'api', lambda method, path, body=None: calls.append((method, path, body)))
     monkeypatch.setattr(state, 'load', lambda name, default: {})
     monkeypatch.setattr(state, 'save', lambda name, data: None)
     assert reword.fix_directions({'id': 'X', 'title': 't'}, 'page', 'de', 'sonnet') == ('ok', '')
@@ -68,27 +68,27 @@ def test_fix_directions_keeps_one_short_line(monkeypatch):
 
 
 def test_fix_directions_refuses_long_hook(monkeypatch):
-    line = notion.para([notion.rt('Alt.')])
+    line = pages.para([pages.rt('Alt.')])
     line['id'] = 'b0'
     line['paragraph']['rich_text'][0]['plain_text'] = 'Alt.'
     monkeypatch.setattr(reword, 'direction_blocks', lambda pid: [line])
     monkeypatch.setattr(crosscheck, 'reference', lambda fid: {})
     monkeypatch.setattr(llm, 'chat_json', lambda *a, **k: {'hook': 'Eins. Zwei. Drei.'})
-    monkeypatch.setattr(notion, 'api', lambda *a, **k: (_ for _ in ()).throw(AssertionError('must not write')))
+    monkeypatch.setattr(pages, 'api', lambda *a, **k: (_ for _ in ()).throw(AssertionError('must not write')))
     assert reword.fix_directions({'id': 'X'}, 'page', 'de', 'sonnet')[0] == 'skipped'
 
 
 def test_old_line_mentioning_the_lab_is_a_direction(monkeypatch):
-    blocks = [notion.block('heading_2', [notion.rt(TEXT['de']['hook_h'])]),
-              notion.para([notion.rt('Such dir einen Hook aus dem Visual Hook Lab aus.')]),
-              notion.para([notion.rt('Starte als Selfie.')]),
-              notion.para([notion.rt(TEXT['de']['required_line'])]),
-              notion.para([notion.rt('Visual Hook Lab', link='https://notion.so/lab')]),
-              notion.divider()]
+    blocks = [pages.block('heading_2', [pages.rt(TEXT['de']['hook_h'])]),
+              pages.para([pages.rt('Such dir einen Hook aus dem Visual Hook Lab aus.')]),
+              pages.para([pages.rt('Starte als Selfie.')]),
+              pages.para([pages.rt(TEXT['de']['required_line'])]),
+              pages.para([pages.rt('Visual Hook Lab', link='https://notion.so/lab')]),
+              pages.divider()]
     for b in blocks:
         for x in b.get(b['type'], {}).get('rich_text', []):
             x['plain_text'] = x['text']['content']
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
     assert [_plain(b) for b in reword.direction_blocks('page')] == [
         'Such dir einen Hook aus dem Visual Hook Lab aus.', 'Starte als Selfie.']
 
@@ -104,12 +104,12 @@ def test_sentence_count_ignores_abbreviations():
 def test_note_is_the_box_under_the_video(monkeypatch):
     from watcher import localize
     warn = {'type': 'emoji', 'emoji': '⚠️'}
-    blocks = [notion.block('callout', [notion.rt('Für alle App-Demos nutz bitte diesen Link')], icon=warn),
-              notion.block('video', type='file', file={'url': 'https://x'}),
-              notion.para([notion.rt('Original auf TikTok', link='https://tiktok.com')]),
-              notion.block('callout', [notion.rt(TEXT['de']['inspo_note_same'])], icon=warn)]
+    blocks = [pages.block('callout', [pages.rt('Für alle App-Demos nutz bitte diesen Link')], icon=warn),
+              pages.block('video', type='file', file={'url': 'https://x'}),
+              pages.para([pages.rt('Original auf TikTok', link='https://tiktok.com')]),
+              pages.block('callout', [pages.rt(TEXT['de']['inspo_note_same'])], icon=warn)]
     for b in blocks:
         for x in b.get(b['type'], {}).get('rich_text', []):
             x['plain_text'] = x['text']['content']
-    monkeypatch.setattr(notion, 'children', lambda pid: blocks)
+    monkeypatch.setattr(pages, 'children', lambda pid: blocks)
     assert localize.note_text('page') == TEXT['de']['inspo_note_same']

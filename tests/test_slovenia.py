@@ -18,11 +18,12 @@ class SloveniaMarketTests(unittest.TestCase):
         sl = CFG['markets']['sl']
         self.assertTrue(sl['enabled'])
         self.assertEqual(sl['lang'], 'sl')
-        for k in ('list_page', 'holder_page', 'archive_page', 'visual_hook_lab', 'discord_env', 'discord_server'):
+        for k in ('visual_hook_lab', 'discord_env', 'discord_server'):
             self.assertTrue(sl[k], k)
-        others = {CFG['markets'][m][k] for m in ('de', 'fr', 'es') for k in ('list_page', 'holder_page', 'archive_page')}
-        self.assertFalse({sl['list_page'], sl['holder_page'], sl['archive_page']} & others)
-        self.assertIn('sl', [m['key'] for m in markets.load(CFG)])
+        mk = {m['key']: m for m in markets.load(CFG)}  # its own list and places in its own Megasheet campaign
+        self.assertIn('sl', mk)
+        others = {mk[m][k] for m in ('fr', 'es') for k in ('list_page', 'holder_page', 'archive_page', 'staging_page')}
+        self.assertFalse({mk['sl'][k] for k in ('list_page', 'holder_page', 'archive_page', 'staging_page')} & others)
 
     def test_slovenian_texts_are_complete(self):
         T = markets.TEXT['sl']
@@ -75,21 +76,6 @@ class AdoptTests(unittest.TestCase):
         self.assertEqual(len(pages), 24)
         self.assertEqual(len(set(pages.values())), 24)
 
-    def test_copies_are_linked_once(self):
-        adopt = {'sl': {'from': 'fr', 'pages': {'aaa111': 'sl111', 'bbb222': 'sl222'}}}
-        fmts = [{'id': 'A', 'pages': {'fr': 'aaa-111', 'es': 'e1'}, 'inspo': {'fr': {'url': 'u', 'strict': True}}},
-                {'id': 'B', 'pages': {'fr': 'bbb222', 'sl': 'own-sl'}},
-                {'id': 'C', 'pages': {'es': 'e3'}}]
-        self.assertEqual(main.adopt_market_pages(fmts, adopt), 1)
-        self.assertEqual(main.page_of(fmts[0], 'sl'), 'sl111')
-        self.assertNotIn('sl', fmts[0]['inspo'])  # the example is looked for in Slovenian by localize
-        self.assertEqual(fmts[1]['pages']['sl'], 'own-sl')  # an existing page is never replaced
-        self.assertNotIn('sl', fmts[2].get('pages', {}))
-        self.assertEqual(main.adopt_market_pages(fmts, adopt), 0)  # nothing twice
-        del fmts[0]['pages']['sl']  # a page taken away later is not linked again
-        self.assertEqual(main.adopt_market_pages(fmts, adopt), 0)
-        self.assertIsNone(main.page_of(fmts[0], 'sl'))
-
 
 class SkipTests(unittest.TestCase):
     """Only JobStep formats in Slovenia: the study-app format 'hardest schools' (from @lern.mit.domi, also a Memo AI
@@ -116,11 +102,11 @@ class SkipTests(unittest.TestCase):
         mkp.assert_not_called()
         fmts = [f, {'id': 'N10', 'status': 'active', 'title': 'n', 'description': 'n', 'pages': {'sl': 'psl'}},
                 {**f, 'pages': {'sl': 'should-not-show'}, 'id': self.SKIP[0]}]
-        with mock.patch.object(main.notion, 'list_entries', return_value=([], None)), \
-                mock.patch.object(main.notion, 'hot_entry_count', return_value=0), \
+        with mock.patch.object(main.pages, 'list_entries', return_value=([], None)), \
+                mock.patch.object(main.pages, 'hot_entry_count', return_value=0), \
                 mock.patch.object(main, 'own_tiers', return_value={}), \
                 mock.patch.object(main.state, 'log'), \
-                mock.patch.object(main.notion, 'set_order') as so:
+                mock.patch.object(main.pages, 'set_order') as so:
             main.rerank(mkts, fmts, {}, CFG)
         self.assertEqual(so.call_args.args[1], ['psl'])
 
@@ -172,15 +158,15 @@ class SloveniaPageChecksTests(unittest.TestCase):
                                                                      'text': {'content': '🎬 VIZUALNI HOOK'}}]}},
                   para('Skopiraj začetek videa.'), para('🚨👇 Visual hook je obvezen v vsakem videu!'),
                   para('Visual Hook Lab', '/74d958b0fc148297b4a1819f32230950'), {'type': 'divider', 'divider': {}}]
-        with mock.patch.object(reword.notion, 'children', return_value=blocks):
+        with mock.patch.object(reword.pages, 'children', return_value=blocks):
             self.assertEqual(len(reword.direction_blocks('p')), 1)
 
     def test_verify_skips_formats_that_are_not_in_the_market(self):
         from watcher import verify
         cfg = {'markets': {'sl': {**CFG['markets']['sl']}}, 'links': CFG['links']}
         fmts = [{'id': 'A20261014173459', 'status': 'active', 'title': 'schools', 'pages': {'fr': 'x'}}]
-        with mock.patch.object(verify.notion, 'list_entries', return_value=([], None)):
+        with mock.patch.object(verify.pages, 'list_entries', return_value=([], None)):
             self.assertEqual(verify.run(cfg, fmts, main.page_of), [])
         laptop = [{'id': 'A20261009204851', 'status': 'active', 'title': 'laptop', 'pages': {'fr': 'x'}}]
-        with mock.patch.object(verify.notion, 'list_entries', return_value=([], None)):
+        with mock.patch.object(verify.pages, 'list_entries', return_value=([], None)):
             self.assertEqual(verify.run(cfg, laptop, main.page_of), ['🇸🇮 laptop: no page'])  # on the list since 16 Oct

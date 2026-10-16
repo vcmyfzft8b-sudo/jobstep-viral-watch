@@ -27,7 +27,7 @@ import re
 import time
 from urllib.parse import urlsplit
 
-from . import align, audit, llm, localize, notion, reword
+from . import align, audit, llm, localize, pages, reword
 from .brands import FEW_CUES, LOCALISE, NO_DIRECTIONS
 from .builder import PARAKEET_FACTS
 from .markets import TEXT, for_format
@@ -110,11 +110,11 @@ def source_id(url):
 
 
 def video_identity(page_id, cache=None):
-    """SHA-256 of the uploaded example video's bytes (the same video uploaded twice has different Notion paths, so
-    the path alone cannot find duplicates). Cached per Notion file path in meta['video_hashes']."""
+    """SHA-256 of the uploaded example video's bytes (the same video uploaded twice has different file paths, so
+    the path alone cannot find duplicates). Cached per file path in meta['video_hashes']."""
     import requests
     cache = {} if cache is None else cache
-    for b in notion.children(page_id):
+    for b in pages.children(page_id):
         if b['type'] != 'video':
             continue
         data = b['video']
@@ -206,7 +206,7 @@ def _evidence(fmt, mk, inp):
 
 
 def _title_block(page_id):
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     i = next((k for k, b in enumerate(blocks) if b['type'].startswith('heading') and '📲' in reword._plain(b)), None)
     if i is None:
         return None
@@ -223,7 +223,7 @@ def set_title(page_id, text):
     b = _title_block(page_id)
     if not b or reword._plain(b).strip() == text.strip():
         return False
-    notion.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [notion.rt(text, bold=True)]}})
+    pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': [pages.rt(text, bold=True)]}})
     return True
 
 
@@ -507,7 +507,7 @@ def fix_group(fmt, mkts, cfg, page_of, meta, res, put_example, links):
 
 
 def approval_drafts(fmts, mkts, cfg, page_of, meta):
-    """Approval-locked scripts that fail the group check get a replacement DRAFT (nothing is written to Notion): same
+    """Approval-locked scripts that fail the group check get a replacement DRAFT (nothing is written to Megasheet): same
     beats and product timing as the reference's canonical example, transcribed from it. Stored in
     meta['approval_drafts'] for the user to approve."""
     out = meta.setdefault('approval_drafts', {})

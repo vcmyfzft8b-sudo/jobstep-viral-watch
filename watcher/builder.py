@@ -54,7 +54,7 @@ RULES = """RULES
 - No voiceover videos (only on-screen text + music): set voiceover=false; each script segment is one text overlay.
 - title_hook: the original's on-screen hook/title - word for word if it is in {lang}, else translated (keep
   caps/emojis style), JobStep -> Parakeet AI.
-- page_title: short {lang} hook for the Notion page name + one emoji at the end.
+- page_title: short {lang} hook for the page name + one emoji at the end.
 - Address creators neutrally (informal "you"), never with a gendered word for "creator".
 - visual_hook_first: """ + VISUAL_HOOK
 

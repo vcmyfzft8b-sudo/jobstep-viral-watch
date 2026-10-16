@@ -17,7 +17,7 @@ import shutil
 import tempfile
 import time
 
-from . import discover, llm, media, notion, soniox, tiktok
+from . import discover, llm, media, pages, soniox, tiktok
 from .markets import TEXT, for_format
 
 LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish', 'sl': 'Slovenian'}
@@ -45,7 +45,7 @@ def verified_embedded_example(page_id, source_url=None):
     record = embedded_record(page_id)
     if not record or not (record.get('speech') or record.get('transcript_corrections')) or not record.get('source_language'):
         return None
-    video = next((b for b in notion.children(page_id) if b['type'] == 'video'), None)
+    video = next((b for b in pages.children(page_id) if b['type'] == 'video'), None)
     if not video or video['id'] != record.get('video_block_id') or not video.get('last_edited_time'):
         return None
     if record.get('source_url'):
@@ -73,7 +73,7 @@ def is_own_url(url):
 
 def current_source(page_id):
     """The page's inspiration video block and the TikTok link right after it (or None if the page has no video)."""
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     i = next((k for k, b in enumerate(blocks) if b['type'] == 'video'), None)
     if i is None:
         return None
@@ -120,48 +120,48 @@ def _relink(block, url):
             link = url
         rich.append({'type': 'text', 'text': {'content': x.get('plain_text', ''), 'link': {'url': link} if link else None},
                      'annotations': x.get('annotations', {})})
-    notion.api('PATCH', f"/blocks/{block['id']}", {block['type']: {'rich_text': rich}})
+    pages.api('PATCH', f"/blocks/{block['id']}", {block['type']: {'rich_text': rich}})
 
 
 def replace_video(page_id, src, d, lang):
     work = tempfile.mkdtemp(prefix='inspo-')
     try:
-        upload = notion.upload_video(media.for_notion(media.download(d['url'], work), work))
+        upload = pages.upload_video(media.for_notion(media.download(d['url'], work), work))
     finally:
         shutil.rmtree(work, ignore_errors=True)
-    r = notion.api('PATCH', f'/blocks/{page_id}/children', {
-        'children': [notion.block('video', type='file_upload', file_upload={'id': upload})], 'after': src['video']})
+    r = pages.api('PATCH', f'/blocks/{page_id}/children', {
+        'children': [pages.block('video', type='file_upload', file_upload={'id': upload})], 'after': src['video']})
     new_video = r['results'][-1]['id']
-    notion.api('DELETE', f"/blocks/{src['video']}")
+    pages.api('DELETE', f"/blocks/{src['video']}")
     if src['link_block']:
         _relink(src['link_block'], d['url'])
     else:
-        notion.api('PATCH', f'/blocks/{page_id}/children', {
-            'children': [notion.para([notion.rt(TEXT[lang]['source'], link=d['url'])])], 'after': new_video})
+        pages.api('PATCH', f'/blocks/{page_id}/children', {
+            'children': [pages.para([pages.rt(TEXT[lang]['source'], link=d['url'])])], 'after': new_video})
 
 
 def add_section(page_id, d, lang):
     """Page without an inspiration video (older FR/ES pages): add the whole section at the top in its language."""
     T = TEXT[lang]
-    if any(b['type'] == 'video' for b in notion.children(page_id)):
+    if any(b['type'] == 'video' for b in pages.children(page_id)):
         return  # never add a second section
     work = tempfile.mkdtemp(prefix='inspo-')
     try:
-        upload = notion.upload_video(media.for_notion(media.download(d['url'], work), work))
+        upload = pages.upload_video(media.for_notion(media.download(d['url'], work), work))
     finally:
         shutil.rmtree(work, ignore_errors=True)
-    section = [notion.block('heading_1', [notion.rt(T['video_heading'])]),
-               notion.block('video', type='file_upload', file_upload={'id': upload}),
-               notion.para([notion.rt(T['source'], link=d['url'])]),
-               notion.block('callout', notion.md('\n'.join(T['inspo_note'])), icon={'type': 'emoji', 'emoji': '⚠️'},
+    section = [pages.block('heading_1', [pages.rt(T['video_heading'])]),
+               pages.block('video', type='file_upload', file_upload={'id': upload}),
+               pages.para([pages.rt(T['source'], link=d['url'])]),
+               pages.block('callout', pages.md('\n'.join(T['inspo_note'])), icon={'type': 'emoji', 'emoji': '⚠️'},
                             color='gray_background'),
-               notion.block('divider')]
+               pages.block('divider')]
     try:
-        notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section, 'position': {'type': 'start'}},
+        pages.api('PATCH', f'/blocks/{page_id}/children', {'children': section, 'position': {'type': 'start'}},
                    version='2025-09-03')
     except Exception as e:  # if inserting at the top is refused: put it at the end of the page instead
         print('top insert refused, adding at the end:', str(e)[:150])
-        notion.api('PATCH', f'/blocks/{page_id}/children', {'children': section})
+        pages.api('PATCH', f'/blocks/{page_id}/children', {'children': section})
 
 
 def example_text(url, page_id=None):
@@ -210,7 +210,7 @@ def example_text(url, page_id=None):
 def note_block(page_id):
     """The ⚠️ note callout right under the inspiration video (old pages may have another ⚠️ box at the top);
     without one there, the first ⚠️ callout of the page."""
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     i = next((k for k, b in enumerate(blocks) if b['type'] == 'video'), None)
     under = next((b for b in blocks[i + 1:i + 4] if b['type'] == 'callout'), None) if i is not None else None
     return under or next((b for b in blocks if b['type'] == 'callout' and '⚠' in str(b['callout'].get('icon'))), None)
@@ -225,25 +225,25 @@ def set_note(page_id, lang, same_lang, own=False):
     """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model'; our own
     creator's video = the 'own' note)."""
     own = own or is_own_url((current_source(page_id) or {}).get('url'))
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     i = next((k for k, x in enumerate(blocks) if x['type'] == 'video'), None)
     b = next((x for x in blocks[i + 1:i + 4] if x['type'] == 'callout'), None) if i is not None else None
     if not b:  # only the note right under the video is ever rewritten
         return
     if b.get('has_children'):  # older pages keep the 2nd note line as a child block -> it would show twice
-        for c in notion.children(b['id']):
+        for c in pages.children(b['id']):
             t = ''.join(x.get('plain_text', '') for x in (c.get(c['type']) or {}).get('rich_text', []) or [])
             if c['type'] == 'paragraph' and re.search(r'JobStep|Parakeet AI', t):  # never a block the user added
-                notion.api('DELETE', f"/blocks/{c['id']}")
-    notion.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': notion.md('\n'.join(
-        notion.inspo_note(lang, same_lang, own)))}})
+                pages.api('DELETE', f"/blocks/{c['id']}")
+    pages.api('PATCH', f"/blocks/{b['id']}", {'callout': {'rich_text': pages.md('\n'.join(
+        pages.inspo_note(lang, same_lang, own)))}})
 
 
 def refresh_note(page_id, lang):
     """The ⚠️ note right under the inspiration video in the current wording, keeping its kind (same-language example or
     not). Old pages without a note under the video get one (the 'other language' kind; added, nothing is deleted).
     Only the box under the video is looked at - never another ⚠️ box the user made. Returns True if anything changed."""
-    blocks = notion.children(page_id)
+    blocks = pages.children(page_id)
     i = next((k for k, x in enumerate(blocks) if x['type'] == 'video'), None)
     if i is None:
         return False  # no inspiration video -> no note
@@ -251,14 +251,14 @@ def refresh_note(page_id, lang):
     if not b:
         link = next((x for x in blocks[i + 1:i + 3] if any('tiktok.com/@' in (((r.get('text') or {}).get('link') or {})
                      .get('url') or '') for r in (x.get(x['type']) or {}).get('rich_text', []) or [])), None)
-        notion.api('PATCH', f'/blocks/{page_id}/children', {'after': (link or blocks[i])['id'], 'children': [
-            notion.block('callout', notion.md('\n'.join(notion.inspo_note(lang, False))),
+        pages.api('PATCH', f'/blocks/{page_id}/children', {'after': (link or blocks[i])['id'], 'children': [
+            pages.block('callout', pages.md('\n'.join(pages.inspo_note(lang, False))),
                          icon={'type': 'emoji', 'emoji': '⚠️'}, color='gray_background')]})
         return True
     note = ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', []))
     same = note_is_same(note, lang)
     own = is_own_url((current_source(page_id) or {}).get('url'))
-    if note.replace('**', '').strip() == '\n'.join(notion.inspo_note(lang, same or own, own)).replace('**', '').strip():
+    if note.replace('**', '').strip() == '\n'.join(pages.inspo_note(lang, same or own, own)).replace('**', '').strip():
         return False
     set_note(page_id, lang, same or own, own)
     return True
@@ -296,6 +296,9 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
             pid = page_of(f, m)
             if not pid:
                 report.append((f['title'], m, 'no page', ''))
+                continue
+            if pages.is_hand(pid):  # edited by hand in Megasheet: its example video stays
+                report.append((f['title'], m, 'kept', 'edited by hand in Megasheet'))
                 continue
             if embedded_record(pid):
                 record = verified_embedded_example(pid)

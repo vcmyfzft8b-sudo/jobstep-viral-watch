@@ -49,7 +49,7 @@ class ComebackTests(unittest.TestCase):
     def run_comebacks(self, tiers, cfg=CFG, ready=None, f=None, force=False):
         f = f or fmts()
         ready = ready or (lambda fmt, mk, *_: ('ok', ''))
-        with mock.patch.object(W.notion, 'move_page') as mv, mock.patch.object(W.notify, 'push') as push, \
+        with mock.patch.object(W.pages, 'move_page') as mv, mock.patch.object(W.notify, 'push') as push, \
                 mock.patch.object(W.state, 'log'), mock.patch.object(W, 'ready_page', side_effect=ready) as rp, \
                 mock.patch.object(W.audit, 'originals', return_value={}):
             back = W.own_comebacks(MKTS, f, cfg, tiers=tiers, now=NOW, force=force)
@@ -84,7 +84,7 @@ class ComebackTests(unittest.TestCase):
     def test_a_failed_move_does_not_stop_the_comeback(self):
         tiers = {'es': {'RDV': {'tier': 1, 'n': 2, 'avg': 33000, 'best': 44000}}}
         f = fmts()
-        with mock.patch.object(W.notion, 'move_page', side_effect=[RuntimeError('boom'), None]) as mv, \
+        with mock.patch.object(W.pages, 'move_page', side_effect=[RuntimeError('boom'), None]) as mv, \
                 mock.patch.object(W.notify, 'push'), mock.patch.object(W.state, 'log'), \
                 mock.patch.object(W, 'ready_page', return_value=('ok', '')), \
                 mock.patch.object(W.audit, 'originals', return_value={}):

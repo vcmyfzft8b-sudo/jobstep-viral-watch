@@ -61,10 +61,22 @@ def apply_hand_tags(videos, tags=None):
         v = videos.get(vid)
         if v is None:
             continue
-        if v.get('format') != t['format']:
+        fmt = aliases().get(t['format'], t['format'])  # a format merged into another (dupes) counts for that one
+        if v.get('format') != fmt:
             changed += 1
-        v.update({'format': t['format'], 'checked': True, 'ours': True, 'format_by': 'hand'})
+        v.update({'format': fmt, 'checked': True, 'ours': True, 'format_by': 'hand'})
     return changed
+
+
+def aliases():
+    """{format id: id it was merged into} - formats archived as "duplicate of X" (lineup.merge_duplicates)."""
+    import re as _re
+    out = {}
+    for f in state.load('formats.json', None) or []:
+        m = _re.match(r'duplicate of (\S+)', f.get('archived_reason') or '')
+        if m:
+            out[f['id']] = m.group(1)
+    return out
 
 
 def videos_now():

@@ -1538,6 +1538,7 @@ def main():
     ap.add_argument('--export', action='store_true', help='all scripts as one encrypted Markdown file (state/scripts_export.enc)')
     ap.add_argument('--conversion', type=int, nargs='?', const=500, default=0,
                     help='read saves of up to N older videos, sort them into formats, print every list by conversion')
+    ap.add_argument('--dedupe', action='store_true', help='merge live formats that have the same title on a list (also every Monday)')
     ap.add_argument('--relist', action='store_true', help='only re-draw the DE/FR/ES lists (order + going-viral section)')
     ap.add_argument('--check-hot', action='store_true', help='strict Claude check of ALL viral videos from the last 7 days')
     ap.add_argument('--init-market', default='', help='fr | es: connect a market to the shared format list')
@@ -1824,6 +1825,16 @@ def main():
     if a.export:
         from . import export
         export.run(load_config(), load_formats(), page_of)
+        return
+    if a.dedupe:
+        cfg, fmts, history = load_config(), load_formats(), state.load('history.json', {})
+        _, own_videos = own.load()
+        mkts = M.load(cfg)
+        merged = lineup.merge_duplicates(history, fmts, cfg, own_videos, mkts)
+        print('merged:', [(d['id'], k['id'], why) for d, k, why in merged] or 'none')
+        state.save('formats.json', fmts)
+        if merged:
+            rerank(mkts, fmts, history, cfg, force=True)
         return
     if a.relist:
         cfg, fmts = load_config(), load_formats()

@@ -141,9 +141,61 @@ def would_keep(history, formats, cfg, v, fid=None, own_videos=None, now=None):
                    f"viral or best converting)")
 
 
+def merge_duplicates(history, formats, cfg, own_videos, mkts, now=None, pairs=None):
+    """Two live formats with near-identical titles in a market (dupes.find): the one with the better score stays,
+    the other is archived as "duplicate of <kept>" (main.resolve follows it), its pages go to each market's archive
+    and its videos (JobStep history, ours) count for the kept one. Returns [(dup, kept, why)]."""
+    from . import conversion, dupes
+    from . import main as watcher
+    pairs = dupes.find(formats, mkts, watcher.page_of) if pairs is None else pairs
+    if not pairs:
+        return []
+    now = now or time.time()
+    reach = rank.form(history, formats, cfg, own.stats(own_videos, formats, now), now)
+    conv, _ = conversion.board(history, formats, cfg, now, reach)
+    by = {f['id']: f for f in formats}
+    merged, today = [], time.strftime('%d.%m.%Y')
+    for a, b, m, ta, tb in pairs:
+        if by[a].get('status') != 'active' or by[b].get('status') != 'active':
+            continue  # one of them was merged already
+        keep, dup = (a, b) if conv[a]['score'] >= conv[b]['score'] else (b, a)
+        f = by[dup]
+        for mk in mkts:
+            pid = watcher.page_of(f, mk['key'])
+            if pid:
+                try:
+                    notion.move_page(pid, mk['archive_page'])
+                except Exception as e:
+                    print('dupes: move to archive failed', mk['key'], f['title'], str(e)[:120])
+        why = f"same title in {m}: \"{ta}\" / \"{tb}\""
+        f['status'] = 'archived'
+        f['archived_reason'] = f"duplicate of {keep} (clean-up {today}: {why})"
+        f.pop('off_markets', None)
+        for v in history.values():
+            if v.get('format') == dup:
+                v['format'] = keep
+        for v in own_videos.values():
+            if v.get('format') == dup:
+                v['format'] = keep
+        state.log({'type': 'duplicate_merged', 'format': dup, 'into': keep, 'why': why})
+        merged.append((f, by[keep], why))
+    if merged:
+        state.save('history.json', history)
+        state.save('own.json', own_videos)
+        notify.push('🔁 Same format twice on a list – merged', '\n'.join(
+            f"➖ *{d['title']}* → kept *{k['title']}* ({why})" for d, k, why in merged) +
+            '\n\n_The one with the better score stays; the other is archived as its duplicate and its videos count '
+            'for the one that stays._')
+    return merged
+
+
 def apply(history, formats, cfg, own_videos, mkts, now=None):
     """Cuts every market's list to its best formats (see plan). mkts: the running markets. Returns the plan."""
     from . import main as watcher  # page helpers live in main
+    try:  # the same format twice on a list: merged first (user, 16 Oct 2026)
+        merge_duplicates(history, formats, cfg, own_videos, mkts, now)
+    except Exception as e:
+        print('clean-up: duplicate check failed', str(e)[:200])
     p = plan(history, formats, cfg, own_videos, now)
     today = time.strftime('%d.%m.%Y')
     by_key = {mk['key']: mk for mk in mkts}

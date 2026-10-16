@@ -14,6 +14,7 @@ import concurrent.futures as cf
 
 from . import llm, localize, reword
 from .brands import LOCALISE
+from .builder import PARAKEET_FACTS
 from .markets import TEXT, for_format
 
 SYSTEM = 'You check translations of UGC video scripts sentence by sentence. Reply with JSON only.'
@@ -44,14 +45,18 @@ translation - every sentence, in the same order, not shortened, not summarised, 
 differences:
 - the translation itself (natural {T['lang_name']}, the market's variant of the language);
 - JobStep (or another CV app) -> Parakeet AI, its website -> the Parakeet AI link;
-- a feature of that app Parakeet AI does not have -> the closest Parakeet AI feature;
+- a feature of that app Parakeet AI does not have -> the closest Parakeet AI feature (e.g. "here are the jobs you
+  applied to, click 'New job'" -> "here you upload your CV"; "and even a cover letter" -> "and even another template")
+  - this is REQUIRED, never report it as reworded or dropped;
 - scores / percentages the app shows -> X / Y;
 - this localisation: {LOCALISE}
 - filler words ("ähm", "like") may go; obvious speech-to-text errors may be fixed.
+{PARAKEET_FACTS}
 Go through the original sentence by sentence. List every OTHER difference: a sentence dropped, shortened or merged
 away, something added, a sentence reworded or retold, a claim / promise / number / personal detail of the creator
-changed or softened, the speaker changed.
-Return JSON {{"problems": [{{"kind": "dropped|added|reworded|softened|speaker|other", "original": "<the original
+changed or softened, the speaker changed - and (kind "feature") a feature Parakeet AI does not have that is still in
+the script.
+Return JSON {{"problems": [{{"kind": "dropped|added|reworded|softened|speaker|feature|other", "original": "<the original
 sentence>", "script": "<what the script says instead, empty if missing>"}}]}} - an empty list when the script is 1:1."""
     r = llm.chat_json(model, SYSTEM, prompt, timeout=900)
     probs = [p for p in (r.get('problems') or []) if isinstance(p, dict)]

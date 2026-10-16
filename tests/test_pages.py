@@ -220,6 +220,18 @@ class UpdateTests(Base):
         self.assertEqual(after['titles'][0]['id'], before['titles'][0]['id'])  # unchanged parts keep their ids
         self.assertEqual(after['resources'][0]['id'], before['resources'][0]['id'])
 
+    def test_a_rewritten_script_is_sent_in_one_update(self):
+        from watcher import align
+        iid = self.build()
+        n = len([c for c in self.ms.writes() if c[0] == 'formats_updateIdea'])
+        spec = dict(SPEC, script=[{'text': 'Premier.'}, {'text': 'Deuxième.', 'new_paragraph': True},
+                                  {'cue': 'parakeet', 'text': 'Troisième.', 'new_paragraph': True}])
+        with mock.patch.object(reword, 'fix_directions', return_value=('ok', '')):
+            self.assertEqual(align._write({'id': 'F'}, iid, 'fr', {'models': {'classify': 'c'}}, LINKS, spec, 'i')[0], 'ok')
+        updates = [c for c in self.ms.writes() if c[0] == 'formats_updateIdea'][n:]
+        self.assertEqual(len(updates), 1)  # inserted + 3 old paragraphs deleted = still ONE update (never half-done)
+        self.assertTrue(self.idea(iid)['scripts'][0]['text'].startswith('Premier.\n\nDeuxième.'))
+
     def test_title_change_renames_the_idea(self):
         from watcher import crosscheck
         iid = self.build()

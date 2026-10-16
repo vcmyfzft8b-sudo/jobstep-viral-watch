@@ -123,6 +123,7 @@ def _relink(block, url):
     pages.api('PATCH', f"/blocks/{block['id']}", {block['type']: {'rich_text': rich}})
 
 
+@pages.one_save(0)
 def replace_video(page_id, src, d, lang):
     work = tempfile.mkdtemp(prefix='inspo-')
     try:
@@ -140,6 +141,7 @@ def replace_video(page_id, src, d, lang):
             'children': [pages.para([pages.rt(TEXT[lang]['source'], link=d['url'])])], 'after': new_video})
 
 
+@pages.one_save(0)
 def add_section(page_id, d, lang):
     """Page without an inspiration video (older FR/ES pages): add the whole section at the top in its language."""
     T = TEXT[lang]
@@ -221,6 +223,7 @@ def note_text(page_id):
     return ''.join(x.get('plain_text', '') for x in b['callout'].get('rich_text', [])) if b else ''
 
 
+@pages.one_save(0)
 def set_note(page_id, lang, same_lang, own=False):
     """The ⚠️ note under the inspiration video, matching the video (same language = 'use it as the model'; our own
     creator's video = the 'own' note)."""

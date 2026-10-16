@@ -29,6 +29,7 @@ class FaithfulTests(unittest.TestCase):
         prompt = faithful.llm.chat_json.call_args[0][2]
         self.assertIn('not shortened, not summarised, not softened', prompt)
         self.assertIn('X / Y', prompt)
+        self.assertIn('cover letters', prompt)  # it knows what Parakeet AI lacks: swaps are allowed, leftovers are not
 
     def test_a_softened_promise_is_a_problem(self):
         r = self.run_check([{'kind': 'softened', 'original': 'in 15 Minuten', 'script': 'plus vite'}])

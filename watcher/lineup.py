@@ -1,21 +1,19 @@
-"""Weekly clean-up: formats that do not convert leave the list (Monday, first run of the week).
+"""Weekly clean-up: each market's list keeps only its best formats (Monday, first run of the week).
 
-User's rule (16 Oct 2026, like the Memo AI watcher): the lists hold formats that convert best and still go viral -
-not formats that only go viral. Every format has a conversion score (conversion.py / rank.order: how many viewers
-save its videos compared with a typical video of their market x how well it goes viral right now; 1.0 = average).
+User's rule (16 Oct 2026): "only the best converting and the most viral ones". Every market's list holds at most
+lineup.list_size (12) formats - the best by conversion score (conversion.py: how many viewers save a format's videos
+compared with a typical video of their market x sqrt(how well it goes viral right now); 1.0 = average) - PLUS in that
+market: formats proven for OUR creators there (own.tiers tier 1: views AND saves), hot formats (5+ viral in 7 days that
+viewers also save) and formats the user pinned (markets.<m>.pin_formats, e.g. the laptop ad spot in Slovenia).
+Going viral in the last weeks or being new no longer protects a format.
 
-A format leaves the list when it is not protected and
-- once conversion.judge_min_videos+ of its videos have a known save count: its score is below conversion.remove_below.
-  Then neither going viral nor being new protects it - only being proven for OUR creators in a running market
-  (own.tiers tier 1, which needs our viewers to save it too), hot (5+ viral in 7 days that viewers also save) or a
-  viral video in the last 21 days while viewers save it at least like an average format;
-- with fewer measured videos: its current form (reach) is below lineup.remove_below, no viral video in the last 21
-  days and it came into the list more than lineup.protect_days ago (like before).
-The list never shrinks below lineup.min_formats (the weakest leave first).
-
-Leaving = every market's page moves to that market's archive (nothing is deleted). Formats come INTO the list when a
-video goes viral / rises with enough saves or converts (main.handle_viral): new ones are built, archived ones come
-back - and archived formats proven for our creators come back by themselves (main.own_comebacks).
+- A format kept in no running market leaves completely: every market's page moves to that market's archive, status
+  archived (nothing is deleted). It comes back on its own when a new video of it goes viral / converts AND is saved
+  like a typical video (main.handle_viral), or when it becomes proven for our creators (main.own_comebacks).
+- A format kept in some markets but not in another: only that market's page moves to that market's archive and the
+  format gets the market in 'off_markets' (markets.for_format then leaves it out there: not listed, built, audited or
+  checked). When it is among a market's best again on a later Monday, its page moves back and it is listed again.
+Between Mondays new formats join the lists right away (a list can then be a bit longer than 12 until Monday).
 """
 import datetime
 import re
@@ -39,82 +37,117 @@ def listed_at(f):
 
 
 def plan(history, formats, cfg, own_videos, now=None):
-    """Which formats would leave: {'out': [(format, score, reason)], 'board': {...}, 'protected': {...}}."""
+    """What Monday does: {'lists': {market: {format_id: why kept}}, 'out': [(format, score, reason)] (leaves every
+    list -> archive), 'off': {market: [format]} (leaves that market's list), 'back': {market: [format]} (back on that
+    market's list), 'board': {format_id: score data}, 'protected': {format_id: why kept or None}, 'typical'}."""
     from . import conversion
     lc = cfg['lineup']
     cc = conversion.conf(cfg)
+    size = lc.get('list_size', 12)
     now = now or time.time()
-    stopped = {k for k, m in cfg['markets'].items() if not m.get('enabled', True)}
-    own_videos = {k: v for k, v in own_videos.items() if v.get('market') not in stopped}  # only running campaigns count
+    running = {k: m for k, m in cfg['markets'].items() if m.get('enabled', True)}
+    own_videos = {k: v for k, v in own_videos.items() if v.get('market') in running}  # only running campaigns count
     reach = rank.form(history, formats, cfg, own.stats(own_videos, formats, now), now)
     conv, base = conversion.board(history, formats, cfg, now, reach)
     board = {fid: {**reach[fid], **conv[fid]} for fid in reach}
     recent = rank.recent_viral(history, formats, cfg)
-    viral21 = {}
-    for v in history.values():
-        if v.get('format') and v['views'] >= cfg['thresholds']['viral_views'] and now - v['created'] <= 21 * DAY:
-            viral21[v['format']] = viral21.get(v['format'], 0) + 1
+    hot_now = {fid for fid, n in recent.items() if n >= hot.MIN_VIRAL and conv.get(fid, {}).get('conv', 0) >= cc['hot_min_conv']}
+    active = [f for f in formats if f.get('status') == 'active']
+    score = lambda f: board[f['id']]['score']
 
-    running = [k for k, m in cfg['markets'].items() if m.get('enabled', True)]
-    proven = {fid for m in running for fid, x in own.tiers(own_videos, formats, now, m, cfg).items() if x['tier'] == 1}
+    lists = {}
+    for m, mc in running.items():
+        tiers = own.tiers(own_videos, formats, now, m, cfg)
+        cands = sorted([f for f in active if f['id'] not in (mc.get('skip_formats') or ())], key=score, reverse=True)
+        best = {f['id'] for f in cands[:size]}
+        keep = {}
+        for f in cands:
+            fid = f['id']
+            if fid in (mc.get('pin_formats') or ()):
+                keep[fid] = 'pinned by you'
+            elif tiers.get(fid, {}).get('tier') == 1:
+                keep[fid] = 'proven for our creators'
+            elif fid in hot_now:
+                keep[fid] = 'hot'
+            elif fid in best:
+                keep[fid] = f'best {size} by score'
+        lists[m] = keep
 
-    def measured(f):
-        return conv[f['id']]['videos'] >= cc['judge_min_videos']
+    order = ('pinned by you', 'proven for our creators', 'hot')
 
-    def protected(f):
-        c = conv[f['id']]
-        if f['id'] in proven:
-            return 'proven for our creators'
-        if recent.get(f['id'], 0) >= hot.MIN_VIRAL and c['conv'] >= cc['hot_min_conv']:
-            return 'hot'
-        if viral21.get(f['id']) and (not measured(f) or c['conv'] >= cc['hot_min_conv']):
-            return f"{viral21[f['id']]} viral in the last 21 days"
-        if now - listed_at(f) < lc['protect_days'] * DAY and not measured(f):
-            return f"in the list for less than {lc['protect_days']} days"
-        return None
-
-    def value(f):
-        return conv[f['id']]['score'] if measured(f) else reach[f['id']]['form']
-
-    def limit(f):
-        return cc['remove_below'] if measured(f) else lc['remove_below']
+    def why(f):
+        reasons = [lists[m][f['id']] for m in lists if f['id'] in lists[m]]
+        return min(reasons, key=lambda r: order.index(r) if r in order else len(order)) if reasons else None
 
     def reason(f):
-        c = conv[f['id']]
-        if measured(f):
-            return (f"saved by {conversion.pct(c['raw_rate'])} of viewers ({c['videos']} videos; typical video "
-                    f"{conversion.pct(base['all'])}) - score {c['score']:.2f}, below {cc['remove_below']}")
-        return f"current form {reach[f['id']]['form']:.2f} (below average) and no viral video in the last 21 days"
+        c = board[f['id']]
+        return (f"not among the best {size} of any list: score {c['score']:.2f} (saved by {conversion.pct(c['raw_rate'])} "
+                f"of viewers, {c['videos']} videos; typical video {conversion.pct(base['all'])}), not proven for our "
+                f"creators, not hot")
 
-    active = [f for f in formats if f.get('status') == 'active']
-    bad = sorted([f for f in active if not protected(f) and value(f) < limit(f)], key=value)
-    room = max(0, len(active) - lc['min_formats'])
-    out = [(f, value(f), reason(f)) for f in bad[:room]]
-    return {'out': out, 'board': board, 'protected': {f['id']: protected(f) for f in active}, 'typical_rate': base['all'],
-            'typical': base}
+    out = [(f, score(f), reason(f)) for f in sorted(active, key=score) if not why(f)]
+    gone = {f['id'] for f, _, _ in out}
+    off, back = {}, {}
+    for m, mc in running.items():
+        skip = set(mc.get('skip_formats') or ())
+        off[m] = [f for f in active if f['id'] not in gone and f['id'] not in skip and f['id'] not in lists[m]
+                  and m not in (f.get('off_markets') or ())]
+        back[m] = [f for f in active if f['id'] in lists[m] and m in (f.get('off_markets') or ())]
+    return {'lists': lists, 'out': out, 'off': off, 'back': back, 'board': board,
+            'protected': {f['id']: why(f) for f in active}, 'typical_rate': base['all'], 'typical': base}
 
 
 def apply(history, formats, cfg, own_videos, mkts, now=None):
-    """Moves the badly performing formats out of the list in every market. Returns the plan."""
+    """Cuts every market's list to its best formats (see plan). mkts: the running markets. Returns the plan."""
     from . import main as watcher  # page helpers live in main
     p = plan(history, formats, cfg, own_videos, now)
     today = time.strftime('%d.%m.%Y')
+    by_key = {mk['key']: mk for mk in mkts}
+
+    def move(f, mk, target, what):
+        pid = watcher.page_of(f, mk['key'])
+        if not pid:
+            return
+        try:
+            notion.move_page(pid, mk[target])
+        except Exception as e:
+            print(f'clean-up: {what} failed', mk['key'], f['title'], str(e)[:150])
+
     for f, score, reason in p['out']:
         for mk in mkts:
-            pid = watcher.page_of(f, mk['key'])
-            if pid:
-                try:
-                    notion.move_page(pid, mk['archive_page'])
-                except Exception as e:
-                    print('clean-up: move to archive failed', mk['key'], f['title'], str(e)[:150])
+            move(f, mk, 'archive_page', 'move to archive')
         f['status'] = 'archived'
         f['archived_reason'] = f'clean-up {today}: {reason}'
+        f.pop('off_markets', None)  # a comeback starts in every market again
         state.log({'type': 'lineup_out', 'format': f['id'], 'form': round(score, 2), 'reason': reason})
-    if p['out']:
-        notify.push('🧹 Formats taken out of the lists (DE/FR/ES)', '\n'.join(
-            f"➖ *{f['title']}* – {r}" for f, _, r in p['out']) +
-            '\n\n_Score 1.0 = an average format (how many viewers save it x how well it goes viral). Nothing is deleted '
-            '– they sit in the archive and come back on their own if a new video of theirs goes viral AND gets saved._')
+    for m, fs in p['off'].items():
+        if m not in by_key:
+            continue
+        for f in fs:
+            move(f, by_key[m], 'archive_page', 'move off the list')
+            f['off_markets'] = sorted(set(f.get('off_markets') or []) | {m})
+            state.log({'type': 'lineup_off', 'format': f['id'], 'market': m, 'form': round(p['board'][f['id']]['score'], 2)})
+    for m, fs in p['back'].items():
+        if m not in by_key:
+            continue
+        for f in fs:
+            move(f, by_key[m], 'holder_page', 'move back to the list')
+            f['off_markets'] = [x for x in f.get('off_markets') or [] if x != m]
+            if not f['off_markets']:
+                f.pop('off_markets')
+            state.log({'type': 'lineup_back', 'format': f['id'], 'market': m})
+    flags = {mk['key']: mk['T']['flag'] for mk in mkts}
+    lines = [f"➖ *{f['title']}* – {r}" for f, _, r in p['out']]
+    for m, fs in p['off'].items():
+        lines += [f"{flags.get(m, m)} ➖ *{f['title']}* – not among the best {cfg['lineup'].get('list_size', 12)} here "
+                  f"(score {p['board'][f['id']]['score']:.2f})" for f in fs]
+    for m, fs in p['back'].items():
+        lines += [f"{flags.get(m, m)} ➕ *{f['title']}* – back among the best here" for f in fs]
+    if lines:
+        notify.push('🧹 Weekly list clean-up – only the best formats stay', '\n'.join(lines) +
+                    '\n\n_Each list: the best 12 by score (how many viewers save a format x how well it goes viral) + '
+                    'formats proven for our creators there + hot ones + pinned ones. Nothing is deleted – they sit in the '
+                    'archive and come back on their own if a new video of theirs goes viral AND gets saved._')
     return p
 
 

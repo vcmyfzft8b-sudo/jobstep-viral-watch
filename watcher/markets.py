@@ -237,6 +237,9 @@ def load(cfg):
 
 def for_format(mkts, fmt):
     """The markets a format belongs in: a market's `skip_formats` (config.json) keeps formats out of it for good - no
-    page is built, listed or checked there (Slovenia: the study-app format 'hardest schools' - not a JobStep format)."""
+    page is built, listed or checked there (Slovenia: the study-app format 'hardest schools' - not a JobStep format).
+    The format's own `off_markets` (lineup.apply, 16 Oct 2026: not among that market's best 12) keeps it out of those
+    markets until a Monday clean-up puts it back."""
     fid = (fmt or {}).get('id')
-    return [mk for mk in mkts if fid not in (mk.get('skip_formats') or ())]
+    off = set((fmt or {}).get('off_markets') or ())
+    return [mk for mk in mkts if fid not in (mk.get('skip_formats') or ()) and mk['key'] not in off]

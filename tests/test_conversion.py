@@ -169,17 +169,59 @@ class OrderTests(unittest.TestCase):
         self.assertFalse(s['OUTRAGE']['top'])
         self.assertTrue(s['HACK']['top'])
 
-    def test_clean_up_takes_out_a_measured_format_nobody_saves_even_when_viral(self):
+    def test_each_list_keeps_only_the_best_12_even_when_viral_or_new(self):
         h, add = history()
-        for k in range(3):
+        for k in range(12):  # 12 formats saved like typical or better
+            for _ in range(2):
+                add(handle='es_a', fmt=f'G{k}', views=60_000, saves=1_800 + 100 * k, days_old=8, judged=True)
+        for _ in range(3):  # goes viral, new on the list, nobody saves it
             add(handle='es_a', fmt='SKIT', views=300_000, saves=600, days_old=3, judged=True)
-        fmts = [{'id': i, 'status': 'active', 'title': i, 'listed_at': NOW - 60 * DAY} for i in 'ABCDEFGH'] + \
+        fmts = [{'id': f'G{k}', 'status': 'active', 'title': f'G{k}', 'listed_at': NOW - 60 * DAY} for k in range(12)] + \
                [{'id': 'SKIT', 'status': 'active', 'title': 'SKIT', 'listed_at': NOW - 2 * DAY}]
         cfg = {**CFG, 'markets': {'es': {'enabled': True}}}
         with mock.patch.object(own, 'tiers', return_value={}):
             p = lineup.plan(h, fmts, cfg, {}, now=NOW)
-        self.assertIn('SKIT', [f['id'] for f, _, _ in p['out']])
-        self.assertIsNone(p['protected']['SKIT'])  # viral and new, but measured and not saved
+        self.assertEqual([f['id'] for f, _, _ in p['out']], ['SKIT'])
+        self.assertIsNone(p['protected']['SKIT'])
+        self.assertEqual(len(p['lists']['es']), 12)
+
+    def test_a_format_can_leave_one_market_and_stay_in_another(self):
+        h, add = history()
+        for k in range(12):
+            add(handle='es_a', fmt=f'G{k}', views=60_000, saves=2_400, days_old=8, judged=True)
+        add(handle='es_a', fmt='LOCAL', views=60_000, saves=600, days_old=8, judged=True)
+        fmts = [{'id': f'G{k}', 'status': 'active', 'title': f'G{k}'} for k in range(12)] + \
+               [{'id': 'LOCAL', 'status': 'active', 'title': 'LOCAL', 'pages': {'es': 'p-es', 'fr': 'p-fr'}}]
+        cfg = {**CFG, 'markets': {'es': {'enabled': True}, 'fr': {'enabled': True}}}
+        tiers = lambda videos, formats, now, m, c: {'LOCAL': {'tier': 1}} if m == 'fr' else {}
+        mkts = [{'key': m, 'T': {'flag': m}, 'archive_page': f'arch-{m}', 'holder_page': f'hold-{m}'} for m in ('es', 'fr')]
+        with mock.patch.object(own, 'tiers', side_effect=tiers), mock.patch.object(lineup.notion, 'move_page') as mv, \
+                mock.patch.object(lineup.notify, 'push'), mock.patch.object(lineup.state, 'log'):
+            p = lineup.apply(h, fmts, cfg, {}, mkts, now=NOW)
+        self.assertEqual(p['out'], [])
+        self.assertEqual([f['id'] for f in p['off']['es']], ['LOCAL'])
+        mv.assert_called_once_with('p-es', 'arch-es')
+        self.assertEqual(fmts[-1]['off_markets'], ['es'])
+        from watcher import markets
+        self.assertEqual([mk['key'] for mk in markets.for_format(mkts, fmts[-1])], ['fr'])
+        with mock.patch.object(own, 'tiers', return_value={'LOCAL': {'tier': 1}}), \
+                mock.patch.object(lineup.notion, 'move_page') as mv, mock.patch.object(lineup.notify, 'push'), \
+                mock.patch.object(lineup.state, 'log'):
+            p = lineup.apply(h, fmts, cfg, {}, mkts, now=NOW)  # proven in Spain too now: back on that list
+        mv.assert_called_once_with('p-es', 'hold-es')
+        self.assertNotIn('off_markets', fmts[-1])
+
+    def test_pinned_format_stays(self):
+        h, add = history()
+        for k in range(12):
+            add(handle='es_a', fmt=f'G{k}', views=60_000, saves=2_400, days_old=8, judged=True)
+        fmts = [{'id': f'G{k}', 'status': 'active', 'title': f'G{k}'} for k in range(12)] + \
+               [{'id': 'LAPTOP', 'status': 'active', 'title': 'laptop'}]
+        cfg = {**CFG, 'markets': {'sl': {'enabled': True, 'pin_formats': ['LAPTOP']}}}
+        with mock.patch.object(own, 'tiers', return_value={}):
+            p = lineup.plan(h, fmts, cfg, {}, now=NOW)
+        self.assertEqual(p['out'], [])
+        self.assertEqual(p['lists']['sl']['LAPTOP'], 'pinned by you')
 
     def test_proven_for_us_still_protects(self):
         h, add = history()

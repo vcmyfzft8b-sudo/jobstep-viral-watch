@@ -100,8 +100,9 @@ def run(cfg, fmts, page_of):
         flag = T['flag']
         entries, _ = notion.list_entries(m['list_page'])
         listed = [p.replace('-', '') for _, p in entries]
+        out_here = lambda f: f['id'] in (m.get('skip_formats') or ()) or key in (f.get('off_markets') or ())
         live = {(page_of(f, key) or '').replace('-', '') for f in fmts if f.get('status') == 'active' and page_of(f, key)
-                and f['id'] not in (m.get('skip_formats') or ())}
+                and not out_here(f)}
         if set(listed) != live or len(listed) != len(set(listed)):
             problems.append(f'{flag} list differs from the live formats: listed {len(listed)}, live {len(live)}')
         else:
@@ -112,14 +113,15 @@ def run(cfg, fmts, page_of):
                 problems.append(f'{flag} list entry {n} not numbered: {t[:50]}')
         for f in fmts:
             if f['id'] in (m.get('skip_formats') or ()):
-                continue  # not a format of this market (Slovenia: the two study-app formats)
+                continue  # not a format of this market (Slovenia: the study-app format 'hardest schools')
             pid = page_of(f, key)
             if not pid:
                 if f.get('status') == 'active':
                     problems.append(f"{flag} {f['title']}: no page")
                 continue
-            try:
-                bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active', ref_text=f.get('script', ''))
+            try:  # a format off this market's list (lineup off_markets) is checked like an archived page
+                bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active' and not out_here(f),
+                                 ref_text=f.get('script', ''))
             except Exception as e:  # e.g. a page moved to the trash
                 bad = [f'page unreadable: {str(e)[:100]}']
             problems += [f"{flag} {f['title']} ({f.get('status')}): {x}" for x in bad]

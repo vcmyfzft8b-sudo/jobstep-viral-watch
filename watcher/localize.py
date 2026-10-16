@@ -18,7 +18,7 @@ import tempfile
 import time
 
 from . import discover, llm, media, notion, soniox, tiktok
-from .markets import TEXT
+from .markets import TEXT, for_format
 
 LANG_NAME = {'de': 'German', 'fr': 'French', 'es': 'Spanish', 'sl': 'Slovenian'}
 MIN_VIEWS = 10_000  # an inspiration video must be proven, not just in the right language
@@ -291,7 +291,7 @@ def run(fmts, mkts, history, accounts, meta, cfg, page_of, now=None, tries=4, ex
         ranked = sorted(((vid, v) for vid, v in history.items() if v.get('format') == f['id']), key=lambda x: -x[1]['views'])[:60]
         for h in {v['handle'] for _, v in ranked} - set(langs):
             langs[h] = discover.language(h)
-        for mk in mkts:
+        for mk in for_format(mkts, f):  # not a market's off-list pages (lineup off_markets)
             m, lang = mk['key'], mk['lang']
             pid = page_of(f, m)
             if not pid:

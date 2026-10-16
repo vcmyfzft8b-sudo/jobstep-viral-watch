@@ -147,3 +147,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
 - Monday clean-up: 2+ measured videos and score < 0.9 → archive, even when viral or new (protected: proven, hot,
   viral in 21 days with conv ≥ 1). History keeps likes/saves/shares (`conversion.record`); older videos are read 60 per
   full run (`read_saves`, then sorted into formats); `mode=conversion` reads up to 500 at once and prints every list.
+
+## Only the best 12 per list (16 Oct 2026, user: "only the best converting and the most viral ones")
+- Monday clean-up (`lineup.plan/apply`, also `mode=lineup` / `lineup-apply`): each running market's list keeps at most
+  `lineup.list_size` = 12 formats by conversion score, PLUS in that market: proven for our creators (tier 1 = views AND
+  saves), hot (5+ viral in 7 days, conv ≥ 1) and pinned (`markets.<m>.pin_formats`; Slovenia: the laptop ad spot,
+  user's choice). Viral-in-21-days and "new" no longer protect.
+- Kept in no market → archived everywhere (`off_markets` cleared). Kept elsewhere only → that market's page moves to
+  its archive and the market goes into the format's `off_markets`; `markets.for_format` then leaves it out there
+  (list, pages, audit, crosscheck, tidy, localize, verify). Back among a market's best on a later Monday → page moves
+  back, market removed from `off_markets`. New formats join right away (a list may exceed 12 until Monday).

@@ -52,9 +52,12 @@ between (new videos, views of young or nearly viral videos, alerts incl. buildin
    automatic sorting. An archived format that is proven for us (tier 1) in a running market comes back into the
    lists by itself (pages move back from the archive; `lineup.never_revive` keeps one out – X01 "rendez-vous": many
    views, almost no signups) and the Monday clean-up never takes a proven format out.
-8. **Monday clean-up**: a format with 2+ videos with known saves and a conversion score under 0.9 leaves the lists
-   (archive, nothing deleted) – also when it goes viral or is new; only proven for us, hot, or viral in 21 days while
-   saved like an average format protects it. Formats with fewer measured videos: current form as before.
+8. **Monday clean-up – only the best stay** (user's rule, 16 Oct 2026): each market's list keeps the best 12 formats
+   by conversion score, plus the formats proven for our creators in that market, hot formats and formats you pinned
+   (`markets.<m>.pin_formats` – Slovenia: the laptop ad spot). Going viral or being new does not protect a format any
+   more. A format kept in no list moves to the archive (nothing deleted); one kept only in other markets leaves just
+   that market's list (its page goes to that market's archive) and comes back there when it is among the best again.
+   New formats join the lists right away; Monday cuts them back to 12 (+ proven/hot/pinned).
    History keeps likes/saves/shares; older videos get their saves read 60 per run, `mode=conversion` reads them at once
    and prints every list with its save rates (`verify` and `lineup` print them too). Settings: `config.json →
    conversion` (`watcher/conversion.py`).

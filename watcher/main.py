@@ -378,7 +378,8 @@ def run(dry_run=False, only_detect=False, auto=False):
             state.save('meta.json', meta)
             try:
                 p = lineup.apply(history, fmts, cfg, own_videos, mkts, now)
-                print('clean-up:', [f['title'] for f, _, _ in p['out']])
+                print('clean-up:', [f['title'] for f, _, _ in p['out']],
+                      {m: [f['title'][:30] for f in fs] for m, fs in p['off'].items() if fs})
                 meta['lineup'] = week_id
                 state.save('formats.json', fmts)
             except Exception as e:
@@ -1498,8 +1499,8 @@ def main():
     ap.add_argument('--weekly', action='store_true', help='send the weekly Slack report now')
     ap.add_argument('--megasheet-check', action='store_true', help='only read our creators from Megasheet (fails if it does not work)')
     ap.add_argument('--own-sync', action='store_true', help='catch up on our own creators (full Megasheet read, more video checks), then re-sort')
-    ap.add_argument('--lineup', action='store_true', help='show the current form of every format and what Monday would take out (no changes)')
-    ap.add_argument('--lineup-apply', action='store_true', help='take the badly performing formats out now')
+    ap.add_argument('--lineup', action='store_true', help="show every market's list (best 12 + proven + hot + pinned) and what Monday would take out (no changes)")
+    ap.add_argument('--lineup-apply', action='store_true', help="cut every market's list to its best formats now")
     ap.add_argument('--accounts-sync', default='', help='JSON file: confirmed new/blocked accounts -> import, backfill, localize')
     ap.add_argument('--localize', action='store_true', help='inspiration videos in each market language (missing ones only)')
     ap.add_argument('--localize-recheck', action='store_true', help='strictly re-check every swapped inspiration video')
@@ -1620,15 +1621,17 @@ def main():
         p = (lineup.apply(history, fmts, cfg, own_videos, M.load(cfg)) if a.lineup_apply
              else lineup.plan(history, fmts, cfg, own_videos))
         b = p['board']
-        print('IN THE LIST (weakest last) - typical save rate:',
-              ' · '.join(f'{m} {conversion.pct(r)}' for m, r in sorted(p['typical'].items())))
-        for f in sorted([f for f in fmts if f.get('status') == 'active' or f in [x[0] for x in p['out']]],
-                        key=lambda f: -b[f['id']]['score']):
-            x = b[f['id']]
-            print(f"  {x['score']:.2f}  {f['title'][:50]:50} saved by {conversion.pct(x['raw_rate'])} ({x['videos']} videos) "
-                  f"conv {x['conv']:.2f} x reach {x['form']:.2f} (JobStep {x['js_form']:.2f} x ours {x['own_factor']:.2f}) "
-                  f"{'| protected: ' + p['protected'][f['id']] if p['protected'].get(f['id']) else ''}")
-        print('OUT:', [(f['title'], round(sc, 2), r) for f, sc, r in p['out']])
+        by = {f['id']: f for f in fmts}
+        print('typical save rate:', ' · '.join(f'{m} {conversion.pct(r)}' for m, r in sorted(p['typical'].items())))
+        for m, keep in p['lists'].items():
+            print(f'{m} LIST ({len(keep)} formats, best score first):')
+            for fid in sorted(keep, key=lambda i: -b[i]['score']):
+                x = b[fid]
+                print(f"  {x['score']:.2f}  {by[fid]['title'][:50]:50} saved by {conversion.pct(x['raw_rate'])} "
+                      f"({x['videos']} videos) conv {x['conv']:.2f} x reach {x['form']:.2f} | {keep[fid]}")
+            print(f'  {m} off the list:', [(f['title'][:40], round(b[f['id']]['score'], 2)) for f in p['off'].get(m, [])])
+            print(f'  {m} back on the list:', [f['title'][:40] for f in p['back'].get(m, [])])
+        print('OUT (archive):', [(f['title'], round(sc, 2)) for f, sc, r in p['out']])
         if a.lineup_apply:
             state.save('formats.json', fmts)
             rerank(M.load(cfg), fmts, history, cfg)

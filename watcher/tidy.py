@@ -148,8 +148,9 @@ def tidy_page(page_id, links, write=True):
 def run(fmts, mkts, cfg, page_of, write=True):
     """Every live page of every running market. Returns [(format title, market, changes)]."""
     report = []
+    from .markets import for_format
     for f in [f for f in fmts if f.get('status') == 'active']:
-        for mk in mkts:
+        for mk in for_format(mkts, f):  # not a market's off-list pages (lineup off_markets)
             pid = page_of(f, mk['key'])
             if not pid:
                 continue

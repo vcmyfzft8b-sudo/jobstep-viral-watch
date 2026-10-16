@@ -183,3 +183,20 @@ here (repo, Notion, Discord, secrets, state are all separate).
   (builder.TRANSCRIBE, brands.LOCALISE) and judges (audit, crosscheck) say so. `watcher/faithful.py` checks every live
   script against its video sentence by sentence (`mode=faithful-check` read-only, `mode=faithful-fix` transcribes the
   ones with changes again with the exact problems); the Monday run does faithful-fix and sends what is still off to Slack.
+
+## Formats in Megasheet (16 Oct 2026, user: "the list changes up on what to make" in Megasheet)
+- Creators read the formats in the Megasheet portal. Notion stays where the watcher builds, checks, tidies and orders
+  pages; `watcher/megasheet_formats.py` copies each running market's Notion list into its campaign
+  (`megasheet.CAMPAIGNS`) as its own workflow step after every run (never fails the run; Slack note at most once a day).
+- One idea per page on the list, same order; hot formats (red card) first with a bold 🔥 hot_header line; title,
+  script, visual hook (lab link dropped - the Visual Hook Lab is a guide on the same Megasheet page), ⚠️ note,
+  resources and the example video come from the page. Ideas are compared with the page every run - only differences
+  are sent (hand edits in Megasheet are put back: Notion is the source). Off the list -> archived (never deleted),
+  back on the list -> the same idea published again. Hand-made Megasheet ideas are left alone, after ours.
+- First copy of a campaign: ideas with the same title (the 15 Oct one-time import) are taken over (same example video
+  = same file size -> not uploaded again), the other published ones archived. Titles used by creators' videos cannot
+  be removed: they stay after ours (`keep_titles`). State: state/megasheet_formats.json (ids only).
+- Needs the Megasheet login with write access (`mcp:write`, since 16 Oct 2026): `scripts/save_megasheet_login.sh`.
+- Modes: `megasheet-formats` (only the copy), `megasheet-formats-dry` (prints what would change). DACH is not copied
+  while the market is off. Page intro/rules/footer, the Visual Hook Lab guide and hook videos are campaign settings
+  in Megasheet (set by hand, not by the watcher).

@@ -7171,5 +7171,19 @@
   },
   "ts": 1792253378,
   "type": "rerank"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792262287,
+  "type": "alert",
+  "video": "7697662354661674262",
+  "views": 5775
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792262291,
+  "type": "alert",
+  "video": "7697637572218014998",
+  "views": 5155
  }
 ]

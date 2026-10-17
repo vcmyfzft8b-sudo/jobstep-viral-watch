@@ -3319,8 +3319,8 @@
   "this.is.creed": "de"
  },
  "hot": {},
- "last_full_run": 1792220543,
- "last_run": 1792239335,
+ "last_full_run": 1792251751,
+ "last_run": 1792251751,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3338,8 +3338,8 @@
   ]
  },
  "top3": [
-  "FRX22",
   "X06",
+  "FRX22",
   "ESX11"
  ],
  "top3_market": "fr",

@@ -1014,7 +1014,9 @@
    "why": ""
   }
  },
- "audit": {},
+ "audit": {
+  "X14:fr": "failed"
+ },
  "audit_fingerprints": {
   "A202610061328:de": "d0c10c2cc1ce25cdd6e27de74cfcd3530424742a5021fdfc1454e7083bd1f610",
   "A202610061328:es": "3269125154cb892d1d44283bcc3f2ded8be5c2081701a6618a4b430566ef00ad",
@@ -3318,9 +3320,17 @@
   "thelma.gtz": "es",
   "this.is.creed": "de"
  },
- "hot": {},
- "last_full_run": 1792275942,
- "last_run": 1792275942,
+ "hot": {
+  "N10": {
+   "announced": {},
+   "count": 5,
+   "creators": {},
+   "messages": {},
+   "since": 1792300842
+  }
+ },
+ "last_full_run": 1792298558,
+ "last_run": 1792298558,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3338,9 +3348,9 @@
   ]
  },
  "top3": [
+  "N10",
   "X06",
-  "FRX22",
-  "ESX11"
+  "FRX22"
  ],
  "top3_market": "fr",
  "video_hashes": {

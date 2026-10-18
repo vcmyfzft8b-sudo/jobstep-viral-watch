@@ -26772,6 +26772,25 @@
    "type": "text"
   }
  ],
+ "f64ddb2f-81a8-4ab2-b117-c74d008569b0.19": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Habla muy cerca de la cámara mientras te sujetas un micro pequeño delante de la boca, con el título encima, igual que en el vídeo de ejemplo. A los 6 segundos más o menos enseñas tu currículum antiguo en la pantalla del portátil o la tablet y luego vuelves a la cámara.",
+   "text": {
+    "content": "Habla muy cerca de la cámara mientras te sujetas un micro pequeño delante de la boca, con el título encima, igual que en el vídeo de ejemplo. A los 6 segundos más o menos enseñas tu currículum antiguo en la pantalla del portátil o la tablet y luego vuelves a la cámara.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "f77958b0-fc14-833b-bc4d-8145d3d8f008": [
   {
    "annotations": {
@@ -47325,6 +47344,453 @@
     "plain_text": "Tri: ceni se in vedno ciljaj višje od minimalca. ",
     "text": {
      "content": "Tri: ceni se in vedno ciljaj višje od minimalca. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:f64ddb2f-81a8-4ab2-b117-c74d008569b0": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Acabo de salir de una entrevista de trabajo y, por favor, que alguien me explique: ",
+    "text": {
+     "content": "Acabo de salir de una entrevista de trabajo y, por favor, que alguien me explique: ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿hoy en día los currículums ya no son así? ",
+    "text": {
+     "content": "¿hoy en día los currículums ya no son así? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Llevo ya 3 meses presentándome a entrevistas con este currículum y, simplemente, no me llaman. En serio, ya empecé a pensar: ¿el problema seré yo? ",
+    "text": {
+     "content": "Llevo ya 3 meses presentándome a entrevistas con este currículum y, simplemente, no me llaman. En serio, ya empecé a pensar: ¿el problema seré yo? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pero se lo pregunté a mi amiga de RRHH y me dijo que el problema no soy yo, sino mi currículum. Porque este tipo de currículums no pasan el filtro ATS. O sea, que los reclutadores en realidad ni te ven. ",
+    "text": {
+     "content": "Pero se lo pregunté a mi amiga de RRHH y me dijo que el problema no soy yo, sino mi currículum. Porque este tipo de currículums no pasan el filtro ATS. O sea, que los reclutadores en realidad ni te ven. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pero luego me enseñó esta página web. ",
+    "text": {
+     "content": "Pero luego me enseñó esta página web. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Aquí solo pegas el enlace de la oferta de trabajo que te ha parecido interesante, y luego la analiza. ",
+    "text": {
+     "content": "Aquí solo pegas el enlace de la oferta de trabajo que te ha parecido interesante, y luego la analiza. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Aquí puedes adaptarlo y también puedes elegir una plantilla. ",
+    "text": {
+     "content": "Aquí puedes adaptarlo y también puedes elegir una plantilla. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Yo ahora, claro, quiero hacer un currículum. ",
+    "text": {
+     "content": "Yo ahora, claro, quiero hacer un currículum. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo procesa todo, y luego yo respondo a sus preguntas y también escribo cosas a las que responde él. ",
+    "text": {
+     "content": "Lo procesa todo, y luego yo respondo a sus preguntas y también escribo cosas a las que responde él. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Así puede transformarlo al momento. ",
+    "text": {
+     "content": "Así puede transformarlo al momento. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y además puntúa cuánto encaja tu perfil con la oferta. ",
+    "text": {
+     "content": "Y además puntúa cuánto encaja tu perfil con la oferta. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Así queda ahora mi currículum; he añadido algunas cosas más para que tenga un Y % de posibilidades de llegar a un reclutador y no a un bot de IA. ",
+    "text": {
+     "content": "Así queda ahora mi currículum; he añadido algunas cosas más para que tenga un Y % de posibilidades de llegar a un reclutador y no a un bot de IA. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y esto encima lo puedes transformar. ",
+    "text": {
+     "content": "Y esto encima lo puedes transformar. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hago un clic y listo. ",
+    "text": {
+     "content": "Hago un clic y listo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Después también puedes descargarlo. ",
+    "text": {
+     "content": "Después también puedes descargarlo. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Este también está adaptado a la oferta. ",
+    "text": {
+     "content": "Este también está adaptado a la oferta. ",
      "link": null
     },
     "type": "text"

@@ -744,10 +744,10 @@
   "pending": {
    "kind": "revive",
    "reasons": [
-    "🇫🇷 transcription refused: the script has 240 words, it must have 134-226 / script transcribed again: The opening sentence 'Je sors d'un entretien d'embauche, et qu"
+    "🇫🇷 transcription refused: the script has 240 words, it must have 134-226 / script transcribed again: The first sentence is not in the example and should be removed"
    ],
    "since": 1792323707,
-   "tries": 2
+   "tries": 3
   },
   "revived": {
    "at": 1792322938,

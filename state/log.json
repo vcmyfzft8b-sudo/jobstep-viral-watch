@@ -7603,5 +7603,103 @@
   "type": "alert",
   "video": "7697986553993383201",
   "views": 6885
+ },
+ {
+  "format": "N10",
+  "level": "converting",
+  "ts": 1792349761,
+  "type": "alert",
+  "video": "7697715589585882371",
+  "views": 54000
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792349766,
+  "type": "alert",
+  "video": "7698037475490614531",
+  "views": 12700
+ },
+ {
+  "format": "X14",
+  "reasons": [
+   "🇫🇷 transcription refused: the script has 240 words, it must have 134-226 / script transcribed again: The first sentence is not in the example and should be removed"
+  ],
+  "tries": 3,
+  "ts": 1792350419,
+  "type": "format_held"
+ },
+ {
+  "order": [
+   "N10",
+   "FRX22",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "X09",
+   "X03",
+   "N02",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "N02",
+    "A20261006183623",
+    "N10",
+    "X16",
+    "A202610061334",
+    "N04",
+    "ESX28",
+    "X03",
+    "ESX11",
+    "X08",
+    "X13",
+    "X06",
+    "X09",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "N10",
+    "FRX22",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "X03",
+    "N02",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "N10",
+    "N02",
+    "X03",
+    "ESX11",
+    "X16",
+    "X13",
+    "X08",
+    "A202610061334",
+    "A20261006183623",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "FRX22",
+    "X06"
+   ]
+  },
+  "ts": 1792351032,
+  "type": "rerank"
  }
 ]

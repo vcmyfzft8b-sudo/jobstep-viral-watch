@@ -1015,7 +1015,9 @@
   }
  },
  "audit": {
-  "X14:fr": "failed"
+  "X14:es": "ok",
+  "X14:fr": "failed",
+  "X14:sl": "ok"
  },
  "audit_fingerprints": {
   "A202610061328:de": "d0c10c2cc1ce25cdd6e27de74cfcd3530424742a5021fdfc1454e7083bd1f610",
@@ -1092,6 +1094,8 @@
   "X13:es": "35984f51ceb2a57c20face882223f8a29107332d7c048d25274d20fcc9259e35",
   "X13:fr": "12fe59e1662b41f34ad33c4d955ffc518ebc389b9980832922d96ef2d0b744df",
   "X13:sl": "52af697799bb394cd1d05c26369f7578f28a7d34bee7d1cc5ebcf59bb63e17bd",
+  "X14:es": "1630d0cd0a1f75f13f1bfdb7a03368d72153923104d81e0b103ef81455d61965",
+  "X14:sl": "2c3eb8f660cf760524c7fa666af9d6bc0879f78982c6293e1086190932e1ab4d",
   "X15:de": "49c2abe8f73de800fc89142d7c68ad50f57eec46341b7501d2707126d3bd82a3",
   "X15:es": "a8dcb7132d5969511b263c054ed81d8b33e4b810ae0f22cdda5e73bcdf29ef34",
   "X15:fr": "d608d9277893934890b5524cfc3219eb260db98a73ecdb04a90c665676449dbf",
@@ -3329,8 +3333,8 @@
    "since": 1792300842
   }
  },
- "last_full_run": 1792298558,
- "last_run": 1792298558,
+ "last_full_run": 1792322333,
+ "last_run": 1792322333,
  "lineup": "2026-W42",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3349,8 +3353,8 @@
  },
  "top3": [
   "N10",
-  "X06",
-  "FRX22"
+  "FRX22",
+  "X06"
  ],
  "top3_market": "fr",
  "video_hashes": {

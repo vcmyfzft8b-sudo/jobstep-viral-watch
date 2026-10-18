@@ -21678,6 +21678,25 @@
    "type": "text"
   }
  ],
+ "8cf29cc8-459c-471d-9ffb-cc66b7710c95.42": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Govori čisto od blizu v kamero z mikrofonom v roki, naslov je ves čas na zaslonu – kot v primeru videa – in za trenutek pokaži svoj stari življenjepis na zaslonu. Nato nadaljuj z enim od hookov iz Visual Hook Laba.",
+   "text": {
+    "content": "Govori čisto od blizu v kamero z mikrofonom v roki, naslov je ves čas na zaslonu – kot v primeru videa – in za trenutek pokaži svoj stari življenjepis na zaslonu. Nato nadaljuj z enim od hookov iz Visual Hook Laba.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "924958b0-fc14-82ae-ae99-81500835cae8": [
   {
    "annotations": {
@@ -26786,6 +26805,25 @@
    "plain_text": "Habla muy cerca de la cámara mientras te sujetas un micro pequeño delante de la boca, con el título encima, igual que en el vídeo de ejemplo. A los 6 segundos más o menos enseñas tu currículum antiguo en la pantalla del portátil o la tablet y luego vuelves a la cámara.",
    "text": {
     "content": "Habla muy cerca de la cámara mientras te sujetas un micro pequeño delante de la boca, con el título encima, igual que en el vídeo de ejemplo. A los 6 segundos más o menos enseñas tu currículum antiguo en la pantalla del portátil o la tablet y luego vuelves a la cámara.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "f64ddb2f-81a8-4ab2-b117-c74d008569b0.41": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Igual que en el vídeo de ejemplo: grábate en selfie muy cerca de la cámara, ligeramente desde abajo, con el micro de solapa pegado a la boca y el título en pantalla. Al llegar a «con este currículum», enseña un momento tu currículum antiguo en la pantalla.",
+   "text": {
+    "content": "Igual que en el vídeo de ejemplo: grábate en selfie muy cerca de la cámara, ligeramente desde abajo, con el micro de solapa pegado a la boca y el título en pantalla. Al llegar a «con este currículum», enseña un momento tu currículum antiguo en la pantalla.",
     "link": null
    },
    "type": "text"
@@ -46799,6 +46837,504 @@
     "plain_text": ") AI rečem, naj ga prilagodi oglasu, dva mala popravka in sem na Y %. Samo še prenesem. ",
     "text": {
      "content": ") AI rečem, naj ga prilagodi oglasu, dva mala popravka in sem na Y %. Samo še prenesem. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:8cf29cc8-459c-471d-9ffb-cc66b7710c95": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pravkar prihajam z razgovora za službo in naj mi, prosim, nekdo razloži, ",
+    "text": {
+     "content": "Pravkar prihajam z razgovora za službo in naj mi, prosim, nekdo razloži, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "a življenjepisi danes ne izgledajo več tako? ",
+    "text": {
+     "content": "a življenjepisi danes ne izgledajo več tako? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Že 3 mesece se s tem življenjepisom prijavljam na razgovore za službo, pa me preprosto ne povabijo. ",
+    "text": {
+     "content": "Že 3 mesece se s tem življenjepisom prijavljam na razgovore za službo, pa me preprosto ne povabijo. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Resno, začela sem že razmišljati, ali sem morda jaz problem? ",
+    "text": {
+     "content": "Resno, začela sem že razmišljati, ali sem morda jaz problem? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ampak vprašala sem prijateljico, ki dela v HR-ju, in rekla mi je, da problem ni v meni, ampak v mojem življenjepisu. ",
+    "text": {
+     "content": "Ampak vprašala sem prijateljico, ki dela v HR-ju, in rekla mi je, da problem ni v meni, ampak v mojem življenjepisu. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Takšni življenjepisi namreč ne pridejo skozi ATS-filter. ",
+    "text": {
+     "content": "Takšni življenjepisi namreč ne pridejo skozi ATS-filter. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tako da te kadroviki sploh ne vidijo. ",
+    "text": {
+     "content": "Tako da te kadroviki sploh ne vidijo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Potem pa mi je pokazala to spletno stran. ",
+    "text": {
+     "content": "Potem pa mi je pokazala to spletno stran. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Sem samo prilepiš povezavo do oglasa za delo, ki se ti je zdel zanimiv, potem pa ga analizira. ",
+    "text": {
+     "content": "Sem samo prilepiš povezavo do oglasa za delo, ki se ti je zdel zanimiv, potem pa ga analizira. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tukaj ga lahko prilagodiš, lahko pa si izbereš tudi predlogo. ",
+    "text": {
+     "content": "Tukaj ga lahko prilagodiš, lahko pa si izbereš tudi predlogo. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Jaz bi zdaj seveda rada naredila življenjepis. ",
+    "text": {
+     "content": "Jaz bi zdaj seveda rada naredila življenjepis. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Vse obdela, potem pa odgovorim na njegova vprašanja, pa tudi sama vpišem stvari, na katere on odgovori. ",
+    "text": {
+     "content": "Vse obdela, potem pa odgovorim na njegova vprašanja, pa tudi sama vpišem stvari, na katere on odgovori. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tako ga lahko takoj predela. ",
+    "text": {
+     "content": "Tako ga lahko takoj predela. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pa še oceni, koliko se tvoj profil ujema z oglasom za delo. ",
+    "text": {
+     "content": "Pa še oceni, koliko se tvoj profil ujema z oglasom za delo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Zdaj moj življenjepis izgleda tako, dodala sem še nekaj stvari, da z Y % verjetnostjo pride do kadrovika, in ne do AI-bota. ",
+    "text": {
+     "content": "Zdaj moj življenjepis izgleda tako, dodala sem še nekaj stvari, da z Y % verjetnostjo pride do kadrovika, in ne do AI-bota. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "To pa lahko še preoblikuješ. ",
+    "text": {
+     "content": "To pa lahko še preoblikuješ. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "En klik in je že končano. ",
+    "text": {
+     "content": "En klik in je že končano. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Potem ga lahko tudi preneseš. ",
+    "text": {
+     "content": "Potem ga lahko tudi preneseš. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ta je prilagojen oglasu za delo. ",
+    "text": {
+     "content": "Ta je prilagojen oglasu za delo. ",
      "link": null
     },
     "type": "text"

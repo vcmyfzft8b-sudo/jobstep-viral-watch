@@ -32,8 +32,14 @@ if (!["standard", "short", "long"].includes(LENGTH)) throw new Error(`unknown --
 /** For an exact length (make_targets.mjs): which parts are jump-cut, what the AI shows, and how long every look lasts.
  *  variant: full | designcut (plan/template/colour cut) | medium (plan … rewriting cut) | short (that + the end cut);
  *  content: standard (4 changes) | long (8 changes + the AI's question); pace: every look × pace. */
+/** --scenario FORMAT_ID: the demo shows what that format's JobStep example shows (scenarios.json) instead of a variant. */
+const SCENARIO_ID = arg("scenario", null);
+const SCENARIO = SCENARIO_ID
+  ? JSON.parse(fs.readFileSync(path.join(HERE, "scenarios.json"), "utf8")).formats[SCENARIO_ID]
+  : null;
+if (SCENARIO_ID && !SCENARIO) throw new Error(`unknown --scenario ${SCENARIO_ID} (scenarios.json)`);
 const VARIANT = arg("variant", LENGTH === "short" ? "short" : "full");
-const CONTENT = arg("content", LENGTH === "long" ? "long" : "standard");
+const CONTENT = SCENARIO ? SCENARIO.content : arg("content", LENGTH === "long" ? "long" : "standard");
 const PACE = Number(arg("pace", 1));
 const NAME = arg("name", LENGTH === "standard" ? "" : LENGTH);
 if (!["full", "designcut", "medium", "short"].includes(VARIANT)) throw new Error(`unknown --variant ${VARIANT}`);
@@ -41,7 +47,7 @@ const SHORT = VARIANT === "short";
 const LONG = CONTENT === "long";
 const CUT_DESIGN = VARIANT !== "full";
 const CUT_JOB = VARIANT === "medium" || SHORT;
-const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}-${VARIANT}-${CONTENT}-${PACE}`);
+const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}-${SCENARIO_ID ? `sc-${SCENARIO_ID}` : `${VARIANT}-${CONTENT}`}-${PACE}`);
 const ANDROID = DEVICE === "android";
 const PHONE = DEVICE === "phone" || ANDROID;
 const SAMPLE = SAMPLES[LANG];
@@ -381,7 +387,24 @@ async function reviewCards(pauses, count) {
   }
 }
 
+/** The job step's field: the real LinkedIn job link pasted (read at once, like the JobStep videos' job-link field), or
+ *  for a sample without one the job ad's text. */
+async function enterJob() {
+  const field = vis(page.locator("main textarea"));
+  await click(field);
+  await sleep(PHONE ? 350 : 250);
+  if (!SAMPLE.jobLink) return page.keyboard.insertText(SAMPLE.job);
+  // a real paste: the app reads a pasted link straight away (JobStep onPaste)
+  await field.evaluate((el, url) => {
+    const data = new DataTransfer();
+    data.setData("text/plain", url);
+    el.dispatchEvent(new ClipboardEvent("paste", { clipboardData: data, bubbles: true, cancelable: true }));
+  }, SAMPLE.jobLink);
+  await byText(COPY.job.readTitle).waitFor({ timeout: 15000 });
+}
+
 async function scenes() {
+  if (SCENARIO) return scenarioScenes();
   const C = COPY;
   // 1. Upload the CV (the file picker is answered with the made-up CV)
   chapter("upload");
@@ -430,14 +453,12 @@ async function scenes() {
     await beat(300);
     await click(next());
   };
-  // 5. Paste the job ad, rewrite for it – cut in the medium and short versions
+  // 5. Paste the job ad (its LinkedIn link where the sample has one), rewrite for it – cut in the medium and short versions
   const job = async () => {
     chapter("job ad");
     await byText(C.job.title).waitFor();
     await beat(200);
-    await click(vis(page.locator("textarea")));
-    await sleep(250);
-    await page.keyboard.insertText(SAMPLE.job);
+    await enterJob();
     await beat(450);
     await snap("job");
     await click(next());
@@ -486,6 +507,163 @@ async function scenes() {
   else await scaled(() => soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), P(LONG ? 1200 : 450))));
   if (LONG) await scaled(() => idle(P(PHONE ? 600 : 800)));
 }
+/** A format's own demo (scenarios.json): the app's steps in their order; a listed step is shown (looked at for its
+ *  ms, × pace), the others happen inside one jump cut. */
+async function scenarioScenes() {
+  const C = COPY, S = SCENARIO.steps;
+  const look = (ms) => scaled(() => idle(P(ms)));
+  const hidden = [];
+  const flush = async () => {
+    if (!hidden.length) return;
+    const run = hidden.splice(0);
+    await cut(async () => {
+      for (const fn of run) await fn();
+    });
+  };
+  const shown = async (name, fn) => {
+    await flush();
+    chapter(name);
+    await fn();
+  };
+  const step = async (key, show, hide) => (key in S ? shown(key, () => show(S[key])) : hidden.push(hide));
+  const scoreBars = () => page.locator("main").getByText(/\d+\s*\/\s*(20|15)$/).filter({ visible: true });
+
+  await step("upload", async (ms) => {
+    await look(ms * 0.6);
+    await snap("upload");
+    await click(PHONE ? byText(C.upload.dropTitlePhone) : byText(C.upload.browse));
+    await look(ms * 0.4);
+  }, () => click(PHONE ? byText(C.upload.dropTitlePhone) : byText(C.upload.browse), { pause: 20 }));
+  await step("reading", (s) => fastTo(() => byText(C.score.title).waitFor({ timeout: 40000 }), s),
+    () => byText(C.score.title).waitFor({ timeout: 40000 }));
+  await step("score", async (ms) => {
+    await scaled(() => sleep(Math.max(1000, P(Math.min(ms, 1300))))); // the gauge fills
+    await snap("score");
+    const rest = Math.max(0, ms - 1300);
+    if (rest >= 1600 && !PHONE)
+      await soft("score bars", async () => {
+        await hover(scoreBars().first(), P(rest * 0.35), { fx: 0.2 });
+        await hover(scoreBars().last(), P(rest * 0.3), { fx: 0.2 });
+      });
+    else await look(rest);
+    await click(next());
+  }, async () => (await sleep(600), await click(next(), { pause: 20 })));
+  await step("plan", async (ms) => {
+    await byText(C.plan.title).waitFor();
+    await look(ms);
+    await click(next());
+  }, async () => (await byText(C.plan.title).waitFor(), await click(next(), { pause: 20 })));
+  const pickModern = async () => {
+    if (PHONE) {
+      await soft("template swipe", () => swipe(VIEW.width * 0.74, VIEW.height * 0.45, -VIEW.width * 0.5));
+      await sleep(450);
+      if (!(await page.getByText("Modern", { exact: true }).filter({ visible: true }).count()))
+        await soft("template pick", () => click(button("Modern")));
+    } else await click(vis(page.locator("main").getByText("Modern", { exact: true })));
+  };
+  await step("template", async (ms) => {
+    await byText(C.template.title).waitFor();
+    if (ms >= 2500 && !PHONE) {
+      // browsing the templates before picking one (X09)
+      const names = page.locator("main").getByText(/^(Classic|Minimal|Executive|Elegant|Compact)$/).filter({ visible: true });
+      const n = await names.count();
+      for (let i = 0; i < Math.min(2, n); i++) await soft("template browse", () => hover(names.nth(i), P(ms * 0.22)));
+    } else if (ms >= 2500 && PHONE) {
+      await look(ms * 0.25);
+      await soft("template swipe", () => swipe(VIEW.width * 0.74, VIEW.height * 0.45, -VIEW.width * 0.5));
+    }
+    await look(ms * 0.25);
+    await pickModern();
+    await look(ms * 0.3);
+    await snap("template");
+    await click(next());
+  }, async () => (await byText(C.template.title).waitFor(), await pickModern(), await click(next(), { pause: 20 })));
+  await step("color", async (ms) => {
+    await byText(C.color.title).waitFor();
+    await look(ms * 0.3);
+    await click(button("Forest"));
+    await look(ms * 0.7);
+    await snap("color");
+    if (SCENARIO.stop !== "color") await click(next());
+  }, async () => (await byText(C.color.title).waitFor(), await click(button("Forest"), { pause: 20 }), await click(next(), { pause: 20 })));
+  if (SCENARIO.stop === "color") return flush();
+  await step("job", async (ms) => {
+    await byText(C.job.title).waitFor();
+    await look(ms * 0.25);
+    await enterJob();
+    await look(ms * 0.75);
+    await snap("job");
+    await click(next());
+  }, async () => (await byText(C.job.title).waitFor(), await enterJob(), await click(next(), { pause: 20 })));
+  await step("rewriting", (s) => fastTo(() => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }), s),
+    () => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }));
+  await step("review", async (ms) => {
+    await reviewCards(Array(12).fill(ms), 12);
+    await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
+    await look(400);
+    await snap("done");
+    await click(next());
+  }, async () => {
+    await reviewCards(Array(12).fill(0), 12);
+    await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
+    await click(next(), { pause: 20 });
+  });
+  const fitted = () => vis(page.getByText(new RegExp(`^(${escapeRe(C.fit.fittedTitle(1))}|${escapeRe(C.fit.alreadyTitle)})`)));
+  await step("fit", async (ms) => {
+    await byText(C.fit.title).waitFor({ timeout: 40000 });
+    await look(ms * 0.4);
+    await click(next());
+    await fitted().waitFor({ timeout: 15000 }).catch(() => {});
+    await look(ms * 0.6);
+    await snap("fit");
+    await click(next());
+  }, async () => {
+    await byText(C.fit.title).waitFor({ timeout: 40000 });
+    await click(next(), { pause: 20 });
+    await fitted().waitFor({ timeout: 15000 }).catch(() => {});
+    await click(next(), { pause: 20 });
+  });
+  const ready = () => vis(page.getByText(new RegExp(`^(${escapeRe(C.result.topShape)}|${escapeRe(C.result.ready)})$`)));
+  await step("rescoring", (s) => fastTo(() => ready().waitFor({ timeout: 40000 }), s), () => ready().waitFor({ timeout: 40000 }));
+  // the result: the new score (the gauge climbs), the new CV above it, the download button
+  await step("result", async (ms) => {
+    await scaled(() => sleep(Math.max(1400, P(ms))));
+    await snap("result");
+  }, () => sleep(1900));
+  await flush();
+  if ("cv" in S) {
+    chapter("cv");
+    await lookOverCv(S.cv);
+  }
+  if ("download" in S) {
+    chapter("download");
+    if (PHONE) await look(S.download);
+    else await scaled(() => soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), P(S.download))));
+  }
+}
+
+/** Looking through the new CV on the result screen, the way the creators point at theirs: the cursor goes over the
+ *  name and headline, the profile, the experience and the skills (phones: the page scrolls up to the CV and back). */
+async function lookOverCv(ms) {
+  const frame = page.locator("iframe, main [data-resume-page], main article").first();
+  if (PHONE) {
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: "smooth" }));
+    await scaled(() => sleep(P(ms * 0.6)));
+    await page.evaluate(() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));
+    return scaled(() => sleep(P(ms * 0.4)));
+  }
+  const name = vis(page.getByText(SAMPLE.name, { exact: true }));
+  const b = (await name.boundingBox().catch(() => null)) ?? (await frame.boundingBox().catch(() => null));
+  if (!b) return scaled(() => idle(P(ms)));
+  // down the CV's left column, as if reading it
+  const x0 = b.x + 10, y0 = b.y + b.height / 2;
+  const stops = [[x0 + 40, y0 + 18], [x0 + 160, y0 + 110], [x0 + 120, y0 + 190], [x0 + 260, y0 + 260], [x0 + 140, y0 + 420]];
+  for (const [x, y] of stops) {
+    await cursorTo(Math.round(x), Math.round(Math.min(y, VIEW.height - 160)), Math.round(rand(320, 520)));
+    await scaled(() => sleep(P(ms / stops.length) * 0.55));
+  }
+}
+
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** The result's download button label, from the resume maker's own messages (the copy file has no key for it). */
 const COPY_DOWNLOAD = () => ({ fr: "Télécharger", es: "Descargar", sl: "Prenesi" })[LANG];

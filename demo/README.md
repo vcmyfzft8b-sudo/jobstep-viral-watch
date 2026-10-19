@@ -25,6 +25,27 @@ Waiting screens (the app holds them ≥ 5 s) play sped up; the short version's m
 creators cut their demos. Laptops: a real-size cursor on curved, uneven paths with a small overshoot, uneven pauses.
 Phones: taps and a finger swipe on the template carousel. No sound (creators talk over it).
 
+## Each format's own demo (Slovenia, 19 Oct 2026)
+
+User: "the demo should show what the example videos show" – e.g. the LinkedIn example pastes a LinkedIn job link, so
+its demo does too. Every example was watched frame by frame (2 fps) and its app part written down in
+`scenarios.json`: which of our steps it shows (upload, reading, score, plan, template, colour, job, rewriting, the
+changes, fit, rescoring, result, looking over the new CV, download), how long each is looked at, and its length
+(= the example's app seconds). Steps it does not show happen inside a jump cut, so a demo may start right at the job
+step (N02, ESX28) or end on the colour step (X09).
+
+The job step always pastes a **real LinkedIn job link** (`samples.mjs` → `jobLink`; Slovenia:
+linkedin.com/jobs/view/4474038171, *Specialist za tržno komuniciranje* at Forward, Ljubljana) – nothing faked; the
+app reads it at once (the demo content's `job` says what that post asks for, in our own words). The creator films
+the job site part themselves.
+
+```bash
+node make_scenarios.mjs --lang sl             # out/final/Slovenia/formats/<id>/Parakeet AI demo – <device>.mp4
+node record.mjs --device mac --lang sl --scenario N02 --debug   # one take, screenshots of every step
+```
+
+`drive_sync.py` puts a format's own demo in its Drive folder when it exists (else its length).
+
 ## Where they are
 
 `out/final/<France|Spain|Slovenia>/Parakeet AI demo (<n> s) – <Mac|Windows|iPhone|Android> (<market>).mp4`

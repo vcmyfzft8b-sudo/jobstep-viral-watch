@@ -237,6 +237,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
   title>/` with the 4 devices in the format's length, plus `_All lengths/`. `python3 demo/drive_sync.py` uploads (one
   at a time, in place) and checks every file by MD5; `demo/drive_folders.json` = page → folder, length, link;
   `demo/drive_links.md` = the list.
+- Each format's own demo (user, 19 Oct 2026: "the demo should show what the example videos show"): every example was
+  watched frame by frame; `demo/scenarios.json` lists which of our steps it shows and for how long (others happen in a
+  jump cut, so a demo may start at the job step or end on the colour step); `demo/make_scenarios.mjs --lang sl` records
+  them (`out/final/Slovenia/formats/<id>/`), each within ±0.8 s of the example's app seconds; `drive_sync.py` puts them
+  in the format folders. The job step pastes a REAL LinkedIn job link (user: "paste a real LinkedIn link, don't fake
+  anything"; `samples.mjs` jobLink, sl = linkedin.com/jobs/view/4474038171, Forward) - no made-up job site pages; the
+  creator films the job site part. Slovenia only for now.
 - It records ParakeetAI's prod code, not the live site (user: "do it with code", no browser sign-in): a local clone
   of `main` at `~/dev/parakeetai-demo` (local branch `demo/resume-maker-creator-demo`, never pushed) with
   `/resumeMaker/demo` answering every call in the browser from prepared content; no account, no AI. The repo is

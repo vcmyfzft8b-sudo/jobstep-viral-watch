@@ -4,7 +4,8 @@
   python3 demo/drive_sync.py --check  only check
 
 Layout: `Parakeet AI – Demo videos/<France|Spain|Slovenia>/`
-  `<page title>/Parakeet AI demo – <iPhone|Android|Mac|Windows>.mp4`   the format's length (format_lengths.json)
+  `<page title>/Parakeet AI demo – <iPhone|Android|Mac|Windows>.mp4`   the format's own demo (scenarios.json, what its
+      example shows: out/final/<market>/formats/<id>/) where recorded, else its length (format_lengths.json)
   `_All lengths/Parakeet AI demo (<n> s) – <device>.mp4`             every length, for new formats
 
 Files are replaced in place (same name, so links and sharing stay), one at a time with retries: Drive lists new
@@ -58,8 +59,11 @@ def expected():
     for p in pages:
         s = lengths[p['format']]['demo_seconds']
         rel = p['folder'].split('/', 1)[1]  # drop the root folder name
+        market = rel.split('/')[0]
         for d in DEVICES:
-            want[f'{rel}/Parakeet AI demo – {d}.mp4'] = local(rel.split('/')[0], s, d)
+            # the format's own demo (make_scenarios.mjs: what its example shows) where it is recorded, else its length
+            own = FINAL / market / 'formats' / p['format'] / f'Parakeet AI demo – {d}.mp4'
+            want[f'{rel}/Parakeet AI demo – {d}.mp4'] = own if own.exists() else local(market, s, d)
     return want, pages, lengths
 
 

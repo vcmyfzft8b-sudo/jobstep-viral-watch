@@ -81,35 +81,59 @@ def test_old_hand_written_page_is_left_alone():
     api.assert_not_called()  # no rename, no edits
 
 
-DEMO = ('🎥 Demo', 'https://drive.google.com/drive/folders/F')
+CUE = '(🎥 Demo – see resources)'
+FOLDER = 'https://drive.google.com/drive/folders/F'
 
 
-def test_demo_cue_goes_right_before_the_first_app_cue_once():
+def test_demo_cue_is_plain_text_right_before_the_first_app_cue_once():
     paras = [[pages.rt('Hi. ')], cue('https://p') + [pages.rt('Upload. ')], cue('https://p') + [pages.rt('Score. ')]]
-    out, changed = tidy.place_demo(paras, LINKS, *DEMO)
+    out, changed = tidy.place_demo(paras, LINKS, CUE)
     assert changed
     assert text(out[0]) == 'Hi. '
-    assert text(out[1]) == '(🎥 Demo) (Parakeet AI · Resume Maker) Upload. '
+    assert text(out[1]) == '(🎥 Demo – see resources) (Parakeet AI · Resume Maker) Upload. '
     assert text(out[2]) == '(Parakeet AI · Resume Maker) Score. '
-    assert [tidy._url(x) for x in out[1] if tidy._url(x)] == [DEMO[1], 'https://p']
-    assert tidy.place_demo(out, LINKS, *DEMO) == (out, False)  # already right: nothing to write
-    trimmed, removed = tidy.trim_cues(out, LINKS)  # the cue rule leaves it alone
+    assert [tidy._url(x) for p in out for x in p if tidy._url(x)] == ['https://p', 'https://p']  # no Drive link
+    assert tidy.place_demo(out, LINKS, CUE) == (out, False)  # already right: nothing to write
+    trimmed, removed = tidy.trim_cues(out, LINKS)
     assert removed == 0 and trimmed == out
+    assert pages.strip_directions(text(out[1])).startswith('(🎥 Demo')  # not taken for a stage direction
 
 
-def test_demo_cue_is_moved_and_repointed():
-    paras = [cue('https://p') + [pages.rt('Upload. ')] + cue(DEMO[1] + 'old', '🎥 Demo') + [pages.rt('Score. ')],
-             cue(DEMO[1], '🎥 Demo') + [pages.rt('Again.')]]
-    out, changed = tidy.place_demo(paras, LINKS, *DEMO)
+def test_old_linked_demo_cue_becomes_the_plain_cue():
+    paras = [cue('https://p') + [pages.rt('Upload. ')] + cue(FOLDER, '🎥 Old') + [pages.rt('Score. (🎥 x) Again.')]]
+    out, changed = tidy.place_demo(paras, LINKS, CUE)
     assert changed
-    assert text(out[0]) == '(🎥 Demo) (Parakeet AI · Resume Maker) Upload. Score. '
-    assert text(out[1]) == 'Again.'
-    assert sum(1 for p in out for x in p if tidy._url(x) == DEMO[1]) == 1
+    assert text(out[0]) == '(🎥 Demo – see resources) (Parakeet AI · Resume Maker) Upload. Score. Again.'
+    assert not any(tidy._url(x) == FOLDER for x in out[0])
+
+
+def test_cue_kept_after_a_megasheet_round_trip():
+    out, _ = tidy.place_demo([cue('https://p') + [pages.rt('Upload.')]], LINKS, CUE)
+    back = pages.md(pages.to_md(out[0]))  # Megasheet merges plain text pieces
+    assert tidy.place_demo([back], LINKS, CUE)[1] is False
 
 
 def test_no_app_cue_no_demo_cue():
     paras = [[pages.rt('Hi.')]]
-    assert tidy.place_demo(paras, LINKS, *DEMO) == (paras, False)
+    assert tidy.place_demo(paras, LINKS, CUE) == (paras, False)
+
+
+def test_demo_folder_goes_into_the_resources_after_parakeet():
+    rich = [pages.rt('Parakeet AI · Resume Maker', link='https://p'), pages.rt('\n'), pages.rt('Gmail', link='https://g'),
+            pages.rt('\n'), pages.rt('- some line')]
+    out, changed = tidy.place_demo_resource(rich, LINKS, '🎥 Demo', FOLDER)
+    assert changed
+    assert [(text([x]), tidy._url(x)) for x in out][:4] == [('Parakeet AI · Resume Maker', 'https://p'), ('\n', ''),
+                                                            ('🎥 Demo', FOLDER), ('\n', '')]
+    assert tidy.place_demo_resource(out, LINKS, '🎥 Demo', FOLDER) == (out, False)
+    again, _ = tidy.place_demo_resource(out, LINKS, '🎥 New', FOLDER + 'X')  # repointed, still one
+    assert sum(1 for x in again if tidy._url(x).startswith('https://drive.google.com/drive/folders/')) == 1
+    assert text(again).count('\n\n') == 0
+
+
+def test_demo_folder_in_empty_resources():
+    out, _ = tidy.place_demo_resource([], LINKS, '🎥 Demo', FOLDER)
+    assert [tidy._url(x) for x in out] == [FOLDER]
 
 
 def test_demo_note_only_in_markets_with_recordings():

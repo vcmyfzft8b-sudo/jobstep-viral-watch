@@ -167,7 +167,7 @@ def asset_label(name):
         t = new
 
 
-DIRECTION_RE = re.compile(r'\((?!\s*📎)[^()]*\)\s*')
+DIRECTION_RE = re.compile(r'\((?!\s*[📎🎥])[^()]*\)\s*')  # 🎥 = the demo recording cue (watcher/demo.py)
 
 
 def strip_directions(text):

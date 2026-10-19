@@ -33,6 +33,19 @@ Phones: taps and a finger swipe on the template carousel. No sound (creators tal
 | iPhone | iPhone, iOS status bar + Safari address bar parakeet-ai.com | 1080×2342 |
 | Android | Samsung Galaxy, Android status bar, Chrome address bar, gesture bar | 1080×2340 |
 
+## On the Parakeet Drive
+
+Uploaded 19 Oct 2026 to the Parakeet Google Drive (rclone remote `gdrive`), private (not shared):
+`Parakeet AI – Demo videos/<France|Spain|Slovenia>/`:
+
+- one folder per published format page, named like the page (its title in that market), holding
+  `Parakeet AI demo – iPhone|Android|Mac|Windows.mp4` in the length that format needs (`format_lengths.json`);
+  the two hand-made "job in 2026" pages (France, Slovenia) count as ESX28 (short);
+- `_All lengths/` – all 12 of the market (`Parakeet AI demo (short ~10 s|standard ~20 s|long ~40 s) – <device>.mp4`),
+  for formats added later.
+
+`drive_folders.json` maps every page (market, format, Megasheet idea id) to its folder and Drive folder id.
+
 ## How it works
 
 It records ParakeetAI's prod code (branch `main` of `ParakeetAI/parakeetai`), not the live site, so it needs no

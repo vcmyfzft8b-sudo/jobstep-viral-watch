@@ -62,6 +62,8 @@ Requisitos:
 - Inglés B2, organización y trabajo en equipo`,
   },
   sl: {
+    // a real LinkedIn job post (Forward, Ljubljana), pasted by its link at the job step like in the JobStep videos
+    jobLink: "https://www.linkedin.com/jobs/view/4474038171",
     file: "CV_Nina_Kovac.pdf",
     name: "Nina Kovač",
     role: "Študentka komunikologije",

@@ -21,7 +21,7 @@
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "anaislanis1": {
   "market": "fr",
@@ -244,6 +244,12 @@
   "since": 1791465487,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "jobswalex": {
+  "market": "fr",
+  "since": 1792416702,
+  "source": "megasheet",
+  "status": "active"
  },
  "jobswithandreaia": {
   "market": "es",
@@ -530,6 +536,12 @@
  "trabajaconlaura_": {
   "market": "es",
   "since": 1791465487,
+  "source": "megasheet",
+  "status": "active"
+ },
+ "useful_tips_by_viktoria": {
+  "market": "sl",
+  "since": 1792416702,
   "source": "megasheet",
   "status": "active"
  },

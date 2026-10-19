@@ -27,7 +27,7 @@ class SloveniaMarketTests(unittest.TestCase):
 
     def test_slovenian_texts_are_complete(self):
         T = markets.TEXT['sl']
-        self.assertEqual(set(T), set(markets.TEXT['fr']))
+        self.assertEqual(set(T) - {'demo_cue', 'demo_note'}, set(markets.TEXT['fr']))  # demo recordings: Slovenia only
         self.assertEqual(len(T['inspo_note']), 2)
         self.assertEqual(len(T['list_fire']), 2)
         self.assertIn('{name}', T['asset_cue'])

@@ -241,3 +241,14 @@ here (repo, Notion, Discord, secrets, state are all separate).
   of `main` at `~/dev/parakeetai-demo` (local branch `demo/resume-maker-creator-demo`, never pushed) with
   `/resumeMaker/demo` answering every call in the browser from prepared content; no account, no AI. The repo is
   reachable with the `nace-race` GitHub login only.
+
+## Demo recordings in the Slovenian scripts (19 Oct 2026, user: "one link per script, where they should start playing it")
+- `watcher/demo.py`: a market whose `markets.TEXT` has `demo_cue` (only `sl` for now) gets ONE "(🎥 Tukaj predvajaj demo
+  posnetek)" link cue in every live script, to the page's Drive folder from `demo/drive_folders.json` (by idea id, else
+  format), right before the first Parakeet AI cue. tidy (`tidy.place_demo`) adds/moves/re-points it on every normal run
+  and after rebuilds; trim_cues leaves it alone; judges never see it (spoken_text skips link labels); verify reports it.
+- How to film it is the last line of the ⚠️ note (`demo_note`, added by `pages.inspo_note`; `mode=renote` puts it on
+  the pages): download (not played in Drive), full screen without player controls, best played on a laptop and filmed
+  as if clicking through the app, no laptop → phone recording as an overlay in the edit.
+- Hand-edited ideas (pages.is_hand) are never written - their cue is added by hand. New format pages get a cue only
+  once their folder exists: run `demo/drive_sync.py` (then commit drive_folders.json).

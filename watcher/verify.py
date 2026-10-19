@@ -60,7 +60,7 @@ def layout_problems(blocks, script, links):
     return out
 
 
-def check_page(pid, lang, links, live=True, ref_text=''):
+def check_page(pid, lang, links, live=True, ref_text='', fmt_id=None):
     """Problems of one format page. ref_text: the format's original words (formats.json 'script') - the speaker
     must stay the same (brands.speaker_changed)."""
     blocks = pages.children(pid)
@@ -83,7 +83,7 @@ def check_page(pid, lang, links, live=True, ref_text=''):
     if SOURCE_RE.search(reword.spoken_text(script)):
         out.append('JobStep (or the other app) named in the script')
     from . import tidy
-    out += tidy.problems(pid, links)
+    out += tidy.problems(pid, links, fmt_id)
     hook = reword.direction_blocks(pid)
     lab = ' '.join(_plain(b) + (b.get('child_page') or {}).get('title', '') for b in blocks)  # link or sub-page
     if len(hook) != 1 or 'Visual Hook Lab' not in lab:
@@ -124,7 +124,7 @@ def run(cfg, fmts, page_of):
                 continue
             try:  # a format off this market's list (lineup off_markets) is checked like an archived page
                 bad = check_page(pid, m['lang'], cfg['links'], live=f.get('status') == 'active' and not out_here(f),
-                                 ref_text=f.get('script', ''))
+                                 ref_text=f.get('script', ''), fmt_id=f['id'])
             except Exception as e:  # e.g. a page moved to the trash
                 bad = [f'page unreadable: {str(e)[:100]}']
             problems += [f"{flag} {f['title']} ({f.get('status')}): {x}" for x in bad]

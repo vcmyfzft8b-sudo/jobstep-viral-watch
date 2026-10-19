@@ -79,3 +79,41 @@ def test_old_hand_written_page_is_left_alone():
         ch = tidy.tidy_page('pid', LINKS)
     assert ch and ch[0].startswith('old layout')
     api.assert_not_called()  # no rename, no edits
+
+
+DEMO = ('🎥 Demo', 'https://drive.google.com/drive/folders/F')
+
+
+def test_demo_cue_goes_right_before_the_first_app_cue_once():
+    paras = [[pages.rt('Hi. ')], cue('https://p') + [pages.rt('Upload. ')], cue('https://p') + [pages.rt('Score. ')]]
+    out, changed = tidy.place_demo(paras, LINKS, *DEMO)
+    assert changed
+    assert text(out[0]) == 'Hi. '
+    assert text(out[1]) == '(🎥 Demo) (Parakeet AI · Resume Maker) Upload. '
+    assert text(out[2]) == '(Parakeet AI · Resume Maker) Score. '
+    assert [tidy._url(x) for x in out[1] if tidy._url(x)] == [DEMO[1], 'https://p']
+    assert tidy.place_demo(out, LINKS, *DEMO) == (out, False)  # already right: nothing to write
+    trimmed, removed = tidy.trim_cues(out, LINKS)  # the cue rule leaves it alone
+    assert removed == 0 and trimmed == out
+
+
+def test_demo_cue_is_moved_and_repointed():
+    paras = [cue('https://p') + [pages.rt('Upload. ')] + cue(DEMO[1] + 'old', '🎥 Demo') + [pages.rt('Score. ')],
+             cue(DEMO[1], '🎥 Demo') + [pages.rt('Again.')]]
+    out, changed = tidy.place_demo(paras, LINKS, *DEMO)
+    assert changed
+    assert text(out[0]) == '(🎥 Demo) (Parakeet AI · Resume Maker) Upload. Score. '
+    assert text(out[1]) == 'Again.'
+    assert sum(1 for p in out for x in p if tidy._url(x) == DEMO[1]) == 1
+
+
+def test_no_app_cue_no_demo_cue():
+    paras = [[pages.rt('Hi.')]]
+    assert tidy.place_demo(paras, LINKS, *DEMO) == (paras, False)
+
+
+def test_demo_note_only_in_markets_with_recordings():
+    from watcher.markets import TEXT
+    assert pages.inspo_note('sl')[-1] == TEXT['sl']['demo_note']
+    assert pages.inspo_note('sl', own=True)[-1] == TEXT['sl']['demo_note']
+    assert len(pages.inspo_note('fr')) == 2 and len(pages.inspo_note('es')) == 2

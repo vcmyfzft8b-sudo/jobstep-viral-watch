@@ -5,17 +5,21 @@ laptop or phone, plays it while they talk, and films the screen. Made the way th
 (`memo-viral-watch/demo`): a screen recording of the real app that moves like a person, with the device's own bars
 around it.
 
-Three lengths, because the JobStep examples show the app for very different times (measured 19 Oct 2026: top JobStep
-videos 10–26 s, ~20 typical; our 14 live formats' examples 2–42 s):
+Each format gets the length its JobStep example shows the app (measured twice, 19 Oct 2026, 1 frame per second:
+examples 2–42 s). Lengths: **12, 15, 19, 22, 32, 42 s** – every format within ±1 s of its example; examples
+showing the app ≤ 12 s get the 12 s version, which still accepts all 4 changes (user's choice).
+`format_lengths.json` → `app_seconds` (example) and `demo_seconds` (its demo).
 
-| length | ~ | what it shows | for formats whose example shows the app |
-|---|---|---|---|
-| short | 12 s | upload → low score (19/50) → *cut* → all 4 AI changes accepted → *cut* → new score (92/100) | ≤ 12 s |
-| standard | 20–24 s | upload → low score → template → colour → paste the job ad → 4 AI changes, card by card → page fit → new score | 13–27 s |
-| long | 36–44 s | the standard flow at a relaxed pace, 8 AI changes and the AI's question (answered on laptops, passed on phones) | > 27 s |
+| length | what it shows |
+|---|---|
+| 12 s | upload → low score (19/50) → *cut* → all 4 AI changes → *cut* → new score (92/100) |
+| 15 s | upload → low score → *cut* (laptops: also the job ad) → 4 AI changes → page fit → rescoring → new score |
+| 19 s / 22 s | the whole flow with 4 AI changes (19 s on laptops: the plan/template/colour step jump-cut) |
+| 32 s / 42 s | 8 AI changes and the AI's question (answered on laptops, passed on phones); 32 s on laptops with the plan/template/colour step cut |
 
-`format_lengths.json` says which length each live format needs (its example's app seconds, device, markets).
-Phones run a bit shorter than laptops (taps vs cursor travel), like in the JobStep videos.
+`make_targets.mjs` makes them: a calibration take per version and device gives the length and the part the pace
+stretches (`pace.json`); each take is recorded with the pace that hits the target and again if it is > 0.8 s off.
+Every video checked: within ±1 s of its target.
 
 Waiting screens (the app holds them ≥ 5 s) play sped up; the short version's middle and end are jump cuts, as the
 creators cut their demos. Laptops: a real-size cursor on curved, uneven paths with a small overshoot, uneven pauses.
@@ -23,8 +27,7 @@ Phones: taps and a finger swipe on the template carousel. No sound (creators tal
 
 ## Where they are
 
-`out/final/<France|Spain|Slovenia>/` (French, Spanish (Spain), Slovenian app and CV), each length per device:
-`Parakeet AI demo – <device> (<market>).mp4` (standard), `Parakeet AI demo (short) – …`, `Parakeet AI demo (long) – …`
+`out/final/<France|Spain|Slovenia>/Parakeet AI demo (<n> s) – <Mac|Windows|iPhone|Android> (<market>).mp4`
 
 | device | looks like | size |
 |---|---|---|
@@ -35,19 +38,16 @@ Phones: taps and a finger swipe on the template carousel. No sound (creators tal
 
 ## On the Parakeet Drive
 
-Uploaded 19 Oct 2026 to the Parakeet Google Drive (rclone remote `gdrive`, owner nace@parakeet-ai.com); every folder and
-video: anyone with the link can view (user's request). Links: `drive_links.md`.
-`Parakeet AI – Demo videos/<France|Spain|Slovenia>/`:
+The Parakeet Google Drive (rclone remote `gdrive`, owner nace@parakeet-ai.com), every folder and video: anyone with the
+link can view. `Parakeet AI – Demo videos/<France|Spain|Slovenia>/`:
 
-- one folder per published format page, named like the page (its title in that market), holding
-  `Parakeet AI demo – iPhone|Android|Mac|Windows.mp4` in the length that format needs (`format_lengths.json`);
-  the two hand-made "job in 2026" pages (France, Slovenia) count as ESX28 (short);
-- `_All lengths/` – all 12 of the market (`Parakeet AI demo (short ~12 s|standard ~20 s|long ~40 s) – <device>.mp4`),
-  for formats added later.
+- one folder per published format page, named like the page, with `Parakeet AI demo – iPhone|Android|Mac|Windows.mp4`
+  in that format's `demo_seconds` (the two hand-made "job in 2026" pages count as ESX28);
+- `_All lengths/Parakeet AI demo (<n> s) – <device>.mp4` – every length, for formats added later.
 
-`drive_folders.json` maps every page (market, format, Megasheet idea id) to its folder, Drive folder id and link.
-Uploading again: replace files in place (`rclone copyto` onto the same name) and run `rclone dedupe --dedupe-mode newest`
-afterwards – Drive is slow to list new files, and a parallel copy once made duplicate folders/files.
+`python3 demo/drive_sync.py` uploads what changed (one file at a time, in place, so links stay), moves unused
+`_All lengths` files to the Drive trash, dedupes, and checks every file against Drive's MD5 and sharing; it writes
+`drive_folders.json` (page → folder, length, link) and `drive_links.md`. `--check` only checks.
 
 ## How it works
 
@@ -74,9 +74,9 @@ Needs the local copy running (`.claude/launch.json` → `parakeet-creator-demo`,
 
 ```bash
 cd demo && npm install && npx playwright install chromium
-node make_all.mjs                     # all 12 standard (skips ones already in out/, --redo records them again)
-node make_all.mjs --length short      # all 12 short (--length long: all 12 long)
-node make_all.mjs phone,android       # only the phones
+node make_targets.mjs                 # every length format_lengths.json needs (skips existing, --redo again)
+node make_targets.mjs --targets 15,42 # only these lengths
+python3 drive_sync.py                 # then put them on Drive and check
 node record.mjs --device mac --lang fr --length long --debug   # one take, screenshots of every step in out/
 ```
 

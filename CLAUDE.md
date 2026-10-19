@@ -230,12 +230,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
   markets (fr, es, sl): `demo/out/final/<France|Spain|Slovenia>/`. Built like `memo-viral-watch/demo` (human-like
   cursor/taps, device bars). See demo/README.md.
 - Length = the JobStep demos' (user, 19 Oct 2026: "same length as the JobStep ones", "different length for different
-  formats"; "short ones a bit longer so you accept all the changes"): short ~12 s / standard ~20–24 s / long ~40 s. `demo/format_lengths.json` maps each live format to one,
-  from the app seconds in its example video (measured 19 Oct: 2–42 s).
+  formats", "triple check"): each format's demo is within ±1 s of the app seconds in its example (re-measured twice);
+  lengths 12/15/19/22/32/42 s, examples ≤ 12 s → 12 s (all 4 changes accepted). `demo/format_lengths.json`
+  (`app_seconds`, `demo_seconds`), `demo/make_targets.mjs` records them (pace calibration in `demo/pace.json`).
 - On the Parakeet Drive (rclone `gdrive`, anyone with the link can view): `Parakeet AI – Demo videos/<market>/<page
-  title>/` with the 4 devices in the format's length, plus `_All lengths/`; `demo/drive_folders.json` = page → Drive
-  folder id + link, `demo/drive_links.md` = the list. After any upload run `rclone dedupe --dedupe-mode newest` (Drive
-  lists new files late; duplicates happened).
+  title>/` with the 4 devices in the format's length, plus `_All lengths/`. `python3 demo/drive_sync.py` uploads (one
+  at a time, in place) and checks every file by MD5; `demo/drive_folders.json` = page → folder, length, link;
+  `demo/drive_links.md` = the list.
 - It records ParakeetAI's prod code, not the live site (user: "do it with code", no browser sign-in): a local clone
   of `main` at `~/dev/parakeetai-demo` (local branch `demo/resume-maker-creator-demo`, never pushed) with
   `/resumeMaker/demo` answering every call in the browser from prepared content; no account, no AI. The repo is

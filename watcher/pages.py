@@ -108,12 +108,14 @@ def divider():
 def inspo_note(lang, same_lang=False, own=False):
     """The note under the inspiration video: same-language example = 'use it as the model, say our script';
     otherwise 'film from our script'. Both say: another brand's video - copy vibe, angles, filming, editing and the demo
-    moments as closely as possible. The second line ('another app is used - do the same with Parakeet AI') names no app."""
+    moments as closely as possible. The second line ('another app is used - do the same with Parakeet AI') names no app.
+    Markets with demo recordings (Slovenia) add a last line: how to film our recording (TEXT demo_note)."""
     T = TEXT[lang]
+    demo = [T['demo_note']] if T.get('demo_note') else []  # how to film our demo recording (watcher/demo.py)
     if own:  # our own creator's video: it already shows Parakeet AI
-        return [T['inspo_note_own']]
+        return [T['inspo_note_own']] + demo
     first = T['inspo_note_same'] if same_lang else T['inspo_note'][0]
-    return [first, T['inspo_note'][1]]
+    return [first, T['inspo_note'][1]] + demo
 
 
 def page_blocks(spec, video, file_upload_id, links, lang='de', lab_url=None, same_lang=False):

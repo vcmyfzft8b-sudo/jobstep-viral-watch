@@ -9,10 +9,12 @@ fixed on every normal run (mode tidy does it at once). Nothing is reworded - onl
 3. The 📲 title is bold.
 4. The idea name is the title (names drifted from the content, e.g. "Carrefour…" when the script never says it).
 5. Reported only: a sub-page above the page content (e.g. a stray copy of the Visual Hook Lab).
+6. Markets with demo recordings (watcher/demo.py, Slovenia): exactly ONE "(🎥 …)" cue to the page's Drive folder, right
+   before the first Parakeet AI cue (where the creator starts playing our recording).
 """
 import re
 
-from . import pages, reword
+from . import demo, pages, reword
 
 MAX_CUES = 3
 QUOTE_RE = re.compile(r'«\s*([^»]+?)\s*»|»\s*([^«]+?)\s*«|“([^”]+)”|„([^“”]+)[“”]|"([^"]+)"')  # »…« = Slovenian
@@ -45,17 +47,69 @@ def trim_cues(paragraphs, links):
                 keep.append(x)
                 continue
             removed += 1  # drop the label and its "(" before / ") " after
-            if keep and _content(keep[-1]).rstrip().endswith('('):
-                t = _content(keep[-1]).rstrip()[:-1]
-                keep[-1]['text']['content'] = t
-            if i + 1 < len(items):
-                nxt = items[i + 1]
-                nxt['text']['content'] = re.sub(r'^\)\s?', '', _content(nxt))
+            _drop_cue(keep, items, i)
         keep = [x for x in keep if _content(x) or _url(x)]
         if keep and not _url(keep[0]):
             keep[0]['text']['content'] = _content(keep[0]).lstrip()
         out.append(keep)
     return out, removed
+
+
+def _drop_cue(keep, items, i):
+    """A removed cue at items[i] takes its brackets with it ('(' at the end of the kept text before, ')' after)."""
+    if keep and _content(keep[-1]).rstrip().endswith('('):
+        keep[-1]['text']['content'] = _content(keep[-1]).rstrip()[:-1]
+    if i + 1 < len(items):
+        nxt = items[i + 1]
+        nxt['text']['content'] = re.sub(r'^\)\s?', '', _content(nxt))
+
+
+def _demo_ok(paragraphs, links, label, url):
+    """Exactly one demo cue (this label + url), and the next link after it is the script's first Parakeet AI cue with
+    only ') (' between them."""
+    found = [(j, i) for j, items in enumerate(paragraphs) for i, x in enumerate(items) if demo.is_demo_url(_url(x))
+             or (_content(x).strip().startswith('🎥') and _url(x))]
+    first = next(((j, i) for j, items in enumerate(paragraphs) for i, x in enumerate(items)
+                  if _url(x) == links['parakeet']), None)
+    if len(found) != 1 or not first:
+        return False
+    j, i = found[0]
+    items = paragraphs[j]
+    if _url(items[i]) != url or _content(items[i]).strip() != label or j != first[0] or i > first[1]:
+        return False
+    between = ''.join(_content(x) for x in items[i + 1:first[1]])
+    return re.sub(r'\s', '', between) == ')('
+
+
+def place_demo(paragraphs, links, label, url):
+    """paragraphs with exactly one '(🎥 label)' cue linking url, right before the first Parakeet AI cue. Returns
+    (paragraphs, changed). No Parakeet AI cue -> unchanged (such a page is rebuilt, not tidied)."""
+    if _demo_ok(paragraphs, links, label, url):
+        return paragraphs, False
+    out = []
+    for items in paragraphs:  # every old demo cue out (wrong place, wrong folder, a second one)
+        items = [dict(x, text=dict(x.get('text') or {'content': x.get('plain_text', '')})) for x in items]
+        keep = []
+        for i, x in enumerate(items):
+            if demo.is_demo_url(_url(x)) or (_content(x).strip().startswith('🎥') and _url(x)):
+                _drop_cue(keep, items, i)
+                continue
+            keep.append(x)
+        out.append([x for x in keep if _content(x) or _url(x)])
+    first = next(((j, i) for j, items in enumerate(out) for i, x in enumerate(items) if _url(x) == links['parakeet']), None)
+    if not first:
+        return paragraphs, False
+    j, k = first
+    items = out[j]
+    cue = [pages.rt('('), pages.rt(label, link=url), pages.rt(') (' if k and _content(items[k - 1]).rstrip().endswith('(')
+                                                               else ') ')]
+    if cue[2]['text']['content'] == ') (':
+        items[k - 1]['text']['content'] = _content(items[k - 1]).rstrip()[:-1]
+        if not _content(items[k - 1]):
+            items.pop(k - 1)
+            k -= 1
+    out[j] = items[:k] + cue + items[k:]
+    return out, True
 
 
 def _norm(t):
@@ -89,14 +143,15 @@ def wanted_name(current, title):
     return (f'{m.group(1)}. ' if m else '') + title
 
 
-def problems(page_id, links):
+def problems(page_id, links, fmt_id=None):
     """What tidy would change on this page (verify uses it read-only)."""
-    return tidy_page(page_id, links, write=False)
+    return tidy_page(page_id, links, write=False, fmt_id=fmt_id)
 
 
 @pages.one_save(0)
-def tidy_page(page_id, links, write=True):
-    """Applies the rules above to one page. Returns the list of changes (or, with write=False, of problems)."""
+def tidy_page(page_id, links, write=True, fmt_id=None):
+    """Applies the rules above to one page. Returns the list of changes (or, with write=False, of problems).
+    fmt_id: the page's format (finds its demo folder when the idea is not in demo/drive_folders.json)."""
     from .crosscheck import _title_block
     from .verify import layout_problems
     changes = []
@@ -110,10 +165,18 @@ def tidy_page(page_id, links, write=True):
     trimmed, removed = trim_cues(paras, links)
     if removed:
         changes.append(f'{removed} extra link cues')
-        if write:
-            for b, items in zip(script, trimmed):
-                if [_content(x) for x in items] != [x.get('plain_text', '') for x in b[b['type']].get('rich_text', [])]:
-                    pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
+    cue, moved = demo.cue_for(page_id, fmt_id), False
+    if cue and cue[1]:
+        trimmed, moved = place_demo(trimmed, links, *cue)
+        if moved:
+            changes.append('demo recording cue missing or not at the first app moment')
+    elif cue and not write:
+        changes.append('no demo recording folder for this page (demo/drive_folders.json - run demo/drive_sync.py)')
+    if write and (removed or moved):
+        for b, items in zip(script, trimmed):
+            if [(_content(x), _url(x)) for x in items] != [(x.get('plain_text', ''), _url(x))
+                                                            for x in b[b['type']].get('rich_text', [])]:
+                pages.api('PATCH', f"/blocks/{b['id']}", {b['type']: {'rich_text': _rich_payload(items)}})
     tb = _title_block(page_id)
     title = reword._plain(tb).strip() if tb else ''
     if not title:
@@ -158,7 +221,7 @@ def run(fmts, mkts, cfg, page_of, write=True):
             if not pid:
                 continue
             try:
-                ch = tidy_page(pid, cfg['links'], write=write)
+                ch = tidy_page(pid, cfg['links'], write=write, fmt_id=f['id'])
             except Exception as e:
                 ch = [f'error: {str(e)[:120]}']
             if ch:

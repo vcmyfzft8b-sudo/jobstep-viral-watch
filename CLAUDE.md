@@ -223,3 +223,13 @@ here (repo, Notion, Discord, secrets, state are all separate).
   cross-country check) + re-sort with Claude, on a throw-away state copy, every Megasheet write / Slack message only
   printed. Rehearsed 16 Oct 2026: no step failed; it would make ~30 updates (real audit fixes: re-transcribed scripts,
   titles, hooks) and build NOTA UNIVERSIDAD's French + Slovenian pages (back among the best there).
+
+## App demo recordings (19 Oct 2026, user: "like the JobStep videos, like the Memo AI demos")
+- `demo/` records the Parakeet AI Resume Maker demo creators play and film (JobStep's demo moment: upload CV → low
+  score → paste job ad → AI changes card by card → new high score), 4 devices (Mac, Windows, iPhone, Android) × 3
+  markets (fr, es, sl): `demo/out/final/<France|Spain|Slovenia>/`. Built like `memo-viral-watch/demo` (human-like
+  cursor/taps, device bars). See demo/README.md.
+- It records ParakeetAI's prod code, not the live site (user: "do it with code", no browser sign-in): a local clone
+  of `main` at `~/dev/parakeetai-demo` (local branch `demo/resume-maker-creator-demo`, never pushed) with
+  `/resumeMaker/demo` answering every call in the browser from prepared content; no account, no AI. The repo is
+  reachable with the `nace-race` GitHub login only.

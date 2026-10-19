@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "parakeet-creator-demo",
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/dev/parakeetai-demo/apps/web && export PATH=/opt/homebrew/opt/node@24/bin:$PATH SKIP_ENV_VALIDATION=1 && npx next dev --turbo -p 3557"
+      ],
+      "port": 3557,
+      "url": "http://localhost:3557"
+    }
+  ]
+}

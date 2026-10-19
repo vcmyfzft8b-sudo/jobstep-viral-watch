@@ -8364,5 +8364,63 @@
   },
   "ts": 1792441550,
   "type": "rerank"
+ },
+ {
+  "format": "A20261006183623",
+  "level": "viral",
+  "ts": 1792453910,
+  "type": "alert",
+  "video": "7698008574026452257",
+  "views": 101900
+ },
+ {
+  "format": "A20261006183623",
+  "level": "viral",
+  "ts": 1792453916,
+  "type": "alert",
+  "video": "7697730962549116182",
+  "views": 100100
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453919,
+  "type": "alert",
+  "video": "7698471989970849057",
+  "views": 18400
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453922,
+  "type": "alert",
+  "video": "7698487459088305430",
+  "views": 9010
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453926,
+  "type": "alert",
+  "video": "7698328843706223904",
+  "views": 8775
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453930,
+  "type": "alert",
+  "video": "7698154342611946773",
+  "views": 7200
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453930,
+  "type": "alert",
+  "video": "7697434392985095445",
+  "views": 7188
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792453933,
+  "type": "alert",
+  "video": "7698482795223452946",
+  "views": 5292
  }
 ]

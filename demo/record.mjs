@@ -25,7 +25,8 @@ const PARAKEET = arg("parakeet", path.join(os.homedir(), "dev/parakeetai-demo"))
 const DEBUG = process.argv.includes("--debug");
 const OUT = arg("out", path.join(HERE, "out"));
 /** Matched to how long each format's JobStep example shows the app (measured 19 Oct 2026, demo/README.md):
- *  short ≈ 10 s (two jump cuts), standard ≈ 20–24 s (the whole flow), long ≈ 40 s (all changes + the AI's question). */
+ *  short ≈ 12 s (two jump cuts, all 4 changes accepted), standard ≈ 20–24 s (the whole flow), long ≈ 40 s (all 8
+ *  changes + the AI's question). */
 const LENGTH = arg("length", "standard");
 if (!["standard", "short", "long"].includes(LENGTH)) throw new Error(`unknown --length ${LENGTH} (short, standard or long)`);
 const SHORT = LENGTH === "short";
@@ -424,10 +425,10 @@ async function scenes() {
   if (SHORT) await cut(middle);
   else await middle();
 
-  // 6. The AI's changes, card by card (the CV on the right changes with each); the short version shows two
+  // 6. The AI's changes, card by card (the CV on the right changes with each); all of them, quicker in the short version
   chapter("review");
-  const pauses = SHORT ? [900, 800] : LONG ? [1100, 1300, 900, 550, 450, 400, 400, 450, 450] : [800, 850, 400, 400, 400, 400];
-  await reviewCards(pauses, SHORT ? 2 : 12);
+  const pauses = SHORT ? [750, 700, 400, 400] : LONG ? [1100, 1300, 900, 550, 450, 400, 400, 450, 450] : [800, 850, 400, 400, 400, 400];
+  await reviewCards(pauses, 12);
   // 7. The rest of the cards, review done, page fit, rescoring – cut in the short version
   const end = async () => {
     await reviewCards([], 12);

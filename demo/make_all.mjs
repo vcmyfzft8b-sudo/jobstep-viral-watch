@@ -1,6 +1,6 @@
 // Records every demo – one per market language and device, in one length:
 //   out/final/<France|Spain|Slovenia>/Parakeet AI demo – <Mac|Windows|iPhone|Android> (<market>).mp4   (~20–24 s)
-//   out/final/<France|Spain|Slovenia>/Parakeet AI demo (short) – <device> (<market>).mp4               (~10 s)
+//   out/final/<France|Spain|Slovenia>/Parakeet AI demo (short) – <device> (<market>).mp4               (~12 s)
 //   out/final/<France|Spain|Slovenia>/Parakeet AI demo (long) – <device> (<market>).mp4                (~40 s)
 //   node make_all.mjs                  all 12 standard (skips ones already in out/, --redo records them again)
 //   node make_all.mjs --length short   all 12 short (--length long: all 12 long)

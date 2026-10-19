@@ -1,6 +1,6 @@
 {
  "measured": "2026-10-19",
- "rule": "app seconds in the example: <=12 short (~10 s demo), <=27 standard (~20-24 s), else long (~40 s)",
+ "rule": "app seconds in the example: <=12 short (~12 s demo), <=27 standard (~20-24 s), else long (~40 s)",
  "formats": {
   "A202610061334": {
    "title": "Jetzt ist die BESTE Zeit für die Jobsuche 👀",

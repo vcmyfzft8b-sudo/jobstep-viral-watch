@@ -10,7 +10,7 @@ videos 10–26 s, ~20 typical; our 14 live formats' examples 2–42 s):
 
 | length | ~ | what it shows | for formats whose example shows the app |
 |---|---|---|---|
-| short | 10 s | upload → low score (19/50) → *cut* → 2 AI changes → *cut* → new score (92/100) | ≤ 12 s |
+| short | 12 s | upload → low score (19/50) → *cut* → all 4 AI changes accepted → *cut* → new score (92/100) | ≤ 12 s |
 | standard | 20–24 s | upload → low score → template → colour → paste the job ad → 4 AI changes, card by card → page fit → new score | 13–27 s |
 | long | 36–44 s | the standard flow at a relaxed pace, 8 AI changes and the AI's question (answered on laptops, passed on phones) | > 27 s |
 
@@ -35,16 +35,19 @@ Phones: taps and a finger swipe on the template carousel. No sound (creators tal
 
 ## On the Parakeet Drive
 
-Uploaded 19 Oct 2026 to the Parakeet Google Drive (rclone remote `gdrive`), private (not shared):
+Uploaded 19 Oct 2026 to the Parakeet Google Drive (rclone remote `gdrive`, owner nace@parakeet-ai.com); every folder and
+video: anyone with the link can view (user's request). Links: `drive_links.md`.
 `Parakeet AI – Demo videos/<France|Spain|Slovenia>/`:
 
 - one folder per published format page, named like the page (its title in that market), holding
   `Parakeet AI demo – iPhone|Android|Mac|Windows.mp4` in the length that format needs (`format_lengths.json`);
   the two hand-made "job in 2026" pages (France, Slovenia) count as ESX28 (short);
-- `_All lengths/` – all 12 of the market (`Parakeet AI demo (short ~10 s|standard ~20 s|long ~40 s) – <device>.mp4`),
+- `_All lengths/` – all 12 of the market (`Parakeet AI demo (short ~12 s|standard ~20 s|long ~40 s) – <device>.mp4`),
   for formats added later.
 
-`drive_folders.json` maps every page (market, format, Megasheet idea id) to its folder and Drive folder id.
+`drive_folders.json` maps every page (market, format, Megasheet idea id) to its folder, Drive folder id and link.
+Uploading again: replace files in place (`rclone copyto` onto the same name) and run `rclone dedupe --dedupe-mode newest`
+afterwards – Drive is slow to list new files, and a parallel copy once made duplicate folders/files.
 
 ## How it works
 

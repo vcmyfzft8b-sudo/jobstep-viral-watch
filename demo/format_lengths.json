@@ -1,6 +1,6 @@
 {
  "measured": "2026-10-19",
- "rule": "app seconds in the example: <=12 short (~12 s demo), <=27 standard (~20-24 s), else long (~40 s)",
+ "rule": "demo_seconds = the app seconds in the example, rounded to one of 15/19/22/32/42 s (every format within ±1 s); examples showing the app ≤ 12 s get the 12 s version (all 4 changes accepted – user, 19 Oct 2026)",
  "formats": {
   "A202610061334": {
    "title": "Jetzt ist die BESTE Zeit für die Jobsuche 👀",
@@ -13,7 +13,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 15,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "A20261006183623": {
    "title": "Lügt in eurem Lebenslauf 🚨",
@@ -26,7 +27,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 15,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "A20261009204851": {
    "title": "Werbeplatz auf meinem Laptop verkauft 🤑",
@@ -37,7 +39,8 @@
    "markets": [
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 15,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "ESX11": {
    "title": "Tips para encontrar trabajo urgentemente !",
@@ -50,7 +53,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 19,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "ESX28": {
    "title": "NOTA UNIVERSIDAD",
@@ -61,7 +65,8 @@
    "markets": [
     "es"
    ],
-   "demo": "short"
+   "demo_seconds": 12,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "N02": {
    "title": "Seit wann kann LinkedIn das? 🤯",
@@ -74,7 +79,8 @@
     "fr",
     "sl"
    ],
-   "demo": "short"
+   "demo_seconds": 12,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "N04": {
    "title": "Monatelang Bewerbungen – und kaum Antworten? 😭",
@@ -87,7 +93,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 22,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "N10": {
    "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀",
@@ -100,7 +107,8 @@
     "fr",
     "sl"
    ],
-   "demo": "long"
+   "demo_seconds": 42,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X03": {
    "title": "Was HR nicht will, dass du weißt 🤫",
@@ -113,7 +121,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 22,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X06": {
    "title": "Vermeidet diesen Fehler!!",
@@ -124,7 +133,8 @@
    "markets": [
     "fr"
    ],
-   "demo": "standard"
+   "demo_seconds": 22,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X08": {
    "title": "Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡",
@@ -137,7 +147,8 @@
     "fr",
     "sl"
    ],
-   "demo": "long"
+   "demo_seconds": 42,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X09": {
    "title": "Dinge die Personaler euch verheimlichen 😳❌",
@@ -150,7 +161,8 @@
     "fr",
     "sl"
    ],
-   "demo": "standard"
+   "demo_seconds": 19,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X13": {
    "title": "3 Psycho-Tipps für deine Jobsuche",
@@ -163,7 +175,8 @@
     "fr",
     "sl"
    ],
-   "demo": "short"
+   "demo_seconds": 12,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   },
   "X16": {
    "title": "Personaler wollen nicht, dass du das weißt 😳😳",
@@ -176,7 +189,8 @@
     "fr",
     "sl"
    ],
-   "demo": "long"
+   "demo_seconds": 32,
+   "checked": "2026-10-19: app seconds re-measured independently (1 frame/s), same as the first count ±1 s"
   }
  }
 }

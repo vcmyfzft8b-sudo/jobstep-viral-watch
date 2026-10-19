@@ -1,0 +1,66 @@
+{
+ "standard/full/mac": {
+  "D": 23.25,
+  "B": 12.21
+ },
+ "standard/designcut/mac": {
+  "D": 18.98,
+  "B": 11.38
+ },
+ "standard/medium/mac": {
+  "D": 15.64,
+  "B": 9.83
+ },
+ "standard/full/windows": {
+  "D": 22.87,
+  "B": 12.17
+ },
+ "standard/designcut/windows": {
+  "D": 18.91,
+  "B": 11.44
+ },
+ "standard/medium/windows": {
+  "D": 15.77,
+  "B": 9.76
+ },
+ "standard/full/phone": {
+  "D": 20.57,
+  "B": 14.62
+ },
+ "standard/designcut/phone": {
+  "D": 17.44,
+  "B": 13.19
+ },
+ "standard/full/android": {
+  "D": 20.38,
+  "B": 14.62
+ },
+ "standard/designcut/android": {
+  "D": 17.35,
+  "B": 13.17
+ },
+ "long/full/mac": {
+  "D": 43.17,
+  "B": 23.72
+ },
+ "long/full/windows": {
+  "D": 42.69,
+  "B": 23.67
+ },
+ "long/full/phone": {
+  "D": 35.51,
+  "B": 27.26
+ },
+ "long/full/android": {
+  "D": 35.49,
+  "B": 27.26
+ },
+ "long/designcut/mac": {
+  "D": 39.07,
+  "B": 22.22
+ },
+ "long/designcut/windows": {
+  "D": 38.7,
+  "B": 22.24
+ }
+}

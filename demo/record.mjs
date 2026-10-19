@@ -29,9 +29,19 @@ const OUT = arg("out", path.join(HERE, "out"));
  *  changes + the AI's question). */
 const LENGTH = arg("length", "standard");
 if (!["standard", "short", "long"].includes(LENGTH)) throw new Error(`unknown --length ${LENGTH} (short, standard or long)`);
-const SHORT = LENGTH === "short";
-const LONG = LENGTH === "long";
-const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}-${LENGTH}`);
+/** For an exact length (make_targets.mjs): which parts are jump-cut, what the AI shows, and how long every look lasts.
+ *  variant: full | designcut (plan/template/colour cut) | medium (plan … rewriting cut) | short (that + the end cut);
+ *  content: standard (4 changes) | long (8 changes + the AI's question); pace: every look × pace. */
+const VARIANT = arg("variant", LENGTH === "short" ? "short" : "full");
+const CONTENT = arg("content", LENGTH === "long" ? "long" : "standard");
+const PACE = Number(arg("pace", 1));
+const NAME = arg("name", LENGTH === "standard" ? "" : LENGTH);
+if (!["full", "designcut", "medium", "short"].includes(VARIANT)) throw new Error(`unknown --variant ${VARIANT}`);
+const SHORT = VARIANT === "short";
+const LONG = CONTENT === "long";
+const CUT_DESIGN = VARIANT !== "full";
+const CUT_JOB = VARIANT === "medium" || SHORT;
+const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}-${VARIANT}-${CONTENT}-${PACE}`);
 const ANDROID = DEVICE === "android";
 const PHONE = DEVICE === "phone" || ANDROID;
 const SAMPLE = SAMPLES[LANG];
@@ -106,12 +116,22 @@ function chapter(name) {
  *  about `seconds` in the video: it reads as a quick progress bar, like JobStep's demos, and never drags. */
 const warps = [];
 async function fastTo(fn, seconds) {
+  seconds = Math.max(0.5, seconds * PACE);
   const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
   await fn();
   if (a == null) return;
   const b = (Date.now() - chapterClock) / 1000;
   warps.push([a, b, Math.max(1, (b - a) / seconds)]);
+  scal.push([a, b]);
 }
+/** The parts of the take that `--pace` stretches (looks, holds, waiting screens), for make_targets.mjs's maths. */
+const scal = [];
+async function scaled(fn) {
+  const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
+  await fn();
+  if (a != null) scal.push([a, (Date.now() - chapterClock) / 1000]);
+}
+const P = (ms) => Math.round(ms * PACE);
 /** A jump cut: what `fn` does happens, but is left out of the video (the short version's way past the middle). */
 async function cut(fn) {
   const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
@@ -324,7 +344,7 @@ async function preroll() {
 }
 
 /** A short look between two actions: a phone's taps need the full beat, a laptop's cursor travel already takes part of it. */
-const beat = (ms) => idle(Math.round(ms * (LONG ? 1.8 : 1) * (PHONE ? 1 : 0.55)));
+const beat = (ms) => scaled(() => idle(Math.round(ms * PACE * (LONG ? 1.8 : 1) * (PHONE ? 1 : 0.55))));
 
 /** Accepts up to `count` change cards (stops at "review complete"), each after a look of `pauses[i]` ms. */
 async function reviewCards(pauses, count) {
@@ -341,7 +361,7 @@ async function reviewCards(pauses, count) {
     if (i === 0) await snap("review");
     if (await field.isVisible().catch(() => false)) {
       // the AI's question (long demo): answered on a laptop; on a phone (no keyboard in the recording) passed
-      await idle(PHONE ? 1300 : 900);
+      await scaled(() => idle(P(PHONE ? 1300 : 900)));
       await snap("question");
       if (PHONE) {
         await click(page.locator("footer button").filter({ visible: true }).nth(-2));
@@ -349,13 +369,13 @@ async function reviewCards(pauses, count) {
         await click(field);
         await sleep(300);
         await type(ANSWER);
-        await idle(450);
+        await scaled(() => idle(P(450)));
         await click(button(C.rewrite.deck.add));
       }
       await sleep(500);
       continue;
     }
-    await idle(Math.round((pauses[i] ?? 350) * (PHONE ? 1 : 0.8)));
+    await scaled(() => idle(Math.round((pauses[i] ?? 350) * PACE * (PHONE ? 1 : 0.8))));
     await click(accept, { pause: 60 });
     await sleep(90);
   }
@@ -374,19 +394,19 @@ async function scenes() {
 
   // 3. The low score
   chapter("low score");
-  await sleep(PHONE ? 1500 : 1300); // the gauge fills
+  await scaled(() => sleep(Math.max(1100, P(PHONE ? 1500 : 1300)))); // the gauge fills
   await snap("score");
   if (LONG && !PHONE)
     await soft("score bars", async () => {
       const bars = page.locator("main").getByText(/\d+\s*\/\s*(20|15)$/).filter({ visible: true });
-      await hover(bars.first(), 650, { fx: 0.2 });
-      await hover(bars.last(), 550, { fx: 0.2 });
+      await hover(bars.first(), P(650), { fx: 0.2 });
+      await hover(bars.last(), P(550), { fx: 0.2 });
     });
   await beat(700);
   await click(next());
 
-  // 4.–5. The plan, a template (Modern, coloured header), its colour (green), the job ad – cut in the short version
-  const middle = async () => {
+  // 4. The plan, a template (Modern, coloured header), its colour (green) – cut in the shorter versions
+  const design = async () => {
     await byText(C.plan.title).waitFor();
     await beat(350);
     await click(next());
@@ -409,8 +429,9 @@ async function scenes() {
     await click(button("Forest"));
     await beat(300);
     await click(next());
-
-    // 5. Paste the job ad, rewrite for it
+  };
+  // 5. Paste the job ad, rewrite for it – cut in the medium and short versions
+  const job = async () => {
     chapter("job ad");
     await byText(C.job.title).waitFor();
     await beat(200);
@@ -422,8 +443,12 @@ async function scenes() {
     await click(next());
     await fastTo(() => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }), LONG ? 2.2 : 1.2);
   };
-  if (SHORT) await cut(middle);
-  else await middle();
+  if (CUT_JOB) await cut(async () => (await design(), await job()));
+  else {
+    if (CUT_DESIGN) await cut(design);
+    else await design();
+    await job();
+  }
 
   // 6. The AI's changes, card by card (the CV on the right changes with each); all of them, quicker in the short version
   chapter("review");
@@ -455,11 +480,11 @@ async function scenes() {
 
   // 8. The new score
   chapter("new score");
-  await sleep(2000); // the gauge climbs from the first score
+  await scaled(() => sleep(Math.max(1900, P(2000)))); // the gauge climbs from the first score
   await snap("result");
-  if (PHONE) await sleep(LONG ? 2400 : 900);
-  else await soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), LONG ? 1200 : 450));
-  if (LONG) await idle(PHONE ? 600 : 800);
+  if (PHONE) await scaled(() => sleep(P(LONG ? 2400 : 900)));
+  else await scaled(() => soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), P(LONG ? 1200 : 450))));
+  if (LONG) await scaled(() => idle(P(PHONE ? 600 : 800)));
 }
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** The result's download button label, from the resume maker's own messages (the copy file has no key for it). */
@@ -649,7 +674,7 @@ function encode(frames, seconds) {
   lines.push(`file '${frames.at(-1).file}'`);
   const list = path.join(FRAMES, "list.txt");
   fs.writeFileSync(list, lines.join("\n"));
-  const outFile = path.join(OUT, `parakeet-ai-demo-${DEVICE}-${LANG}${LENGTH === "standard" ? "" : `-${LENGTH}`}.mp4`);
+  const outFile = path.join(OUT, `parakeet-ai-demo-${DEVICE}-${LANG}${NAME ? `-${NAME}` : ""}.mp4`);
   const px = (v) => Math.round(v * SCREEN.dsf);
   const W = px(SCREEN.w), H = px(SCREEN.h);
   const filter =
@@ -678,3 +703,6 @@ await drawBars();
 const video = encode(frames, seconds);
 console.log(`wrote ${video} (${videoTime(seconds).toFixed(1)} s)`);
 console.log(`chapters: ${chapters.map(([t, n]) => `${videoTime(t).toFixed(1)}s ${n}`).join(", ")}`);
+// for make_targets.mjs: the video's length and the part of it --pace stretches
+const stretchable = scal.reduce((sum, [a, b]) => sum + videoTime(b) - videoTime(a), 0);
+console.log(`CALIBRATION ${JSON.stringify({ D: +videoTime(seconds).toFixed(2), B: +stretchable.toFixed(2), variant: VARIANT, content: CONTENT, pace: PACE })}`);

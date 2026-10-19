@@ -229,6 +229,9 @@ here (repo, Notion, Discord, secrets, state are all separate).
   score → paste job ad → AI changes card by card → new high score), 4 devices (Mac, Windows, iPhone, Android) × 3
   markets (fr, es, sl): `demo/out/final/<France|Spain|Slovenia>/`. Built like `memo-viral-watch/demo` (human-like
   cursor/taps, device bars). See demo/README.md.
+- Length = the JobStep demos' (user, 19 Oct 2026: "same length as the JobStep ones", "different length for different
+  formats"): short ~10 s / standard ~20–24 s / long ~40 s. `demo/format_lengths.json` maps each live format to one,
+  from the app seconds in its example video (measured 19 Oct: 2–42 s).
 - It records ParakeetAI's prod code, not the live site (user: "do it with code", no browser sign-in): a local clone
   of `main` at `~/dev/parakeetai-demo` (local branch `demo/resume-maker-creator-demo`, never pushed) with
   `/resumeMaker/demo` answering every call in the browser from prepared content; no account, no AI. The repo is

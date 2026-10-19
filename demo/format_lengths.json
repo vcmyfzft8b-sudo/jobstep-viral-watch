@@ -1,0 +1,182 @@
+{
+ "measured": "2026-10-19",
+ "rule": "app seconds in the example: <=12 short (~10 s demo), <=27 standard (~20-24 s), else long (~40 s)",
+ "formats": {
+  "A202610061334": {
+   "title": "Jetzt ist die BESTE Zeit für die Jobsuche 👀",
+   "example": "https://www.tiktok.com/@luworks/video/7692607504752135432",
+   "app_seconds": 16,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "A20261006183623": {
+   "title": "Lügt in eurem Lebenslauf 🚨",
+   "example": "https://www.tiktok.com/@lissa.jobtipps/video/7692141310198713633",
+   "app_seconds": 16,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "A20261009204851": {
+   "title": "Werbeplatz auf meinem Laptop verkauft 🤑",
+   "example": "https://www.tiktok.com/@lern.mit.domi/video/7692061360221457686",
+   "app_seconds": 14,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "ESX11": {
+   "title": "Tips para encontrar trabajo urgentemente !",
+   "example": "https://www.tiktok.com/@marietipsapply/video/7692988880336735509",
+   "app_seconds": 18,
+   "job_site_seconds": 8,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "ESX28": {
+   "title": "NOTA UNIVERSIDAD",
+   "example": "https://www.tiktok.com/@nataliagonzalezga38/video/7693228875035282720",
+   "app_seconds": 2,
+   "job_site_seconds": 3,
+   "device": "phone",
+   "markets": [
+    "es"
+   ],
+   "demo": "short"
+  },
+  "N02": {
+   "title": "Seit wann kann LinkedIn das? 🤯",
+   "example": "https://www.tiktok.com/@revekaonline/video/7689223891197136148",
+   "app_seconds": 8,
+   "job_site_seconds": 11,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "short"
+  },
+  "N04": {
+   "title": "Monatelang Bewerbungen – und kaum Antworten? 😭",
+   "example": "https://www.tiktok.com/@emasavetuje/video/7692125028871146760",
+   "app_seconds": 21,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "N10": {
+   "title": "Niemand liest deinen Lebenslauf? Schau hier hin 👀",
+   "example": "https://www.tiktok.com/@emasavetuje/video/7692884328304479495",
+   "app_seconds": 42,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "long"
+  },
+  "X03": {
+   "title": "Was HR nicht will, dass du weißt 🤫",
+   "example": "https://www.tiktok.com/@srokolajobtips/video/7692059934875340064",
+   "app_seconds": 22,
+   "job_site_seconds": 2,
+   "device": "tablet",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "X06": {
+   "title": "Vermeidet diesen Fehler!!",
+   "example": "https://www.tiktok.com/@jobeasilybylucie7/video/7688707702813429024",
+   "app_seconds": 23,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "fr"
+   ],
+   "demo": "standard"
+  },
+  "X08": {
+   "title": "Mit 1.3 Abi bei EDEKA abgelehnt.... 🤡",
+   "example": "https://www.tiktok.com/@ma.life.de.chomeu/video/7693731193187011872",
+   "app_seconds": 42,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "long"
+  },
+  "X09": {
+   "title": "Dinge die Personaler euch verheimlichen 😳❌",
+   "example": "https://www.tiktok.com/@jenny_jennyv/video/7694696093623389462",
+   "app_seconds": 19,
+   "job_site_seconds": 0,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "standard"
+  },
+  "X13": {
+   "title": "3 Psycho-Tipps für deine Jobsuche",
+   "example": "https://www.tiktok.com/@diann1770/video/7693414335552425234",
+   "app_seconds": 6,
+   "job_site_seconds": 0,
+   "device": "phone",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "short"
+  },
+  "X16": {
+   "title": "Personaler wollen nicht, dass du das weißt 😳😳",
+   "example": "https://www.tiktok.com/@tsvetelina.tips/video/7691061952071716118",
+   "app_seconds": 32,
+   "job_site_seconds": 2,
+   "device": "laptop",
+   "markets": [
+    "es",
+    "fr",
+    "sl"
+   ],
+   "demo": "long"
+  }
+ }
+}

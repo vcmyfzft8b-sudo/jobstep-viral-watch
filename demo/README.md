@@ -5,29 +5,33 @@ laptop or phone, plays it while they talk, and films the screen. Made the way th
 (`memo-viral-watch/demo`): a screen recording of the real app that moves like a person, with the device's own bars
 around it.
 
-The walkthrough is JobStep's demo, in Parakeet AI's Resume Maker (the real Upload Resume flow):
+Three lengths, because the JobStep examples show the app for very different times (measured 19 Oct 2026: top JobStep
+videos 10–26 s, ~20 typical; our 14 live formats' examples 2–42 s):
 
-1. "Make every application count" → upload the CV (a made-up, weak "before" CV)
-2. reading + scoring → the low score (19/50) next to the uploaded CV
-3. the plan → a template (Modern) → a colour (green)
-4. paste the job ad → the AI rewrites the CV
-5. review the changes card by card (the CV updates on the right); the AI asks one question – answered on laptops
-   ("+1 200 followers in 5 months"), passed on phones
-6. "Review complete" → page fit → rescoring → the new score: the gauge climbs from 46 to ~92/100, "Download"
+| length | ~ | what it shows | for formats whose example shows the app |
+|---|---|---|---|
+| short | 10 s | upload → low score (19/50) → *cut* → 2 AI changes → *cut* → new score (92/100) | ≤ 12 s |
+| standard | 20–24 s | upload → low score → template → colour → paste the job ad → 4 AI changes, card by card → page fit → new score | 13–27 s |
+| long | 36–44 s | the standard flow at a relaxed pace, 8 AI changes and the AI's question (answered on laptops, passed on phones) | > 27 s |
 
-Waiting screens play 3× faster. Laptops: a real-size cursor on curved, uneven paths with a small overshoot, uneven
-pauses. Phones: taps and a finger swipe on the template carousel. No sound (creators talk over it).
+`format_lengths.json` says which length each live format needs (its example's app seconds, device, markets).
+Phones run a bit shorter than laptops (taps vs cursor travel), like in the JobStep videos.
+
+Waiting screens (the app holds them ≥ 5 s) play sped up; the short version's middle and end are jump cuts, as the
+creators cut their demos. Laptops: a real-size cursor on curved, uneven paths with a small overshoot, uneven pauses.
+Phones: taps and a finger swipe on the template carousel. No sound (creators talk over it).
 
 ## Where they are
 
-`out/final/<France|Spain|Slovenia>/` (French, Spanish (Spain), Slovenian app and CV):
+`out/final/<France|Spain|Slovenia>/` (French, Spanish (Spain), Slovenian app and CV), each length per device:
+`Parakeet AI demo – <device> (<market>).mp4` (standard), `Parakeet AI demo (short) – …`, `Parakeet AI demo (long) – …`
 
-| file | looks like | size |
+| device | looks like | size |
 |---|---|---|
-| `Parakeet AI demo – Mac (…).mp4` | MacBook Pro 16", Safari bar with parakeet-ai.com, macOS cursor | 1920×1240 |
-| `Parakeet AI demo – Windows (…).mp4` | 1080p laptop at 100 %, Chrome window with parakeet-ai.com, Windows cursor | 1920×1080 |
-| `Parakeet AI demo – iPhone (…).mp4` | iPhone, iOS status bar + Safari address bar parakeet-ai.com | 1080×2342 |
-| `Parakeet AI demo – Android (…).mp4` | Samsung Galaxy, Android status bar, Chrome address bar, gesture bar | 1080×2340 |
+| Mac | MacBook Pro 16", Safari bar with parakeet-ai.com, macOS cursor | 1920×1242 |
+| Windows | 1080p laptop at 100 %, Chrome window with parakeet-ai.com, Windows cursor | 1920×1080 |
+| iPhone | iPhone, iOS status bar + Safari address bar parakeet-ai.com | 1080×2342 |
+| Android | Samsung Galaxy, Android status bar, Chrome address bar, gesture bar | 1080×2340 |
 
 ## How it works
 
@@ -36,7 +40,8 @@ account and runs no AI:
 
 - `~/dev/parakeetai-demo` is a clone of `main` with one local commit (branch `demo/resume-maker-creator-demo`,
   never pushed): the route `/resumeMaker/demo` renders the real `UploadOnboarding` with a tRPC client whose every
-  call is answered in the browser (`apps/web/src/lib/creatorDemo/api.ts`). The "AI answers" are prepared per
+  call is answered in the browser (`apps/web/src/lib/creatorDemo/api.ts`; `?long=1` = the long demo's 8 changes and
+  question, else 4 changes). The "AI answers" are prepared per
   language in `apps/web/src/lib/creatorDemo/content/{fr,es,sl}.ts` and go through the app's own scoring and
   change-card code (`buildAtsScore`, `validateProposals`), so the numbers and cards are what prod would show.
   `apps/web/.env.local` holds placeholders only (no real keys).
@@ -53,9 +58,10 @@ Needs the local copy running (`.claude/launch.json` → `parakeet-creator-demo`,
 
 ```bash
 cd demo && npm install && npx playwright install chromium
-node make_all.mjs                 # all 12 (skips ones already in out/, --redo records them again)
-node make_all.mjs phone,android   # only the phones
-node record.mjs --device mac --lang fr --debug   # one take, screenshots of every step in out/
+node make_all.mjs                     # all 12 standard (skips ones already in out/, --redo records them again)
+node make_all.mjs --length short      # all 12 short (--length long: all 12 long)
+node make_all.mjs phone,android       # only the phones
+node record.mjs --device mac --lang fr --length long --debug   # one take, screenshots of every step in out/
 ```
 
 After a fresh server start, the first take compiles every screen (run one without `--no-warm`).

@@ -24,7 +24,13 @@ const APP = arg("app", "http://localhost:3557");
 const PARAKEET = arg("parakeet", path.join(os.homedir(), "dev/parakeetai-demo"));
 const DEBUG = process.argv.includes("--debug");
 const OUT = arg("out", path.join(HERE, "out"));
-const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}`);
+/** Matched to how long each format's JobStep example shows the app (measured 19 Oct 2026, demo/README.md):
+ *  short ≈ 10 s (two jump cuts), standard ≈ 20–24 s (the whole flow), long ≈ 40 s (all changes + the AI's question). */
+const LENGTH = arg("length", "standard");
+if (!["standard", "short", "long"].includes(LENGTH)) throw new Error(`unknown --length ${LENGTH} (short, standard or long)`);
+const SHORT = LENGTH === "short";
+const LONG = LENGTH === "long";
+const FRAMES = path.join(HERE, "frames", `${DEVICE}-${LANG}-${LENGTH}`);
 const ANDROID = DEVICE === "android";
 const PHONE = DEVICE === "phone" || ANDROID;
 const SAMPLE = SAMPLES[LANG];
@@ -32,20 +38,20 @@ if (!SAMPLE) throw new Error(`unknown --lang ${LANG} (fr, es or sl)`);
 
 // Screen = what the video shows. The page gets the screen minus the fake browser bars drawn around it.
 const SCREEN = {
-  mac: { w: 1728, h: 1117, top: 44, bottom: 0, dsf: 2, outW: 1920 }, // MacBook Pro 16", default scaling
+  mac: { w: 1728, h: 1117, top: 44, bottom: 0, dsf: 1.15, outW: 1920 }, // MacBook Pro 16", default scaling (drawn at 1.15×: enough for a 1920 video, 2× slows the page down)
   windows: { w: 1920, h: 1080, top: 80, bottom: 0, dsf: 1, outW: 1920 }, // 1080p laptop at 100 %
   phone: { w: 393, h: 852, top: 54, bottom: 78, dsf: 3, outW: 1080 }, // iPhone 15/16, Safari
   android: { w: 360, h: 780, top: 84, bottom: 18, dsf: 3, outW: 1080 }, // Samsung Galaxy S, Chrome
 }[DEVICE];
 if (!SCREEN) throw new Error(`unknown --device ${DEVICE} (mac, windows, phone or android)`);
 const VIEW = { width: SCREEN.w, height: SCREEN.h - SCREEN.top - SCREEN.bottom };
+/** Screencast frame width: no bigger than the video needs (a 2× laptop screen at full size slows the page down). */
+const CAPTURE_W = Math.round(Math.min(VIEW.width * SCREEN.dsf, SCREEN.outW * 1.15));
 
 // ---------------------------------------------------------------- the app's own words (prod copy, per language)
 const COPY = Object.values(
   await import(path.join(PARAKEET, `apps/web/src/components/resumeMaker/onboarding/onboardingCopy.${LANG}.ts`)),
 )[0];
-/** What the demo person answers on the AI's question card. */
-const ANSWER = { fr: "+1 200 abonnés en 5 mois", es: "+1.200 seguidores en 5 meses", sl: "+1.200 sledilcev v 5 mesecih" }[LANG];
 
 // ---------------------------------------------------------------- page helpers
 const MAC_CURSOR = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 26 34"><path d="M2 2 L2 27 L8.2 21.2 L12.4 31 L16.6 29.2 L12.5 19.6 L21 19.6 Z" fill="#000" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>`;
@@ -95,12 +101,51 @@ const chapters = [];
 function chapter(name) {
   if (chapterClock) chapters.push([(Date.now() - chapterClock) / 1000, name]);
 }
-/** Waiting screens (reading, rewriting, rescoring) play `factor`× faster in the video, so they read but don't drag. */
+/** A waiting screen (reading, rewriting, rescoring – the app holds each at least 5 s) plays sped up, so it lasts
+ *  about `seconds` in the video: it reads as a quick progress bar, like JobStep's demos, and never drags. */
 const warps = [];
-async function fast(fn, factor = 2) {
+async function fastTo(fn, seconds) {
   const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
   await fn();
-  if (a != null) warps.push([a, (Date.now() - chapterClock) / 1000, factor]);
+  if (a == null) return;
+  const b = (Date.now() - chapterClock) / 1000;
+  warps.push([a, b, Math.max(1, (b - a) / seconds)]);
+}
+/** A jump cut: what `fn` does happens, but is left out of the video (the short version's way past the middle). */
+async function cut(fn) {
+  const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
+  await fn();
+  if (a == null) return;
+  const b = (Date.now() - chapterClock) / 1000;
+  // a speed-up inside the cut is part of it
+  for (let i = warps.length - 1; i >= 0; i--) if (warps[i][0] >= a && warps[i][1] <= b) warps.splice(i, 1);
+  warps.push([a, b, 1e6]);
+  cuts.push([a, b]);
+  await freshFrame();
+}
+const cuts = [];
+/** The screencast only sends a frame when the screen changes: a 2 px tick in a corner makes one right after a cut,
+ *  so the picture after the cut is the one shown (the frames inside a cut are dropped in encode). */
+async function freshFrame() {
+  await page.evaluate(
+    () =>
+      new Promise((done) => {
+        let el = document.getElementById("demo-tick");
+        if (!el) {
+          el = document.createElement("div");
+          el.id = "demo-tick";
+          el.style.cssText = "position:fixed;right:0;bottom:0;width:2px;height:2px;z-index:2147483647;pointer-events:none";
+          document.body.appendChild(el);
+        }
+        let n = 0;
+        const step = () => {
+          el.style.background = n % 2 ? "rgba(255,255,255,.02)" : "rgba(255,255,255,.04)";
+          if (++n < 6) requestAnimationFrame(step);
+          else done();
+        };
+        requestAnimationFrame(step);
+      }),
+  );
 }
 /** Recording time → video time. */
 function videoTime(t) {
@@ -172,7 +217,7 @@ async function cursorPos() {
 
 /** Moves to an element and clicks (laptop) or taps it (phone), like a person would. */
 let waitLimit = 15000;
-async function click(loc, { dx = 0, dy = 0, pause = 160, move, timeout = waitLimit } = {}) {
+async function click(loc, { dx = 0, dy = 0, pause = PHONE ? 110 : 75, move, timeout = waitLimit } = {}) {
   await loc.waitFor({ state: "visible", timeout });
   await loc.scrollIntoViewIfNeeded();
   const b = await loc.boundingBox();
@@ -185,11 +230,11 @@ async function click(loc, { dx = 0, dy = 0, pause = 160, move, timeout = waitLim
   }
   const [x0, y0] = await cursorPos();
   const dist = Math.hypot(x - x0, y - y0);
-  await cursorTo(x, y, move ?? Math.round(Math.min(620, Math.max(280, dist * 0.55))));
+  await cursorTo(x, y, move ?? Math.round(Math.min(420, Math.max(190, dist * 0.38))));
   await sleep(pause * rand(0.8, 1.5));
   await page.evaluate(() => document.getElementById("demo-cursor")?.classList.add("down"));
   await page.mouse.down();
-  await sleep(rand(55, 110));
+  await sleep(rand(50, 90));
   await page.mouse.up();
   await page.evaluate(() => document.getElementById("demo-cursor")?.classList.remove("down"));
 }
@@ -221,25 +266,6 @@ async function idle(ms) {
   await sleep(Math.max(0, end - Date.now()));
 }
 
-/** Smooth scroll of whatever is under (x, y), eased like a trackpad flick (on a phone it reads as a swipe). */
-async function scroll(dy, ms = 1000, at) {
-  const [x, y] = at ?? [Math.round(VIEW.width * 0.5 + rand(-30, 30)), Math.round(VIEW.height * rand(0.45, 0.6))];
-  if (!PHONE) {
-    const [cx, cy] = await cursorPos();
-    if (Math.hypot(cx - x, cy - y) > 200) await cursorTo(x, y, 420);
-  }
-  await page.mouse.move(x, y);
-  const t0 = Date.now();
-  let done = 0;
-  for (;;) {
-    const t = Math.min(1, (Date.now() - t0) / ms);
-    const target = Math.round(dy * (1 - Math.pow(1 - t, 2.6)));
-    if (target !== done) await page.mouse.wheel(0, target - done);
-    done = target;
-    if (t >= 1) break;
-    await sleep(12);
-  }
-}
 
 /** A finger swipe on a phone (the template carousel): quick, slightly curved, released while moving. */
 async function swipe(x0, y0, dx) {
@@ -260,11 +286,15 @@ async function swipe(x0, y0, dx) {
   await cdp.detach();
 }
 
-/** Types like a person (phone keyboard or laptop). */
-async function type(text, perChar = 70) {
+
+/** What the demo person answers on the AI's question card (long demo, laptops). */
+const ANSWER = { fr: "+1 200 abonnés en 5 mois", es: "+1.200 seguidores en 5 meses", sl: "+1.200 sledilcev v 5 mesecih" }[LANG];
+
+/** Types like a person on a laptop keyboard. */
+async function type(text, perChar = 45) {
   for (const ch of text) {
     await page.keyboard.type(ch);
-    await sleep(perChar + (/[ ,.]/.test(ch) ? 50 : Math.random() * 45));
+    await sleep(perChar + (/[ ,.]/.test(ch) ? 40 : Math.random() * 35));
   }
 }
 
@@ -281,93 +311,24 @@ async function soft(name, fn) {
 }
 
 // ---------------------------------------------------------------- the walkthrough (JobStep's demo, in Parakeet AI)
-async function scenes() {
+// About 20 s, like the app part of the JobStep videos (measured 19 Oct 2026 on 8 top videos: 10–26 s, ~20 typical).
+
+/** Before the recording starts: the flow's opening screen, on to the upload. */
+async function preroll() {
+  await byText(COPY.intake.trajectory.titles.yes.key).waitFor({ timeout: 20000 });
+  await sleep(500);
+  await next().click();
+  await byText(COPY.upload.title).waitFor();
+  await sleep(700);
+}
+
+/** A short look between two actions: a phone's taps need the full beat, a laptop's cursor travel already takes part of it. */
+const beat = (ms) => idle(Math.round(ms * (LONG ? 1.8 : 1) * (PHONE ? 1 : 0.55)));
+
+/** Accepts up to `count` change cards (stops at "review complete"), each after a look of `pauses[i]` ms. */
+async function reviewCards(pauses, count) {
   const C = COPY;
-  // 1. "Make every application count" – where the flow opens, then on to the upload
-  chapter("start");
-  await byText(C.intake.trajectory.titles.yes.key).waitFor({ timeout: 20000 });
-  await idle(1000);
-  await snap("trajectory");
-  await click(next());
-
-  // 2. Upload the CV (the file picker is answered with the made-up CV)
-  chapter("upload");
-  await byText(C.upload.title).waitFor();
-  await idle(700);
-  await snap("upload");
-  if (PHONE) await click(byText(C.upload.dropTitlePhone));
-  else {
-    await hover(byText(C.upload.dropTitle), 500);
-    await click(byText(C.upload.browse));
-  }
-
-  // 3. Reading + scoring (sped up)
-  await fast(() => byText(C.score.title).waitFor({ timeout: 40000 }), 3);
-
-  // 4. The low score
-  chapter("low score");
-  await sleep(1300); // the gauge fills
-  await snap("score");
-  if (PHONE) {
-    await sleep(2200);
-  } else {
-    await soft("score bars", async () => {
-      const bars = page.locator("main").getByText(/\d+\s*\/\s*(20|15)$/).filter({ visible: true });
-      await hover(bars.first(), 650, { fx: 0.2 });
-      await hover(bars.last(), 550, { fx: 0.2 });
-    });
-    await idle(700);
-  }
-  await click(next());
-
-  // 5. The plan
-  await byText(C.plan.title).waitFor();
-  await idle(900);
-  await snap("plan");
-  await click(next());
-
-  // 6. A template (Modern, the one with the coloured header)
-  chapter("template");
-  await byText(C.template.title).waitFor();
-  await idle(600);
-  if (PHONE) {
-    await soft("template swipe", () => swipe(VIEW.width * 0.74, VIEW.height * 0.45, -VIEW.width * 0.5));
-    await sleep(800);
-    if (!(await page.getByText("Modern", { exact: true }).filter({ visible: true }).count()))
-      await soft("template pick", () => click(button("Modern")));
-  } else {
-    await click(vis(page.locator("main").getByText("Modern", { exact: true })));
-  }
-  await idle(900);
-  await snap("template");
-  await click(next());
-
-  // 7. Its colour (green)
-  await byText(C.color.title).waitFor();
-  await idle(500);
-  await click(button("Forest"));
-  await idle(700);
-  await snap("color");
-  await click(next());
-
-  // 8. Paste the job ad
-  chapter("job ad");
-  await byText(C.job.title).waitFor();
-  await idle(500);
-  await click(vis(page.locator("textarea")));
-  await sleep(450);
-  await page.keyboard.insertText(SAMPLE.job);
-  await idle(900);
-  await snap("job");
-  await click(next());
-
-  // 9. Rewriting (sped up)
-  await fast(() => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }), 3);
-
-  // 10. Review the changes: the first ones read, the rest accepted quicker
-  chapter("review");
-  const pauses = [1200, 1300, 600, 350, 300, 300, 300, 300, 300, 300];
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < count; i++) {
     const accept = button(C.rewrite.deck.accept);
     const field = vis(page.locator("main input[type=text], main input:not([type]), main textarea"));
     await Promise.race([
@@ -378,51 +339,126 @@ async function scenes() {
     if (await byText(C.rewrite.deck.doneTitle).isVisible().catch(() => false)) break;
     if (i === 0) await snap("review");
     if (await field.isVisible().catch(() => false)) {
-      // the AI's question: answered on a laptop; on a phone (no keyboard in the recording) passed for now
-      if (PHONE) {
-        await idle(1300);
-        await snap("question");
-        await click(page.locator("footer button").filter({ visible: true }).nth(-2));
-        await sleep(500);
-        continue;
-      }
-      await idle(900);
+      // the AI's question (long demo): answered on a laptop; on a phone (no keyboard in the recording) passed
+      await idle(PHONE ? 1300 : 900);
       await snap("question");
-      await click(field);
-      await sleep(350);
-      await type(ANSWER, 45);
-      await idle(450);
-      await click(button(C.rewrite.deck.add));
-      await sleep(600);
+      if (PHONE) {
+        await click(page.locator("footer button").filter({ visible: true }).nth(-2));
+      } else {
+        await click(field);
+        await sleep(300);
+        await type(ANSWER);
+        await idle(450);
+        await click(button(C.rewrite.deck.add));
+      }
+      await sleep(500);
       continue;
     }
-    await idle(pauses[i] ?? 650);
-    await click(accept, { pause: 80 });
-    await sleep(150);
+    await idle(Math.round((pauses[i] ?? 350) * (PHONE ? 1 : 0.8)));
+    await click(accept, { pause: 60 });
+    await sleep(90);
   }
+}
 
-  // 11. Review done
-  await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
-  await idle(600);
-  await snap("done");
+async function scenes() {
+  const C = COPY;
+  // 1. Upload the CV (the file picker is answered with the made-up CV)
+  chapter("upload");
+  await beat(450);
+  await snap("upload");
+  await click(PHONE ? byText(C.upload.dropTitlePhone) : byText(C.upload.browse));
+
+  // 2. Reading + scoring
+  await fastTo(() => byText(C.score.title).waitFor({ timeout: 40000 }), LONG ? 2 : 1.1);
+
+  // 3. The low score
+  chapter("low score");
+  await sleep(PHONE ? 1500 : 1300); // the gauge fills
+  await snap("score");
+  if (LONG && !PHONE)
+    await soft("score bars", async () => {
+      const bars = page.locator("main").getByText(/\d+\s*\/\s*(20|15)$/).filter({ visible: true });
+      await hover(bars.first(), 650, { fx: 0.2 });
+      await hover(bars.last(), 550, { fx: 0.2 });
+    });
+  await beat(700);
   await click(next());
 
-  // 12. The answer goes in, then the page fit
-  await fast(() => byText(C.fit.title).waitFor({ timeout: 40000 }), 3);
-  await idle(500);
-  await click(next());
-  await vis(page.getByText(new RegExp(`^(${escapeRe(C.fit.fittedTitle(1))}|${escapeRe(C.fit.alreadyTitle)})`))).waitFor({ timeout: 15000 }).catch(() => {});
-  await idle(600);
-  await snap("fit");
-  await click(next());
+  // 4.–5. The plan, a template (Modern, coloured header), its colour (green), the job ad – cut in the short version
+  const middle = async () => {
+    await byText(C.plan.title).waitFor();
+    await beat(350);
+    await click(next());
+    chapter("template");
+    await byText(C.template.title).waitFor();
+    await beat(250);
+    if (PHONE) {
+      await soft("template swipe", () => swipe(VIEW.width * 0.74, VIEW.height * 0.45, -VIEW.width * 0.5));
+      await sleep(450);
+      if (!(await page.getByText("Modern", { exact: true }).filter({ visible: true }).count()))
+        await soft("template pick", () => click(button("Modern")));
+    } else {
+      await click(vis(page.locator("main").getByText("Modern", { exact: true })));
+    }
+    await beat(350);
+    await snap("template");
+    await click(next());
+    await byText(C.color.title).waitFor();
+    await beat(200);
+    await click(button("Forest"));
+    await beat(300);
+    await click(next());
 
-  // 13. Rescoring (sped up), then the new score
-  await fast(() => vis(page.getByText(new RegExp(`^(${escapeRe(C.result.topShape)}|${escapeRe(C.result.ready)})$`))).waitFor({ timeout: 40000 }), 3);
+    // 5. Paste the job ad, rewrite for it
+    chapter("job ad");
+    await byText(C.job.title).waitFor();
+    await beat(200);
+    await click(vis(page.locator("textarea")));
+    await sleep(250);
+    await page.keyboard.insertText(SAMPLE.job);
+    await beat(450);
+    await snap("job");
+    await click(next());
+    await fastTo(() => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }), LONG ? 2.2 : 1.2);
+  };
+  if (SHORT) await cut(middle);
+  else await middle();
+
+  // 6. The AI's changes, card by card (the CV on the right changes with each); the short version shows two
+  chapter("review");
+  const pauses = SHORT ? [900, 800] : LONG ? [1100, 1300, 900, 550, 450, 400, 400, 450, 450] : [800, 850, 400, 400, 400, 400];
+  await reviewCards(pauses, SHORT ? 2 : 12);
+  // 7. The rest of the cards, review done, page fit, rescoring – cut in the short version
+  const end = async () => {
+    await reviewCards([], 12);
+    await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
+    chapter("review done");
+    await beat(350);
+    await snap("done");
+    await click(next());
+
+    // page fit, then rescoring
+    await fastTo(() => byText(C.fit.title).waitFor({ timeout: 40000 }), LONG ? 1.5 : 0.4);
+    chapter("fit");
+    await beat(250);
+    await click(next());
+    await vis(page.getByText(new RegExp(`^(${escapeRe(C.fit.fittedTitle(1))}|${escapeRe(C.fit.alreadyTitle)})`))).waitFor({ timeout: 15000 }).catch(() => {});
+    await beat(300);
+    await snap("fit");
+    await click(next());
+    chapter("rescoring");
+    await fastTo(() => vis(page.getByText(new RegExp(`^(${escapeRe(C.result.topShape)}|${escapeRe(C.result.ready)})$`))).waitFor({ timeout: 40000 }), LONG ? 2.2 : 1.3);
+  };
+  if (SHORT) await cut(end);
+  else await end();
+
+  // 8. The new score
   chapter("new score");
-  await sleep(2200); // the gauge climbs
+  await sleep(2000); // the gauge climbs from the first score
   await snap("result");
-  await soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), 1200));
-  await idle(1500);
+  if (PHONE) await sleep(LONG ? 2400 : 900);
+  else await soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), LONG ? 1200 : 450));
+  if (LONG) await idle(PHONE ? 600 : 800);
 }
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** The result's download button label, from the resume maker's own messages (the copy file has no key for it). */
@@ -467,8 +503,9 @@ async function run({ capture }) {
   page = await ctx.newPage();
   page.on("filechooser", (chooser) => chooser.setFiles(path.join(HERE, "assets", SAMPLE.file)));
   page.on("pageerror", (e) => console.warn(`  page error: ${e.message.split("\n")[0]}`));
-  await page.goto(`${APP}/resumeMaker/demo`, { waitUntil: "networkidle" });
+  await page.goto(`${APP}/resumeMaker/demo${LONG ? "?long=1" : ""}`, { waitUntil: "networkidle" });
   await sleep(1500); // fonts, hydration, entrance
+  await preroll();
 
   const frames = [];
   let cdp;
@@ -488,14 +525,14 @@ async function run({ capture }) {
       format: "jpeg",
       quality: 90,
       everyNthFrame: 1,
-      maxWidth: VIEW.width * SCREEN.dsf,
-      maxHeight: VIEW.height * SCREEN.dsf,
+      maxWidth: CAPTURE_W,
+      maxHeight: Math.round((VIEW.height * CAPTURE_W) / VIEW.width),
     });
   }
   const t0 = Date.now();
   if (capture) chapterClock = t0;
   await scenes();
-  await sleep(400);
+  await sleep(250);
   const seconds = (Date.now() - t0) / 1000;
   if (capture) await cdp.send("Page.stopScreencast");
   await sleep(500);
@@ -601,6 +638,8 @@ function encode(frames, seconds) {
   const base = chapterClock / 1000;
   const vt = (t) => videoTime(t - base);
   const end = base + seconds + 0.2;
+  // nothing captured inside a jump cut is shown
+  frames = frames.filter((f) => !cuts.some(([a, b]) => f.t - base > a && f.t - base <= b));
   const lines = ["ffconcat version 1.0"];
   frames.forEach((f, i) => {
     const nextT = i + 1 < frames.length ? frames[i + 1].t : end;
@@ -609,10 +648,11 @@ function encode(frames, seconds) {
   lines.push(`file '${frames.at(-1).file}'`);
   const list = path.join(FRAMES, "list.txt");
   fs.writeFileSync(list, lines.join("\n"));
-  const outFile = path.join(OUT, `parakeet-ai-demo-${DEVICE}-${LANG}.mp4`);
-  const W = SCREEN.w * SCREEN.dsf, H = SCREEN.h * SCREEN.dsf;
+  const outFile = path.join(OUT, `parakeet-ai-demo-${DEVICE}-${LANG}${LENGTH === "standard" ? "" : `-${LENGTH}`}.mp4`);
+  const px = (v) => Math.round(v * SCREEN.dsf);
+  const W = px(SCREEN.w), H = px(SCREEN.h);
   const filter =
-    `[0:v]format=rgb24,scale=${W}:${VIEW.height * SCREEN.dsf}:flags=lanczos,format=rgb24,pad=${W}:${H}:0:${SCREEN.top * SCREEN.dsf}:white,fps=60[page];` +
+    `[0:v]format=rgb24,scale=${W}:${H - px(SCREEN.top) - px(SCREEN.bottom)}:flags=lanczos,format=rgb24,pad=${W}:${H}:0:${px(SCREEN.top)}:white,fps=60[page];` +
     `[page][1:v]overlay=0:0,scale=${SCREEN.outW}:-2:flags=lanczos,format=yuv420p[v]`;
   execFileSync("ffmpeg", [
     "-v", "error", "-y",

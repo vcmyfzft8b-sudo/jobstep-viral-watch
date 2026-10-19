@@ -3,9 +3,11 @@ where they should start playing it" - Slovenia for now).
 
 demo/drive_folders.json (written by demo/drive_sync.py) has one Drive folder per format page with the recording in its
 length for iPhone, Android, Mac and Windows. A market whose texts have `demo_cue` (markets.TEXT, today only Slovenian)
-gets ONE "(🎥 …)" link cue to that folder in every live script, right before the first Parakeet AI cue (where the app
-appears first); tidy puts it there and keeps it there (also after a rebuild or re-transcription), verify checks it. How to
-film it (download, full screen, laptop, phone overlay) is in the ⚠️ note (`demo_note`, pages.inspo_note).
+gets ONE plain "(🎥 … – see resources)" cue in every live script, right before the first Parakeet AI cue (where the app
+appears first), and that folder as a link in the 🔧 resources (`demo_res`; links inside a script are not clickable for
+creators - user, 19 Oct 2026). tidy puts both there and keeps them (also after a rebuild or re-transcription), verify
+checks them. How to film it (pick your device's version, download, full screen, laptop, phone overlay) is in the ⚠️
+note (`demo_note`, pages.inspo_note).
 """
 import json
 import os
@@ -42,8 +44,8 @@ def label(market):
 
 
 def cue_for(page_id, fmt_id=None, market=None):
-    """(label, Drive folder url) for this page's demo cue; (label, None) when the market has cues but no folder fits;
-    None when the market has no demo cues."""
+    """{'cue': script cue, 'res': resource label, 'url': Drive folder url} for this page ('url' None when no folder
+    fits); None when the market has no demo cues."""
     full, idea = _idea(page_id)
     market = market or idea.get('market')
     lab = label(market)
@@ -53,7 +55,7 @@ def cue_for(page_id, fmt_id=None, market=None):
     fmt_id = fmt_id or idea.get('format')
     row = next((r for r in rows if r.get('idea_id') == full), None) or \
         next((r for r in rows if fmt_id and r.get('format') == fmt_id), None)
-    return lab, (row or {}).get('url')
+    return {'cue': lab, 'res': TEXT[market]['demo_res'], 'url': (row or {}).get('url')}
 
 
 def is_demo_url(url):

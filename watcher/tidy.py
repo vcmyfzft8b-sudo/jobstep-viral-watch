@@ -9,8 +9,9 @@ fixed on every normal run (mode tidy does it at once). Nothing is reworded - onl
 3. The 📲 title is bold.
 4. The idea name is the title (names drifted from the content, e.g. "Carrefour…" when the script never says it).
 5. Reported only: a sub-page above the page content (e.g. a stray copy of the Visual Hook Lab).
-6. Markets with demo recordings (watcher/demo.py, Slovenia): exactly ONE "(🎥 …)" cue to the page's Drive folder, right
-   before the first Parakeet AI cue (where the creator starts playing our recording).
+6. Markets with demo recordings (watcher/demo.py, Slovenia): exactly ONE plain "(🎥 … – see resources)" cue, right
+   before the first Parakeet AI cue (where the creator starts playing our recording), and the page's Drive folder as a
+   resource (links in a script are not clickable for creators).
 """
 import re
 
@@ -64,52 +65,96 @@ def _drop_cue(keep, items, i):
         nxt['text']['content'] = re.sub(r'^\)\s?', '', _content(nxt))
 
 
-def _demo_ok(paragraphs, links, label, url):
-    """Exactly one demo cue (this label + url), and the next link after it is the script's first Parakeet AI cue with
-    only ') (' between them."""
-    found = [(j, i) for j, items in enumerate(paragraphs) for i, x in enumerate(items) if demo.is_demo_url(_url(x))
-             or (_content(x).strip().startswith('🎥') and _url(x))]
-    first = next(((j, i) for j, items in enumerate(paragraphs) for i, x in enumerate(items)
-                  if _url(x) == links['parakeet']), None)
-    if len(found) != 1 or not first:
-        return False
-    j, i = found[0]
-    items = paragraphs[j]
-    if _url(items[i]) != url or _content(items[i]).strip() != label or j != first[0] or i > first[1]:
-        return False
-    between = ''.join(_content(x) for x in items[i + 1:first[1]])
-    return re.sub(r'\s', '', between) == ')('
+DEMO_CUE_RE = re.compile(r'\(\s*🎥[^()]*\)\s?')  # the plain-text demo cue (its link sits in the resources)
 
 
-def place_demo(paragraphs, links, label, url):
-    """paragraphs with exactly one '(🎥 label)' cue linking url, right before the first Parakeet AI cue. Returns
-    (paragraphs, changed). No Parakeet AI cue -> unchanged (such a page is rebuilt, not tidied)."""
-    if _demo_ok(paragraphs, links, label, url):
+def _first_app(paragraphs, links):
+    return next(((j, i) for j, items in enumerate(paragraphs) for i, x in enumerate(items)
+                 if _url(x) == links['parakeet']), None)
+
+
+def _demo_ok(paragraphs, links, cue):
+    """No linked demo cue, exactly one plain cue (this text), and it stands right before the first Parakeet AI cue."""
+    if any(demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x)) for p in paragraphs for x in p):
+        return False
+    found = [m for p in paragraphs for x in p if not _url(x) for m in DEMO_CUE_RE.findall(_content(x))]
+    first = _first_app(paragraphs, links)
+    if len(found) != 1 or found[0].strip() != cue or not first or not first[1]:
+        return False
+    return bool(re.search(re.escape(cue) + r'\s*\($', _content(paragraphs[first[0]][first[1] - 1]).rstrip()))
+
+
+def place_demo(paragraphs, links, cue):
+    """paragraphs with exactly one plain '(🎥 … – see resources)' cue, right before the first Parakeet AI cue (where the
+    creator starts playing our recording). Script links to Drive are not clickable for creators (user, 19 Oct 2026), so
+    the folder is a resource (place_demo_resource) and older linked cues are removed. Returns (paragraphs, changed).
+    No Parakeet AI cue -> unchanged (such a page is rebuilt, not tidied)."""
+    if _demo_ok(paragraphs, links, cue):
         return paragraphs, False
     out = []
-    for items in paragraphs:  # every old demo cue out (wrong place, wrong folder, a second one)
+    for items in paragraphs:  # every old demo cue out (linked, wrong place, a second one)
         items = [dict(x, text=dict(x.get('text') or {'content': x.get('plain_text', '')})) for x in items]
         keep = []
         for i, x in enumerate(items):
-            if demo.is_demo_url(_url(x)) or (_content(x).strip().startswith('🎥') and _url(x)):
+            if demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x)):
                 _drop_cue(keep, items, i)
                 continue
+            if not _url(x):
+                x['text']['content'] = re.sub(r' {2,}', ' ', DEMO_CUE_RE.sub('', _content(x)))
             keep.append(x)
         out.append([x for x in keep if _content(x) or _url(x)])
-    first = next(((j, i) for j, items in enumerate(out) for i, x in enumerate(items) if _url(x) == links['parakeet']), None)
+    first = _first_app(out, links)
     if not first:
         return paragraphs, False
     j, k = first
     items = out[j]
-    cue = [pages.rt('('), pages.rt(label, link=url), pages.rt(') (' if k and _content(items[k - 1]).rstrip().endswith('(')
-                                                               else ') ')]
-    if cue[2]['text']['content'] == ') (':
-        items[k - 1]['text']['content'] = _content(items[k - 1]).rstrip()[:-1]
-        if not _content(items[k - 1]):
-            items.pop(k - 1)
-            k -= 1
-    out[j] = items[:k] + cue + items[k:]
+    before = _content(items[k - 1]).rstrip() if k else ''
+    if before.endswith('('):
+        rest = before[:-1].rstrip()
+        items[k - 1]['text']['content'] = (rest + ' ' if rest else '') + cue + ' ('
+    else:
+        items.insert(k, pages.rt(cue + ' '))
     return out, True
+
+
+def resources_block(blocks):
+    """The callout of the 🔧 resources section (its links are the idea's resources in Megasheet)."""
+    inside = False
+    for b in blocks:
+        if b['type'].startswith('heading'):
+            inside = '🔧' in reword._plain(b)
+            continue
+        if inside and b['type'] == 'callout':
+            return b
+    return None
+
+
+def place_demo_resource(rich, links, label, url):
+    """The resources callout's rich text with exactly one demo link (label, url) right after the Parakeet AI link (else
+    after the last link before any text line). Returns (rich, changed)."""
+    demos = [x for x in rich if demo.is_demo_url(_url(x))]
+    if len(demos) == 1 and _url(demos[0]) == url and _content(demos[0]).strip() == label:
+        return rich, False
+    items = [dict(x, text=dict(x.get('text') or {'content': x.get('plain_text', '')})) for x in rich]
+    keep = []
+    for i, x in enumerate(items):
+        if demo.is_demo_url(_url(x)):
+            if keep and _content(keep[-1]) == '\n':
+                keep.pop()
+            elif not keep and i + 1 < len(items) and _content(items[i + 1]) == '\n':
+                items[i + 1]['text']['content'] = ''
+            continue
+        keep.append(x)
+    keep = [x for x in keep if _content(x)]
+    at = next((i + 1 for i, x in enumerate(keep) if _url(x) == links['parakeet']), None)
+    if at is None:
+        at = 0
+        while at < len(keep) and (_url(keep[at]) or _content(keep[at]) == '\n'):
+            at += 1
+        while at and _content(keep[at - 1]) == '\n':
+            at -= 1
+    add = ([pages.rt('\n')] if at else []) + [pages.rt(label, link=url)] + ([pages.rt('\n')] if not at and keep else [])
+    return keep[:at] + add + keep[at:], True
 
 
 def _norm(t):
@@ -166,10 +211,17 @@ def tidy_page(page_id, links, write=True, fmt_id=None):
     if removed:
         changes.append(f'{removed} extra link cues')
     cue, moved = demo.cue_for(page_id, fmt_id), False
-    if cue and cue[1]:
-        trimmed, moved = place_demo(trimmed, links, *cue)
+    if cue and cue['url']:
+        trimmed, moved = place_demo(trimmed, links, cue['cue'])
         if moved:
             changes.append('demo recording cue missing or not at the first app moment')
+        res = resources_block(blocks)
+        if res:
+            rich, res_moved = place_demo_resource(res['callout'].get('rich_text', []), links, cue['res'], cue['url'])
+            if res_moved:
+                changes.append('demo recording folder missing in the resources')
+                if write:
+                    pages.api('PATCH', f"/blocks/{res['id']}", {'callout': {'rich_text': _rich_payload(rich)}})
     elif cue and not write:
         changes.append('no demo recording folder for this page (demo/drive_folders.json - run demo/drive_sync.py)')
     if write and (removed or moved):

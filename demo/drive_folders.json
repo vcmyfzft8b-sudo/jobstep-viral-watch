@@ -1,0 +1,366 @@
+{
+ "uploaded": "2026-10-19",
+ "drive": "rclone remote gdrive (Parakeet Drive, private – not shared)",
+ "root": "Parakeet AI – Demo videos",
+ "markets": {
+  "France": {
+   "folder_id": "10kkDSjGMpyjrb0QH4WKrOui0Xfemby2k",
+   "all_lengths_folder_id": "1zbNLj93nKChIj0r8O63vtz5RhMeytQ4g"
+  },
+  "Spain": {
+   "folder_id": "1GI90Zk0MJCTOO2yxUQi5uyZO_85PVFv1",
+   "all_lengths_folder_id": "1gPg2Yx0y_pa6QDzTi9IJA3OoY7OjlU2-"
+  },
+  "Slovenia": {
+   "folder_id": "16iXAxn9ABG-pUoHWR2eTsGnegd4U6yEG",
+   "all_lengths_folder_id": "1LIPHBFNcCZpBiOOhXXWpiqJuZ5ImJ9r0"
+  }
+ },
+ "files": "each format folder: Parakeet AI demo – iPhone|Android|Mac|Windows.mp4 in the format's length (format_lengths.json)",
+ "pages": [
+  {
+   "market": "fr",
+   "format": "N10",
+   "idea_id": "ad829749-02db-4e92-a459-57095616d32c",
+   "page_title": "PERSONNE ne lit ton CV 😮",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/France/PERSONNE ne lit ton CV 😮",
+   "folder_id": "1AIoveZpZc08xFliUhBeU9BSAQJKK-HWa"
+  },
+  {
+   "market": "fr",
+   "format": "X06",
+   "idea_id": "e514bd66-cf35-45ad-ac8e-f1ae9fa5d4b5",
+   "page_title": "Évitez cette erreur !!",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/Évitez cette erreur !!",
+   "folder_id": "1H7wipb06CauWqy8TFQJGRVzDF57SPWGJ"
+  },
+  {
+   "market": "fr",
+   "format": "ESX11",
+   "idea_id": "297c72a4-1e8a-4160-87ff-fbd4da5df211",
+   "page_title": "MON CONSEIL HYPER TOXIQUE POUR TROUVER UN JOB 💀",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/MON CONSEIL HYPER TOXIQUE POUR TROUVER UN JOB 💀",
+   "folder_id": "1LZ5wm5hdlL7jUkULXqkpHnrGofpf6N4q"
+  },
+  {
+   "market": "fr",
+   "format": "X16",
+   "idea_id": "cd202182-c4f7-4b7c-bb25-8964e334315c",
+   "page_title": "‼️J'ai quitté mon job aux RH, alors je te balance TOUS leurs secrets 🤫‼️",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/France/‼️J'ai quitté mon job aux RH, alors je te balance TOUS leurs secrets 🤫‼️",
+   "folder_id": "1XPzYveXIB4Aou84RoQccV4sNjgI72K37"
+  },
+  {
+   "market": "fr",
+   "format": "X08",
+   "idea_id": "6d80798b-efbb-405a-bab1-51dff730f9cd",
+   "page_title": "POV : refusée pour un job de caissière avec un bac+5 🤡",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/France/POV : refusée pour un job de caissière avec un bac+5 🤡",
+   "folder_id": "1aShaj0m6a0tCu7b8-KBeixoUbFXPzibH"
+  },
+  {
+   "market": "fr",
+   "format": "X13",
+   "idea_id": "8954e4b1-4127-42f6-8989-a17745ac2cb8",
+   "page_title": "3 conseils pour que tu trouves ENFIN un taf 💼",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/France/3 conseils pour que tu trouves ENFIN un taf 💼",
+   "folder_id": "1LYZMKpgTrr8f3NxOKLO9RNNSrOFXJtrQ"
+  },
+  {
+   "market": "fr",
+   "format": "A202610061334",
+   "idea_id": "76100946-4c0f-4ef8-ab4e-2f2eba1d4471",
+   "page_title": "On entre dans LA meilleure période pour chercher du taf 👩🏻‍💻👀✨",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/On entre dans LA meilleure période pour chercher du taf 👩🏻‍💻👀✨",
+   "folder_id": "1ic1yMx6zqe_rjq9s1CY-A1CpNIhVzXpa"
+  },
+  {
+   "market": "fr",
+   "format": "X09",
+   "idea_id": "bd02a5d8-5393-4143-b928-ae9c41504a51",
+   "page_title": "Les choses que les recruteurs te cachent 😳❌",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/Les choses que les recruteurs te cachent 😳❌",
+   "folder_id": "1PRgd4_eiEy-sN6z3KInpSOtkuMG3XgzV"
+  },
+  {
+   "market": "fr",
+   "format": "X03",
+   "idea_id": "d37c1b10-ec3b-4e46-b76e-3d4f3ba673b1",
+   "page_title": "Les recruteurs ne veulent ABSOLUMENT pas que tu saches ça😳❗️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/Les recruteurs ne veulent ABSOLUMENT pas que tu saches ça😳❗️",
+   "folder_id": "1LEjSNR3-bRbRhjZst2XwN9TU38l3uSfX"
+  },
+  {
+   "market": "fr",
+   "format": "N02",
+   "idea_id": "822a11e6-2a1b-45de-ac1b-e17769e6b706",
+   "page_title": "DEPUIS QUAND LINKEDIN PEUT FAIRE ÇA ???",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/France/DEPUIS QUAND LINKEDIN PEUT FAIRE ÇA ???",
+   "folder_id": "1JL-c2xitPcuGB2kC0yZHuv5xJKRk44WZ"
+  },
+  {
+   "market": "fr",
+   "format": "A20261006183623",
+   "idea_id": "381802e6-b994-4d73-aab7-4b7626c57e69",
+   "page_title": "Mentez sur votre CV 🚨🚨‼️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/Mentez sur votre CV 🚨🚨‼️",
+   "folder_id": "1Dowdrboiidexru7lFqfm689lhVYIG39N"
+  },
+  {
+   "market": "fr",
+   "format": "N04",
+   "idea_id": "8134702e-c690-41f3-bf92-18dcbcf9d43b",
+   "page_title": "J'ai décroché 20 ENTRETIENS ? 🤯",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/France/J'ai décroché 20 ENTRETIENS ? 🤯",
+   "folder_id": "1mpmg_ebf8DyGOQ2pjW8O2JMZuO-_OlDa"
+  },
+  {
+   "market": "fr",
+   "format": "ESX28",
+   "idea_id": "d992efa3-18e8-44fd-be8f-fd3cfde5030d",
+   "page_title": "Trouver un job en 2026 😳 :",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/France/Trouver un job en 2026 😳 :",
+   "folder_id": "1S0QM9jQGEmRjMltfiXjoZKUmc814btyg",
+   "note": "hand-made page, same format as ESX28"
+  },
+  {
+   "market": "es",
+   "format": "N02",
+   "idea_id": "66acc8e7-0be8-4bda-9a39-989570e71ab5",
+   "page_title": "Espera… ¿LinkedIn hace ESTO? 😳",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Spain/Espera… ¿LinkedIn hace ESTO? 😳",
+   "folder_id": "1fu7ADb_avtqWe5MMkASsWk8knWyme13I"
+  },
+  {
+   "market": "es",
+   "format": "A20261006183623",
+   "idea_id": "1755a3b3-15e3-45f5-ac6f-d4cf1615de8e",
+   "page_title": "Miente en tu CV 🚨🚨‼️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/Miente en tu CV 🚨🚨‼️",
+   "folder_id": "1L8J55Ho1C9CrVMXknh4iMPM8uEIU29ff"
+  },
+  {
+   "market": "es",
+   "format": "N10",
+   "idea_id": "d2410723-5798-4363-8ed9-478c35dde191",
+   "page_title": "¿Tu CV lo lee un humano? Spoiler: no 🤦🏽‍♀️",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Spain/¿Tu CV lo lee un humano? Spoiler: no 🤦🏽‍♀️",
+   "folder_id": "1uPjVNlXqNVuGKvZV-5uw7uzn8KrhPy6r"
+  },
+  {
+   "market": "es",
+   "format": "X16",
+   "idea_id": "6764715d-96a2-468a-b7e5-79e1b42722a8",
+   "page_title": "‼️Dejé mi curro en RR. HH. y te voy a contar TODOS sus secretos 🤫‼️",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Spain/‼️Dejé mi curro en RR. HH. y te voy a contar TODOS sus secretos 🤫‼️",
+   "folder_id": "1BLrfcbpZHTRoZR348ISdY-iSkakazgd2"
+  },
+  {
+   "market": "es",
+   "format": "A202610061334",
+   "idea_id": "c9d12d71-9034-4eed-8b02-782d0527d997",
+   "page_title": "Empieza la MEJOR época para buscar trabajo 👩🏻‍💻👀✨",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/Empieza la MEJOR época para buscar trabajo 👩🏻‍💻👀✨",
+   "folder_id": "1BRbz39AsFFlHhF5n0_2yRP76XyMwATpa"
+  },
+  {
+   "market": "es",
+   "format": "ESX28",
+   "idea_id": "d6e073f6-3d63-4e53-ac0c-3f940d676042",
+   "page_title": "Conseguir empleo en 2026 😳:",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Spain/Conseguir empleo en 2026 😳:",
+   "folder_id": "168qcluM2UrQvqxcm4LznzKBugIFv4FuU"
+  },
+  {
+   "market": "es",
+   "format": "X03",
+   "idea_id": "efacd1e0-0096-4461-b159-ffde5789e197",
+   "page_title": "Los reclutadores NO quieren que sepas ESTO 😳❗️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/Los reclutadores NO quieren que sepas ESTO 😳❗️",
+   "folder_id": "10d8FHqz-sV6nFRlWeTnAJa9GKevdWfM9"
+  },
+  {
+   "market": "es",
+   "format": "ESX11",
+   "idea_id": "0c749165-c74a-4a59-8a13-910b7b4fd91a",
+   "page_title": "MI CONSEJO SÚPER TÓXICO PARA ENCONTRAR CURRO 💀",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/MI CONSEJO SÚPER TÓXICO PARA ENCONTRAR CURRO 💀",
+   "folder_id": "1872d7yA8WFJ-vLflEj96gn6yT3LfrhrO"
+  },
+  {
+   "market": "es",
+   "format": "X08",
+   "idea_id": "49d1d6b7-58ce-43cd-8acc-6f0ae6dd71a9",
+   "page_title": "POV: me han rechazado como cajera con un grado y un máster 🤡",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Spain/POV: me han rechazado como cajera con un grado y un máster 🤡",
+   "folder_id": "12is4jmdkznK-A6GTF4sutMJL92T8xEou"
+  },
+  {
+   "market": "es",
+   "format": "X13",
+   "idea_id": "969d2e6f-94aa-44ba-8e61-32223abce210",
+   "page_title": "3 consejos para encontrar curro",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Spain/3 consejos para encontrar curro",
+   "folder_id": "1TxU14mekVrcMMR4YwpPZIWHUImOXkGlS"
+  },
+  {
+   "market": "es",
+   "format": "N04",
+   "idea_id": "016be7bf-4f8f-4d7d-96b0-05da250ab627",
+   "page_title": "¿He conseguido 20 ENTREVISTAS? 🤯",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/¿He conseguido 20 ENTREVISTAS? 🤯",
+   "folder_id": "1rb5sCSj4xj717vS_F2odtVRItO2515B_"
+  },
+  {
+   "market": "es",
+   "format": "X09",
+   "idea_id": "12b4510a-bb5a-47db-a99b-dc43673d49f7",
+   "page_title": "Cosas que los reclutadores te ocultan 😳❌",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Spain/Cosas que los reclutadores te ocultan 😳❌",
+   "folder_id": "1mbJryLu7wl5EjGPxYtTBoiYUBrRNwUZK"
+  },
+  {
+   "market": "sl",
+   "format": "N10",
+   "idea_id": "0512a0a3-15b2-4a9d-8075-9740ff32a777",
+   "page_title": "NIHČE ne bere tvojega CV-ja 😮",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Slovenia/NIHČE ne bere tvojega CV-ja 😮",
+   "folder_id": "163F3lFJ-OzxRWakksClOFrB_yrYOC8p9"
+  },
+  {
+   "market": "sl",
+   "format": "N02",
+   "idea_id": "d4c2e39f-6bd2-4017-939e-a85787f4fb62",
+   "page_title": "OD KDAJ LINKEDIN TO ZNA ???",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Slovenia/OD KDAJ LINKEDIN TO ZNA ???",
+   "folder_id": "1TklOf9YMKEDxTTjXM2wWkJaMGGrwp_AB"
+  },
+  {
+   "market": "sl",
+   "format": "X03",
+   "idea_id": "56449049-105f-4e9d-92e4-a87c8cfe353f",
+   "page_title": "Rekruterji NIKAKOR nočejo, da to veš😳❗️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Rekruterji NIKAKOR nočejo, da to veš😳❗️",
+   "folder_id": "1O6d-1Gbllx3ige9C2UOXHvmV_7VkpHgz"
+  },
+  {
+   "market": "sl",
+   "format": "ESX11",
+   "idea_id": "5881f705-d377-4bbc-a0e4-e07cb54feb7f",
+   "page_title": "MOJ HUDO TOKSIČEN NASVET ZA ISKANJE SLUŽBE 💀",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/MOJ HUDO TOKSIČEN NASVET ZA ISKANJE SLUŽBE 💀",
+   "folder_id": "11OblnCZ21FWbg1HK9CYdzjdaJWvvQUPp"
+  },
+  {
+   "market": "sl",
+   "format": "X16",
+   "idea_id": "38433e0e-8dbf-4d60-a0d4-ccdf0044e1b0",
+   "page_title": "‼️Ne delam več v kadrovski, zato ti izdam VSE njihove skrivnosti 🤫‼️",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Slovenia/‼️Ne delam več v kadrovski, zato ti izdam VSE njihove skrivnosti 🤫‼️",
+   "folder_id": "1RG2C0Y94mKAw4jXZo7qR_kka7jKSG0HH"
+  },
+  {
+   "market": "sl",
+   "format": "X13",
+   "idea_id": "16b08a17-cbd9-4c9d-ab0a-8d7032a4c28b",
+   "page_title": "3 nasveti, da KONČNO najdeš službo 💼",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Slovenia/3 nasveti, da KONČNO najdeš službo 💼",
+   "folder_id": "1sYa6HYppNy_HCkH8HTG3Ha_xFJLiQl8r"
+  },
+  {
+   "market": "sl",
+   "format": "X08",
+   "idea_id": "77623af6-ab46-4980-bc94-7d3b7a69f323",
+   "page_title": "POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡",
+   "demo": "long",
+   "folder": "Parakeet AI – Demo videos/Slovenia/POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡",
+   "folder_id": "1HDG0SlCrzYYN_qLc-DiI1Y_235NLeOR5"
+  },
+  {
+   "market": "sl",
+   "format": "A202610061334",
+   "idea_id": "71941cdd-64f5-4fac-868e-c88579fa0d98",
+   "page_title": "Začenja se NAJBOLJŠI čas za iskanje službe 👩🏻‍💻👀✨",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Začenja se NAJBOLJŠI čas za iskanje službe 👩🏻‍💻👀✨",
+   "folder_id": "15wK_Pys30Zph7j3x2pGDZpV8W6ZfRZA1"
+  },
+  {
+   "market": "sl",
+   "format": "A20261006183623",
+   "idea_id": "3590017c-af69-4691-88f0-09baeba11ae8",
+   "page_title": "Lagaj v CV-ju 🚨🚨‼️",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Lagaj v CV-ju 🚨🚨‼️",
+   "folder_id": "1LtUzJMfiUm9uMQgoAbH_gCgrmlx_1BZR"
+  },
+  {
+   "market": "sl",
+   "format": "X09",
+   "idea_id": "6bcfe1a0-cbc7-4446-a859-0b54fbbc9c4b",
+   "page_title": "Kako sem v samo 15 minutah našla službo 😳❌",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Kako sem v samo 15 minutah našla službo 😳❌",
+   "folder_id": "1-dRp_14W5VpqlCy3uEy1SdKF6kjLdI2z"
+  },
+  {
+   "market": "sl",
+   "format": "N04",
+   "idea_id": "9a47a3bc-ceb1-47fd-b110-773ece5fe499",
+   "page_title": "Mesece brez odgovora… zdaj pa RAZGOVORI? 🤯",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Mesece brez odgovora… zdaj pa RAZGOVORI? 🤯",
+   "folder_id": "1cuqYouuLArMJvflQkjwDZigEZ_kIBfoL"
+  },
+  {
+   "market": "sl",
+   "format": "A20261009204851",
+   "idea_id": "e7f2050f-69dc-45dc-a07d-610110dcda1c",
+   "page_title": "Prvi kupec🤑",
+   "demo": "standard",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Prvi kupec🤑",
+   "folder_id": "1wCkkBRNeYr9hA5vNcBO164m41HnsvhTP"
+  },
+  {
+   "market": "sl",
+   "format": "ESX28",
+   "idea_id": "5228c801-efe5-471d-bb52-faac7a9a8304",
+   "page_title": "Dobiti službo v 2026 😳:",
+   "demo": "short",
+   "folder": "Parakeet AI – Demo videos/Slovenia/Dobiti službo v 2026 😳:",
+   "folder_id": "1XTR-37TZMtUIljqHqJXWEI5UNViq6prf",
+   "note": "hand-made page, same format as ESX28"
+  }
+ ]
+}

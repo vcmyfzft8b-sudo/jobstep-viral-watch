@@ -3,7 +3,10 @@
  "ideas": {
   "016be7bf-4f8f-4d7d-96b0-05da250ab627": {
    "format": "N04",
-   "fp": "a1ca816539863e0d",
+   "fp": "fa283d703c577793",
+   "keep_titles": [
+    "Meses sin respuesta… ¿y ahora ENTREVISTAS? 🤯"
+   ],
    "market": "es",
    "media_ids": [
     "13e1139b-37c5-4fdf-8a76-2dc9acb157ce"
@@ -21,7 +24,10 @@
   },
   "0c749165-c74a-4a59-8a13-910b7b4fd91a": {
    "format": "ESX11",
-   "fp": "f4de4ac75f1fa65c",
+   "fp": "0c9c41e191a1d7d9",
+   "keep_titles": [
+    "EL TRUCO MÁS TÓXICO PARA BUSCAR CURRO 💀"
+   ],
    "market": "es",
    "media_ids": [
     "e72870ad-b292-48fc-9936-38ca639db07f"
@@ -39,7 +45,7 @@
   },
   "16b08a17-cbd9-4c9d-ab0a-8d7032a4c28b": {
    "format": "X13",
-   "fp": "0b1b872f62ba9ce4",
+   "fp": "cfb1c13eb9221739",
    "market": "sl",
    "media_ids": [
     "b6a269ee-178b-408d-a6c9-ff02ce72e61b"
@@ -100,6 +106,15 @@
    ],
    "place": "live"
   },
+  "5228c801-efe5-471d-bb52-faac7a9a8304": {
+   "created": 1792387450,
+   "fp": "2288f83a080a53de",
+   "market": "sl",
+   "media_ids": [
+    "c9a470a9-6014-4a9c-9111-8888decce75b"
+   ],
+   "place": "live"
+  },
   "56449049-105f-4e9d-92e4-a87c8cfe353f": {
    "format": "X03",
    "fp": "8047ce7819dcb2bf",
@@ -138,7 +153,7 @@
   },
   "6bcfe1a0-cbc7-4446-a859-0b54fbbc9c4b": {
    "format": "X09",
-   "fp": "a18581802969f20a",
+   "fp": "a1ad38820ff52315",
    "market": "sl",
    "media_ids": [
     "3bbe3a39-010a-441e-85d2-e495a612745f"
@@ -156,7 +171,7 @@
   },
   "71941cdd-64f5-4fac-868e-c88579fa0d98": {
    "format": "A202610061334",
-   "fp": "78646ae4c2ca9aba",
+   "fp": "ee88e5c9c8dd2e79",
    "market": "sl",
    "media_ids": [
     "a20c7607-a176-438a-9c54-c1cad7cbec5b"
@@ -165,7 +180,7 @@
   },
   "76100946-4c0f-4ef8-ab4e-2f2eba1d4471": {
    "format": "A202610061334",
-   "fp": "5b2ea8fef4f60aa9",
+   "fp": "15aa9c3582610a92",
    "market": "fr",
    "media_ids": [
     "d4eefedb-1d0d-4e0a-ad39-6f63c0da2db6"
@@ -174,7 +189,7 @@
   },
   "77623af6-ab46-4980-bc94-7d3b7a69f323": {
    "format": "X08",
-   "fp": "9d0c90f47e6a22af",
+   "fp": "db791a48eb2a26dd",
    "market": "sl",
    "media_ids": [
     "8e8cccdf-3873-43bc-b685-bdbc1b8c681f"
@@ -183,7 +198,7 @@
   },
   "8134702e-c690-41f3-bf92-18dcbcf9d43b": {
    "format": "N04",
-   "fp": "9f246bcdfadd2a2e",
+   "fp": "6c846116377de6ea",
    "market": "fr",
    "media_ids": [
     "89468e35-d17e-4208-81d6-6e2648c079fc"
@@ -210,7 +225,7 @@
   },
   "8cf29cc8-459c-471d-9ffb-cc66b7710c95": {
    "created": 1792299292,
-   "fp": "af81bc56d3c0cfe0",
+   "fp": "aa40063ddb967726",
    "market": "sl",
    "media_ids": [
     "e4fda454-34c1-4a4f-bbe3-8365b3ef53c7"
@@ -219,7 +234,7 @@
   },
   "969d2e6f-94aa-44ba-8e61-32223abce210": {
    "format": "X13",
-   "fp": "8ab467f580be8b4a",
+   "fp": "15b1336403bbe8b0",
    "market": "es",
    "media_ids": [
     "e84fd66b-69e7-486f-b1b0-ba34b8ee9299"
@@ -238,7 +253,7 @@
   },
   "ad829749-02db-4e92-a459-57095616d32c": {
    "format": "N10",
-   "fp": "f485a24f4b965375",
+   "fp": "4fd0b59e72c7a7ce",
    "market": "fr",
    "media_ids": [
     "c14fc4c6-2f76-4cd5-bb0e-509d3d30c9a2"
@@ -265,7 +280,10 @@
   },
   "c9d12d71-9034-4eed-8b02-782d0527d997": {
    "format": "A202610061334",
-   "fp": "552f06d47b34e104",
+   "fp": "ad77c4c833e1db16",
+   "keep_titles": [
+    "Ahora es el MEJOR momento para cambiar de curro 👩🏻‍💻👀✨"
+   ],
    "market": "es",
    "media_ids": [
     "8fcea377-a3d6-4649-97d2-72a8681d5c77"
@@ -274,7 +292,7 @@
   },
   "cd202182-c4f7-4b7c-bb25-8964e334315c": {
    "format": "X16",
-   "fp": "0662dcbee75950ee",
+   "fp": "7cc4d743710de31c",
    "market": "fr",
    "media_ids": [
     "dca445da-0e75-4086-a505-c8e8b3e5b16f"
@@ -283,7 +301,7 @@
   },
   "d2410723-5798-4363-8ed9-478c35dde191": {
    "format": "N10",
-   "fp": "89488e3adcb92612",
+   "fp": "e372e462ab398cf3",
    "market": "es",
    "media_ids": [
     "bae55b69-5e4c-428b-9b06-d65c765496fb"
@@ -301,7 +319,7 @@
   },
   "d4c2e39f-6bd2-4017-939e-a85787f4fb62": {
    "format": "N02",
-   "fp": "e12841ddfe32d011",
+   "fp": "6cf6800b7949409d",
    "market": "sl",
    "media_ids": [
     "4f4e2050-dab4-4404-9acd-66bc0e4ed7eb"
@@ -317,9 +335,18 @@
    ],
    "place": "live"
   },
+  "d992efa3-18e8-44fd-be8f-fd3cfde5030d": {
+   "created": 1792387321,
+   "fp": "fd4f1a89157d1f74",
+   "market": "fr",
+   "media_ids": [
+    "5d88b2cc-df05-4198-874d-c81ea286d6f5"
+   ],
+   "place": "live"
+  },
   "db88f344-e168-4edb-b36a-d7eebc839986": {
    "created": 1792299201,
-   "fp": "a5858b6c74378c8a",
+   "fp": "4efccef116ea3f7a",
    "market": "fr",
    "media_ids": [
     "3957ecd3-1753-4cc6-842d-f7409a9307b1"
@@ -333,11 +360,11 @@
    "media_ids": [
     "8c59ad23-d7f7-4baf-b09f-cdb44f57d5eb"
    ],
-   "place": "live"
+   "place": "archive"
   },
   "e514bd66-cf35-45ad-ac8e-f1ae9fa5d4b5": {
    "format": "X06",
-   "fp": "1adaf2b7d25aca18",
+   "fp": "c0b5df9fce59b150",
    "market": "fr",
    "media_ids": [
     "07eacabc-aec2-4c0e-82c6-90c296d246c0"
@@ -346,7 +373,7 @@
   },
   "e7f2050f-69dc-45dc-a07d-610110dcda1c": {
    "format": "A20261009204851",
-   "fp": "26c22b3f9c464c1c",
+   "fp": "a4b2da6a7e2eca3b",
    "market": "sl",
    "media_ids": [
     "0a66ca5a-c7af-4f84-b398-402561b87ab7"
@@ -369,7 +396,7 @@
   },
   "f64ddb2f-81a8-4ab2-b117-c74d008569b0": {
    "created": 1792299241,
-   "fp": "a50d31ea05eba972",
+   "fp": "0f15add3c3e17169",
    "market": "es",
    "media_ids": [
     "b120c391-9342-4774-9e05-b6c153b40249"

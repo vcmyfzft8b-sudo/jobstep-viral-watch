@@ -589,6 +589,72 @@
   },
   "title_en": "Things recruiters hide from you 😳❌ – the 'I'm deleting this in 2 hours' CV secret"
  },
+ "X14": {
+  "accepted_sources": [
+   "7697743556009676054"
+  ],
+  "allowed_localisation": [
+   "Hook text translated naturally (DE/FR/ES) but keeping the 'explain this to my parents' + 💀 meaning",
+   "How long they applied or the number of rejections (e.g. three months, 50+ applications, a realistic local number)",
+   "The friend's gender and job title (HR friend, recruiter friend, friend at a staffing agency)",
+   "The local name for ATS / applicant filter software, if more common",
+   "Everyday wording, slang and idioms that sound natural in each country, with the same number of sentences and the same meaning",
+   "The example job ad (a realistic local job and local job board link)",
+   "The exact score value, as long as it is a high score that is really shown in the app",
+   "The optional parents'-era line (printed CV, walk-ins) phrased for the local culture",
+   "Creator's look, setting and on-screen caption style"
+  ],
+  "beats": [
+   "1. Hook: the on-screen text 'Wie soll ich meinen Eltern erklären, dass...? 💀' (localised) while the creator vents to camera. Optional: one spoken sentence contrasting this with the parents' time (printed CV, walking in and asking for a job).",
+   "2. Struggle: 'I've been applying with this CV for [three months / 50+ applications] and they simply don't invite me. Honestly, I started to think I might be the problem.'",
+   "3. Friend's verdict: 'But I asked my friend who works in HR, and she said the problem isn't me, it's my CV. CVs like this don't get through the ATS filter, so recruiters never even see you.'",
+   "4. Product reveal (link cue: Parakeet AI shown): 'Then she showed me this website. You just paste the link to a job ad you're interested in, then it analyses it, here you can tailor it and you can also edit everything yourself.' (The original's cover-letter mention is replaced by 'edit everything yourself'.)",
+   "5. Demo, input: 'Of course I want to create a CV now. It processes everything, then I answer its questions, and I also type in extra things it asks about, so it can rewrite the CV right away, and it scores how well your profile matches the job ad.'",
+   "6. Result: 'This is what my CV looks like now. I added a few more things and now it scores 96% for this job.' (Do not say the CV has a 96% chance of reaching a recruiter.)",
+   "7. Template: 'And you can change this too, one click and it's done.' (choosing a template)",
+   "8. Close: 'Then you just download it, and it's tailored to exactly this job ad.' (This replaces the original's cover-letter sentence.)"
+  ],
+  "canonical_source": "7697743556009676054",
+  "filming": "Length 40 to 60 seconds, vertical 9:16. Beats 1 to 3: a handheld selfie talking head shot at home (bedroom or desk), natural light, the hook text visible from frame 1, frustrated and ironic tone, quick jump cuts. A printed or on-screen CV in hand is optional. Beat 4: switch to a screen recording of Parakeet AI (phone or laptop), with the creator's voice continuing as voiceover. A small face-cam overlay is optional. Demo sequence, in this order: (a) open Parakeet AI Resume Maker and upload the CV, (b) paste the job ad link or text, (c) analysis and score appear, (d) answer questions in the chat and type in extra details, (e) the AI rewrites and tailors the CV, (f) the updated CV with a higher match score (e.g. 96%), (g) pick a different template with one click, (h) edit a field yourself (optional, short), (i) download. Captions follow the speech. Copy the example video's pacing and framing as closely as possible.",
+  "generated": 1792386338,
+  "hook": "On-screen text over the creator's face in the first frame: 'Wie soll ich meinen Eltern erklären, dass...? 💀' (FR: 'Comment j'explique ça à mes parents ? 💀' / ES: '¿Cómo les explico esto a mis padres? 💀'). The text stays on screen while the creator starts speaking straight into the camera, frustrated and half joking. The joke is that the parents found jobs with a printed CV or by walking in, and they can't understand why their child with a good CV gets no interviews.",
+  "not_allowed": [
+   "Dropping the 'explain to my parents' hook or swapping it for a different hook (that makes it a different format)",
+   "Dropping the struggle → friend's verdict → product reveal → demo order, or opening with the product",
+   "Turning it into a direct ad read, a tutorial without the personal story, or adding a spoken hard-sell CTA",
+   "Mentioning or showing JobStep, Studyflash or any other app; Parakeet AI replaces it everywhere it appears",
+   "Mentioning or showing cover letters / motivation letters (the app has no cover letters; replace with download or edit yourself)",
+   "Showing or mentioning an overview of your applications or a 'New job' button",
+   "Claiming a guaranteed interview or job, or guaranteed passing of ATS filters",
+   "Saying the CV has an 'X% chance of reaching a recruiter instead of a bot'; only say it shows a match score for the job ad",
+   "Invented statistics about ATS rejection rates or success rates attributed to Parakeet AI",
+   "Showing features or screens that don't exist in Parakeet AI's Resume Maker",
+   "Adding stage directions or filming tips in brackets to the script (scripts have only the spoken words plus link cues)"
+  ],
+  "premise": "A young job seeker has applied for months with the same CV and gets no interview invites. They start to think they are the problem. A friend who works in HR or recruiting tells them the problem is the CV, not them: CVs like this get filtered out by ATS software and recruiters never see them. The friend shows them a website, Parakeet AI. They paste in a job ad, answer the AI's questions, let it tailor the CV to the job, watch the match score go up, switch the template and download the CV. It is told as a personal anecdote with a screen demo. It is not an ad read.",
+  "product": {
+   "cta": "none",
+   "features_used": [
+    "upload your CV",
+    "CV score / analysis",
+    "paste the link (or text) of a job ad",
+    "answer questions in a chat",
+    "AI rewrites / tailors the CV to the job",
+    "match score for the job ad",
+    "pick a template",
+    "edit everything yourself",
+    "download the CV"
+   ],
+   "introduced_at_beat": 4,
+   "spoken_brand": "not spoken: the original only says 'this website'. The brand is shown on screen via the link cue or screen recording from beat 4 on, and a caption or on-screen URL is allowed."
+  },
+  "rejected_sources": {},
+  "rules": "no-directions-2026-10-11",
+  "source_urls": {
+   "7697743556009676054": "https://www.tiktok.com/@benkorebeka5/video/7697743556009676054"
+  },
+  "title_en": "How am I supposed to explain this to my parents?"
+ },
  "X18": {
   "accepted_sources": [
    "7695190648357489921"

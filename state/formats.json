@@ -730,6 +730,7 @@
   "title": "3 Psycho-Tipps für deine Jobsuche"
  },
  {
+  "archived_reason": "did not pass the page check: cross-country check fail: format_consistency fr: Beat 8 has no download step. The closing line is 'tout modifier toi-même' instead of 'download it, tailored to this job ad'. In beat 4 the cover-letter",
   "description": "Explaining-to-parents hook: the creator rants about how job hunting has changed since printed CVs and walk-ins, shares 50+ rejections and a recruiter friend's verdict on their CV, then shows fixing it with Parakeet AI. Examples: 'Wie soll ich meinen Eltern erklären, dass...'",
   "id": "X14",
   "notion_pages": {
@@ -744,10 +745,10 @@
   "pending": {
    "kind": "revive",
    "reasons": [
-    "🇫🇷 transcription refused: the script has 240 words, it must have 134-226 / script transcribed again: The first sentence is not in the example and should be removed"
+    "cross-country check fail: format_consistency fr: Beat 8 has no download step. The closing line is 'tout modifier toi-même' instead of 'download it, tailored to this job ad'. In beat 4 the cover-letter line became 'répondre à des questions dans le chat' instead of 'edit everything yourself', so the chat step now comes up twic"
    ],
    "since": 1792323707,
-   "tries": 3
+   "tries": 4
   },
   "revived": {
    "at": 1792322938,
@@ -756,12 +757,13 @@
   },
   "reworded": {
    "es": true,
+   "fr": true,
    "sl": true
   },
   "script": "(DEUTSCH) Wie soll ich meinen Eltern erklären, dass man heutzutage NICHT mit einem ausgedruckten Lebenslauf in eine Firma reinläuft und sagt: “Hier, ich bewerbe mich jetzt”? So, heutzutage wollen Firmen einfach auch, dass man ein Bewerbungsvideo dreht. Ich habe wirklich ungelogen letzten Monat über 50 Bewerbungen rausgeschickt und wurde die ganze Zeit abgelehnt.  Meine beste Freundin arbeitet aber im Recruiting bei so einer großen Firma, und ich habe sie mal gefragt, was denn falsch ist mit meinen Bewerbungen, und sie meinte: “Franzi, klar wirst du abgelehnt, weil dein Lebenslauf nicht im ATS-Format ist.” Und ich so: “Ja, okay, und was heißt das jetzt?”  Sie meinte, dass die Lebensläufe gar nicht mehr von echten Menschen gelesen werden, sondern dass es durch eine KI durchgeht. Sie hat mir dann so eine Website gezeigt, Parakeet AI heißt sie, da habe ich jetzt meinen Lebenslauf, meinen al",
   "source": "DACH archive (old formats)",
   "source_video": "https://www.tiktok.com/@benkorebeka5/video/7697743556009676054",
-  "status": "pending",
+  "status": "archived",
   "title": "Wie soll ich meinen Eltern erklären, dass..."
  },
  {
@@ -1020,6 +1022,7 @@
   "adopted": {
    "sl": true
   },
+  "archived_reason": "clean-up 19.10.2026: not among the best 12 of any list: score 1.02 (saved by 2.5% of viewers, 2 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
   "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
   "id": "FRX22",
   "inspo": {
@@ -1044,10 +1047,6 @@
    "es": "3f7958b0-fc14-81b5-9685-c2a589d96510",
    "sl": "281958b0fc148339a63081dfa6e326b0"
   },
-  "off_markets": [
-   "es",
-   "sl"
-  ],
   "pages": {
    "fr": "ddf59e94-a352-4124-9793-93b6f413f606"
   },
@@ -1061,7 +1060,7 @@
    "fr": true
   },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Après six mois de chômage, j’ai enfin trouvé un emploi Un seul changement a tout changé Mon ancien CV était joli, mais il n’était pas compatible avec les ATS La première entreprise à laquelle j’ai postulé m’a embauchée Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué. On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes. Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV. Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même. Le nouveau, lui, c'est tout l'i",
-  "status": "active",
+  "status": "archived",
   "title": "Après six mois de chômage, j’ai enfin trouvé un travail"
  },
  {
@@ -1379,12 +1378,10 @@
    "fr": "3f7958b0-fc14-819d-a5a1-f0824cbbb05e",
    "sl": "c30958b0fc1483eaaf5c81725f4fc286"
   },
-  "off_markets": [
-   "fr",
-   "sl"
-  ],
   "pages": {
-   "es": "d6e073f6-3d63-4e53-ac0c-3f940d676042"
+   "es": "d6e073f6-3d63-4e53-ac0c-3f940d676042",
+   "fr": "d992efa3-18e8-44fd-be8f-fd3cfde5030d",
+   "sl": "5228c801-efe5-471d-bb52-faac7a9a8304"
   },
   "pending_pages": {},
   "revived": {

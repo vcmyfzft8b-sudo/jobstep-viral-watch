@@ -7754,5 +7754,366 @@
   "type": "alert",
   "video": "7698074549308443922",
   "views": 5475
+ },
+ {
+  "format": "ESX21",
+  "level": "rising",
+  "ts": 1792386052,
+  "type": "alert",
+  "video": "7698017592610540833",
+  "views": 42700
+ },
+ {
+  "format": "N01",
+  "level": "rising",
+  "ts": 1792386064,
+  "type": "alert",
+  "video": "7698037475490614531",
+  "views": 33300
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792386073,
+  "type": "alert",
+  "video": "7697871766429158664",
+  "views": 18100
+ },
+ {
+  "format": "X14",
+  "reasons": [
+   "cross-country check fail: format_consistency fr: Beat 8 has no download step. The closing line is 'tout modifier toi-même' instead of 'download it, tailored to this job ad'. In beat 4 the cover-letter line became 'répondre à des questions dans le chat' instead of 'edit everything yourself', so the chat step now comes up twic"
+  ],
+  "tries": 4,
+  "ts": 1792386483,
+  "type": "format_held"
+ },
+ {
+  "form": 1.02,
+  "format": "FRX22",
+  "reason": "not among the best 12 of any list: score 1.02 (saved by 2.5% of viewers, 2 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
+  "ts": 1792387275,
+  "type": "lineup_out"
+ },
+ {
+  "format": "ESX28",
+  "market": "fr",
+  "ts": 1792387275,
+  "type": "lineup_back"
+ },
+ {
+  "format": "ESX28",
+  "market": "sl",
+  "ts": 1792387275,
+  "type": "lineup_back"
+ },
+ {
+  "changes": [
+   "fr"
+  ],
+  "ts": 1792387381,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "N10",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "X09",
+   "X03",
+   "N02",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "fr": [
+    "N10",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "X03",
+    "N02",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ]
+  },
+  "ts": 1792387393,
+  "type": "rerank"
+ },
+ {
+  "order": [
+   "N10",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "X09",
+   "X03",
+   "N02",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "fr": [
+    "N10",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "X03",
+    "N02",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ]
+  },
+  "ts": 1792387394,
+  "type": "rerank"
+ },
+ {
+  "changes": [
+   "es"
+  ],
+  "ts": 1792387395,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "N02",
+   "A20261006183623",
+   "N10",
+   "X16",
+   "A202610061334",
+   "ESX28",
+   "X03",
+   "ESX11",
+   "X08",
+   "X13",
+   "N04",
+   "X06",
+   "X09",
+   "A20261009204851"
+  ],
+  "orders": {
+   "es": [
+    "N02",
+    "A20261006183623",
+    "N10",
+    "X16",
+    "A202610061334",
+    "ESX28",
+    "X03",
+    "ESX11",
+    "X08",
+    "X13",
+    "N04",
+    "X06",
+    "X09",
+    "A20261009204851"
+   ]
+  },
+  "ts": 1792387404,
+  "type": "rerank"
+ },
+ {
+  "changes": [
+   "sl"
+  ],
+  "ts": 1792387533,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "N10",
+   "N02",
+   "X03",
+   "ESX11",
+   "X16",
+   "X13",
+   "X08",
+   "A20261006183623",
+   "A202610061334",
+   "X09",
+   "N04",
+   "A20261009204851",
+   "ESX28",
+   "X06"
+  ],
+  "orders": {
+   "sl": [
+    "N10",
+    "N02",
+    "X03",
+    "ESX11",
+    "X16",
+    "X13",
+    "X08",
+    "A20261006183623",
+    "A202610061334",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792387538,
+  "type": "rerank"
+ },
+ {
+  "order": [
+   "N10",
+   "N02",
+   "X03",
+   "ESX11",
+   "X16",
+   "X13",
+   "X08",
+   "A20261006183623",
+   "A202610061334",
+   "X09",
+   "N04",
+   "A20261009204851",
+   "ESX28",
+   "X06"
+  ],
+  "orders": {
+   "sl": [
+    "N10",
+    "N02",
+    "X03",
+    "ESX11",
+    "X16",
+    "X13",
+    "X08",
+    "A20261006183623",
+    "A202610061334",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792387539,
+  "type": "rerank"
+ },
+ {
+  "order": [
+   "N10",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "X09",
+   "X03",
+   "N02",
+   "A20261006183623",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "N02",
+    "A20261006183623",
+    "N10",
+    "X16",
+    "A202610061334",
+    "ESX28",
+    "X03",
+    "ESX11",
+    "X08",
+    "X13",
+    "N04",
+    "X06",
+    "X09",
+    "A20261009204851"
+   ],
+   "fr": [
+    "N10",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "X09",
+    "X03",
+    "N02",
+    "A20261006183623",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "N10",
+    "N02",
+    "X03",
+    "ESX11",
+    "X16",
+    "X13",
+    "X08",
+    "A202610061334",
+    "A20261006183623",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792388861,
+  "type": "rerank"
+ },
+ {
+  "ts": 1792388865,
+  "type": "weekly",
+  "week": "2026-W43"
+ },
+ {
+  "added": [],
+  "paused": [
+   "alexkoleva13",
+   "jobfluesterin",
+   "majo67568"
+  ],
+  "revived": [
+   "catita.tipss",
+   "isaconsejoscv"
+  ],
+  "ts": 1792389193,
+  "type": "discovery"
+ },
+ {
+  "added": [],
+  "paused": [],
+  "revived": [],
+  "ts": 1792389195,
+  "type": "own_discovery"
  }
 ]

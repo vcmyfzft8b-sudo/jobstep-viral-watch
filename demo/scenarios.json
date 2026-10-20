@@ -1,71 +1,183 @@
 {
- "about": "What each format's demo shows, copied from what its JobStep example shows in its app part (examples watched frame by frame at 2 fps, 19 Oct 2026; user: \"the demo should show what the example videos show\"). Steps run in the app's own order: upload, reading, score, plan, template, color, job, rewriting, review, fit, rescoring, result, cv, download. A step listed here is shown (number = how long it is looked at, ms; reading/rewriting/rescoring = seconds of the sped-up wait); a step not listed happens inside a jump cut. A job step is always a real LinkedIn job link pasted (samples.mjs jobLink). make_scenarios.mjs stretches every look by one pace so the video lasts `seconds`. stop = the demo ends on that step.",
+ "about": "What each format's demo shows, copied from what its JobStep example shows in its app part (examples watched frame by frame at 2 fps, 19 Oct 2026; user: \"the demo should show what the example videos show\"). Steps run in the app's own order: upload, reading, score, plan, template, color, job, rewriting, review, fit, rescoring, result, download, cv. A step listed here is shown (number = how long it is looked at, ms; reading/rewriting/rescoring = seconds of the sped-up wait; cv = \"Open the editor\" on the result and the new CV big in the real editor, scrolled on laptops; cards = how many changes are accepted on screen, the rest in the next cut); a step not listed happens inside a jump cut. A job step is always a real LinkedIn job link pasted (samples.mjs jobLink). make_scenarios.mjs stretches every look by one pace so the video lasts `seconds`. stop = the demo ends on that step.",
  "formats": {
   "N10": {
-   "seconds": 42, "content": "long",
+   "seconds": 42,
+   "content": "long",
    "example": "upload → analysis checklist → 38/100 with bars, Improve → steps plan → AI chat with Approve → template + colour → new CV → (face) → 96 → scroll the CV",
-   "steps": {"upload": 900, "reading": 5.5, "score": 4500, "plan": 5000, "template": 900, "color": 700, "rewriting": 1.5, "review": 1000, "result": 2500, "cv": 5500}
+   "steps": {
+    "upload": 900,
+    "reading": 5,
+    "score": 4500,
+    "plan": 6500,
+    "template": 900,
+    "color": 700,
+    "rewriting": 1.5,
+    "review": 380,
+    "result": 2000,
+    "cv": 7000
+   }
   },
   "N02": {
-   "seconds": 12, "content": "standard",
+   "seconds": 12,
+   "content": "standard",
    "example": "(LinkedIn filter, filmed by the creator) → JobStep job modal, pastes linkedin.com/jobs/view/… → Add → tailored CV, scrolled down and up",
-   "steps": {"job": 2600, "rewriting": 1, "result": 800, "cv": 5500}
+   "steps": {
+    "job": 3000,
+    "rewriting": 1,
+    "cv": 6500
+   }
   },
   "X03": {
-   "seconds": 22, "content": "standard",
+   "seconds": 22,
+   "content": "standard",
    "example": "(copy the job ad link, filmed by the creator) → job modal, paste link → match 30 → Apply skills one by one 30→70 → 96 → scroll the CV",
-   "steps": {"upload": 900, "reading": 1, "score": 1600, "job": 2600, "rewriting": 1, "review": 900, "rescoring": 1, "result": 2600, "cv": 3200}
+   "steps": {
+    "job": 3600,
+    "rewriting": 1,
+    "review": 900,
+    "rescoring": 0.5,
+    "result": 2000,
+    "cv": 6000
+   }
   },
   "ESX11": {
-   "seconds": 19, "content": "standard",
+   "seconds": 19,
+   "content": "standard",
    "example": "(job post → Share → Copy link, filmed by the creator) → landing → job modal with a LinkedIn link, Add → analysing → pick the CV → suggestion card, Accept → tailored CV",
-   "steps": {"upload": 1100, "reading": 1, "score": 1000, "job": 3000, "rewriting": 2, "review": 800, "result": 3200}
+   "steps": {
+    "upload": 1000,
+    "reading": 1,
+    "score": 1000,
+    "job": 3200,
+    "rewriting": 2,
+    "review": 900,
+    "result": 2000,
+    "cv": 3500
+   },
+   "cards": 2
   },
   "X16": {
-   "seconds": 32, "content": "standard",
+   "seconds": 32,
+   "content": "standard",
    "example": "tracker → job modal, paste the job link → CV analysed → match 68 → Continue, fix details → 96 → Download",
-   "steps": {"upload": 2600, "reading": 1.5, "score": 1800, "job": 3400, "rewriting": 2.5, "review": 1000, "fit": 1200, "rescoring": 1.5, "result": 3600, "download": 2600}
+   "steps": {
+    "upload": 1500,
+    "reading": 1,
+    "score": 1800,
+    "job": 4200,
+    "rewriting": 2.5,
+    "review": 1000,
+    "fit": 1200,
+    "rescoring": 1.5,
+    "result": 3000,
+    "download": 1500,
+    "cv": 4000
+   }
   },
   "X13": {
-   "seconds": 12, "content": "standard",
+   "seconds": 12,
+   "content": "standard",
    "example": "phone recording laid over the creator: job modal with a pasted link, Add → analysing → match 28 → Accept skills → done CV",
-   "steps": {"upload": 900, "job": 1500, "rewriting": 0.8, "review": 450, "result": 1800}
+   "steps": {
+    "upload": 800,
+    "job": 1500,
+    "rewriting": 0.8,
+    "review": 450,
+    "result": 1800
+   },
+   "cards": 3
   },
   "X08": {
-   "seconds": 42, "content": "long",
+   "seconds": 42,
+   "content": "long",
    "example": "upload → analysis checklist → 38/100 with bars, Improve → steps plan → AI chat, a question answered, Approve → 96 → scroll the CV (Download visible)",
-   "steps": {"upload": 1600, "reading": 5, "score": 5000, "plan": 4200, "template": 1200, "color": 800, "job": 1200, "rewriting": 2, "review": 1100, "result": 4200, "cv": 5000}
+   "steps": {
+    "upload": 1600,
+    "reading": 5,
+    "score": 6000,
+    "plan": 6000,
+    "template": 700,
+    "review": 700,
+    "result": 3500,
+    "cv": 5000
+   }
   },
   "A202610061334": {
-   "seconds": 15, "content": "standard",
+   "seconds": 15,
+   "content": "standard",
    "example": "landing → analysis → 38/100, Improve → steps plan → skip AI → the CV in the editor, scrolled → 96",
-   "steps": {"upload": 1200, "reading": 3, "score": 2600, "plan": 900, "template": 400, "color": 400, "result": 1600, "cv": 2800}
+   "steps": {
+    "upload": 1200,
+    "reading": 3,
+    "score": 2600,
+    "plan": 1800,
+    "result": 1500,
+    "cv": 2800
+   }
   },
   "A20261006183623": {
-   "seconds": 15, "content": "standard",
+   "seconds": 15,
+   "content": "standard",
    "example": "editor with the processed CV → New job → job-link field → (face) → the tailored CV, scrolled",
-   "steps": {"upload": 2600, "reading": 1, "score": 900, "job": 4600, "result": 600, "cv": 3200}
+   "steps": {
+    "upload": 1500,
+    "reading": 1,
+    "score": 1300,
+    "job": 2200,
+    "cv": 4500
+   }
   },
   "X09": {
-   "seconds": 19, "content": "standard",
+   "seconds": 19,
+   "content": "standard",
    "example": "landing → upload, the file picked → 12/100 with bars, Continue → templates browsed, one picked → colour dots with the new CV, scrolled",
-   "steps": {"upload": 3200, "reading": 1, "score": 4000, "template": 3600, "color": 4200},
+   "steps": {
+    "upload": 3000,
+    "reading": 1,
+    "score": 4000,
+    "template": 4200,
+    "color": 4000
+   },
    "stop": "color"
   },
   "N04": {
-   "seconds": 22, "content": "standard",
+   "seconds": 22,
+   "content": "standard",
    "example": "(her own old PDF) → analysis checklist → 38/100 with bars, Improve → steps plan → editor → the new CV, scrolled, Download",
-   "steps": {"upload": 1200, "reading": 4.5, "score": 3600, "plan": 2200, "template": 2000, "color": 1200, "result": 800, "cv": 4000}
+   "steps": {
+    "upload": 1200,
+    "reading": 4.5,
+    "score": 3600,
+    "plan": 5000,
+    "template": 1200,
+    "color": 1300,
+    "cv": 4800
+   }
   },
   "A20261009204851": {
-   "seconds": 15, "content": "standard",
+   "seconds": 15,
+   "content": "standard",
    "example": "(Studyflash) upload → target grade → plan loader → flashcards / quiz → podcast; in Parakeet AI: upload → score → job (the goal) → rewriting (plan loader) → changes (cards) → result",
-   "steps": {"upload": 1200, "reading": 0.5, "score": 900, "job": 1600, "rewriting": 1.2, "review": 500, "result": 1800}
+   "steps": {
+    "upload": 1000,
+    "score": 1000,
+    "job": 2200,
+    "rewriting": 1.5,
+    "review": 500,
+    "result": 3300
+   }
   },
   "ESX28": {
-   "seconds": 12, "content": "standard",
+   "seconds": 12,
+   "content": "standard",
    "example": "(Indeed post → Share → Copy link, filmed by the creator) → Parakeet AI result: 100 with category scores, Download, scrolled",
-   "steps": {"job": 1800, "rewriting": 1, "result": 2800, "download": 1000, "cv": 1600}
+   "steps": {
+    "job": 2600,
+    "rewriting": 0.8,
+    "result": 2600,
+    "cv": 3500
+   }
   }
  }
 }

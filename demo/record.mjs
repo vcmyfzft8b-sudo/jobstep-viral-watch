@@ -142,12 +142,21 @@ const P = (ms) => Math.round(ms * PACE);
 async function cut(fn) {
   const a = chapterClock ? (Date.now() - chapterClock) / 1000 : null;
   await fn();
+  // the next screen's entrance and its first frames belong to the cut too: a frame of the screen before (or a blank
+  // page between) never shows after the jump
+  await sleep(SCENARIO ? 320 : 0);
+  if (SCENARIO) await freshFrame();
   if (a == null) return;
   const b = (Date.now() - chapterClock) / 1000;
-  // a speed-up inside the cut is part of it
-  for (let i = warps.length - 1; i >= 0; i--) if (warps[i][0] >= a && warps[i][1] <= b) warps.splice(i, 1);
-  warps.push([a, b, 1e6]);
-  cuts.push([a, b]);
+  // the cut starts a moment early: the next (cut-out) screen may already be drawing when the cut begins
+  const a0 = SCENARIO && a > 0.3 ? a - 0.15 : a;
+  // a speed-up inside the cut is part of it; one running into it ends where the cut starts
+  for (let i = warps.length - 1; i >= 0; i--) {
+    if (warps[i][0] >= a0 && warps[i][1] <= b) warps.splice(i, 1);
+    else if (warps[i][0] < a0 && warps[i][1] > a0) warps[i][1] = a0;
+  }
+  warps.push([a0, b, 1e6]);
+  cuts.push([a0, b]);
   await freshFrame();
 }
 const cuts = [];
@@ -369,12 +378,13 @@ async function reviewCards(pauses, count) {
       // the AI's question (long demo): answered on a laptop; on a phone (no keyboard in the recording) passed
       await scaled(() => idle(P(PHONE ? 1300 : 900)));
       await snap("question");
-      if (PHONE) {
+      if (PHONE && !SCENARIO) {
         await click(page.locator("footer button").filter({ visible: true }).nth(-2));
       } else {
+        // answered, like the examples' chat question (phones type on the on-screen keyboard: only the text shows)
         await click(field);
         await sleep(300);
-        await type(ANSWER);
+        await type(ANSWER, PHONE ? 70 : 45);
         await scaled(() => idle(P(450)));
         await click(button(C.rewrite.deck.add));
       }
@@ -400,7 +410,13 @@ async function enterJob() {
     data.setData("text/plain", url);
     el.dispatchEvent(new ClipboardEvent("paste", { clipboardData: data, bubbles: true, cancelable: true }));
   }, SAMPLE.jobLink);
-  await byText(COPY.job.readTitle).waitFor({ timeout: 15000 });
+  if (!PHONE) {
+    // the hand comes off the field so the link can be read while the app reads it
+    const b = await field.boundingBox().catch(() => null);
+    if (b) await cursorTo(Math.round(b.x + b.width * 0.55), Math.round(b.y + b.height + 70), 420);
+  }
+  // the app reads the link (the field greyed, the link in it): a little sped up, so it reads about a second
+  await fastTo(() => byText(COPY.job.readTitle).waitFor({ timeout: 15000 }), 1.5);
 }
 
 async function scenes() {
@@ -582,32 +598,52 @@ async function scenarioScenes() {
     await byText(C.color.title).waitFor();
     await look(ms * 0.3);
     await click(button("Forest"));
-    await look(ms * 0.7);
+    if (SCENARIO.stop === "color" && !PHONE && ms >= 3000) {
+      // the example scrolls its new CV here: down the coloured CV and back up
+      await look(ms * 0.2);
+      const pv = await vis(page.getByText(SAMPLE.name, { exact: true })).boundingBox().catch(() => null);
+      if (pv) await cursorTo(Math.round(pv.x + 120), Math.round(pv.y + 160), 420);
+      for (const dy of [140, 140, 140, -140, -140, -140]) {
+        await page.mouse.wheel(0, dy);
+        await scaled(() => sleep(P(ms * 0.07)));
+      }
+      await look(ms * 0.08);
+    } else await look(ms * 0.7);
     await snap("color");
     if (SCENARIO.stop !== "color") await click(next());
   }, async () => (await byText(C.color.title).waitFor(), await click(button("Forest"), { pause: 20 }), await click(next(), { pause: 20 })));
   if (SCENARIO.stop === "color") return flush();
   await step("job", async (ms) => {
     await byText(C.job.title).waitFor();
-    await look(ms * 0.25);
+    await look(ms * 0.2);
     await enterJob();
-    await look(ms * 0.75);
+    await look(ms * 0.35);
     await snap("job");
+    // the read job: the hand points at the match, like the creators' finger on JobStep's match score
+    if (!PHONE) await scaled(() => soft("job match", () => hover(vis(page.getByText(/%/)).first(), P(ms * 0.45), { fx: 0.3 })));
+    else await look(ms * 0.45);
     await click(next());
   }, async () => (await byText(C.job.title).waitFor(), await enterJob(), await click(next(), { pause: 20 })));
-  await step("rewriting", (s) => fastTo(() => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }), s),
-    () => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }));
-  await step("review", async (ms) => {
-    await reviewCards(Array(12).fill(ms), 12);
-    await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
-    await look(400);
-    await snap("done");
-    await click(next());
-  }, async () => {
+  // no cards on screen (the example shows none): the wait ends on its "100 %", so the cards appear inside the cut
+  const rewritten = "review" in S
+    ? () => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 })
+    : () => vis(page.getByText(/^100\s*%$/)).waitFor({ timeout: 40000 }).catch(() => {});
+  await step("rewriting", (s) => fastTo(rewritten, s), () => button(C.rewrite.deck.accept).waitFor({ timeout: 40000 }));
+  const restOfReview = async () => {
     await reviewCards(Array(12).fill(0), 12);
     await byText(C.rewrite.deck.doneTitle).waitFor({ timeout: 15000 });
     await click(next(), { pause: 20 });
-  });
+  };
+  // review: `cards` of the changes are accepted on screen (the example's number), the rest inside the next cut
+  await step("review", async (ms) => {
+    const shownCards = SCENARIO.cards ?? 12;
+    await reviewCards(Array(12).fill(ms), shownCards);
+    if (await byText(C.rewrite.deck.doneTitle).isVisible().catch(() => false)) {
+      await look(300);
+      await snap("done");
+      await click(next());
+    } else hidden.push(restOfReview);
+  }, restOfReview);
   const fitted = () => vis(page.getByText(new RegExp(`^(${escapeRe(C.fit.fittedTitle(1))}|${escapeRe(C.fit.alreadyTitle)})`)));
   await step("fit", async (ms) => {
     await byText(C.fit.title).waitFor({ timeout: 40000 });
@@ -624,23 +660,73 @@ async function scenarioScenes() {
     await click(next(), { pause: 20 });
   });
   const ready = () => vis(page.getByText(new RegExp(`^(${escapeRe(C.result.topShape)}|${escapeRe(C.result.ready)})$`)));
-  await step("rescoring", (s) => fastTo(() => ready().waitFor({ timeout: 40000 }), s), () => ready().waitFor({ timeout: 40000 }));
-  // the result: the new score (the gauge climbs), the new CV above it, the download button
+  // the result page holds the first score a moment before the needle moves: that hold belongs to the wait/cut,
+  // so the new score climbs as soon as the page shows
+  const climbing = async () => {
+    await ready().waitFor({ timeout: 40000 });
+    await page.waitForFunction(() => {
+      const m = document.querySelector("main")?.innerText.match(/(\d{1,3})\s*\/\s*100/);
+      const w = window;
+      if (!m) return false;
+      if (w.__firstGauge == null) w.__firstGauge = m[1];
+      return m[1] !== w.__firstGauge;
+    }, null, { timeout: 4000, polling: 30 }).catch(() => {});
+  };
+  await step("rescoring", (s) => fastTo(climbing, s), climbing);
   await step("result", async (ms) => {
-    await scaled(() => sleep(Math.max(1400, P(ms))));
+    await scaled(() => sleep(Math.max(1500, P(ms))));
+    if (!PHONE) await soft("result look", () => hover(vis(page.getByText(/\/\s*100/)).first(), 500, { fx: 0.5 }));
     await snap("result");
   }, () => sleep(1900));
   await flush();
-  if ("cv" in S) {
-    chapter("cv");
-    await lookOverCv(S.cv);
-  }
   if ("download" in S) {
     chapter("download");
+    const dl = button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`));
     if (PHONE) await look(S.download);
-    else await scaled(() => soft("download hover", () => hover(button(new RegExp(`^${escapeRe(COPY_DOWNLOAD())}`)), P(S.download))));
+    else await scaled(() => soft("download hover", () => hover(dl, P(S.download))));
+  }
+  if ("cv" in S) {
+    chapter("editor");
+    // no result page in the example: the jump goes straight to the CV in the editor
+    if (!("result" in S) && !("download" in S)) {
+      await cut(() => openEditor());
+      await editorScroll(S.cv);
+    } else await openEditorAndScroll(S.cv);
   }
 }
+
+/** "Open the editor" on the result, then the new CV big in the real editor, scrolled down and back up – the way every
+ *  example ends (the creators scroll their finished CV). */
+const editorPreview = () => page.locator("[data-resume-page], .resume-page, iframe").filter({ visible: true }).first();
+async function openEditor() {
+  await click(button(COPY.result.toEditor));
+  await editorPreview().waitFor({ timeout: 20000 }).catch(() => {});
+}
+async function openEditorAndScroll(ms) {
+  await openEditor();
+  await editorScroll(ms);
+}
+async function editorScroll(ms) {
+  const preview = editorPreview;
+  await scaled(() => sleep(P(ms * 0.15)));
+  await snap("editor");
+  const box = await preview().boundingBox().catch(() => null);
+  const cx = box ? box.x + box.width / 2 : VIEW.width * 0.65, cy = box ? box.y + Math.min(box.height, VIEW.height) * 0.45 : VIEW.height * 0.5;
+  if (!PHONE) await cursorTo(Math.round(cx + rand(-40, 40)), Math.round(cy), 450);
+  const scrollFor = async (dy, total) => {
+    const steps = Math.max(6, Math.round(total / 90));
+    for (let i = 0; i < steps; i++) {
+      await page.mouse.wheel(0, dy / steps);
+      await sleep(total / steps);
+    }
+  };
+  // a phone's editor shows the whole page at once (nothing to scroll): it is looked at
+  if (PHONE) return scaled(() => sleep(P(ms * 0.85)));
+  await scaled(() => scrollFor(Math.round(VIEW.height * 0.9), P(ms * 0.45)));
+  await scaled(() => sleep(P(ms * 0.1)));
+  await scaled(() => scrollFor(-Math.round(VIEW.height * 0.9), P(ms * 0.3)));
+}
+
 
 /** Looking through the new CV on the result screen, the way the creators point at theirs: the cursor goes over the
  *  name and headline, the profile, the experience and the skills (phones: the page scrolls up to the CV and back). */

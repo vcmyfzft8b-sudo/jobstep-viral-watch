@@ -44,6 +44,13 @@ node make_scenarios.mjs --lang sl             # out/final/Slovenia/formats/<id>/
 node record.mjs --device mac --lang sl --scenario N02 --debug   # one take, screenshots of every step
 ```
 
+Checked twice against the examples, frame by frame (20 Oct 2026). What came out of it: every demo with a "cv" step
+ends like the examples, on the new CV big in the real editor ("Odpri urejevalnik", opened in place by the demo route;
+scrolled down and back up on laptops, the whole page on phones); jump cuts start a moment early and end once the next
+screen has drawn (no frames of a cut-out screen); the new score climbs at once; the AI's question is answered on
+phones too; `cards` limits the changes accepted on screen to the example's number; the pasted link stays readable
+~1.5 s with the cursor off it; the original CV says "Kontakt".
+
 `drive_sync.py` puts a format's own demo in its Drive folder when it exists (else its length).
 
 ## Where they are

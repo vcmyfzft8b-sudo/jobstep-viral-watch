@@ -37,7 +37,7 @@ Profil :
     name: "Lucía Martín Gómez",
     role: "Recién graduada en Marketing",
     contact: ["lucia.martin@example.com", "612 345 678", "Madrid"],
-    labels: { profile: "Objetivo", experience: "Experiencia", education: "Formación", skills: "Habilidades", languages: "Idiomas", hobbies: "Aficiones" },
+    labels: { contact: "Contacto", profile: "Objetivo", experience: "Experiencia", education: "Formación", skills: "Habilidades", languages: "Idiomas", hobbies: "Aficiones" },
     profile:
       "Soy una persona responsable, trabajadora y con muchas ganas de aprender. Busco un puesto en una empresa donde pueda crecer profesionalmente.",
     experience: [
@@ -68,7 +68,7 @@ Requisitos:
     name: "Nina Kovač",
     role: "Študentka komunikologije",
     contact: ["nina.kovac@example.com", "041 234 567", "Ljubljana"],
-    labels: { profile: "Cilj", experience: "Delovne izkušnje", education: "Izobrazba", skills: "Znanja", languages: "Jeziki", hobbies: "Hobiji" },
+    labels: { contact: "Kontakt", profile: "Cilj", experience: "Delovne izkušnje", education: "Izobrazba", skills: "Znanja", languages: "Jeziki", hobbies: "Hobiji" },
     profile:
       "Sem odgovorna, komunikativna in delovna oseba. Iščem zaposlitev v podjetju, kjer se bom lahko razvijala in pokazala svoje sposobnosti.",
     experience: [
@@ -118,7 +118,7 @@ export function cvHtml(s) {
   .item ul{margin:0;padding-left:5mm}.item li{font-size:9.5pt;line-height:1.5}
   </style></head><body><div class="page">
   <div class="side"><div class="avatar">${initials}</div>
-    <h2>Contact</h2><ul>${s.contact.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
+    <h2>${esc(s.labels.contact ?? "Contact")}</h2><ul>${s.contact.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
     <h2>${s.labels.skills}</h2><ul>${s.skills.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
     <h2>${s.labels.languages}</h2><ul>${s.languages.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
     <h2>${s.labels.hobbies}</h2><p>${esc(s.hobbies)}</p></div>

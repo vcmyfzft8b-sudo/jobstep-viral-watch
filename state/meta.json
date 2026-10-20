@@ -3777,14 +3777,14 @@
  "hot": {
   "N10": {
    "announced": {},
-   "count": 7,
+   "count": 5,
    "creators": {},
    "messages": {},
    "since": 1792300842
   }
  },
- "last_full_run": 1792440008,
- "last_run": 1792453624,
+ "last_full_run": 1792472376,
+ "last_run": 1792472376,
  "lineup": "2026-W43",
  "manual_review": {
   "approved_german_exact": 11,

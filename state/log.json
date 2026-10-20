@@ -8625,5 +8625,35 @@
   },
   "ts": 1792498249,
   "type": "rerank"
+ },
+ {
+  "format": "A20261006183623",
+  "level": "viral",
+  "ts": 1792517216,
+  "type": "alert",
+  "video": "7698487459088305430",
+  "views": 103600
+ },
+ {
+  "format": "A202610061331",
+  "level": "rising",
+  "ts": 1792517236,
+  "type": "alert",
+  "video": "7698667346101161238",
+  "views": 64300
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792517239,
+  "type": "alert",
+  "video": "7698745147915259158",
+  "views": 5916
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792517244,
+  "type": "alert",
+  "video": "7698772334622084384",
+  "views": 5643
  }
 ]

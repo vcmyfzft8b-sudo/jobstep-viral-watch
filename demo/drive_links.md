@@ -49,7 +49,7 @@ All lengths: https://drive.google.com/drive/folders/1LIPHBFNcCZpBiOOhXXWpiqJuZ5I
 - 3 nasveti, da KONČNO najdeš službo 💼 — 12 s (example: 6 s): https://drive.google.com/drive/folders/1sYa6HYppNy_HCkH8HTG3Ha_xFJLiQl8r
 - POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡 — 42 s (example: 42 s): https://drive.google.com/drive/folders/1HDG0SlCrzYYN_qLc-DiI1Y_235NLeOR5
 - Začenja se NAJBOLJŠI čas za iskanje službe 👩🏻‍💻👀✨ — 15 s (example: 16 s): https://drive.google.com/drive/folders/15wK_Pys30Zph7j3x2pGDZpV8W6ZfRZA1
-- Lagaj v CV-ju 🚨🚨‼️ — 15 s (example: 16 s): https://drive.google.com/drive/folders/1LtUzJMfiUm9uMQgoAbH_gCgrmlx_1BZR
+- Laži v CV-ju 🚨🚨‼️ — 15 s (example: 16 s): https://drive.google.com/drive/folders/1LtUzJMfiUm9uMQgoAbH_gCgrmlx_1BZR
 - Kako sem v samo 15 minutah našla službo 😳❌ — 19 s (example: 19 s): https://drive.google.com/drive/folders/1-dRp_14W5VpqlCy3uEy1SdKF6kjLdI2z
 - Mesece brez odgovora… zdaj pa RAZGOVORI? 🤯 — 22 s (example: 21 s): https://drive.google.com/drive/folders/1cuqYouuLArMJvflQkjwDZigEZ_kIBfoL
 - Prvi kupec🤑 — 15 s (example: 14 s): https://drive.google.com/drive/folders/1wCkkBRNeYr9hA5vNcBO164m41HnsvhTP

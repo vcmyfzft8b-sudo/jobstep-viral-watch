@@ -437,6 +437,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "optimizatucvconnazaret": {
+  "market": "es",
+  "since": 1792496878,
+  "source": "megasheet",
+  "status": "active"
+ },
  "para.debs": {
   "market": "de",
   "since": 1791465487,
@@ -562,6 +568,12 @@
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "yaiza.canvas": {
+  "market": "es",
+  "since": 1792496878,
+  "source": "megasheet",
+  "status": "active"
  },
  "yaiza.techlife": {
   "market": "es",

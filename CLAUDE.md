@@ -251,12 +251,14 @@ here (repo, Notion, Discord, secrets, state are all separate).
 
 ## Demo recordings in the Slovenian scripts (19 Oct 2026, user: "one link per script, where they should start playing it")
 - `watcher/demo.py`: a market whose `markets.TEXT` has `demo_cue` (only `sl` for now) gets ONE plain-text cue
-  "(🎥 Tukaj predvajaj demo posnetek – glej Viri)" in every live script, right before the first Parakeet AI cue, and the
-  page's Drive folder (`demo/drive_folders.json`, by idea id, else format) as a 🔧 resource link
-  "🎥 Demo posnetek (iPhone, Android, Mac, Windows)" (`demo_res`). Not a link in the script: script links are not
-  clickable for creators (user, same day). tidy (`tidy.place_demo` + `place_demo_resource`) adds/moves/re-points both on
-  every normal run and after rebuilds; `pages.DIRECTION_RE` keeps 🎥 cues like 📎 ones; judges never see it
-  (spoken_text drops brackets); verify reports it.
+  "(🎥 Tukaj predvajaj posnetek)" in every live script, where the app first appears (the first Parakeet AI cue's place),
+  and NO "(Parakeet AI · Resume Maker)" cues (user, 20 Oct 2026: "play the recording from here only once per video,
+  just the recording"); the app link and the page's Drive folder (`demo/drive_folders.json`, by idea id, else format,
+  "🎥 Demo posnetek (iPhone, Android, Mac, Windows)" = `demo_res`) are 🔧 resources. Script links are not clickable for
+  creators. Writers still mark app moments with cue "parakeet"; tidy (`tidy.place_demo` + `place_demo_resource`) turns
+  them into the one recording cue on every normal run and after rebuilds (only once the page's folder exists);
+  `verify.layout_problems` and `timing` take the 🎥 cue as the app moment; `pages.DIRECTION_RE` keeps 🎥 cues like 📎
+  ones; judges never see it (spoken_text drops brackets).
 - How to film it is the last line of the ⚠️ note (`demo_note`, added by `pages.inspo_note`; `mode=renote` puts it on
   the pages): it is in Viri, pick your device's version, download (not played in Drive), full screen without player
   controls, best played on a laptop and filmed as if clicking through the app, no laptop → phone recording as overlay.

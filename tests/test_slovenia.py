@@ -170,3 +170,11 @@ class SloveniaPageChecksTests(unittest.TestCase):
         laptop = [{'id': 'A20261009204851', 'status': 'active', 'title': 'laptop', 'pages': {'fr': 'x'}}]
         with mock.patch.object(verify.pages, 'list_entries', return_value=([], None)):
             self.assertEqual(verify.run(cfg, laptop, main.page_of), ['🇸🇮 laptop: no page'])  # on the list since 16 Oct
+
+    def test_verify_needs_no_page_for_a_format_off_this_list(self):
+        """X06 is off the Slovenian list (lineup off_markets): no Slovenian page is missing (verify 20 Oct 2026)."""
+        from watcher import verify
+        cfg = {'markets': {'sl': {**CFG['markets']['sl']}}, 'links': CFG['links']}
+        off = [{'id': 'X06', 'status': 'active', 'title': 'mistake', 'pages': {'fr': 'x'}, 'off_markets': ['es', 'sl']}]
+        with mock.patch.object(verify.pages, 'list_entries', return_value=([], None)):
+            self.assertEqual(verify.run(cfg, off, main.page_of), [])

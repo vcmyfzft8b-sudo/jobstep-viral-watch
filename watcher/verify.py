@@ -54,8 +54,8 @@ def layout_problems(blocks, script, links):
         out.append('no link to the original TikTok')
     if not script:
         out.append('no script section')
-    elif not any(((x.get('text') or {}).get('link') or {}).get('url') == links['parakeet']
-                 for b in script for x in b[b['type']].get('rich_text', [])):
+    elif not any(((x.get('text') or {}).get('link') or {}).get('url') == links['parakeet'] or '(🎥' in (x.get('plain_text') or '')
+                 for b in script for x in b[b['type']].get('rich_text', [])):  # 🎥 = the recording cue (watcher/demo.py)
         out.append('no Parakeet AI link in the script')
     return out
 
@@ -116,7 +116,7 @@ def run(cfg, fmts, page_of):
                 continue  # not a format of this market (Slovenia: the study-app format 'hardest schools')
             pid = page_of(f, key)
             if not pid:
-                if f.get('status') == 'active':
+                if f.get('status') == 'active' and not out_here(f):  # off this market's list: no page needed
                     problems.append(f"{flag} {f['title']}: no page")
                 continue
             if pages.is_hand(pid):

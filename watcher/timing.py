@@ -29,6 +29,8 @@ def script_positions(page_id, parakeet_url):
                 if url == parakeet_url and shown is None:
                     shown = n
                 continue
+            if shown is None and '(🎥' in x.get('plain_text', ''):  # the recording cue (watcher/demo.py) = the app shown
+                shown = n + len(_words(x.get('plain_text', '').split('(🎥')[0]))
             t = re.sub(r'\([^)]*\)', ' ', x.get('plain_text', ''))
             if said is None and re.search(r'parakeet', t, re.I):
                 said = n + len(_words(t[:re.search(r'parakeet', t, re.I).start()]))

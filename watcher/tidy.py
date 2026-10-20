@@ -9,9 +9,9 @@ fixed on every normal run (mode tidy does it at once). Nothing is reworded - onl
 3. The 📲 title is bold.
 4. The idea name is the title (names drifted from the content, e.g. "Carrefour…" when the script never says it).
 5. Reported only: a sub-page above the page content (e.g. a stray copy of the Visual Hook Lab).
-6. Markets with demo recordings (watcher/demo.py, Slovenia): exactly ONE plain "(🎥 … – see resources)" cue, right
-   before the first Parakeet AI cue (where the creator starts playing our recording), and the page's Drive folder as a
-   resource (links in a script are not clickable for creators).
+6. Markets with demo recordings (watcher/demo.py, Slovenia): the script's only app cue is ONE plain "(🎥 …)" recording
+   cue where the app first appears (the Parakeet AI cues go; the app link and the page's Drive folder are resources -
+   links in a script are not clickable for creators).
 """
 import re
 
@@ -74,46 +74,57 @@ def _first_app(paragraphs, links):
 
 
 def _demo_ok(paragraphs, links, cue):
-    """No linked demo cue, exactly one plain cue (this text), and it stands right before the first Parakeet AI cue."""
-    if any(demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x)) for p in paragraphs for x in p):
+    """The script holds exactly one cue: the plain recording cue (this text). No app link cues and no linked demo cue
+    (user, 20 Oct 2026: "play the recording from here only once per video, just the recording")."""
+    if any(_url(x) == links['parakeet'] or demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x))
+           for p in paragraphs for x in p):
         return False
     found = [m for p in paragraphs for x in p if not _url(x) for m in DEMO_CUE_RE.findall(_content(x))]
-    first = _first_app(paragraphs, links)
-    if len(found) != 1 or found[0].strip() != cue or not first or not first[1]:
-        return False
-    return bool(re.search(re.escape(cue) + r'\s*\($', _content(paragraphs[first[0]][first[1] - 1]).rstrip()))
+    return len(found) == 1 and found[0].strip() == cue
 
 
 def place_demo(paragraphs, links, cue):
-    """paragraphs with exactly one plain '(🎥 … – see resources)' cue, right before the first Parakeet AI cue (where the
-    creator starts playing our recording). Script links to Drive are not clickable for creators (user, 19 Oct 2026), so
-    the folder is a resource (place_demo_resource) and older linked cues are removed. Returns (paragraphs, changed).
-    No Parakeet AI cue -> unchanged (such a page is rebuilt, not tidied)."""
+    """paragraphs with exactly one plain recording cue, where the app first appears (the first Parakeet AI cue, else
+    where a recording cue already stands), and no Parakeet AI cues: the app link is in the resources, the creator plays
+    the recording from that one point. Script links are not clickable for creators (user, 19 Oct 2026). Returns
+    (paragraphs, changed). Neither cue in the script -> unchanged (verify reports it)."""
     if _demo_ok(paragraphs, links, cue):
         return paragraphs, False
-    out = []
-    for items in paragraphs:  # every old demo cue out (linked, wrong place, a second one)
+    out, anchor = [], None
+    for j, items in enumerate(paragraphs):  # every app cue and old recording cue out; the first one's place is kept
         items = [dict(x, text=dict(x.get('text') or {'content': x.get('plain_text', '')})) for x in items]
         keep = []
         for i, x in enumerate(items):
-            if demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x)):
+            app = _url(x) == links['parakeet']
+            if app or demo.is_demo_url(_url(x)) or ('🎥' in _content(x) and _url(x)):
                 _drop_cue(keep, items, i)
+                if anchor is None and (app or '🎥' in _content(x)):
+                    anchor = (j, len(keep))
                 continue
-            if not _url(x):
+            if not _url(x) and DEMO_CUE_RE.search(_content(x)):
+                if anchor is None:  # an earlier plain recording cue: the recording starts here
+                    t = _content(x)
+                    m = DEMO_CUE_RE.search(t)
+                    x['text']['content'] = t[:m.start()]
+                    keep.append(x)
+                    anchor = (j, len(keep))
+                    keep.append(dict(x, text=dict(x['text'], content=t[m.end():])))
+                    keep[-1]['text']['content'] = re.sub(r' {2,}', ' ', DEMO_CUE_RE.sub('', keep[-1]['text']['content']))
+                    continue
                 x['text']['content'] = re.sub(r' {2,}', ' ', DEMO_CUE_RE.sub('', _content(x)))
             keep.append(x)
-        out.append([x for x in keep if _content(x) or _url(x)])
-    first = _first_app(out, links)
-    if not first:
+        out.append(keep)
+    if anchor is None:
         return paragraphs, False
-    j, k = first
-    items = out[j]
-    before = _content(items[k - 1]).rstrip() if k else ''
-    if before.endswith('('):
-        rest = before[:-1].rstrip()
-        items[k - 1]['text']['content'] = (rest + ' ' if rest else '') + cue + ' ('
-    else:
-        items.insert(k, pages.rt(cue + ' '))
+    j, k = anchor
+    out[j].insert(k, pages.rt(cue + ' '))
+    out = [[x for x in items if _content(x) or _url(x)] for items in out]
+    # no double spaces and no space at the start of a paragraph around the cue
+    for items in out:
+        for x in items:
+            x['text']['content'] = re.sub(r' {2,}', ' ', _content(x))
+        if items and not _url(items[0]):
+            items[0]['text']['content'] = _content(items[0]).lstrip()
     return out, True
 
 

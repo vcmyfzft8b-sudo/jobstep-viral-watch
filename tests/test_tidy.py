@@ -81,30 +81,31 @@ def test_old_hand_written_page_is_left_alone():
     api.assert_not_called()  # no rename, no edits
 
 
-CUE = '(🎥 Demo – see resources)'
+CUE = '(🎥 Play the recording)'
 FOLDER = 'https://drive.google.com/drive/folders/F'
 
 
-def test_demo_cue_is_plain_text_right_before_the_first_app_cue_once():
-    paras = [[pages.rt('Hi. ')], cue('https://p') + [pages.rt('Upload. ')], cue('https://p') + [pages.rt('Score. ')]]
+def test_recording_cue_replaces_the_app_cues_once():
+    paras = [[pages.rt('Hi. ')], cue('https://p') + [pages.rt('Upload. ')], cue('https://p') + [pages.rt('Score. ')],
+             cue('https://l', 'LinkedIn') + [pages.rt('Copy. ')]]
     out, changed = tidy.place_demo(paras, LINKS, CUE)
     assert changed
     assert text(out[0]) == 'Hi. '
-    assert text(out[1]) == '(🎥 Demo – see resources) (Parakeet AI · Resume Maker) Upload. '
-    assert text(out[2]) == '(Parakeet AI · Resume Maker) Score. '
-    assert [tidy._url(x) for p in out for x in p if tidy._url(x)] == ['https://p', 'https://p']  # no Drive link
+    assert text(out[1]) == '(🎥 Play the recording) Upload. '
+    assert text(out[2]) == 'Score. '
+    assert [tidy._url(x) for p in out for x in p if tidy._url(x)] == ['https://l']  # LinkedIn cue stays, no app cue
     assert tidy.place_demo(out, LINKS, CUE) == (out, False)  # already right: nothing to write
-    trimmed, removed = tidy.trim_cues(out, LINKS)
-    assert removed == 0 and trimmed == out
-    assert pages.strip_directions(text(out[1])).startswith('(🎥 Demo')  # not taken for a stage direction
+    assert pages.strip_directions(text(out[1])).startswith('(🎥 Play')  # not taken for a stage direction
 
 
-def test_old_linked_demo_cue_becomes_the_plain_cue():
-    paras = [cue('https://p') + [pages.rt('Upload. ')] + cue(FOLDER, '🎥 Old') + [pages.rt('Score. (🎥 x) Again.')]]
+def test_old_recording_cue_before_the_app_cue_becomes_the_one_cue():
+    paras = [[pages.rt('Intro. (🎥 Old – see resources) (')] + [pages.rt('P', link='https://p'), pages.rt(') Upload.')],
+             cue(FOLDER, '🎥 Linked') + [pages.rt('Again.')]]
     out, changed = tidy.place_demo(paras, LINKS, CUE)
     assert changed
-    assert text(out[0]) == '(🎥 Demo – see resources) (Parakeet AI · Resume Maker) Upload. Score. Again.'
-    assert not any(tidy._url(x) == FOLDER for x in out[0])
+    assert text(out[0]) == 'Intro. (🎥 Play the recording) Upload.'
+    assert text(out[1]) == 'Again.'
+    assert not any(tidy._url(x) for p in out for x in p)
 
 
 def test_cue_kept_after_a_megasheet_round_trip():
@@ -113,7 +114,7 @@ def test_cue_kept_after_a_megasheet_round_trip():
     assert tidy.place_demo([back], LINKS, CUE)[1] is False
 
 
-def test_no_app_cue_no_demo_cue():
+def test_no_app_cue_no_recording_cue():
     paras = [[pages.rt('Hi.')]]
     assert tidy.place_demo(paras, LINKS, CUE) == (paras, False)
 
@@ -141,3 +142,10 @@ def test_demo_note_only_in_markets_with_recordings():
     assert pages.inspo_note('sl')[-1] == TEXT['sl']['demo_note']
     assert pages.inspo_note('sl', own=True)[-1] == TEXT['sl']['demo_note']
     assert len(pages.inspo_note('fr')) == 2 and len(pages.inspo_note('es')) == 2
+
+
+def test_a_recording_cue_counts_as_the_app_moment_for_verify():
+    from watcher import verify
+    script = [{'type': 'paragraph', 'paragraph': {'rich_text': pages._norm_rich([pages.rt('(🎥 Play the recording) Upload.')])}}]
+    blocks = [{'type': 'video', 'video': {}}, pages.para([pages.rt('Original', link='https://www.tiktok.com/@a/video/1')])]
+    assert 'no Parakeet AI link in the script' not in verify.layout_problems(blocks, script, LINKS)

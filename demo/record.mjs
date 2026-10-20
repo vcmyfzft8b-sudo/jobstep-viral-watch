@@ -415,8 +415,8 @@ async function enterJob() {
     const b = await field.boundingBox().catch(() => null);
     if (b) await cursorTo(Math.round(b.x + b.width * 0.55), Math.round(b.y + b.height + 70), 420);
   }
-  // the app reads the link (the field greyed, the link in it): a little sped up, so it reads about a second
-  await fastTo(() => byText(COPY.job.readTitle).waitFor({ timeout: 15000 }), 1.5);
+  // the app reads the link (the field greyed, the link in it) at its own speed: the link stays readable ~2 s
+  await byText(COPY.job.readTitle).waitFor({ timeout: 15000 });
 }
 
 async function scenes() {

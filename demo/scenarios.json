@@ -160,12 +160,12 @@
    "content": "standard",
    "example": "(Studyflash) upload → target grade → plan loader → flashcards / quiz → podcast; in Parakeet AI: upload → score → job (the goal) → rewriting (plan loader) → changes (cards) → result",
    "steps": {
-    "upload": 1000,
-    "score": 1000,
-    "job": 2200,
-    "rewriting": 1.5,
-    "review": 500,
-    "result": 3300
+    "upload": 800,
+    "score": 800,
+    "job": 1200,
+    "rewriting": 1.2,
+    "review": 400,
+    "result": 2600
    }
   },
   "ESX28": {

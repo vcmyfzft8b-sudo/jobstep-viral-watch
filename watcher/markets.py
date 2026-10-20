@@ -175,14 +175,14 @@ TEXT = {
                           '(vibe), kote kamere, način snemanja, montažo in trenutke, ko je prikazan Parakeet AI (demo). Svoj '
                           'video posnemi po spodnjem scenariju.',
         # our demo recording (watcher/demo.py, 19 Oct 2026): one cue in the script + how to film it, in the ⚠️ note
-        'demo_cue': '(🎥 Tukaj predvajaj demo posnetek – glej Viri)',
+        'demo_cue': '(🎥 Tukaj predvajaj posnetek)',
         'demo_res': '🎥 Demo posnetek (iPhone, Android, Mac, Windows)',
-        'demo_note': '**🎥 Demo posnetek:** Kjer v scenariju piše »🎥 Tukaj predvajaj demo posnetek«, začni predvajati naš '
+        'demo_note': '**🎥 Posnetek aplikacije:** Kjer v scenariju piše »🎥 Tukaj predvajaj posnetek«, začni predvajati naš '
                      'posnetek aplikacije. Najdeš ga spodaj v Virih (»🎥 Demo posnetek«) – odpri ga in izberi verzijo za '
                      'svojo napravo (iPhone, Android, Mac ali Windows). Posnetek PRENESI – ne predvajaj ga v Google Drivu – '
                      'in ga predvajaj čez cel zaslon, da kontrole predvajalnika niso vidne. Najbolje ga predvajaš na '
                      'prenosniku in posnameš s telefonom, kot da sam klikaš po aplikaciji. Če nimaš prenosnika, v montaži '
-                     'dodaj posnetek za telefon kot overlay čez svoj video.',
+                     'dodaj posnetek za telefon kot overlay čez svoj video. Povezava do Parakeet AI je prav tako v Virih.',
         'inspo_note_same': '**Pomembno:** Video za navdih zgoraj je v slovenščini in prikazuje točno ta format, vendar je od druge '
                            'znamke in NI video, ki ga moraš posneti. Od njega čim BOLJ NATANČNO prevzemi vzdušje (vibe), kote '
                            'kamere, način snemanja, montažo in trenutke, ko je prikazana aplikacija (demo) – prav za to so '

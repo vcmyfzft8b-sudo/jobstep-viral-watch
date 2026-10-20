@@ -8655,5 +8655,144 @@
   "type": "alert",
   "video": "7698772334622084384",
   "views": 5643
+ },
+ {
+  "format": "N06",
+  "reasons": [
+   "🇫🇷 script transcribed again: spoken brand count is 1; source requires 0; linked filming cues do not count / transcription refused: \"Parakeet AI\"/the website appear",
+   "🇪🇸 script transcribed again: spoken brand count is 2; source requires 0; linked filming cues do not count / script transcribed from the example (166 words (origina",
+   "🇸🇮 script transcribed again: The closing question uses the plural/formal 'dodali', but the original speaks to one person ('agregarías', 'querés', 'se / script tran"
+  ],
+  "tries": 1,
+  "ts": 1792534568,
+  "type": "format_held"
+ },
+ {
+  "format": "N06",
+  "position": null,
+  "reasons": [
+   "🇫🇷 script transcribed again: spoken brand count is 1; source requires 0; linked filming cues do not count / transcription refused: \"Parakeet AI\"/the website appear",
+   "🇪🇸 script transcribed again: spoken brand count is 2; source requires 0; linked filming cues do not count / script transcribed from the example (166 words (origina",
+   "🇸🇮 script transcribed again: The closing question uses the plural/formal 'dodali', but the original speaks to one person ('agregarías', 'querés', 'se / script tran"
+  ],
+  "ts": 1792534568,
+  "type": "format_held",
+  "video": "7698038926191119632"
+ },
+ {
+  "format": "N06",
+  "level": "viral",
+  "ts": 1792534569,
+  "type": "alert",
+  "video": "7698038926191119632",
+  "views": 100000
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792534572,
+  "type": "alert",
+  "video": "7698204739778907424",
+  "views": 18800
+ },
+ {
+  "format": "N06",
+  "reasons": [
+   "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand out loud as the fourth ranked site ('jobs",
+   "🇪🇸 script transcribed from the example (167 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep.io sí'), but the scrip",
+   "🇸🇮 script transcribed from the example (153 words (original 174)) / script transcribed again: The original says the brand out loud at this spot ('jobstep.io sí'), "
+  ],
+  "tries": 2,
+  "ts": 1792535405,
+  "type": "format_held"
+ },
+ {
+  "count": 5,
+  "format": "A20261006183623",
+  "ts": 1792536148,
+  "type": "hot"
+ },
+ {
+  "format": "N10",
+  "ts": 1792536148,
+  "type": "hot_cooled"
+ },
+ {
+  "changes": [
+   "es:ESX15^3",
+   "es:FRX30^3"
+  ],
+  "ts": 1792536149,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "X13",
+   "A202610061334",
+   "N10",
+   "X09",
+   "N02",
+   "X03",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X16",
+    "A202610061334",
+    "ESX28",
+    "X08",
+    "X03",
+    "X13",
+    "N10",
+    "N04",
+    "X06",
+    "X09",
+    "A20261009204851"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "X13",
+    "A202610061334",
+    "N10",
+    "X09",
+    "N02",
+    "X03",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X16",
+    "X03",
+    "X13",
+    "X08",
+    "A202610061334",
+    "N10",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792536198,
+  "type": "rerank"
  }
 ]

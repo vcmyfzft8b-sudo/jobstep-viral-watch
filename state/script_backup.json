@@ -21185,6 +21185,25 @@
    "type": "text"
   }
  ],
+ "4dc5a771-14ce-41bc-8289-d1a15c551c86.18": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copia el inicio del vídeo de ejemplo: sentado a una mesa, frente a la cámara y escribiendo con un boli en un taco de pósits mientras hablas, con el título en pantalla y luego las etiquetas \"RANKING PÁGINAS WEB PARA BUSCAR TRABAJO ‼️\" y el nombre de cada web con su emoji encima de ti.",
+   "text": {
+    "content": "Copia el inicio del vídeo de ejemplo: sentado a una mesa, frente a la cámara y escribiendo con un boli en un taco de pósits mientras hablas, con el título en pantalla y luego las etiquetas \"RANKING PÁGINAS WEB PARA BUSCAR TRABAJO ‼️\" y el nombre de cada web con su emoji encima de ti.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "5228c801-efe5-471d-bb52-faac7a9a8304.18": [
   {
    "annotations": {
@@ -21732,6 +21751,25 @@
    "plain_text": "Čisto na začetku naj bo na zaslonu napis »3 nasveti, da KONČNO najdeš službo 💼«, ti pa govori čisto blizu kamere in s prsti pokaži »tri«, z velikimi gestami. Točno to skopiraj, kot v vzorčnem videu.",
    "text": {
     "content": "Čisto na začetku naj bo na zaslonu napis »3 nasveti, da KONČNO najdeš službo 💼«, ti pa govori čisto blizu kamere in s prsti pokaži »tri«, z velikimi gestami. Točno to skopiraj, kot v vzorčnem videu.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "8760c812-9c59-49a1-9f20-68e14fc0bcfa.18": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Tako kot v primeru sedi za mizo, glej v kamero in s kemičnim svinčnikom piši po listkih za zapiske, medtem ko je naslov na zaslonu. Ob vsaki strani se pojavi oznaka ✅ / ⚠️ / ❌, točno kot v originalu.",
+   "text": {
+    "content": "Tako kot v primeru sedi za mizo, glej v kamero in s kemičnim svinčnikom piši po listkih za zapiske, medtem ko je naslov na zaslonu. Ob vsaki strani se pojavi oznaka ✅ / ⚠️ / ❌, točno kot v originalu.",
     "link": null
    },
    "type": "text"
@@ -27109,6 +27147,25 @@
    "plain_text": "Točno skopiraj začetek vzorčnega videa: v kamero, medtem ko govoriš, z likalnikom za lase zravnaš zmečkan bankovec za 20 €. Na zaslonu naj piše »Stvari, ki ti jih kadroviki skrivajo 😳❌«, začni pa z »Kako sem dobila službo v 15 minutah?«.",
    "text": {
     "content": "Točno skopiraj začetek vzorčnega videa: v kamero, medtem ko govoriš, z likalnikom za lase zravnaš zmečkan bankovec za 20 €. Na zaslonu naj piše »Stvari, ki ti jih kadroviki skrivajo 😳❌«, začni pa z »Kako sem dobila službo v 15 minutah?«.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "fa303c94-a68b-4b62-baf8-7c8a59871729.18": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'exemple : assieds-toi à une table face caméra et commence en train d'écrire avec un stylo sur un bloc de post-it, avec le titre en haut de l'écran. Ensuite, pour chaque site, tu fais apparaître son nom avec « oui ✅ », « non ❌ » ou « peut-être ⚠️ » en texte à l'écran.",
+   "text": {
+    "content": "Comme dans la vidéo d'exemple : assieds-toi à une table face caméra et commence en train d'écrire avec un stylo sur un bloc de post-it, avec le titre en haut de l'écran. Ensuite, pour chaque site, tu fais apparaître son nom avec « oui ✅ », « non ❌ » ou « peut-être ⚠️ » en texte à l'écran.",
     "link": null
    },
    "type": "text"
@@ -46528,6 +46585,243 @@
    }
   ]
  ],
+ "page:4dc5a771-14ce-41bc-8289-d1a15c551c86": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ranking de páginas web para buscar trabajo en España: ¿sí, no o tal vez? ",
+    "text": {
+     "content": "Ranking de páginas web para buscar trabajo en España: ¿sí, no o tal vez? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿InfoJobs? ",
+    "text": {
+     "content": "¿InfoJobs? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Sí: tiene un montón de ofertas de distintos sectores y sirve principalmente para trabajos de atención al cliente, logística y operarios de producción. ",
+    "text": {
+     "content": "Sí: tiene un montón de ofertas de distintos sectores y sirve principalmente para trabajos de atención al cliente, logística y operarios de producción. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿LinkedIn? ",
+    "text": {
+     "content": "¿LinkedIn? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tal vez: es una muy buena opción para hacer contactos, pero normalmente las grandes empresas trabajan con muchos sistemas ATS; tienes que tener siempre el perfil actualizado. ",
+    "text": {
+     "content": "Tal vez: es una muy buena opción para hacer contactos, pero normalmente las grandes empresas trabajan con muchos sistemas ATS; tienes que tener siempre el perfil actualizado. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Indeed? ",
+    "text": {
+     "content": "¿Indeed? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "No, yo no la pondría entre mis primeras opciones si estoy intentando ampliar mis posibilidades. Eso no quita que tenga buenas ofertas, pero depende mucho del sector y del perfil. ",
+    "text": {
+     "content": "No, yo no la pondría entre mis primeras opciones si estoy intentando ampliar mis posibilidades. Eso no quita que tenga buenas ofertas, pero depende mucho del sector y del perfil. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Parakeet AI, parakeet-ai.com/resume-maker, sí es una de las más completas porque, ",
+    "text": {
+     "content": "Parakeet AI, parakeet-ai.com/resume-maker, sí es una de las más completas porque, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "además de adaptarte el CV para pasar los filtros ATS, también tiene una página donde puedes copiar y pegar distintas ofertas de trabajo que te interesen, y te ayuda a remodelar el CV y te lo deja listo para descargar. ",
+    "text": {
+     "content": "además de adaptarte el CV para pasar los filtros ATS, también tiene una página donde puedes copiar y pegar distintas ofertas de trabajo que te interesen, y te ayuda a remodelar el CV y te lo deja listo para descargar. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "¿Qué página añadirías al ranking? Y si quieres más consejos así, sígueme. ¿A qué estás esperando? ",
+    "text": {
+     "content": "¿Qué página añadirías al ranking? Y si quieres más consejos así, sígueme. ¿A qué estás esperando? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:4e6958b0fc148380a0bb81e6e1fbdd94": [
   [
    {
@@ -48135,6 +48429,294 @@
     "plain_text": ") Donc testez absolument le site parakeet-ai.com/resume-maker, parce qu'il va littéralement passer en revue tout votre CV et vous allez enfin décrocher un travail.",
     "text": {
      "content": ") Donc testez absolument le site parakeet-ai.com/resume-maker, parce qu'il va littéralement passer en revue tout votre CV et vous allez enfin décrocher un travail.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:8760c812-9c59-49a1-9f20-68e14fc0bcfa": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lestvica spletnih strani za iskanje službe v Sloveniji: ja, ne ali mogoče? ",
+    "text": {
+     "content": "Lestvica spletnih strani za iskanje službe v Sloveniji: ja, ne ali mogoče? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "MojeDelo? ",
+    "text": {
+     "content": "MojeDelo? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ja: ima ogromno ponudb iz različnih panog in je uporabna predvsem za delo s strankami, logistiko in delo v proizvodnji. ",
+    "text": {
+     "content": "Ja: ima ogromno ponudb iz različnih panog in je uporabna predvsem za delo s strankami, logistiko in delo v proizvodnji. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "LinkedIn? ",
+    "text": {
+     "content": "LinkedIn? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Mogoče: je zelo dobra izbira za navezovanje stikov, ampak velika podjetja večinoma delajo s kar nekaj sistemi ATS; profil moraš imeti vedno posodobljen. ",
+    "text": {
+     "content": "Mogoče: je zelo dobra izbira za navezovanje stikov, ampak velika podjetja večinoma delajo s kar nekaj sistemi ATS; profil moraš imeti vedno posodobljen. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Zaposlitev.net? ",
+    "text": {
+     "content": "Zaposlitev.net? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ne, zame ni med prvimi izbirami, če poskušam povečati svoje možnosti. ",
+    "text": {
+     "content": "Ne, zame ni med prvimi izbirami, če poskušam povečati svoje možnosti. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "To ne pomeni, da nima dobrih ponudb, ampak je zelo odvisno od panoge in profila. ",
+    "text": {
+     "content": "To ne pomeni, da nima dobrih ponudb, ampak je zelo odvisno od panoge in profila. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "parakeet-ai.com/resume-maker? ",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ja, je ena najbolj celovitih, ker ti poleg tega, da ti prilagodi CV, da gre skozi filtre ATS, ",
+    "text": {
+     "content": "Ja, je ena najbolj celovitih, ker ti poleg tega, da ti prilagodi CV, da gre skozi filtre ATS, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "ima tudi stran, kjer lahko kopiraš in prilepiš različne ponudbe za delo, ki te zanimajo, in ti pomaga preoblikovati CV in ti ga tudi oceni. ",
+    "text": {
+     "content": "ima tudi stran, kjer lahko kopiraš in prilepiš različne ponudbe za delo, ki te zanimajo, in ti pomaga preoblikovati CV in ti ga tudi oceni. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Katero stran bi še dodali na lestvico? ",
+    "text": {
+     "content": "Katero stran bi še dodali na lestvico? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "In če hočeš več takih nasvetov, me spremljaj. Kaj še čakaš? ",
+    "text": {
+     "content": "In če hočeš več takih nasvetov, me spremljaj. Kaj še čakaš? ",
      "link": null
     },
     "type": "text"
@@ -51265,6 +51847,192 @@
     "plain_text": "Este también está adaptado a la oferta. ",
     "text": {
      "content": "Este también está adaptado a la oferta. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:fa303c94-a68b-4b62-baf8-7c8a59871729": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Classement des sites web pour chercher du travail en France : oui, non ou peut-être ? ",
+    "text": {
+     "content": "Classement des sites web pour chercher du travail en France : oui, non ou peut-être ? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Indeed ? Oui : il y a plein d'offres dans différents secteurs, et ça sert surtout pour les postes en service client, en logistique et d'opérateurs de production. ",
+    "text": {
+     "content": "Indeed ? Oui : il y a plein d'offres dans différents secteurs, et ça sert surtout pour les postes en service client, en logistique et d'opérateurs de production. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "LinkedIn ? Peut-être : c'est une très bonne option pour faire du réseau, mais en général les grandes entreprises passent par plein de systèmes ATS ; il faut toujours que ton profil soit à jour. ",
+    "text": {
+     "content": "LinkedIn ? Peut-être : c'est une très bonne option pour faire du réseau, mais en général les grandes entreprises passent par plein de systèmes ATS ; il faut toujours que ton profil soit à jour. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Welcome to the Jungle ? Non, je ne le mettrais pas dans mes premiers choix si j'essaie d'élargir mes possibilités. Ça ne veut pas dire qu'il n'y a pas de bonnes offres, mais ça dépend beaucoup du secteur et du profil. ",
+    "text": {
+     "content": "Welcome to the Jungle ? Non, je ne le mettrais pas dans mes premiers choix si j'essaie d'élargir mes possibilités. Ça ne veut pas dire qu'il n'y a pas de bonnes offres, mais ça dépend beaucoup du secteur et du profil. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "parakeet-ai.com/resume-maker ? Oui, c'est l'un des plus complets parce que, ",
+    "text": {
+     "content": "parakeet-ai.com/resume-maker ? Oui, c'est l'un des plus complets parce que, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "en plus de t'adapter le CV pour passer les filtres ATS, il y a aussi une page où tu peux copier-coller différentes offres d'emploi qui t'intéressent, et ça t'aide à remodeler le CV et te le donne prêt à télécharger. ",
+    "text": {
+     "content": "en plus de t'adapter le CV pour passer les filtres ATS, il y a aussi une page où tu peux copier-coller différentes offres d'emploi qui t'intéressent, et ça t'aide à remodeler le CV et te le donne prêt à télécharger. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Quel site tu ajouterais au classement ? Et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
+    "text": {
+     "content": "Quel site tu ajouterais au classement ? Et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
      "link": null
     },
     "type": "text"

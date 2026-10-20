@@ -93,9 +93,34 @@
    "fr": "3f0958b0-fc14-8081-94a3-c83118091812"
   },
   "page_id": "3f0958b0fc1481208c6ac19b0c666666",
-  "pages": {},
+  "pages": {
+   "es": "4dc5a771-14ce-41bc-8289-d1a15c551c86",
+   "fr": "fa303c94-a68b-4b62-baf8-7c8a59871729",
+   "sl": "8760c812-9c59-49a1-9f20-68e14fc0bcfa"
+  },
+  "pending": {
+   "kind": "revive",
+   "reasons": [
+    "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand out loud as the fourth ranked site ('jobs",
+    "🇪🇸 script transcribed from the example (167 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep.io sí'), but the scrip",
+    "🇸🇮 script transcribed from the example (153 words (original 174)) / script transcribed again: The original says the brand out loud at this spot ('jobstep.io sí'), "
+   ],
+   "since": 1792534568,
+   "tries": 2
+  },
+  "revived": {
+   "at": 1792533763,
+   "because": "https://www.tiktok.com/@maguiteexplica/video/7698038926191119632",
+   "views": 100000
+  },
+  "reworded": {
+   "es": true,
+   "fr": true,
+   "sl": true
+  },
   "script": "Jobseiten bewerten: Ja, Nein oder Vielleicht. Indeed: auf gar keinen Fall – außer du hast Bock, für Mindestlohn einen Job zu machen, für den man eigentlich zehn Leute bräuchte. Auf LinkedIn einen guten Job zu finden, ist echt nicht leicht. Da sitzt du locker ein paar Wochen und suchst, aber vielleicht hast du Glück und findest wirklich was. Also: Vielleicht. Parakeet AI ist ein klares Ja. Die Plattform ist noch ziemlich neu, funktioniert aber deutlich besser als die anderen. (Parakeet AI · Resume Maker) Die passt deinen Lebenslauf an das an, was in der Stellenanzeige verlangt wird. (Parakeet AI · Resume Maker) Das ist mein alter, der hatte X Punkte. (Parakeet AI · Resume Maker) So kommt er durch alle Filter und landet wirklich beim Recruiter. (Parakeet AI · Resume Maker) Und hier hat mein neuer Y Punkte, (Parakeet AI · Resume Maker) und ich kann ihn sogar noch bearbeiten, zum Beispiel d",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@maguiteexplica/video/7698038926191119632",
+  "status": "pending",
   "title": "Jobsuche: Ja, nein oder vielleicht?"
  },
  {

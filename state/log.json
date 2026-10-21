@@ -9090,5 +9090,28 @@
   },
   "ts": 1792593214,
   "type": "rerank"
+ },
+ {
+  "format": "A20261006183623",
+  "level": "viral",
+  "ts": 1792608631,
+  "type": "alert",
+  "video": "7698385467003227425",
+  "views": 100700
+ },
+ {
+  "format": null,
+  "level": "rising",
+  "ts": 1792608654,
+  "type": "alert",
+  "video": "7699018135982116129",
+  "views": 33700
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792608661,
+  "type": "alert",
+  "video": "7699127025428188438",
+  "views": 17100
  }
 ]

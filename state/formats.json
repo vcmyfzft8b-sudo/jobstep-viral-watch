@@ -101,10 +101,12 @@
   "pending": {
    "kind": "revive",
    "reasons": [
-    "HTTPSConnectionPool(host='megasheet.app', port=443): Read timed out. (read timeout=60)"
+    "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep.io sí'), but the scr",
+    "🇪🇸 script transcribed from the example (169 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep punto io? sí'), but th",
+    "🇸🇮 script transcribed from the example (152 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep punto io? sí'). The "
    ],
    "since": 1792534568,
-   "tries": 2
+   "tries": 3
   },
   "revived": {
    "at": 1792533763,

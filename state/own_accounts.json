@@ -17,6 +17,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "alba.lucia.job": {
+  "market": "es",
+  "since": 1792590876,
+  "source": "megasheet",
+  "status": "active"
+ },
  "alex_ugc01": {
   "market": "fr",
   "since": 1791465487,
@@ -100,6 +106,12 @@
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "carmen.ia.viral": {
+  "market": "es",
+  "since": 1792590876,
+  "source": "megasheet",
+  "status": "active"
  },
  "charlotte_pro28": {
   "market": "fr",

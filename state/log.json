@@ -8991,5 +8991,104 @@
   },
   "ts": 1792571837,
   "type": "rerank"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792591618,
+  "type": "alert",
+  "video": "7698480290263551254",
+  "views": 44400
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792591621,
+  "type": "alert",
+  "video": "7699085000062422294",
+  "views": 8703
+ },
+ {
+  "format": "N06",
+  "reasons": [
+   "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep.io sí'), but the scr",
+   "🇪🇸 script transcribed from the example (169 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep punto io? sí'), but th",
+   "🇸🇮 script transcribed from the example (152 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep punto io? sí'). The "
+  ],
+  "tries": 3,
+  "ts": 1792592486,
+  "type": "format_held"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X09",
+   "N02",
+   "X03",
+   "FRX22",
+   "N04",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "A202610061334",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "X13",
+    "N10",
+    "N04",
+    "X06",
+    "X09",
+    "FRX22",
+    "A20261009204851"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X09",
+    "N02",
+    "X03",
+    "FRX22",
+    "N04",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X03",
+    "X16",
+    "X13",
+    "X08",
+    "A202610061334",
+    "N10",
+    "X09",
+    "N04",
+    "FRX22",
+    "A20261009204851",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792593214,
+  "type": "rerank"
  }
 ]

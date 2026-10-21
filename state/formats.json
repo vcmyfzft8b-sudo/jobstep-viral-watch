@@ -101,9 +101,7 @@
   "pending": {
    "kind": "revive",
    "reasons": [
-    "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand out loud as the fourth ranked site ('jobs",
-    "🇪🇸 script transcribed from the example (167 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep.io sí'), but the scrip",
-    "🇸🇮 script transcribed from the example (153 words (original 174)) / script transcribed again: The original says the brand out loud at this spot ('jobstep.io sí'), "
+    "HTTPSConnectionPool(host='megasheet.app', port=443): Read timed out. (read timeout=60)"
    ],
    "since": 1792534568,
    "tries": 2
@@ -1047,45 +1045,51 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 19.10.2026: not among the best 12 of any list: score 1.02 (saved by 2.5% of viewers, 2 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
   "description": "After six months unemployed, the creator realizes that even small companies use ATS software and says one CV change got them hired.",
   "id": "FRX22",
   "inspo": {
    "es": {
-    "built": true,
-    "own": true,
+    "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7687619784669695265",
-    "views": 157400
+    "views": 161100
    },
    "fr": {
-    "own": true,
-    "rebuilt": true,
+    "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7687619784669695265",
-    "views": 157200
+    "views": 161100
+   },
+   "sl": {
+    "audit": true,
+    "strict": true,
+    "url": "https://www.tiktok.com/@jobeasilybylucie7/video/7687619784669695265",
+    "views": 161100
    }
   },
-  "listed_at": 1791814818,
-  "market_only": "fr",
+  "listed_at": 1792570274,
   "notion_pages": {
    "es": "3f7958b0-fc14-81b5-9685-c2a589d96510",
    "sl": "281958b0fc148339a63081dfa6e326b0"
   },
   "pages": {
-   "fr": "ddf59e94-a352-4124-9793-93b6f413f606"
+   "es": "f0f57560-45bf-425e-8626-839934f99dcb",
+   "fr": "ddf59e94-a352-4124-9793-93b6f413f606",
+   "sl": "4b7fe571-295c-4bbf-8a40-9b0a8043987c"
   },
   "pending_pages": {},
   "revived": {
-   "at": 1791814818,
-   "because": "proven for our creators (fr: our 14 videos average 15k, best 157k)"
+   "at": 1792569849,
+   "because": "https://www.tiktok.com/@maguiteexplica/video/7698889580660919559",
+   "views": 31100
   },
   "reworded": {
    "es": true,
    "fr": true
   },
   "script": "📲 TEXTE ÉCRIT Choisis une de ces phrases. Après six mois de chômage, j’ai enfin trouvé un emploi Un seul changement a tout changé Mon ancien CV était joli, mais il n’était pas compatible avec les ATS La première entreprise à laquelle j’ai postulé m’a embauchée Utilise les sous-titres automatiques pendant toute la vidéo. 💬 SCRIPT Six mois sans job. Six mois. Et franchement, je pense qu'un seul changement a tout débloqué. On me répétait partout de faire un CV compatible ATS. Moi, j'écoutais pas. Dans ma tête, je postulais surtout dans des petites boîtes, des structures à dix personnes, donc je me disais : elles ont clairement pas de logiciel de tri, c'est un truc de grands groupes. Sauf que les refus s'enchaînaient. Alors au bout d'un moment, j'ai cédé, j'ai refait mon CV. Et pourtant, l'ancien était pas moche, hein. Il était clair, propre, plutôt joli même. Le nouveau, lui, c'est tout l'i",
-  "status": "archived",
+  "source_video": "https://www.tiktok.com/@maguiteexplica/video/7698889580660919559",
+  "status": "active",
   "title": "Après six mois de chômage, j’ai enfin trouvé un travail"
  },
  {

@@ -107,9 +107,18 @@
    ],
    "place": "live"
   },
+  "4b7fe571-295c-4bbf-8a40-9b0a8043987c": {
+   "created": 1792569846,
+   "fp": "9fc3e6c799d844bc",
+   "market": "sl",
+   "media_ids": [
+    "245e5b8c-95e5-431f-a756-e05daf60446e"
+   ],
+   "place": "live"
+  },
   "4dc5a771-14ce-41bc-8289-d1a15c551c86": {
    "created": 1792533714,
-   "fp": "9029ce92d581fe52",
+   "fp": "aba54a5e46979052",
    "market": "es",
    "media_ids": [
     "746e632b-158a-4cd7-90d5-d50059e724d9"
@@ -374,12 +383,15 @@
   },
   "ddf59e94-a352-4124-9793-93b6f413f606": {
    "format": "FRX22",
-   "fp": "41bcdbcd7e5ef7d6",
+   "fp": "c16c3a68f93cef4b",
+   "keep_titles": [
+    "après 6 mois de chômage, j’ai enfin trouvé un emploi"
+   ],
    "market": "fr",
    "media_ids": [
-    "8c59ad23-d7f7-4baf-b09f-cdb44f57d5eb"
+    "d45ab320-d542-4159-b53b-33eaeb6a6ce6"
    ],
-   "place": "archive"
+   "place": "live"
   },
   "e514bd66-cf35-45ad-ac8e-f1ae9fa5d4b5": {
    "format": "X06",
@@ -413,6 +425,15 @@
    ],
    "place": "live"
   },
+  "f0f57560-45bf-425e-8626-839934f99dcb": {
+   "created": 1792569795,
+   "fp": "ac1f13346d527aaa",
+   "market": "es",
+   "media_ids": [
+    "6a2cf81c-54a6-4e1d-8361-d24488f3684c"
+   ],
+   "place": "live"
+  },
   "f64ddb2f-81a8-4ab2-b117-c74d008569b0": {
    "created": 1792299241,
    "fp": "0f15add3c3e17169",
@@ -424,7 +445,7 @@
   },
   "fa303c94-a68b-4b62-baf8-7c8a59871729": {
    "created": 1792533682,
-   "fp": "6663c43dc7336642",
+   "fp": "488bb250d27c7911",
    "market": "fr",
    "media_ids": [
     "1cf02d0b-261b-450c-b6b7-eae56507dd37"

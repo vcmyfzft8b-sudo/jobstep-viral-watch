@@ -28723,10 +28723,10 @@
   "judged": false,
   "likes": 79,
   "mature": true,
-  "saves": 52,
+  "saves": 51,
   "saves_unknown": false,
   "shares": 16,
-  "views": 1843,
+  "views": 1844,
   "views_7d": 1843
  },
  "7696018112851774738": {
@@ -28741,7 +28741,7 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 0,
-  "views": 782,
+  "views": 783,
   "views_7d": 778
  },
  "7696032836419079446": {
@@ -28756,7 +28756,7 @@
   "saves": 69,
   "saves_unknown": false,
   "shares": 7,
-  "views": 4811,
+  "views": 4815,
   "views_7d": 4804
  },
  "7696037845533871393": {
@@ -28768,10 +28768,10 @@
   "judged": false,
   "likes": 39,
   "mature": true,
-  "saves": 34,
+  "saves": 35,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1844,
+  "views": 1848,
   "views_7d": 1839
  },
  "7696038222811467030": {
@@ -28786,7 +28786,7 @@
   "saves": 30,
   "saves_unknown": false,
   "shares": 9,
-  "views": 2594,
+  "views": 2595,
   "views_7d": 2587
  },
  "7696040955710836000": {
@@ -28797,7 +28797,7 @@
   "hook": "Rejected, rejected, rejected: pretty CVs vs ATS-format CV",
   "judged": false,
   "likes": 45,
-  "mature": false,
+  "mature": true,
   "saves": 21,
   "saves_unknown": false,
   "shares": 2,
@@ -28812,7 +28812,7 @@
   "hook": "A tip for finding a job (no text or speech)",
   "judged": false,
   "likes": 31,
-  "mature": false,
+  "mature": true,
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
@@ -28827,11 +28827,11 @@
   "hook": "This is how you get rejected: pretty CVs vs ATS-format CV",
   "judged": false,
   "likes": 20,
-  "mature": false,
+  "mature": true,
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 884,
+  "views": 885,
   "views_7d": 884
  },
  "7696041481357757728": {
@@ -28842,11 +28842,11 @@
   "hook": "Just lie on your CV, then show the tool",
   "judged": false,
   "likes": 55,
-  "mature": false,
+  "mature": true,
   "saves": 9,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1028,
+  "views": 1030,
   "views_7d": 1028
  },
  "7696041943452618017": {
@@ -28856,12 +28856,12 @@
   "handle": "sarinajobstep",
   "hook": "'We chose someone else' is a lie: automatic AI rejection",
   "judged": false,
-  "likes": 90,
-  "mature": false,
+  "likes": 92,
+  "mature": true,
   "saves": 15,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1654,
+  "views": 1672,
   "views_7d": 1654
  },
  "7696042248420478241": {
@@ -28872,11 +28872,11 @@
   "hook": "Ex-HR secret: copy the job link into the tool for a tailored CV",
   "judged": false,
   "likes": 5,
-  "mature": false,
+  "mature": true,
   "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 832,
+  "views": 833,
   "views_7d": 832
  },
  "7696042661135781152": {
@@ -28887,11 +28887,11 @@
   "hook": "Rejected at Edeka despite a business degree; CV never passed the ATS filter",
   "judged": false,
   "likes": 80,
-  "mature": false,
+  "mature": true,
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1405,
+  "views": 1412,
   "views_7d": 1405
  },
  "7696047604999720214": {
@@ -28901,9 +28901,9 @@
   "handle": "work.with.ell",
   "hook": "How am I supposed to explain this to my parents? (job applications aren't written like they used to be; rejection after rejection until a recruiter said my CV fails ATS)",
   "judged": false,
-  "likes": 195,
+  "likes": 200,
   "mature": true,
-  "saves": 152,
+  "saves": 153,
   "saves_unknown": false,
   "shares": 26,
   "views": 11000,
@@ -28916,13 +28916,13 @@
   "handle": "sarinajobstep",
   "hook": "Did you know you can just lie on your CV? I used to do it all the time (only small things).",
   "judged": false,
-  "likes": 1432,
-  "mature": false,
+  "likes": 1433,
+  "mature": true,
   "saves": 698,
   "saves_unknown": false,
   "shares": 76,
   "sorted": true,
-  "views": 71500,
+  "views": 71600,
   "views_7d": 71500
  },
  "7696059794217651489": {
@@ -28952,7 +28952,7 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1002,
+  "views": 1003,
   "views_7d": 1001
  },
  "7696063342594542881": {
@@ -28967,7 +28967,7 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1293,
+  "views": 1296,
   "views_7d": 1289
  },
  "7696065795897494806": {
@@ -28977,12 +28977,12 @@
   "handle": "swaaag_06",
   "hook": "Do this right away so your CV gets through ATS filters; HR friend showed me",
   "judged": false,
-  "likes": 43,
+  "likes": 44,
   "mature": true,
   "saves": 38,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1951,
+  "views": 1958,
   "views_7d": 1917
  },
  "7696071739171769632": {
@@ -29008,11 +29008,11 @@
   "hook": "The HR person who gave me this tip, thank you",
   "judged": false,
   "likes": 21,
-  "mature": false,
+  "mature": true,
   "saves": 7,
   "saves_unknown": false,
   "shares": 2,
-  "views": 396,
+  "views": 398,
   "views_7d": 396
  },
  "7696081390349159713": {
@@ -29023,11 +29023,11 @@
   "hook": "Unemployed in pajamas on a Tuesday; a friend recommended a platform that matches job listings",
   "judged": false,
   "likes": 23,
-  "mature": false,
+  "mature": true,
   "saves": 3,
   "saves_unknown": false,
   "shares": 1,
-  "views": 800,
+  "views": 801,
   "views_7d": 800
  },
  "7696082664410942752": {
@@ -29042,7 +29042,7 @@
   "saves": 36,
   "saves_unknown": false,
   "shares": 5,
-  "views": 4117,
+  "views": 4118,
   "views_7d": 4116
  },
  "7696086605316099360": {
@@ -29057,7 +29057,7 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 2,
-  "views": 325,
+  "views": 327,
   "views_7d": 325
  },
  "7696086675545525537": {
@@ -29098,11 +29098,11 @@
   "hook": "I could kiss the HR person who showed me this",
   "judged": false,
   "likes": 25,
-  "mature": false,
+  "mature": true,
   "saves": 5,
   "saves_unknown": false,
   "shares": 5,
-  "views": 605,
+  "views": 613,
   "views_7d": 605
  },
  "7696100647258590497": {
@@ -29112,12 +29112,12 @@
   "handle": "jobtipsmetmarie",
   "hook": "How do I explain this to my parents (printed CV, ATS)",
   "judged": false,
-  "likes": 75,
+  "likes": 76,
   "mature": true,
   "saves": 8,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1173,
+  "views": 1174,
   "views_7d": 1172
  },
  "7696108059650837793": {
@@ -29128,11 +29128,11 @@
   "hook": "This rating changes everything: CV analysis app demo",
   "judged": false,
   "likes": 25,
-  "mature": false,
+  "mature": true,
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 784,
+  "views": 786,
   "views_7d": 784
  },
  "7696114886211915030": {
@@ -29820,7 +29820,7 @@
   "saves": 2312,
   "saves_unknown": false,
   "shares": 257,
-  "views": 55300,
+  "views": 55400,
   "views_7d": 55300
  },
  "7696229026901282070": {
@@ -30056,12 +30056,12 @@
   "hook": "A CV no company will reject in 5 minutes",
   "judged": false,
   "likes": 54,
-  "mature": false,
+  "mature": true,
   "saves": 8,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1062,
-  "views_7d": 1062
+  "views": 1063,
+  "views_7d": 1063
  },
  "7696273961545682194": {
   "created": 1791928429,
@@ -30075,8 +30075,8 @@
   "saves": 26,
   "saves_unknown": false,
   "shares": 1,
-  "views": 2118,
-  "views_7d": 2118
+  "views": 2126,
+  "views_7d": 2126
  },
  "7696279533141445920": {
   "created": 1791929720,
@@ -30105,8 +30105,8 @@
   "saves": 662,
   "saves_unknown": false,
   "shares": 131,
-  "views": 22400,
-  "views_7d": 22400
+  "views": 23000,
+  "views_7d": 23000
  },
  "7696319984217115911": {
   "created": 1791939143,
@@ -30116,12 +30116,12 @@
   "hook": "Many rejections until a recruiter explained why and recommended Jobstep, score 96%",
   "judged": false,
   "likes": 20,
-  "mature": false,
+  "mature": true,
   "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 680,
-  "views_7d": 680
+  "views": 682,
+  "views_7d": 682
  },
  "7696320757068057863": {
   "created": 1791939323,
@@ -30131,12 +30131,12 @@
   "hook": "POV: finally a job offer email while filming content",
   "judged": false,
   "likes": 63,
-  "mature": false,
+  "mature": true,
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1422,
-  "views_7d": 1422
+  "views": 1425,
+  "views_7d": 1425
  },
  "7696334837846068501": {
   "created": 1791942602,
@@ -30145,13 +30145,13 @@
   "handle": "majo67568",
   "hook": "HR secret: I'll delete this video in 2 hours — CVs are never read by a person, ATS software discards them",
   "judged": true,
-  "likes": 14400,
-  "mature": false,
-  "saves": 10842,
+  "likes": 14500,
+  "mature": true,
+  "saves": 10949,
   "saves_unknown": false,
-  "shares": 2382,
-  "views": 299300,
-  "views_7d": 299300
+  "shares": 2399,
+  "views": 302100,
+  "views_7d": 302100
  },
  "7696336996440067360": {
   "created": 1791943114,
@@ -30176,12 +30176,12 @@
   "hook": "The best (no text or speech)",
   "judged": false,
   "likes": 35,
-  "mature": false,
+  "mature": true,
   "saves": 14,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1041,
-  "views_7d": 1041
+  "views": 1046,
+  "views_7d": 1046
  },
  "7696341302203436321": {
   "created": 1791944111,
@@ -30206,12 +30206,12 @@
   "hook": "Toxic tip: make an ugly CV that passes ATS; HR mom's advice",
   "judged": false,
   "likes": 46,
-  "mature": false,
+  "mature": true,
   "saves": 26,
   "saves_unknown": false,
   "shares": 5,
-  "views": 857,
-  "views_7d": 857
+  "views": 859,
+  "views_7d": 859
  },
  "7696351124177079570": {
   "created": 1791946392,
@@ -30236,12 +30236,12 @@
   "hook": "People say the unemployed do nothing, but here's our 24 hours: at least 6 of them go into sending CVs and still getting rejected",
   "judged": false,
   "likes": 1747,
-  "mature": false,
+  "mature": true,
   "saves": 521,
   "saves_unknown": false,
   "shares": 178,
-  "views": 35800,
-  "views_7d": 35800
+  "views": 35900,
+  "views_7d": 35900
  },
  "7696384071051578646": {
   "created": 1791954069,
@@ -30251,12 +30251,12 @@
   "hook": "Does your CV look like this? (text only, Jobstep promo)",
   "judged": false,
   "likes": 121,
-  "mature": false,
+  "mature": true,
   "saves": 73,
   "saves_unknown": false,
   "shares": 13,
-  "views": 5422,
-  "views_7d": 5422
+  "views": 5424,
+  "views_7d": 5424
  },
  "7696392681815133472": {
   "created": 1791956069,
@@ -30266,12 +30266,12 @@
   "hook": "My ultra toxic tip to find a job: copy the job link into the tool for a tailored CV and cover letter",
   "judged": false,
   "likes": 44,
-  "mature": false,
+  "mature": true,
   "saves": 18,
   "saves_unknown": false,
   "shares": 8,
-  "views": 1168,
-  "views_7d": 1168
+  "views": 1169,
+  "views_7d": 1169
  },
  "7696397910627355925": {
   "created": 1791957286,
@@ -30281,12 +30281,12 @@
   "hook": "100 applications, 200 rejections: Canva CVs fail ATS, uploading to Jobstep raises score to 96%, now have interviews",
   "judged": false,
   "likes": 53,
-  "mature": false,
+  "mature": true,
   "saves": 41,
   "saves_unknown": false,
   "shares": 24,
-  "views": 1286,
-  "views_7d": 1286
+  "views": 1287,
+  "views_7d": 1287
  },
  "7696398551953313032": {
   "created": 1791957436,
@@ -30296,12 +30296,12 @@
   "hook": "You need an ugly Harvard-style CV to get a good one; saw a girl's video about an app",
   "judged": false,
   "likes": 7,
-  "mature": false,
+  "mature": true,
   "saves": 2,
   "saves_unknown": false,
   "shares": 1,
-  "views": 672,
-  "views_7d": 672
+  "views": 674,
+  "views_7d": 674
  },
  "7696401678974651670": {
   "created": 1791958164,
@@ -30401,12 +30401,12 @@
   "hook": "Nobody wanted to work as much as me: applied everywhere, last chance Jobstep, match score 40 to ATS 96",
   "judged": false,
   "likes": 22,
-  "mature": false,
+  "mature": true,
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 809,
-  "views_7d": 809
+  "views": 810,
+  "views_7d": 810
  },
  "7696429677514149153": {
   "created": 1791964684,
@@ -30430,11 +30430,11 @@
   "handle": "emma.jobtips",
   "hook": "POV: you're in my private story — after 4 months unemployed I finally got a job after changing one thing on my CV",
   "judged": true,
-  "likes": 1379,
+  "likes": 1396,
   "mature": false,
-  "saves": 969,
+  "saves": 988,
   "saves_unknown": false,
-  "shares": 146,
+  "shares": 149,
   "views": 34600,
   "views_7d": 34600
  },
@@ -30450,8 +30450,8 @@
   "saves": 506,
   "saves_unknown": false,
   "shares": 144,
-  "views": 100300,
-  "views_7d": 100300
+  "views": 100400,
+  "views_7d": 100400
  },
  "7696450125152963872": {
   "created": 1791969441,
@@ -30460,7 +30460,7 @@
   "handle": "julie.jobtips",
   "hook": "Sending exactly the same CV to every company? Adapt the CV to each offer",
   "judged": false,
-  "likes": 32,
+  "likes": 33,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
@@ -30493,8 +30493,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 2,
-  "views": 950,
-  "views_7d": 950
+  "views": 951,
+  "views_7d": 951
  },
  "7696458187548986657": {
   "created": 1791971319,
@@ -30508,8 +30508,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1548,
-  "views_7d": 1548
+  "views": 1549,
+  "views_7d": 1549
  },
  "7696459656213957910": {
   "created": 1791971666,
@@ -30549,8 +30549,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 438,
-  "views_7d": 438
+  "views": 439,
+  "views_7d": 439
  },
  "7696467847563709729": {
   "created": 1791973566,
@@ -30589,9 +30589,9 @@
   "handle": "itswithluna",
   "hook": "Do you also have a bad CV? ❌❌❌✅ (on-screen text only, no speech)",
   "judged": true,
-  "likes": 1358,
+  "likes": 1361,
   "mature": false,
-  "saves": 688,
+  "saves": 686,
   "saves_unknown": false,
   "shares": 58,
   "sorted": true,
@@ -30605,13 +30605,13 @@
   "handle": "carolinaworktips",
   "hook": "Rejected, rejected, rejected: these CVs don't work, here's how to pass ATS filters with an AI tool",
   "judged": true,
-  "likes": 4220,
+  "likes": 4318,
   "mature": false,
-  "saves": 6695,
+  "saves": 6834,
   "saves_unknown": false,
-  "shares": 2647,
-  "views": 235600,
-  "views_7d": 235600
+  "shares": 2685,
+  "views": 239100,
+  "views_7d": 239100
  },
  "7696496300107287841": {
   "created": 1791980190,
@@ -30640,8 +30640,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 1,
-  "views": 539,
-  "views_7d": 539
+  "views": 541,
+  "views_7d": 541
  },
  "7696499922694114593": {
   "created": 1791981034,
@@ -30655,8 +30655,8 @@
   "saves": 62,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1789,
-  "views_7d": 1789
+  "views": 1792,
+  "views_7d": 1792
  },
  "7696500270716538144": {
   "created": 1791981117,
@@ -30665,7 +30665,7 @@
   "handle": "lau.urarm",
   "hook": "200 rejections and no interview, because an ATS reads your CV, not a person",
   "judged": false,
-  "likes": 32,
+  "likes": 35,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
@@ -30685,8 +30685,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 3,
-  "views": 913,
-  "views_7d": 913
+  "views": 915,
+  "views_7d": 915
  },
  "7696512826487115030": {
   "created": 1791984041,
@@ -30700,8 +30700,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1573,
-  "views_7d": 1573
+  "views": 1596,
+  "views_7d": 1596
  },
  "7696513165978357014": {
   "created": 1791984121,
@@ -30770,13 +30770,13 @@
   "handle": "_klaudii30",
   "hook": "I quit my HR job so now I can tell the secret: 80% of CVs are never read by a human",
   "judged": false,
-  "likes": 91,
+  "likes": 92,
   "mature": false,
   "saves": 65,
   "saves_unknown": false,
   "shares": 8,
-  "views": 5847,
-  "views_7d": 5847
+  "views": 5855,
+  "views_7d": 5855
  },
  "7696524681486093590": {
   "created": 1791986803,
@@ -30790,8 +30790,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 342,
-  "views_7d": 342
+  "views": 343,
+  "views_7d": 343
  },
  "7696527713590463777": {
   "created": 1791987506,
@@ -30800,13 +30800,13 @@
   "handle": "emy.jobstep.io",
   "hook": "Lie on your CV (then the AI builds an ATS version)",
   "judged": false,
-  "likes": 92,
+  "likes": 93,
   "mature": false,
-  "saves": 27,
+  "saves": 28,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1385,
-  "views_7d": 1385
+  "views": 1391,
+  "views_7d": 1391
  },
  "7696531188629949729": {
   "created": 1791988315,
@@ -30815,13 +30815,13 @@
   "handle": "stay.with.giulia",
   "hook": "Why is a CV rejected? Filters stop it reaching recruiters",
   "judged": false,
-  "likes": 33,
+  "likes": 34,
   "mature": false,
-  "saves": 18,
+  "saves": 19,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1977,
-  "views_7d": 1977
+  "views": 2063,
+  "views_7d": 2063
  },
  "7696531421980134688": {
   "created": 1791988369,
@@ -30835,8 +30835,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1988,
-  "views_7d": 1988
+  "views": 2093,
+  "views_7d": 2093
  },
  "7696537505788661024": {
   "created": 1791989785,
@@ -30847,11 +30847,11 @@
   "judged": false,
   "likes": 69,
   "mature": false,
-  "saves": 35,
+  "saves": 36,
   "saves_unknown": false,
   "shares": 17,
-  "views": 2364,
-  "views_7d": 2364
+  "views": 2367,
+  "views_7d": 2367
  },
  "7696538670370917654": {
   "created": 1791990059,
@@ -30860,11 +30860,11 @@
   "handle": "swaaag_06",
   "hook": "The secret HR people know‼️ Hold to fast-forward",
   "judged": false,
-  "likes": 431,
+  "likes": 439,
   "mature": false,
-  "saves": 776,
+  "saves": 787,
   "saves_unknown": false,
-  "shares": 263,
+  "shares": 265,
   "sorted": true,
   "views": 54700,
   "views_7d": 54700
@@ -30881,8 +30881,8 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1332,
-  "views_7d": 1332
+  "views": 1334,
+  "views_7d": 1334
  },
  "7696544610365246722": {
   "created": 1791991440,
@@ -30891,13 +30891,13 @@
   "handle": "linnegzmstf",
   "hook": "No text or speech, job tips ad",
   "judged": false,
-  "likes": 146,
+  "likes": 152,
   "mature": false,
-  "saves": 108,
+  "saves": 112,
   "saves_unknown": false,
-  "shares": 18,
-  "views": 5543,
-  "views_7d": 5543
+  "shares": 19,
+  "views": 5794,
+  "views_7d": 5794
  },
  "7696550572836637984": {
   "created": 1791992828,
@@ -30911,8 +30911,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 0,
-  "views": 447,
-  "views_7d": 447
+  "views": 448,
+  "views_7d": 448
  },
  "7696551132755266838": {
   "created": 1791992963,
@@ -30941,8 +30941,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 4,
-  "views": 919,
-  "views_7d": 919
+  "views": 920,
+  "views_7d": 920
  },
  "7696553742866402582": {
   "created": 1791993567,
@@ -30971,8 +30971,8 @@
   "saves": 34,
   "saves_unknown": false,
   "shares": 14,
-  "views": 1919,
-  "views_7d": 1919
+  "views": 1930,
+  "views_7d": 1930
  },
  "7696557029397155104": {
   "created": 1791994330,
@@ -31016,8 +31016,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 884,
-  "views_7d": 884
+  "views": 886,
+  "views_7d": 886
  },
  "7696568005790158112": {
   "created": 1791996886,
@@ -31046,8 +31046,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 13,
-  "views": 2292,
-  "views_7d": 2292
+  "views": 2293,
+  "views_7d": 2293
  },
  "7696572695697198358": {
   "created": 1791997979,
@@ -31061,8 +31061,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1343,
-  "views_7d": 1343
+  "views": 1345,
+  "views_7d": 1345
  },
  "7696573603428551958": {
   "created": 1791998194,
@@ -31091,8 +31091,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 38,
-  "views": 1138,
-  "views_7d": 1138
+  "views": 1145,
+  "views_7d": 1145
  },
  "7696583310658587937": {
   "created": 1792000449,
@@ -31121,8 +31121,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 1,
-  "views": 503,
-  "views_7d": 503
+  "views": 504,
+  "views_7d": 504
  },
  "7696584985993645344": {
   "created": 1792000840,
@@ -31195,8 +31195,8 @@
   "saves": 35,
   "saves_unknown": false,
   "shares": 40,
-  "views": 2295,
-  "views_7d": 2295
+  "views": 2298,
+  "views_7d": 2298
  },
  "7696590666582740246": {
   "created": 1792002162,
@@ -31210,8 +31210,8 @@
   "saves": 1235,
   "saves_unknown": false,
   "shares": 265,
-  "views": 60900,
-  "views_7d": 60900
+  "views": 61000,
+  "views_7d": 61000
  },
  "7696594790992874774": {
   "created": 1792003125,
@@ -31240,8 +31240,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1090,
-  "views_7d": 1090
+  "views": 1092,
+  "views_7d": 1092
  },
  "7696604002737294625": {
   "created": 1792005268,
@@ -31315,8 +31315,8 @@
   "saves": 19,
   "saves_unknown": false,
   "shares": 9,
-  "views": 1220,
-  "views_7d": 1220
+  "views": 1226,
+  "views_7d": 1226
  },
  "7696623285085179158": {
   "created": 1792009761,
@@ -31330,8 +31330,8 @@
   "saves": 30,
   "saves_unknown": false,
   "shares": 7,
-  "views": 2320,
-  "views_7d": 2320
+  "views": 2327,
+  "views_7d": 2327
  },
  "7696625182462446870": {
   "created": 1792010202,
@@ -31390,8 +31390,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 3,
-  "views": 612,
-  "views_7d": 612
+  "views": 614,
+  "views_7d": 614
  },
  "7696626640356445473": {
   "created": 1792010538,
@@ -31405,8 +31405,8 @@
   "saves": 222,
   "saves_unknown": false,
   "shares": 23,
-  "views": 8548,
-  "views_7d": 8548
+  "views": 8559,
+  "views_7d": 8559
  },
  "7696632985038245138": {
   "created": 1792012026,
@@ -31420,8 +31420,8 @@
   "saves": 30,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1668,
-  "views_7d": 1668
+  "views": 1672,
+  "views_7d": 1672
  },
  "7696641536393579783": {
   "created": 1792014012,
@@ -31435,8 +31435,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 5,
-  "views": 903,
-  "views_7d": 903
+  "views": 906,
+  "views_7d": 906
  },
  "7696644166582914337": {
   "created": 1792014621,
@@ -31450,8 +31450,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1380,
-  "views_7d": 1380
+  "views": 1385,
+  "views_7d": 1385
  },
  "7696655262320528662": {
   "created": 1792017218,
@@ -31465,8 +31465,8 @@
   "saves": 43,
   "saves_unknown": false,
   "shares": 11,
-  "views": 1511,
-  "views_7d": 1511
+  "views": 1517,
+  "views_7d": 1517
  },
  "7696661907553537301": {
   "created": 1792018756,
@@ -31480,8 +31480,8 @@
   "saves": 63,
   "saves_unknown": false,
   "shares": 7,
-  "views": 2227,
-  "views_7d": 2227
+  "views": 2247,
+  "views_7d": 2247
  },
  "7696665020221984020": {
   "created": 1792019481,
@@ -31495,8 +31495,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 0,
-  "views": 14,
-  "views_7d": 14
+  "views": 16,
+  "views_7d": 16
  },
  "7696673485350767905": {
   "created": 1792021450,
@@ -31525,8 +31525,8 @@
   "saves": 391,
   "saves_unknown": false,
   "shares": 71,
-  "views": 13000,
-  "views_7d": 13000
+  "views": 14300,
+  "views_7d": 14300
  },
  "7696698012701101345": {
   "created": 1792027185,
@@ -31540,8 +31540,8 @@
   "saves": 32,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1099,
-  "views_7d": 1099
+  "views": 1101,
+  "views_7d": 1101
  },
  "7696701896576290081": {
   "created": 1792028096,
@@ -31555,8 +31555,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1498,
-  "views_7d": 1498
+  "views": 1502,
+  "views_7d": 1502
  },
  "7696706553432345874": {
   "created": 1792029157,
@@ -31565,11 +31565,11 @@
   "handle": "origomez953",
   "hook": "A trick HR doesn't want you to know: I overheard an HR woman on the train say CVs go through an ATS filter, and she recommended JobStep",
   "judged": true,
-  "likes": 63500,
+  "likes": 64300,
   "mature": false,
-  "saves": 40640,
+  "saves": 41125,
   "saves_unknown": false,
-  "shares": 31700,
+  "shares": 32000,
   "views": 1200000,
   "views_7d": 1200000
  },
@@ -31585,8 +31585,8 @@
   "saves": 35,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1724,
-  "views_7d": 1724
+  "views": 1726,
+  "views_7d": 1726
  },
  "7696729508551888148": {
   "created": 1792034492,
@@ -31595,13 +31595,13 @@
   "handle": "majo67568",
   "hook": "Someone explain why I hadn't seen this (no speech or text)",
   "judged": true,
-  "likes": 2300,
+  "likes": 2333,
   "mature": false,
-  "saves": 2435,
+  "saves": 2459,
   "saves_unknown": false,
-  "shares": 638,
-  "views": 124400,
-  "views_7d": 124400
+  "shares": 641,
+  "views": 125400,
+  "views_7d": 125400
  },
  "7696733737047919873": {
   "created": 1792035478,
@@ -31615,8 +31615,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 5,
-  "views": 911,
-  "views_7d": 911
+  "views": 914,
+  "views_7d": 914
  },
  "7696735280602123541": {
   "created": 1792035839,
@@ -31630,8 +31630,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1036,
-  "views_7d": 1036
+  "views": 1042,
+  "views_7d": 1042
  },
  "7696741727717068050": {
   "created": 1792037338,
@@ -31645,8 +31645,8 @@
   "saves": 29,
   "saves_unknown": false,
   "shares": 9,
-  "views": 2638,
-  "views_7d": 2638
+  "views": 2714,
+  "views_7d": 2714
  },
  "7696745570387496210": {
   "created": 1792038231,
@@ -31660,8 +31660,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1302,
-  "views_7d": 1302
+  "views": 1327,
+  "views_7d": 1327
  },
  "7696749496234954005": {
   "created": 1792039144,
@@ -31690,8 +31690,8 @@
   "saves": 70,
   "saves_unknown": false,
   "shares": 5,
-  "views": 2371,
-  "views_7d": 2371
+  "views": 2380,
+  "views_7d": 2380
  },
  "7696756823201828104": {
   "created": 1792040860,
@@ -31705,8 +31705,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1327,
-  "views_7d": 1327
+  "views": 1328,
+  "views_7d": 1328
  },
  "7696772892196900128": {
   "created": 1792044594,
@@ -31720,8 +31720,8 @@
   "saves": 14,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1052,
-  "views_7d": 1052
+  "views": 1058,
+  "views_7d": 1058
  },
  "7696773224490732832": {
   "created": 1792044672,
@@ -31750,8 +31750,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 572,
-  "views_7d": 572
+  "views": 574,
+  "views_7d": 574
  },
  "7696784701071117600": {
   "created": 1792047347,
@@ -31765,8 +31765,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1115,
-  "views_7d": 1115
+  "views": 1117,
+  "views_7d": 1117
  },
  "7696787092772375830": {
   "created": 1792047906,
@@ -31780,8 +31780,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 851,
-  "views_7d": 851
+  "views": 853,
+  "views_7d": 853
  },
  "7696791925277478176": {
   "created": 1792049028,
@@ -31792,7 +31792,7 @@
   "judged": false,
   "likes": 65,
   "mature": false,
-  "saves": 59,
+  "saves": 58,
   "saves_unknown": false,
   "shares": 15,
   "views": 4903,
@@ -31810,8 +31810,8 @@
   "saves": 99,
   "saves_unknown": false,
   "shares": 8,
-  "views": 6548,
-  "views_7d": 6548
+  "views": 6552,
+  "views_7d": 6552
  },
  "7696801839265664288": {
   "created": 1792051331,
@@ -31835,13 +31835,13 @@
   "handle": "salii.jobtipps",
   "hook": "200 applications, only the typical 'we chose another candidate' rejection; an AI judges your CV",
   "judged": false,
-  "likes": 21,
+  "likes": 22,
   "mature": false,
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1073,
-  "views_7d": 1073
+  "views": 1102,
+  "views_7d": 1102
  },
  "7696825921940049185": {
   "created": 1792056939,
@@ -31855,8 +31855,8 @@
   "saves": 230,
   "saves_unknown": false,
   "shares": 39,
-  "views": 7990,
-  "views_7d": 7990
+  "views": 7996,
+  "views_7d": 7996
  },
  "7696830370272136451": {
   "created": 1792057975,
@@ -31870,8 +31870,8 @@
   "saves": 71,
   "saves_unknown": false,
   "shares": 6,
-  "views": 5134,
-  "views_7d": 5134
+  "views": 5137,
+  "views_7d": 5137
  },
  "7696835470847659296": {
   "created": 1792059161,
@@ -31880,13 +31880,13 @@
   "handle": "chloejobtips",
   "hook": "Cute Canva CVs don't pass ATS, which is why nobody calls you back",
   "judged": false,
-  "likes": 17,
+  "likes": 19,
   "mature": false,
-  "saves": 14,
+  "saves": 16,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1749,
-  "views_7d": 1749
+  "views": 1750,
+  "views_7d": 1750
  },
  "7696837391822228768": {
   "created": 1792059610,
@@ -31895,7 +31895,7 @@
   "handle": "chloe.jobtipps",
   "hook": "Unemployed? ATS filters sort your CV before a recruiter sees it; fixed CV scores 96",
   "judged": false,
-  "likes": 23,
+  "likes": 24,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
@@ -31915,8 +31915,8 @@
   "saves": 28,
   "saves_unknown": false,
   "shares": 3,
-  "views": 980,
-  "views_7d": 980
+  "views": 982,
+  "views_7d": 982
  },
  "7696850342578867489": {
   "created": 1792062624,
@@ -31930,8 +31930,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 453,
-  "views_7d": 453
+  "views": 456,
+  "views_7d": 456
  },
  "7696860439082175776": {
   "created": 1792064974,
@@ -31945,8 +31945,8 @@
   "saves": 27,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1496,
-  "views_7d": 1496
+  "views": 1500,
+  "views_7d": 1500
  },
  "7696871663962557718": {
   "created": 1792067591,
@@ -31960,8 +31960,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1234,
-  "views_7d": 1234
+  "views": 1238,
+  "views_7d": 1238
  },
  "7696882739236162838": {
   "created": 1792070167,
@@ -31975,8 +31975,8 @@
   "saves": 36,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1100,
-  "views_7d": 1100
+  "views": 1106,
+  "views_7d": 1106
  },
  "7696885023571528993": {
   "created": 1792070699,
@@ -32020,8 +32020,8 @@
   "saves": 24,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1484,
-  "views_7d": 1484
+  "views": 1499,
+  "views_7d": 1499
  },
  "7696897404418837782": {
   "created": 1792073582,
@@ -32035,8 +32035,8 @@
   "saves": 59,
   "saves_unknown": false,
   "shares": 4,
-  "views": 4269,
-  "views_7d": 4269
+  "views": 4290,
+  "views_7d": 4290
  },
  "7696905305673698593": {
   "created": 1792075420,
@@ -32050,8 +32050,8 @@
   "saves": 120,
   "saves_unknown": false,
   "shares": 36,
-  "views": 7727,
-  "views_7d": 7727
+  "views": 7745,
+  "views_7d": 7745
  },
  "7696905888610782486": {
   "created": 1792075558,
@@ -32125,8 +32125,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1313,
-  "views_7d": 1313
+  "views": 1320,
+  "views_7d": 1320
  },
  "7696908690611473687": {
   "created": 1792076211,
@@ -32155,8 +32155,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1293,
-  "views_7d": 1293
+  "views": 1298,
+  "views_7d": 1298
  },
  "7696912115310890262": {
   "created": 1792077009,
@@ -32170,8 +32170,8 @@
   "saves": 20,
   "saves_unknown": false,
   "shares": 64,
-  "views": 812,
-  "views_7d": 812
+  "views": 818,
+  "views_7d": 818
  },
  "7696912340918209825": {
   "created": 1792077057,
@@ -32185,8 +32185,8 @@
   "saves": 64,
   "saves_unknown": false,
   "shares": 13,
-  "views": 4478,
-  "views_7d": 4478
+  "views": 4479,
+  "views_7d": 4479
  },
  "7696914712675519777": {
   "created": 1792077610,
@@ -32200,8 +32200,8 @@
   "saves": 46,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1926,
-  "views_7d": 1926
+  "views": 1950,
+  "views_7d": 1950
  },
  "7696920210493787424": {
   "created": 1792078891,
@@ -32230,8 +32230,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1583,
-  "views_7d": 1583
+  "views": 1587,
+  "views_7d": 1587
  },
  "7696926241034685718": {
   "created": 1792080278,
@@ -32245,8 +32245,8 @@
   "saves": 35,
   "saves_unknown": false,
   "shares": 30,
-  "views": 2126,
-  "views_7d": 2126
+  "views": 2188,
+  "views_7d": 2188
  },
  "7696932853992443168": {
   "created": 1792081834,
@@ -32260,8 +32260,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 327,
-  "views_7d": 327
+  "views": 328,
+  "views_7d": 328
  },
  "7696934378789801238": {
   "created": 1792082190,
@@ -32275,8 +32275,8 @@
   "saves": 31,
   "saves_unknown": false,
   "shares": 7,
-  "views": 5579,
-  "views_7d": 5579
+  "views": 5581,
+  "views_7d": 5581
  },
  "7696936677419306273": {
   "created": 1792082725,
@@ -32305,8 +32305,8 @@
   "saves": 827,
   "saves_unknown": false,
   "shares": 117,
-  "views": 47800,
-  "views_7d": 47800
+  "views": 47900,
+  "views_7d": 47900
  },
  "7696940278002765089": {
   "created": 1792083562,
@@ -32320,8 +32320,8 @@
   "saves": 458,
   "saves_unknown": false,
   "shares": 40,
-  "views": 17100,
-  "views_7d": 17100
+  "views": 17200,
+  "views_7d": 17200
  },
  "7696940478901652769": {
   "created": 1792083609,
@@ -32335,8 +32335,8 @@
   "saves": 176,
   "saves_unknown": false,
   "shares": 172,
-  "views": 25800,
-  "views_7d": 25800
+  "views": 25900,
+  "views_7d": 25900
  },
  "7696941604875111698": {
   "created": 1792083873,
@@ -32350,8 +32350,8 @@
   "saves": 58,
   "saves_unknown": false,
   "shares": 10,
-  "views": 3739,
-  "views_7d": 3739
+  "views": 3795,
+  "views_7d": 3795
  },
  "7696943016304495904": {
   "created": 1792084200,
@@ -32365,8 +32365,8 @@
   "saves": 23,
   "saves_unknown": false,
   "shares": 11,
-  "views": 1483,
-  "views_7d": 1483
+  "views": 1485,
+  "views_7d": 1485
  },
  "7696944619442982176": {
   "created": 1792084572,
@@ -32380,8 +32380,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 0,
-  "views": 321,
-  "views_7d": 321
+  "views": 322,
+  "views_7d": 322
  },
  "7696947131348684054": {
   "created": 1792085160,
@@ -32390,13 +32390,13 @@
   "handle": "itswithluna",
   "hook": "HR rejects all CVs like these (bad CV = rejection)",
   "judged": true,
-  "likes": 7436,
+  "likes": 7447,
   "mature": false,
-  "saves": 5387,
+  "saves": 5396,
   "saves_unknown": false,
   "shares": 781,
-  "views": 154300,
-  "views_7d": 154300
+  "views": 154700,
+  "views_7d": 154700
  },
  "7696947215884963104": {
   "created": 1792085178,
@@ -32425,8 +32425,8 @@
   "saves": 74,
   "saves_unknown": false,
   "shares": 5,
-  "views": 5407,
-  "views_7d": 5407
+  "views": 5409,
+  "views_7d": 5409
  },
  "7696952011283090710": {
   "created": 1792086296,
@@ -32455,8 +32455,8 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1296,
-  "views_7d": 1296
+  "views": 1297,
+  "views_7d": 1297
  },
  "7696959497092271382": {
   "created": 1792088039,
@@ -32470,8 +32470,8 @@
   "saves": 89,
   "saves_unknown": false,
   "shares": 19,
-  "views": 7652,
-  "views_7d": 7652
+  "views": 7763,
+  "views_7d": 7763
  },
  "7696960122458803477": {
   "created": 1792088188,
@@ -32485,8 +32485,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 3,
-  "views": 673,
-  "views_7d": 673
+  "views": 678,
+  "views_7d": 678
  },
  "7696960594489904417": {
   "created": 1792088293,
@@ -32500,8 +32500,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 887,
-  "views_7d": 887
+  "views": 888,
+  "views_7d": 888
  },
  "7696964355878915350": {
   "created": 1792089169,
@@ -32515,8 +32515,8 @@
   "saves": 76,
   "saves_unknown": false,
   "shares": 8,
-  "views": 9836,
-  "views_7d": 9836
+  "views": 9843,
+  "views_7d": 9843
  },
  "7696965190469881120": {
   "created": 1792089363,
@@ -32530,8 +32530,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1998,
-  "views_7d": 1998
+  "views": 2002,
+  "views_7d": 2002
  },
  "7696973603652341025": {
   "created": 1792091321,
@@ -32570,13 +32570,13 @@
   "handle": "lissa.jobtipps",
   "hook": "LIE ON YOUR CV 🚨",
   "judged": true,
-  "likes": 4699,
+  "likes": 4732,
   "mature": false,
-  "saves": 3049,
+  "saves": 3076,
   "saves_unknown": false,
-  "shares": 388,
-  "views": 345500,
-  "views_7d": 345500
+  "shares": 395,
+  "views": 348000,
+  "views_7d": 348000
  },
  "7696986523715046678": {
   "created": 1792094332,
@@ -32590,8 +32590,8 @@
   "saves": 60,
   "saves_unknown": false,
   "shares": 9,
-  "views": 3374,
-  "views_7d": 3374
+  "views": 3379,
+  "views_7d": 3379
  },
  "7696988310777924886": {
   "created": 1792094746,
@@ -32600,13 +32600,13 @@
   "handle": "lockinwitheva",
   "hook": "These CVs get rejected, throw yours away",
   "judged": true,
-  "likes": 1961,
+  "likes": 1963,
   "mature": false,
-  "saves": 1373,
+  "saves": 1375,
   "saves_unknown": false,
   "shares": 850,
-  "views": 156400,
-  "views_7d": 156400
+  "views": 156500,
+  "views_7d": 156500
  },
  "7696988677121068321": {
   "created": 1792094831,
@@ -32635,8 +32635,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 1,
-  "views": 476,
-  "views_7d": 476
+  "views": 483,
+  "views_7d": 483
  },
  "7696990503325142294": {
   "created": 1792095257,
@@ -32650,8 +32650,8 @@
   "saves": 27,
   "saves_unknown": false,
   "shares": 2,
-  "views": 3412,
-  "views_7d": 3412
+  "views": 3415,
+  "views_7d": 3415
  },
  "7696994765153373473": {
   "created": 1792096251,
@@ -32680,8 +32680,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 955,
-  "views_7d": 955
+  "views": 961,
+  "views_7d": 961
  },
  "7696997597554265366": {
   "created": 1792096911,
@@ -32740,8 +32740,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 1,
-  "views": 455,
-  "views_7d": 455
+  "views": 456,
+  "views_7d": 456
  },
  "7696999165242445089": {
   "created": 1792097273,
@@ -32770,8 +32770,8 @@
   "saves": 97,
   "saves_unknown": false,
   "shares": 9,
-  "views": 5445,
-  "views_7d": 5445
+  "views": 5451,
+  "views_7d": 5451
  },
  "7697005968248343829": {
   "created": 1792098860,
@@ -32785,8 +32785,8 @@
   "saves": 71,
   "saves_unknown": false,
   "shares": 5,
-  "views": 3000,
-  "views_7d": 3000
+  "views": 3033,
+  "views_7d": 3033
  },
  "7697013685356629270": {
   "created": 1792100658,
@@ -32830,8 +32830,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 0,
-  "views": 654,
-  "views_7d": 654
+  "views": 656,
+  "views_7d": 656
  },
  "7697018447326104850": {
   "created": 1792101765,
@@ -32845,8 +32845,8 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1062,
-  "views_7d": 1062
+  "views": 1063,
+  "views_7d": 1063
  },
  "7697019984370781448": {
   "created": 1792102126,
@@ -32860,8 +32860,8 @@
   "saves": 239,
   "saves_unknown": false,
   "shares": 32,
-  "views": 7447,
-  "views_7d": 7447
+  "views": 7462,
+  "views_7d": 7462
  },
  "7697020976281718038": {
   "created": 1792102355,
@@ -32875,8 +32875,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 5,
-  "views": 859,
-  "views_7d": 859
+  "views": 861,
+  "views_7d": 861
  },
  "7697022386419371296": {
   "created": 1792102683,
@@ -32890,8 +32890,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 3,
-  "views": 740,
-  "views_7d": 740
+  "views": 742,
+  "views_7d": 742
  },
  "7697027372876401940": {
   "created": 1792103843,
@@ -32905,8 +32905,8 @@
   "saves": 486,
   "saves_unknown": false,
   "shares": 98,
-  "views": 8122,
-  "views_7d": 8122
+  "views": 8285,
+  "views_7d": 8285
  },
  "7697040422585109778": {
   "created": 1792106889,
@@ -32920,8 +32920,8 @@
   "saves": 127,
   "saves_unknown": false,
   "shares": 20,
-  "views": 6531,
-  "views_7d": 6531
+  "views": 6602,
+  "views_7d": 6602
  },
  "7697047542021885216": {
   "created": 1792108543,
@@ -32935,8 +32935,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
-  "views": 847,
-  "views_7d": 847
+  "views": 853,
+  "views_7d": 853
  },
  "7697049589383269664": {
   "created": 1792109022,
@@ -32950,8 +32950,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 523,
-  "views_7d": 523
+  "views": 526,
+  "views_7d": 526
  },
  "7697050127990590740": {
   "created": 1792109145,
@@ -32965,8 +32965,8 @@
   "saves": 14,
   "saves_unknown": false,
   "shares": 5,
-  "views": 827,
-  "views_7d": 827
+  "views": 832,
+  "views_7d": 832
  },
  "7697063025760652564": {
   "created": 1792112151,
@@ -32980,8 +32980,8 @@
   "saves": 2558,
   "saves_unknown": false,
   "shares": 679,
-  "views": 47700,
-  "views_7d": 47700
+  "views": 49600,
+  "views_7d": 49600
  },
  "7697087376778087698": {
   "created": 1792117814,
@@ -32995,8 +32995,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 731,
-  "views_7d": 731
+  "views": 732,
+  "views_7d": 732
  },
  "7697093248661064980": {
   "created": 1792119181,
@@ -33010,8 +33010,8 @@
   "saves": 42,
   "saves_unknown": false,
   "shares": 9,
-  "views": 4127,
-  "views_7d": 4127
+  "views": 4138,
+  "views_7d": 4138
  },
  "7697110629169040660": {
   "created": 1792123229,
@@ -33040,8 +33040,8 @@
   "saves": 33,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1437,
-  "views_7d": 1437
+  "views": 1446,
+  "views_7d": 1446
  },
  "7697125911002500368": {
   "created": 1792126793,
@@ -33050,13 +33050,13 @@
   "handle": "lil.janeiro0",
   "hook": "Rejected, rejected, rejected: these CVs are wrong, ATS filters; make an ATS CV with the app",
   "judged": false,
-  "likes": 197,
+  "likes": 200,
   "mature": false,
-  "saves": 142,
+  "saves": 145,
   "saves_unknown": false,
-  "shares": 14,
-  "views": 5202,
-  "views_7d": 5202
+  "shares": 16,
+  "views": 5263,
+  "views_7d": 5263
  },
  "7697128733752167682": {
   "created": 1792127458,
@@ -33065,13 +33065,13 @@
   "handle": "filippajobbtips",
   "hook": "Why can't CVs look like this anymore?",
   "judged": true,
-  "likes": 10300,
+  "likes": 10400,
   "mature": false,
-  "saves": 6227,
+  "saves": 6262,
   "saves_unknown": false,
-  "shares": 886,
-  "views": 290700,
-  "views_7d": 290700
+  "shares": 899,
+  "views": 292900,
+  "views_7d": 292900
  },
  "7697133123108162838": {
   "created": 1792128479,
@@ -33080,13 +33080,13 @@
   "handle": "annikajobtips",
   "hook": "My HR friend told me this, keep it secret",
   "judged": false,
-  "likes": 32,
+  "likes": 33,
   "mature": false,
-  "saves": 9,
+  "saves": 10,
   "saves_unknown": false,
   "shares": 4,
-  "views": 612,
-  "views_7d": 612
+  "views": 614,
+  "views_7d": 614
  },
  "7697139326525738248": {
   "created": 1792129915,
@@ -33100,8 +33100,8 @@
   "saves": 25,
   "saves_unknown": false,
   "shares": 14,
-  "views": 1690,
-  "views_7d": 1690
+  "views": 1708,
+  "views_7d": 1708
  },
  "7697145746251894037": {
   "created": 1792131405,
@@ -33130,8 +33130,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 483,
-  "views_7d": 483
+  "views": 484,
+  "views_7d": 484
  },
  "7697148325845355808": {
   "created": 1792132009,
@@ -33145,8 +33145,8 @@
   "saves": 26,
   "saves_unknown": false,
   "shares": 3,
-  "views": 5091,
-  "views_7d": 5091
+  "views": 5121,
+  "views_7d": 5121
  },
  "7697148709263412512": {
   "created": 1792132094,
@@ -33160,8 +33160,8 @@
   "saves": 32,
   "saves_unknown": false,
   "shares": 5,
-  "views": 4752,
-  "views_7d": 4752
+  "views": 4771,
+  "views_7d": 4771
  },
  "7697148990902603041": {
   "created": 1792132168,
@@ -33175,8 +33175,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 0,
-  "views": 826,
-  "views_7d": 826
+  "views": 827,
+  "views_7d": 827
  },
  "7697149590566472992": {
   "created": 1792132305,
@@ -33219,9 +33219,9 @@
   "mature": false,
   "saves": 26,
   "saves_unknown": false,
-  "shares": 2,
-  "views": 1298,
-  "views_7d": 1298
+  "shares": 3,
+  "views": 1300,
+  "views_7d": 1300
  },
  "7697171522259111201": {
   "created": 1792137407,
@@ -33264,9 +33264,9 @@
   "mature": false,
   "saves": 3,
   "saves_unknown": false,
-  "shares": 2,
-  "views": 406,
-  "views_7d": 406
+  "shares": 3,
+  "views": 432,
+  "views_7d": 432
  },
  "7697196878034701601": {
   "created": 1792143310,
@@ -33275,13 +33275,13 @@
   "handle": "emma_jobtips",
   "hook": "This CV gets rejected, this one doesn't: icons and charts aren't ATS-proof",
   "judged": true,
-  "likes": 4536,
+  "likes": 4553,
   "mature": false,
-  "saves": 4060,
+  "saves": 4084,
   "saves_unknown": false,
-  "shares": 887,
-  "views": 271300,
-  "views_7d": 271300
+  "shares": 889,
+  "views": 272200,
+  "views_7d": 272200
  },
  "7697212800955108611": {
   "created": 1792147026,
@@ -33290,13 +33290,13 @@
   "handle": "juliantyonhaku",
   "hook": "Save this video if you're job hunting: copy job link, Jobstep tailors CV and shows score",
   "judged": false,
-  "likes": 83,
+  "likes": 85,
   "mature": false,
   "saves": 39,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1157,
-  "views_7d": 1157
+  "views": 1159,
+  "views_7d": 1159
  },
  "7697219144353205536": {
   "created": 1792148493,
@@ -33305,13 +33305,13 @@
   "handle": "emma.jobtips",
   "hook": "POV in my private story during unemployment: 4 months of automatic refusals, tried the AI CV tool and it worked",
   "judged": false,
-  "likes": 116,
+  "likes": 132,
   "mature": false,
-  "saves": 22,
+  "saves": 29,
   "saves_unknown": false,
-  "shares": 14,
-  "views": 2963,
-  "views_7d": 2963
+  "shares": 16,
+  "views": 2975,
+  "views_7d": 2975
  },
  "7697230214547393814": {
   "created": 1792151075,
@@ -33335,13 +33335,13 @@
   "handle": "carolinaworktips",
   "hook": "Sent my CV on Wednesday and today they called me to work",
   "judged": false,
-  "likes": 1108,
+  "likes": 2716,
   "mature": false,
-  "saves": 407,
+  "saves": 1062,
   "saves_unknown": false,
-  "shares": 67,
-  "views": 81400,
-  "views_7d": 81400
+  "shares": 186,
+  "views": 83200,
+  "views_7d": 83200
  },
  "7697249608119930134": {
   "created": 1792155591,
@@ -33350,7 +33350,7 @@
   "handle": "jenny_jennyv",
   "hook": "Rating job-search platforms with gold/silver/bronze ranking",
   "judged": false,
-  "likes": 23,
+  "likes": 25,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
@@ -33365,13 +33365,13 @@
   "handle": "samjobtips",
   "hook": "My super toxic tip for finding a job (use AI so you don't spend 2-3 hours applying every day)",
   "judged": false,
-  "likes": 178,
+  "likes": 180,
   "mature": false,
   "saves": 161,
   "saves_unknown": false,
   "shares": 15,
-  "views": 7082,
-  "views_7d": 7082
+  "views": 7086,
+  "views_7d": 7086
  },
  "7697256380729789704": {
   "created": 1792157164,
@@ -33380,13 +33380,13 @@
   "handle": "yamiworks22",
   "hook": "I finally understand why everyone is deleting ChatGPT: numbered steps to a tailored CV",
   "judged": false,
-  "likes": 29,
+  "likes": 31,
   "mature": false,
-  "saves": 13,
+  "saves": 15,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1309,
-  "views_7d": 1309
+  "views": 1408,
+  "views_7d": 1408
  },
  "7697264197272341783": {
   "created": 1792158985,
@@ -33400,8 +33400,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 0,
-  "views": 550,
-  "views_7d": 550
+  "views": 553,
+  "views_7d": 553
  },
  "7697280869244882209": {
   "created": 1792162865,
@@ -33415,8 +33415,8 @@
   "saves": 36,
   "saves_unknown": false,
   "shares": 25,
-  "views": 2142,
-  "views_7d": 2142
+  "views": 2157,
+  "views_7d": 2157
  },
  "7697283915190390049": {
   "created": 1792163572,
@@ -33430,8 +33430,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 10,
-  "views": 1605,
-  "views_7d": 1605
+  "views": 1616,
+  "views_7d": 1616
  },
  "7697284096677940502": {
   "created": 1792163616,
@@ -33475,8 +33475,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 45,
-  "views": 666,
-  "views_7d": 666
+  "views": 680,
+  "views_7d": 680
  },
  "7697292983393193238": {
   "created": 1792165687,
@@ -33505,8 +33505,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 0,
-  "views": 871,
-  "views_7d": 871
+  "views": 872,
+  "views_7d": 872
  },
  "7697296895005363458": {
   "created": 1792166577,
@@ -33520,8 +33520,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 6,
-  "views": 871,
-  "views_7d": 871
+  "views": 882,
+  "views_7d": 882
  },
  "7697298102801157409": {
   "created": 1792166874,
@@ -33535,8 +33535,8 @@
   "saves": 31,
   "saves_unknown": false,
   "shares": 2,
-  "views": 3105,
-  "views_7d": 3105
+  "views": 3107,
+  "views_7d": 3107
  },
  "7697298224352152835": {
   "created": 1792166906,
@@ -33565,8 +33565,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1652,
-  "views_7d": 1652
+  "views": 1717,
+  "views_7d": 1717
  },
  "7697300533647887649": {
   "created": 1792167441,
@@ -33580,8 +33580,8 @@
   "saves": 34,
   "saves_unknown": false,
   "shares": 4,
-  "views": 4012,
-  "views_7d": 4012
+  "views": 4018,
+  "views_7d": 4018
  },
  "7697301132799986976": {
   "created": 1792167581,
@@ -33590,13 +33590,13 @@
   "handle": "stay.with.giulia",
   "hook": "I left my job in HR, so now I can tell you the secrets they don't tell you 🤫",
   "judged": true,
-  "likes": 3805,
+  "likes": 3807,
   "mature": false,
-  "saves": 4629,
+  "saves": 4638,
   "saves_unknown": false,
-  "shares": 521,
-  "views": 198700,
-  "views_7d": 198700
+  "shares": 522,
+  "views": 199000,
+  "views_7d": 199000
  },
  "7697302137965006112": {
   "created": 1792167816,
@@ -33610,8 +33610,8 @@
   "saves": 24,
   "saves_unknown": false,
   "shares": 2,
-  "views": 846,
-  "views_7d": 846
+  "views": 849,
+  "views_7d": 849
  },
  "7697303731599133985": {
   "created": 1792168186,
@@ -33625,8 +33625,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1643,
-  "views_7d": 1643
+  "views": 1647,
+  "views_7d": 1647
  },
  "7697306474481028385": {
   "created": 1792168824,
@@ -33640,8 +33640,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 12,
-  "views": 909,
-  "views_7d": 909
+  "views": 916,
+  "views_7d": 916
  },
  "7697306899254988054": {
   "created": 1792168927,
@@ -33655,8 +33655,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1992,
-  "views_7d": 1992
+  "views": 2000,
+  "views_7d": 2000
  },
  "7697309433940020502": {
   "created": 1792169518,
@@ -33685,8 +33685,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 641,
-  "views_7d": 641
+  "views": 647,
+  "views_7d": 647
  },
  "7697316549698276630": {
   "created": 1792171172,
@@ -33700,8 +33700,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1130,
-  "views_7d": 1130
+  "views": 1134,
+  "views_7d": 1134
  },
  "7697322093901270304": {
   "created": 1792172461,
@@ -33715,8 +33715,8 @@
   "saves": 63,
   "saves_unknown": false,
   "shares": 8,
-  "views": 11500,
-  "views_7d": 11500
+  "views": 11600,
+  "views_7d": 11600
  },
  "7697322336852184342": {
   "created": 1792172522,
@@ -33730,8 +33730,8 @@
   "saves": 1125,
   "saves_unknown": false,
   "shares": 223,
-  "views": 60500,
-  "views_7d": 60500
+  "views": 60700,
+  "views_7d": 60700
  },
  "7697322759013059873": {
   "created": 1792172616,
@@ -33760,8 +33760,8 @@
   "saves": 84,
   "saves_unknown": false,
   "shares": 8,
-  "views": 4587,
-  "views_7d": 4587
+  "views": 4599,
+  "views_7d": 4599
  },
  "7697326119904742688": {
   "created": 1792173399,
@@ -33805,8 +33805,8 @@
   "saves": 19,
   "saves_unknown": false,
   "shares": 1,
-  "views": 717,
-  "views_7d": 717
+  "views": 718,
+  "views_7d": 718
  },
  "7697331573980515605": {
   "created": 1792174670,
@@ -33820,8 +33820,8 @@
   "saves": 14,
   "saves_unknown": false,
   "shares": 2,
-  "views": 516,
-  "views_7d": 516
+  "views": 520,
+  "views_7d": 520
  },
  "7697342918222155041": {
   "created": 1792177310,
@@ -33850,8 +33850,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1050,
-  "views_7d": 1050
+  "views": 1052,
+  "views_7d": 1052
  },
  "7697349008515173654": {
   "created": 1792178729,
@@ -33865,8 +33865,8 @@
   "saves": 91,
   "saves_unknown": false,
   "shares": 23,
-  "views": 3302,
-  "views_7d": 3302
+  "views": 3388,
+  "views_7d": 3388
  },
  "7697349868041424150": {
   "created": 1792178932,
@@ -33895,8 +33895,8 @@
   "saves": 68,
   "saves_unknown": false,
   "shares": 5,
-  "views": 3442,
-  "views_7d": 3442
+  "views": 3450,
+  "views_7d": 3450
  },
  "7697358054999723297": {
   "created": 1792180833,
@@ -33925,8 +33925,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 16,
-  "views": 1748,
-  "views_7d": 1748
+  "views": 1759,
+  "views_7d": 1759
  },
  "7697365916094434582": {
   "created": 1792182668,
@@ -33940,8 +33940,8 @@
   "saves": 29,
   "saves_unknown": false,
   "shares": 1,
-  "views": 2164,
-  "views_7d": 2164
+  "views": 2165,
+  "views_7d": 2165
  },
  "7697368523739368726": {
   "created": 1792183275,
@@ -33955,8 +33955,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1439,
-  "views_7d": 1439
+  "views": 1447,
+  "views_7d": 1447
  },
  "7697369929460370721": {
   "created": 1792183599,
@@ -33970,8 +33970,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1229,
-  "views_7d": 1229
+  "views": 1230,
+  "views_7d": 1230
  },
  "7697370466285096225": {
   "created": 1792183724,
@@ -34000,8 +34000,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 1,
-  "views": 658,
-  "views_7d": 658
+  "views": 667,
+  "views_7d": 667
  },
  "7697382567238012180": {
   "created": 1792186546,
@@ -34015,8 +34015,8 @@
   "saves": 593,
   "saves_unknown": false,
   "shares": 118,
-  "views": 22400,
-  "views_7d": 22400
+  "views": 22800,
+  "views_7d": 22800
  },
  "7697383840804818209": {
   "created": 1792186838,
@@ -34030,8 +34030,8 @@
   "saves": 19,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1058,
-  "views_7d": 1058
+  "views": 1059,
+  "views_7d": 1059
  },
  "7697385177194024225": {
   "created": 1792187150,
@@ -34045,8 +34045,8 @@
   "saves": 68,
   "saves_unknown": false,
   "shares": 6,
-  "views": 3048,
-  "views_7d": 3048
+  "views": 3059,
+  "views_7d": 3059
  },
  "7697386027555589394": {
   "created": 1792187357,
@@ -34060,8 +34060,8 @@
   "saves": 165,
   "saves_unknown": false,
   "shares": 117,
-  "views": 27900,
-  "views_7d": 27900
+  "views": 28000,
+  "views_7d": 28000
  },
  "7697393779011079442": {
   "created": 1792189165,
@@ -34075,8 +34075,8 @@
   "saves": 378,
   "saves_unknown": false,
   "shares": 60,
-  "views": 22000,
-  "views_7d": 22000
+  "views": 23100,
+  "views_7d": 23100
  },
  "7697395855543913760": {
   "created": 1792189638,
@@ -34090,8 +34090,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
-  "views": 360,
-  "views_7d": 360
+  "views": 361,
+  "views_7d": 361
  },
  "7697415613932653856": {
   "created": 1792194244,
@@ -34105,8 +34105,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 9,
-  "views": 1068,
-  "views_7d": 1068
+  "views": 1072,
+  "views_7d": 1072
  },
  "7697417422290128160": {
   "created": 1792194666,
@@ -34120,8 +34120,8 @@
   "saves": 91,
   "saves_unknown": false,
   "shares": 8,
-  "views": 5076,
-  "views_7d": 5076
+  "views": 5079,
+  "views_7d": 5079
  },
  "7697434392985095445": {
   "created": 1792198610,
@@ -34135,8 +34135,8 @@
   "saves": 312,
   "saves_unknown": false,
   "shares": 35,
-  "views": 7432,
-  "views_7d": 7432
+  "views": 7646,
+  "views_7d": 7646
  },
  "7697436786439621904": {
   "created": 1792199174,
@@ -34150,8 +34150,8 @@
   "saves": 341,
   "saves_unknown": false,
   "shares": 92,
-  "views": 12200,
-  "views_7d": 12200
+  "views": 12700,
+  "views_7d": 12700
  },
  "7697439332449160500": {
   "created": 1792199764,
@@ -34165,8 +34165,8 @@
   "saves": 476,
   "saves_unknown": false,
   "shares": 94,
-  "views": 25400,
-  "views_7d": 25400
+  "views": 28400,
+  "views_7d": 28400
  },
  "7697462899945753874": {
   "created": 1792205258,
@@ -34180,8 +34180,8 @@
   "saves": 26,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1219,
-  "views_7d": 1219
+  "views": 1224,
+  "views_7d": 1224
  },
  "7697465453148474645": {
   "created": 1792205842,
@@ -34195,8 +34195,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 5,
-  "views": 685,
-  "views_7d": 685
+  "views": 690,
+  "views_7d": 690
  },
  "7697485323827285268": {
   "created": 1792210472,
@@ -34210,8 +34210,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 4,
-  "views": 847,
-  "views_7d": 847
+  "views": 855,
+  "views_7d": 855
  },
  "7697488127086185746": {
   "created": 1792211125,
@@ -34225,8 +34225,8 @@
   "saves": 39,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1137,
-  "views_7d": 1137
+  "views": 1160,
+  "views_7d": 1160
  },
  "7697494938753174800": {
   "created": 1792212713,
@@ -34240,8 +34240,8 @@
   "saves": 33,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1615,
-  "views_7d": 1615
+  "views": 1638,
+  "views_7d": 1638
  },
  "7697496674834353415": {
   "created": 1792213116,
@@ -34255,8 +34255,8 @@
   "saves": 50,
   "saves_unknown": false,
   "shares": 32,
-  "views": 3191,
-  "views_7d": 3191
+  "views": 3662,
+  "views_7d": 3662
  },
  "7697505669812866312": {
   "created": 1792215206,
@@ -34265,13 +34265,13 @@
   "handle": "lil.janeiro0",
   "hook": "I left my job in HR and now I can finally say it (tips for job hunting)",
   "judged": true,
-  "likes": 9345,
+  "likes": 9533,
   "mature": false,
-  "saves": 5898,
+  "saves": 6016,
   "saves_unknown": false,
-  "shares": 995,
-  "views": 164900,
-  "views_7d": 164900
+  "shares": 1020,
+  "views": 168500,
+  "views_7d": 168500
  },
  "7697520571671727393": {
   "created": 1792218680,
@@ -34280,13 +34280,13 @@
   "handle": "marine.realfakephotos",
   "hook": "After 3 months unemployed and 256 applications, I can finally say it: I found a job, just by changing this",
   "judged": false,
-  "likes": 708,
+  "likes": 763,
   "mature": false,
-  "saves": 99,
+  "saves": 109,
   "saves_unknown": false,
-  "shares": 24,
-  "views": 27000,
-  "views_7d": 27000
+  "shares": 25,
+  "views": 27100,
+  "views_7d": 27100
  },
  "7697529374441999649": {
   "created": 1792220726,
@@ -34300,8 +34300,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 3,
-  "views": 624,
-  "views_7d": 624
+  "views": 626,
+  "views_7d": 626
  },
  "7697529467735919904": {
   "created": 1792220749,
@@ -34315,8 +34315,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1335,
-  "views_7d": 1335
+  "views": 1345,
+  "views_7d": 1345
  },
  "7697529784678485281": {
   "created": 1792220822,
@@ -34340,13 +34340,13 @@
   "handle": "itswithluna",
   "hook": "I spent 95 hours a week on job hunting",
   "judged": false,
-  "likes": 45,
+  "likes": 46,
   "mature": false,
-  "saves": 6,
+  "saves": 7,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1357,
-  "views_7d": 1357
+  "views": 1364,
+  "views_7d": 1364
  },
  "7697546080614894870": {
   "created": 1792224620,
@@ -34355,13 +34355,13 @@
   "handle": "swaaag_06",
   "hook": "A secret HR never tells you: I recently quit, so now I can reveal how people really get hired. HR doesn't want you to know because AI screens the CVs. Copy a job link from LinkedIn or Indeed.",
   "judged": false,
-  "likes": 578,
+  "likes": 607,
   "mature": false,
-  "saves": 807,
+  "saves": 856,
   "saves_unknown": false,
-  "shares": 170,
-  "views": 24800,
-  "views_7d": 24800
+  "shares": 175,
+  "views": 25000,
+  "views_7d": 25000
  },
  "7697559339317398806": {
   "created": 1792227706,
@@ -34370,13 +34370,13 @@
   "handle": "annikajobtips",
   "hook": "HR rejects CVs with graphics and charts because the ATS machine can't read them",
   "judged": false,
-  "likes": 44,
+  "likes": 46,
   "mature": false,
-  "saves": 23,
+  "saves": 24,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1143,
-  "views_7d": 1143
+  "views": 1145,
+  "views_7d": 1145
  },
  "7697566922388409632": {
   "created": 1792229466,
@@ -34385,13 +34385,13 @@
   "handle": "claucreate",
   "hook": "I hate sending endless applications and cover letters; a friend showed me a site",
   "judged": false,
-  "likes": 66,
+  "likes": 67,
   "mature": false,
-  "saves": 20,
+  "saves": 21,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1065,
-  "views_7d": 1065
+  "views": 1070,
+  "views_7d": 1070
  },
  "7697581701941316896": {
   "created": 1792232909,
@@ -34420,8 +34420,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1488,
-  "views_7d": 1488
+  "views": 1489,
+  "views_7d": 1489
  },
  "7697592631148301600": {
   "created": 1792235454,
@@ -34462,11 +34462,11 @@
   "judged": false,
   "likes": 62,
   "mature": false,
-  "saves": 24,
+  "saves": 25,
   "saves_unknown": false,
   "shares": 10,
-  "views": 2110,
-  "views_7d": 2110
+  "views": 2112,
+  "views_7d": 2112
  },
  "7697603489333103905": {
   "created": 1792237981,
@@ -34480,8 +34480,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 977,
-  "views_7d": 977
+  "views": 978,
+  "views_7d": 978
  },
  "7697611822139968790": {
   "created": 1792239923,
@@ -34495,8 +34495,8 @@
   "saves": 19,
   "saves_unknown": false,
   "shares": 1,
-  "views": 4485,
-  "views_7d": 4485
+  "views": 4487,
+  "views_7d": 4487
  },
  "7697616770798062870": {
   "created": 1792241076,
@@ -34510,8 +34510,8 @@
   "saves": 25,
   "saves_unknown": false,
   "shares": 2,
-  "views": 959,
-  "views_7d": 959
+  "views": 962,
+  "views_7d": 962
  },
  "7697626659943468310": {
   "created": 1792243378,
@@ -34525,8 +34525,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1327,
-  "views_7d": 1327
+  "views": 1334,
+  "views_7d": 1334
  },
  "7697633983739350304": {
   "created": 1792245082,
@@ -34555,8 +34555,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 9,
-  "views": 8570,
-  "views_7d": 8570
+  "views": 8576,
+  "views_7d": 8576
  },
  "7697640857272454423": {
   "created": 1792246685,
@@ -34570,8 +34570,8 @@
   "saves": 50,
   "saves_unknown": false,
   "shares": 15,
-  "views": 3537,
-  "views_7d": 3537
+  "views": 3542,
+  "views_7d": 3542
  },
  "7697653118162554144": {
   "created": 1792249534,
@@ -34585,8 +34585,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 3,
-  "views": 2762,
-  "views_7d": 2762
+  "views": 2766,
+  "views_7d": 2766
  },
  "7697655472333032726": {
   "created": 1792250084,
@@ -34600,8 +34600,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 3,
-  "views": 708,
-  "views_7d": 708
+  "views": 709,
+  "views_7d": 709
  },
  "7697658518974860577": {
   "created": 1792250792,
@@ -34630,8 +34630,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1882,
-  "views_7d": 1882
+  "views": 1887,
+  "views_7d": 1887
  },
  "7697662354661674262": {
   "created": 1792251687,
@@ -34640,13 +34640,13 @@
   "handle": "issa.jobtips",
   "hook": "Too good a site, it helped me a lot!!! (#ad)",
   "judged": true,
-  "likes": 3358,
+  "likes": 3381,
   "mature": false,
-  "saves": 2992,
+  "saves": 3015,
   "saves_unknown": false,
-  "shares": 666,
-  "views": 165900,
-  "views_7d": 165900
+  "shares": 675,
+  "views": 166900,
+  "views_7d": 166900
  },
  "7697666613629160726": {
   "created": 1792252679,
@@ -34675,8 +34675,8 @@
   "saves": 28,
   "saves_unknown": false,
   "shares": 12,
-  "views": 1749,
-  "views_7d": 1749
+  "views": 1850,
+  "views_7d": 1850
  },
  "7697671665777429792": {
   "created": 1792253852,
@@ -34690,8 +34690,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 3,
-  "views": 410,
-  "views_7d": 410
+  "views": 417,
+  "views_7d": 417
  },
  "7697674948164259104": {
   "created": 1792254616,
@@ -34720,8 +34720,8 @@
   "saves": 44,
   "saves_unknown": false,
   "shares": 13,
-  "views": 1366,
-  "views_7d": 1366
+  "views": 1379,
+  "views_7d": 1379
  },
  "7697676435686706464": {
   "created": 1792254962,
@@ -34735,8 +34735,8 @@
   "saves": 98,
   "saves_unknown": false,
   "shares": 6,
-  "views": 5659,
-  "views_7d": 5659
+  "views": 5661,
+  "views_7d": 5661
  },
  "7697676500715293985": {
   "created": 1792254978,
@@ -34765,8 +34765,8 @@
   "saves": 422,
   "saves_unknown": false,
   "shares": 161,
-  "views": 35800,
-  "views_7d": 35800
+  "views": 35900,
+  "views_7d": 35900
  },
  "7697686073803148577": {
   "created": 1792257207,
@@ -34780,8 +34780,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1014,
-  "views_7d": 1014
+  "views": 1015,
+  "views_7d": 1015
  },
  "7697686499680111904": {
   "created": 1792257306,
@@ -34810,8 +34810,8 @@
   "saves": 19,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1921,
-  "views_7d": 1921
+  "views": 1968,
+  "views_7d": 1968
  },
  "7697687863512632608": {
   "created": 1792257623,
@@ -34840,8 +34840,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1072,
-  "views_7d": 1072
+  "views": 1075,
+  "views_7d": 1075
  },
  "7697691541007027488": {
   "created": 1792258479,
@@ -34870,8 +34870,8 @@
   "saves": 31,
   "saves_unknown": false,
   "shares": 2,
-  "views": 2210,
-  "views_7d": 2210
+  "views": 2224,
+  "views_7d": 2224
  },
  "7697691940900359446": {
   "created": 1792258575,
@@ -34885,8 +34885,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 379,
-  "views_7d": 379
+  "views": 380,
+  "views_7d": 380
  },
  "7697693570202914081": {
   "created": 1792258952,
@@ -34960,8 +34960,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 11,
-  "views": 1877,
-  "views_7d": 1877
+  "views": 1888,
+  "views_7d": 1888
  },
  "7697715486968007958": {
   "created": 1792264056,
@@ -34975,8 +34975,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1037,
-  "views_7d": 1037
+  "views": 1041,
+  "views_7d": 1041
  },
  "7697715589585882371": {
   "created": 1792264081,
@@ -34985,13 +34985,13 @@
   "handle": "abis.luv6",
   "hook": "How I stopped being unemployed: I applied to 1000 jobs, and if your CV doesn't pass the ATS, no human will ever see it. Then I got 15 interviews.",
   "judged": true,
-  "likes": 31800,
+  "likes": 33000,
   "mature": false,
-  "saves": 13912,
+  "saves": 14282,
   "saves_unknown": false,
-  "shares": 2539,
-  "views": 339600,
-  "views_7d": 339600
+  "shares": 2615,
+  "views": 348400,
+  "views_7d": 348400
  },
  "7697719714117635360": {
   "created": 1792265039,
@@ -35005,8 +35005,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 345,
-  "views_7d": 345
+  "views": 346,
+  "views_7d": 346
  },
  "7697720040929496372": {
   "created": 1792265120,
@@ -35030,13 +35030,13 @@
   "handle": "lockinwitheva",
   "hook": "HR hates these CVs!!! ATS — throw away your Canva CVs",
   "judged": true,
-  "likes": 4074,
+  "likes": 4105,
   "mature": false,
-  "saves": 5401,
+  "saves": 5444,
   "saves_unknown": false,
-  "shares": 1557,
-  "views": 224400,
-  "views_7d": 224400
+  "shares": 1580,
+  "views": 226200,
+  "views_7d": 226200
  },
  "7697722559030250784": {
   "created": 1792265702,
@@ -35050,8 +35050,8 @@
   "saves": 40,
   "saves_unknown": false,
   "shares": 9,
-  "views": 1940,
-  "views_7d": 1940
+  "views": 1948,
+  "views_7d": 1948
  },
  "7697722900060605718": {
   "created": 1792265784,
@@ -35065,8 +35065,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 0,
-  "views": 836,
-  "views_7d": 836
+  "views": 837,
+  "views_7d": 837
  },
  "7697727130838322453": {
   "created": 1792266776,
@@ -35080,8 +35080,8 @@
   "saves": 162,
   "saves_unknown": false,
   "shares": 32,
-  "views": 6656,
-  "views_7d": 6656
+  "views": 7289,
+  "views_7d": 7289
  },
  "7697730962549116182": {
   "created": 1792267662,
@@ -35090,13 +35090,13 @@
   "handle": "martets",
   "hook": "Lie on your CV 🚨❗️ (Norwegian, text-only hook)",
   "judged": true,
-  "likes": 6341,
+  "likes": 6349,
   "mature": false,
-  "saves": 2475,
+  "saves": 2479,
   "saves_unknown": false,
-  "shares": 354,
-  "views": 113400,
-  "views_7d": 113400
+  "shares": 357,
+  "views": 113700,
+  "views_7d": 113700
  },
  "7697732414985997590": {
   "created": 1792267998,
@@ -35110,8 +35110,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 1,
-  "views": 3533,
-  "views_7d": 3533
+  "views": 3539,
+  "views_7d": 3539
  },
  "7697739224123985184": {
   "created": 1792269581,
@@ -35125,8 +35125,8 @@
   "saves": 384,
   "saves_unknown": false,
   "shares": 69,
-  "views": 35200,
-  "views_7d": 35200
+  "views": 35600,
+  "views_7d": 35600
  },
  "7697741902321339680": {
   "created": 1792270205,
@@ -35140,8 +35140,8 @@
   "saves": 23,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1071,
-  "views_7d": 1071
+  "views": 1074,
+  "views_7d": 1074
  },
  "7697743556009676054": {
   "created": 1792270594,
@@ -35150,13 +35150,13 @@
   "handle": "benkorebeka5",
   "hook": "How do I explain this to my parents? I've been applying for three months with this CV and nobody calls me back; my HR friend said the CV doesn't pass ATS.",
   "judged": true,
-  "likes": 10800,
+  "likes": 11000,
   "mature": false,
-  "saves": 6691,
+  "saves": 6773,
   "saves_unknown": false,
-  "shares": 1317,
-  "views": 250800,
-  "views_7d": 250800
+  "shares": 1332,
+  "views": 254000,
+  "views_7d": 254000
  },
  "7697748442671484193": {
   "created": 1792271728,
@@ -35170,8 +35170,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 291,
-  "views_7d": 291
+  "views": 293,
+  "views_7d": 293
  },
  "7697750923694689558": {
   "created": 1792272308,
@@ -35185,8 +35185,8 @@
   "saves": 59,
   "saves_unknown": false,
   "shares": 25,
-  "views": 4514,
-  "views_7d": 4514
+  "views": 4547,
+  "views_7d": 4547
  },
  "7697752810699443488": {
   "created": 1792272746,
@@ -35200,8 +35200,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1244,
-  "views_7d": 1244
+  "views": 1248,
+  "views_7d": 1248
  },
  "7697754106294848800": {
   "created": 1792273049,
@@ -35215,8 +35215,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
-  "views": 330,
-  "views_7d": 330
+  "views": 331,
+  "views_7d": 331
  },
  "7697757861694295316": {
   "created": 1792273938,
@@ -35230,8 +35230,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1098,
-  "views_7d": 1098
+  "views": 1103,
+  "views_7d": 1103
  },
  "7697758253266029876": {
   "created": 1792274020,
@@ -35245,8 +35245,8 @@
   "saves": 32,
   "saves_unknown": false,
   "shares": 18,
-  "views": 7828,
-  "views_7d": 7828
+  "views": 7892,
+  "views_7d": 7892
  },
  "7697762010242632992": {
   "created": 1792274889,
@@ -35260,8 +35260,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 449,
-  "views_7d": 449
+  "views": 453,
+  "views_7d": 453
  },
  "7697763601519594774": {
   "created": 1792275261,
@@ -35275,8 +35275,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 1,
-  "views": 570,
-  "views_7d": 570
+  "views": 571,
+  "views_7d": 571
  },
  "7697771182241631508": {
   "created": 1792277029,
@@ -35290,8 +35290,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 0,
-  "views": 260,
-  "views_7d": 260
+  "views": 261,
+  "views_7d": 261
  },
  "7697779411860376850": {
   "created": 1792278944,
@@ -35305,8 +35305,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1380,
-  "views_7d": 1380
+  "views": 1386,
+  "views_7d": 1386
  },
  "7697784875239230740": {
   "created": 1792280219,
@@ -35335,8 +35335,8 @@
   "saves": 186,
   "saves_unknown": false,
   "shares": 36,
-  "views": 8409,
-  "views_7d": 8409
+  "views": 8444,
+  "views_7d": 8444
  },
  "7697789294278102290": {
   "created": 1792281247,
@@ -35350,8 +35350,8 @@
   "saves": 33,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1738,
-  "views_7d": 1738
+  "views": 1743,
+  "views_7d": 1743
  },
  "7697799860946357525": {
   "created": 1792283708,
@@ -35365,8 +35365,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 311,
-  "views_7d": 311
+  "views": 312,
+  "views_7d": 312
  },
  "7697814177808796948": {
   "created": 1792287038,
@@ -35380,8 +35380,8 @@
   "saves": 61,
   "saves_unknown": false,
   "shares": 49,
-  "views": 12000,
-  "views_7d": 12000
+  "views": 12400,
+  "views_7d": 12400
  },
  "7697826237783330069": {
   "created": 1792289850,
@@ -35410,8 +35410,8 @@
   "saves": 38,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1599,
-  "views_7d": 1599
+  "views": 1624,
+  "views_7d": 1624
  },
  "7697836054262336789": {
   "created": 1792292133,
@@ -35425,8 +35425,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 669,
-  "views_7d": 669
+  "views": 670,
+  "views_7d": 670
  },
  "7697837060589194512": {
   "created": 1792292368,
@@ -35440,8 +35440,8 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 4,
-  "views": 985,
-  "views_7d": 985
+  "views": 1036,
+  "views_7d": 1036
  },
  "7697870950980799751": {
   "created": 1792300258,
@@ -35455,8 +35455,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 444,
-  "views_7d": 444
+  "views": 449,
+  "views_7d": 449
  },
  "7697871766429158664": {
   "created": 1792300445,
@@ -35470,8 +35470,8 @@
   "saves": 2520,
   "saves_unknown": false,
   "shares": 328,
-  "views": 70600,
-  "views_7d": 70600
+  "views": 72800,
+  "views_7d": 72800
  },
  "7697896870412143904": {
   "created": 1792306293,
@@ -35485,8 +35485,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 489,
-  "views_7d": 489
+  "views": 490,
+  "views_7d": 490
  },
  "7697903612067876118": {
   "created": 1792307865,
@@ -35560,8 +35560,8 @@
   "saves": 14,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1977,
-  "views_7d": 1977
+  "views": 1979,
+  "views_7d": 1979
  },
  "7697907274253192470": {
   "created": 1792308719,
@@ -35575,8 +35575,8 @@
   "saves": 21,
   "saves_unknown": false,
   "shares": 8,
-  "views": 4588,
-  "views_7d": 4588
+  "views": 4589,
+  "views_7d": 4589
  },
  "7697918536534084886": {
   "created": 1792311340,
@@ -35587,11 +35587,11 @@
   "judged": false,
   "likes": 263,
   "mature": false,
-  "saves": 256,
+  "saves": 257,
   "saves_unknown": false,
   "shares": 39,
-  "views": 11100,
-  "views_7d": 11100
+  "views": 11200,
+  "views_7d": 11200
  },
  "7697918726418550038": {
   "created": 1792311382,
@@ -35600,13 +35600,13 @@
   "handle": "itswithluna",
   "hook": "If you're job hunting, listen up! Close your Canva CV",
   "judged": true,
-  "likes": 1507,
+  "likes": 1511,
   "mature": false,
-  "saves": 691,
+  "saves": 694,
   "saves_unknown": false,
   "shares": 101,
-  "views": 96200,
-  "views_7d": 96200
+  "views": 96400,
+  "views_7d": 96400
  },
  "7697921378858667297": {
   "created": 1792311996,
@@ -35635,8 +35635,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 2,
-  "views": 3486,
-  "views_7d": 3486
+  "views": 3494,
+  "views_7d": 3494
  },
  "7697930578406034720": {
   "created": 1792314138,
@@ -35650,8 +35650,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 460,
-  "views_7d": 460
+  "views": 461,
+  "views_7d": 461
  },
  "7697932935634144545": {
   "created": 1792314684,
@@ -35660,13 +35660,13 @@
   "handle": "marine.realfakephotos",
   "hook": "Did you know you could do this for your CV? Chat with AI to update it live, 96% ATS",
   "judged": false,
-  "likes": 15,
+  "likes": 16,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 861,
-  "views_7d": 861
+  "views": 863,
+  "views_7d": 863
  },
  "7697937267855248662": {
   "created": 1792315696,
@@ -35679,7 +35679,7 @@
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
-  "shares": 1,
+  "shares": 2,
   "views": 461,
   "views_7d": 461
  },
@@ -35690,43 +35690,43 @@
   "handle": "tips.from.ale",
   "hook": "I love the HR girl who showed me this",
   "judged": true,
-  "likes": 2021,
+  "likes": 2053,
   "mature": false,
-  "saves": 2910,
+  "saves": 2966,
   "saves_unknown": false,
-  "shares": 2184,
-  "views": 111500,
-  "views_7d": 111500
+  "shares": 2221,
+  "views": 113100,
+  "views_7d": 113100
  },
  "7697974620711898401": {
   "created": 1792324388,
   "format": "X03",
   "german": true,
   "handle": "emy.jobstep.io",
-  "hook": "",
+  "hook": "POV: HR doesn't want you to know THIS",
   "judged": false,
   "likes": 18,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 410,
-  "views_7d": 410
+  "views": 411,
+  "views_7d": 411
  },
  "7697977308879195414": {
   "created": 1792325020,
   "format": null,
   "german": false,
   "handle": "work.with.ell",
-  "hook": "",
+  "hook": "I found my best friend a job in a few minutes",
   "judged": false,
   "likes": 15,
   "mature": false,
   "saves": 3,
   "saves_unknown": false,
   "shares": 3,
-  "views": 337,
-  "views_7d": 337
+  "views": 338,
+  "views_7d": 338
  },
  "7697979387693501719": {
   "created": 1792325501,
@@ -35735,13 +35735,13 @@
   "handle": "edda.anneli",
   "hook": "A lifehack job seekers should check out",
   "judged": false,
-  "likes": 283,
+  "likes": 297,
   "mature": false,
-  "saves": 108,
+  "saves": 119,
   "saves_unknown": false,
-  "shares": 10,
-  "views": 8424,
-  "views_7d": 8424
+  "shares": 11,
+  "views": 8652,
+  "views_7d": 8652
  },
  "7697979840430902550": {
   "created": 1792325608,
@@ -35750,20 +35750,20 @@
   "handle": "swaaag_06",
   "hook": "Lie on your CV! (not inventing jobs, just the small details) – a friend showed me this tool",
   "judged": false,
-  "likes": 1207,
+  "likes": 1213,
   "mature": false,
-  "saves": 635,
+  "saves": 641,
   "saves_unknown": false,
-  "shares": 83,
-  "views": 56900,
-  "views_7d": 56900
+  "shares": 84,
+  "views": 57300,
+  "views_7d": 57300
  },
  "7697981629838495009": {
   "created": 1792326022,
   "format": "A202610061331",
   "german": true,
   "handle": "franzi.jobtipps",
-  "hook": "",
+  "hook": "Two applicants want the same job: who gets invited to the interview?",
   "judged": false,
   "likes": 13,
   "mature": false,
@@ -35778,7 +35778,7 @@
   "format": "ESX21",
   "german": true,
   "handle": "franzi.jobtipps",
-  "hook": "",
+  "hook": "HR rejects CVs like this",
   "judged": false,
   "likes": 16,
   "mature": false,
@@ -35795,20 +35795,20 @@
   "handle": "lau.urarm",
   "hook": "How am I supposed to explain this to my parents? Résumés today don't look like this anymore; 3 months with no interview requests until I learned my CV wasn't passing ATS.",
   "judged": false,
-  "likes": 1627,
+  "likes": 1652,
   "mature": false,
-  "saves": 2080,
+  "saves": 2121,
   "saves_unknown": false,
-  "shares": 609,
-  "views": 91100,
-  "views_7d": 91100
+  "shares": 623,
+  "views": 92900,
+  "views_7d": 92900
  },
  "7697987097818303766": {
   "created": 1792327296,
   "format": "X15",
   "german": false,
   "handle": "joelle.jobstep.io",
-  "hook": "",
+  "hook": "Rejected, rejected, rejected: CVs with charts and icons fail ATS, the plain one passes",
   "judged": false,
   "likes": 33,
   "mature": false,
@@ -35825,28 +35825,28 @@
   "handle": "olatinasaid",
   "hook": "How HR people react to your CVs‼️ (caption: tailor your CV for each position)",
   "judged": true,
-  "likes": 1803,
+  "likes": 1884,
   "mature": false,
-  "saves": 1324,
+  "saves": 1386,
   "saves_unknown": false,
-  "shares": 441,
-  "views": 46000,
-  "views_7d": 46000
+  "shares": 455,
+  "views": 47000,
+  "views_7d": 47000
  },
  "7697998394958089504": {
   "created": 1792329927,
   "format": null,
   "german": true,
   "handle": "itshelin03",
-  "hook": "",
+  "hook": "We don't gatekeep: this is how you find your next job",
   "judged": false,
   "likes": 36,
   "mature": false,
   "saves": 20,
   "saves_unknown": false,
   "shares": 3,
-  "views": 874,
-  "views_7d": 874
+  "views": 877,
+  "views_7d": 877
  },
  "7698004905117764896": {
   "created": 1792331443,
@@ -35860,8 +35860,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 12,
-  "views": 4765,
-  "views_7d": 4765
+  "views": 4787,
+  "views_7d": 4787
  },
  "7698008177924738336": {
   "created": 1792332204,
@@ -35875,8 +35875,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 2,
-  "views": 2367,
-  "views_7d": 2367
+  "views": 2374,
+  "views_7d": 2374
  },
  "7698008469491731744": {
   "created": 1792332270,
@@ -35890,8 +35890,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 2,
-  "views": 2117,
-  "views_7d": 2117
+  "views": 2124,
+  "views_7d": 2124
  },
  "7698008574026452257": {
   "created": 1792332296,
@@ -35900,13 +35900,13 @@
   "handle": "alex.jobtipps",
   "hook": "Just lie on your CV (not invent jobs, but get the CV tailored properly)",
   "judged": true,
-  "likes": 4104,
+  "likes": 4121,
   "mature": false,
-  "saves": 4166,
+  "saves": 4180,
   "saves_unknown": false,
-  "shares": 657,
-  "views": 107900,
-  "views_7d": 107900
+  "shares": 658,
+  "views": 108300,
+  "views_7d": 108300
  },
  "7698009071185644832": {
   "created": 1792332411,
@@ -35920,8 +35920,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 2,
-  "views": 2076,
-  "views_7d": 2076
+  "views": 2081,
+  "views_7d": 2081
  },
  "7698010532149857568": {
   "created": 1792332752,
@@ -35930,13 +35930,13 @@
   "handle": "alex.jobtipps",
   "hook": "I worked in HR at a well-known Munich corporation, and there's one thing recruiters don't want you to know",
   "judged": false,
-  "likes": 60,
+  "likes": 61,
   "mature": false,
-  "saves": 28,
+  "saves": 30,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1306,
-  "views_7d": 1306
+  "views": 1313,
+  "views_7d": 1313
  },
  "7698017592610540833": {
   "created": 1792334395,
@@ -35945,13 +35945,13 @@
   "handle": "itssophiatalea",
   "hook": "This is how you get rejected 100%: pretty CVs get rejected because they aren't in ATS format",
   "judged": true,
-  "likes": 3686,
+  "likes": 3865,
   "mature": false,
-  "saves": 5732,
+  "saves": 6017,
   "saves_unknown": false,
-  "shares": 2298,
-  "views": 457400,
-  "views_7d": 457400
+  "shares": 2369,
+  "views": 474400,
+  "views_7d": 474400
  },
  "7698032884405325089": {
   "created": 1792337955,
@@ -35965,8 +35965,8 @@
   "saves": 20,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1318,
-  "views_7d": 1318
+  "views": 1324,
+  "views_7d": 1324
  },
  "7698037475490614531": {
   "created": 1792339029,
@@ -35975,13 +35975,13 @@
   "handle": "abis.luv6",
   "hook": "How do I explain to my parents that I can't find a job???",
   "judged": true,
-  "likes": 1788,
+  "likes": 2042,
   "mature": false,
-  "saves": 240,
+  "saves": 256,
   "saves_unknown": false,
-  "shares": 49,
-  "views": 137400,
-  "views_7d": 137400
+  "shares": 54,
+  "views": 153600,
+  "views_7d": 153600
  },
  "7698038926191119632": {
   "created": 1792339369,
@@ -35990,13 +35990,13 @@
   "handle": "maguiteexplica",
   "hook": "Ranking job-search websites: yes / no / maybe",
   "judged": true,
-  "likes": 7817,
+  "likes": 8139,
   "mature": false,
-  "saves": 5300,
+  "saves": 5539,
   "saves_unknown": false,
-  "shares": 952,
-  "views": 102500,
-  "views_7d": 102500
+  "shares": 989,
+  "views": 107100,
+  "views_7d": 107100
  },
  "7698038968037723414": {
   "created": 1792339355,
@@ -36005,13 +36005,13 @@
   "handle": "danielaavega___",
   "hook": "Thanks to this I got a job: paste the job link and get a tailored CV",
   "judged": false,
-  "likes": 61,
+  "likes": 62,
   "mature": false,
-  "saves": 69,
+  "saves": 75,
   "saves_unknown": false,
   "shares": 20,
-  "views": 1565,
-  "views_7d": 1565
+  "views": 1653,
+  "views_7d": 1653
  },
  "7698042524241349920": {
   "created": 1792340200,
@@ -36025,8 +36025,8 @@
   "saves": 48,
   "saves_unknown": false,
   "shares": 5,
-  "views": 4669,
-  "views_7d": 4669
+  "views": 4671,
+  "views_7d": 4671
  },
  "7698045078534622466": {
   "created": 1792340797,
@@ -36040,8 +36040,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1303,
-  "views_7d": 1303
+  "views": 1304,
+  "views_7d": 1304
  },
  "7698047511373597984": {
   "created": 1792341360,
@@ -36055,15 +36055,15 @@
   "saves": 21,
   "saves_unknown": false,
   "shares": 12,
-  "views": 1498,
-  "views_7d": 1498
+  "views": 1499,
+  "views_7d": 1499
  },
  "7698051361295863072": {
   "created": 1792342257,
   "format": null,
   "german": true,
   "handle": "emy.jobtipps",
-  "hook": "",
+  "hook": "This is how you get rejected 100%",
   "judged": false,
   "likes": 6,
   "mature": false,
@@ -36085,23 +36085,23 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 917,
-  "views_7d": 917
+  "views": 918,
+  "views_7d": 918
  },
  "7698052191378066721": {
   "created": 1792342451,
   "format": "A202610061332",
   "german": false,
   "handle": "gabbolab",
-  "hook": "",
+  "hook": "Here's what HR hides from you: Canva CVs get filtered by ATS",
   "judged": false,
   "likes": 83,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 830,
-  "views_7d": 830
+  "views": 831,
+  "views_7d": 831
  },
  "7698055467695607072": {
   "created": 1792343213,
@@ -36115,15 +36115,15 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1145,
-  "views_7d": 1145
+  "views": 1147,
+  "views_7d": 1147
  },
  "7698055814078024992": {
   "created": 1792343294,
   "format": "ESX28",
   "german": false,
   "handle": "laviniateol1",
-  "hook": "",
+  "hook": "My boyfriend, who works at Microsoft, showed me this trick",
   "judged": false,
   "likes": 24,
   "mature": false,
@@ -36145,23 +36145,23 @@
   "saves": 106,
   "saves_unknown": false,
   "shares": 21,
-  "views": 7869,
-  "views_7d": 7869
+  "views": 7874,
+  "views_7d": 7874
  },
  "7698057678689504534": {
   "created": 1792343728,
   "format": null,
   "german": false,
   "handle": "viktorietyna",
-  "hook": "",
+  "hook": "Yes... all of them (ice cream emoji)",
   "judged": false,
   "likes": 44,
   "mature": false,
   "saves": 6,
   "saves_unknown": false,
   "shares": 2,
-  "views": 482,
-  "views_7d": 482
+  "views": 486,
+  "views_7d": 486
  },
  "7698058617144003862": {
   "created": 1792343949,
@@ -36175,8 +36175,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 4,
-  "views": 824,
-  "views_7d": 824
+  "views": 827,
+  "views_7d": 827
  },
  "7698060578664860961": {
   "created": 1792344404,
@@ -36189,9 +36189,9 @@
   "mature": false,
   "saves": 51,
   "saves_unknown": false,
-  "shares": 2,
-  "views": 2586,
-  "views_7d": 2586
+  "shares": 3,
+  "views": 2592,
+  "views_7d": 2592
  },
  "7698065141484555542": {
   "created": 1792345467,
@@ -36205,8 +36205,8 @@
   "saves": 20,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1378,
-  "views_7d": 1378
+  "views": 1381,
+  "views_7d": 1381
  },
  "7698066201225858326": {
   "created": 1792345716,
@@ -36220,15 +36220,15 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 16,
-  "views": 998,
-  "views_7d": 998
+  "views": 1006,
+  "views_7d": 1006
  },
  "7698068900667313440": {
   "created": 1792346342,
   "format": null,
   "german": false,
   "handle": "joaocareer",
-  "hook": "",
+  "hook": "Can't find a job? This video is for you",
   "judged": false,
   "likes": 17,
   "mature": false,
@@ -36275,20 +36275,20 @@
   "handle": "alinaibarra13",
   "hook": "Ugly CV = better: example of a correct CV that passes ATS filters",
   "judged": false,
-  "likes": 862,
+  "likes": 903,
   "mature": false,
-  "saves": 321,
+  "saves": 339,
   "saves_unknown": false,
-  "shares": 73,
-  "views": 13900,
-  "views_7d": 13900
+  "shares": 78,
+  "views": 14300,
+  "views_7d": 14300
  },
  "7698075611184499990": {
   "created": 1792347905,
   "format": "X03",
   "german": false,
   "handle": "joelle.jobstep.io",
-  "hook": "",
+  "hook": "I quit as an HR manager so now I can finally say this",
   "judged": false,
   "likes": 31,
   "mature": false,
@@ -36310,8 +36310,8 @@
   "saves": 23,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1157,
-  "views_7d": 1157
+  "views": 1160,
+  "views_7d": 1160
  },
  "7698080333199133974": {
   "created": 1792349006,
@@ -36320,13 +36320,13 @@
   "handle": "benkorebeka5",
   "hook": "I got my best friend a job",
   "judged": false,
-  "likes": 24,
+  "likes": 25,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1489,
-  "views_7d": 1489
+  "views": 1518,
+  "views_7d": 1518
  },
  "7698083136965446934": {
   "created": 1792349658,
@@ -36340,8 +36340,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 15,
-  "views": 2503,
-  "views_7d": 2503
+  "views": 2512,
+  "views_7d": 2512
  },
  "7698083674469731606": {
   "created": 1792349783,
@@ -36355,15 +36355,15 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1027,
-  "views_7d": 1027
+  "views": 1028,
+  "views_7d": 1028
  },
  "7698091326360816918": {
   "created": 1792351565,
   "format": null,
   "german": false,
   "handle": "diana_osm",
-  "hook": "",
+  "hook": "I found out I can record my hiring",
   "judged": false,
   "likes": 33,
   "mature": false,
@@ -36382,18 +36382,18 @@
   "judged": false,
   "likes": 108,
   "mature": false,
-  "saves": 18,
+  "saves": 19,
   "saves_unknown": false,
   "shares": 0,
-  "views": 2086,
-  "views_7d": 2086
+  "views": 2123,
+  "views_7d": 2123
  },
  "7698091896274554145": {
   "created": 1792351694,
   "format": null,
   "german": false,
   "handle": "gabbolab",
-  "hook": "",
+  "hook": "POV: you're job hunting but can't get noticed (HR says ATS filters everything)",
   "judged": false,
   "likes": 44,
   "mature": false,
@@ -36410,13 +36410,13 @@
   "handle": "ferni.tips",
   "hook": "I got my best friend a job",
   "judged": false,
-  "likes": 51,
+  "likes": 54,
   "mature": false,
   "saves": 19,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1161,
-  "views_7d": 1161
+  "views": 1179,
+  "views_7d": 1179
  },
  "7698103394887601440": {
   "created": 1792354372,
@@ -36430,8 +36430,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1214,
-  "views_7d": 1214
+  "views": 1221,
+  "views_7d": 1221
  },
  "7698105084244151584": {
   "created": 1792354764,
@@ -36440,13 +36440,13 @@
   "handle": "dymphy.tiktok",
   "hook": "Finding a job in 2026? My sister in HR explains why they don't reply",
   "judged": false,
-  "likes": 105,
+  "likes": 106,
   "mature": false,
   "saves": 25,
   "saves_unknown": false,
   "shares": 8,
-  "views": 1598,
-  "views_7d": 1598
+  "views": 1608,
+  "views_7d": 1608
  },
  "7698108041832500502": {
   "created": 1792355457,
@@ -36455,13 +36455,13 @@
   "handle": "tsvetelina.tips",
   "hook": "I worked in HR and here's what nobody tells you",
   "judged": false,
-  "likes": 21,
+  "likes": 23,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
-  "shares": 5,
-  "views": 1006,
-  "views_7d": 1006
+  "shares": 8,
+  "views": 1082,
+  "views_7d": 1082
  },
  "7698112155513670934": {
   "created": 1792356416,
@@ -36470,20 +36470,20 @@
   "handle": "lavoraconjulia",
   "hook": "My boyfriend's dad didn't hire me because he said my CV sucks (sad story)",
   "judged": false,
-  "likes": 987,
+  "likes": 1061,
   "mature": false,
-  "saves": 210,
+  "saves": 222,
   "saves_unknown": false,
-  "shares": 49,
-  "views": 73700,
-  "views_7d": 73700
+  "shares": 53,
+  "views": 78100,
+  "views_7d": 78100
  },
  "7698112235780066592": {
   "created": 1792356432,
   "format": null,
   "german": true,
   "handle": "sophia_einszwei",
-  "hook": "",
+  "hook": "Do this now so your CV passes ATS filters",
   "judged": false,
   "likes": 9,
   "mature": false,
@@ -36498,7 +36498,7 @@
   "format": null,
   "german": true,
   "handle": "sophia_einszwei",
-  "hook": "",
+  "hook": "This is how you get rejected 100%",
   "judged": false,
   "likes": 3,
   "mature": false,
@@ -36520,12 +36520,12 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 358,
-  "views_7d": 358
+  "views": 359,
+  "views_7d": 359
  },
  "7698133814077295905": {
   "created": 1792361456,
-  "format": null,
+  "format": "N09",
   "german": false,
   "handle": "manujobtips",
   "hook": "",
@@ -36535,8 +36535,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 3,
-  "views": 726,
-  "views_7d": 726
+  "views": 730,
+  "views_7d": 730
  },
  "7698133972659834134": {
   "created": 1792361501,
@@ -36545,28 +36545,28 @@
   "handle": "angetipsw",
   "hook": "",
   "judged": false,
-  "likes": 30,
+  "likes": 31,
   "mature": false,
-  "saves": 14,
+  "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 404,
-  "views_7d": 404
+  "views": 405,
+  "views_7d": 405
  },
  "7698134678045265172": {
   "created": 1792361661,
-  "format": null,
+  "format": "FRX35",
   "german": false,
   "handle": "marietipsapply",
   "hook": "",
   "judged": false,
-  "likes": 14,
+  "likes": 15,
   "mature": false,
   "saves": 7,
   "saves_unknown": false,
   "shares": 6,
-  "views": 672,
-  "views_7d": 672
+  "views": 680,
+  "views_7d": 680
  },
  "7698154342611946773": {
   "created": 1792366240,
@@ -36575,28 +36575,28 @@
   "handle": "laurapopia4",
   "hook": "Just left an interview; someone explained why CVs don't look like this anymore. Three months of applying with this Canva CV and no interviews, until an HR person showed me this app.",
   "judged": false,
-  "likes": 332,
+  "likes": 344,
   "mature": false,
-  "saves": 284,
+  "saves": 298,
   "saves_unknown": false,
-  "shares": 38,
-  "views": 8621,
-  "views_7d": 8621
+  "shares": 44,
+  "views": 9153,
+  "views_7d": 9153
  },
  "7698184627558649108": {
   "created": 1792373290,
-  "format": null,
+  "format": "A202610061332",
   "german": false,
   "handle": "majo67568",
   "hook": "",
   "judged": false,
-  "likes": 25,
+  "likes": 26,
   "mature": false,
   "saves": 17,
   "saves_unknown": false,
-  "shares": 4,
-  "views": 791,
-  "views_7d": 791
+  "shares": 5,
+  "views": 811,
+  "views_7d": 811
  },
  "7698187499910302982": {
   "created": 1792373961,
@@ -36609,9 +36609,9 @@
   "mature": false,
   "saves": 6,
   "saves_unknown": false,
-  "shares": 1,
-  "views": 598,
-  "views_7d": 598
+  "shares": 2,
+  "views": 604,
+  "views_7d": 604
  },
  "7698192569511054612": {
   "created": 1792375146,
@@ -36620,13 +36620,13 @@
   "handle": "mikiii4670",
   "hook": "",
   "judged": false,
-  "likes": 17,
+  "likes": 18,
   "mature": false,
-  "saves": 5,
+  "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 521,
-  "views_7d": 521
+  "views": 538,
+  "views_7d": 538
  },
  "7698196489188740368": {
   "created": 1792376054,
@@ -36635,13 +36635,13 @@
   "handle": "catita.tipss",
   "hook": "",
   "judged": false,
-  "likes": 54,
+  "likes": 55,
   "mature": false,
   "saves": 19,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1048,
-  "views_7d": 1048
+  "views": 1057,
+  "views_7d": 1057
  },
  "7698198135000059143": {
   "created": 1792376438,
@@ -36650,13 +36650,13 @@
   "handle": "yamiworks22",
   "hook": "",
   "judged": false,
-  "likes": 44,
+  "likes": 49,
   "mature": false,
-  "saves": 15,
+  "saves": 21,
   "saves_unknown": false,
-  "shares": 3,
-  "views": 2518,
-  "views_7d": 2518
+  "shares": 5,
+  "views": 2668,
+  "views_7d": 2668
  },
  "7698202395465076001": {
   "created": 1792377458,
@@ -36665,13 +36665,13 @@
   "handle": "ma.life.de.chomeu",
   "hook": "",
   "judged": false,
-  "likes": 25,
+  "likes": 26,
   "mature": false,
   "saves": 3,
   "saves_unknown": false,
   "shares": 1,
-  "views": 378,
-  "views_7d": 378
+  "views": 382,
+  "views_7d": 382
  },
  "7698204739778907424": {
   "created": 1792377997,
@@ -36680,13 +36680,13 @@
   "handle": "ma.life.de.chomeu",
   "hook": "After 5 months unemployed and 478 applications, I can finally say it: I found a job!",
   "judged": false,
-  "likes": 887,
+  "likes": 924,
   "mature": false,
-  "saves": 52,
+  "saves": 60,
   "saves_unknown": false,
-  "shares": 36,
-  "views": 19200,
-  "views_7d": 19200
+  "shares": 38,
+  "views": 19400,
+  "views_7d": 19400
  },
  "7698205095422332178": {
   "created": 1792378053,
@@ -36700,12 +36700,12 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1618,
-  "views_7d": 1618
+  "views": 1629,
+  "views_7d": 1629
  },
  "7698206413696306453": {
   "created": 1792378362,
-  "format": null,
+  "format": "A202610061334",
   "german": false,
   "handle": "aime_aqui",
   "hook": "",
@@ -36715,27 +36715,27 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 4,
-  "views": 862,
-  "views_7d": 862
+  "views": 864,
+  "views_7d": 864
  },
  "7698223658929573136": {
   "created": 1792382374,
-  "format": null,
+  "format": "N07",
   "german": false,
   "handle": "lavalaletze",
   "hook": "",
   "judged": false,
-  "likes": 0,
+  "likes": 18,
   "mature": false,
-  "saves": 0,
+  "saves": 3,
   "saves_unknown": false,
-  "shares": 0,
-  "views": 628,
-  "views_7d": 628
+  "shares": 2,
+  "views": 633,
+  "views_7d": 633
  },
  "7698233501849521426": {
   "created": 1792384668,
-  "format": null,
+  "format": "N07",
   "german": false,
   "handle": "jimena.ruizf",
   "hook": "",
@@ -36745,8 +36745,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 5,
-  "views": 746,
-  "views_7d": 746
+  "views": 755,
+  "views_7d": 755
  },
  "7698248963354348822": {
   "created": 1792388283,
@@ -36760,12 +36760,12 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 0,
-  "views": 639,
-  "views_7d": 639
+  "views": 640,
+  "views_7d": 640
  },
  "7698250644754304278": {
   "created": 1792388667,
-  "format": null,
+  "format": "ESX21",
   "german": false,
   "handle": "annikajobtips",
   "hook": "",
@@ -36775,8 +36775,8 @@
   "saves": 64,
   "saves_unknown": false,
   "shares": 20,
-  "views": 7520,
-  "views_7d": 7520
+  "views": 7532,
+  "views_7d": 7532
  },
  "7698265419999743264": {
   "created": 1792392103,
@@ -36790,12 +36790,12 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 295,
-  "views_7d": 295
+  "views": 298,
+  "views_7d": 298
  },
  "7698265792269372705": {
   "created": 1792392192,
-  "format": null,
+  "format": "X15",
   "german": true,
   "handle": "sarinajobstep",
   "hook": "",
@@ -36805,8 +36805,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 0,
-  "views": 846,
-  "views_7d": 846
+  "views": 847,
+  "views_7d": 847
  },
  "7698266056741145888": {
   "created": 1792392248,
@@ -36820,27 +36820,27 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1021,
-  "views_7d": 1021
+  "views": 1024,
+  "views_7d": 1024
  },
  "7698266147493334305": {
   "created": 1792392271,
-  "format": null,
+  "format": "X17",
   "german": true,
   "handle": "sarinajobstep",
   "hook": "",
   "judged": false,
-  "likes": 85,
+  "likes": 86,
   "mature": false,
-  "saves": 26,
+  "saves": 27,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1298,
-  "views_7d": 1298
+  "views": 1301,
+  "views_7d": 1301
  },
  "7698272536886349078": {
   "created": 1792393766,
-  "format": null,
+  "format": "N05",
   "german": false,
   "handle": "filippajobbtips",
   "hook": "",
@@ -36850,23 +36850,23 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 0,
-  "views": 3556,
-  "views_7d": 3556
+  "views": 3559,
+  "views_7d": 3559
  },
  "7698274663557844256": {
   "created": 1792394252,
-  "format": null,
+  "format": "N06",
   "german": false,
   "handle": "marine.realfakephotos",
   "hook": "",
   "judged": false,
-  "likes": 39,
+  "likes": 40,
   "mature": false,
-  "saves": 26,
+  "saves": 27,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1211,
-  "views_7d": 1211
+  "views": 1216,
+  "views_7d": 1216
  },
  "7698291739118865696": {
   "created": 1792398228,
@@ -36880,8 +36880,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 0,
-  "views": 377,
-  "views_7d": 377
+  "views": 378,
+  "views_7d": 378
  },
  "7698302841810586912": {
   "created": 1792400812,
@@ -36895,8 +36895,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1517,
-  "views_7d": 1517
+  "views": 1520,
+  "views_7d": 1520
  },
  "7698322330711346484": {
   "created": 1792405350,
@@ -36910,8 +36910,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 0,
-  "views": 739,
-  "views_7d": 739
+  "views": 742,
+  "views_7d": 742
  },
  "7698327743418666272": {
   "created": 1792406610,
@@ -36935,11 +36935,11 @@
   "handle": "laviniateol1",
   "hook": "I quit my job as an HR manager and I can finally say it: 80% of the CVs you send are never read by a human, ATS software rejects them",
   "judged": false,
-  "likes": 224,
+  "likes": 226,
   "mature": false,
   "saves": 205,
   "saves_unknown": false,
-  "shares": 91,
+  "shares": 92,
   "views": 10100,
   "views_7d": 10100
  },
@@ -36955,8 +36955,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 20,
-  "views": 4317,
-  "views_7d": 4317
+  "views": 4320,
+  "views_7d": 4320
  },
  "7698335689414397206": {
   "created": 1792408464,
@@ -36970,8 +36970,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 859,
-  "views_7d": 859
+  "views": 863,
+  "views_7d": 863
  },
  "7698336312297819424": {
   "created": 1792408606,
@@ -37015,8 +37015,8 @@
   "saves": 35,
   "saves_unknown": false,
   "shares": 18,
-  "views": 2039,
-  "views_7d": 2039
+  "views": 2055,
+  "views_7d": 2055
  },
  "7698343511854271777": {
   "created": 1792410281,
@@ -37025,13 +37025,13 @@
   "handle": "emma.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 17,
+  "likes": 18,
   "mature": false,
-  "saves": 11,
+  "saves": 12,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1051,
-  "views_7d": 1051
+  "views": 1057,
+  "views_7d": 1057
  },
  "7698352099846917398": {
   "created": 1792412287,
@@ -37060,8 +37060,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 13,
-  "views": 2185,
-  "views_7d": 2185
+  "views": 2187,
+  "views_7d": 2187
  },
  "7698357085125299489": {
   "created": 1792413441,
@@ -37070,13 +37070,13 @@
   "handle": "lau.urarm",
   "hook": "",
   "judged": false,
-  "likes": 69,
+  "likes": 71,
   "mature": false,
   "saves": 24,
   "saves_unknown": false,
   "shares": 7,
-  "views": 1292,
-  "views_7d": 1292
+  "views": 1294,
+  "views_7d": 1294
  },
  "7698365699584019734": {
   "created": 1792415450,
@@ -37090,8 +37090,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 1,
-  "views": 2210,
-  "views_7d": 2210
+  "views": 2250,
+  "views_7d": 2250
  },
  "7698372995915566368": {
   "created": 1792417146,
@@ -37102,11 +37102,11 @@
   "judged": true,
   "likes": 2805,
   "mature": false,
-  "saves": 985,
+  "saves": 984,
   "saves_unknown": false,
   "shares": 145,
-  "views": 66800,
-  "views_7d": 66800
+  "views": 66900,
+  "views_7d": 66900
  },
  "7698379471245659414": {
   "created": 1792418656,
@@ -37117,11 +37117,11 @@
   "judged": false,
   "likes": 44,
   "mature": false,
-  "saves": 28,
+  "saves": 30,
   "saves_unknown": false,
   "shares": 8,
-  "views": 1541,
-  "views_7d": 1541
+  "views": 1617,
+  "views_7d": 1617
  },
  "7698381245700508950": {
   "created": 1792419071,
@@ -37135,8 +37135,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 526,
-  "views_7d": 526
+  "views": 528,
+  "views_7d": 528
  },
  "7698385467003227425": {
   "created": 1792420047,
@@ -37145,13 +37145,13 @@
   "handle": "stay.with.giulia",
   "hook": "Lie on your CV (white lies, small details) - then an HR friend's tip leads to the tool, which scores and tailors the CV to 96% ATS compatibility",
   "judged": true,
-  "likes": 2614,
+  "likes": 2638,
   "mature": false,
-  "saves": 1388,
+  "saves": 1413,
   "saves_unknown": false,
-  "shares": 217,
-  "views": 87200,
-  "views_7d": 87200
+  "shares": 219,
+  "views": 88200,
+  "views_7d": 88200
  },
  "7698385493536361731": {
   "created": 1792420057,
@@ -37165,8 +37165,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1203,
-  "views_7d": 1203
+  "views": 1208,
+  "views_7d": 1208
  },
  "7698385717902232864": {
   "created": 1792420107,
@@ -37180,8 +37180,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1673,
-  "views_7d": 1673
+  "views": 1683,
+  "views_7d": 1683
  },
  "7698385751536422177": {
   "created": 1792420115,
@@ -37190,13 +37190,13 @@
   "handle": "elizacv25",
   "hook": "",
   "judged": false,
-  "likes": 16,
+  "likes": 17,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 464,
-  "views_7d": 464
+  "views": 465,
+  "views_7d": 465
  },
  "7698387600612035872": {
   "created": 1792420544,
@@ -37205,13 +37205,13 @@
   "handle": "gabbolab",
   "hook": "",
   "judged": false,
-  "likes": 89,
+  "likes": 90,
   "mature": false,
-  "saves": 12,
+  "saves": 13,
   "saves_unknown": false,
   "shares": 0,
-  "views": 825,
-  "views_7d": 825
+  "views": 831,
+  "views_7d": 831
  },
  "7698388910610648342": {
   "created": 1792420853,
@@ -37220,13 +37220,13 @@
   "handle": "majat05",
   "hook": "",
   "judged": false,
-  "likes": 37,
+  "likes": 38,
   "mature": false,
   "saves": 26,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1625,
-  "views_7d": 1625
+  "views": 1643,
+  "views_7d": 1643
  },
  "7698389432151444769": {
   "created": 1792420971,
@@ -37240,8 +37240,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 3,
-  "views": 969,
-  "views_7d": 969
+  "views": 970,
+  "views_7d": 970
  },
  "7698391226134891798": {
   "created": 1792421390,
@@ -37250,13 +37250,13 @@
   "handle": "olatinasaid",
   "hook": "",
   "judged": false,
-  "likes": 30,
+  "likes": 32,
   "mature": false,
-  "saves": 12,
+  "saves": 13,
   "saves_unknown": false,
   "shares": 32,
-  "views": 509,
-  "views_7d": 509
+  "views": 539,
+  "views_7d": 539
  },
  "7698392495759133984": {
   "created": 1792421685,
@@ -37270,8 +37270,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1851,
-  "views_7d": 1851
+  "views": 1854,
+  "views_7d": 1854
  },
  "7698393985693273376": {
   "created": 1792422031,
@@ -37285,8 +37285,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 2,
-  "views": 935,
-  "views_7d": 935
+  "views": 948,
+  "views_7d": 948
  },
  "7698397725041249568": {
   "created": 1792422903,
@@ -37300,8 +37300,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 4,
-  "views": 808,
-  "views_7d": 808
+  "views": 810,
+  "views_7d": 810
  },
  "7698402995544788246": {
   "created": 1792424132,
@@ -37310,13 +37310,13 @@
   "handle": "martets",
   "hook": "I found HR's secret trick (Jobstep.io)",
   "judged": false,
-  "likes": 663,
+  "likes": 667,
   "mature": false,
-  "saves": 392,
+  "saves": 396,
   "saves_unknown": false,
   "shares": 82,
-  "views": 21400,
-  "views_7d": 21400
+  "views": 21500,
+  "views_7d": 21500
  },
  "7698405311178181910": {
   "created": 1792424671,
@@ -37325,13 +37325,13 @@
   "handle": "ella.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 208,
+  "likes": 210,
   "mature": false,
-  "saves": 54,
+  "saves": 59,
   "saves_unknown": false,
-  "shares": 12,
-  "views": 6186,
-  "views_7d": 6186
+  "shares": 13,
+  "views": 6278,
+  "views_7d": 6278
  },
  "7698409519600127254": {
   "created": 1792425650,
@@ -37345,8 +37345,8 @@
   "saves": 29,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1101,
-  "views_7d": 1101
+  "views": 1103,
+  "views_7d": 1103
  },
  "7698411198894705942": {
   "created": 1792426021,
@@ -37355,13 +37355,13 @@
   "handle": "danielaavega___",
   "hook": "",
   "judged": false,
-  "likes": 120,
+  "likes": 175,
   "mature": false,
-  "saves": 59,
+  "saves": 74,
   "saves_unknown": false,
-  "shares": 69,
-  "views": 5964,
-  "views_7d": 5964
+  "shares": 118,
+  "views": 8150,
+  "views_7d": 8150
  },
  "7698413398207286560": {
   "created": 1792426552,
@@ -37375,8 +37375,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 3,
-  "views": 914,
-  "views_7d": 914
+  "views": 915,
+  "views_7d": 915
  },
  "7698420647625559329": {
   "created": 1792428238,
@@ -37390,8 +37390,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 4,
-  "views": 960,
-  "views_7d": 960
+  "views": 966,
+  "views_7d": 966
  },
  "7698423612092484886": {
   "created": 1792428931,
@@ -37405,8 +37405,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 7,
-  "views": 301,
-  "views_7d": 301
+  "views": 303,
+  "views_7d": 303
  },
  "7698423765847280918": {
   "created": 1792428968,
@@ -37415,13 +37415,13 @@
   "handle": "jobtipy",
   "hook": "",
   "judged": false,
-  "likes": 10,
+  "likes": 11,
   "mature": false,
-  "saves": 3,
+  "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 281,
-  "views_7d": 281
+  "views": 282,
+  "views_7d": 282
  },
  "7698428629939801366": {
   "created": 1792430101,
@@ -37435,8 +37435,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 9,
-  "views": 5342,
-  "views_7d": 5342
+  "views": 5361,
+  "views_7d": 5361
  },
  "7698432292166831393": {
   "created": 1792430950,
@@ -37450,8 +37450,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 0,
-  "views": 473,
-  "views_7d": 473
+  "views": 474,
+  "views_7d": 474
  },
  "7698434863136787745": {
   "created": 1792431548,
@@ -37465,8 +37465,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 0,
-  "views": 267,
-  "views_7d": 267
+  "views": 268,
+  "views_7d": 268
  },
  "7698436065207651606": {
   "created": 1792431831,
@@ -37480,8 +37480,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 0,
-  "views": 761,
-  "views_7d": 761
+  "views": 763,
+  "views_7d": 763
  },
  "7698436873722531105": {
   "created": 1792432015,
@@ -37507,11 +37507,11 @@
   "judged": true,
   "likes": 53300,
   "mature": false,
-  "saves": 25160,
+  "saves": 25162,
   "saves_unknown": false,
-  "shares": 3471,
-  "views": 641300,
-  "views_7d": 641300
+  "shares": 3474,
+  "views": 642500,
+  "views_7d": 642500
  },
  "7698446880992234784": {
   "created": 1792434346,
@@ -37520,13 +37520,13 @@
   "handle": "itssophiatalea",
   "hook": "",
   "judged": false,
-  "likes": 8,
+  "likes": 9,
   "mature": false,
   "saves": 11,
   "saves_unknown": false,
-  "shares": 1,
-  "views": 716,
-  "views_7d": 716
+  "shares": 2,
+  "views": 724,
+  "views_7d": 724
  },
  "7698447376159083798": {
   "created": 1792434465,
@@ -37535,13 +37535,13 @@
   "handle": "viktorietyna",
   "hook": "",
   "judged": false,
-  "likes": 54,
+  "likes": 55,
   "mature": false,
-  "saves": 17,
+  "saves": 16,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1300,
-  "views_7d": 1300
+  "views": 1312,
+  "views_7d": 1312
  },
  "7698449202854038806": {
   "created": 1792434889,
@@ -37555,8 +37555,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 459,
-  "views_7d": 459
+  "views": 463,
+  "views_7d": 463
  },
  "7698450005283179798": {
   "created": 1792435077,
@@ -37600,8 +37600,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1017,
-  "views_7d": 1017
+  "views": 1023,
+  "views_7d": 1023
  },
  "7698453551718157590": {
   "created": 1792435902,
@@ -37615,8 +37615,8 @@
   "saves": 29,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1209,
-  "views_7d": 1209
+  "views": 1233,
+  "views_7d": 1233
  },
  "7698460561540975893": {
   "created": 1792437538,
@@ -37630,8 +37630,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 2,
-  "views": 325,
-  "views_7d": 325
+  "views": 340,
+  "views_7d": 340
  },
  "7698463922235428118": {
   "created": 1792438316,
@@ -37640,13 +37640,13 @@
   "handle": "anniaelina",
   "hook": "",
   "judged": false,
-  "likes": 35,
+  "likes": 36,
   "mature": false,
   "saves": 11,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1350,
-  "views_7d": 1350
+  "views": 1410,
+  "views_7d": 1410
  },
  "7698468699828686102": {
   "created": 1792439429,
@@ -37660,8 +37660,8 @@
   "saves": 11,
   "saves_unknown": false,
   "shares": 3,
-  "views": 474,
-  "views_7d": 474
+  "views": 492,
+  "views_7d": 492
  },
  "7698469548239981856": {
   "created": 1792439624,
@@ -37675,8 +37675,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 625,
-  "views_7d": 625
+  "views": 627,
+  "views_7d": 627
  },
  "7698470526225796374": {
   "created": 1792439854,
@@ -37700,13 +37700,13 @@
   "handle": "_klaudii30",
   "hook": "Lie on your CV (just small details that make a difference)",
   "judged": true,
-  "likes": 1637,
+  "likes": 1642,
   "mature": false,
-  "saves": 1548,
+  "saves": 1555,
   "saves_unknown": false,
-  "shares": 393,
-  "views": 71500,
-  "views_7d": 71500
+  "shares": 397,
+  "views": 71800,
+  "views_7d": 71800
  },
  "7698472987489553696": {
   "created": 1792440424,
@@ -37720,8 +37720,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 4,
-  "views": 927,
-  "views_7d": 927
+  "views": 928,
+  "views_7d": 928
  },
  "7698473519272824096": {
   "created": 1792440549,
@@ -37730,13 +37730,13 @@
   "handle": "ma.life.de.chomeu",
   "hook": "",
   "judged": false,
-  "likes": 17,
+  "likes": 18,
   "mature": false,
   "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 564,
-  "views_7d": 564
+  "views": 573,
+  "views_7d": 573
  },
  "7698473806314229014": {
   "created": 1792440620,
@@ -37750,8 +37750,8 @@
   "saves": 12,
   "saves_unknown": false,
   "shares": 3,
-  "views": 751,
-  "views_7d": 751
+  "views": 755,
+  "views_7d": 755
  },
  "7698478389824392481": {
   "created": 1792441682,
@@ -37765,8 +37765,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 644,
-  "views_7d": 644
+  "views": 650,
+  "views_7d": 650
  },
  "7698480290263551254": {
   "created": 1792442128,
@@ -37775,13 +37775,13 @@
   "handle": "tsvetelina.tips",
   "hook": "",
   "judged": false,
-  "likes": 210,
+  "likes": 357,
   "mature": false,
-  "saves": 163,
+  "saves": 267,
   "saves_unknown": false,
-  "shares": 123,
-  "views": 22700,
-  "views_7d": 22700
+  "shares": 202,
+  "views": 36800,
+  "views_7d": 36800
  },
  "7698480642438286624": {
   "created": 1792442208,
@@ -37792,11 +37792,11 @@
   "judged": false,
   "likes": 17,
   "mature": false,
-  "saves": 6,
+  "saves": 7,
   "saves_unknown": false,
   "shares": 5,
-  "views": 837,
-  "views_7d": 837
+  "views": 847,
+  "views_7d": 847
  },
  "7698481117409709334": {
   "created": 1792442321,
@@ -37810,8 +37810,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 3,
-  "views": 414,
-  "views_7d": 414
+  "views": 415,
+  "views_7d": 415
  },
  "7698482063497841952": {
   "created": 1792442538,
@@ -37820,13 +37820,13 @@
   "handle": "dianapracuje",
   "hook": "",
   "judged": false,
-  "likes": 319,
+  "likes": 323,
   "mature": false,
-  "saves": 102,
+  "saves": 106,
   "saves_unknown": false,
-  "shares": 20,
-  "views": 4934,
-  "views_7d": 4934
+  "shares": 23,
+  "views": 5176,
+  "views_7d": 5176
  },
  "7698482795223452946": {
   "created": 1792442716,
@@ -37835,13 +37835,13 @@
   "handle": "zorica.djurdjevic21",
   "hook": "How to find a job within a few days?!",
   "judged": true,
-  "likes": 811,
+  "likes": 841,
   "mature": false,
-  "saves": 868,
+  "saves": 895,
   "saves_unknown": false,
-  "shares": 410,
-  "views": 59800,
-  "views_7d": 59800
+  "shares": 433,
+  "views": 62200,
+  "views_7d": 62200
  },
  "7698487459088305430": {
   "created": 1792443802,
@@ -37850,13 +37850,13 @@
   "handle": "lavoraconjulia",
   "hook": "Let me spit a fact: lie on your CV (meaning add small details that make the difference), then a friend who works at a big company showed me how to structure it to pass the filters.",
   "judged": true,
-  "likes": 16700,
+  "likes": 18100,
   "mature": false,
-  "saves": 9134,
+  "saves": 9948,
   "saves_unknown": false,
-  "shares": 831,
-  "views": 164700,
-  "views_7d": 164700
+  "shares": 910,
+  "views": 178000,
+  "views_7d": 178000
  },
  "7698490251781721366": {
   "created": 1792444449,
@@ -37865,13 +37865,13 @@
   "handle": "cvwithines_",
   "hook": "",
   "judged": false,
-  "likes": 16,
+  "likes": 17,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 2,
-  "views": 652,
-  "views_7d": 652
+  "views": 655,
+  "views_7d": 655
  },
  "7698490941409168672": {
   "created": 1792444605,
@@ -37885,8 +37885,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 333,
-  "views_7d": 333
+  "views": 352,
+  "views_7d": 352
  },
  "7698494647085042951": {
   "created": 1792445473,
@@ -37897,11 +37897,11 @@
   "judged": false,
   "likes": 129,
   "mature": false,
-  "saves": 125,
+  "saves": 127,
   "saves_unknown": false,
   "shares": 12,
-  "views": 7923,
-  "views_7d": 7923
+  "views": 7945,
+  "views_7d": 7945
  },
  "7698496051908545824": {
   "created": 1792445798,
@@ -37915,8 +37915,8 @@
   "saves": 18,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1797,
-  "views_7d": 1797
+  "views": 1803,
+  "views_7d": 1803
  },
  "7698496737526205728": {
   "created": 1792445958,
@@ -37930,8 +37930,8 @@
   "saves": 14,
   "saves_unknown": false,
   "shares": 1,
-  "views": 459,
-  "views_7d": 459
+  "views": 462,
+  "views_7d": 462
  },
  "7698497882948685064": {
   "created": 1792446234,
@@ -37945,8 +37945,8 @@
   "saves": 15,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1049,
-  "views_7d": 1049
+  "views": 1059,
+  "views_7d": 1059
  },
  "7698498597217783060": {
   "created": 1792446400,
@@ -37955,13 +37955,13 @@
   "handle": "ferni.tips",
   "hook": "",
   "judged": false,
-  "likes": 78,
+  "likes": 80,
   "mature": false,
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 1741,
-  "views_7d": 1741
+  "views": 1755,
+  "views_7d": 1755
  },
  "7698500853279329569": {
   "created": 1792446915,
@@ -37975,8 +37975,8 @@
   "saves": 13,
   "saves_unknown": false,
   "shares": 0,
-  "views": 824,
-  "views_7d": 824
+  "views": 835,
+  "views_7d": 835
  },
  "7698500895062904071": {
   "created": 1792446928,
@@ -37990,8 +37990,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 697,
-  "views_7d": 697
+  "views": 723,
+  "views_7d": 723
  },
  "7698501505225182496": {
   "created": 1792447078,
@@ -38005,8 +38005,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 424,
-  "views_7d": 424
+  "views": 427,
+  "views_7d": 427
  },
  "7698507062971616519": {
   "created": 1792448369,
@@ -38015,13 +38015,13 @@
   "handle": "alinaibarra13",
   "hook": "",
   "judged": false,
-  "likes": 823,
+  "likes": 858,
   "mature": false,
-  "saves": 316,
+  "saves": 333,
   "saves_unknown": false,
-  "shares": 73,
-  "views": 12300,
-  "views_7d": 12300
+  "shares": 74,
+  "views": 12800,
+  "views_7d": 12800
  },
  "7698519466941975841": {
   "created": 1792451253,
@@ -38030,13 +38030,13 @@
   "handle": "leonorjobstepp",
   "hook": "",
   "judged": false,
-  "likes": 51,
+  "likes": 52,
   "mature": false,
-  "saves": 19,
+  "saves": 20,
   "saves_unknown": false,
   "shares": 2,
-  "views": 654,
-  "views_7d": 654
+  "views": 667,
+  "views_7d": 667
  },
  "7698529431148612885": {
   "created": 1792453573,
@@ -38050,8 +38050,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 0,
-  "views": 419,
-  "views_7d": 419
+  "views": 438,
+  "views_7d": 438
  },
  "7698533316479241473": {
   "created": 1792454478,
@@ -38065,8 +38065,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 463,
-  "views_7d": 463
+  "views": 477,
+  "views_7d": 477
  },
  "7698534352317205780": {
   "created": 1792454716,
@@ -38080,8 +38080,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 0,
-  "views": 9,
-  "views_7d": 9
+  "views": 12,
+  "views_7d": 12
  },
  "7698535736257039636": {
   "created": 1792455037,
@@ -38090,13 +38090,13 @@
   "handle": "luworks",
   "hook": "",
   "judged": false,
-  "likes": 223,
+  "likes": 228,
   "mature": false,
-  "saves": 76,
+  "saves": 78,
   "saves_unknown": false,
   "shares": 26,
-  "views": 6378,
-  "views_7d": 6378
+  "views": 6539,
+  "views_7d": 6539
  },
  "7698556699069713682": {
   "created": 1792459924,
@@ -38105,13 +38105,13 @@
   "handle": "catita.tipss",
   "hook": "",
   "judged": false,
-  "likes": 47,
+  "likes": 53,
   "mature": false,
-  "saves": 13,
+  "saves": 21,
   "saves_unknown": false,
-  "shares": 6,
-  "views": 1218,
-  "views_7d": 1218
+  "shares": 7,
+  "views": 1348,
+  "views_7d": 1348
  },
  "7698557014703639828": {
   "created": 1792459999,
@@ -38120,13 +38120,13 @@
   "handle": "mikiii4670",
   "hook": "",
   "judged": false,
-  "likes": 42,
+  "likes": 49,
   "mature": false,
-  "saves": 15,
+  "saves": 16,
   "saves_unknown": false,
-  "shares": 2,
-  "views": 1157,
-  "views_7d": 1157
+  "shares": 3,
+  "views": 1545,
+  "views_7d": 1545
  },
  "7698574074129173768": {
   "created": 1792463967,
@@ -38137,11 +38137,11 @@
   "judged": false,
   "likes": 54,
   "mature": false,
-  "saves": 18,
+  "saves": 19,
   "saves_unknown": false,
   "shares": 1,
-  "views": 657,
-  "views_7d": 657
+  "views": 678,
+  "views_7d": 678
  },
  "7698602203417857301": {
   "created": 1792470512,
@@ -38150,13 +38150,13 @@
   "handle": "marietipsapply",
   "hook": "",
   "judged": false,
-  "likes": 150,
+  "likes": 160,
   "mature": false,
-  "saves": 69,
+  "saves": 75,
   "saves_unknown": false,
-  "shares": 16,
-  "views": 4191,
-  "views_7d": 4191
+  "shares": 17,
+  "views": 4373,
+  "views_7d": 4373
  },
  "7698621662652009736": {
   "created": 1792475044,
@@ -38165,13 +38165,13 @@
   "handle": "diann1770",
   "hook": "",
   "judged": false,
-  "likes": 42,
+  "likes": 44,
   "mature": false,
   "saves": 18,
   "saves_unknown": false,
   "shares": 0,
-  "views": 518,
-  "views_7d": 518
+  "views": 534,
+  "views_7d": 534
  },
  "7698632032049515808": {
   "created": 1792477458,
@@ -38185,8 +38185,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 285,
-  "views_7d": 285
+  "views": 286,
+  "views_7d": 286
  },
  "7698635706570165536": {
   "created": 1792478317,
@@ -38200,8 +38200,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 1,
-  "views": 953,
-  "views_7d": 953
+  "views": 963,
+  "views_7d": 963
  },
  "7698635893451574560": {
   "created": 1792478366,
@@ -38215,8 +38215,8 @@
   "saves": 0,
   "saves_unknown": false,
   "shares": 1,
-  "views": 385,
-  "views_7d": 385
+  "views": 389,
+  "views_7d": 389
  },
  "7698638280941767968": {
   "created": 1792478916,
@@ -38230,8 +38230,8 @@
   "saves": 7,
   "saves_unknown": false,
   "shares": 1,
-  "views": 415,
-  "views_7d": 415
+  "views": 432,
+  "views_7d": 432
  },
  "7698660561139060001": {
   "created": 1792484103,
@@ -38244,9 +38244,9 @@
   "mature": false,
   "saves": 16,
   "saves_unknown": false,
-  "shares": 5,
-  "views": 1848,
-  "views_7d": 1848
+  "shares": 6,
+  "views": 1850,
+  "views_7d": 1850
  },
  "7698667346101161238": {
   "created": 1792485686,
@@ -38255,13 +38255,13 @@
   "handle": "swaaag_06",
   "hook": "Rejected ❌❌ – hold on for the fast-forward: how to write a CV in 2026",
   "judged": true,
-  "likes": 1294,
+  "likes": 1544,
   "mature": false,
-  "saves": 1602,
+  "saves": 1927,
   "saves_unknown": false,
-  "shares": 404,
-  "views": 100500,
-  "views_7d": 100500
+  "shares": 487,
+  "views": 117300,
+  "views_7d": 117300
  },
  "7698667788206083361": {
   "created": 1792485783,
@@ -38270,13 +38270,13 @@
   "handle": "chloejobtips",
   "hook": "",
   "judged": false,
-  "likes": 22,
+  "likes": 23,
   "mature": false,
   "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 697,
-  "views_7d": 697
+  "views": 712,
+  "views_7d": 712
  },
  "7698667824679488790": {
   "created": 1792485795,
@@ -38285,13 +38285,13 @@
   "handle": "filippajobbtips",
   "hook": "",
   "judged": false,
-  "likes": 89,
+  "likes": 90,
   "mature": false,
-  "saves": 58,
+  "saves": 59,
   "saves_unknown": false,
   "shares": 4,
-  "views": 3866,
-  "views_7d": 3866
+  "views": 3895,
+  "views_7d": 3895
  },
  "7698670286295649568": {
   "created": 1792486368,
@@ -38300,13 +38300,13 @@
   "handle": "emma.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 40,
+  "likes": 42,
   "mature": false,
-  "saves": 51,
+  "saves": 52,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1744,
-  "views_7d": 1744
+  "views": 1773,
+  "views_7d": 1773
  },
  "7698672026956926241": {
   "created": 1792486769,
@@ -38320,8 +38320,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 1,
-  "views": 808,
-  "views_7d": 808
+  "views": 815,
+  "views_7d": 815
  },
  "7698677006594002209": {
   "created": 1792487929,
@@ -38335,8 +38335,8 @@
   "saves": 10,
   "saves_unknown": false,
   "shares": 1,
-  "views": 792,
-  "views_7d": 792
+  "views": 799,
+  "views_7d": 799
  },
  "7698680410884082976": {
   "created": 1792488722,
@@ -38345,13 +38345,13 @@
   "handle": "itssophiatalea",
   "hook": "",
   "judged": false,
-  "likes": 19,
+  "likes": 20,
   "mature": false,
   "saves": 16,
   "saves_unknown": false,
   "shares": 5,
-  "views": 1102,
-  "views_7d": 1102
+  "views": 1155,
+  "views_7d": 1155
  },
  "7698692737184369953": {
   "created": 1792491591,
@@ -38362,11 +38362,11 @@
   "judged": false,
   "likes": 19,
   "mature": false,
-  "saves": 5,
+  "saves": 6,
   "saves_unknown": false,
   "shares": 1,
-  "views": 356,
-  "views_7d": 356
+  "views": 378,
+  "views_7d": 378
  },
  "7698694697660796193": {
   "created": 1792492050,
@@ -38380,8 +38380,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 1383,
-  "views_7d": 1383
+  "views": 1388,
+  "views_7d": 1388
  },
  "7698697455054982432": {
   "created": 1792492691,
@@ -38395,8 +38395,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 1,
-  "views": 542,
-  "views_7d": 542
+  "views": 564,
+  "views_7d": 564
  },
  "7698698165289094422": {
   "created": 1792492862,
@@ -38407,11 +38407,11 @@
   "judged": false,
   "likes": 38,
   "mature": false,
-  "saves": 7,
+  "saves": 8,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1608,
-  "views_7d": 1608
+  "views": 1664,
+  "views_7d": 1664
  },
  "7698699911444843798": {
   "created": 1792493266,
@@ -38425,8 +38425,8 @@
   "saves": 16,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1649,
-  "views_7d": 1649
+  "views": 1656,
+  "views_7d": 1656
  },
  "7698708810872999190": {
   "created": 1792495338,
@@ -38440,8 +38440,8 @@
   "saves": 86,
   "saves_unknown": false,
   "shares": 12,
-  "views": 4280,
-  "views_7d": 4280
+  "views": 4290,
+  "views_7d": 4290
  },
  "7698722738369858838": {
   "created": 1792498581,
@@ -38450,13 +38450,13 @@
   "handle": "itswithluna",
   "hook": "",
   "judged": false,
-  "likes": 167,
+  "likes": 178,
   "mature": false,
-  "saves": 54,
+  "saves": 56,
   "saves_unknown": false,
   "shares": 4,
-  "views": 5032,
-  "views_7d": 5032
+  "views": 5258,
+  "views_7d": 5258
  },
  "7698723766913846561": {
   "created": 1792498819,
@@ -38470,8 +38470,8 @@
   "saves": 22,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1135,
-  "views_7d": 1135
+  "views": 1147,
+  "views_7d": 1147
  },
  "7698741778341448992": {
   "created": 1792503007,
@@ -38485,8 +38485,8 @@
   "saves": 24,
   "saves_unknown": false,
   "shares": 4,
-  "views": 1114,
-  "views_7d": 1114
+  "views": 1151,
+  "views_7d": 1151
  },
  "7698745147915259158": {
   "created": 1792503796,
@@ -38495,13 +38495,13 @@
   "handle": "angetipsw",
   "hook": "Lie on your CV (not by inventing jobs, but with the details that make the difference)",
   "judged": false,
-  "likes": 178,
+  "likes": 186,
   "mature": false,
   "saves": 61,
   "saves_unknown": false,
   "shares": 13,
-  "views": 7431,
-  "views_7d": 7431
+  "views": 7574,
+  "views_7d": 7574
  },
  "7698753220352412960": {
   "created": 1792505672,
@@ -38515,8 +38515,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 1,
-  "views": 266,
-  "views_7d": 266
+  "views": 270,
+  "views_7d": 270
  },
  "7698753501266038048": {
   "created": 1792505738,
@@ -38530,8 +38530,8 @@
   "saves": 17,
   "saves_unknown": false,
   "shares": 4,
-  "views": 5293,
-  "views_7d": 5293
+  "views": 5365,
+  "views_7d": 5365
  },
  "7698753723954105632": {
   "created": 1792505790,
@@ -38545,8 +38545,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 3,
-  "views": 1619,
-  "views_7d": 1619
+  "views": 1660,
+  "views_7d": 1660
  },
  "7698755547696205089": {
   "created": 1792506214,
@@ -38560,8 +38560,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 459,
-  "views_7d": 459
+  "views": 462,
+  "views_7d": 462
  },
  "7698757233521249569": {
   "created": 1792506606,
@@ -38575,8 +38575,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 2,
-  "views": 297,
-  "views_7d": 297
+  "views": 301,
+  "views_7d": 301
  },
  "7698757649554246944": {
   "created": 1792506705,
@@ -38585,13 +38585,13 @@
   "handle": "mona.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 16,
+  "likes": 17,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 284,
-  "views_7d": 284
+  "views": 289,
+  "views_7d": 289
  },
  "7698765553137208609": {
   "created": 1792508544,
@@ -38605,8 +38605,8 @@
   "saves": 1,
   "saves_unknown": false,
   "shares": 1,
-  "views": 561,
-  "views_7d": 561
+  "views": 592,
+  "views_7d": 592
  },
  "7698771573448117526": {
   "created": 1792509947,
@@ -38615,13 +38615,13 @@
   "handle": "edda.anneli",
   "hook": "",
   "judged": false,
-  "likes": 26,
+  "likes": 32,
   "mature": false,
-  "saves": 7,
+  "saves": 11,
   "saves_unknown": false,
-  "shares": 0,
-  "views": 463,
-  "views_7d": 463
+  "shares": 1,
+  "views": 542,
+  "views_7d": 542
  },
  "7698772334622084384": {
   "created": 1792510122,
@@ -38630,13 +38630,13 @@
   "handle": "matildedicas",
   "hook": "Lie on your CV (not by inventing jobs, just the details that make the difference), then paste a LinkedIn job link into the tool to get a tailored CV",
   "judged": false,
-  "likes": 390,
+  "likes": 430,
   "mature": false,
-  "saves": 271,
+  "saves": 294,
   "saves_unknown": false,
-  "shares": 54,
-  "views": 18200,
-  "views_7d": 18200
+  "shares": 65,
+  "views": 19300,
+  "views_7d": 19300
  },
  "7698773389904727329": {
   "created": 1792510369,
@@ -38650,8 +38650,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 2,
-  "views": 453,
-  "views_7d": 453
+  "views": 485,
+  "views_7d": 485
  },
  "7698775073838173462": {
   "created": 1792510766,
@@ -38675,13 +38675,13 @@
   "handle": "gabbolab",
   "hook": "",
   "judged": false,
-  "likes": 31,
+  "likes": 32,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 302,
-  "views_7d": 302
+  "views": 311,
+  "views_7d": 311
  },
  "7698782633429454102": {
   "created": 1792512527,
@@ -38695,8 +38695,8 @@
   "saves": 9,
   "saves_unknown": false,
   "shares": 2,
-  "views": 1193,
-  "views_7d": 1193
+  "views": 1222,
+  "views_7d": 1222
  },
  "7698782905060838678": {
   "created": 1792512566,
@@ -38705,13 +38705,13 @@
   "handle": "danielaavega___",
   "hook": "",
   "judged": false,
-  "likes": 35,
+  "likes": 39,
   "mature": false,
-  "saves": 29,
+  "saves": 30,
   "saves_unknown": false,
-  "shares": 10,
-  "views": 1136,
-  "views_7d": 1136
+  "shares": 14,
+  "views": 1327,
+  "views_7d": 1327
  },
  "7698787802061884705": {
   "created": 1792513725,
@@ -38720,13 +38720,13 @@
   "handle": "job.by.niki",
   "hook": "",
   "judged": false,
-  "likes": 30,
+  "likes": 31,
   "mature": false,
   "saves": 14,
   "saves_unknown": false,
   "shares": 6,
-  "views": 1392,
-  "views_7d": 1392
+  "views": 1500,
+  "views_7d": 1500
  },
  "7698789666518093088": {
   "created": 1792514160,
@@ -38735,13 +38735,13 @@
   "handle": "justsara676",
   "hook": "",
   "judged": false,
-  "likes": 69,
+  "likes": 87,
   "mature": false,
-  "saves": 37,
+  "saves": 43,
   "saves_unknown": false,
   "shares": 5,
-  "views": 2170,
-  "views_7d": 2170
+  "views": 2693,
+  "views_7d": 2693
  },
  "7698790901920976160": {
   "created": 1792514446,
@@ -38750,13 +38750,13 @@
   "handle": "job.reality.mit.tatyana",
   "hook": "",
   "judged": false,
-  "likes": 27,
+  "likes": 28,
   "mature": false,
   "saves": 11,
   "saves_unknown": false,
   "shares": 2,
-  "views": 805,
-  "views_7d": 805
+  "views": 823,
+  "views_7d": 823
  },
  "7698791053134007574": {
   "created": 1792514486,
@@ -38765,13 +38765,13 @@
   "handle": "juliantyonhaku",
   "hook": "",
   "judged": false,
-  "likes": 52,
+  "likes": 57,
   "mature": false,
-  "saves": 34,
+  "saves": 38,
   "saves_unknown": false,
   "shares": 4,
-  "views": 692,
-  "views_7d": 692
+  "views": 815,
+  "views_7d": 815
  },
  "7698794846198385923": {
   "created": 1792515366,
@@ -38780,13 +38780,13 @@
   "handle": "jobtipy",
   "hook": "",
   "judged": false,
-  "likes": 3,
+  "likes": 4,
   "mature": false,
-  "saves": 1,
+  "saves": 2,
   "saves_unknown": false,
   "shares": 1,
-  "views": 256,
-  "views_7d": 256
+  "views": 262,
+  "views_7d": 262
  },
  "7698798015082958112": {
   "created": 1792516101,
@@ -38795,13 +38795,13 @@
   "handle": "elizacv25",
   "hook": "",
   "judged": false,
-  "likes": 35,
+  "likes": 36,
   "mature": false,
   "saves": 18,
   "saves_unknown": false,
   "shares": 1,
-  "views": 934,
-  "views_7d": 934
+  "views": 961,
+  "views_7d": 961
  },
  "7698798093189401878": {
   "created": 1792516125,
@@ -38812,11 +38812,11 @@
   "judged": false,
   "likes": 6,
   "mature": false,
-  "saves": 4,
+  "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 280,
-  "views_7d": 280
+  "views": 291,
+  "views_7d": 291
  },
  "7698805200521366817": {
   "created": 1792517774,
@@ -38825,13 +38825,13 @@
   "handle": "joaocareer",
   "hook": "",
   "judged": false,
-  "likes": 10,
+  "likes": 12,
   "mature": false,
-  "saves": 1,
+  "saves": 3,
   "saves_unknown": false,
   "shares": 2,
-  "views": 285,
-  "views_7d": 285
+  "views": 311,
+  "views_7d": 311
  },
  "7698810799313341704": {
   "created": 1792519088,
@@ -38840,13 +38840,13 @@
   "handle": "alinaibarra13",
   "hook": "",
   "judged": false,
-  "likes": 246,
+  "likes": 278,
   "mature": false,
-  "saves": 109,
+  "saves": 124,
   "saves_unknown": false,
-  "shares": 30,
-  "views": 3785,
-  "views_7d": 3785
+  "shares": 38,
+  "views": 4434,
+  "views_7d": 4434
  },
  "7698811305561427233": {
   "created": 1792519195,
@@ -38860,8 +38860,8 @@
   "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 789,
-  "views_7d": 789
+  "views": 794,
+  "views_7d": 794
  },
  "7698812532978453792": {
   "created": 1792519483,
@@ -38875,8 +38875,8 @@
   "saves": 6,
   "saves_unknown": false,
   "shares": 0,
-  "views": 767,
-  "views_7d": 767
+  "views": 780,
+  "views_7d": 780
  },
  "7698813699104050465": {
   "created": 1792519753,
@@ -38890,8 +38890,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 2,
-  "views": 259,
-  "views_7d": 259
+  "views": 270,
+  "views_7d": 270
  },
  "7698814443253255446": {
   "created": 1792519928,
@@ -38900,13 +38900,13 @@
   "handle": "diana_osm",
   "hook": "",
   "judged": false,
-  "likes": 21,
+  "likes": 26,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 308,
-  "views_7d": 308
+  "views": 337,
+  "views_7d": 337
  },
  "7698814761764424982": {
   "created": 1792520006,
@@ -38915,13 +38915,13 @@
   "handle": "viktorietyna",
   "hook": "",
   "judged": false,
-  "likes": 60,
+  "likes": 67,
   "mature": false,
-  "saves": 11,
+  "saves": 15,
   "saves_unknown": false,
   "shares": 1,
-  "views": 892,
-  "views_7d": 892
+  "views": 1006,
+  "views_7d": 1006
  },
  "7698816927979834657": {
   "created": 1792520504,
@@ -38935,8 +38935,8 @@
   "saves": 2,
   "saves_unknown": false,
   "shares": 0,
-  "views": 322,
-  "views_7d": 322
+  "views": 357,
+  "views_7d": 357
  },
  "7698819759307017494": {
   "created": 1792521167,
@@ -38945,13 +38945,13 @@
   "handle": "dorcsyy_jobstep",
   "hook": "",
   "judged": false,
-  "likes": 85,
+  "likes": 93,
   "mature": false,
-  "saves": 22,
+  "saves": 23,
   "saves_unknown": false,
   "shares": 7,
-  "views": 2796,
-  "views_7d": 2796
+  "views": 3034,
+  "views_7d": 3034
  },
  "7698822395251019028": {
   "created": 1792521786,
@@ -38960,13 +38960,13 @@
   "handle": "marianaloprueba",
   "hook": "",
   "judged": false,
-  "likes": 34,
+  "likes": 67,
   "mature": false,
-  "saves": 9,
+  "saves": 17,
   "saves_unknown": false,
   "shares": 2,
-  "views": 912,
-  "views_7d": 912
+  "views": 1723,
+  "views_7d": 1723
  },
  "7698823066968804640": {
   "created": 1792521934,
@@ -38980,8 +38980,8 @@
   "saves": 8,
   "saves_unknown": false,
   "shares": 2,
-  "views": 911,
-  "views_7d": 911
+  "views": 921,
+  "views_7d": 921
  },
  "7698824344260152608": {
   "created": 1792522230,
@@ -38990,13 +38990,13 @@
   "handle": "manal.jobstep.io",
   "hook": "",
   "judged": false,
-  "likes": 14,
+  "likes": 16,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
   "shares": 7,
-  "views": 277,
-  "views_7d": 277
+  "views": 282,
+  "views_7d": 282
  },
  "7698832013494881557": {
   "created": 1792524022,
@@ -39005,13 +39005,13 @@
   "handle": "ferni.tips",
   "hook": "",
   "judged": false,
-  "likes": 22,
+  "likes": 28,
   "mature": false,
-  "saves": 13,
+  "saves": 16,
   "saves_unknown": false,
-  "shares": 1,
-  "views": 591,
-  "views_7d": 591
+  "shares": 3,
+  "views": 793,
+  "views_7d": 793
  },
  "7698832715952491798": {
   "created": 1792524186,
@@ -39020,28 +39020,28 @@
   "handle": "lockinwitheva",
   "hook": "",
   "judged": false,
-  "likes": 27,
+  "likes": 30,
   "mature": false,
-  "saves": 9,
+  "saves": 11,
   "saves_unknown": false,
-  "shares": 40,
-  "views": 418,
-  "views_7d": 418
+  "shares": 41,
+  "views": 522,
+  "views_7d": 522
  },
  "7698832869078093089": {
   "created": 1792524217,
-  "format": null,
+  "format": "X16",
   "german": false,
   "handle": "dianapracuje",
   "hook": "",
-  "judged": false,
-  "likes": 169,
+  "judged": true,
+  "likes": 884,
   "mature": false,
-  "saves": 90,
+  "saves": 808,
   "saves_unknown": false,
-  "shares": 22,
-  "views": 4537,
-  "views_7d": 4537
+  "shares": 183,
+  "views": 37200,
+  "views_7d": 37200
  },
  "7698839028807830816": {
   "created": 1792525651,
@@ -39050,13 +39050,13 @@
   "handle": "justsara676",
   "hook": "",
   "judged": false,
-  "likes": 11,
+  "likes": 27,
   "mature": false,
-  "saves": 8,
+  "saves": 12,
   "saves_unknown": false,
-  "shares": 0,
-  "views": 307,
-  "views_7d": 307
+  "shares": 2,
+  "views": 744,
+  "views_7d": 744
  },
  "7698840005451582728": {
   "created": 1792525904,
@@ -39065,13 +39065,13 @@
   "handle": "sevvalcareer",
   "hook": "",
   "judged": false,
-  "likes": 4,
+  "likes": 5,
   "mature": false,
-  "saves": 3,
+  "saves": 4,
   "saves_unknown": false,
   "shares": 0,
-  "views": 686,
-  "views_7d": 686
+  "views": 770,
+  "views_7d": 770
  },
  "7698842155992861985": {
   "created": 1792526379,
@@ -39080,13 +39080,13 @@
   "handle": "itssophiatalea",
   "hook": "",
   "judged": false,
-  "likes": 5,
+  "likes": 9,
   "mature": false,
-  "saves": 4,
+  "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 405,
-  "views_7d": 405
+  "views": 730,
+  "views_7d": 730
  },
  "7698844450482851074": {
   "created": 1792526917,
@@ -39100,8 +39100,8 @@
   "saves": 3,
   "saves_unknown": false,
   "shares": 0,
-  "views": 766,
-  "views_7d": 766
+  "views": 785,
+  "views_7d": 785
  },
  "7698847771880606998": {
   "created": 1792527688,
@@ -39110,13 +39110,13 @@
   "handle": "issa.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 10,
+  "likes": 15,
   "mature": false,
-  "saves": 4,
+  "saves": 5,
   "saves_unknown": false,
-  "shares": 1,
-  "views": 265,
-  "views_7d": 265
+  "shares": 3,
+  "views": 549,
+  "views_7d": 549
  },
  "7698850552083402017": {
   "created": 1792528335,
@@ -39125,13 +39125,13 @@
   "handle": "ale.jobtips",
   "hook": "",
   "judged": false,
-  "likes": 14,
+  "likes": 15,
   "mature": false,
   "saves": 5,
   "saves_unknown": false,
   "shares": 1,
-  "views": 332,
-  "views_7d": 332
+  "views": 401,
+  "views_7d": 401
  },
  "7698850737102523655": {
   "created": 1792528389,
@@ -39140,13 +39140,13 @@
   "handle": "emasavetuje",
   "hook": "",
   "judged": false,
-  "likes": 15,
+  "likes": 27,
   "mature": false,
-  "saves": 2,
+  "saves": 12,
   "saves_unknown": false,
   "shares": 0,
-  "views": 472,
-  "views_7d": 472
+  "views": 1005,
+  "views_7d": 1005
  },
  "7698852699948715286": {
   "created": 1792528838,
@@ -39155,13 +39155,13 @@
   "handle": "abis.luv6",
   "hook": "",
   "judged": false,
-  "likes": 65,
+  "likes": 271,
   "mature": false,
-  "saves": 42,
+  "saves": 108,
   "saves_unknown": false,
-  "shares": 5,
-  "views": 1588,
-  "views_7d": 1588
+  "shares": 16,
+  "views": 4517,
+  "views_7d": 4517
  },
  "7698853082339298582": {
   "created": 1792528926,
@@ -39170,13 +39170,13 @@
   "handle": "anniaelina",
   "hook": "",
   "judged": false,
-  "likes": 6,
+  "likes": 7,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 4,
-  "views": 279,
-  "views_7d": 279
+  "views": 299,
+  "views_7d": 299
  },
  "7698854211315911969": {
   "created": 1792529185,
@@ -39190,8 +39190,8 @@
   "saves": 5,
   "saves_unknown": false,
   "shares": 0,
-  "views": 718,
-  "views_7d": 718
+  "views": 764,
+  "views_7d": 764
  },
  "7698855659009232150": {
   "created": 1792529527,
@@ -39200,13 +39200,13 @@
   "handle": "tsvetelina.tips",
   "hook": "",
   "judged": false,
-  "likes": 18,
+  "likes": 37,
   "mature": false,
-  "saves": 3,
+  "saves": 12,
   "saves_unknown": false,
-  "shares": 1,
-  "views": 270,
-  "views_7d": 270
+  "shares": 3,
+  "views": 738,
+  "views_7d": 738
  },
  "7698856487837338888": {
   "created": 1792529731,
@@ -39215,13 +39215,13 @@
   "handle": "zorica.djurdjevic21",
   "hook": "",
   "judged": false,
-  "likes": 6,
+  "likes": 8,
   "mature": false,
-  "saves": 5,
+  "saves": 8,
   "saves_unknown": false,
   "shares": 0,
-  "views": 425,
-  "views_7d": 425
+  "views": 648,
+  "views_7d": 648
  },
  "7698857150591896854": {
   "created": 1792529875,
@@ -39230,13 +39230,13 @@
   "handle": "laraworking",
   "hook": "",
   "judged": false,
-  "likes": 5,
+  "likes": 9,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
   "shares": 2,
-  "views": 280,
-  "views_7d": 280
+  "views": 298,
+  "views_7d": 298
  },
  "7698865127138921761": {
   "created": 1792531727,
@@ -39245,13 +39245,13 @@
   "handle": "lissa.jobtipps",
   "hook": "",
   "judged": false,
-  "likes": 11,
+  "likes": 15,
   "mature": false,
-  "saves": 10,
+  "saves": 15,
   "saves_unknown": false,
   "shares": 0,
-  "views": 548,
-  "views_7d": 548
+  "views": 743,
+  "views_7d": 743
  },
  "7698866549926399254": {
   "created": 1792532064,
@@ -39260,13 +39260,13 @@
   "handle": "cvwithines_",
   "hook": "",
   "judged": false,
-  "likes": 15,
+  "likes": 17,
   "mature": false,
   "saves": 2,
   "saves_unknown": false,
   "shares": 4,
-  "views": 507,
-  "views_7d": 507
+  "views": 556,
+  "views_7d": 556
  },
  "7698869227599449376": {
   "created": 1792532682,
@@ -39275,13 +39275,13 @@
   "handle": "_klaudii30",
   "hook": "",
   "judged": false,
-  "likes": 7,
+  "likes": 11,
   "mature": false,
-  "saves": 3,
+  "saves": 4,
   "saves_unknown": false,
   "shares": 1,
-  "views": 224,
-  "views_7d": 224
+  "views": 425,
+  "views_7d": 425
  },
  "7698877733518036231": {
   "created": 1792534677,
@@ -39290,28 +39290,28 @@
   "handle": "lavalaletze",
   "hook": "",
   "judged": false,
-  "likes": 75,
+  "likes": 297,
   "mature": false,
-  "saves": 12,
+  "saves": 108,
   "saves_unknown": false,
-  "shares": 6,
-  "views": 1037,
-  "views_7d": 1037
+  "shares": 32,
+  "views": 4303,
+  "views_7d": 4303
  },
  "7698889580660919559": {
   "created": 1792537434,
-  "format": null,
+  "format": "FRX22",
   "german": false,
   "handle": "maguiteexplica",
   "hook": "",
-  "judged": false,
-  "likes": 96,
+  "judged": true,
+  "likes": 1662,
   "mature": false,
-  "saves": 63,
+  "saves": 1241,
   "saves_unknown": false,
-  "shares": 7,
-  "views": 2090,
-  "views_7d": 2090
+  "shares": 166,
+  "views": 31100,
+  "views_7d": 31100
  },
  "7698897418372386080": {
   "created": 1792539258,
@@ -39320,12 +39320,237 @@
   "handle": "leonorjobstepp",
   "hook": "",
   "judged": false,
+  "likes": 18,
+  "mature": false,
+  "saves": 15,
+  "saves_unknown": false,
+  "shares": 0,
+  "views": 212,
+  "views_7d": 212
+ },
+ "7698924781432884500": {
+  "created": 1792545622,
+  "format": null,
+  "german": false,
+  "handle": "marietipsapply",
+  "hook": "",
+  "judged": false,
+  "likes": 49,
+  "mature": false,
+  "saves": 30,
+  "saves_unknown": false,
+  "shares": 3,
+  "views": 1300,
+  "views_7d": 1300
+ },
+ "7698930865727917333": {
+  "created": 1792547039,
+  "format": null,
+  "german": false,
+  "handle": "mikiii4670",
+  "hook": "",
+  "judged": false,
+  "likes": 34,
+  "mature": false,
+  "saves": 14,
+  "saves_unknown": false,
+  "shares": 2,
+  "views": 692,
+  "views_7d": 692
+ },
+ "7698938728001162514": {
+  "created": 1792548869,
+  "format": null,
+  "german": false,
+  "handle": "yamiworks22",
+  "hook": "",
+  "judged": false,
+  "likes": 13,
+  "mature": false,
+  "saves": 7,
+  "saves_unknown": false,
+  "shares": 5,
+  "views": 468,
+  "views_7d": 468
+ },
+ "7698941535647288608": {
+  "created": 1792549527,
+  "format": null,
+  "german": false,
+  "handle": "ma.life.de.chomeu",
+  "hook": "",
+  "judged": false,
+  "likes": 17,
+  "mature": false,
+  "saves": 8,
+  "saves_unknown": false,
+  "shares": 2,
+  "views": 399,
+  "views_7d": 399
+ },
+ "7698943670057192712": {
+  "created": 1792550018,
+  "format": null,
+  "german": false,
+  "handle": "catita.tipss",
+  "hook": "",
+  "judged": false,
+  "likes": 64,
+  "mature": false,
+  "saves": 18,
+  "saves_unknown": false,
+  "shares": 2,
+  "views": 1293,
+  "views_7d": 1293
+ },
+ "7698944080289533217": {
+  "created": 1792550119,
+  "format": null,
+  "german": false,
+  "handle": "ma.life.de.chomeu",
+  "hook": "",
+  "judged": false,
+  "likes": 9,
+  "mature": false,
+  "saves": 11,
+  "saves_unknown": false,
+  "shares": 0,
+  "views": 440,
+  "views_7d": 440
+ },
+ "7698963305422949638": {
+  "created": 1792554592,
+  "format": null,
+  "german": false,
+  "handle": "yamiworks22",
+  "hook": "",
+  "judged": false,
+  "likes": 63,
+  "mature": false,
+  "saves": 42,
+  "saves_unknown": false,
+  "shares": 4,
+  "views": 2384,
+  "views_7d": 2384
+ },
+ "7698969738793291014": {
+  "created": 1792556087,
+  "format": null,
+  "german": false,
+  "handle": "aime_aqui",
+  "hook": "",
+  "judged": false,
+  "likes": 15,
+  "mature": false,
+  "saves": 6,
+  "saves_unknown": false,
+  "shares": 2,
+  "views": 409,
+  "views_7d": 409
+ },
+ "7698973339586399506": {
+  "created": 1792556926,
+  "format": null,
+  "german": false,
+  "handle": "jimena.ruizf",
+  "hook": "",
+  "judged": false,
+  "likes": 4,
+  "mature": false,
+  "saves": 3,
+  "saves_unknown": false,
+  "shares": 0,
+  "views": 132,
+  "views_7d": 132
+ },
+ "7698979106561510663": {
+  "created": 1792558266,
+  "format": null,
+  "german": false,
+  "handle": "lil.janeiro0",
+  "hook": "",
+  "judged": false,
+  "likes": 96,
+  "mature": false,
+  "saves": 35,
+  "saves_unknown": false,
+  "shares": 4,
+  "views": 1410,
+  "views_7d": 1410
+ },
+ "7698982726149459218": {
+  "created": 1792559110,
+  "format": null,
+  "german": false,
+  "handle": "origomez953",
+  "hook": "",
+  "judged": false,
   "likes": 7,
+  "mature": false,
+  "saves": 0,
+  "saves_unknown": false,
+  "shares": 0,
+  "views": 79,
+  "views_7d": 79
+ },
+ "7698989276784004374": {
+  "created": 1792560637,
+  "format": null,
+  "german": false,
+  "handle": "annikajobtips",
+  "hook": "",
+  "judged": false,
+  "likes": 12,
+  "mature": false,
+  "saves": 0,
+  "saves_unknown": false,
+  "shares": 1,
+  "views": 249,
+  "views_7d": 249
+ },
+ "7699015971201092897": {
+  "created": 1792566849,
+  "format": null,
+  "german": true,
+  "handle": "sarinajobstep",
+  "hook": "",
+  "judged": false,
+  "likes": 9,
   "mature": false,
   "saves": 4,
   "saves_unknown": false,
+  "shares": 1,
+  "views": 155,
+  "views_7d": 155
+ },
+ "7699018135982116129": {
+  "created": 1792567353,
+  "format": null,
+  "german": false,
+  "handle": "marine.realfakephotos",
+  "hook": "",
+  "judged": false,
+  "likes": 7,
+  "mature": false,
+  "saves": 1,
+  "saves_unknown": false,
+  "shares": 2,
+  "views": 274,
+  "views_7d": 274
+ },
+ "7699021992070057249": {
+  "created": 1792568252,
+  "format": null,
+  "german": false,
+  "handle": "emma.jobtips",
+  "hook": "",
+  "judged": false,
+  "likes": 11,
+  "mature": false,
+  "saves": 3,
+  "saves_unknown": false,
   "shares": 0,
-  "views": 153,
-  "views_7d": 153
+  "views": 144,
+  "views_7d": 144
  }
 }

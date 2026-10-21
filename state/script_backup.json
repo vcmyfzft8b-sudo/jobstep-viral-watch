@@ -21058,6 +21058,25 @@
    "type": "text"
   }
  ],
+ "4b7fe571-295c-4bbf-8a40-9b0a8043987c.18": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Sedi za mizo pred kamero in si med govorjenjem pripravljaj čaj, tako kot v primeru: s škarjami odpri vrečko čaja, jo daj v visok kozarec in nalij vodo iz čajnika, naslov pa naj bo ves čas viden.",
+   "text": {
+    "content": "Sedi za mizo pred kamero in si med govorjenjem pripravljaj čaj, tako kot v primeru: s škarjami odpri vrečko čaja, jo daj v visok kozarec in nalij vodo iz čajnika, naslov pa naj bo ves čas viden.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "4d33327e-27e7-4328-821f-e2d482f58e91": [
   {
    "annotations": {
@@ -22749,6 +22768,25 @@
    "plain_text": "Točno skopiraj začetek vzorčnega videa: začni čisto blizu kamere, ko si popravljaš trak za lase ali lase, z naveličanim izrazom, nato se odmakni in govori v kamero, medtem ko si nanašaš kremo. Prve 3 sekunde naj bo na zaslonu napis »POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡«.",
    "text": {
     "content": "Točno skopiraj začetek vzorčnega videa: začni čisto blizu kamere, ko si popravljaš trak za lase ali lase, z naveličanim izrazom, nato se odmakni in govori v kamero, medtem ko si nanašaš kremo. Prve 3 sekunde naj bo na zaslonu napis »POV: zavrnili so me za blagajničarko, pa imam magisterij 🤡«.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "ddf59e94-a352-4124-9793-93b6f413f606.38": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'exemple, prépare-toi un thé pendant que tu parles : assise à table devant un verre vide, tu ouvres un sachet de thé avec des ciseaux, puis tu verses l'eau de la bouilloire. Le titre reste affiché à l'écran.",
+   "text": {
+    "content": "Comme dans la vidéo d'exemple, prépare-toi un thé pendant que tu parles : assise à table devant un verre vide, tu ouvres un sachet de thé avec des ciseaux, puis tu verses l'eau de la bouilloire. Le titre reste affiché à l'écran.",
     "link": null
    },
    "type": "text"
@@ -27071,6 +27109,25 @@
    "plain_text": "Creme dir am Anfang die Hände ein, während du in die Kamera sprichst – der Titel ist eingeblendet.",
    "text": {
     "content": "Creme dir am Anfang die Hände ein, während du in die Kamera sprichst – der Titel ist eingeblendet.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "f0f57560-45bf-425e-8626-839934f99dcb.18": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Haz exactamente lo mismo que en el vídeo de ejemplo: siéntate a la mesa y prepárate un té mientras hablas (abre el sobre con unas tijeras, mételo en un vaso y echa el agua con una tetera).",
+   "text": {
+    "content": "Haz exactamente lo mismo que en el vídeo de ejemplo: siéntate a la mesa y prepárate un té mientras hablas (abre el sobre con unas tijeras, mételo en un vaso y echa el agua con una tetera).",
     "link": null
    },
    "type": "text"
@@ -46585,6 +46642,398 @@
    }
   ]
  ],
+ "page:4b7fe571-295c-4bbf-8a40-9b0a8043987c": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pred kratkim sem prišla iz sveta brezposelnosti, zato ti bom dala nasvet, da prideš od tam ven tudi ti. ",
+    "text": {
+     "content": "Pred kratkim sem prišla iz sveta brezposelnosti, zato ti bom dala nasvet, da prideš od tam ven tudi ti. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tudi jaz sem se prijavljala na kup podjetij, ampak me nikoli niso poklicali in nisem razumela, zakaj. ",
+    "text": {
+     "content": "Tudi jaz sem se prijavljala na kup podjetij, ampak me nikoli niso poklicali in nisem razumela, zakaj. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Seznam prijav – glej Viri) ",
+    "text": {
+     "content": "(📎 Seznam prijav – glej Viri) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Dobesedno sem se prijavila na tisoč, se pravi, vzela sem si čas in preverila. Se pravi, punca, ogromno. ",
+    "text": {
+     "content": "Dobesedno sem se prijavila na tisoč, se pravi, vzela sem si čas in preverila. Se pravi, punca, ogromno. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "In uporabljala sem tiste življenjepise iz Canve, se pravi, mislila sem, da so v redu, da so lepi, se pravi, »aesthetic«, ampak ne. ",
+    "text": {
+     "content": "In uporabljala sem tiste življenjepise iz Canve, se pravi, mislila sem, da so v redu, da so lepi, se pravi, »aesthetic«, ampak ne. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Dokler se nisem pogovorila s prijateljico, ki dela v kadrovski, in mi je nekako rekla, da me s tem življenjepisom ne bodo poklicali nikjer, ker zdaj podjetja delajo z umetno inteligenco, ki bere življenjepise. ",
+    "text": {
+     "content": "Dokler se nisem pogovorila s prijateljico, ki dela v kadrovski, in mi je nekako rekla, da me s tem življenjepisom ne bodo poklicali nikjer, ker zdaj podjetja delajo z umetno inteligenco, ki bere življenjepise. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ja, sistemi ATS, a lahko verjameš? Ampak pokazala mi je tudi rešitev. ",
+    "text": {
+     "content": "Ja, sistemi ATS, a lahko verjameš? Ampak pokazala mi je tudi rešitev. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Čakaj, pridi, da ti pokažem. ",
+    "text": {
+     "content": "Čakaj, pridi, da ti pokažem. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Greš na parakeet-ai.com/resume-maker in kar narediš, je, da kopiraš in prilepiš oglas za službo, ki jo iščeš. ",
+    "text": {
+     "content": "Greš na parakeet-ai.com/resume-maker in kar narediš, je, da kopiraš in prilepiš oglas za službo, ki jo iščeš. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Kar naredi, je, da analizira ta oglas za službo s ključnimi besedami in ti naredi življenjepis, da lahko prilagodiš življenjepis, ki ga že imaš, in si izbereš predlogo. ",
+    "text": {
+     "content": "Kar naredi, je, da analizira ta oglas za službo s ključnimi besedami in ti naredi življenjepis, da lahko prilagodiš življenjepis, ki ga že imaš, in si izbereš predlogo. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Primerja tvoj življenjepis in ima urejevalnik, ki ti sproti pomaga, da ga izboljšaš, da prideš skozi te filtre ATS. ",
+    "text": {
+     "content": "Primerja tvoj življenjepis in ima urejevalnik, ki ti sproti pomaga, da ga izboljšaš, da prideš skozi te filtre ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "In to je to, dobesedno, ko ti ga enkrat prilagodi, ti ga izboljša, in s tem sem dobila kup razgovorov. Poglejte. ",
+    "text": {
+     "content": "In to je to, dobesedno, ko ti ga enkrat prilagodi, ti ga izboljša, in s tem sem dobila kup razgovorov. Poglejte. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Gmail-posnetek – glej Viri) ",
+    "text": {
+     "content": "(📎 Gmail-posnetek – glej Viri) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pridi, da pokažem. Poglejte, koliko jih je. Ljudje, lahko izbiram, dobesedno. ",
+    "text": {
+     "content": "Pridi, da pokažem. Poglejte, koliko jih je. Ljudje, lahko izbiram, dobesedno. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Poslušaj me in če hočeš še več takih nasvetov, mi sledi. Kaj čakaš? ",
+    "text": {
+     "content": "Poslušaj me in če hočeš še več takih nasvetov, mi sledi. Kaj čakaš? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Poslušaj me in če hočeš še več takih nasvetov, mi sledi. Kaj čakaš? ",
+    "text": {
+     "content": "Poslušaj me in če hočeš še več takih nasvetov, mi sledi. Kaj čakaš? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:4dc5a771-14ce-41bc-8289-d1a15c551c86": [
   [
    {
@@ -51161,6 +51610,430 @@
    }
   ]
  ],
+ "page:ddf59e94-a352-4124-9793-93b6f413f606": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Je viens de sortir du chômage, alors je vais te donner un conseil pour que toi aussi tu t'en sortes. ",
+    "text": {
+     "content": "Je viens de sortir du chômage, alors je vais te donner un conseil pour que toi aussi tu t'en sortes. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Parce que moi aussi, je postulais dans plein d'entreprises, mais on ne m'appelait jamais et je ne comprenais pas pourquoi. ",
+    "text": {
+     "content": "Parce que moi aussi, je postulais dans plein d'entreprises, mais on ne m'appelait jamais et je ne comprenais pas pourquoi. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "J'ai littéralement postulé à mille, genre, j'ai pris le temps de vérifier. ",
+    "text": {
+     "content": "J'ai littéralement postulé à mille, genre, j'ai pris le temps de vérifier. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Tableau de candidatures – voir Ressources) ",
+    "text": {
+     "content": "(📎 Tableau de candidatures – voir Ressources) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Genre, ma belle, une tonne. ",
+    "text": {
+     "content": "Genre, ma belle, une tonne. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et j'utilisais ces CV Canva, genre, je pensais qu'ils étaient bien, qu'ils étaient jolis, genre « aesthetic », mais non. ",
+    "text": {
+     "content": "Et j'utilisais ces CV Canva, genre, je pensais qu'ils étaient bien, qu'ils étaient jolis, genre « aesthetic », mais non. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Jusqu'à ce que je parle avec une amie qui bosse dans les RH, et elle m'a dit genre, euh, qu'avec ce CV, personne n'allait m'appeler, parce que maintenant les entreprises travaillent avec une intelligence artificielle qui lit les CV. ",
+    "text": {
+     "content": "Jusqu'à ce que je parle avec une amie qui bosse dans les RH, et elle m'a dit genre, euh, qu'avec ce CV, personne n'allait m'appeler, parce que maintenant les entreprises travaillent avec une intelligence artificielle qui lit les CV. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Oui, les systèmes ATS, vous y croyez ? ",
+    "text": {
+     "content": "Oui, les systèmes ATS, vous y croyez ? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Mais elle m'a aussi montré la solution. ",
+    "text": {
+     "content": "Mais elle m'a aussi montré la solution. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Attends, viens, je te montre. ",
+    "text": {
+     "content": "Attends, viens, je te montre. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tu vas aller sur parakeet-ai.com/resume-maker, et ce que tu vas faire, c'est copier-coller l'offre d'emploi que tu vises. ",
+    "text": {
+     "content": "Tu vas aller sur parakeet-ai.com/resume-maker, et ce que tu vas faire, c'est copier-coller l'offre d'emploi que tu vises. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ce que ça va faire, c'est analyser cette offre d'emploi avec les mots-clés et te faire un CV pour que tu puisses adapter le CV que tu as déjà, et te laisser choisir un modèle. ",
+    "text": {
+     "content": "Ce que ça va faire, c'est analyser cette offre d'emploi avec les mots-clés et te faire un CV pour que tu puisses adapter le CV que tu as déjà, et te laisser choisir un modèle. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ça compare ton CV, et il y a un éditeur qui t'aide à l'améliorer pour passer ces filtres ATS. ",
+    "text": {
+     "content": "Ça compare ton CV, et il y a un éditeur qui t'aide à l'améliorer pour passer ces filtres ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et voilà, littéralement, une fois que ça te l'adapte et que ça te l'améliore… avec ça, j'ai décroché plein d'entretiens. Regardez. ",
+    "text": {
+     "content": "Et voilà, littéralement, une fois que ça te l'adapte et que ça te l'améliore… avec ça, j'ai décroché plein d'entretiens. Regardez. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Boîte mail avec invitations à des entretiens – voir Ressources) ",
+    "text": {
+     "content": "(📎 Boîte mail avec invitations à des entretiens – voir Ressources) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Viens, je vous montre. Regardez le nombre. Les gars, j'ai le choix, littéralement. ",
+    "text": {
+     "content": "Viens, je vous montre. Regardez le nombre. Les gars, j'ai le choix, littéralement. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Écoute-moi, et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
+    "text": {
+     "content": "Écoute-moi, et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Écoute-moi, et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
+    "text": {
+     "content": "Écoute-moi, et si tu veux plus de conseils comme ça, abonne-toi. Qu'est-ce que tu attends ? ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:e514bd66-cf35-45ad-ac8e-f1ae9fa5d4b5": [
   [
    {
@@ -51400,6 +52273,364 @@
     "plain_text": "Zato kar poglejte tja in spodaj komentirajte, kaj mislite, kdo bo kupil naslednji prostor.",
     "text": {
      "content": "Zato kar poglejte tja in spodaj komentirajte, kaj mislite, kdo bo kupil naslednji prostor.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:f0f57560-45bf-425e-8626-839934f99dcb": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hace poco salí del mundo del desempleo, así que te voy a dar un consejo para que tú también salgas de ahí. ",
+    "text": {
+     "content": "Hace poco salí del mundo del desempleo, así que te voy a dar un consejo para que tú también salgas de ahí. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y es que yo también me presentaba a un montón de empresas, pero nunca me llamaban y no entendía por qué. ",
+    "text": {
+     "content": "Y es que yo también me presentaba a un montón de empresas, pero nunca me llamaban y no entendía por qué. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Lista de candidaturas – ver Recursos) ",
+    "text": {
+     "content": "(📎 Lista de candidaturas – ver Recursos) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Literalmente me presenté a mil, o sea, me tomé el tiempo de revisarlo. O sea, tía, un montón. ",
+    "text": {
+     "content": "Literalmente me presenté a mil, o sea, me tomé el tiempo de revisarlo. O sea, tía, un montón. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y yo usaba esos currículums de Canva, o sea, yo pensaba que estaban bien, que eran bonitos, o sea, \"aesthetic\", pero no. ",
+    "text": {
+     "content": "Y yo usaba esos currículums de Canva, o sea, yo pensaba que estaban bien, que eran bonitos, o sea, \"aesthetic\", pero no. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hasta que hablé con una amiga que trabaja en recursos humanos y me dijo que con ese CV no me iban a llamar de ningún sitio, porque ahora las empresas trabajan con una inteligencia artificial que lee los currículums. Sí, los sistemas ATS, ¿os lo podéis creer? Pero también me enseñó la solución. ",
+    "text": {
+     "content": "Hasta que hablé con una amiga que trabaja en recursos humanos y me dijo que con ese CV no me iban a llamar de ningún sitio, porque ahora las empresas trabajan con una inteligencia artificial que lee los currículums. Sí, los sistemas ATS, ¿os lo podéis creer? Pero también me enseñó la solución. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Espera, ven que te lo enseño. ",
+    "text": {
+     "content": "Espera, ven que te lo enseño. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Vas a entrar en parakeet-ai.com/resume-maker y lo que vas a hacer es copiar y pegar la oferta de trabajo que estás buscando. ",
+    "text": {
+     "content": "Vas a entrar en parakeet-ai.com/resume-maker y lo que vas a hacer es copiar y pegar la oferta de trabajo que estás buscando. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo que va a hacer es analizar esa oferta de trabajo con las palabras clave y te hace un currículum para que puedas adaptar el currículum que ya tienes y elegir una plantilla. ",
+    "text": {
+     "content": "Lo que va a hacer es analizar esa oferta de trabajo con las palabras clave y te hace un currículum para que puedas adaptar el currículum que ya tienes y elegir una plantilla. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Compara tu CV y tiene un editor que te va ayudando a mejorarlo para pasar estos filtros ATS. ",
+    "text": {
+     "content": "Compara tu CV y tiene un editor que te va ayudando a mejorarlo para pasar estos filtros ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y listo, literalmente una vez que te lo adapta, te lo mejora, y con eso conseguí un montón de entrevistas. ",
+    "text": {
+     "content": "Y listo, literalmente una vez que te lo adapta, te lo mejora, y con eso conseguí un montón de entrevistas. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(📎 Bandeja de entrada con entrevistas – ver Recursos) ",
+    "text": {
+     "content": "(📎 Bandeja de entrada con entrevistas – ver Recursos) ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Mirad. Ven que lo enseño. Mirad la cantidad. Chicos, tengo para elegir, literal. ",
+    "text": {
+     "content": "Mirad. Ven que lo enseño. Mirad la cantidad. Chicos, tengo para elegir, literal. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Hazme caso y si quieres más consejos así, sígueme. ¿A qué estás esperando? Hazme caso y si quieres más consejos así, sígueme. ¿A qué estás esperando? ",
+    "text": {
+     "content": "Hazme caso y si quieres más consejos así, sígueme. ¿A qué estás esperando? Hazme caso y si quieres más consejos así, sígueme. ¿A qué estás esperando? ",
      "link": null
     },
     "type": "text"

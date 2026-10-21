@@ -1093,7 +1093,9 @@
   "ESX28:es": "6899ad60d5cfa766cc131026a29358c2f754bd0d6ca145f7d5cc72b965d07ce2",
   "ESX28:fr": "fe3449860556d3f35526e8eb5dda7757d2f9728de37b4b114b0df9fb890dff43",
   "ESX28:sl": "dbf5ffd01a4c400150c4f42ce028dedf3de6b99562f588cb13016eb6eeff649f",
-  "FRX22:fr": "34b2bd2e2b58e1317d285b0cebe5ec51ebf6689b5c4ed40af60f39702a9acc1d",
+  "FRX22:es": "928aebe2f99f2ae9f5119a403934900553688318f4532b66a8cd031b4ce2a638",
+  "FRX22:fr": "7f454fa124d493bf34d5d9ae7f5a55b44c4624043ad3a1c5482c88320c574348",
+  "FRX22:sl": "2839705403ded1fc06e10e028b85a2e5b16442de027d77f62c08196c0c195c43",
   "FRX34:es": "609dd8eac954c16d0130283d91caf3e7e8b79a1b20408984e4b66dca24f38725",
   "FRX34:fr": "cecfa5fa84b9567bbb888e0926020fd77062b3e27c8f2f66ced584299c8ea5cd",
   "FRX34:sl": "a937570b1c0de20c99c608a777028d80dc3c30813cfc04a78facd8940b48b873",
@@ -2015,9 +2017,10 @@
   "FRX22": {
    "approval": {
     "es": "not_locked",
-    "fr": "not_locked"
+    "fr": "not_locked",
+    "sl": "not_locked"
    },
-   "checked_at": 1791884512,
+   "checked_at": 1792570240,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2028,9 +2031,13 @@
     "fr": {
      "source_id": "7687619784669695265",
      "video_identity": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad"
+    },
+    "sl": {
+     "source_id": "7687619784669695265",
+     "video_identity": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad"
     }
    },
-   "key": "3ccfa7f467d6adf01cbf17bb4d5c3fa04a147f095ee797baea31be52b4745529",
+   "key": "7b3e3e836ad88b1b75e97f4a7897425cee10ed250906259ad734c2c609bd9de1",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2040,6 +2047,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2052,6 +2063,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "features_claims": {
@@ -2060,6 +2075,10 @@
       "pass": true
      },
      "fr": {
+      "issue": "",
+      "pass": true
+     },
+     "sl": {
       "issue": "",
       "pass": true
      }
@@ -2072,6 +2091,10 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     },
     "script_matches_example": {
@@ -2082,13 +2105,17 @@
      "fr": {
       "issue": "",
       "pass": true
+     },
+     "sl": {
+      "issue": "",
+      "pass": true
      }
     }
    },
    "status": "pass",
-   "summary": "Both scripts pass every dimension: FR is the example's transcript and ES is a close Spain-Spanish translation, both keep the 5 beats in order, credit only Parakeet AI once in beat 3, keep the soft CTA, and their titles and short visual-hook directions match the example.",
+   "summary": "All three pages pass. The FR script is the original transcript, and the ES and SL scripts are close translations with the same 5 beats, Parakeet AI said once in beat 3, the same soft CTA, valid filming directions and titles that claim nothing the example video doesn't.",
    "title_fixes": {},
-   "version": "group-2026-10-13.timeless"
+   "version": "group-2026-10-16.pure-transcription"
   },
   "FRX34": {
    "approval": {
@@ -3633,6 +3660,9 @@
  },
  "group_duplicates": [],
  "group_rejected": {
+  "FRX22": [
+   "7698889580660919559"
+  ],
   "N02": [
    "7690964265083079942"
   ],
@@ -3786,8 +3816,8 @@
    "since": 1792536148
   }
  },
- "last_full_run": 1792532580,
- "last_run": 1792543248,
+ "last_full_run": 1792568781,
+ "last_run": 1792568781,
  "lineup": "2026-W43",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3914,6 +3944,7 @@
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/fb839eb4-c4cb-40fd-b2bb-240c53fb5079/video.mp4": "sha256:fc0471612e58d7af91ce7bdbd0a226af81fce07a6b7700e1c43299e11b04c2f0",
   "/6ece7afa-09a1-4d59-9768-bec309aa780e/fc2bb7e4-4498-45e8-bb23-f7c2736521ca/video.mp4": "sha256:83caf92777bbd334431f4749c847907194ca46eafdf733060a651aa3eaa7af2d",
   "/f/IuATf0F4Q2061FW1OboTQmCaoNX4kwqY0DWnVtdAgicv5Uup": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/f/IuATf0F4Q20630Ko2uduZwWvc1QYJyGUdxSor6qf4stEDjNM": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad",
   "/f/IuATf0F4Q2065PoDuLydOKzq6BE1Mgjhp98bUStv2Rl37YoN": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
   "/f/IuATf0F4Q2067t19JupkN2JG159xe08SRWDjCEwzlIgVtrdi": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/f/IuATf0F4Q2069AnvCqVUNtCsfKEVA6xQvqD8BiX3cGJ1MulL": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
@@ -3922,10 +3953,13 @@
   "/f/IuATf0F4Q206AN6bDmeKvs52uPjQWi6VdMAk8TI9BwcO4Glt": "sha256:cd53be33eb7c55d699dabe9b5b6da30cd0c4c4935311b6c5d19b1afd2269fc97",
   "/f/IuATf0F4Q206Ao6OGwKvs52uPjQWi6VdMAk8TI9BwcO4GltH": "sha256:09a1415e3d91ec2fb62c91d7572e3c01d4143f95305719a522b15de160534c75",
   "/f/IuATf0F4Q206BGUWN7i2VDa6vyPismdME3n51FgjQKz4tuqf": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
+  "/f/IuATf0F4Q206Bb73QLi2VDa6vyPismdME3n51FgjQKz4tuqf": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad",
   "/f/IuATf0F4Q206EAzRVtSp6tmGQz9adqnYVf1IvOAXsi23SHuT": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
+  "/f/IuATf0F4Q206ErEN1fSp6tmGQz9adqnYVf1IvOAXsi23SHuT": "sha256:f3adf7276fd18fe650d7c792650da4c3b27606eddc73ae28ae22ae6089a8528c",
   "/f/IuATf0F4Q206KdiIysGtDbQ2dXJfRzVLExUWuherG5aNjHPs": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/f/IuATf0F4Q206KpO87XGtDbQ2dXJfRzVLExUWuherG5aNjHPs": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
   "/f/IuATf0F4Q206LIRVEsxMSr42EsVgfObo5vGaPZpAIYkUwLFy": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636",
+  "/f/IuATf0F4Q206ONs2tJYHsCNjnxouRDJ2mWTtVSbd957cOkAL": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad",
   "/f/IuATf0F4Q206OeZ1NbYHsCNjnxouRDJ2mWTtVSbd957cOkAL": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
   "/f/IuATf0F4Q206QFAIWV1tK49x5pX6n2uTd8zjc7wWPVya0vLq": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/f/IuATf0F4Q206UQNnBaPWgDRMCzA7OhxpvLkKmGeqBbXHcQSY": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
@@ -3941,6 +3975,7 @@
   "/f/IuATf0F4Q206n0VP21llBrJbwpLSU8tGqWnC4OIPsYAVX2N9": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",
   "/f/IuATf0F4Q206oM6WJhqH8KzCLhGMSNI7rUqlZnRiumgvf4ot": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/f/IuATf0F4Q206oXGVYMnqH8KzCLhGMSNI7rUqlZnRiumgvf4o": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636",
+  "/f/IuATf0F4Q206oXXivuSqH8KzCLhGMSNI7rUqlZnRiumgvf4o": "sha256:f3adf7276fd18fe650d7c792650da4c3b27606eddc73ae28ae22ae6089a8528c",
   "/f/IuATf0F4Q206ofRI3iqH8KzCLhGMSNI7rUqlZnRiumgvf4ot": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
   "/f/IuATf0F4Q206onlt1QqH8KzCLhGMSNI7rUqlZnRiumgvf4ot": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986",
   "/f/IuATf0F4Q206q1stYjvYaPM0q8o7XSblRD9ptCcVyFjEBUAQ": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
@@ -3952,6 +3987,7 @@
   "/f/IuATf0F4Q206un0mnZ4Mhm0yOSfwqUB1VK9WjRgzTXsY2Mia": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/f/IuATf0F4Q206unkG4aWMhm0yOSfwqUB1VK9WjRgzTXsY2Mia": "sha256:41285ddccce91ab75aebaab0cecde59516dedecbf6786b8ab1d7719892fbda17",
   "/f/IuATf0F4Q206vHzEtAXhmpqewUBn2rEYa9ujM7F63fOvC1HT": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af",
+  "/f/IuATf0F4Q206w88tfYQBwJghiIQZ5YXRtfDL79oc4CWqdGnj": "sha256:f3adf7276fd18fe650d7c792650da4c3b27606eddc73ae28ae22ae6089a8528c",
   "/f/IuATf0F4Q206xwAlD2mFyN9grK5obMqE60pR1YvlHT2UGuOh": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
   "/f/IuATf0F4Q206zDZFSUEblJtTDyRhIQGnfvk5riFANZCX2uq9": "sha256:307aa1c0539ca70d1fec42b385f1b59110331cb98cd07d9d6a94c961ee1db986"
  },

@@ -1155,7 +1155,7 @@
   "X18:sl": "86c940f660a42bff4655771fa6353b56705f59f145c8034d41f208c6245e8ffd"
  },
  "audit_rules": "2026-10-16.pure-transcription",
- "discovered_at": 1792385466,
+ "discovered_at": 1792645271,
  "group_audit": {
   "A202610061328": {
    "approval": {
@@ -3816,8 +3816,8 @@
    "since": 1792536148
   }
  },
- "last_full_run": 1792625174,
- "last_run": 1792625174,
+ "last_full_run": 1792645271,
+ "last_run": 1792645271,
  "lineup": "2026-W43",
  "manual_review": {
   "approved_german_exact": 11,

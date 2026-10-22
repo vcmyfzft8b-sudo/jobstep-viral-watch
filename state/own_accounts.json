@@ -1,14 +1,38 @@
 {
+ "4w.broedel.cristina": {
+  "market": "",
+  "since": 1792649531,
+  "source": "lightreel",
+  "status": "active"
+ },
  "_zamarasantiago": {
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
   "status": "active"
  },
+ "ada.jobwithai1114": {
+  "market": "",
+  "since": 1792649532,
+  "source": "lightreel",
+  "status": "active"
+ },
  "adrynotas": {
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "ai.withgrace": {
+  "market": "",
+  "since": 1792649533,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "ai.withgracieplus": {
+  "market": "",
+  "since": 1792649536,
+  "source": "lightreel",
   "status": "active"
  },
  "ailecaraujobs": {
@@ -33,6 +57,12 @@
   "market": "es",
   "since": 1792625174,
   "source": "megasheet",
+  "status": "active"
+ },
+ "amandaworks10": {
+  "market": "",
+  "since": 1792649541,
+  "source": "lightreel",
   "status": "active"
  },
  "anaislanis1": {
@@ -77,6 +107,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "becki.jobs": {
+  "market": "",
+  "since": 1792649542,
+  "source": "lightreel",
+  "status": "active"
+ },
  "bell.work.tips": {
   "market": "es",
   "since": 1791635942,
@@ -100,6 +136,12 @@
   "since": 1791465487,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "careerchats604": {
+  "market": "",
+  "since": 1792649545,
+  "source": "lightreel",
+  "status": "active"
  },
  "careerwithflavia": {
   "market": "fr",
@@ -125,6 +167,12 @@
   "source": "megasheet",
   "status": "active"
  },
+ "cieracareersadvic": {
+  "market": "",
+  "since": 1792649563,
+  "source": "lightreel",
+  "status": "active"
+ },
  "clahemvlc7s": {
   "market": "fr",
   "since": 1791465487,
@@ -142,6 +190,12 @@
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "connorjobs": {
+  "market": "",
+  "since": 1792649564,
+  "source": "lightreel",
+  "status": "active"
  },
  "createdbydanaa": {
   "market": "de",
@@ -167,6 +221,12 @@
   "source": "megasheet",
   "status": "inactive"
  },
+ "eduardo.creates": {
+  "market": "",
+  "since": 1792649567,
+  "source": "lightreel",
+  "status": "active"
+ },
  "eleine.canva": {
   "market": "es",
   "since": 1791465487,
@@ -191,6 +251,12 @@
   "source": "megasheet",
   "status": "inactive"
  },
+ "em.findssss": {
+  "market": "",
+  "since": 1792649570,
+  "source": "lightreel",
+  "status": "active"
+ },
  "empleoconia27": {
   "market": "es",
   "since": 1791465487,
@@ -201,6 +267,12 @@
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "ferjobtips": {
+  "market": "",
+  "since": 1792649574,
+  "source": "lightreel",
   "status": "active"
  },
  "getajobfaster": {
@@ -215,16 +287,52 @@
   "source": "megasheet",
   "status": "active"
  },
+ "helenejobtips": {
+  "market": "",
+  "since": 1792649574,
+  "source": "lightreel",
+  "status": "active"
+ },
  "helpmarina": {
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
   "status": "active"
  },
+ "hiredtips101": {
+  "market": "",
+  "since": 1792649575,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "hireheatherr": {
+  "market": "",
+  "since": 1792649578,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "holt.careertips": {
+  "market": "",
+  "since": 1792649581,
+  "source": "lightreel",
+  "status": "active"
+ },
  "inteligenciaalaboral": {
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "interviewreadyme": {
+  "market": "",
+  "since": 1792649584,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "isaiahjobss": {
+  "market": "",
+  "since": 1792649585,
+  "source": "lightreel",
   "status": "active"
  },
  "itsl.eticia17": {
@@ -251,6 +359,24 @@
   "source": "lightreel",
   "status": "active"
  },
+ "jkhworks": {
+  "market": "",
+  "since": 1792649588,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "job.prepped": {
+  "market": "",
+  "since": 1792649589,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "job_tippsraluy2": {
+  "market": "",
+  "since": 1792649600,
+  "source": "lightreel",
+  "status": "active"
+ },
  "jobeasilybylucie7": {
   "market": "fr",
   "since": 1791465487,
@@ -263,10 +389,28 @@
   "source": "megasheet",
   "status": "inactive"
  },
+ "jobhunting102": {
+  "market": "",
+  "since": 1792649601,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "jobhunting1022": {
+  "market": "",
+  "since": 1792649604,
+  "source": "lightreel",
+  "status": "active"
+ },
  "jobswalex": {
   "market": "fr",
   "since": 1792416702,
   "source": "megasheet",
+  "status": "active"
+ },
+ "jobswbrighton": {
+  "market": "",
+  "since": 1792649609,
+  "source": "lightreel",
   "status": "active"
  },
  "jobswithandreaia": {
@@ -275,10 +419,22 @@
   "source": "megasheet",
   "status": "active"
  },
+ "jobswithdru": {
+  "market": "",
+  "since": 1792649612,
+  "source": "lightreel",
+  "status": "active"
+ },
  "jobswitheva": {
   "market": "fr",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "jobswithgavin87": {
+  "market": "",
+  "since": 1792649615,
+  "source": "lightreel",
   "status": "active"
  },
  "jobswithlara": {
@@ -299,10 +455,22 @@
   "source": "megasheet",
   "status": "active"
  },
+ "jobswithsara": {
+  "market": "",
+  "since": 1792649615,
+  "source": "lightreel",
+  "status": "active"
+ },
  "jobswithsaragabs": {
   "market": "es",
   "since": 1791998244,
   "source": "megasheet",
+  "status": "active"
+ },
+ "jobswithshannon5": {
+  "market": "",
+  "since": 1792649616,
+  "source": "lightreel",
   "status": "active"
  },
  "jobtippswithmagdaf": {
@@ -310,6 +478,12 @@
   "since": 1791756187,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "jobtips26": {
+  "market": "",
+  "since": 1792649617,
+  "source": "lightreel",
+  "status": "active"
  },
  "jobwithemma": {
   "market": "fr",
@@ -329,11 +503,23 @@
   "source": "megasheet",
   "status": "active"
  },
+ "kaatjobs": {
+  "market": "",
+  "since": 1792649618,
+  "source": "lightreel",
+  "status": "active"
+ },
  "karinas.lifetips": {
   "market": "de",
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "katerinetips05": {
+  "market": "",
+  "since": 1792649627,
+  "source": "lightreel",
+  "status": "active"
  },
  "kathenotas": {
   "market": "es",
@@ -358,6 +544,12 @@
   "since": 1791465487,
   "source": "megasheet",
   "status": "inactive"
+ },
+ "kobehustles": {
+  "market": "",
+  "since": 1792649630,
+  "source": "lightreel",
+  "status": "active"
  },
  "lapaniugc": {
   "market": "es",
@@ -425,10 +617,22 @@
   "source": "megasheet",
   "status": "active"
  },
+ "maryjobstips": {
+  "market": "",
+  "since": 1792649633,
+  "source": "lightreel",
+  "status": "active"
+ },
  "mery.jobs23": {
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "nat.hiringhacks1": {
+  "market": "",
+  "since": 1792649634,
+  "source": "lightreel",
   "status": "active"
  },
  "nataliagonzalezga38": {
@@ -477,6 +681,12 @@
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "samszgetshired": {
+  "market": "",
+  "since": 1792649638,
+  "source": "lightreel",
   "status": "active"
  },
  "sarahbllt02": {
@@ -551,6 +761,18 @@
   "source": "megasheet",
   "status": "active"
  },
+ "thatgirlgetshired3": {
+  "market": "",
+  "since": 1792649642,
+  "source": "lightreel",
+  "status": "active"
+ },
+ "thatgirlgetshired4": {
+  "market": "",
+  "since": 1792649642,
+  "source": "lightreel",
+  "status": "active"
+ },
  "tifajobs": {
   "market": "es",
   "since": 1791465487,
@@ -575,16 +797,34 @@
   "source": "megasheet",
   "status": "active"
  },
+ "vonojobhunting": {
+  "market": "",
+  "since": 1792649643,
+  "source": "lightreel",
+  "status": "active"
+ },
  "winwithzafira77": {
   "market": "de",
   "since": 1791324501,
   "source": "megasheet",
   "status": "inactive"
  },
+ "workingwithalexp": {
+  "market": "",
+  "since": 1792649644,
+  "source": "lightreel",
+  "status": "active"
+ },
  "works_genesistips": {
   "market": "es",
   "since": 1791465487,
   "source": "megasheet",
+  "status": "active"
+ },
+ "worksmartwithleo71": {
+  "market": "de",
+  "since": 1792649649,
+  "source": "lightreel",
   "status": "active"
  },
  "worksmartwithsarahh": {

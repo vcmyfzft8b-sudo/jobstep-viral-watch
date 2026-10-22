@@ -453,7 +453,7 @@
   "market": "es",
   "since": 1792181239,
   "source": "megasheet",
-  "status": "active"
+  "status": "inactive"
  },
  "jobswithsara": {
   "market": "",
@@ -788,6 +788,12 @@
  "trabajaconlaura_": {
   "market": "es",
   "since": 1791465487,
+  "source": "megasheet",
+  "status": "active"
+ },
+ "trabajaconpaula": {
+  "market": "es",
+  "since": 1792670544,
   "source": "megasheet",
   "status": "active"
  },

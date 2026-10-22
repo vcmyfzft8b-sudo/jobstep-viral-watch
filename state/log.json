@@ -9113,5 +9113,120 @@
   "type": "alert",
   "video": "7699127025428188438",
   "views": 17100
+ },
+ {
+  "format": "X16",
+  "level": "viral",
+  "ts": 1792625996,
+  "type": "alert",
+  "video": "7698832869078093089",
+  "views": 101600
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792626001,
+  "type": "alert",
+  "video": "7699194597087530262",
+  "views": 24300
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792626005,
+  "type": "alert",
+  "video": "7699215752787774742",
+  "views": 7592
+ },
+ {
+  "format": "N06",
+  "reasons": [
+   "🇫🇷 script transcribed again: The original names the brand out loud ('jobstep punto io' / jobstep.io), but the script says 'Celui-ci ?' instead. It mu / script tran",
+   "🇪🇸 script transcribed from the example (170 words (original 174)) / script transcribed again: The original says the brand name (jobstep.io) at the start of its fou",
+   "🇸🇮 script transcribed from the example (152 words (original 174)) / script transcribed again: The original names the brand aloud ('jobstep.io sí'), but the script "
+  ],
+  "tries": 4,
+  "ts": 1792626896,
+  "type": "format_held"
+ },
+ {
+  "changes": [
+   "es:X09^2"
+  ],
+  "ts": 1792627554,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X09",
+   "N02",
+   "X03",
+   "N04",
+   "FRX22",
+   "A20261009204851",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "A202610061334",
+    "N02",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "X13",
+    "N10",
+    "X09",
+    "N04",
+    "X06",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X09",
+    "N02",
+    "X03",
+    "N04",
+    "FRX22",
+    "A20261009204851",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X16",
+    "X03",
+    "X08",
+    "A202610061334",
+    "N10",
+    "X13",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28",
+    "X06"
+   ]
+  },
+  "ts": 1792627584,
+  "type": "rerank"
  }
 ]

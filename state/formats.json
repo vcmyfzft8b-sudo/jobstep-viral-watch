@@ -85,7 +85,7 @@
   "title": "2026 Abschluss – aber noch kein Job? 😭"
  },
  {
-  "archived_reason": "clean-up 07.10.2026: current form 0.90 (below average) and no viral video in the last 21 days",
+  "archived_reason": "did not pass the page check: 🇫🇷 script transcribed again: The original names the brand out loud ('jobstep punto io' / jobstep.io), but the script says 'Celui-ci ?' instead. It mu / script tran; 🇪🇸 script transcribed from the exam",
   "description": "Rating or ranking job-search websites/apps: YES/NO/MAYBE, good/better/best, tier list, top 3 job sites; the CV tool wins. Examples: 'Stranice za traženje posla NE/MOŽDA/DA', 'meglio / bene / perfetto', 'dobrze / lepiej / idealnie'.",
   "id": "N06",
   "notion_pages": {
@@ -101,12 +101,12 @@
   "pending": {
    "kind": "revive",
    "reasons": [
-    "🇫🇷 script transcribed from the example (203 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep.io sí'), but the scr",
-    "🇪🇸 script transcribed from the example (169 words (original 174)) / script transcribed again: The original says the brand out loud ('jobstep punto io? sí'), but th",
-    "🇸🇮 script transcribed from the example (152 words (original 174)) / script transcribed again: The original says the brand name aloud ('jobstep punto io? sí'). The "
+    "🇫🇷 script transcribed again: The original names the brand out loud ('jobstep punto io' / jobstep.io), but the script says 'Celui-ci ?' instead. It mu / script tran",
+    "🇪🇸 script transcribed from the example (170 words (original 174)) / script transcribed again: The original says the brand name (jobstep.io) at the start of its fou",
+    "🇸🇮 script transcribed from the example (152 words (original 174)) / script transcribed again: The original names the brand aloud ('jobstep.io sí'), but the script "
    ],
    "since": 1792534568,
-   "tries": 3
+   "tries": 4
   },
   "revived": {
    "at": 1792533763,
@@ -120,7 +120,7 @@
   },
   "script": "Jobseiten bewerten: Ja, Nein oder Vielleicht. Indeed: auf gar keinen Fall – außer du hast Bock, für Mindestlohn einen Job zu machen, für den man eigentlich zehn Leute bräuchte. Auf LinkedIn einen guten Job zu finden, ist echt nicht leicht. Da sitzt du locker ein paar Wochen und suchst, aber vielleicht hast du Glück und findest wirklich was. Also: Vielleicht. Parakeet AI ist ein klares Ja. Die Plattform ist noch ziemlich neu, funktioniert aber deutlich besser als die anderen. (Parakeet AI · Resume Maker) Die passt deinen Lebenslauf an das an, was in der Stellenanzeige verlangt wird. (Parakeet AI · Resume Maker) Das ist mein alter, der hatte X Punkte. (Parakeet AI · Resume Maker) So kommt er durch alle Filter und landet wirklich beim Recruiter. (Parakeet AI · Resume Maker) Und hier hat mein neuer Y Punkte, (Parakeet AI · Resume Maker) und ich kann ihn sogar noch bearbeiten, zum Beispiel d",
   "source_video": "https://www.tiktok.com/@maguiteexplica/video/7698038926191119632",
-  "status": "pending",
+  "status": "archived",
   "title": "Jobsuche: Ja, nein oder vielleicht?"
  },
  {

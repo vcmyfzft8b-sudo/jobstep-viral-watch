@@ -9674,5 +9674,20 @@
   },
   "ts": 1792707349,
   "type": "rerank"
+ },
+ {
+  "format": "ESX11",
+  "level": "converting",
+  "ts": 1792717761,
+  "type": "alert",
+  "video": "7698938420701203733",
+  "views": 31400
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792717764,
+  "type": "alert",
+  "video": "7699230886629215520",
+  "views": 18100
  }
 ]

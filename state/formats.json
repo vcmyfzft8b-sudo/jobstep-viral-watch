@@ -318,6 +318,7 @@
  },
  {
   "archived_reason": "clean-up 07.10.2026: current form 0.63 (below average) and no viral video in the last 21 days",
+  "comeback_tries": 1,
   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
   "id": "N09",
   "notion_pages": {
@@ -326,6 +327,10 @@
   },
   "page_id": "3f0958b0fc1481da8accda8f08494a00",
   "pages": {},
+  "pending_pages": {
+   "es": "6aa8e346-524a-4ba2-8f24-ebf8a3698e5f",
+   "sl": "b7f73af2-7898-4742-929d-a919e1a8fb55"
+  },
   "script": "(Texteinblendung 0–3 s, nicht sprechen) Ich könnte den Typen aus HR echt heiraten, weil er mir das gezeigt hat. (LinkedIn-Jobsuche) Du suchst dir eine Stellenanzeige aus, die dir gefällt, und kopierst die Beschreibung. (Parakeet AI · Resume Maker) Dann ab auf diese Seite. (Parakeet AI · Resume Maker) Hier fügst du die Anzeige ein, und die wird automatisch analysiert. (Parakeet AI · Resume Maker) Dann bewertet es deinen Lebenslauf im Vergleich zu der Stelle, auf die du dich bewerben willst, (Parakeet AI · Resume Maker) und hier kannst du noch ein paar Sachen ergänzen. (Parakeet AI · Resume Maker) Und das ist jetzt mein fertiger Lebenslauf. Leute, das müsst ihr ausprobieren. Wie lange hab ich gebraucht? Nicht mal zwei Minuten – und Y Prozent. Ich kann's nicht glauben. 🎬",
   "status": "archived",
   "title": "Den HR-Typen könnte ich heiraten 😳"
@@ -1510,5 +1515,30 @@
   "source_video": "https://www.tiktok.com/@origomez953/video/7696706553432345874",
   "status": "archived",
   "title": "Les RH ne veulent PAS que tu saches ça 🤫"
+ },
+ {
+  "created": 1792741975,
+  "description": "Talking-head recruiter-tip video (recruiters spend 6 seconds on a CV, F-pattern scanning, headline matters) opening with CV screenshots popping up and being dismissed, then a tablet screen recording of uploading a CV, getting a low score and editing it into a better CV.",
+  "id": "A20261023075255",
+  "pages": {
+   "es": "1074e130-6f7f-4c5d-9849-dd9086d4c400",
+   "fr": "b79580f7-de4d-4b5c-9434-33670117c3d9"
+  },
+  "pending": {
+   "kind": "new",
+   "reasons": [
+    "🇸🇮 page could not be built: script does not look Slovenian"
+   ],
+   "since": 1792742362,
+   "tries": 0
+  },
+  "reworded": {
+   "es": true,
+   "fr": true
+  },
+  "script": "Pas celui-là, pas celui-là non plus, et celui-là, encore moins. Un RH parcourt les CV en forme de F. Donc en vrai, le titre, c'est la partie la plus importante. Un recruteur consacre 6 secondes à ton CV, donc tu as 6 secondes pour capter son attention. C'est pour ça que ton titre doit être percutant. Et si tu te demandes comment faire un CV comme ça, eh ben comme ça : tu vas sur le site et tu importes ton CV. Le système l'analyse, puis te donne un score en fonction de ton CV. Moi, il m'a donné X points, ce qui n'est, bah, pas vraiment top. Ensuite, ici, tu peux modifier ton CV comme tu veux. Regarde la différence. Bref, c'est exactement le CV que les RH veulent voir.",
+  "source_video": "https://www.tiktok.com/@benkorebeka5/video/7699194597087530262",
+  "status": "pending",
+  "title": "6 secondes pour décrocher le job ⏱️"
  }
 ]

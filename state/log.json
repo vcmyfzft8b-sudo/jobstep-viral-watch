@@ -9689,5 +9689,157 @@
   "type": "alert",
   "video": "7699230886629215520",
   "views": 18100
+ },
+ {
+  "format": "A20261023075255",
+  "reasons": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "tries": 0,
+  "ts": 1792742362,
+  "type": "format_held"
+ },
+ {
+  "format": "A20261023075255",
+  "page_de": null,
+  "pages": {
+   "es": "1074e130-6f7f-4c5d-9849-dd9086d4c400",
+   "fr": "b79580f7-de4d-4b5c-9434-33670117c3d9"
+  },
+  "position": null,
+  "problems": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "ts": 1792742362,
+  "type": "format_built"
+ },
+ {
+  "built": "A20261023075255",
+  "format": "A20261023075255",
+  "level": "viral",
+  "position": null,
+  "problems": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "ts": 1792742363,
+  "type": "alert",
+  "video": "7699194597087530262",
+  "views": 103700
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792742366,
+  "type": "alert",
+  "video": "7699721008210644242",
+  "views": 24800
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792742369,
+  "type": "alert",
+  "video": "7699679172821617938",
+  "views": 5316
+ },
+ {
+  "format": "A20261023075255",
+  "reasons": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "tries": 0,
+  "ts": 1792742511,
+  "type": "format_held"
+ },
+ {
+  "changes": [
+   "es:N09^1"
+  ],
+  "ts": 1792743331,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "format": "N09",
+  "not_ready": {
+   "es": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)",
+   "fr": "error: HTTPSConnectionPool(host='megasheet.app', port=443): Read timed out. (read timeout=60)",
+   "sl": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)"
+  },
+  "tries": 1,
+  "ts": 1792743692,
+  "type": "format_comeback_held"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "X13",
+   "N10",
+   "X09",
+   "N02",
+   "X03",
+   "N04",
+   "A20261009204851",
+   "FRX22",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "X06",
+    "X13",
+    "N10",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "X13",
+    "N10",
+    "X09",
+    "N02",
+    "X03",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X16",
+    "X03",
+    "X08",
+    "X06",
+    "A202610061334",
+    "N10",
+    "X13",
+    "N04",
+    "X09",
+    "A20261009204851",
+    "ESX28",
+    "FRX22"
+   ]
+  },
+  "ts": 1792743700,
+  "type": "rerank"
  }
 ]

@@ -37,6 +37,25 @@
    "type": "text"
   }
  ],
+ "1074e130-6f7f-4c5d-9849-dd9086d4c400.16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Igual que en el vídeo de ejemplo: mientras dices «Este no, este tampoco, y este ya ni de broma», van apareciendo uno a uno al lado tuyo tres currículums distintos y los descartas con un gesto de la mano (puedes llevar un lápiz o un boli en la mano), con el título en pantalla.",
+   "text": {
+    "content": "Igual que en el vídeo de ejemplo: mientras dices «Este no, este tampoco, y este ya ni de broma», van apareciendo uno a uno al lado tuyo tres currículums distintos y los descartas con un gesto de la mano (puedes llevar un lápiz o un boli en la mano), con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "1661d80f-3b14-4a41-b620-252ccdbfae16": [
   {
    "annotations": {
@@ -22293,6 +22312,25 @@
    "type": "text"
   }
  ],
+ "b79580f7-de4d-4b5c-9434-33670117c3d9.16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'exemple : face caméra, un stylet à la main, des captures de CV s'affichent à côté de toi l'une après l'autre et tu les écartes d'un geste du stylet sur « Pas celui-là, pas celui-là non plus… », avec le titre affiché en haut.",
+   "text": {
+    "content": "Comme dans la vidéo d'exemple : face caméra, un stylet à la main, des captures de CV s'affichent à côté de toi l'une après l'autre et tu les écartes d'un geste du stylet sur « Pas celui-là, pas celui-là non plus… », avec le titre affiché en haut.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "bcdb8045-f778-49ee-8a8c-70a3c433e8f5": [
   {
    "annotations": {
@@ -27227,6 +27265,326 @@
    },
    "type": "text"
   }
+ ],
+ "page:1074e130-6f7f-4c5d-9849-dd9086d4c400": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Este no, este tampoco, y este ya ni de broma. ",
+    "text": {
+     "content": "Este no, este tampoco, y este ya ni de broma. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Alguien de RR. HH. escanea los currículums en forma de F. ",
+    "text": {
+     "content": "Alguien de RR. HH. escanea los currículums en forma de F. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "O sea, que en realidad el título es la parte más importante. ",
+    "text": {
+     "content": "O sea, que en realidad el título es la parte más importante. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Un reclutador le dedica 6 segundos a tu currículum, así que tienes 6 segundos para captar su atención. ",
+    "text": {
+     "content": "Un reclutador le dedica 6 segundos a tu currículum, así que tienes 6 segundos para captar su atención. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Por eso el encabezado tiene que ser potente. ",
+    "text": {
+     "content": "Por eso el encabezado tiene que ser potente. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y si te preguntas cómo puedes hacer un currículum así, pues así: ",
+    "text": {
+     "content": "Y si te preguntas cómo puedes hacer un currículum así, pues así: ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "entras en la página y subes tu currículum. ",
+    "text": {
+     "content": "entras en la página y subes tu currículum. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "El sistema lo analiza y luego te da una puntuación según tu currículum. ",
+    "text": {
+     "content": "El sistema lo analiza y luego te da una puntuación según tu currículum. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "A mí me ha dado X puntos, que, bueno, no es que sea muy bueno. ",
+    "text": {
+     "content": "A mí me ha dado X puntos, que, bueno, no es que sea muy bueno. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Después, aquí puedes editar tu currículum como tú quieras. ",
+    "text": {
+     "content": "Después, aquí puedes editar tu currículum como tú quieras. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Mira la diferencia. ",
+    "text": {
+     "content": "Mira la diferencia. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "O sea, justo el currículum que quieren los de RR. HH. ",
+    "text": {
+     "content": "O sea, justo el currículum que quieren los de RR. HH. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
  ],
  "page:1fa958b0fc14822b9c368120457c63ee": [
   [
@@ -50264,6 +50622,326 @@
     "plain_text": "Alors, Dieu merci, j'ai trouvé ce site, donc parakeet-ai.com/resume-maker, si vous voulez trouver un job en 2026.",
     "text": {
      "content": "Alors, Dieu merci, j'ai trouvé ce site, donc parakeet-ai.com/resume-maker, si vous voulez trouver un job en 2026.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:b79580f7-de4d-4b5c-9434-33670117c3d9": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Pas celui-là, pas celui-là non plus, et celui-là, encore moins. ",
+    "text": {
+     "content": "Pas celui-là, pas celui-là non plus, et celui-là, encore moins. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Un RH parcourt les CV en forme de F. ",
+    "text": {
+     "content": "Un RH parcourt les CV en forme de F. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Donc en vrai, le titre, c'est la partie la plus importante. ",
+    "text": {
+     "content": "Donc en vrai, le titre, c'est la partie la plus importante. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Un recruteur consacre 6 secondes à ton CV, donc tu as 6 secondes pour capter son attention. ",
+    "text": {
+     "content": "Un recruteur consacre 6 secondes à ton CV, donc tu as 6 secondes pour capter son attention. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "C'est pour ça que ton titre doit être percutant. ",
+    "text": {
+     "content": "C'est pour ça que ton titre doit être percutant. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et si tu te demandes comment faire un CV comme ça, eh ben comme ça : ",
+    "text": {
+     "content": "Et si tu te demandes comment faire un CV comme ça, eh ben comme ça : ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "tu vas sur le site et tu importes ton CV. ",
+    "text": {
+     "content": "tu vas sur le site et tu importes ton CV. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Le système l'analyse, puis te donne un score en fonction de ton CV. ",
+    "text": {
+     "content": "Le système l'analyse, puis te donne un score en fonction de ton CV. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Moi, il m'a donné X points, ce qui n'est, bah, pas vraiment top. ",
+    "text": {
+     "content": "Moi, il m'a donné X points, ce qui n'est, bah, pas vraiment top. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ensuite, ici, tu peux modifier ton CV comme tu veux. ",
+    "text": {
+     "content": "Ensuite, ici, tu peux modifier ton CV comme tu veux. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Regarde la différence. ",
+    "text": {
+     "content": "Regarde la différence. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bref, c'est exactement le CV que les RH veulent voir. ",
+    "text": {
+     "content": "Bref, c'est exactement le CV que les RH veulent voir. ",
      "link": null
     },
     "type": "text"

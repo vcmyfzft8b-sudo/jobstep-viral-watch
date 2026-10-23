@@ -318,7 +318,7 @@
  },
  {
   "archived_reason": "clean-up 07.10.2026: current form 0.63 (below average) and no viral video in the last 21 days",
-  "comeback_tries": 1,
+  "comeback_tries": 2,
   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
   "id": "N09",
   "notion_pages": {
@@ -329,6 +329,7 @@
   "pages": {},
   "pending_pages": {
    "es": "6aa8e346-524a-4ba2-8f24-ebf8a3698e5f",
+   "fr": "87feb22c-e2cd-4ad9-a38e-8c34c6871fd4",
    "sl": "b7f73af2-7898-4742-929d-a919e1a8fb55"
   },
   "script": "(Texteinblendung 0–3 s, nicht sprechen) Ich könnte den Typen aus HR echt heiraten, weil er mir das gezeigt hat. (LinkedIn-Jobsuche) Du suchst dir eine Stellenanzeige aus, die dir gefällt, und kopierst die Beschreibung. (Parakeet AI · Resume Maker) Dann ab auf diese Seite. (Parakeet AI · Resume Maker) Hier fügst du die Anzeige ein, und die wird automatisch analysiert. (Parakeet AI · Resume Maker) Dann bewertet es deinen Lebenslauf im Vergleich zu der Stelle, auf die du dich bewerben willst, (Parakeet AI · Resume Maker) und hier kannst du noch ein paar Sachen ergänzen. (Parakeet AI · Resume Maker) Und das ist jetzt mein fertiger Lebenslauf. Leute, das müsst ihr ausprobieren. Wie lange hab ich gebraucht? Nicht mal zwei Minuten – und Y Prozent. Ich kann's nicht glauben. 🎬",
@@ -928,21 +929,35 @@
    "sl": "a37958b0fc1482f5b8bc019ebaba8239"
   },
   "page_id": "3d5958b0-fc14-8179-b216-cd6c20cb48e1",
-  "pages": {},
+  "pages": {
+   "es": "80a5c2a2-836f-42a0-98eb-b3c8b38e7cad",
+   "fr": "7d3089c9-9cf9-4498-8ba7-ea3a7696d653",
+   "sl": "d8c0dbf9-828c-4620-aeee-a18f1263403c"
+  },
+  "pending": {
+   "kind": "revive",
+   "reasons": [
+    "🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate",
+    "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
+   ],
+   "since": 1792763947,
+   "tries": 2
+  },
   "revived": {
-   "at": 1792151482,
-   "because": "https://www.tiktok.com/@filippajobbtips/video/7695689084508949782",
-   "views": 63500
+   "at": 1792763717,
+   "because": "https://www.tiktok.com/@lil.janeiro0/video/7699721008210644242",
+   "views": 54300
   },
   "reworded": {
    "de": true,
    "es": true,
-   "fr": true
+   "fr": true,
+   "sl": true
   },
   "script": "(DEUTSCH) Arbeitgeber möchten nicht, dass ihr das wisst, schon gar nicht die Personalabteilung. Ich verrat’s euch. So, ich hau’s jetzt einfach mal raus: Und zwar verwenden sie ATS. Jetzt wisst ihr’s. Und ab jetzt könnt ihr sie hops nehmen. So, und wie machen wir das jetzt? Ganz einfach: Du gehst auf deine Stellenanzeige, auf der du gerade bist, egal ob bei Indeed, Job, LinkedIn, egal wo.  Du kopierst dir den Link und du fügst ihn da ein, wo ich dir jetzt gleich zeige, wo du ihn einfügen wirst. Und zwar gehst du auf Parakeet AI und fügst dort den Link ein von deiner Stellenanzeige. Die Jobanzeige wird dann für dich analysiert. Let’s go. Und dann, ja, sehen wir schon mal: solide, ist einiges drin. Und darauf basierend gehen wir jetzt zum Lebenslauf erstellen. Tada.  Und da haben wir ihn auch schon. Fertiger Lebenslauf, wenig Aufwand, basierend auf der Stellenanzeige, die ich hier eingefüg",
   "source": "DACH archive (old formats)",
   "source_video": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
-  "status": "archived",
+  "status": "pending",
   "title": "Personaler wollen nicht dass wir das wissen 🤡"
  },
  {

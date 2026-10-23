@@ -1041,6 +1041,7 @@
   "N06:fr": "failed",
   "N06:sl": "failed",
   "N09:es": "failed",
+  "N09:fr": "failed",
   "N09:sl": "failed",
   "N10:es": "ok",
   "N10:fr": "ok",
@@ -1063,7 +1064,10 @@
   "X14:sl": "ok",
   "X16:es": "ok",
   "X16:fr": "ok",
-  "X16:sl": "ok"
+  "X16:sl": "ok",
+  "X18:es": "ok",
+  "X18:fr": "ok",
+  "X18:sl": "ok"
  },
  "audit_fingerprints": {
   "A202610061328:de": "d0c10c2cc1ce25cdd6e27de74cfcd3530424742a5021fdfc1454e7083bd1f610",
@@ -1089,8 +1093,8 @@
   "A20261014173459:fr": "6a77d84dd150b118e84e9c06aa19a521797e9cb4498e0174cbc3b53772bf2813",
   "A20261015100922:es": "5837934c8843f06d9605267de99f4d9d9ac3432bfb4f92d456c27d30d5fe1b1b",
   "A20261015100922:fr": "31dd7192d99bb4141c56a9fe9ca1c1348620120cc65bf51c4f5925b1589bed53",
-  "A20261023075255:es": "4f840f63ad6b046c02779bee7f9ebcd97d27d335834820324a86a3e33a2e03a2",
-  "A20261023075255:fr": "90db86d59e4557fd3d260c81dfe770117abd7f357b3633c6c50994aaca7252d1",
+  "A20261023075255:es": "c566cdfb5b1cdbd67c6ede5c0cf98b018a457eeedb24e7271d83386780d9ac14",
+  "A20261023075255:fr": "904ec4e37402a722a6e0517f2cfff3bfc63d265fa87c19eaa0174d3641ff04f8",
   "ESX11:de": "7b89a55878a03b6f906103467f2621d3cf2541e38ac784a0d88eef3ffe7a9a38",
   "ESX11:es": "de92dcd4e68c4715f905d637d11766b7c88401e6153f58087b2de20fb27e1fca",
   "ESX11:fr": "3f320038dcbbefb42f546221b4aa5da374a96cdb449ae6f281900380a00f818b",
@@ -1157,9 +1161,9 @@
   "X16:fr": "b7ed7c6aa3202d8a806048b253f4d00c614bdd383df1a00eba85d58dc1051bac",
   "X16:sl": "d45f91f5164e7d798b486289ffb397c32923a203e3083d4dd79633ab26ed89bd",
   "X18:de": "d632d9071bbfb6e81de71c270a9184815f6bad96a8a00a4853d83271f277efa1",
-  "X18:es": "d9e6e780dcbff8ddeb4da44a663042cdda576d5feb1fbfac869ebd2ee972ecd7",
-  "X18:fr": "948e499a20fbbc9c482aef2bc4c385727ef2ecd590db3bdbcecc2b5329db00ab",
-  "X18:sl": "86c940f660a42bff4655771fa6353b56705f59f145c8034d41f208c6245e8ffd"
+  "X18:es": "143868478dd29714027ef967244e592af5c7b5d1ea7d10da496b95f8e1c8443a",
+  "X18:fr": "dcd56eb2e2939ca77f0a4b82ce2e898d9cef24874006155190f36630cb9372f2",
+  "X18:sl": "a2430333666215274d99737ded34e6f9dfbf01f35ca403aeaf6ed0990983222b"
  },
  "audit_rules": "2026-10-16.pure-transcription",
  "discovered_at": 1792645271,
@@ -3823,8 +3827,8 @@
    "since": 1792536148
   }
  },
- "last_full_run": 1792741162,
- "last_run": 1792741162,
+ "last_full_run": 1792762483,
+ "last_run": 1792762483,
  "lineup": "2026-W43",
  "manual_review": {
   "approved_german_exact": 11,

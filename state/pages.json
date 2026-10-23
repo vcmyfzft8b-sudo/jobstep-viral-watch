@@ -233,6 +233,24 @@
    ],
    "place": "live"
   },
+  "7d3089c9-9cf9-4498-8ba7-ea3a7696d653": {
+   "created": 1792763604,
+   "fp": "c1fd173e10c42ac1",
+   "market": "fr",
+   "media_ids": [
+    "061cf043-3b8f-41e5-a75c-d18e8d48064f"
+   ],
+   "place": "staging"
+  },
+  "80a5c2a2-836f-42a0-98eb-b3c8b38e7cad": {
+   "created": 1792763639,
+   "fp": "638c05bb6924da5d",
+   "market": "es",
+   "media_ids": [
+    "c4e457c0-5cbc-4cdb-96d1-4455d99010de"
+   ],
+   "place": "staging"
+  },
   "8134702e-c690-41f3-bf92-18dcbcf9d43b": {
    "format": "N04",
    "fp": "6c846116377de6ea",
@@ -257,6 +275,15 @@
    "market": "sl",
    "media_ids": [
     "cf4fbe80-a742-4c4b-8766-d6b2b7438ca0"
+   ],
+   "place": "staging"
+  },
+  "87feb22c-e2cd-4ad9-a38e-8c34c6871fd4": {
+   "created": 1792765255,
+   "fp": "cd25248e83d76110",
+   "market": "fr",
+   "media_ids": [
+    "a28d6df8-e8c2-4c34-800a-090155ed455c"
    ],
    "place": "staging"
   },
@@ -398,6 +425,15 @@
     "fa36b060-d11c-4458-88ad-853a113bfe14"
    ],
    "place": "live"
+  },
+  "d8c0dbf9-828c-4620-aeee-a18f1263403c": {
+   "created": 1792763713,
+   "fp": "c08e4045f27c1abf",
+   "market": "sl",
+   "media_ids": [
+    "504465b7-0435-40a2-a8cd-bbe43f48ff3b"
+   ],
+   "place": "staging"
   },
   "d992efa3-18e8-44fd-be8f-fd3cfde5030d": {
    "created": 1792387321,

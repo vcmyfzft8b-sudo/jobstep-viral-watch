@@ -9841,5 +9841,146 @@
   },
   "ts": 1792743700,
   "type": "rerank"
+ },
+ {
+  "format": "N10",
+  "level": "viral",
+  "ts": 1792763549,
+  "type": "alert",
+  "video": "7699429721884429600",
+  "views": 105800
+ },
+ {
+  "format": "X18",
+  "reasons": [
+   "🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate",
+   "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
+  ],
+  "tries": 1,
+  "ts": 1792763947,
+  "type": "format_held"
+ },
+ {
+  "format": "X18",
+  "position": null,
+  "reasons": [
+   "🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate",
+   "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
+  ],
+  "ts": 1792763947,
+  "type": "format_held",
+  "video": "7699721008210644242"
+ },
+ {
+  "format": "X18",
+  "level": "converting",
+  "ts": 1792763948,
+  "type": "alert",
+  "video": "7699721008210644242",
+  "views": 54300
+ },
+ {
+  "format": "X18",
+  "reasons": [
+   "🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate",
+   "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
+  ],
+  "tries": 2,
+  "ts": 1792763993,
+  "type": "format_held"
+ },
+ {
+  "format": "A20261023075255",
+  "reasons": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "tries": 0,
+  "ts": 1792764105,
+  "type": "format_held"
+ },
+ {
+  "format": "N09",
+  "not_ready": {
+   "es": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)",
+   "fr": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)",
+   "sl": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)"
+  },
+  "tries": 2,
+  "ts": 1792765544,
+  "type": "format_comeback_held"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X16",
+   "X08",
+   "A202610061334",
+   "N10",
+   "X13",
+   "X09",
+   "N02",
+   "X03",
+   "N04",
+   "A20261009204851",
+   "FRX22",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "X06",
+    "X13",
+    "N10",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X16",
+    "X08",
+    "A202610061334",
+    "N10",
+    "X13",
+    "X09",
+    "N02",
+    "X03",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "X16",
+    "ESX11",
+    "X03",
+    "X08",
+    "X06",
+    "A202610061334",
+    "N10",
+    "X13",
+    "N04",
+    "X09",
+    "A20261009204851",
+    "ESX28",
+    "FRX22"
+   ]
+  },
+  "ts": 1792765562,
+  "type": "rerank"
  }
 ]

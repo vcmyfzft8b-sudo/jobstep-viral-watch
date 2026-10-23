@@ -21684,6 +21684,44 @@
    "type": "text"
   }
  ],
+ "7d3089c9-9cf9-4498-8ba7-ea3a7696d653.15": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans l'exemple, parle directement à la caméra avec le titre affiché et tripote un objet du quotidien pendant que tu parles, par exemple un lisseur et un tube de colle. Ensuite, filme l'écran de ta tablette ou de ton laptop de près pendant que tu utilises l'appli.",
+   "text": {
+    "content": "Comme dans l'exemple, parle directement à la caméra avec le titre affiché et tripote un objet du quotidien pendant que tu parles, par exemple un lisseur et un tube de colle. Ensuite, filme l'écran de ta tablette ou de ton laptop de près pendant que tu utilises l'appli.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "80a5c2a2-836f-42a0-98eb-b3c8b38e7cad.15": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Copia el arranque del vídeo de ejemplo: habla de cerca a la cámara mientras juegas con objetos en las manos (en el original, una plancha de pelo y una barra de pegamento), con el título en pantalla.",
+   "text": {
+    "content": "Copia el arranque del vídeo de ejemplo: habla de cerca a la cámara mientras juegas con objetos en las manos (en el original, una plancha de pelo y una barra de pegamento), con el título en pantalla.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "83ee43d1-527a-402a-aec6-6a02953639e7": [
   {
    "annotations": {
@@ -22675,6 +22713,25 @@
    "plain_text": ") Und ich krieg X von 100. Also nichts, echt gar nichts ist gut.",
    "text": {
     "content": ") Und ich krieg X von 100. Also nichts, echt gar nichts ist gut.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "d8c0dbf9-828c-4620-aeee-a18f1263403c.15": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Kot v primeru: govori naravnost v kamero, medtem ko se v rokah ves čas igraš s predmeti (likalnik za lase in lepilo v stiku), naslov pa je na zaslonu.",
+   "text": {
+    "content": "Kot v primeru: govori naravnost v kamero, medtem ko se v rokah ves čas igraš s predmeti (likalnik za lase in lepilo v stiku), naslov pa je na zaslonu.",
     "link": null
    },
    "type": "text"
@@ -49037,6 +49094,472 @@
    }
   ]
  ],
+ "page:7d3089c9-9cf9-4498-8ba7-ea3a7696d653": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Les RH ne veulent pas que tu saches ça, mais moi je vais te le dire : en fait, ils utilisent les filtres ATS. C'est genre un système : avant que ton CV arrive à la personne qui va le regarder, ils le font passer par ce système, et s'il passe ces filtres, là ils l'envoient à la personne qui va voir ton CV. ",
+    "text": {
+     "content": "Les RH ne veulent pas que tu saches ça, mais moi je vais te le dire : en fait, ils utilisent les filtres ATS. C'est genre un système : avant que ton CV arrive à la personne qui va le regarder, ils le font passer par ce système, et s'il passe ces filtres, là ils l'envoient à la personne qui va voir ton CV. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bon, mais t'inquiète pas : si t'es sur le point d'envoyer ce CV, je vais te donner ce qui va te sauver pour que tu arrives à passer ces filtres ATS. La seule chose qu'on a à faire, c'est d'aller sur cette page et de faire ce qui suit. ",
+    "text": {
+     "content": "Bon, mais t'inquiète pas : si t'es sur le point d'envoyer ce CV, je vais te donner ce qui va te sauver pour que tu arrives à passer ces filtres ATS. La seule chose qu'on a à faire, c'est d'aller sur cette page et de faire ce qui suit. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Recherche d’emploi LinkedIn",
+    "text": {
+     "content": "Recherche d’emploi LinkedIn",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "La première chose à faire, c'est de copier le lien de l'offre que tu veux, ",
+    "text": {
+     "content": "La première chose à faire, c'est de copier le lien de l'offre que tu veux, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "et ensuite tu vas aller sur cette appli qui s'appelle Parakeet AI, parakeet-ai.com/resume-maker. ",
+    "text": {
+     "content": "et ensuite tu vas aller sur cette appli qui s'appelle Parakeet AI, parakeet-ai.com/resume-maker. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tu vas coller le lien de l'offre que tu veux et l'ajouter, et elle va nous analyser l'offre d'emploi, ",
+    "text": {
+     "content": "Tu vas coller le lien de l'offre que tu veux et l'ajouter, et elle va nous analyser l'offre d'emploi, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "elle va nous charger un CV et un score de correspondance, et elle va nous faire notre CV en fonction de l'entreprise qu'on veut. ",
+    "text": {
+     "content": "elle va nous charger un CV et un score de correspondance, et elle va nous faire notre CV en fonction de l'entreprise qu'on veut. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et comme tu peux le voir, voilà à quoi ressemble notre CV qui passe les filtres ATS. ",
+    "text": {
+     "content": "Et comme tu peux le voir, voilà à quoi ressemble notre CV qui passe les filtres ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:80a5c2a2-836f-42a0-98eb-b3c8b38e7cad": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Los de Recursos Humanos no quieren que sepáis esto, pero yo sí os lo voy a contar: resulta que utilizan los filtros ATS, que es como un sistema que, antes de que tu currículum llegue a la persona que lo va a ver, lo pasan por este sistema, y si pasa estos filtros, pues ya lo mandan a la persona que va a ver tu currículum. ",
+    "text": {
+     "content": "Los de Recursos Humanos no quieren que sepáis esto, pero yo sí os lo voy a contar: resulta que utilizan los filtros ATS, que es como un sistema que, antes de que tu currículum llegue a la persona que lo va a ver, lo pasan por este sistema, y si pasa estos filtros, pues ya lo mandan a la persona que va a ver tu currículum. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bueno, pero no te preocupes, que si tú estás a punto de enviar ese currículum, yo te voy a dar tu salvación para que logres pasar esos filtros ATS, y lo único que tenemos que hacer es ir a esta página y hacer lo siguiente. ",
+    "text": {
+     "content": "Bueno, pero no te preocupes, que si tú estás a punto de enviar ese currículum, yo te voy a dar tu salvación para que logres pasar esos filtros ATS, y lo único que tenemos que hacer es ir a esta página y hacer lo siguiente. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Búsqueda de empleo en LinkedIn",
+    "text": {
+     "content": "Búsqueda de empleo en LinkedIn",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo primero que tienes que hacer es copiar el enlace del trabajo que quieres, ",
+    "text": {
+     "content": "Lo primero que tienes que hacer es copiar el enlace del trabajo que quieres, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "y después te vas a ir a esta aplicación que se llama parakeet-ai.com/resume-maker, ",
+    "text": {
+     "content": "y después te vas a ir a esta aplicación que se llama parakeet-ai.com/resume-maker, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "vas a pegar el enlace al trabajo que quieres y lo vas a añadir, y nos va a analizar la oferta de empleo, ",
+    "text": {
+     "content": "vas a pegar el enlace al trabajo que quieres y lo vas a añadir, y nos va a analizar la oferta de empleo, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "nos va a cargar un currículum y una puntuación, y nuestro CV nos lo va a hacer dependiendo de la empresa que queramos, ",
+    "text": {
+     "content": "nos va a cargar un currículum y una puntuación, y nuestro CV nos lo va a hacer dependiendo de la empresa que queramos, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "y como podéis ver, así queda nuestro CV pasando los filtros ATS. ",
+    "text": {
+     "content": "y como podéis ver, así queda nuestro CV pasando los filtros ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
  "page:8134702e-c690-41f3-bf92-18dcbcf9d43b": [
   [
    {
@@ -51561,6 +52084,239 @@
     "plain_text": "Así que gracias a Dios que encontré esta página, o sea, parakeet-ai.com/resume-maker, si queréis encontrar trabajo en 2026.",
     "text": {
      "content": "Así que gracias a Dios que encontré esta página, o sea, parakeet-ai.com/resume-maker, si queréis encontrar trabajo en 2026.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:d8c0dbf9-828c-4620-aeee-a18f1263403c": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ljudje iz kadrovske nočejo, da veš to, ampak jaz ti to povem: izkaže se, da uporabljajo filtre ATS, to je nek sistem, ki ga, preden tvoj življenjepis sploh pride do osebe, ki ga bo pogledala, ta tvoj življenjepis najprej spustijo skozi ta sistem, in če gre skozi te filtre, ga šele potem pošljejo naprej osebi, ki bo pogledala tvoj življenjepis. ",
+    "text": {
+     "content": "Ljudje iz kadrovske nočejo, da veš to, ampak jaz ti to povem: izkaže se, da uporabljajo filtre ATS, to je nek sistem, ki ga, preden tvoj življenjepis sploh pride do osebe, ki ga bo pogledala, ta tvoj življenjepis najprej spustijo skozi ta sistem, in če gre skozi te filtre, ga šele potem pošljejo naprej osebi, ki bo pogledala tvoj življenjepis. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ampak brez skrbi, ker če ravno nameravaš poslati ta svoj življenjepis, ti zdaj dam tvojo rešitev, da ti bo končno uspelo priti skozi te filtre ATS, in edino, kar moramo narediti, je, da gremo na to stran in naredimo naslednje. ",
+    "text": {
+     "content": "Ampak brez skrbi, ker če ravno nameravaš poslati ta svoj življenjepis, ti zdaj dam tvojo rešitev, da ti bo končno uspelo priti skozi te filtre ATS, in edino, kar moramo narediti, je, da gremo na to stran in naredimo naslednje. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.linkedin.com/jobs/",
+    "plain_text": "Iskanje zaposlitve na LinkedInu",
+    "text": {
+     "content": "Iskanje zaposlitve na LinkedInu",
+     "link": {
+      "url": "https://www.linkedin.com/jobs/"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Najprej moraš kopirati povezavo do službe, ki jo hočeš, ",
+    "text": {
+     "content": "Najprej moraš kopirati povezavo do službe, ki jo hočeš, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "potem pa greš v to aplikacijo, ki se imenuje Parakeet AI, parakeet-ai.com/resume-maker, ",
+    "text": {
+     "content": "potem pa greš v to aplikacijo, ki se imenuje Parakeet AI, parakeet-ai.com/resume-maker, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "tam prilepiš povezavo do službe, ki jo hočeš, in jo dodaš, in nam bo analiziralo oglas za delo, ",
+    "text": {
+     "content": "tam prilepiš povezavo do službe, ki jo hočeš, in jo dodaš, in nam bo analiziralo oglas za delo, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "naložilo nam bo življenjepis in ga ocenilo, in naš življenjepis nam bo naredilo čisto glede na podjetje, ki ga hočemo, ",
+    "text": {
+     "content": "naložilo nam bo življenjepis in ga ocenilo, in naš življenjepis nam bo naredilo čisto glede na podjetje, ki ga hočemo, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "in kot lahko vidite, tako izgleda naš življenjepis, ki gre skozi filtre ATS. ",
+    "text": {
+     "content": "in kot lahko vidite, tako izgleda naš življenjepis, ki gre skozi filtre ATS. ",
      "link": null
     },
     "type": "text"

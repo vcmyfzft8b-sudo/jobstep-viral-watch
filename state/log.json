@@ -9982,5 +9982,39 @@
   },
   "ts": 1792765562,
   "type": "rerank"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792780432,
+  "type": "alert",
+  "video": "7699885181536128288",
+  "views": 10600
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792780435,
+  "type": "alert",
+  "video": "7699749440378260768",
+  "views": 9860
+ },
+ {
+  "error": "Extra data: line 3 column 1 (char 408)",
+  "ts": 1792780440,
+  "type": "error",
+  "video": "7699843489445465366"
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792780444,
+  "type": "alert",
+  "video": "7699886917667605793",
+  "views": 5957
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792780448,
+  "type": "alert",
+  "video": "7699876437766999328",
+  "views": 5127
  }
 ]

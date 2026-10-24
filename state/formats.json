@@ -518,7 +518,7 @@
   "title": "Ich hab so getan, als hätte ich einen Termin 😳"
  },
  {
-  "comeback_tries": 1,
+  "comeback_tries": 2,
   "description": "Gushing HR-tip hook: the creator jokes they could marry the HR guy who showed them a trick, then demos copying a job-ad link into Parakeet AI, which analyzes it and generates a tailored CV that can be edited further, ending with a 'Comment JOB' CTA. Examples: 'Ich könnte den Typen aus dem HR wirklich heiraten'",
   "id": "X02",
   "page_id": "3eb958b0-fc14-80b0-94a4-f86ba412dcc2",
@@ -903,7 +903,7 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 16.10.2026: not among the best 12 of any list: score 1.12 (saved by 2.2% of viewers, 8 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
+  "archived_reason": "did not pass the page check: 🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate; 🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - ",
   "description": "Spill-the-secret hook: the creator bluntly reveals that employers use ATS, then walks through copying any job-ad link (Indeed, LinkedIn, etc.) and pasting it into Parakeet AI to beat the system. Examples: 'Personaler wollen nicht dass wir das wissen 🤡'",
   "id": "X18",
   "inspo": {
@@ -945,7 +945,7 @@
     "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
    ],
    "since": 1792763947,
-   "tries": 3
+   "tries": 4
   },
   "revived": {
    "at": 1792763717,
@@ -961,7 +961,7 @@
   "script": "(DEUTSCH) Arbeitgeber möchten nicht, dass ihr das wisst, schon gar nicht die Personalabteilung. Ich verrat’s euch. So, ich hau’s jetzt einfach mal raus: Und zwar verwenden sie ATS. Jetzt wisst ihr’s. Und ab jetzt könnt ihr sie hops nehmen. So, und wie machen wir das jetzt? Ganz einfach: Du gehst auf deine Stellenanzeige, auf der du gerade bist, egal ob bei Indeed, Job, LinkedIn, egal wo.  Du kopierst dir den Link und du fügst ihn da ein, wo ich dir jetzt gleich zeige, wo du ihn einfügen wirst. Und zwar gehst du auf Parakeet AI und fügst dort den Link ein von deiner Stellenanzeige. Die Jobanzeige wird dann für dich analysiert. Let’s go. Und dann, ja, sehen wir schon mal: solide, ist einiges drin. Und darauf basierend gehen wir jetzt zum Lebenslauf erstellen. Tada.  Und da haben wir ihn auch schon. Fertiger Lebenslauf, wenig Aufwand, basierend auf der Stellenanzeige, die ich hier eingefüg",
   "source": "DACH archive (old formats)",
   "source_video": "https://www.tiktok.com/@marietipsapply/video/7695190648357489921",
-  "status": "pending",
+  "status": "archived",
   "title": "Personaler wollen nicht dass wir das wissen 🤡"
  },
  {

@@ -10408,5 +10408,111 @@
   },
   "ts": 1792819239,
   "type": "rerank"
+ },
+ {
+  "format": "ESX15",
+  "level": "viral",
+  "ts": 1792841351,
+  "type": "alert",
+  "video": "7698015363195211029",
+  "views": 100500
+ },
+ {
+  "format": "A20261023075255",
+  "reasons": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "tries": 0,
+  "ts": 1792841476,
+  "type": "format_held"
+ },
+ {
+  "format": "X02",
+  "not_ready": {
+   "es": "error: no example video to build from (None)",
+   "fr": "error: no example video to build from (None)",
+   "sl": "error: no example video to build from (None)"
+  },
+  "tries": 3,
+  "ts": 1792842785,
+  "type": "format_comeback_held"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X08",
+   "X16",
+   "A202610061334",
+   "N10",
+   "X13",
+   "X09",
+   "N02",
+   "X03",
+   "N07",
+   "N04",
+   "A20261009204851",
+   "FRX22",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "X13",
+    "N10",
+    "X09",
+    "N04",
+    "X06",
+    "N07",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X08",
+    "X16",
+    "A202610061334",
+    "N10",
+    "X13",
+    "X09",
+    "N02",
+    "X03",
+    "N07",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X03",
+    "X16",
+    "N07",
+    "A202610061334",
+    "X08",
+    "N10",
+    "X13",
+    "X09",
+    "N04",
+    "A20261009204851",
+    "ESX28",
+    "FRX22",
+    "X06"
+   ]
+  },
+  "ts": 1792842799,
+  "type": "rerank"
  }
 ]

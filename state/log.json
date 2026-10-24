@@ -10016,5 +10016,289 @@
   "type": "alert",
   "video": "7699876437766999328",
   "views": 5127
+ },
+ {
+  "format": null,
+  "level": "viral",
+  "ts": 1792797964,
+  "type": "alert",
+  "video": "7698112155513670934",
+  "views": 100000
+ },
+ {
+  "format": "N07",
+  "reasons": [
+   "cross-country check fail: directions_match es: The directions say to do make-up with a brush, but the reference says the creator handles jewellery in a casual selfie, and FR says jewellery too. The ES and SL directions should match the reference and FR (filmed while handling jewellery).; directions_match sl: The directions d"
+  ],
+  "tries": 1,
+  "ts": 1792798434,
+  "type": "format_held"
+ },
+ {
+  "format": "N07",
+  "position": null,
+  "reasons": [
+   "cross-country check fail: directions_match es: The directions say to do make-up with a brush, but the reference says the creator handles jewellery in a casual selfie, and FR says jewellery too. The ES and SL directions should match the reference and FR (filmed while handling jewellery).; directions_match sl: The directions d"
+  ],
+  "ts": 1792798434,
+  "type": "format_held",
+  "video": "7699679172821617938"
+ },
+ {
+  "format": "N07",
+  "level": "converting",
+  "ts": 1792798435,
+  "type": "alert",
+  "video": "7699679172821617938",
+  "views": 72600
+ },
+ {
+  "format": "A202610061334",
+  "level": "converting",
+  "ts": 1792798448,
+  "type": "alert",
+  "video": "7699244720698002721",
+  "views": 31100
+ },
+ {
+  "format": "N01",
+  "level": "converting",
+  "ts": 1792798462,
+  "type": "alert",
+  "video": "7699885181536128288",
+  "views": 30200
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792798465,
+  "type": "alert",
+  "video": "7699946286119652630",
+  "views": 9455
+ },
+ {
+  "level": "taking_off",
+  "ts": 1792798468,
+  "type": "alert",
+  "video": "7699927120880946452",
+  "views": 5642
+ },
+ {
+  "changes": [
+   "es:FRX24^3"
+  ],
+  "ts": 1792798716,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X08",
+   "X16",
+   "A202610061334",
+   "N10",
+   "X13",
+   "X09",
+   "N02",
+   "X03",
+   "N07",
+   "N04",
+   "A20261009204851",
+   "FRX22",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "N10",
+    "X13",
+    "X09",
+    "N04",
+    "X06",
+    "N07",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X08",
+    "X16",
+    "A202610061334",
+    "N10",
+    "X13",
+    "X09",
+    "N02",
+    "X03",
+    "N07",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X03",
+    "X16",
+    "A202610061334",
+    "X08",
+    "N10",
+    "N07",
+    "X13",
+    "N04",
+    "X09",
+    "A20261009204851",
+    "ESX28",
+    "FRX22",
+    "X06"
+   ]
+  },
+  "ts": 1792798744,
+  "type": "rerank"
+ },
+ {
+  "format": "N07",
+  "position": 12,
+  "ts": 1792798744,
+  "type": "format_published"
+ },
+ {
+  "format": "X18",
+  "reasons": [
+   "🇫🇷 same title as the live format X03 (\"les recruteurs ne veulent absolument pas que tu saches ça\") - a duplicate",
+   "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
+  ],
+  "tries": 3,
+  "ts": 1792798781,
+  "type": "format_held"
+ },
+ {
+  "format": "A20261023075255",
+  "reasons": [
+   "🇸🇮 page could not be built: script does not look Slovenian"
+  ],
+  "tries": 0,
+  "ts": 1792798901,
+  "type": "format_held"
+ },
+ {
+  "changes": [
+   "es:X02^1"
+  ],
+  "ts": 1792799772,
+  "type": "own_tiers",
+  "week": "2026-W43"
+ },
+ {
+  "format": "N09",
+  "not_ready": {
+   "es": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)",
+   "fr": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)",
+   "sl": "not built: page waits in the radar page until it passes the check (https://www.tiktok.com/@candice_study/video/7693644607275486496)"
+  },
+  "tries": 3,
+  "ts": 1792800036,
+  "type": "format_comeback_held"
+ },
+ {
+  "format": "X02",
+  "not_ready": {
+   "es": "error: no example video to build from (None)",
+   "fr": "error: no example video to build from (None)",
+   "sl": "error: no example video to build from (None)"
+  },
+  "tries": 1,
+  "ts": 1792800039,
+  "type": "format_comeback_held"
+ },
+ {
+  "order": [
+   "A20261006183623",
+   "X06",
+   "ESX11",
+   "X08",
+   "X16",
+   "A202610061334",
+   "N10",
+   "X13",
+   "X09",
+   "N02",
+   "X03",
+   "N07",
+   "N04",
+   "A20261009204851",
+   "FRX22",
+   "ESX28"
+  ],
+  "orders": {
+   "es": [
+    "A20261006183623",
+    "N02",
+    "A202610061334",
+    "ESX11",
+    "X16",
+    "ESX28",
+    "X08",
+    "X03",
+    "N10",
+    "X13",
+    "X09",
+    "N04",
+    "X06",
+    "N07",
+    "A20261009204851",
+    "FRX22"
+   ],
+   "fr": [
+    "A20261006183623",
+    "X06",
+    "ESX11",
+    "X08",
+    "X16",
+    "A202610061334",
+    "N10",
+    "X13",
+    "X09",
+    "N02",
+    "X03",
+    "N07",
+    "N04",
+    "A20261009204851",
+    "FRX22",
+    "ESX28"
+   ],
+   "sl": [
+    "A20261006183623",
+    "N02",
+    "ESX11",
+    "X03",
+    "X16",
+    "A202610061334",
+    "X08",
+    "N10",
+    "N07",
+    "X13",
+    "N04",
+    "X09",
+    "A20261009204851",
+    "ESX28",
+    "FRX22",
+    "X06"
+   ]
+  },
+  "ts": 1792800042,
+  "type": "rerank"
  }
 ]

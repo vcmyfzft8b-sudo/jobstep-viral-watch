@@ -1040,6 +1040,9 @@
   "N06:es": "failed",
   "N06:fr": "failed",
   "N06:sl": "failed",
+  "N07:es": "fixed",
+  "N07:fr": "ok",
+  "N07:sl": "fixed",
   "N09:es": "failed",
   "N09:fr": "failed",
   "N09:sl": "failed",
@@ -1125,9 +1128,9 @@
   "N04:fr": "2053be5413caf6614619617585c1aff37b010602fd1207f0d7aed7d5ffd6fe32",
   "N04:sl": "9a230daded6de121dca3047da4e81cbcbcef41fdedcce3361f407b7bc4bd6bc0",
   "N07:de": "d7c7945832cb6a00106f87efdb31d6bc60015cea2dbf64c5b1670849d544413a",
-  "N07:es": "81941bd7dc86884667d89de726d371be970ca59d02771427f5b349404b854d99",
-  "N07:fr": "1b0b24eb80316ef75d770822afbe3776b3bb4b4a08d689c6203cb35968a15753",
-  "N07:sl": "a90c693e09ff9d16757868d5c2c9f13a8f66648b0a8b4e66b5e2900f44582678",
+  "N07:es": "77c4c888d52798e25441e4ae54f745f003c6789e1bb4ad8419f84ca95b7a24fb",
+  "N07:fr": "fb8408bf66a0a34dbdb2f20693f74f06bd6e4b96aa3060825b4de67e3cc952e5",
+  "N07:sl": "a42ea3765592879fb957d539d33af61f97c2352313d9497686df71f00db17229",
   "N10:de": "5faf2a4c7ac5a75bc5d05fb69c4ba09f1b653cd80cfc4aef1bff313e78fc3b64",
   "N10:es": "5012b2727f32736aea8ce65c0672dd7cfdfb7f1a5fbd56bcbcbc3056c9e9448a",
   "N10:fr": "8f69068d8f5218ee98096cfd353a02eae6b36c2623299dd61b82c1eb7b88f8a2",
@@ -1161,9 +1164,9 @@
   "X16:fr": "b7ed7c6aa3202d8a806048b253f4d00c614bdd383df1a00eba85d58dc1051bac",
   "X16:sl": "d45f91f5164e7d798b486289ffb397c32923a203e3083d4dd79633ab26ed89bd",
   "X18:de": "d632d9071bbfb6e81de71c270a9184815f6bad96a8a00a4853d83271f277efa1",
-  "X18:es": "143868478dd29714027ef967244e592af5c7b5d1ea7d10da496b95f8e1c8443a",
-  "X18:fr": "dcd56eb2e2939ca77f0a4b82ce2e898d9cef24874006155190f36630cb9372f2",
-  "X18:sl": "a2430333666215274d99737ded34e6f9dfbf01f35ca403aeaf6ed0990983222b"
+  "X18:es": "0604e48380200b103c2040b68f250799df98483ea7837460773741470d84e9ef",
+  "X18:fr": "724d138c2e0e7eec44b972826462b43f7e5caf8996fde785c79ac4a19e8dc7a4",
+  "X18:sl": "6818c7c9614df297e4071b496f4774d901e5ccc916ce6cd1f18100720b98dacb"
  },
  "audit_rules": "2026-10-16.pure-transcription",
  "discovered_at": 1792645271,
@@ -2603,7 +2606,7 @@
     "fr": "not_locked",
     "sl": "not_locked"
    },
-   "checked_at": 1792153916,
+   "checked_at": 1792798683,
    "deterministic": {},
    "duplicates": [],
    "inputs": {
@@ -2620,7 +2623,7 @@
      "video_identity": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54"
     }
    },
-   "key": "50a2999a097385a27f7c2ff4960fa95eed2d45e43cb1d0ef6f7244a030a95bfa",
+   "key": "d093f5d4afc0cf0a8787e2fc1ea7fe9accc9305de815e5a168d480634585e39a",
    "passed": true,
    "reasons": [],
    "results": {
@@ -2696,9 +2699,9 @@
     }
    },
    "status": "pass",
-   "summary": "All three pages follow N07 closely: the recruiter-brother hook, the score check on the site, the question-by-question build and the final-score then before-score reveal are all kept, the 24h promise is softened, the scores use X/Y, the brand is never spoken and there is no CTA, so every dimension passes.",
+   "summary": "All three pages use the canonical example 7689479710677470471 (FR now uses it too, not the rejected source) and closely translate its sentences in order: brother recruiter, 24h promise, cue placement, Y final score and the before reveal with X (ES keeps the original's 'esta') all match; titles and visual hooks fit.",
    "title_fixes": {},
-   "version": "group-2026-10-13.timeless"
+   "version": "group-2026-10-16.pure-transcription"
   },
   "N10": {
    "approval": {
@@ -3679,7 +3682,8 @@
   ],
   "N07": [
    "7691252438875098400",
-   "7696228517259824406"
+   "7696228517259824406",
+   "7699679172821617938"
   ],
   "N10": [
    "7693601460084362516"
@@ -3827,8 +3831,8 @@
    "since": 1792536148
   }
  },
- "last_full_run": 1792762483,
- "last_run": 1792780032,
+ "last_full_run": 1792797195,
+ "last_run": 1792797195,
  "lineup": "2026-W43",
  "manual_review": {
   "approved_german_exact": 11,
@@ -3967,13 +3971,18 @@
   "/f/IuATf0F4Q206Bb73QLi2VDa6vyPismdME3n51FgjQKz4tuqf": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad",
   "/f/IuATf0F4Q206EAzRVtSp6tmGQz9adqnYVf1IvOAXsi23SHuT": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
   "/f/IuATf0F4Q206ErEN1fSp6tmGQz9adqnYVf1IvOAXsi23SHuT": "sha256:f3adf7276fd18fe650d7c792650da4c3b27606eddc73ae28ae22ae6089a8528c",
+  "/f/IuATf0F4Q206G2Jkf6SNz5Kcb4jsLUF0AJt2rY1PpuwB9eVD": "sha256:200ed60e1d211108e63abe74a1f44e088c6cecdb9f539e7adadcdbfb27215ff0",
+  "/f/IuATf0F4Q206GaKeMQNz5Kcb4jsLUF0AJt2rY1PpuwB9eVDd": "sha256:200ed60e1d211108e63abe74a1f44e088c6cecdb9f539e7adadcdbfb27215ff0",
+  "/f/IuATf0F4Q206I5I2dpF4Q206uv1yaOPrlMZKWED5SHCfFGpt": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/f/IuATf0F4Q206KdiIysGtDbQ2dXJfRzVLExUWuherG5aNjHPs": "sha256:9cd1c7715a41884e63f77386b4463475c5977298037d1dc6e17156890c25a7b7",
   "/f/IuATf0F4Q206KpO87XGtDbQ2dXJfRzVLExUWuherG5aNjHPs": "sha256:eae9b49353ff38b8c33b74db1e020638c50ff9737694d85ed985b8702dcb3d12",
   "/f/IuATf0F4Q206LIRVEsxMSr42EsVgfObo5vGaPZpAIYkUwLFy": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636",
   "/f/IuATf0F4Q206ONs2tJYHsCNjnxouRDJ2mWTtVSbd957cOkAL": "sha256:8ca2d4b9c521bf15d03520ce1ebf455d20d9b344f7c1a678803aa34dd205c5ad",
   "/f/IuATf0F4Q206OeZ1NbYHsCNjnxouRDJ2mWTtVSbd957cOkAL": "sha256:274dccbdf202d089a540c2cdfc273ea99a643c1f792b99d8b1ac3a01d2598a4f",
   "/f/IuATf0F4Q206QFAIWV1tK49x5pX6n2uTd8zjc7wWPVya0vLq": "sha256:10cbbb08591fdea96ceae5607fc10144efef2712fa7d2f288f80e5813fcddce7",
+  "/f/IuATf0F4Q206QFISbDytK49x5pX6n2uTd8zjc7wWPVya0vLq": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/f/IuATf0F4Q206UQNnBaPWgDRMCzA7OhxpvLkKmGeqBbXHcQSY": "sha256:e28db4667fc3717121407e394d03e8aead90218a261f16ba01c11bf3f4c72e46",
+  "/f/IuATf0F4Q206UhVJbeWgDRMCzA7OhxpvLkKmGeqBbXHcQSYi": "sha256:200ed60e1d211108e63abe74a1f44e088c6cecdb9f539e7adadcdbfb27215ff0",
   "/f/IuATf0F4Q206VGd77cr1bC0yFqg6GdBtZp3rNic7awWMnmIA": "sha256:41285ddccce91ab75aebaab0cecde59516dedecbf6786b8ab1d7719892fbda17",
   "/f/IuATf0F4Q206WSq7Ofaq3pE0t59eYUROxjV1ZiBglrb6Kw2k": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/f/IuATf0F4Q206XUUoTNsOWhl2xzdJibm5c30T4u8nrRBYXoj1": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
@@ -3981,6 +3990,7 @@
   "/f/IuATf0F4Q206dmj93S4LNConycP7GxjtMu48S5q6WUvKDQzg": "sha256:474c4a8ec84a270632cffc15677db81fdec53d908a180e84b3ab6ab48828b180",
   "/f/IuATf0F4Q206f1BWuKAw7vtDLjHK98Aql043Rfa1yENTk2mz": "sha256:a7289dd713384a9cefc066ee081d54044990f3124140cfef30f64a8ea71769af",
   "/f/IuATf0F4Q206fzhTWbAw7vtDLjHK98Aql043Rfa1yENTk2mz": "sha256:da0d2bce93ba6b3bff40e32ab88c68fe32182c6c3441ae5e05cf2660e45fbfc3",
+  "/f/IuATf0F4Q206iyeLVv8BzTK24qsZhbytuILdAxpDQ8XFNORo": "sha256:5fb54f46be6aa53245d3e4c3bec2821fc0ba68f12cc646fa9f9413aec1d04e54",
   "/f/IuATf0F4Q206lARF6SkIhCsXD6mV4KqtubF9H58Ey3jYJnfg": "sha256:8783c0d6f6071ffc7eb200cb5c6cca95f5e6dbf1f94ac1b55fe8b043715123cb",
   "/f/IuATf0F4Q206lVbCvpikIhCsXD6mV4KqtubF9H58Ey3jYJnf": "sha256:f4fc875e8896371efe765a1248136741a2f7118bdb3fa46a8b8a8f1f87bcf636",
   "/f/IuATf0F4Q206n0VP21llBrJbwpLSU8tGqWnC4OIPsYAVX2N9": "sha256:8c2d176036be7739a7ed99b67d85abd187fc202073e9611291633d9d4dad465b",

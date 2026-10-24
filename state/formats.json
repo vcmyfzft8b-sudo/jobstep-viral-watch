@@ -242,7 +242,6 @@
   "adopted": {
    "sl": true
   },
-  "archived_reason": "clean-up 16.10.2026: not among the best 12 of any list: score 1.08 (saved by 2.9% of viewers, 13 videos; typical video 1.7%), not proven for our creators, not hot, not among the most viral or best converting",
   "description": "My brother/sister/best friend/relative is a recruiter or in HR and this is how you find a job in 24h / they always find work - an insider relative's tip. Example: 'MOJ BRAT JE REGRUTER I EVO NACINA DA NADJETE POSAO ZA 24h'.",
   "id": "N07",
   "inspo": {
@@ -250,33 +249,37 @@
     "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
-    "views": 41100
+    "views": 41800
    },
    "fr": {
     "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
-    "views": 41100
+    "views": 41800
    },
    "sl": {
     "audit": true,
     "strict": true,
     "url": "https://www.tiktok.com/@zorica.djurdjevic21/video/7689479710677470471",
-    "views": 41100
+    "views": 41800
    }
   },
-  "listed_at": 1792154000,
+  "listed_at": 1792798744,
   "notion_pages": {
    "es": "3f0958b0-fc14-800e-a255-eb7b885dad4d",
    "fr": "3f0958b0-fc14-8054-98bb-db185e6e7472",
    "sl": "3f8958b0fc14829283a9010ceefbdeef"
   },
   "page_id": "3f0958b0fc1481babee1d2e56b4e56af",
-  "pages": {},
+  "pages": {
+   "es": "eb96abcf-e201-461a-bea3-63acc2e9e059",
+   "fr": "01d80acd-b35a-47dd-b3ca-fa4a3c77993e",
+   "sl": "0c7d81c3-463b-46a3-b57a-3fd3fab022d8"
+  },
   "revived": {
-   "at": 1792152552,
-   "because": "https://www.tiktok.com/@lavoraconjulia/video/7696228517259824406",
-   "views": 51000
+   "at": 1792798172,
+   "because": "https://www.tiktok.com/@catita.tipss/video/7699679172821617938",
+   "views": 72600
   },
   "reworded": {
    "de": true,
@@ -285,7 +288,7 @@
   },
   "script": "Mein Bruder ist Recruiter, und ich zeig dir, wie du deine Jobchancen in 24 Stunden pushst. Erstens: Dein Lebenslauf muss gut sein und eine gute Punktzahl haben. Am schnellsten checkst du das auf dieser Seite hier – einfach deine Daten eingeben. \nSo sieht mein Lebenslauf gerade aus. Mit jeder Frage kommt ein neuer, wichtiger Teil dazu. \nUnd da ist er: Endpunktzahl Y – und so sieht er jetzt aus. Vorher sah er so aus, mit dieser Punktzahl: X. ",
   "source_video": "https://www.tiktok.com/@lavoraconjulia/video/7696228517259824406",
-  "status": "archived",
+  "status": "active",
   "title": "Der Recruiter-Tipp, den ich gerne früher gehört hätte 🤫"
  },
  {
@@ -318,7 +321,7 @@
  },
  {
   "archived_reason": "clean-up 07.10.2026: current form 0.63 (below average) and no viral video in the last 21 days",
-  "comeback_tries": 2,
+  "comeback_tries": 3,
   "description": "I could marry/kiss the guy/girl from HR (or recruiter/CEO) because he showed me this - silent text hook with a dramatic reaction or odd task, then the tool demo. Examples: 'Stvarno bih se mogla udati za tipa iz HR-a', 'Je pourrais embrasser la personne qui m'a montré ça'.",
   "id": "N09",
   "notion_pages": {
@@ -515,6 +518,7 @@
   "title": "Ich hab so getan, als hätte ich einen Termin 😳"
  },
  {
+  "comeback_tries": 1,
   "description": "Gushing HR-tip hook: the creator jokes they could marry the HR guy who showed them a trick, then demos copying a job-ad link into Parakeet AI, which analyzes it and generates a tailored CV that can be edited further, ending with a 'Comment JOB' CTA. Examples: 'Ich könnte den Typen aus dem HR wirklich heiraten'",
   "id": "X02",
   "page_id": "3eb958b0-fc14-80b0-94a4-f86ba412dcc2",
@@ -941,7 +945,7 @@
     "🇪🇸 same title as the live format X03 (\"los reclutadores no quieren que sepas esto\") - a duplicate"
    ],
    "since": 1792763947,
-   "tries": 2
+   "tries": 3
   },
   "revived": {
    "at": 1792763717,

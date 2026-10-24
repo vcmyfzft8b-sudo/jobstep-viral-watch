@@ -13,6 +13,15 @@
    ],
    "place": "live"
   },
+  "01d80acd-b35a-47dd-b3ca-fa4a3c77993e": {
+   "created": 1792798023,
+   "fp": "b56509e042f2f201",
+   "market": "fr",
+   "media_ids": [
+    "0cfd31ff-d9c6-4b3d-91b6-58e2e13a3384"
+   ],
+   "place": "live"
+  },
   "0512a0a3-15b2-4a9d-8075-9740ff32a777": {
    "format": "N10",
    "fp": "5d1e6950a70873ee",
@@ -31,6 +40,15 @@
    "market": "es",
    "media_ids": [
     "e72870ad-b292-48fc-9936-38ca639db07f"
+   ],
+   "place": "live"
+  },
+  "0c7d81c3-463b-46a3-b57a-3fd3fab022d8": {
+   "created": 1792798166,
+   "fp": "970f3739cf86c1ee",
+   "market": "sl",
+   "media_ids": [
+    "cd8b9399-4c67-47dd-9703-63230dfb1ec2"
    ],
    "place": "live"
   },
@@ -480,6 +498,15 @@
    "market": "sl",
    "media_ids": [
     "0a66ca5a-c7af-4f84-b398-402561b87ab7"
+   ],
+   "place": "live"
+  },
+  "eb96abcf-e201-461a-bea3-63acc2e9e059": {
+   "created": 1792798058,
+   "fp": "32795438ae5f2e54",
+   "market": "es",
+   "media_ids": [
+    "91b02099-4faa-4fa7-82b3-33aefeb6b984"
    ],
    "place": "live"
   },

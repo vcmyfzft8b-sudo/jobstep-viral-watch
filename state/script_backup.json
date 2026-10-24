@@ -18,6 +18,25 @@
    "type": "text"
   }
  ],
+ "01d80acd-b35a-47dd-b3ca-fa4a3c77993e.16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Comme dans la vidéo d'inspiration, parle tout près de la caméra pendant que tu te maquilles : tu mélanges ton fond de teint dans un petit gobelet avec un pinceau et tu l'appliques, avec le titre affiché. Continue ce geste à chaque fois que tu parles face caméra.",
+   "text": {
+    "content": "Comme dans la vidéo d'inspiration, parle tout près de la caméra pendant que tu te maquilles : tu mélanges ton fond de teint dans un petit gobelet avec un pinceau et tu l'appliques, avec le titre affiché. Continue ce geste à chaque fois que tu parles face caméra.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "0b583a4e-f083-4ea3-8a19-07ab5e7b03b6": [
   {
    "annotations": {
@@ -32,6 +51,25 @@
    "plain_text": "Es geht nämlich ums Format. Es gibt so Systeme, KI-Systeme, die heißen ATS, und die gehen alle Lebensläufe durch. Und manchmal kommt dein Lebenslauf wegen denen gar nicht erst bei einem echten Menschen an.",
    "text": {
     "content": "Es geht nämlich ums Format. Es gibt so Systeme, KI-Systeme, die heißen ATS, und die gehen alle Lebensläufe durch. Und manchmal kommt dein Lebenslauf wegen denen gar nicht erst bei einem echten Menschen an.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
+ "0c7d81c3-463b-46a3-b57a-3fd3fab022d8.16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Tako kot v originalnem videu se med govorjenjem ves čas ličiš: s čopičem jemlješ puder ali korektor iz majhnega papirnatega lončka in ga nanašaš na obraz, naslov pa je ves čas na ekranu.",
+   "text": {
+    "content": "Tako kot v originalnem videu se med govorjenjem ves čas ličiš: s čopičem jemlješ puder ali korektor iz majhnega papirnatega lončka in ga nanašaš na obraz, naslov pa je ves čas na ekranu.",
     "link": null
    },
    "type": "text"
@@ -27190,6 +27228,25 @@
    "type": "text"
   }
  ],
+ "eb96abcf-e201-461a-bea3-63acc2e9e059.16": [
+  {
+   "annotations": {
+    "bold": false,
+    "code": false,
+    "color": "default",
+    "italic": false,
+    "strikethrough": false,
+    "underline": false
+   },
+   "href": null,
+   "plain_text": "Haz lo mismo que en el vídeo de ejemplo: habla muy cerca de la cámara mientras te maquillas, mojando una brocha en un vasito de base o corrector y aplicándotela, con el texto «te enseño como conseguir trabajo 🫶» en pantalla. Sigue maquillándote todo el rato que hablas a cámara.",
+   "text": {
+    "content": "Haz lo mismo que en el vídeo de ejemplo: habla muy cerca de la cámara mientras te maquillas, mojando una brocha en un vasito de base o corrector y aplicándotela, con el texto «te enseño como conseguir trabajo 🫶» en pantalla. Sigue maquillándote todo el rato que hablas a cámara.",
+    "link": null
+   },
+   "type": "text"
+  }
+ ],
  "eda68d4c-ca18-4ece-8f28-b7a63c0e23f9": [
   {
    "annotations": {
@@ -27322,6 +27379,525 @@
    },
    "type": "text"
   }
+ ],
+ "page:01d80acd-b35a-47dd-b3ca-fa4a3c77993e": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "En tant que personne qui a des contacts aux RH, je vais t'apprendre à trouver un job. ",
+    "text": {
+     "content": "En tant que personne qui a des contacts aux RH, je vais t'apprendre à trouver un job. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bon, on me l'a conseillé et je l'ai fait, je l'ai testé, et c'est pour ça que je te le conseille, parce que je sais que ça marche. ",
+    "text": {
+     "content": "Bon, on me l'a conseillé et je l'ai fait, je l'ai testé, et c'est pour ça que je te le conseille, parce que je sais que ça marche. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Ce qu'il te faut, c'est que ton CV passe le filtre ATS ; sinon, l'intelligence artificielle l'élimine automatiquement. ",
+    "text": {
+     "content": "Ce qu'il te faut, c'est que ton CV passe le filtre ATS ; sinon, l'intelligence artificielle l'élimine automatiquement. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et ça, on le sait depuis longtemps. ",
+    "text": {
+     "content": "Et ça, on le sait depuis longtemps. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Alors après, ne viens pas me dire : « Ah, mais personne ne me l'a dit ». ",
+    "text": {
+     "content": "Alors après, ne viens pas me dire : « Ah, mais personne ne me l'a dit ». ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Donc maintenant, je vais t'apprendre à rendre ton CV compatible avec les ATS. ",
+    "text": {
+     "content": "Donc maintenant, je vais t'apprendre à rendre ton CV compatible avec les ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tu vas ouvrir cette appli, tu vas y importer ton CV et tu vérifies s'il est compatible avec les ATS. ",
+    "text": {
+     "content": "Tu vas ouvrir cette appli, tu vas y importer ton CV et tu vérifies s'il est compatible avec les ATS. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Le plus probable, c'est qu'il ne le soit pas et que tu aies un score très bas, comme le mien, mais après, tu vas le modifier. ",
+    "text": {
+     "content": "Le plus probable, c'est qu'il ne le soit pas et que tu aies un score très bas, comme le mien, mais après, tu vas le modifier. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Et après avoir fait tout ce processus, qui va te prendre moins de 5 minutes, ton CV sera prêt. ",
+    "text": {
+     "content": "Et après avoir fait tout ce processus, qui va te prendre moins de 5 minutes, ton CV sera prêt. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Alors fais-moi confiance, tu vas trouver un job. ",
+    "text": {
+     "content": "Alors fais-moi confiance, tu vas trouver un job. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:0c7d81c3-463b-46a3-b57a-3fd3fab022d8": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Kot nekdo, ki ima zveze s kadrovsko službo, te bom zdaj naučila, kako dobiti službo. ",
+    "text": {
+     "content": "Kot nekdo, ki ima zveze s kadrovsko službo, te bom zdaj naučila, kako dobiti službo. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "No, to so mi svetovali in sem to tudi naredila, sem preizkusila, in zato zdaj to svetujem tudi vam, ker vem, da deluje. ",
+    "text": {
+     "content": "No, to so mi svetovali in sem to tudi naredila, sem preizkusila, in zato zdaj to svetujem tudi vam, ker vem, da deluje. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Vi namreč potrebujete, da vaš življenjepis prestane ATS filter, drugače ga umetna inteligenca avtomatsko zavrže. ",
+    "text": {
+     "content": "Vi namreč potrebujete, da vaš življenjepis prestane ATS filter, drugače ga umetna inteligenca avtomatsko zavrže. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "In to se že zelo dolgo ve. ",
+    "text": {
+     "content": "In to se že zelo dolgo ve. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tako da potem ne pridite in mi govorite: „Ja, ampak meni pa nihče ni povedal.“ ",
+    "text": {
+     "content": "Tako da potem ne pridite in mi govorite: „Ja, ampak meni pa nihče ni povedal.“ ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Zato vas bom zdaj naučila, kako narediti, da bo tvoj življenjepis združljiv s sistemi ATS. ",
+    "text": {
+     "content": "Zato vas bom zdaj naučila, kako narediti, da bo tvoj življenjepis združljiv s sistemi ATS. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Odpreš tole aplikacijo, naložiš svoj življenjepis in preveriš, ali je združljiv s sistemi ATS. ",
+    "text": {
+     "content": "Odpreš tole aplikacijo, naložiš svoj življenjepis in preveriš, ali je združljiv s sistemi ATS. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Najverjetneje ne bo in boš dobil zelo nizko oceno, tako kot jaz, ampak potem ga boš uredil. ",
+    "text": {
+     "content": "Najverjetneje ne bo in boš dobil zelo nizko oceno, tako kot jaz, ampak potem ga boš uredil. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "In ko boš šel čez cel ta postopek, ki ti bo vzel manj kot 5 minut, boš imel svoj življenjepis pripravljen. ",
+    "text": {
+     "content": "In ko boš šel čez cel ta postopek, ki ti bo vzel manj kot 5 minut, boš imel svoj življenjepis pripravljen. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Tako da mi zaupaj, da boš službo res dobil. ",
+    "text": {
+     "content": "Tako da mi zaupaj, da boš službo res dobil. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
  ],
  "page:1074e130-6f7f-4c5d-9849-dd9086d4c400": [
   [
@@ -53707,6 +54283,239 @@
     "plain_text": "Zato kar poglejte tja in spodaj komentirajte, kaj mislite, kdo bo kupil naslednji prostor.",
     "text": {
      "content": "Zato kar poglejte tja in spodaj komentirajte, kaj mislite, kdo bo kupil naslednji prostor.",
+     "link": null
+    },
+    "type": "text"
+   }
+  ]
+ ],
+ "page:eb96abcf-e201-461a-bea3-63acc2e9e059": [
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Como una persona que tiene contactos con los de Recursos Humanos, te voy a enseñar cómo conseguir trabajo. ",
+    "text": {
+     "content": "Como una persona que tiene contactos con los de Recursos Humanos, te voy a enseñar cómo conseguir trabajo. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Bueno, esto me lo aconsejaron y yo lo hice, lo probé, y por eso os lo estoy aconsejando a vosotros, porque sé que funciona. ",
+    "text": {
+     "content": "Bueno, esto me lo aconsejaron y yo lo hice, lo probé, y por eso os lo estoy aconsejando a vosotros, porque sé que funciona. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo que necesitáis es que vuestro currículum pase el filtro de ATS; si no, la inteligencia artificial automáticamente lo descarta. ",
+    "text": {
+     "content": "Lo que necesitáis es que vuestro currículum pase el filtro de ATS; si no, la inteligencia artificial automáticamente lo descarta. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y esto ya se sabe desde hace mucho tiempo. Así que después no vengáis diciendo: «Ay, es que nadie me lo dijo». ",
+    "text": {
+     "content": "Y esto ya se sabe desde hace mucho tiempo. Así que después no vengáis diciendo: «Ay, es que nadie me lo dijo». ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Así que ahora os voy a enseñar cómo hacer que tu currículum sea compatible con los ATS. ",
+    "text": {
+     "content": "Así que ahora os voy a enseñar cómo hacer que tu currículum sea compatible con los ATS. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "(",
+    "text": {
+     "content": "(",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": "https://www.parakeet-ai.com/resume-maker",
+    "plain_text": "Parakeet AI · Resume Maker",
+    "text": {
+     "content": "Parakeet AI · Resume Maker",
+     "link": {
+      "url": "https://www.parakeet-ai.com/resume-maker"
+     }
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": ") ",
+    "text": {
+     "content": ") ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Vas a abrir esta aplicación, le vas a subir tu currículum y compruebas si es compatible con los ATS. ",
+    "text": {
+     "content": "Vas a abrir esta aplicación, le vas a subir tu currículum y compruebas si es compatible con los ATS. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Lo más probable es que no lo sea y te salga una puntuación muy baja, como la mía, ",
+    "text": {
+     "content": "Lo más probable es que no lo sea y te salga una puntuación muy baja, como la mía, ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "pero después lo vas a editar. ",
+    "text": {
+     "content": "pero después lo vas a editar. ",
+     "link": null
+    },
+    "type": "text"
+   },
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Y después de hacer todo ese proceso, que te va a llevar menos de 5 minutos, vas a tener listo tu currículum. ",
+    "text": {
+     "content": "Y después de hacer todo ese proceso, que te va a llevar menos de 5 minutos, vas a tener listo tu currículum. ",
+     "link": null
+    },
+    "type": "text"
+   }
+  ],
+  [
+   {
+    "annotations": {
+     "bold": false,
+     "code": false,
+     "color": "default",
+     "italic": false,
+     "strikethrough": false,
+     "underline": false
+    },
+    "href": null,
+    "plain_text": "Así que confía en mí, que sí vas a conseguir trabajo. ",
+    "text": {
+     "content": "Así que confía en mí, que sí vas a conseguir trabajo. ",
      "link": null
     },
     "type": "text"
